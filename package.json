@@ -1,0 +1,13 @@
+{
+  "name": "fda-pipeline",
+  "version": "1.0.0",
+  "description": "FDA Clinical Trials & PDUFA Catalysts Pipeline",
+  "main": "run-pipeline.js",
+  "scripts": {
+    "start": "node run-pipeline.js",
+    "update": "node run-pipeline.js --force",
+    "scrape": "node scrape-pdufa.js --verbose"
+  },
+  "author": "",
+  "license": "MIT"
+}
