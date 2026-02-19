@@ -144,8 +144,17 @@ const KNOWN_DRUGS = {
   'zidesamtinib': { drug: 'zidesamtinib', brandName: null },
   'nuvalent': { drug: 'zidesamtinib', brandName: null },
   'ino-3107': { drug: 'INO-3107', brandName: null },
-  'inovio': { drug: 'INO-3107', brandName: null }
+  'inovio': { drug: 'INO-3107', brandName: null },
+  'ctx-1301': { drug: 'CTx-1301', brandName: null },
+  'cingulate': { drug: 'CTx-1301', brandName: null },
+  'dexmethylphenidate': { drug: 'CTx-1301', brandName: null }
 };
+
+// Drugs to exclude (rejected, withdrawn, or obsolete)
+const EXCLUDED_DRUGS = new Set([
+  'roluperidone',  // Minerva - CRL Feb 2024
+  'sanofi'  // False positive from drug extraction
+]);
 
 /**
  * Make an HTTPS request

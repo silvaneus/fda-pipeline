@@ -299,6 +299,16 @@ const CURATED_CATALYSTS = [
     notes: 'Subcutaneous autoinjector starting dose; Priority Review'
   },
   {
+    drug: 'CTx-1301',
+    brandName: null,
+    company: 'Cingulate',
+    indication: 'Attention-Deficit/Hyperactivity Disorder (ADHD)',
+    pdufaDate: '2026-05-31',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'Dexmethylphenidate with PTR technology; once-daily tablet'
+  },
+  {
     drug: 'talquetamab',
     brandName: 'Talvey',
     company: 'Johnson & Johnson',
@@ -831,11 +841,25 @@ async function getPDUFACatalysts(options = {}) {
         }
       }
 
-      // Add submissions awaiting PDUFA
+      // Add submissions awaiting PDUFA (only recent ones - within last 90 days)
       if (scrapedData.submissions && Array.isArray(scrapedData.submissions)) {
+        const cutoffDate = new Date();
+        cutoffDate.setDate(cutoffDate.getDate() - 90); // Only submissions from last 90 days
+
+        // Excluded drugs (rejected, withdrawn, etc.)
+        const excludedDrugs = new Set(['roluperidone', 'sanofi', 'eport', 'pplication']);
+
         for (const sub of scrapedData.submissions) {
           if (!sub.drug || sub.drug.length < 4) continue;
           if (existingDrugs.has(sub.drug.toLowerCase())) continue;
+          if (excludedDrugs.has(sub.drug.toLowerCase())) continue;
+
+          // Skip old submissions (likely already resolved)
+          const subDate = new Date(sub.submissionDate || sub.releaseDate);
+          if (subDate < cutoffDate) {
+            if (verbose) console.log(`  - Skipping old submission: ${sub.drug} (${sub.submissionDate || sub.releaseDate})`);
+            continue;
+          }
 
           allCatalysts.push({
             drug: sub.drug,
