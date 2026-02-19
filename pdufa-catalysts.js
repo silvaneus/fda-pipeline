@@ -421,6 +421,16 @@ const CURATED_CATALYSTS = [
     notes: 'mRNA-based flu vaccine; split approval: full for 50-64, accelerated for 65+'
   },
   {
+    drug: 'oveporexton',
+    brandName: null,
+    company: 'Takeda',
+    indication: 'Narcolepsy Type 1',
+    pdufaDate: '2026-08-10',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'First-in-class OX2R agonist; Priority Review; Q3 2026 target'
+  },
+  {
     drug: 'retatrutide',
     brandName: null,
     company: 'Eli Lilly',
@@ -513,6 +523,16 @@ const CURATED_CATALYSTS = [
     notes: 'RSV fusion inhibitor'
   },
   {
+    drug: 'tabelecleucel',
+    brandName: 'Ebvallo',
+    company: 'Pierre Fabre Pharmaceuticals',
+    indication: 'EBV+ Post-Transplant Lymphoproliferative Disease',
+    pdufaDate: '2026-10-10',
+    submissionType: 'BLA',
+    status: 'Pending',
+    notes: 'Allogeneic EBV-specific T-cell immunotherapy; Orphan Drug'
+  },
+  {
     drug: 'surufatinib',
     brandName: null,
     company: 'HUTCHMED',
@@ -563,6 +583,16 @@ const CURATED_CATALYSTS = [
     submissionType: 'NDA',
     status: 'Pending',
     notes: 'Microtubule inhibitor'
+  },
+  {
+    drug: 'tirabrutinib',
+    brandName: null,
+    company: 'Deciphera Pharmaceuticals',
+    indication: 'Primary CNS Lymphoma',
+    pdufaDate: '2026-12-18',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'BTK inhibitor; Orphan Drug for R/R PCNSL'
   },
   // 2027 - Early
   {
