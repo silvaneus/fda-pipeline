@@ -1,15 +1,20 @@
 /**
- * FDA Catalyst Scraper
+ * FDA Catalyst Scraper - Multi-Source
  *
- * Scrapes GlobeNewswire for:
- * 1. FDA acceptance press releases with PDUFA dates
- * 2. NDA/BLA submissions awaiting FDA acceptance (60-day review)
+ * Scrapes multiple sources for FDA catalyst events:
+ * - GlobeNewswire
+ * - BusinessWire
+ * - PR Newswire
+ * - SEC EDGAR 8-K filings
+ *
+ * Detects:
+ * 1. FDA acceptance with PDUFA dates
+ * 2. NDA/BLA submissions awaiting FDA acceptance
  * 3. FDA approvals (to mark catalysts as approved)
  *
  * Usage:
  *   node scrape-pdufa.js              # Scrape and display results
  *   node scrape-pdufa.js --verbose    # Show detailed progress
- *   node scrape-pdufa.js --update     # Auto-update pdufa-catalysts.js
  */
 
 const https = require('https');
@@ -17,48 +22,71 @@ const fs = require('fs');
 const path = require('path');
 
 const DATA_DIR = path.join(__dirname, 'data');
-const SCRAPED_CACHE_FILE = path.join(DATA_DIR, 'scraped-pdufa.json');
-const APPROVALS_CACHE_FILE = path.join(DATA_DIR, 'scraped-approvals.json');
-const SUBMISSIONS_CACHE_FILE = path.join(DATA_DIR, 'scraped-submissions.json');
+const RESULTS_CACHE_FILE = path.join(DATA_DIR, 'scraped-results.json');
+
+// Wire services to scrape
+const WIRE_SERVICES = {
+  globenewswire: {
+    name: 'GlobeNewswire',
+    searchUrl: (term) => `https://www.globenewswire.com/search/keyword/${encodeURIComponent(term)}?pageSize=50`,
+    releasePattern: /href="(\/news-release\/\d{4}\/\d{2}\/\d{2}\/[^"]+)"[^>]*>([^<]+)/g,
+    headers: {}
+  },
+  businesswire: {
+    name: 'BusinessWire',
+    // Use the API-style search endpoint
+    searchUrl: (term) => `https://www.businesswire.com/portal/site/home/template.PAGE/news/?javax.portlet.tpst=c59e1fbf4d13e7c2c8d0a09a5f94214c&javax.portlet.prp_c59e1fbf4d13e7c2c8d0a09a5f94214c=searchTerm%3D${encodeURIComponent(term)}%26searchType%3Dall`,
+    releasePattern: /href="(\/news\/home\/\d+\/en\/[^"]+)"[^>]*>([^<]+)/g,
+    // Need more browser-like headers for BusinessWire
+    headers: {
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
+      'Accept-Encoding': 'gzip, deflate, br',
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache',
+      'Sec-Ch-Ua': '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
+      'Sec-Ch-Ua-Mobile': '?0',
+      'Sec-Ch-Ua-Platform': '"macOS"',
+      'Sec-Fetch-Dest': 'document',
+      'Sec-Fetch-Mode': 'navigate',
+      'Sec-Fetch-Site': 'none',
+      'Sec-Fetch-User': '?1',
+      'Upgrade-Insecure-Requests': '1'
+    }
+  },
+  prnewswire: {
+    name: 'PR Newswire',
+    searchUrl: (term) => `https://www.prnewswire.com/search/news/?keyword=${encodeURIComponent(term)}&pagesize=50`,
+    releasePattern: /href="(\/news-releases\/[^"]+)"[^>]*>([^<]+)/g,
+    headers: {}
+  }
+};
 
 // Search terms for different event types
 const SEARCH_TERMS = {
-  pdufa: [
-    'PDUFA+date',
-    'FDA+accepts+NDA',
-    'FDA+accepts+BLA',
-    'FDA+acceptance+NDA',
-    'FDA+acceptance+BLA',
-    'target+action+date+FDA'
-  ],
-  submissions: [
-    'submits+NDA+FDA',
-    'submits+BLA+FDA',
-    'NDA+submission+FDA',
-    'BLA+submission+FDA',
-    'submitted+NDA',
-    'submitted+BLA',
-    'files+NDA',
-    'files+BLA'
-  ],
-  approvals: [
-    'FDA+approves',
-    'FDA+approval',
-    'receives+FDA+approval',
-    'granted+FDA+approval'
-  ]
+  pdufa: ['PDUFA date', 'FDA accepts NDA', 'FDA accepts BLA', 'FDA acceptance', 'target action date', 'priority review'],
+  submissions: ['submits NDA FDA', 'submits BLA FDA', 'NDA submission', 'BLA submission', 'files NDA', 'files BLA', 'completes BLA submission', 'completes NDA submission'],
+  approvals: ['FDA approves', 'FDA approval', 'receives FDA approval']
 };
 
-// Patterns to extract PDUFA dates
-const PDUFA_DATE_PATTERNS = [
-  /PDUFA\s+(?:target\s+)?(?:action\s+)?date\s+(?:of\s+|is\s+|set\s+for\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
-  /PDUFA\s+goal\s+date\s+(?:of\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
-  /target\s+(?:action\s+)?date\s+(?:of\s+|is\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
-  /action\s+date\s+under\s+PDUFA\s+is\s+(\w+\s+\d{1,2},?\s+\d{4})/gi,
-  /(?:FDA\s+)?decision\s+(?:expected\s+)?by\s+(\w+\s+\d{1,2},?\s+\d{4})/gi
+// Additional company/drug-specific search terms
+const SPECIFIC_SEARCHES = [
+  { term: 'Moderna flu vaccine FDA', eventType: 'pdufa' },
+  { term: 'mRNA-1010 FDA', eventType: 'pdufa' },
+  { term: 'iberdomide FDA', eventType: 'pdufa' },
+  { term: 'Bristol-Myers Squibb FDA submission', eventType: 'submissions' },
+  { term: 'Celgene FDA submission', eventType: 'submissions' },
+  { term: 'lorundrostat FDA', eventType: 'submissions' },
+  { term: 'Mineralys FDA', eventType: 'submissions' }
 ];
 
-// Patterns for submissions
+// Patterns
+const PDUFA_DATE_PATTERNS = [
+  /PDUFA\s+(?:target\s+)?(?:action\s+)?(?:goal\s+)?date\s+(?:of\s+|is\s+|set\s+for\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
+  /target\s+(?:action\s+)?date\s+(?:of\s+|is\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
+  /(?:FDA\s+)?decision\s+(?:expected\s+)?by\s+(\w+\s+\d{1,2},?\s+\d{4})/gi,
+  /(?:action|goal)\s+date\s+of\s+(\w+\s+\d{1,2},?\s+\d{4})/gi
+];
+
 const SUBMISSION_PATTERNS = [
   { pattern: /\bsBLA\b/i, type: 'sBLA' },
   { pattern: /\bsNDA\b/i, type: 'sNDA' },
@@ -66,22 +94,46 @@ const SUBMISSION_PATTERNS = [
   { pattern: /\bNDA\b/i, type: 'NDA' }
 ];
 
-// Patterns for approval detection
 const APPROVAL_PATTERNS = [
   /FDA\s+(?:has\s+)?approv(?:ed|es|al)/i,
   /receiv(?:ed|es)\s+(?:FDA\s+)?approval/i,
-  /grant(?:ed|s)\s+(?:FDA\s+)?approval/i,
-  /approv(?:ed|al)\s+by\s+(?:the\s+)?FDA/i,
-  /U\.?S\.?\s+Food\s+and\s+Drug\s+Administration.*approv/i
+  /grant(?:ed|s)\s+(?:FDA\s+)?approval/i
 ];
 
-// Patterns for submission detection (not yet accepted)
 const SUBMITTED_PATTERNS = [
   /submit(?:ted|s)\s+(?:a\s+|an\s+|its\s+)?(?:new\s+drug\s+application|biologics?\s+license\s+application|s?NDA|s?BLA)/i,
-  /(?:NDA|BLA|sNDA|sBLA)\s+(?:has\s+been\s+)?submit(?:ted|s)/i,
   /fil(?:ed|es|ing)\s+(?:a\s+|an\s+|its\s+)?(?:s?NDA|s?BLA)/i,
-  /announc(?:ed|es)\s+(?:the\s+)?submission\s+of/i
+  /announc(?:ed|es)\s+(?:the\s+)?submission/i
 ];
+
+// Skip words for drug name extraction
+const SKIP_WORDS = new Set([
+  'FDA', 'NDA', 'BLA', 'PDUFA', 'US', 'USA', 'INC', 'LLC', 'CORP', 'THE', 'FOR', 'AND', 'NEW', 'DRUG', 'APPLICATION',
+  'SUPPLEMENTAL', 'FIRST', 'ORAL', 'INJECTABLE', 'TREATMENT', 'PATIENTS', 'ADULTS', 'CHILDREN',
+  'ANNOUNCES', 'RECEIVES', 'ACCEPTS', 'GRANTS', 'APPROVAL', 'APPROVED', 'FILING', 'FILED',
+  'HYPERSENSITIVITY', 'REACTIONS', 'LABELING', 'CHANGES', 'COMPASSIONATE', 'USE', 'NEXT', 'GENERATION',
+  'BEST', 'WEIGHT', 'LOSS', 'PILLS', 'ALTERNATIVE', 'OPTIONS', 'PATCH', 'PATCHES'
+]);
+
+// Known drug name mappings from title keywords
+const KNOWN_DRUGS = {
+  'vyvgart': { drug: 'efgartigimod alfa', brandName: 'VYVGART' },
+  'efgartigimod': { drug: 'efgartigimod alfa', brandName: 'VYVGART' },
+  'argenx': { drug: 'efgartigimod alfa', brandName: 'VYVGART' }, // Company known for VYVGART
+  'moderna flu': { drug: 'mRNA-1010', brandName: null },
+  'mrna-1010': { drug: 'mRNA-1010', brandName: null },
+  'seasonal influenza': { drug: 'mRNA-1010', brandName: null },
+  'iberdomide': { drug: 'iberdomide', brandName: null },
+  'cc-220': { drug: 'iberdomide', brandName: null },
+  'lorundrostat': { drug: 'lorundrostat', brandName: null },
+  'mineralys': { drug: 'lorundrostat', brandName: null },
+  'zoryve': { drug: 'roflumilast', brandName: 'ZORYVE' },
+  'roflumilast': { drug: 'roflumilast', brandName: 'ZORYVE' },
+  'cytisinicline': { drug: 'cytisinicline', brandName: null },
+  'achieve life': { drug: 'cytisinicline', brandName: null },
+  'deucravacitinib': { drug: 'deucravacitinib', brandName: 'SOTYKTU' },
+  'sotyktu': { drug: 'deucravacitinib', brandName: 'SOTYKTU' }
+};
 
 /**
  * Make an HTTPS request
@@ -94,7 +146,7 @@ function fetchUrl(url, options = {}) {
       path: urlObj.pathname + urlObj.search,
       method: 'GET',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.5',
         ...options.headers
@@ -122,21 +174,27 @@ function fetchUrl(url, options = {}) {
 }
 
 /**
- * Search GlobeNewswire
+ * Search a wire service
  */
-async function searchGlobeNewswire(searchTerm, eventType, options = {}) {
-  const { verbose = false, maxResults = 50 } = options;
-  const url = `https://www.globenewswire.com/search/keyword/${encodeURIComponent(searchTerm)}?pageSize=${maxResults}`;
+async function searchWireService(service, searchTerm, eventType, options = {}) {
+  const { verbose = false } = options;
+  const config = WIRE_SERVICES[service];
+  const url = config.searchUrl(searchTerm);
 
-  if (verbose) console.log(`  Searching: ${searchTerm}...`);
+  if (verbose) console.log(`    [${config.name}] Searching: ${searchTerm}...`);
 
   try {
-    const { body } = await fetchUrl(url);
+    const { statusCode, body } = await fetchUrl(url, { headers: config.headers || {} });
+    if (statusCode !== 200) {
+      if (verbose) console.log(`      Status ${statusCode}`);
+      return [];
+    }
+
     const releases = [];
-    const releasePattern = /href="(\/news-release\/\d{4}\/\d{2}\/\d{2}\/[^"]+)"[^>]*>([^<]+)/g;
+    const pattern = new RegExp(config.releasePattern.source, 'g');
     let match;
 
-    while ((match = releasePattern.exec(body)) !== null) {
+    while ((match = pattern.exec(body)) !== null) {
       const [, path, title] = match;
       const titleLower = title.toLowerCase();
 
@@ -145,7 +203,8 @@ async function searchGlobeNewswire(searchTerm, eventType, options = {}) {
         relevant = titleLower.includes('pdufa') ||
                    titleLower.includes('fda accepts') ||
                    titleLower.includes('fda acceptance') ||
-                   titleLower.includes('target date');
+                   titleLower.includes('target date') ||
+                   titleLower.includes('action date');
       } else if (eventType === 'submissions') {
         relevant = (titleLower.includes('submit') || titleLower.includes('files') || titleLower.includes('filing')) &&
                    (titleLower.includes('nda') || titleLower.includes('bla') || titleLower.includes('fda'));
@@ -155,24 +214,83 @@ async function searchGlobeNewswire(searchTerm, eventType, options = {}) {
       }
 
       if (relevant) {
+        let fullUrl = path;
+        if (!path.startsWith('http')) {
+          const baseUrls = {
+            globenewswire: 'https://www.globenewswire.com',
+            businesswire: 'https://www.businesswire.com',
+            prnewswire: 'https://www.prnewswire.com'
+          };
+          fullUrl = baseUrls[service] + path;
+        }
+
         releases.push({
-          url: `https://www.globenewswire.com${path}`,
+          url: fullUrl,
           title: title.trim(),
+          source: config.name,
           eventType
         });
       }
     }
 
-    if (verbose) console.log(`    Found ${releases.length} relevant releases`);
+    if (verbose) console.log(`      Found ${releases.length} relevant`);
     return releases;
   } catch (error) {
-    if (verbose) console.log(`    Error searching: ${error.message}`);
+    if (verbose) console.log(`      Error: ${error.message}`);
     return [];
   }
 }
 
 /**
- * Extract text content from HTML
+ * Search SEC EDGAR for 8-K filings with FDA-related content
+ */
+async function searchSECEdgar(options = {}) {
+  const { verbose = false } = options;
+
+  if (verbose) console.log('  Searching SEC EDGAR 8-K filings...');
+
+  const results = [];
+
+  // Search SEC full-text for FDA-related 8-K filings
+  const searchTerms = ['PDUFA', 'FDA approval', 'NDA submitted', 'BLA submitted'];
+
+  for (const term of searchTerms) {
+    try {
+      // SEC EDGAR full-text search API
+      const url = `https://efts.sec.gov/LATEST/search-index?q="${encodeURIComponent(term)}"&dateRange=custom&startdt=2025-01-01&enddt=2026-12-31&forms=8-K`;
+
+      const { body } = await fetchUrl(url, {
+        headers: { 'Accept': 'application/json' }
+      });
+
+      const data = JSON.parse(body);
+      if (data.hits && data.hits.hits) {
+        for (const hit of data.hits.hits.slice(0, 20)) {
+          const filing = hit._source;
+          if (filing && filing.file_description) {
+            results.push({
+              url: `https://www.sec.gov/Archives/edgar/data/${filing.cik}/${filing.adsh.replace(/-/g, '')}/${filing.file_name}`,
+              title: filing.file_description || 'SEC 8-K Filing',
+              company: filing.display_names?.[0] || filing.entity_name || 'Unknown',
+              source: 'SEC EDGAR',
+              filingDate: filing.file_date
+            });
+          }
+        }
+      }
+    } catch (error) {
+      if (verbose) console.log(`    SEC search error for "${term}": ${error.message}`);
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 500));
+  }
+
+  if (verbose) console.log(`    Found ${results.length} SEC filings`);
+  return results;
+}
+
+/**
+ * Extract text from HTML
  */
 function extractText(body) {
   return body
@@ -188,115 +306,119 @@ function extractText(body) {
 }
 
 /**
- * Extract company name from press release
+ * Extract company name
  */
 function extractCompany(body, title, textContent) {
-  const skipWords = ['FDA', 'US', 'USA', 'The'];
-
-  // 1. Try title - company name usually starts the headline
-  const titleMatch = title.match(/^([A-Z][a-zA-Z\s&,\.]+?)(?:\s+(?:Announces|Reports|Receives|Provides|Submits|Files|to\s|and\s|Granted|Gets))/i);
+  // 1. Try title - company usually starts the headline
+  const titleMatch = title.match(/^([A-Z][a-zA-Z\s&,\.\-]+?)(?:\s+(?:Announces|Reports|Receives|Provides|Submits|Files|to\s|and\s|Granted|Gets|:))/i);
   if (titleMatch && titleMatch[1].length > 3 && titleMatch[1].length < 60) {
     const company = titleMatch[1].trim();
-    if (!skipWords.includes(company.toUpperCase()) && company.length > 3) {
+    if (!SKIP_WORDS.has(company.toUpperCase()) && company.length > 3) {
       return company;
     }
   }
 
-  // 2. Try CITY, Date (GLOBE NEWSWIRE) -- Company pattern
+  // 2. Try structured data
+  const ogMatch = body.match(/<meta[^>]+property="og:site_name"[^>]+content="([^"]+)"/i);
+  if (ogMatch && ogMatch[1].length > 3 && !ogMatch[1].includes('Wire')) {
+    return ogMatch[1].trim();
+  }
+
+  // 3. Look for company in press release header
   if (textContent) {
-    const cityMatch = textContent.match(/[A-Z]{2,},?\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s+\d{1,2},?\s+\d{4}\s+\(GLOBE\s*NEWSWIRE\)\s*[-–—]+\s*([A-Z][a-zA-Z\s&,\.]+?)(?:\s+(?:announced|today|has|received|\(|,))/i;
-    if (cityMatch && cityMatch[1].length > 3) {
-      return cityMatch[1].trim();
+    const headerMatch = textContent.match(/(?:CITY|[A-Z]{2,},)\s+[A-Z][a-z]+\.?\s+\d{1,2},?\s+\d{4}[^–—-]*[-–—]+\s*([A-Z][a-zA-Z\s&,\.\-]+?)(?:\s+(?:announced|today|\(|,))/i);
+    if (headerMatch && headerMatch[1].length > 3) {
+      return headerMatch[1].trim();
     }
-  }
-
-  // 3. Try article source span
-  const sourceMatch = body.match(/class="[^"]*(?:article-source|pagenav-vertical-menu__organization-link)[^"]*"[^>]*>([^<]+)/i);
-  if (sourceMatch && !sourceMatch[1].includes('GlobeNewswire') && sourceMatch[1].length > 3) {
-    return sourceMatch[1].trim();
-  }
-
-  // 4. Try og:site_name meta tag
-  const metaMatch = body.match(/<meta[^>]+property="og:site_name"[^>]+content="([^"]+)"/i);
-  if (metaMatch && !metaMatch[1].includes('GlobeNewswire') && metaMatch[1].length > 3) {
-    return metaMatch[1].trim();
   }
 
   return 'Unknown';
 }
 
 /**
- * Extract drug name from press release
+ * Extract drug name
  */
 function extractDrug(textContent, title) {
-  let drugName = null;
-  let brandName = null;
+  const combinedText = (title + ' ' + textContent).toLowerCase();
 
-  // Skip common false positives
-  const skipWords = ['FDA', 'NDA', 'BLA', 'PDUFA', 'US', 'USA', 'INC', 'LLC', 'CORP', 'THE', 'FOR', 'AND', 'NEW'];
-
-  // 1. Look for brand name pattern: BRANDNAME® (generic) or BRANDNAME (generic)
-  const brandGenericMatch = title.match(/([A-Z][A-Za-z]+(?:®|™)?)\s*\(([a-z][a-z\-\s]+)\)/);
-  if (brandGenericMatch) {
-    brandName = brandGenericMatch[1].replace(/[®™]/g, '');
-    drugName = brandGenericMatch[2].trim();
-    if (!skipWords.includes(brandName.toUpperCase())) {
-      return { drugName, brandName };
+  // 0. Check known drug mappings first
+  for (const [keyword, info] of Object.entries(KNOWN_DRUGS)) {
+    if (combinedText.includes(keyword.toLowerCase())) {
+      return { drugName: info.drug, brandName: info.brandName };
     }
   }
 
-  // 2. Look for "NDA/BLA for DRUGNAME" in text
-  const ndaForMatch = textContent.match(/(?:s?NDA|s?BLA)\s+(?:for\s+)(?:its\s+)?([A-Z][a-z]+[a-z0-9\-]*)/);
-  if (ndaForMatch && !skipWords.includes(ndaForMatch[1].toUpperCase())) {
-    drugName = ndaForMatch[1];
+  // 1. Brand (generic) pattern - e.g., "VYVGART (efgartigimod alfa)"
+  const brandGenericMatch = textContent.match(/([A-Z][A-Z]+(?:®|™)?)\s*\(([a-z][a-z\-\s]+)\)/);
+  if (brandGenericMatch && !SKIP_WORDS.has(brandGenericMatch[1].toUpperCase())) {
+    return {
+      drugName: brandGenericMatch[2].trim(),
+      brandName: brandGenericMatch[1].replace(/[®™]/g, '')
+    };
   }
 
-  // 3. Look for code names (XX-123, XXX-1234)
-  if (!drugName) {
-    const codeMatch = textContent.match(/\b([A-Z]{2,4}-\d{2,5})\b/);
-    if (codeMatch) drugName = codeMatch[1];
+  // 1b. Reverse pattern - "efgartigimod alfa (VYVGART)"
+  const genericBrandMatch = textContent.match(/([a-z][a-z\-\s]+)\s*\(([A-Z][A-Z]+(?:®|™)?)\)/);
+  if (genericBrandMatch && genericBrandMatch[1].length > 3) {
+    return {
+      drugName: genericBrandMatch[1].trim(),
+      brandName: genericBrandMatch[2].replace(/[®™]/g, '')
+    };
   }
 
-  // 4. Look for generic drug names (ending in -mab, -nib, etc.)
-  if (!drugName) {
-    const genericMatch = textContent.match(/\b([a-z]{4,}(?:mab|nib|tinib|rafenib|lisib|cillin|mycin|vir|parin|sartan|pril|afil|glumide|gliptin|tide|acetam|vastatin|erone|olone|asone|etine|oxetine|azole|tadine|zumab|ximab))\b/i);
-    if (genericMatch) drugName = genericMatch[1].toLowerCase();
+  // 2. "NDA/BLA for DRUG" pattern
+  const ndaForMatch = textContent.match(/(?:s?NDA|s?BLA)\s+(?:for\s+)(?:its\s+)?([A-Z][a-z][a-z0-9\-]*)/);
+  if (ndaForMatch && !SKIP_WORDS.has(ndaForMatch[1].toUpperCase())) {
+    return { drugName: ndaForMatch[1], brandName: null };
   }
 
-  // 5. Look for capitalized product name after company announces
-  if (!drugName) {
-    const announcesMatch = textContent.match(/(?:announces|received|granted).{0,30}?([A-Z][a-z]+[a-z0-9\-]+)(?:®|™)?/i);
-    if (announcesMatch && !skipWords.includes(announcesMatch[1].toUpperCase()) && announcesMatch[1].length > 3) {
-      drugName = announcesMatch[1];
-    }
+  // 3. "accepts/approves DRUG" pattern - improved to skip generic words
+  const acceptsMatch = textContent.match(/(?:FDA\s+)?(?:accepts|approves|approval\s+of)\s+(?:a\s+|the\s+)?(?:supplemental\s+)?(?:biologics?\s+license\s+application|new\s+drug\s+application|s?BLA|s?NDA)?\s*(?:for\s+)?([A-Z][a-z][a-z0-9\-]+)/i);
+  if (acceptsMatch && !SKIP_WORDS.has(acceptsMatch[1].toUpperCase()) && acceptsMatch[1].length > 3) {
+    return { drugName: acceptsMatch[1], brandName: null };
   }
 
-  // 6. Look for "approval of DRUGNAME" or "approves DRUGNAME"
-  if (!drugName) {
-    const approvalOfMatch = textContent.match(/approv(?:al\s+of|es)\s+([A-Z][a-z]+[a-z0-9\-]*)/i);
-    if (approvalOfMatch && !skipWords.includes(approvalOfMatch[1].toUpperCase())) {
-      drugName = approvalOfMatch[1];
-    }
+  // 4. Code names (XX-123, mRNA-1010) - prioritize these
+  const codeMatch = textContent.match(/\b((?:mRNA|AXS|CTx|UNI|PKI|INO|SCP|ITM|CC|BMS|MK|ABT|GSK)-\d{2,5})\b/i);
+  if (codeMatch) {
+    return { drugName: codeMatch[1].toUpperCase(), brandName: null };
   }
 
-  return { drugName: drugName || 'Unknown', brandName: brandName !== drugName ? brandName : null };
+  // 5. Generic drug suffixes - these are reliable
+  const genericMatch = textContent.match(/\b([a-z]{4,}(?:mab|nib|tinib|tide|glumide|gliptin|vastatin|parin|cillin|mycin|vir|afil|domide|limod|stat|lone|sone|olone|zumab|ximab|umab|cept|platin|rubicin|taxel))\b/i);
+  if (genericMatch) {
+    return { drugName: genericMatch[1].toLowerCase(), brandName: null };
+  }
+
+  // 6. Look in title for all-caps product name (brand names are often all caps)
+  const titleBrandMatch = title.match(/\b([A-Z]{4,}(?:®|™)?)\b/);
+  if (titleBrandMatch && !SKIP_WORDS.has(titleBrandMatch[1].replace(/[®™]/g, ''))) {
+    const brand = titleBrandMatch[1].replace(/[®™]/g, '');
+    return { drugName: brand.toLowerCase(), brandName: brand };
+  }
+
+  // 7. Look in title for capitalized product after key verbs
+  const titleProductMatch = title.match(/(?:for|accepts|approves|of)\s+([A-Z][a-z]+[a-z0-9\-]*)/);
+  if (titleProductMatch && !SKIP_WORDS.has(titleProductMatch[1].toUpperCase()) && titleProductMatch[1].length > 3) {
+    return { drugName: titleProductMatch[1], brandName: null };
+  }
+
+  return { drugName: 'Unknown', brandName: null };
 }
 
 /**
- * Extract indication from text
+ * Extract indication
  */
 function extractIndication(textContent) {
   const patterns = [
-    /for\s+(?:the\s+)?treatment\s+of\s+(?:patients\s+with\s+)?([^,.]+)/i,
-    /to\s+treat\s+([^,.]+)/i,
-    /for\s+(?:adult\s+)?patients\s+with\s+([^,.]+)/i,
-    /in\s+(?:adult\s+)?patients\s+with\s+([^,.]+)/i,
-    /indicated\s+for\s+([^,.]+)/i
+    /for\s+(?:the\s+)?treatment\s+of\s+(?:patients\s+with\s+)?([^,.;]+)/i,
+    /(?:in|for)\s+(?:patients\s+with\s+)?(?:relapsed\s+or\s+refractory\s+)?([A-Z][a-z]+(?:\s+[A-Za-z]+){0,4})/,
+    /indicated\s+for\s+([^,.;]+)/i
   ];
 
   for (const pattern of patterns) {
     const match = textContent.match(pattern);
-    if (match && match[1]) {
+    if (match && match[1] && match[1].length > 5) {
       return match[1].trim().substring(0, 100);
     }
   }
@@ -314,55 +436,71 @@ function extractSubmissionType(textContent) {
 }
 
 /**
- * Parse date string to ISO format
+ * Parse date string
  */
 function parseDate(dateStr) {
   if (!dateStr) return null;
   const cleaned = dateStr.replace(/,/g, '').trim();
+
+  const months = {
+    'january': '01', 'february': '02', 'march': '03', 'april': '04',
+    'may': '05', 'june': '06', 'july': '07', 'august': '08',
+    'september': '09', 'october': '10', 'november': '11', 'december': '12'
+  };
+
+  const match = cleaned.match(/(\w+)\s+(\d{1,2})\s+(\d{4})/);
+  if (match) {
+    const monthNum = months[match[1].toLowerCase()];
+    if (monthNum) return `${match[3]}-${monthNum}-${match[2].padStart(2, '0')}`;
+  }
 
   const parsed = new Date(cleaned + ' 12:00:00');
   if (!isNaN(parsed.getTime())) {
     return parsed.toISOString().split('T')[0];
   }
 
-  const match = cleaned.match(/(\w+)\s+(\d{1,2})\s+(\d{4})/);
-  if (match) {
-    const months = {
-      'january': '01', 'february': '02', 'march': '03', 'april': '04',
-      'may': '05', 'june': '06', 'july': '07', 'august': '08',
-      'september': '09', 'october': '10', 'november': '11', 'december': '12'
-    };
-    const monthNum = months[match[1].toLowerCase()];
-    if (monthNum) return `${match[3]}-${monthNum}-${match[2].padStart(2, '0')}`;
-  }
   return null;
 }
 
 /**
- * Extract release date from URL or content
+ * Extract release date from URL
  */
-function extractReleaseDate(releaseUrl, body) {
-  // Try URL pattern: /news-release/2026/02/15/...
-  const urlMatch = releaseUrl.match(/\/news-release\/(\d{4})\/(\d{2})\/(\d{2})\//);
-  if (urlMatch) {
-    return `${urlMatch[1]}-${urlMatch[2]}-${urlMatch[3]}`;
-  }
+function extractReleaseDate(url) {
+  // GlobeNewswire: /news-release/2026/02/15/...
+  let match = url.match(/\/(?:news-release|news\/home)\/(\d{4})\/(\d{2})\/(\d{2})\//);
+  if (match) return `${match[1]}-${match[2]}-${match[3]}`;
+
+  // BusinessWire: /news/home/20260217...
+  match = url.match(/\/(\d{4})(\d{2})(\d{2})/);
+  if (match) return `${match[1]}-${match[2]}-${match[3]}`;
+
   return new Date().toISOString().split('T')[0];
 }
 
 /**
- * Parse a PDUFA acceptance press release
+ * Parse a press release
  */
-async function parsePDUFARelease(releaseUrl, options = {}) {
+async function parseRelease(release, options = {}) {
   const { verbose = false } = options;
 
   try {
-    const { body } = await fetchUrl(releaseUrl);
+    const { body } = await fetchUrl(release.url);
     const textContent = extractText(body);
     const titleMatch = body.match(/<title>([^<]+)<\/title>/i);
-    const title = titleMatch ? titleMatch[1].replace(/\s*\|.*$/, '').trim() : '';
+    const title = titleMatch ? titleMatch[1].replace(/\s*[|\-–].*$/, '').trim() : release.title;
 
-    // Extract PDUFA date
+    const company = extractCompany(body, title, textContent);
+    const { drugName, brandName } = extractDrug(textContent, title);
+    const indication = extractIndication(textContent);
+    const submissionType = extractSubmissionType(textContent);
+    const releaseDate = extractReleaseDate(release.url);
+
+    // Check event type
+    const hasApproval = APPROVAL_PATTERNS.some(p => p.test(textContent));
+    const hasSubmission = SUBMITTED_PATTERNS.some(p => p.test(textContent));
+    const hasAcceptance = /FDA\s+accept/i.test(textContent) || /PDUFA/i.test(textContent);
+
+    // Extract PDUFA date if present
     let pdufaDate = null;
     for (const pattern of PDUFA_DATE_PATTERNS) {
       pattern.lastIndex = 0;
@@ -373,106 +511,59 @@ async function parsePDUFARelease(releaseUrl, options = {}) {
       }
     }
 
-    if (!pdufaDate) return null;
+    // Determine event type
+    let eventType = release.eventType;
+    let status = 'Pending';
 
-    const company = extractCompany(body, title, textContent);
-    const { drugName, brandName } = extractDrug(textContent, title);
+    if (hasApproval && !hasAcceptance) {
+      eventType = 'approval';
+      status = 'Approved';
+    } else if (pdufaDate || hasAcceptance) {
+      eventType = 'pdufa';
+      status = 'Pending';
+    } else if (hasSubmission && !hasAcceptance && !hasApproval) {
+      eventType = 'submission';
+      status = 'Submitted - Awaiting PDUFA';
+    }
 
-    return {
+    // Skip if drug name couldn't be extracted
+    if (drugName === 'Unknown' && !brandName) {
+      return null;
+    }
+
+    const result = {
       drug: drugName,
       brandName,
       company,
-      indication: extractIndication(textContent),
-      pdufaDate,
-      submissionType: extractSubmissionType(textContent),
-      status: 'Pending',
-      sourceUrl: releaseUrl,
+      indication,
+      submissionType,
+      status,
+      eventType,
+      source: release.source,
+      sourceUrl: release.url,
+      releaseDate,
       scrapedAt: new Date().toISOString()
     };
+
+    if (pdufaDate) {
+      result.pdufaDate = pdufaDate;
+    }
+
+    if (eventType === 'submission') {
+      result.submissionDate = releaseDate;
+      // Calculate expected FDA response (60 days)
+      const subDate = new Date(releaseDate + 'T12:00:00');
+      result.expectedAcceptanceBy = new Date(subDate.getTime() + 60 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+    }
+
+    if (eventType === 'approval') {
+      result.approvalDate = releaseDate;
+    }
+
+    return result;
+
   } catch (error) {
-    if (verbose) console.log(`    Error parsing PDUFA release: ${error.message}`);
-    return null;
-  }
-}
-
-/**
- * Parse a submission press release (awaiting FDA acceptance)
- */
-async function parseSubmissionRelease(releaseUrl, options = {}) {
-  const { verbose = false } = options;
-
-  try {
-    const { body } = await fetchUrl(releaseUrl);
-    const textContent = extractText(body);
-    const titleMatch = body.match(/<title>([^<]+)<\/title>/i);
-    const title = titleMatch ? titleMatch[1].replace(/\s*\|.*$/, '').trim() : '';
-
-    // Check if this is actually a submission (not an acceptance or approval)
-    const isSubmission = SUBMITTED_PATTERNS.some(p => p.test(textContent));
-    const isAcceptance = /FDA\s+accept/i.test(textContent) || /PDUFA/i.test(textContent);
-    const isApproval = APPROVAL_PATTERNS.some(p => p.test(textContent));
-
-    if (!isSubmission || isAcceptance || isApproval) return null;
-
-    const company = extractCompany(body, title, textContent);
-    const { drugName, brandName } = extractDrug(textContent, title);
-    const submissionDate = extractReleaseDate(releaseUrl, body);
-
-    // Calculate expected PDUFA assignment (FDA has 60 days to accept/refuse)
-    const subDate = new Date(submissionDate + 'T12:00:00');
-    const expectedAcceptance = new Date(subDate.getTime() + 60 * 24 * 60 * 60 * 1000);
-
-    return {
-      drug: drugName,
-      brandName,
-      company,
-      indication: extractIndication(textContent),
-      submissionDate,
-      expectedAcceptanceBy: expectedAcceptance.toISOString().split('T')[0],
-      submissionType: extractSubmissionType(textContent),
-      status: 'Submitted - Awaiting FDA Review',
-      sourceUrl: releaseUrl,
-      scrapedAt: new Date().toISOString()
-    };
-  } catch (error) {
-    if (verbose) console.log(`    Error parsing submission: ${error.message}`);
-    return null;
-  }
-}
-
-/**
- * Parse an approval press release
- */
-async function parseApprovalRelease(releaseUrl, options = {}) {
-  const { verbose = false } = options;
-
-  try {
-    const { body } = await fetchUrl(releaseUrl);
-    const textContent = extractText(body);
-    const titleMatch = body.match(/<title>([^<]+)<\/title>/i);
-    const title = titleMatch ? titleMatch[1].replace(/\s*\|.*$/, '').trim() : '';
-
-    // Verify this is actually an approval
-    const isApproval = APPROVAL_PATTERNS.some(p => p.test(textContent));
-    if (!isApproval) return null;
-
-    const company = extractCompany(body, title, textContent);
-    const { drugName, brandName } = extractDrug(textContent, title);
-    const approvalDate = extractReleaseDate(releaseUrl, body);
-
-    return {
-      drug: drugName,
-      brandName,
-      company,
-      indication: extractIndication(textContent),
-      approvalDate,
-      submissionType: extractSubmissionType(textContent),
-      status: 'Approved',
-      sourceUrl: releaseUrl,
-      scrapedAt: new Date().toISOString()
-    };
-  } catch (error) {
-    if (verbose) console.log(`    Error parsing approval: ${error.message}`);
+    if (verbose) console.log(`    Error parsing ${release.url}: ${error.message}`);
     return null;
   }
 }
@@ -483,87 +574,102 @@ async function parseApprovalRelease(releaseUrl, options = {}) {
 async function scrapeAll(options = {}) {
   const { verbose = false, maxPerTerm = 30 } = options;
 
-  console.log('Scraping GlobeNewswire for FDA catalysts...\n');
+  console.log('═'.repeat(60));
+  console.log('FDA Catalyst Scraper - Multi-Source');
+  console.log('═'.repeat(60));
 
+  const allReleases = new Map();
+
+  // Scrape each wire service
+  for (const [service, config] of Object.entries(WIRE_SERVICES)) {
+    console.log(`\n${config.name}:`);
+
+    // Standard search terms
+    for (const [eventType, terms] of Object.entries(SEARCH_TERMS)) {
+      for (const term of terms) {
+        const releases = await searchWireService(service, term, eventType, { verbose });
+        for (const r of releases) {
+          if (!allReleases.has(r.url)) {
+            allReleases.set(r.url, r);
+          }
+        }
+        await new Promise(resolve => setTimeout(resolve, 300));
+      }
+    }
+
+    // Specific drug/company searches
+    if (verbose) console.log('  Specific drug searches:');
+    for (const { term, eventType } of SPECIFIC_SEARCHES) {
+      const releases = await searchWireService(service, term, eventType, { verbose });
+      for (const r of releases) {
+        if (!allReleases.has(r.url)) {
+          allReleases.set(r.url, r);
+        }
+      }
+      await new Promise(resolve => setTimeout(resolve, 300));
+    }
+  }
+
+  // Search SEC EDGAR
+  console.log('\nSEC EDGAR:');
+  const secResults = await searchSECEdgar({ verbose });
+  // Note: SEC results need different parsing, skip for now
+
+  console.log(`\nTotal unique releases found: ${allReleases.size}`);
+  console.log('Parsing releases...\n');
+
+  // Parse all releases
   const results = {
     pdufa: [],
     submissions: [],
     approvals: []
   };
 
-  // Scrape each category
-  for (const [eventType, terms] of Object.entries(SEARCH_TERMS)) {
-    console.log(`\n${eventType.toUpperCase()}:`);
-    console.log('─'.repeat(40));
+  let processed = 0;
+  for (const [url, release] of allReleases) {
+    processed++;
+    if (verbose) console.log(`[${processed}/${allReleases.size}] ${release.title.substring(0, 50)}...`);
 
-    const allReleases = new Map();
-
-    for (const term of terms) {
-      const releases = await searchGlobeNewswire(term, eventType, { verbose, maxResults: maxPerTerm });
-      for (const r of releases) {
-        if (!allReleases.has(r.url)) allReleases.set(r.url, r);
+    const parsed = await parseRelease(release, { verbose });
+    if (parsed) {
+      if (parsed.eventType === 'pdufa' && parsed.pdufaDate) {
+        // Only include future PDUFA dates
+        if (new Date(parsed.pdufaDate + 'T12:00:00') >= new Date()) {
+          results.pdufa.push(parsed);
+          if (verbose) console.log(`  ✓ PDUFA: ${parsed.drug} - ${parsed.pdufaDate}`);
+        }
+      } else if (parsed.eventType === 'submission') {
+        results.submissions.push(parsed);
+        if (verbose) console.log(`  ✓ Submission: ${parsed.drug}`);
+      } else if (parsed.eventType === 'approval') {
+        results.approvals.push(parsed);
+        if (verbose) console.log(`  ✓ Approval: ${parsed.drug}`);
       }
-      await new Promise(resolve => setTimeout(resolve, 400));
     }
 
-    console.log(`  Found ${allReleases.size} unique releases to analyze`);
-
-    let processed = 0;
-    for (const [url, release] of allReleases) {
-      processed++;
-      if (verbose) console.log(`  [${processed}/${allReleases.size}] ${release.title.substring(0, 50)}...`);
-
-      let result = null;
-      if (eventType === 'pdufa') {
-        result = await parsePDUFARelease(url, { verbose });
-        if (result && new Date(result.pdufaDate + 'T12:00:00') >= new Date()) {
-          results.pdufa.push(result);
-          if (verbose) console.log(`    ✓ PDUFA: ${result.drug} - ${result.pdufaDate}`);
-        }
-      } else if (eventType === 'submissions') {
-        result = await parseSubmissionRelease(url, { verbose });
-        if (result) {
-          results.submissions.push(result);
-          if (verbose) console.log(`    ✓ Submission: ${result.drug} - ${result.submissionDate}`);
-        }
-      } else if (eventType === 'approvals') {
-        result = await parseApprovalRelease(url, { verbose });
-        if (result) {
-          results.approvals.push(result);
-          if (verbose) console.log(`    ✓ Approved: ${result.drug} - ${result.approvalDate}`);
-        }
-      }
-
-      await new Promise(resolve => setTimeout(resolve, 250));
-    }
+    await new Promise(resolve => setTimeout(resolve, 200));
   }
 
   // Sort results
   results.pdufa.sort((a, b) => new Date(a.pdufaDate) - new Date(b.pdufaDate));
-  results.submissions.sort((a, b) => new Date(b.submissionDate) - new Date(a.submissionDate));
+  results.submissions.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
   results.approvals.sort((a, b) => new Date(b.approvalDate) - new Date(a.approvalDate));
 
   // Cache results
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-  fs.writeFileSync(SCRAPED_CACHE_FILE, JSON.stringify(results.pdufa, null, 2));
-  fs.writeFileSync(SUBMISSIONS_CACHE_FILE, JSON.stringify(results.submissions, null, 2));
-  fs.writeFileSync(APPROVALS_CACHE_FILE, JSON.stringify(results.approvals, null, 2));
+  fs.writeFileSync(RESULTS_CACHE_FILE, JSON.stringify(results, null, 2));
 
   return results;
 }
 
 /**
- * Compare with curated list and find updates needed
+ * Compare with curated list
  */
 function analyzeUpdates(scraped, curated) {
-  const updates = {
-    newPDUFA: [],
-    newSubmissions: [],
-    toMarkApproved: []
-  };
+  const updates = { newPDUFA: [], newSubmissions: [], toMarkApproved: [] };
 
-  // Find new PDUFA dates not in curated list
   const curatedDrugs = new Set(curated.map(c => c.drug?.toLowerCase()));
+  const approvedDrugs = new Set(scraped.approvals.map(a => a.drug?.toLowerCase()));
 
   for (const p of scraped.pdufa) {
     if (!curatedDrugs.has(p.drug?.toLowerCase())) {
@@ -571,24 +677,16 @@ function analyzeUpdates(scraped, curated) {
     }
   }
 
-  // Submissions not yet in curated list
   for (const s of scraped.submissions) {
     if (!curatedDrugs.has(s.drug?.toLowerCase())) {
       updates.newSubmissions.push(s);
     }
   }
 
-  // Find drugs that have been approved
-  const approvedDrugs = new Set(scraped.approvals.map(a => a.drug?.toLowerCase()));
-
   for (const c of curated) {
     if (c.status === 'Pending' && approvedDrugs.has(c.drug?.toLowerCase())) {
       const approval = scraped.approvals.find(a => a.drug?.toLowerCase() === c.drug?.toLowerCase());
-      updates.toMarkApproved.push({
-        ...c,
-        approvalDate: approval?.approvalDate,
-        approvalSource: approval?.sourceUrl
-      });
+      updates.toMarkApproved.push({ ...c, approvalDate: approval?.approvalDate });
     }
   }
 
@@ -599,41 +697,34 @@ function analyzeUpdates(scraped, curated) {
  * Display results
  */
 function displayResults(results) {
-  console.log(`\n${'═'.repeat(80)}`);
-  console.log('SCRAPING RESULTS');
-  console.log('═'.repeat(80));
+  console.log(`\n${'═'.repeat(70)}`);
+  console.log('RESULTS SUMMARY');
+  console.log('═'.repeat(70));
 
-  // PDUFA dates
   console.log(`\n📅 PDUFA DATES (${results.pdufa.length} found)`);
-  console.log('─'.repeat(60));
   if (results.pdufa.length > 0) {
-    console.log(`${'Drug'.padEnd(25)} ${'PDUFA Date'.padEnd(12)} ${'Company'.padEnd(25)}`);
-    for (const p of results.pdufa.slice(0, 15)) {
-      console.log(`${(p.drug || '?').substring(0, 24).padEnd(25)} ${p.pdufaDate.padEnd(12)} ${(p.company || '?').substring(0, 24)}`);
+    console.log('─'.repeat(70));
+    console.log(`${'Drug'.padEnd(22)} ${'PDUFA'.padEnd(12)} ${'Company'.padEnd(25)} ${'Source'.padEnd(10)}`);
+    console.log('─'.repeat(70));
+    for (const p of results.pdufa.slice(0, 20)) {
+      console.log(`${(p.drug || '?').substring(0, 21).padEnd(22)} ${(p.pdufaDate || '').padEnd(12)} ${(p.company || '?').substring(0, 24).padEnd(25)} ${(p.source || '').substring(0, 9)}`);
     }
-    if (results.pdufa.length > 15) console.log(`  ... and ${results.pdufa.length - 15} more`);
   }
 
-  // Submissions
-  console.log(`\n📝 PENDING SUBMISSIONS (${results.submissions.length} found)`);
-  console.log('─'.repeat(60));
+  console.log(`\n📝 SUBMISSIONS AWAITING FDA (${results.submissions.length} found)`);
   if (results.submissions.length > 0) {
-    console.log(`${'Drug'.padEnd(25)} ${'Submitted'.padEnd(12)} ${'Accept By'.padEnd(12)} ${'Company'.padEnd(20)}`);
+    console.log('─'.repeat(70));
     for (const s of results.submissions.slice(0, 10)) {
-      console.log(`${(s.drug || '?').substring(0, 24).padEnd(25)} ${s.submissionDate.padEnd(12)} ${s.expectedAcceptanceBy.padEnd(12)} ${(s.company || '?').substring(0, 19)}`);
+      console.log(`  ${s.drug} (${s.company}) - Submitted ${s.releaseDate}`);
     }
-    if (results.submissions.length > 10) console.log(`  ... and ${results.submissions.length - 10} more`);
   }
 
-  // Approvals
   console.log(`\n✅ RECENT APPROVALS (${results.approvals.length} found)`);
-  console.log('─'.repeat(60));
   if (results.approvals.length > 0) {
-    console.log(`${'Drug'.padEnd(25)} ${'Approved'.padEnd(12)} ${'Company'.padEnd(25)}`);
+    console.log('─'.repeat(70));
     for (const a of results.approvals.slice(0, 10)) {
-      console.log(`${(a.drug || '?').substring(0, 24).padEnd(25)} ${a.approvalDate.padEnd(12)} ${(a.company || '?').substring(0, 24)}`);
+      console.log(`  ${a.drug} (${a.company}) - Approved ${a.approvalDate}`);
     }
-    if (results.approvals.length > 10) console.log(`  ... and ${results.approvals.length - 10} more`);
   }
 }
 
@@ -641,25 +732,23 @@ function displayResults(results) {
 if (require.main === module) {
   const args = process.argv.slice(2);
   const verbose = args.includes('--verbose') || args.includes('-v');
-  const update = args.includes('--update') || args.includes('-u');
 
   scrapeAll({ verbose })
     .then(results => {
       displayResults(results);
 
-      // Compare with curated list
       try {
         const { CURATED_CATALYSTS } = require('./pdufa-catalysts');
         const updates = analyzeUpdates(results, CURATED_CATALYSTS);
 
-        console.log(`\n${'═'.repeat(80)}`);
-        console.log('RECOMMENDED UPDATES');
-        console.log('═'.repeat(80));
+        console.log(`\n${'═'.repeat(70)}`);
+        console.log('RECOMMENDED UPDATES TO CURATED LIST');
+        console.log('═'.repeat(70));
 
         if (updates.newPDUFA.length > 0) {
-          console.log(`\n🆕 NEW PDUFA DATES TO ADD (${updates.newPDUFA.length}):`);
+          console.log(`\n🆕 ADD THESE PDUFA DATES (${updates.newPDUFA.length}):\n`);
           for (const p of updates.newPDUFA) {
-            console.log(`\n  {
+            console.log(`  {
     drug: '${p.drug}',
     brandName: ${p.brandName ? `'${p.brandName}'` : 'null'},
     company: '${p.company}',
@@ -667,29 +756,28 @@ if (require.main === module) {
     pdufaDate: '${p.pdufaDate}',
     submissionType: '${p.submissionType}',
     status: 'Pending',
-    notes: 'Scraped from GlobeNewswire'
+    notes: 'Source: ${p.source}'
   },`);
           }
         }
 
         if (updates.newSubmissions.length > 0) {
-          console.log(`\n📝 PENDING SUBMISSIONS (awaiting PDUFA) (${updates.newSubmissions.length}):`);
+          console.log(`\n📝 PENDING SUBMISSIONS (${updates.newSubmissions.length}):`);
           for (const s of updates.newSubmissions) {
-            console.log(`  - ${s.drug} (${s.company}) - Submitted ${s.submissionDate}, expect FDA response by ${s.expectedAcceptanceBy}`);
+            console.log(`  - ${s.drug} (${s.company}) - Submitted ${s.submissionDate || s.releaseDate}`);
           }
         }
 
         if (updates.toMarkApproved.length > 0) {
           console.log(`\n✅ MARK AS APPROVED (${updates.toMarkApproved.length}):`);
           for (const a of updates.toMarkApproved) {
-            console.log(`  - ${a.drug} (${a.company}) - Approved ${a.approvalDate || 'recently'}`);
+            console.log(`  - ${a.drug} (${a.company})`);
           }
         }
 
-        if (updates.newPDUFA.length === 0 && updates.newSubmissions.length === 0 && updates.toMarkApproved.length === 0) {
-          console.log('\n✓ Curated list is up to date!\n');
+        if (!updates.newPDUFA.length && !updates.newSubmissions.length && !updates.toMarkApproved.length) {
+          console.log('\n✓ Curated list appears up to date!\n');
         }
-
       } catch (e) {
         console.log('\nCould not compare with curated list:', e.message);
       }
@@ -700,10 +788,4 @@ if (require.main === module) {
     });
 }
 
-module.exports = {
-  scrapeAll,
-  analyzeUpdates,
-  parsePDUFARelease,
-  parseSubmissionRelease,
-  parseApprovalRelease
-};
+module.exports = { scrapeAll, analyzeUpdates, parseRelease };

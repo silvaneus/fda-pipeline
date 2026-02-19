@@ -389,6 +389,16 @@ const CURATED_CATALYSTS = [
   },
   // August 2026
   {
+    drug: 'mRNA-1010',
+    brandName: null,
+    company: 'Moderna',
+    indication: 'Seasonal Influenza (Adults)',
+    pdufaDate: '2026-08-05',
+    submissionType: 'BLA',
+    status: 'Pending',
+    notes: 'mRNA-based flu vaccine; split approval: full for 50-64, accelerated for 65+'
+  },
+  {
     drug: 'retatrutide',
     brandName: null,
     company: 'Eli Lilly',
@@ -397,6 +407,16 @@ const CURATED_CATALYSTS = [
     submissionType: 'NDA',
     status: 'Pending',
     notes: 'Triple agonist (GIP/GLP-1/glucagon)'
+  },
+  {
+    drug: 'iberdomide',
+    brandName: null,
+    company: 'Bristol Myers Squibb',
+    indication: 'Relapsed/Refractory Multiple Myeloma',
+    pdufaDate: '2026-08-17',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'CELMoD agent; Breakthrough Therapy + Priority Review'
   },
   {
     drug: '177Lu-edotreotide',
