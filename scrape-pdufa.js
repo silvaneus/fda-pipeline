@@ -32,32 +32,21 @@ const WIRE_SERVICES = {
     releasePattern: /href="(\/news-release\/\d{4}\/\d{2}\/\d{2}\/[^"]+)"[^>]*>([^<]+)/g,
     headers: {}
   },
-  businesswire: {
-    name: 'BusinessWire',
-    // Use the API-style search endpoint
-    searchUrl: (term) => `https://www.businesswire.com/portal/site/home/template.PAGE/news/?javax.portlet.tpst=c59e1fbf4d13e7c2c8d0a09a5f94214c&javax.portlet.prp_c59e1fbf4d13e7c2c8d0a09a5f94214c=searchTerm%3D${encodeURIComponent(term)}%26searchType%3Dall`,
-    releasePattern: /href="(\/news\/home\/\d+\/en\/[^"]+)"[^>]*>([^<]+)/g,
-    // Need more browser-like headers for BusinessWire
-    headers: {
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8',
-      'Accept-Encoding': 'gzip, deflate, br',
-      'Cache-Control': 'no-cache',
-      'Pragma': 'no-cache',
-      'Sec-Ch-Ua': '"Not A(Brand";v="99", "Google Chrome";v="121", "Chromium";v="121"',
-      'Sec-Ch-Ua-Mobile': '?0',
-      'Sec-Ch-Ua-Platform': '"macOS"',
-      'Sec-Fetch-Dest': 'document',
-      'Sec-Fetch-Mode': 'navigate',
-      'Sec-Fetch-Site': 'none',
-      'Sec-Fetch-User': '?1',
-      'Upgrade-Insecure-Requests': '1'
-    }
-  },
   prnewswire: {
     name: 'PR Newswire',
     searchUrl: (term) => `https://www.prnewswire.com/search/news/?keyword=${encodeURIComponent(term)}&pagesize=50`,
     releasePattern: /href="(\/news-releases\/[^"]+)"[^>]*>([^<]+)/g,
     headers: {}
+  },
+  yahoofinance: {
+    name: 'Yahoo Finance',
+    // Yahoo Finance aggregates from BusinessWire, PR Newswire, GlobeNewswire
+    searchUrl: (term) => `https://finance.yahoo.com/news/search?q=${encodeURIComponent(term)}`,
+    releasePattern: /href="(\/news\/[^"]+)"[^>]*>([^<]+)/g,
+    headers: {
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+      'Accept-Language': 'en-US,en;q=0.5'
+    }
   }
 };
 
@@ -119,7 +108,7 @@ const SKIP_WORDS = new Set([
 const KNOWN_DRUGS = {
   'vyvgart': { drug: 'efgartigimod alfa', brandName: 'VYVGART' },
   'efgartigimod': { drug: 'efgartigimod alfa', brandName: 'VYVGART' },
-  'argenx': { drug: 'efgartigimod alfa', brandName: 'VYVGART' }, // Company known for VYVGART
+  'argenx': { drug: 'efgartigimod alfa', brandName: 'VYVGART' },
   'moderna flu': { drug: 'mRNA-1010', brandName: null },
   'mrna-1010': { drug: 'mRNA-1010', brandName: null },
   'seasonal influenza': { drug: 'mRNA-1010', brandName: null },
@@ -132,7 +121,30 @@ const KNOWN_DRUGS = {
   'cytisinicline': { drug: 'cytisinicline', brandName: null },
   'achieve life': { drug: 'cytisinicline', brandName: null },
   'deucravacitinib': { drug: 'deucravacitinib', brandName: 'SOTYKTU' },
-  'sotyktu': { drug: 'deucravacitinib', brandName: 'SOTYKTU' }
+  'sotyktu': { drug: 'deucravacitinib', brandName: 'SOTYKTU' },
+  'imlifidase': { drug: 'imlifidase', brandName: 'Idefirix' },
+  'hansa biopharma': { drug: 'imlifidase', brandName: 'Idefirix' },
+  'ivonescimab': { drug: 'ivonescimab', brandName: null },
+  'summit therapeutics': { drug: 'ivonescimab', brandName: null },
+  'lirafugratinib': { drug: 'lirafugratinib', brandName: null },
+  'elevar therapeutics': { drug: 'lirafugratinib', brandName: null },
+  'deramiocel': { drug: 'deramiocel', brandName: null },
+  'capricor': { drug: 'deramiocel', brandName: null },
+  'leqembi': { drug: 'lecanemab', brandName: 'LEQEMBI' },
+  'lecanemab': { drug: 'lecanemab', brandName: 'LEQEMBI' },
+  'oxylanthanum': { drug: 'oxylanthanum carbonate', brandName: null },
+  'unicycive': { drug: 'oxylanthanum carbonate', brandName: null },
+  'gedatolisib': { drug: 'gedatolisib', brandName: null },
+  'celcuity': { drug: 'gedatolisib', brandName: null },
+  'afrezza': { drug: 'insulin human', brandName: 'Afrezza' },
+  'mannkind': { drug: 'furoscix', brandName: null },
+  'furoscix': { drug: 'furosemide', brandName: 'Furoscix' },
+  'edotreotide': { drug: '177Lu-edotreotide', brandName: null },
+  'itm isotope': { drug: '177Lu-edotreotide', brandName: null },
+  'zidesamtinib': { drug: 'zidesamtinib', brandName: null },
+  'nuvalent': { drug: 'zidesamtinib', brandName: null },
+  'ino-3107': { drug: 'INO-3107', brandName: null },
+  'inovio': { drug: 'INO-3107', brandName: null }
 };
 
 /**

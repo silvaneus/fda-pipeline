@@ -26,10 +26,32 @@ const CURATED_CATALYSTS = [
     company: 'Mineralys Therapeutics',
     indication: 'Uncontrolled/Resistant Hypertension',
     pdufaDate: null,
-    submissionDate: '2025-12-15', // Approximate - "late 2025"
+    submissionDate: '2025-12-15',
     submissionType: 'NDA',
     status: 'Submitted - Awaiting PDUFA',
     notes: 'Aldosterone synthase inhibitor; FDA has 60 days to accept'
+  },
+  {
+    drug: 'lirafugratinib',
+    brandName: null,
+    company: 'Elevar Therapeutics',
+    indication: 'Cholangiocarcinoma (Second-line)',
+    pdufaDate: null,
+    submissionDate: '2026-01-15',
+    submissionType: 'NDA',
+    status: 'Submitted - Awaiting PDUFA',
+    notes: 'FGFR inhibitor; previously submitted for HCC'
+  },
+  {
+    drug: 'deramiocel',
+    brandName: null,
+    company: 'Capricor Therapeutics',
+    indication: 'Duchenne Muscular Dystrophy',
+    pdufaDate: null,
+    submissionDate: '2026-02-01',
+    submissionType: 'BLA',
+    status: 'Submitted - Awaiting PDUFA',
+    notes: 'Cell therapy; HOPE-3 CSR submitted Feb 2026'
   },
   // February 2026
   {
@@ -419,6 +441,16 @@ const CURATED_CATALYSTS = [
     notes: 'CELMoD agent; Breakthrough Therapy + Priority Review'
   },
   {
+    drug: 'imlifidase',
+    brandName: 'Idefirix',
+    company: 'Hansa Biopharma',
+    indication: 'Kidney Transplant Desensitization',
+    pdufaDate: '2026-08-18',
+    submissionType: 'BLA',
+    status: 'Pending',
+    notes: 'IgG antibody-cleaving enzyme; Priority Review requested; FDA accepted Feb 18, 2026'
+  },
+  {
     drug: '177Lu-edotreotide',
     brandName: null,
     company: 'ITM Isotope Technologies',
@@ -510,6 +542,16 @@ const CURATED_CATALYSTS = [
     submissionType: 'BLA',
     status: 'Pending',
     notes: 'HER2-targeting ADC'
+  },
+  {
+    drug: 'ivonescimab',
+    brandName: null,
+    company: 'Summit Therapeutics',
+    indication: 'Non-Small Cell Lung Cancer (NSCLC)',
+    pdufaDate: '2026-11-14',
+    submissionType: 'BLA',
+    status: 'Pending',
+    notes: 'PD-1/VEGF bispecific antibody; combination with chemo'
   },
   // December 2026
   {
