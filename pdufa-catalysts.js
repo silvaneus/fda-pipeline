@@ -19,6 +19,18 @@ const CATALYSTS_LAST_FETCH = path.join(DATA_DIR, 'pdufa-catalysts-last-fetch.txt
  * Sources: Company press releases, SEC filings, FDA announcements
  */
 const CURATED_CATALYSTS = [
+  // Submitted - Awaiting FDA Acceptance (PDUFA TBD)
+  {
+    drug: 'lorundrostat',
+    brandName: null,
+    company: 'Mineralys Therapeutics',
+    indication: 'Uncontrolled/Resistant Hypertension',
+    pdufaDate: null,
+    submissionDate: '2025-12-15', // Approximate - "late 2025"
+    submissionType: 'NDA',
+    status: 'Submitted - Awaiting PDUFA',
+    notes: 'Aldosterone synthase inhibitor; FDA has 60 days to accept'
+  },
   // February 2026
   {
     drug: 'milsaperidone',
