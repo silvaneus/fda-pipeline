@@ -841,20 +841,23 @@ async function getPDUFACatalysts(options = {}) {
         }
       }
 
-      // Add submissions awaiting PDUFA (only recent ones - within last 90 days)
+      // Add submissions awaiting PDUFA (only recent ones - within last 18 months)
+      // FDA timeline: 60 days to accept + 10 months (standard) or 6 months (priority) review
       if (scrapedData.submissions && Array.isArray(scrapedData.submissions)) {
         const cutoffDate = new Date();
-        cutoffDate.setDate(cutoffDate.getDate() - 90); // Only submissions from last 90 days
+        cutoffDate.setMonth(cutoffDate.getMonth() - 18); // 18 months covers full PDUFA timeline
 
-        // Excluded drugs (rejected, withdrawn, etc.)
-        const excludedDrugs = new Set(['roluperidone', 'sanofi', 'eport', 'pplication']);
+        // Skip malformed drug names (parsing errors)
+        const invalidDrugPatterns = ['eport', 'pplication', 'dministration', 'ompany'];
 
         for (const sub of scrapedData.submissions) {
           if (!sub.drug || sub.drug.length < 4) continue;
           if (existingDrugs.has(sub.drug.toLowerCase())) continue;
-          if (excludedDrugs.has(sub.drug.toLowerCase())) continue;
 
-          // Skip old submissions (likely already resolved)
+          // Skip malformed drug names from parsing errors
+          if (invalidDrugPatterns.some(p => sub.drug.toLowerCase().includes(p))) continue;
+
+          // Skip old submissions (likely already resolved - approved, rejected, or withdrawn)
           const subDate = new Date(sub.submissionDate || sub.releaseDate);
           if (subDate < cutoffDate) {
             if (verbose) console.log(`  - Skipping old submission: ${sub.drug} (${sub.submissionDate || sub.releaseDate})`);
