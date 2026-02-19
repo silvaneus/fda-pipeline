@@ -12,6 +12,7 @@ const { getSuccessRate } = require('./success-rates');
 const DATA_DIR = path.join(__dirname, 'data');
 const CATALYSTS_CACHE_FILE = path.join(DATA_DIR, 'pdufa-catalysts.json');
 const CATALYSTS_LAST_FETCH = path.join(DATA_DIR, 'pdufa-catalysts-last-fetch.txt');
+const SCRAPED_RESULTS_FILE = path.join(DATA_DIR, 'scraped-results.json');
 
 /**
  * Curated list of known upcoming PDUFA dates
@@ -286,6 +287,16 @@ const CURATED_CATALYSTS = [
     submissionType: 'sBLA',
     status: 'Pending',
     notes: 'AChR-Ab seronegative expansion'
+  },
+  {
+    drug: 'lecanemab-irmb',
+    brandName: 'LEQEMBI IQLIK',
+    company: 'Eisai/Biogen',
+    indication: 'Early Alzheimer\'s Disease (SC Starting Dose)',
+    pdufaDate: '2026-05-24',
+    submissionType: 'sBLA',
+    status: 'Pending',
+    notes: 'Subcutaneous autoinjector starting dose; Priority Review'
   },
   {
     drug: 'talquetamab',
@@ -784,6 +795,68 @@ async function getPDUFACatalysts(options = {}) {
 
   // Start with curated list
   let allCatalysts = CURATED_CATALYSTS.map(c => ({ ...c, source: 'Curated' }));
+
+  // Merge scraped results from scrape-pdufa.js output
+  try {
+    if (fs.existsSync(SCRAPED_RESULTS_FILE)) {
+      const scrapedData = JSON.parse(fs.readFileSync(SCRAPED_RESULTS_FILE, 'utf-8'));
+      const existingDrugs = new Set(allCatalysts.map(c => c.drug.toLowerCase()));
+
+      // Add PDUFA dates from scraped results
+      if (scrapedData.pdufa && Array.isArray(scrapedData.pdufa)) {
+        for (const scraped of scrapedData.pdufa) {
+          // Skip if drug name looks invalid (too short, or common false positives)
+          if (!scraped.drug || scraped.drug.length < 4) continue;
+          if (scraped.drug.toLowerCase().includes('unknown')) continue;
+
+          // Skip if already in curated list
+          if (existingDrugs.has(scraped.drug.toLowerCase())) continue;
+
+          // Add scraped catalyst
+          allCatalysts.push({
+            drug: scraped.drug,
+            brandName: scraped.brandName || null,
+            company: scraped.company || 'Unknown',
+            indication: scraped.indication || null,
+            pdufaDate: scraped.pdufaDate,
+            submissionType: scraped.submissionType || 'NDA',
+            status: scraped.status || 'Pending',
+            source: 'Scraped',
+            sourceUrl: scraped.sourceUrl,
+            notes: `Auto-detected from ${scraped.source || 'press release'}`
+          });
+          existingDrugs.add(scraped.drug.toLowerCase());
+
+          if (verbose) console.log(`  + Added from scraper: ${scraped.drug} (${scraped.pdufaDate})`);
+        }
+      }
+
+      // Add submissions awaiting PDUFA
+      if (scrapedData.submissions && Array.isArray(scrapedData.submissions)) {
+        for (const sub of scrapedData.submissions) {
+          if (!sub.drug || sub.drug.length < 4) continue;
+          if (existingDrugs.has(sub.drug.toLowerCase())) continue;
+
+          allCatalysts.push({
+            drug: sub.drug,
+            brandName: sub.brandName || null,
+            company: sub.company || 'Unknown',
+            indication: sub.indication || null,
+            pdufaDate: null,
+            submissionDate: sub.submissionDate || sub.releaseDate,
+            submissionType: sub.submissionType || 'NDA',
+            status: 'Submitted - Awaiting PDUFA',
+            source: 'Scraped',
+            sourceUrl: sub.sourceUrl,
+            notes: `Auto-detected submission from ${sub.source || 'press release'}`
+          });
+          existingDrugs.add(sub.drug.toLowerCase());
+        }
+      }
+    }
+  } catch (err) {
+    if (verbose) console.log(`  Warning: Could not load scraped results: ${err.message}`);
+  }
 
   // Optionally fetch from web sources
   if (includeWebScrape) {
