@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { aggregateCatalysts, calculateDaysUntil } = require('./aggregate-catalysts');
+const { getPDUFACatalysts, calculateDaysUntil } = require('./pdufa-catalysts');
 
 const REPORTS_DIR = path.join(__dirname, 'reports');
 
@@ -663,9 +663,9 @@ async function generateCatalystReport(options = {}) {
     forceRefresh = false
   } = options;
 
-  // Aggregate catalysts
-  if (verbose) console.log('Aggregating catalyst data...');
-  const { nearTermCatalysts } = await aggregateCatalysts({ forceRefresh, verbose });
+  // Load curated + scraped PDUFA catalysts (with approved entries filtered out)
+  if (verbose) console.log('Loading PDUFA catalyst data...');
+  const nearTermCatalysts = await getPDUFACatalysts({ forceRefresh, verbose });
 
   // Recalculate days until (in case data was cached)
   nearTermCatalysts.forEach(catalyst => {

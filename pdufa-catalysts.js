@@ -781,6 +781,131 @@ function enrichCatalyst(catalyst) {
 }
 
 /**
+ * Fetch JSON from a URL (for OpenFDA API calls)
+ */
+function fetchJSON(url) {
+  return new Promise((resolve, reject) => {
+    const request = https.get(url, {
+      headers: { 'User-Agent': 'FDA-Pipeline/1.0' }
+    }, (response) => {
+      let data = '';
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => {
+        if (response.statusCode === 200) {
+          try { resolve(JSON.parse(data)); }
+          catch (e) { reject(new Error(`JSON parse error: ${e.message}`)); }
+        } else if (response.statusCode === 404) {
+          resolve({ results: [] });
+        } else {
+          reject(new Error(`HTTP ${response.statusCode}`));
+        }
+      });
+    });
+    request.on('error', reject);
+    request.setTimeout(15000, () => { request.destroy(); reject(new Error('Timeout')); });
+  });
+}
+
+/**
+ * Check if a past-PDUFA catalyst has been approved by the FDA.
+ * Queries OpenFDA drugs@fda for recent approval actions matching the drug.
+ */
+async function checkRecentFDAApproval(catalyst, verbose = false) {
+  const { drug, brandName, pdufaDate } = catalyst;
+  if (!pdufaDate) return false;
+
+  const daysUntil = calculateDaysUntil(pdufaDate);
+  if (daysUntil === null || daysUntil >= 0) return false;
+
+  const pdufaMs = new Date(pdufaDate + 'T12:00:00').getTime();
+
+  // Build search terms - brand name first (more specific), then drug name
+  const searchTerms = [];
+  if (brandName) {
+    const cleanBrand = brandName.split(/[\(\+\/]/)[0].trim();
+    if (cleanBrand.length >= 3) searchTerms.push(cleanBrand);
+  }
+  if (drug) {
+    const cleanDrug = drug.split(/[\+\/]/)[0].trim();
+    if (cleanDrug.length >= 3) searchTerms.push(cleanDrug);
+  }
+
+  for (const term of searchTerms) {
+    try {
+      const encoded = encodeURIComponent(term.toLowerCase());
+      const url = `https://api.fda.gov/drug/drugsfda.json?search=(openfda.brand_name:"${encoded}"+openfda.generic_name:"${encoded}")&limit=10`;
+
+      const data = await fetchJSON(url);
+      if (!data.results || data.results.length === 0) continue;
+
+      // Look for AP (Approved) submissions near the PDUFA date
+      for (const result of data.results) {
+        for (const sub of (result.submissions || [])) {
+          if (sub.submission_status === 'AP' && sub.submission_status_date) {
+            const ds = sub.submission_status_date;
+            const approvalMs = new Date(
+              `${ds.slice(0, 4)}-${ds.slice(4, 6)}-${ds.slice(6, 8)}T12:00:00`
+            ).getTime();
+
+            // Approval within 90 days before to 30 days after PDUFA date
+            const daysDiff = (approvalMs - pdufaMs) / 86400000;
+            if (daysDiff >= -90 && daysDiff <= 30) {
+              if (verbose) {
+                console.log(`    ✓ ${drug}: approved ${ds.slice(0, 4)}-${ds.slice(4, 6)}-${ds.slice(6, 8)} (PDUFA: ${pdufaDate})`);
+              }
+              return true;
+            }
+          }
+        }
+      }
+    } catch (e) {
+      if (verbose) console.log(`    Warning: FDA lookup failed for "${term}": ${e.message}`);
+    }
+
+    // Small delay between API calls to avoid rate limiting
+    await new Promise(r => setTimeout(r, 250));
+  }
+
+  return false;
+}
+
+/**
+ * Filter out past-PDUFA catalysts that have been confirmed approved by FDA
+ */
+async function filterApprovedCatalysts(catalysts, verbose = false) {
+  const results = [];
+  let removedCount = 0;
+
+  for (const catalyst of catalysts) {
+    const daysUntil = calculateDaysUntil(catalyst.pdufaDate);
+
+    // Keep future catalysts and ones without dates
+    if (!catalyst.pdufaDate || daysUntil === null || daysUntil >= 0) {
+      results.push(catalyst);
+      continue;
+    }
+
+    // For past-PDUFA entries still marked Pending, check FDA for approval
+    const status = (catalyst.status || 'Pending').toLowerCase();
+    if (status === 'pending') {
+      const isApproved = await checkRecentFDAApproval(catalyst, verbose);
+      if (isApproved) {
+        removedCount++;
+        continue; // Remove approved entry from results
+      }
+    }
+
+    results.push(catalyst);
+  }
+
+  if (verbose && removedCount > 0) {
+    console.log(`  Removed ${removedCount} approved past-PDUFA catalyst(s)`);
+  }
+
+  return results;
+}
+
+/**
  * Get all PDUFA catalysts
  */
 async function getPDUFACatalysts(options = {}) {
@@ -901,8 +1026,11 @@ async function getPDUFACatalysts(options = {}) {
   // Enrich all catalysts
   allCatalysts = allCatalysts.map(enrichCatalyst);
 
+  // Filter out past-PDUFA entries that have been approved by FDA
+  if (verbose) console.log('  Checking past-PDUFA entries for FDA approval status...');
+  allCatalysts = await filterApprovedCatalysts(allCatalysts, verbose);
+
   // Filter to future dates only (or within past 30 days for recent decisions)
-  const today = new Date();
   allCatalysts = allCatalysts.filter(c => {
     if (!c.pdufaDate) return true;
     const daysUntil = c.daysUntilPDUFA;
@@ -1015,5 +1143,6 @@ module.exports = {
   getCatalystStats,
   calculateDaysUntil,
   enrichCatalyst,
+  filterApprovedCatalysts,
   CURATED_CATALYSTS
 };
