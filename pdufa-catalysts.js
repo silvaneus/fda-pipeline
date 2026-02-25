@@ -807,8 +807,100 @@ function fetchJSON(url) {
 }
 
 /**
+ * Fetch a web page and return raw HTML/XML content
+ */
+function fetchPage(url) {
+  return new Promise((resolve, reject) => {
+    const request = https.get(url, {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
+      }
+    }, (response) => {
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        fetchPage(response.headers.location).then(resolve).catch(reject);
+        return;
+      }
+      let data = '';
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => resolve(data));
+    });
+    request.on('error', reject);
+    request.setTimeout(15000, () => { request.destroy(); reject(new Error('Timeout')); });
+  });
+}
+
+/**
+ * Fetch recent FDA approval announcements from FDA.gov.
+ * Sources:
+ *   1. Novel Drug Approvals page (covers NDA/BLA, updated same-day)
+ *   2. FDA Drugs RSS feed (covers supplemental approvals too)
+ * Returns combined lowercased text to search for drug name matches.
+ */
+async function fetchFDAApprovalAnnouncements(verbose = false) {
+  let novelText = '';
+  let rssText = '';
+
+  // 1. Novel Drug Approvals page for current year
+  try {
+    const year = new Date().getFullYear();
+    const url = `https://www.fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-${year}`;
+    if (verbose) console.log(`    Fetching FDA novel drug approvals for ${year}...`);
+    const html = await fetchPage(url);
+    novelText = html.replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').toLowerCase();
+    if (verbose) console.log(`    Novel approvals page loaded (${novelText.length} chars)`);
+  } catch (e) {
+    if (verbose) console.log(`    Warning: Novel approvals page fetch failed: ${e.message}`);
+  }
+
+  // 2. FDA Drugs RSS feed — filter to approval-related items only
+  try {
+    const rssUrl = 'https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/drugs/rss.xml';
+    if (verbose) console.log('    Fetching FDA drugs RSS feed...');
+    const xml = await fetchPage(rssUrl);
+    const items = xml.match(/<item>[\s\S]*?<\/item>/gi) || [];
+    const approvalItems = items.filter(item => /approv/i.test(item));
+    const approvalText = approvalItems.map(item => {
+      const title = (item.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '';
+      const desc = (item.match(/<description>([\s\S]*?)<\/description>/i) || [])[1] || '';
+      return title + ' ' + desc;
+    }).join(' ');
+    rssText = approvalText.replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').toLowerCase();
+    if (verbose) console.log(`    RSS feed: ${approvalItems.length} approval-related items`);
+  } catch (e) {
+    if (verbose) console.log(`    Warning: RSS feed fetch failed: ${e.message}`);
+  }
+
+  return { novelText, rssText };
+}
+
+/**
+ * Check if a catalyst's drug/brand name appears in FDA approval announcements
+ */
+function isInFDAAnnouncements(catalyst, announcements) {
+  const combined = announcements.novelText + ' ' + announcements.rssText;
+  if (!combined.trim()) return false;
+
+  const searchTerms = [];
+  if (catalyst.brandName) {
+    const cleanBrand = catalyst.brandName.split(/[\(\+\/]/)[0].trim();
+    if (cleanBrand.length >= 4) searchTerms.push(cleanBrand.toLowerCase());
+  }
+  if (catalyst.drug) {
+    const cleanDrug = catalyst.drug.split(/[\+\/]/)[0].trim();
+    if (cleanDrug.length >= 4) searchTerms.push(cleanDrug.toLowerCase());
+  }
+
+  for (const term of searchTerms) {
+    if (combined.includes(term)) return true;
+  }
+  return false;
+}
+
+/**
  * Check if a past-PDUFA catalyst has been approved by the FDA.
  * Queries OpenFDA drugs@fda for recent approval actions matching the drug.
+ * (Slower fallback — used when FDA.gov page/RSS don't have the info yet)
  */
 async function checkRecentFDAApproval(catalyst, verbose = false) {
   const { drug, brandName, pdufaDate } = catalyst;
@@ -870,11 +962,27 @@ async function checkRecentFDAApproval(catalyst, verbose = false) {
 }
 
 /**
- * Filter out past-PDUFA catalysts that have been confirmed approved by FDA
+ * Filter out past-PDUFA catalysts that have been confirmed approved by FDA.
+ * Uses a two-tier approach:
+ *   1. Fast: Scrape FDA.gov novel approvals page + RSS feed (same-day data)
+ *   2. Slow fallback: Query OpenFDA API per-drug (lags 1-3 weeks)
  */
 async function filterApprovedCatalysts(catalysts, verbose = false) {
   const results = [];
   let removedCount = 0;
+
+  // Identify past-PDUFA pending entries that need checking
+  const pastPending = catalysts.filter(c => {
+    const d = calculateDaysUntil(c.pdufaDate);
+    return c.pdufaDate && d !== null && d < 0 && (c.status || 'Pending').toLowerCase() === 'pending';
+  });
+
+  if (pastPending.length === 0) return catalysts;
+
+  if (verbose) console.log(`  Checking ${pastPending.length} past-PDUFA entries for FDA approval...`);
+
+  // Fast check: fetch FDA.gov approval announcements (2 requests total)
+  const announcements = await fetchFDAApprovalAnnouncements(verbose);
 
   for (const catalyst of catalysts) {
     const daysUntil = calculateDaysUntil(catalyst.pdufaDate);
@@ -885,13 +993,22 @@ async function filterApprovedCatalysts(catalysts, verbose = false) {
       continue;
     }
 
-    // For past-PDUFA entries still marked Pending, check FDA for approval
+    // For past-PDUFA entries still marked Pending, check for approval
     const status = (catalyst.status || 'Pending').toLowerCase();
     if (status === 'pending') {
+      // Tier 1: Check FDA.gov page + RSS (fast, same-day)
+      if (isInFDAAnnouncements(catalyst, announcements)) {
+        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — found on FDA.gov`);
+        removedCount++;
+        continue;
+      }
+
+      // Tier 2: Check OpenFDA API (slower, may lag 1-3 weeks)
       const isApproved = await checkRecentFDAApproval(catalyst, verbose);
       if (isApproved) {
+        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — confirmed by OpenFDA`);
         removedCount++;
-        continue; // Remove approved entry from results
+        continue;
       }
     }
 
