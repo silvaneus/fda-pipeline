@@ -13,6 +13,8 @@ const DATA_DIR = path.join(__dirname, 'data');
 const CATALYSTS_CACHE_FILE = path.join(DATA_DIR, 'pdufa-catalysts.json');
 const CATALYSTS_LAST_FETCH = path.join(DATA_DIR, 'pdufa-catalysts-last-fetch.txt');
 const SCRAPED_RESULTS_FILE = path.join(DATA_DIR, 'scraped-results.json');
+// Stored outside data/ so it's not gitignored — needed for GitHub Actions
+const APPROVAL_CACHE_FILE = path.join(__dirname, '.fda-approval-cache.json');
 
 /**
  * Curated list of known upcoming PDUFA dates
@@ -872,6 +874,26 @@ async function fetchFDAApprovalAnnouncements(verbose = false) {
     if (verbose) console.log(`    RSS feed: ${approvalItems.length} approval-related items`);
   } catch (e) {
     if (verbose) console.log(`    Warning: RSS feed fetch failed: ${e.message}`);
+  }
+
+  // Cache results when scrape succeeds; load from cache when it fails
+  const combined = (novelText + ' ' + rssText).trim();
+  if (combined.length > 100) {
+    // Scrape succeeded — save to cache for GitHub Actions
+    try {
+      fs.writeFileSync(APPROVAL_CACHE_FILE, JSON.stringify({
+        novelText, rssText, lastUpdated: new Date().toISOString()
+      }));
+      if (verbose) console.log('    Saved approval announcements to cache');
+    } catch (e) { /* ignore write errors */ }
+  } else if (fs.existsSync(APPROVAL_CACHE_FILE)) {
+    // Scrape returned too little data — use cached version
+    try {
+      const cached = JSON.parse(fs.readFileSync(APPROVAL_CACHE_FILE, 'utf-8'));
+      novelText = cached.novelText || '';
+      rssText = cached.rssText || '';
+      if (verbose) console.log(`    Using cached FDA approval announcements (from ${cached.lastUpdated || 'unknown'})`);
+    } catch (e) { /* ignore read errors */ }
   }
 
   return { novelText, rssText };
