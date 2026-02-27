@@ -807,7 +807,8 @@ function fetchJSON(url) {
 }
 
 /**
- * Fetch a web page and return raw HTML/XML content
+ * Fetch a web page and return raw HTML/XML content.
+ * Handles relative redirect URLs by resolving against the original URL.
  */
 function fetchPage(url) {
   return new Promise((resolve, reject) => {
@@ -818,7 +819,9 @@ function fetchPage(url) {
       }
     }, (response) => {
       if (response.statusCode === 301 || response.statusCode === 302) {
-        fetchPage(response.headers.location).then(resolve).catch(reject);
+        // Resolve relative redirect URLs against original URL
+        const redirectUrl = new URL(response.headers.location, url).href;
+        fetchPage(redirectUrl).then(resolve).catch(reject);
         return;
       }
       let data = '';
