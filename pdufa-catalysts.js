@@ -432,6 +432,16 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Anti-C5 antibody, subcutaneous'
   },
+  {
+    drug: 'centanafadine',
+    brandName: null,
+    company: 'Otsuka Pharmaceutical',
+    indication: 'ADHD (Children, Adolescents, and Adults)',
+    pdufaDate: '2026-07-24',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'First-in-class NDSRI; Priority Review'
+  },
   // August 2026
   {
     drug: 'mRNA-1010',

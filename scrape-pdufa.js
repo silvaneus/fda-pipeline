@@ -38,14 +38,16 @@ const WIRE_SERVICES = {
     releasePattern: /href="(\/news-releases\/[^"]+)"[^>]*>([^<]+)/g,
     headers: {}
   },
-  yahoofinance: {
-    name: 'Yahoo Finance',
-    // Yahoo Finance aggregates from BusinessWire, PR Newswire, GlobeNewswire
-    searchUrl: (term) => `https://finance.yahoo.com/news/search?q=${encodeURIComponent(term)}`,
-    releasePattern: /href="(\/news\/[^"]+)"[^>]*>([^<]+)/g,
+  googlenews: {
+    name: 'Google News',
+    // Google News RSS aggregates from BusinessWire, PR Newswire, GlobeNewswire, and more
+    // Uses RSS feed which returns structured XML - no JS rendering needed
+    searchUrl: (term) => `https://news.google.com/rss/search?q=${encodeURIComponent(term)}+when%3A90d&hl=en-US&gl=US&ceid=US:en`,
+    // Google News RSS items have <link> and <title> tags, parsed separately in searchGoogleNews()
+    releasePattern: null,
+    isRSS: true,
     headers: {
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Accept-Language': 'en-US,en;q=0.5'
+      'Accept': 'application/rss+xml,application/xml,text/xml'
     }
   }
 };
@@ -148,8 +150,140 @@ const KNOWN_DRUGS = {
   'ctx-1301': { drug: 'CTx-1301', brandName: null },
   'cingulate': { drug: 'CTx-1301', brandName: null },
   'dexmethylphenidate': { drug: 'CTx-1301', brandName: null },
-  'roluperidone': { drug: 'roluperidone', brandName: null }
+  'roluperidone': { drug: 'roluperidone', brandName: null },
+  'centanafadine': { drug: 'centanafadine', brandName: null },
+  'otsuka': { drug: 'centanafadine', brandName: null }
 };
+
+// Comprehensive INN (International Nonproprietary Name) drug suffixes
+// Organized by pharmacological category for maintainability
+const DRUG_SUFFIXES = [
+  // Monoclonal antibodies & biologics
+  'mab', 'zumab', 'ximab', 'umab', 'limab', 'tumab', 'mumab', 'nimab',
+  'cimab', 'timab', 'tuzumab', 'vizumab',
+  'cept',        // receptor-Fc fusions (e.g., etanercept, aflibercept)
+  'fusp',        // fusion proteins (e.g., tividenofusp)
+  'cel', 'leucel', 'sel',  // cell therapies (e.g., axicabtagene ciloleucel)
+  'gene',        // gene therapies (e.g., onasemnogene)
+  // Kinase inhibitors
+  'nib', 'tinib', 'rutinib', 'lisib', 'ciclib', 'rafenib', 'metinib',
+  'zanib', 'ertinib', 'anib',
+  // Antibiotics
+  'cillin',      // penicillins
+  'mycin',       // aminoglycosides
+  'cycline',     // tetracyclines
+  'floxacin',    // fluoroquinolones
+  'micin',       // aminoglycosides variant
+  'sulfa',       // sulfonamides
+  'oxacin',      // quinolones
+  'penem',       // carbapenems
+  'sporin',      // cephalosporins (cefazolin pattern below too)
+  // Antivirals
+  'vir', 'ovir', 'navir', 'gravir', 'tegravir', 'ciclovir', 'amivir',
+  'buvir', 'previr', 'asvir',
+  // Cardiovascular
+  'sartan',      // ARBs
+  'dipine',      // calcium channel blockers
+  'olol',        // beta-blockers
+  'pril',        // ACE inhibitors
+  'statin',      // HMG-CoA reductase inhibitors
+  'vastatin',    // statins variant
+  'fibrate',     // fibrates
+  'semide',      // loop diuretics
+  'thiazide',    // thiazide diuretics
+  'parin',       // anticoagulants (heparins)
+  'gatran',      // direct thrombin inhibitors
+  'xaban',       // factor Xa inhibitors
+  'grel',        // antiplatelet agents
+  'afil',        // PDE5 inhibitors
+  // Corticosteroids & hormones
+  'sone', 'olone', 'lone', 'onide', 'solone', 'nisolone',
+  'androne', 'sterone',
+  'pressin',     // vasopressins (e.g., desmopressin)
+  'reotide',     // somatostatin analogs
+  'relin',       // GnRH related
+  'lutamide',    // antiandrogens
+  'estrant',     // estrogen receptor modulators
+  // Antidiabetics / GLP-1 / metabolic
+  'gliptin',     // DPP-4 inhibitors
+  'gliflozin',   // SGLT2 inhibitors
+  'glutide',     // GLP-1 agonists (e.g., semaglutide, liraglutide)
+  'glinide',     // meglitinides
+  'formin',      // biguanides
+  'tide',        // peptides (general)
+  // Oncology
+  'platin',      // platinum agents
+  'rubicin',     // anthracyclines
+  'taxel',       // taxanes
+  'tecan',       // topoisomerase inhibitors
+  'poside',      // topoisomerase II
+  'mustine',     // alkylating agents
+  'domide', 'limod', 'glumide',  // IMiDs / cereblon modulators
+  'tuxetan', 'vedotin', 'deruxtecan', 'govitecan', 'mafodotin', 'ozogamicin',  // ADC payloads
+  // CNS / psychiatric / neurological
+  'azepam',      // benzodiazepines
+  'zolam',       // benzodiazepines (triazolam pattern)
+  'barbital',    // barbiturates
+  'azine',       // phenothiazines
+  'peridone',    // atypical antipsychotics (e.g., risperidone, milsaperidone)
+  'peridol',     // typical antipsychotics
+  'pramine',     // tricyclic antidepressants
+  'oxetine',     // SSRIs (e.g., fluoxetine, paroxetine)
+  'aline',       // SNRIs variant
+  'fadine',      // NDSRIs and related (e.g., centanafadine)
+  'racetam',     // nootropics
+  'triptan',     // migraine (serotonin agonists)
+  'pezil',       // cholinesterase inhibitors
+  'antine',      // antivirals/NMDA (e.g., amantadine, memantine)
+  'bamate',      // anxiolytics (e.g., meprobamate)
+  'finil',       // wakefulness agents (e.g., modafinil)
+  // Anti-inflammatory / immunology
+  'fenac',       // NSAIDs (diclofenac)
+  'profen',      // NSAIDs (ibuprofen)
+  'oxicam',      // NSAIDs (piroxicam)
+  'citinib',     // JAK inhibitors (e.g., tofacitinib, deucravacitinib)
+  'milast',      // PDE4 inhibitors (e.g., roflumilast, apremilast)
+  'olimus',      // mTOR inhibitors (e.g., sirolimus, everolimus)
+  'sporine',     // calcineurin inhibitors
+  // Antifungals
+  'azole', 'conazole', 'fungin',
+  // Respiratory
+  'terol',       // beta-2 agonists (e.g., salbutamol, formoterol)
+  'lukast',      // leukotriene antagonists (e.g., montelukast)
+  'phylline',    // xanthines (e.g., theophylline)
+  'tropium',     // anticholinergics
+  // GI
+  'prazole',     // proton pump inhibitors
+  'tidine',      // H2 blockers (e.g., famotidine, ranitidine)
+  'setron',      // 5-HT3 antagonists (e.g., ondansetron)
+  // Opioids / pain
+  'codone',      // opioids (oxycodone, hydrocodone)
+  'orphine',     // opioids (morphine)
+  'adol',        // analgesics (tramadol)
+  'gesia',       // analgesics suffix
+  // Other common stems
+  'amine',       // amines (general)
+  'ximab', 'axomab',  // chimeric antibodies
+  'pase',        // enzymes (e.g., pegzilarginase)
+  'inase',       // kinase enzymes
+  'dase',        // enzyme suffix
+  'dronate',     // bisphosphonates
+  'parib',       // PARP inhibitors
+  'toran',       // endothelin receptor antagonists
+  'sentan',      // endothelin receptor antagonists
+  'iguat',       // guanylate cyclase stimulators
+  'rinone',      // PDE3 inhibitors
+  'vaptan',      // vasopressin receptor antagonists
+  'netant',      // neurokinin antagonists
+  'leukin',      // interleukins
+  'feron',       // interferons
+  'poetin',      // erythropoietins
+  'stim',        // colony-stimulating factors
+  'plase',       // fibrinolytics
+  'teplase',     // tissue plasminogen activators
+  'argine',      // arginase-related
+  'aginase',     // enzyme therapies
+];
 
 /**
  * Make an HTTPS request
@@ -190,11 +324,12 @@ function fetchUrl(url, options = {}) {
 }
 
 /**
- * Search a wire service
+ * Search a wire service (HTML-based: GlobeNewswire, PR Newswire)
  */
 async function searchWireService(service, searchTerm, eventType, options = {}) {
   const { verbose = false } = options;
   const config = WIRE_SERVICES[service];
+  if (config.isRSS) return []; // RSS sources handled by searchGoogleNews
   const url = config.searchUrl(searchTerm);
 
   if (verbose) console.log(`    [${config.name}] Searching: ${searchTerm}...`);
@@ -255,6 +390,97 @@ async function searchWireService(service, searchTerm, eventType, options = {}) {
     if (verbose) console.log(`      Error: ${error.message}`);
     return [];
   }
+}
+
+/**
+ * Search Google News RSS feed for FDA-related press releases.
+ * Aggregates results from BusinessWire, PR Newswire, GlobeNewswire, and more.
+ * Returns releases with links to the original source articles.
+ */
+async function searchGoogleNews(eventType, options = {}) {
+  const { verbose = false } = options;
+  const config = WIRE_SERVICES.googlenews;
+  if (!config) return [];
+
+  // Build targeted queries per event type
+  const queries = [];
+  if (eventType === 'pdufa') {
+    queries.push('"FDA accepts" "NDA"', '"FDA accepts" "BLA"', '"PDUFA date"', '"FDA acceptance" "priority review"', '"target action date" FDA');
+  } else if (eventType === 'submissions') {
+    queries.push('"submits NDA" FDA', '"submits BLA" FDA', '"files NDA" FDA', '"files BLA" FDA');
+  } else if (eventType === 'approvals') {
+    queries.push('"FDA approves"', '"receives FDA approval"');
+  }
+
+  const allReleases = new Map();
+
+  for (const query of queries) {
+    const url = config.searchUrl(query);
+    if (verbose) console.log(`    [Google News] Searching: ${query}...`);
+
+    try {
+      const { statusCode, body } = await fetchUrl(url, { headers: config.headers || {} });
+      if (statusCode !== 200) {
+        if (verbose) console.log(`      Status ${statusCode}`);
+        continue;
+      }
+
+      // Parse RSS XML items
+      const items = body.match(/<item>[\s\S]*?<\/item>/gi) || [];
+
+      for (const item of items) {
+        const title = ((item.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '').replace(/<!\[CDATA\[|\]\]>/g, '').trim();
+        // Google News wraps the real URL; extract from <link> tag
+        let link = ((item.match(/<link>([\s\S]*?)<\/link>/i) || [])[1] || '').trim();
+        // Some feeds put the link after the tag on a new line
+        if (!link) {
+          const linkMatch = item.match(/<link\s*\/>\s*(https?:\/\/[^\s<]+)/i);
+          if (linkMatch) link = linkMatch[1].trim();
+        }
+
+        if (!title || !link) continue;
+
+        const titleLower = title.toLowerCase();
+
+        // Filter for FDA relevance
+        let relevant = false;
+        if (eventType === 'pdufa') {
+          relevant = titleLower.includes('pdufa') ||
+                     titleLower.includes('fda accepts') ||
+                     titleLower.includes('fda acceptance') ||
+                     titleLower.includes('target date') ||
+                     titleLower.includes('action date') ||
+                     titleLower.includes('priority review');
+        } else if (eventType === 'submissions') {
+          relevant = (titleLower.includes('submit') || titleLower.includes('files') || titleLower.includes('filing')) &&
+                     (titleLower.includes('nda') || titleLower.includes('bla') || titleLower.includes('fda'));
+        } else if (eventType === 'approvals') {
+          relevant = titleLower.includes('fda') &&
+                     (titleLower.includes('approv') || titleLower.includes('grants'));
+        }
+
+        if (relevant && !allReleases.has(link)) {
+          // Determine original source from title suffix (e.g., "- Business Wire", "- GlobeNewswire")
+          const sourceMatch = title.match(/\s+-\s+([^-]+)$/);
+          const sourceName = sourceMatch ? sourceMatch[1].trim() : 'Google News';
+
+          allReleases.set(link, {
+            url: link,
+            title: title.replace(/\s+-\s+[^-]+$/, '').trim(),
+            source: sourceName,
+            eventType
+          });
+        }
+      }
+
+      await new Promise(resolve => setTimeout(resolve, 300));
+    } catch (error) {
+      if (verbose) console.log(`      Error: ${error.message}`);
+    }
+  }
+
+  if (verbose) console.log(`      Found ${allReleases.size} relevant across all queries`);
+  return Array.from(allReleases.values());
 }
 
 /**
@@ -400,8 +626,10 @@ function extractDrug(textContent, title) {
     return { drugName: codeMatch[1].toUpperCase(), brandName: null };
   }
 
-  // 5. Generic drug suffixes - these are reliable
-  const genericMatch = textContent.match(/\b([a-z]{4,}(?:mab|nib|tinib|tide|glumide|gliptin|vastatin|parin|cillin|mycin|vir|afil|domide|limod|stat|lone|sone|olone|zumab|ximab|umab|cept|platin|rubicin|taxel))\b/i);
+  // 5. Generic drug suffixes - comprehensive INN (International Nonproprietary Name) stems
+  const genericMatch = textContent.match(new RegExp(
+    '\\b([a-z]{3,}(?:' + DRUG_SUFFIXES.join('|') + '))\\b', 'i'
+  ));
   if (genericMatch) {
     return { drugName: genericMatch[1].toLowerCase(), brandName: null };
   }
@@ -596,8 +824,20 @@ async function scrapeAll(options = {}) {
 
   const allReleases = new Map();
 
-  // Scrape each wire service
+  // 1. Google News RSS — aggregates from all wire services (BusinessWire, PR Newswire, GlobeNewswire)
+  console.log('\nGoogle News RSS:');
+  for (const eventType of Object.keys(SEARCH_TERMS)) {
+    const releases = await searchGoogleNews(eventType, { verbose });
+    for (const r of releases) {
+      if (!allReleases.has(r.url)) {
+        allReleases.set(r.url, r);
+      }
+    }
+  }
+
+  // 2. Direct wire service searches for additional coverage
   for (const [service, config] of Object.entries(WIRE_SERVICES)) {
+    if (config.isRSS) continue; // Skip RSS sources (handled above)
     console.log(`\n${config.name}:`);
 
     // Standard search terms
