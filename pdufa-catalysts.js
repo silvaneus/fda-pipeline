@@ -78,14 +78,14 @@ const CURATED_CATALYSTS = [
     notes: 'Enzyme replacement therapy'
   },
   {
-    drug: 'ET-600',
+    drug: 'desmopressin acetate',
     brandName: null,
     company: 'Eton Pharmaceuticals',
     indication: 'Central Diabetes Insipidus',
     pdufaDate: '2026-02-25',
     submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'Arginine vasopressin deficiency'
+    status: 'Approved',
+    notes: 'Formerly ET-600; approved Feb 25, 2026'
   },
   {
     drug: 'decitabine/cedazuridine + venetoclax',
@@ -1018,8 +1018,15 @@ async function filterApprovedCatalysts(catalysts, verbose = false) {
       continue;
     }
 
-    // For past-PDUFA entries still marked Pending, check for approval
+    // Remove entries already marked Approved
     const status = (catalyst.status || 'Pending').toLowerCase();
+    if (status === 'approved') {
+      if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — marked as Approved`);
+      removedCount++;
+      continue;
+    }
+
+    // For past-PDUFA entries still marked Pending, check for approval
     if (status === 'pending') {
       // Tier 1: Check FDA.gov page + RSS (fast, same-day)
       if (isInFDAAnnouncements(catalyst, announcements)) {
