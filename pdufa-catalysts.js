@@ -6,6 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const http = require('http');
 const { classifyCondition } = require('./classify-disease');
 const { getSuccessRate } = require('./success-rates');
 
@@ -104,18 +105,18 @@ const CURATED_CATALYSTS = [
     indication: 'Phenylketonuria (PKU) - Adolescents',
     pdufaDate: '2026-02-28',
     submissionType: 'sBLA',
-    status: 'Pending',
-    notes: 'Expansion to ages 12-17'
+    status: 'Approved',
+    notes: 'Approved Feb 27, 2026 — expansion to ages 12+'
   },
   {
     drug: 'navepegritide',
-    brandName: 'TransCon CNP',
+    brandName: 'Yuviwel',
     company: 'Ascendis Pharma',
     indication: 'Achondroplasia',
     pdufaDate: '2026-02-28',
     submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'C-type natriuretic peptide for children'
+    status: 'Approved',
+    notes: 'Approved Feb 27, 2026 as Yuviwel — children 2+ with open epiphyses'
   },
   {
     drug: 'dupilumab',
@@ -124,8 +125,8 @@ const CURATED_CATALYSTS = [
     indication: 'Allergic Fungal Rhinosinusitis',
     pdufaDate: '2026-02-28',
     submissionType: 'sBLA',
-    status: 'Pending',
-    notes: 'Adults and children 6+'
+    status: 'Approved',
+    notes: 'Approved Feb 24, 2026 — first and only medicine for AFRS'
   },
   {
     drug: 'idebenone',
@@ -134,8 +135,8 @@ const CURATED_CATALYSTS = [
     indication: 'Leber Hereditary Optic Neuropathy',
     pdufaDate: '2026-02-28',
     submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'Mitochondrial disease therapy'
+    status: 'Rejected',
+    notes: 'Complete Response Letter (CRL) issued'
   },
   // March 2026
   {
@@ -145,8 +146,8 @@ const CURATED_CATALYSTS = [
     indication: 'Psoriatic Arthritis',
     pdufaDate: '2026-03-06',
     submissionType: 'sNDA',
-    status: 'Pending',
-    notes: 'First TYK2 inhibitor for PsA'
+    status: 'Approved',
+    notes: 'Approved Mar 2026 — first TYK2 inhibitor for PsA'
   },
   {
     drug: 'vanzacaftor/tezacaftor/deutivacaftor',
@@ -824,7 +825,8 @@ function fetchJSON(url) {
  */
 function fetchPage(url) {
   return new Promise((resolve, reject) => {
-    const request = https.get(url, {
+    const client = url.startsWith('https') ? https : http;
+    const request = client.get(url, {
       headers: {
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'
@@ -866,6 +868,18 @@ async function fetchFDAApprovalAnnouncements(verbose = false) {
     if (verbose) console.log(`    Novel approvals page loaded (${novelText.length} chars)`);
   } catch (e) {
     if (verbose) console.log(`    Warning: Novel approvals page fetch failed: ${e.message}`);
+  }
+
+  // 1b. FDA drug approvals and databases page (covers supplemental approvals sNDA/sBLA)
+  try {
+    const url = 'https://www.fda.gov/drugs/drug-approvals-and-databases';
+    if (verbose) console.log('    Fetching FDA drug approvals and databases page...');
+    const html = await fetchPage(url);
+    const supplementalText = html.replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ').replace(/\s+/g, ' ').toLowerCase();
+    novelText += ' ' + supplementalText;
+    if (verbose) console.log(`    Supplemental approvals page loaded (${supplementalText.length} chars)`);
+  } catch (e) {
+    if (verbose) console.log(`    Warning: Supplemental approvals page fetch failed: ${e.message}`);
   }
 
   // 2. FDA Drugs RSS feed — filter to approval-related items only
@@ -917,13 +931,19 @@ function isInFDAAnnouncements(catalyst, announcements) {
   if (!combined.trim()) return false;
 
   const searchTerms = [];
+  // Add brand name(s) — split on +, /, ( to handle combos like "INQOVI + Venclexta"
   if (catalyst.brandName) {
-    const cleanBrand = catalyst.brandName.split(/[\(\+\/]/)[0].trim();
-    if (cleanBrand.length >= 4) searchTerms.push(cleanBrand.toLowerCase());
+    for (const part of catalyst.brandName.split(/[\+\/\(]/)) {
+      const clean = part.trim().replace(/\)$/, '');
+      if (clean.length >= 4) searchTerms.push(clean.toLowerCase());
+    }
   }
+  // Add drug name(s) — split on +, /, ( to handle combos like "decitabine/cedazuridine + venetoclax"
   if (catalyst.drug) {
-    const cleanDrug = catalyst.drug.split(/[\+\/]/)[0].trim();
-    if (cleanDrug.length >= 4) searchTerms.push(cleanDrug.toLowerCase());
+    for (const part of catalyst.drug.split(/[\+\/\(]/)) {
+      const clean = part.trim().replace(/\)$/, '');
+      if (clean.length >= 4) searchTerms.push(clean.toLowerCase());
+    }
   }
 
   for (const term of searchTerms) {
@@ -1028,10 +1048,15 @@ async function filterApprovedCatalysts(catalysts, verbose = false) {
       continue;
     }
 
-    // Remove entries already marked Approved
+    // Remove entries already marked Approved or Rejected/CRL
     const status = (catalyst.status || 'Pending').toLowerCase();
     if (status === 'approved') {
       if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — marked as Approved`);
+      removedCount++;
+      continue;
+    }
+    if (status === 'rejected' || status === 'crl') {
+      if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — marked as Rejected/CRL`);
       removedCount++;
       continue;
     }
