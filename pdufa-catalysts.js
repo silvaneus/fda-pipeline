@@ -280,6 +280,16 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Amylin analog + GLP-1'
   },
+  {
+    drug: 'dextromethorphan/bupropion',
+    brandName: 'AXS-05',
+    company: 'Axsome Therapeutics',
+    indication: 'Alzheimer\'s Disease Agitation',
+    pdufaDate: '2026-04-30',
+    submissionType: 'sNDA',
+    status: 'Pending',
+    notes: 'Priority Review; first oral therapy for AD agitation'
+  },
   // May 2026
   {
     drug: 'efgartigimod alfa',
@@ -402,6 +412,16 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Anti-IGF-1R antibody'
   },
+  {
+    drug: 'oxylanthanum carbonate',
+    brandName: null,
+    company: 'Unicycive Therapeutics',
+    indication: 'Hyperphosphatemia in CKD on Dialysis',
+    pdufaDate: '2026-06-27',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'NDA resubmission; phosphate binder'
+  },
   // July 2026
   {
     drug: 'atacicept',
@@ -442,6 +462,26 @@ const CURATED_CATALYSTS = [
     submissionType: 'NDA',
     status: 'Pending',
     notes: 'First-in-class NDSRI; Priority Review'
+  },
+  {
+    drug: 'gedatolisib',
+    brandName: null,
+    company: 'Celcuity',
+    indication: 'HR+/HER2-/PIK3CA Wild-Type Advanced Breast Cancer',
+    pdufaDate: '2026-07-17',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'PI3K/mTOR inhibitor'
+  },
+  {
+    drug: 'furosemide',
+    brandName: 'Furoscix',
+    company: 'MannKind',
+    indication: 'Edema in Chronic Heart Failure/CKD',
+    pdufaDate: '2026-07-26',
+    submissionType: 'sNDA',
+    status: 'Pending',
+    notes: 'ReadyFlow autoinjector; subcutaneous formulation'
   },
   // August 2026
   {
