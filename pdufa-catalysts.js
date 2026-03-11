@@ -964,6 +964,143 @@ async function fetchFDAApprovalAnnouncements(verbose = false) {
 }
 
 /**
+ * PDUFA date patterns — reused from scrape-pdufa.js
+ */
+const PDUFA_DATE_PATTERNS = [
+  /PDUFA\s+(?:target\s+)?(?:action\s+)?(?:goal\s+)?date\s+(?:of\s+|is\s+|set\s+for\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
+  /target\s+(?:action\s+)?date\s+(?:of\s+|is\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
+  /(?:FDA\s+)?decision\s+(?:expected\s+)?by\s+(\w+\s+\d{1,2},?\s+\d{4})/gi,
+  /(?:action|goal)\s+date\s+of\s+(\w+\s+\d{1,2},?\s+\d{4})/gi
+];
+
+/**
+ * Fetch a page from SEC.gov with required User-Agent header.
+ * SEC blocks browser-like UAs; requires app name + contact email.
+ */
+function fetchSEC(url) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith('https') ? https : http;
+    const request = client.get(url, {
+      headers: {
+        'User-Agent': 'FDA-Pipeline research@company.com',
+        'Accept': 'text/html,*/*'
+      }
+    }, (response) => {
+      if (response.statusCode === 301 || response.statusCode === 302) {
+        const redirectUrl = new URL(response.headers.location, url).href;
+        fetchSEC(redirectUrl).then(resolve).catch(reject);
+        return;
+      }
+      let data = '';
+      response.on('data', chunk => data += chunk);
+      response.on('end', () => resolve(data));
+    });
+    request.on('error', reject);
+    request.setTimeout(15000, () => { request.destroy(); reject(new Error('Timeout')); });
+  });
+}
+
+/**
+ * Check "Submitted - Awaiting PDUFA" catalysts for newly announced PDUFA dates.
+ * Searches SEC EDGAR 8-K filings for press releases containing PDUFA dates.
+ */
+async function checkAwaitingPDUFA(catalysts, verbose = false) {
+  const awaiting = catalysts.filter(c =>
+    (c.status || '').toLowerCase().includes('awaiting')
+  );
+
+  if (awaiting.length === 0) return catalysts;
+  if (verbose) console.log(`  Checking ${awaiting.length} "Awaiting PDUFA" entries for announced dates...`);
+
+  for (const catalyst of awaiting) {
+    const searchTerm = catalyst.drug.split(/[\+\/\(]/)[0].trim();
+    if (searchTerm.length < 4) continue;
+
+    try {
+      // Search SEC EDGAR full-text search for 8-K filings mentioning drug + PDUFA
+      const query = encodeURIComponent(`"${searchTerm}" "PDUFA"`);
+      const searchUrl = `https://efts.sec.gov/LATEST/search-index?q=${query}&forms=8-K&dateRange=custom&startdt=2025-01-01&enddt=2026-12-31`;
+      const searchData = await fetchJSON(searchUrl);
+
+      if (!searchData || !searchData.hits || !searchData.hits.hits || searchData.hits.hits.length === 0) {
+        if (verbose) console.log(`    ${catalyst.drug} — no SEC filings found`);
+        continue;
+      }
+
+      // Check the most recent filing first
+      let found = false;
+      for (const hit of searchData.hits.hits.slice(0, 3)) {
+        if (found) break;
+        const src = hit._source;
+        const rawCik = (src.ciks && src.ciks[0]) || (Array.isArray(src.cik) ? src.cik[0] : src.cik);
+        const cik = rawCik ? String(rawCik).replace(/^0+/, '') : null;
+        const adsh = src.adsh || '';
+        if (!cik || !adsh) continue;
+
+        // Fetch filing documents from the index page
+        const adshClean = adsh.replace(/-/g, '');
+
+        try {
+          const indexHtml = await fetchSEC(`https://www.sec.gov/Archives/edgar/data/${cik}/${adshClean}/${adsh}-index.htm`);
+          const docLinks = [...indexHtml.matchAll(/href="([^"]+\.htm)"/g)].map(m => m[1]);
+
+          for (const docPath of docLinks) {
+            if (found) break;
+            // Skip index/viewer pages
+            if (docPath.includes('/ix?doc=') || docPath === '/index.htm') continue;
+            const docUrl = docPath.startsWith('http') ? docPath :
+              docPath.startsWith('/') ? `https://www.sec.gov${docPath}` :
+              `https://www.sec.gov/Archives/edgar/data/${cik}/${adshClean}/${docPath}`;
+
+            const docHtml = await fetchSEC(docUrl);
+            const text = docHtml.replace(/<[^>]+>/g, ' ').replace(/&[^;]+;/g, ' ');
+
+            // Verify drug name is in document
+            if (!text.toLowerCase().includes(searchTerm.toLowerCase())) continue;
+
+            // Search for PDUFA date patterns
+            for (const pattern of PDUFA_DATE_PATTERNS) {
+              pattern.lastIndex = 0;
+              const match = pattern.exec(text);
+              if (match && match[1]) {
+                const dateStr = match[1].replace(',', '');
+                const parsed = new Date(dateStr + ' 12:00:00');
+                if (!isNaN(parsed.getTime()) && parsed > new Date()) {
+                  const yyyy = parsed.getFullYear();
+                  const mm = String(parsed.getMonth() + 1).padStart(2, '0');
+                  const dd = String(parsed.getDate()).padStart(2, '0');
+                  catalyst.pdufaDate = `${yyyy}-${mm}-${dd}`;
+                  catalyst.status = 'Pending';
+                  catalyst.notes = (catalyst.notes || '').replace(/FDA has 60 days to accept/i, '').trim();
+                  if (catalyst.notes && !catalyst.notes.endsWith(';')) catalyst.notes += ';';
+                  catalyst.notes = (catalyst.notes + ` PDUFA date found via SEC filing`).trim();
+                  if (verbose) console.log(`    ✓ ${catalyst.drug} — PDUFA date found: ${catalyst.pdufaDate}`);
+                  found = true;
+                  break;
+                }
+              }
+            }
+          }
+        } catch (e) {
+          // Skip this filing, try next
+        }
+
+        // SEC rate limit
+        await new Promise(r => setTimeout(r, 200));
+      }
+
+      if (!found && verbose) {
+        console.log(`    ${catalyst.drug} — filings found but no PDUFA date extracted`);
+      }
+    } catch (e) {
+      if (verbose) console.log(`    Warning: SEC search failed for ${catalyst.drug}: ${e.message}`);
+    }
+  }
+
+  return catalysts;
+}
+
+/**
  * Check if a catalyst's drug/brand name appears in FDA approval announcements
  */
 function isInFDAAnnouncements(catalyst, announcements) {
@@ -1246,6 +1383,9 @@ async function getPDUFACatalysts(options = {}) {
       }
     }
   }
+
+  // Check "Awaiting PDUFA" entries for newly announced dates
+  allCatalysts = await checkAwaitingPDUFA(allCatalysts, verbose);
 
   // Enrich all catalysts
   allCatalysts = allCatalysts.map(enrichCatalyst);
