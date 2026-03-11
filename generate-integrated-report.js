@@ -127,6 +127,26 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FDA Pipeline Report - Clinical Trials & Catalysts</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+    <defs>
+      <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#2563eb"/>
+        <stop offset="100%" stop-color="#7c3aed"/>
+      </linearGradient>
+    </defs>
+    <!-- Rounded square background -->
+    <rect width="64" height="64" rx="14" fill="url(#g)"/>
+    <!-- Capsule/pill shape -->
+    <rect x="12" y="22" width="24" height="12" rx="6" fill="white" opacity="0.95"/>
+    <rect x="24" y="22" width="12" height="12" rx="0" fill="white" opacity="0.7"/>
+    <!-- Rising bar chart (pipeline stages) -->
+    <rect x="40" y="32" width="5" height="10" rx="1" fill="white" opacity="0.6"/>
+    <rect x="46.5" y="26" width="5" height="16" rx="1" fill="white" opacity="0.8"/>
+    <rect x="40" y="18" width="5" height="6" rx="1" fill="#34d399" opacity="0.9"/>
+    <rect x="46.5" y="14" width="5" height="6" rx="1" fill="#34d399" opacity="0.9"/>
+    <!-- Checkmark on last bar -->
+    <path d="M47 48 l2 2 l4-4" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`)}">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * { box-sizing: border-box; }
