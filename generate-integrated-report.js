@@ -366,6 +366,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
               <th data-sort="submissionType">Type</th>
               <th data-sort="therapeuticArea">Disease Area</th>
               <th data-sort="indication">Indication</th>
+              <th>Source</th>
             </tr></thead>
             <tbody id="catalystsBody"></tbody>
           </table>
@@ -534,6 +535,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
           <td>\${c.submissionType?'<span class="badge badge-info">'+c.submissionType+'</span>':'-'}</td>
           <td>\${c.therapeuticArea?'<span class="badge badge-info">'+c.therapeuticArea+'</span>':'-'}</td>
           <td class="truncate" title="\${escapeHtml(c.indication)}">\${escapeHtml(c.indication)||'-'}</td>
+          <td>\${c.sourceUrl ? '<a href="'+escapeHtml(c.sourceUrl)+'" target="_blank" style="color:#2563eb;text-decoration:none" title="'+escapeHtml(c.sourceUrl)+'">🔗</a>' : '-'}</td>
         </tr>\`;
       }).join('');
       document.getElementById('catalystCount').textContent = data.length;
@@ -589,8 +591,8 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
     }
 
     function exportCatalystsCSV() {
-      const h = ['Drug','Brand Name','Company','PDUFA Date','Days Until','Status','Type','Disease Area','Indication'];
-      const r = catalysts.map(c => ['"'+(c.drug||'').replace(/"/g,'""')+'"',c.brandName||'','"'+(c.company||'').replace(/"/g,'""')+'"',c.pdufaDate||'',c.daysUntilPDUFA!==null?c.daysUntilPDUFA:'',c.status||'Pending',c.submissionType||'',c.therapeuticArea||'','"'+(c.indication||'').replace(/"/g,'""')+'"']);
+      const h = ['Drug','Brand Name','Company','PDUFA Date','Days Until','Status','Type','Disease Area','Indication','Source URL'];
+      const r = catalysts.map(c => ['"'+(c.drug||'').replace(/"/g,'""')+'"',c.brandName||'','"'+(c.company||'').replace(/"/g,'""')+'"',c.pdufaDate||'',c.daysUntilPDUFA!==null?c.daysUntilPDUFA:'',c.status||'Pending',c.submissionType||'',c.therapeuticArea||'','"'+(c.indication||'').replace(/"/g,'""')+'"',c.sourceUrl||'']);
       downloadCSV([h,...r],'fda-catalysts.csv');
     }
 

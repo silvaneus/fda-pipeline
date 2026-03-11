@@ -149,26 +149,8 @@ const CURATED_CATALYSTS = [
     status: 'Approved',
     notes: 'Approved Mar 2026 — first TYK2 inhibitor for PsA'
   },
-  {
-    drug: 'vanzacaftor/tezacaftor/deutivacaftor',
-    brandName: 'Alyftrek',
-    company: 'Vertex Pharmaceuticals',
-    indication: 'Cystic Fibrosis',
-    pdufaDate: '2026-03-08',
-    submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'Next-gen CF triple combo'
-  },
-  {
-    drug: 'pirtobrutinib',
-    brandName: 'Jaypirca',
-    company: 'Eli Lilly',
-    indication: 'Chronic Lymphocytic Leukemia (CLL)',
-    pdufaDate: '2026-03-15',
-    submissionType: 'sBLA',
-    status: 'Pending',
-    notes: 'First-line CLL indication'
-  },
+  // REMOVED: vanzacaftor/tezacaftor/deutivacaftor (Alyftrek) — already approved Dec 20, 2024 for CF
+  // REMOVED: pirtobrutinib (Jaypirca) CLL — traditional approval Dec 3, 2025 for R/R CLL/SLL; first-line sBLA not yet submitted
   {
     drug: 'reproxalap',
     brandName: null,
@@ -288,7 +270,8 @@ const CURATED_CATALYSTS = [
     pdufaDate: '2026-04-30',
     submissionType: 'sNDA',
     status: 'Pending',
-    notes: 'Priority Review; first oral therapy for AD agitation'
+    notes: 'Priority Review; first oral therapy for AD agitation',
+    sourceUrl: 'https://www.globenewswire.com/news-release/2025/12/31/3211743/33090/en/Axsome-Therapeutics-Announces-FDA-Acceptance-and-Priority-Review-of-Supplemental-New-Drug-Application-for-AXS-05-for-the-Treatment-of-Alzheimer-s-Disease-Agitation.html'
   },
   // May 2026
   {
@@ -420,7 +403,8 @@ const CURATED_CATALYSTS = [
     pdufaDate: '2026-06-27',
     submissionType: 'NDA',
     status: 'Pending',
-    notes: 'NDA resubmission; phosphate binder'
+    notes: 'NDA resubmission; phosphate binder',
+    sourceUrl: 'https://www.globenewswire.com/news-release/2026/01/29/3228435/0/en/Unicycive-Therapeutics-Announces-FDA-Acceptance-of-Oxylanthanum-Carbonate-OLC-New-Drug-Application-NDA-Resubmission.html'
   },
   // July 2026
   {
@@ -471,7 +455,8 @@ const CURATED_CATALYSTS = [
     pdufaDate: '2026-07-17',
     submissionType: 'NDA',
     status: 'Pending',
-    notes: 'PI3K/mTOR inhibitor'
+    notes: 'PI3K/mTOR inhibitor',
+    sourceUrl: 'https://www.globenewswire.com/news-release/2026/01/20/3221601/0/en/Celcuity-Announces-FDA-Acceptance-of-New-Drug-Application-for-Gedatolisib-in-HR-HER2-PIK3CA-Wild-Type-Advanced-Breast-Cancer.html'
   },
   {
     drug: 'furosemide',
@@ -481,7 +466,8 @@ const CURATED_CATALYSTS = [
     pdufaDate: '2026-07-26',
     submissionType: 'sNDA',
     status: 'Pending',
-    notes: 'ReadyFlow autoinjector; subcutaneous formulation'
+    notes: 'ReadyFlow autoinjector; subcutaneous formulation',
+    sourceUrl: 'https://www.globenewswire.com/news-release/2025/12/01/3196982/29517/en/MannKind-Announces-U-S-FDA-Accepts-for-Review-its-Supplemental-New-Drug-Application-sNDA-of-FUROSCIX-ReadyFlow-Autoinjector-for-the-Treatment-of-Edema-in-Adults-with-Chronic-Heart-.html'
   },
   // August 2026
   {
@@ -1101,6 +1087,66 @@ async function checkAwaitingPDUFA(catalysts, verbose = false) {
 }
 
 /**
+ * Auto-populate sourceUrl for catalysts that don't have one.
+ * Searches SEC EDGAR for 8-K filings mentioning the drug + "PDUFA" or "FDA".
+ */
+async function enrichSourceUrls(catalysts, verbose = false) {
+  const missing = catalysts.filter(c => !c.sourceUrl && c.drug);
+  if (missing.length === 0) return;
+
+  if (verbose) console.log(`  Finding source URLs for ${missing.length} catalysts...`);
+  let found = 0;
+
+  for (const catalyst of missing) {
+    const searchTerm = catalyst.drug.split(/[\+\/\(]/)[0].trim();
+    if (searchTerm.length < 4) continue;
+
+    try {
+      // Try drug name first, then brand name
+      const terms = [searchTerm];
+      if (catalyst.brandName) {
+        const cleanBrand = catalyst.brandName.split(/[\(\+\/]/)[0].trim();
+        if (cleanBrand.length >= 4 && cleanBrand !== searchTerm) terms.push(cleanBrand);
+      }
+
+      let searchData = null;
+      for (const term of terms) {
+        const query = encodeURIComponent(`"${term}" ("PDUFA" OR "FDA accepts" OR "FDA acceptance")`);
+        const searchUrl = `https://efts.sec.gov/LATEST/search-index?q=${query}&forms=8-K&dateRange=custom&startdt=2024-01-01&enddt=2026-12-31`;
+        searchData = await fetchJSON(searchUrl);
+        if (searchData && searchData.hits && searchData.hits.hits && searchData.hits.hits.length > 0) break;
+        searchData = null;
+        await new Promise(r => setTimeout(r, 150));
+      }
+
+      if (searchData && searchData.hits && searchData.hits.hits && searchData.hits.hits.length > 0) {
+        const src = searchData.hits.hits[0]._source;
+        const rawCik = (src.ciks && src.ciks[0]) || '';
+        const cik = String(rawCik).replace(/^0+/, '');
+        const adsh = src.adsh || '';
+        if (cik && adsh) {
+          const adshClean = adsh.replace(/-/g, '');
+          catalyst.sourceUrl = `https://www.sec.gov/Archives/edgar/data/${cik}/${adshClean}/${adsh}-index.htm`;
+          found++;
+        }
+      } else {
+        // Fallback: Google News search link for manual verification
+        const q = encodeURIComponent(`${searchTerm} PDUFA FDA acceptance`);
+        catalyst.sourceUrl = `https://www.google.com/search?q=${q}&tbm=nws`;
+        found++;
+      }
+
+      // SEC rate limit
+      await new Promise(r => setTimeout(r, 150));
+    } catch (e) {
+      // Skip failures silently
+    }
+  }
+
+  if (verbose && found > 0) console.log(`  Found ${found} source URLs from SEC EDGAR`);
+}
+
+/**
  * Check if a catalyst's drug/brand name appears in FDA approval announcements
  */
 function isInFDAAnnouncements(catalyst, announcements) {
@@ -1389,6 +1435,9 @@ async function getPDUFACatalysts(options = {}) {
 
   // Enrich all catalysts
   allCatalysts = allCatalysts.map(enrichCatalyst);
+
+  // Auto-populate source URLs for entries missing them
+  await enrichSourceUrls(allCatalysts, verbose);
 
   // Filter out past-PDUFA entries that have been approved by FDA
   if (verbose) console.log('  Checking past-PDUFA entries for FDA approval status...');
