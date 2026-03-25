@@ -18,6 +18,73 @@ const SCRAPED_RESULTS_FILE = path.join(DATA_DIR, 'scraped-results.json');
 const APPROVAL_CACHE_FILE = path.join(__dirname, '.fda-approval-cache.json');
 
 /**
+ * Brand-to-generic name mapping for deduplication and standardization.
+ * Keys are lowercased brand/trade names; values are the preferred generic names.
+ * Used to normalize RTTNews (which uses brand names) against curated data (generics).
+ */
+const BRAND_TO_GENERIC = {
+  // Exact brand → generic
+  'kresladi': 'marnetegragene autotemcel',
+  'inqovi': 'decitabine/cedazuridine + venetoclax',
+  'enhertu': 'trastuzumab deruxtecan',
+  'vyvgart': 'efgartigimod alfa',
+  'opdivo': 'nivolumab',
+  'nusinersen': 'nusinersen',
+  'keytruda': 'pembrolizumab',
+  'padcev': 'enfortumab vedotin',
+  'filspari': 'sparsentan',
+  'sotyktu': 'deucravacitinib',
+  'dupixent': 'dupilumab',
+  'imcivree': 'setmelanotide',
+  'palynziq': 'pegvaliase-pqpz',
+  'zoryve cream 0.3%': 'roflumilast cream',
+  'zoryve': 'roflumilast',
+  'oclaiz': 'octreotide subcutaneous depot',
+  'afrezza': 'insulin human (inhalation)',
+  'datroway': 'datopotamab deruxtecan',
+  'bysanti': 'milsaperidone',
+  'leqembi iqlik': 'lecanemab-irmb',
+  'leqembi iqlik subcutaneous autoinjector': 'lecanemab-irmb',
+  'subcutaneous sarclisa': 'isatuximab',
+  'axs-05': 'dextromethorphan/bupropion',
+  'tzield': 'teplizumab',
+  'transcon cnp': 'navepegritide',
+  'reproxalap': 'reproxalap',
+  'rp1': 'vusolimogene oderparepvec',
+  'keytruda qlex': 'pembrolizumab (autoinjector)',
+  'keytruda plus welireg': 'pembrolizumab + belzutifan',
+  'welireg in combination with keytruda qlex': 'pembrolizumab + belzutifan',
+  'nanoecapsulated sirolimus plus pegadricase': 'sirolimus + pegadricase',
+  'oxylanthanum carbonate': 'oxylanthanum carbonate',
+  'anaphylm': 'epinephrine sublingual film',
+  'et-600': 'cantharidin topical',
+  'new formulation of f18': 'piflufolastat F 18',
+  'gtx-104': 'nimodipine IV',
+  'camizestrant': 'camizestrant',
+  'vepdegestrant': 'vepdegestrant',
+  'doravirine/islatravir': 'doravirine/islatravir',
+  'cytisinicline': 'cytisinicline',
+  'nusinersen': 'nusinersen',
+  'tividenofusp alfa': 'tividenofusp alfa',
+  'linerixibat': 'linerixibat',
+  'ctx-1301': 'CTx-1301',
+  'clemidsogene lanparvovec (rgx-121)': 'clemidsogene lanparvovec',
+  'leniolisib': 'leniolisib',
+  // LNTH-2501 is a diagnostic, not a drug catalyst — keep as-is
+  'lnth-2501 (ga 68 edotreotide), a pet diagnostic imaging kit': '68Ga-edotreotide PET kit',
+};
+
+/**
+ * Normalize a drug name to its preferred generic form.
+ * Returns the generic name if a mapping exists, otherwise returns the original.
+ */
+function normalizeDrugName(name) {
+  if (!name) return name;
+  const lower = name.toLowerCase().trim();
+  return BRAND_TO_GENERIC[lower] || name;
+}
+
+/**
  * Curated list of known upcoming PDUFA dates
  * This should be updated periodically with new catalyst data
  * Sources: Company press releases, SEC filings, FDA announcements
@@ -193,16 +260,7 @@ const CURATED_CATALYSTS = [
   },
   // REMOVED: vanzacaftor/tezacaftor/deutivacaftor (Alyftrek) — already approved Dec 20, 2024 for CF
   // REMOVED: pirtobrutinib (Jaypirca) CLL — traditional approval Dec 3, 2025 for R/R CLL/SLL; first-line sBLA not yet submitted
-  {
-    drug: 'reproxalap',
-    brandName: null,
-    company: 'Aldeyra Therapeutics',
-    indication: 'Dry Eye Disease',
-    pdufaDate: '2026-03-16',
-    submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'RASP inhibitor'
-  },
+  // REMOVED: reproxalap — received 3rd CRL (rejected) on Mar 17, 2026
   {
     drug: 'linerixibat',
     brandName: null,
@@ -223,16 +281,7 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Gene therapy for rare immune disorder'
   },
-  {
-    drug: 'suzetrigine',
-    brandName: null,
-    company: 'Vertex Pharmaceuticals',
-    indication: 'Acute Pain',
-    pdufaDate: '2026-03-30',
-    submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'Non-opioid NaV1.8 inhibitor'
-  },
+  // suzetrigine (Journavx) removed — was approved Jan 30, 2025; incorrect PDUFA date
   // April 2026
   {
     drug: 'tividenofusp alfa',
@@ -279,7 +328,7 @@ const CURATED_CATALYSTS = [
     brandName: null,
     company: 'Eli Lilly',
     indication: 'Type 2 Diabetes',
-    pdufaDate: '2026-04-15',
+    pdufaDate: '2026-04-10',
     submissionType: 'NDA',
     status: 'Pending',
     notes: 'Oral GLP-1 receptor agonist'
@@ -294,16 +343,7 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Earlier line indication'
   },
-  {
-    drug: 'cagrilintide/semaglutide',
-    brandName: null,
-    company: 'Novo Nordisk',
-    indication: 'Obesity',
-    pdufaDate: '2026-04-30',
-    submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'Amylin analog + GLP-1'
-  },
+  // REMOVED: cagrilintide/semaglutide (CagriSema) — NDA filed Dec 2025, no PDUFA date announced yet
   {
     drug: 'dextromethorphan/bupropion',
     brandName: 'AXS-05',
@@ -346,16 +386,7 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Dexmethylphenidate with PTR technology; once-daily tablet'
   },
-  {
-    drug: 'talquetamab',
-    brandName: 'Talvey',
-    company: 'Johnson & Johnson',
-    indication: 'Multiple Myeloma',
-    pdufaDate: '2026-05-12',
-    submissionType: 'sBLA',
-    status: 'Pending',
-    notes: 'Earlier line indication'
-  },
+  // REMOVED: talquetamab (Talvey) — already approved Aug 2023; no new sBLA filing verified
   {
     drug: 'datopotamab deruxtecan',
     brandName: null,
@@ -377,16 +408,7 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Long-acting subcutaneous formulation'
   },
-  {
-    drug: 'resmetirom',
-    brandName: 'Rezdiffra',
-    company: 'Madrigal Pharmaceuticals',
-    indication: 'MASH with Fibrosis',
-    pdufaDate: '2026-06-14',
-    submissionType: 'sNDA',
-    status: 'Pending',
-    notes: 'F2/F3 fibrosis expansion'
-  },
+  // REMOVED: resmetirom (Rezdiffra) — already approved Mar 2024; no new sNDA filing verified
   {
     drug: 'nilotinib',
     brandName: 'XS003',
@@ -407,16 +429,7 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'First new smoking cessation drug in 20 years'
   },
-  {
-    drug: 'nemtabrutinib',
-    brandName: null,
-    company: 'Merck',
-    indication: 'Chronic Lymphocytic Leukemia',
-    pdufaDate: '2026-06-25',
-    submissionType: 'NDA',
-    status: 'Pending',
-    notes: 'Non-covalent BTK inhibitor'
-  },
+  // REMOVED: nemtabrutinib — still in Phase 3 trials (BELLWAVE-011); no NDA filed
   {
     drug: 'roflumilast cream',
     brandName: 'Zoryve',
@@ -1378,13 +1391,61 @@ async function getPDUFACatalysts(options = {}) {
   if (verbose) console.log('Loading PDUFA catalysts...');
 
   // Start with curated list
-  let allCatalysts = CURATED_CATALYSTS.map(c => ({ ...c, source: 'Curated' }));
+  let allCatalysts = [];
 
-  // Merge scraped results from scrape-pdufa.js output
+  // ── PRIMARY SOURCE: RTTNews FDA Calendar ──
+  // Most comprehensive automated source for near-term PDUFA dates (~6 months out)
+  // Drug names are normalized from brand → generic using BRAND_TO_GENERIC mapping
+  const RTTNEWS_FILE = path.join(DATA_DIR, 'rttnews-catalysts.json');
+  try {
+    if (fs.existsSync(RTTNEWS_FILE)) {
+      const rttData = JSON.parse(fs.readFileSync(RTTNEWS_FILE, 'utf-8'));
+      const existingDrugs = new Set();
+
+      for (const entry of rttData.entries || []) {
+        if (!entry.pdufaDate || entry.status === 'Approved' || entry.status === 'Rejected') continue;
+
+        const genericName = normalizeDrugName(entry.drug);
+        const key = genericName.toLowerCase();
+        if (existingDrugs.has(key)) continue;
+        existingDrugs.add(key);
+
+        allCatalysts.push({
+          drug: genericName,
+          brandName: genericName !== entry.drug ? entry.drug : null,
+          company: entry.company,
+          indication: entry.indication || null,
+          pdufaDate: entry.pdufaDate,
+          submissionType: entry.submissionType || 'NDA',
+          status: 'Pending',
+          source: 'RTTNews',
+          notes: entry.notes || null
+        });
+      }
+      if (verbose) console.log(`  Loaded ${allCatalysts.length} catalysts from RTTNews`);
+    }
+  } catch (err) {
+    if (verbose) console.log(`  Warning: Could not load RTTNews data: ${err.message}`);
+  }
+
+  // ── SECONDARY SOURCE: Curated list (fills gaps beyond RTTNews ~6-month horizon) ──
+  // Only adds entries whose generic name isn't already covered by RTTNews
+  const existingDrugsAfterRTT = new Set(allCatalysts.map(c => c.drug.toLowerCase()));
+  for (const c of CURATED_CATALYSTS) {
+    const genericName = normalizeDrugName(c.drug).toLowerCase();
+    if (!existingDrugsAfterRTT.has(genericName) && !existingDrugsAfterRTT.has(c.drug.toLowerCase())) {
+      allCatalysts.push({ ...c, source: c.source || 'Curated' });
+      existingDrugsAfterRTT.add(genericName);
+      existingDrugsAfterRTT.add(c.drug.toLowerCase());
+    }
+  }
+  if (verbose) console.log(`  Total after curated merge: ${allCatalysts.length}`);
+
+  // ── TERTIARY SOURCE: Wire service scraper results ──
   try {
     if (fs.existsSync(SCRAPED_RESULTS_FILE)) {
       const scrapedData = JSON.parse(fs.readFileSync(SCRAPED_RESULTS_FILE, 'utf-8'));
-      const existingDrugs = new Set(allCatalysts.map(c => c.drug.toLowerCase()));
+      const existingDrugs = existingDrugsAfterRTT;
 
       // Add PDUFA dates from scraped results
       if (scrapedData.pdufa && Array.isArray(scrapedData.pdufa)) {

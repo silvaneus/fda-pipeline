@@ -15,6 +15,7 @@
 
 const path = require('path');
 const { generateIntegratedReport } = require('./generate-integrated-report');
+const { main: scrapeRTTNews } = require('./scrape-rttnews');
 
 async function runPipeline(options = {}) {
   const startTime = Date.now();
@@ -24,6 +25,15 @@ async function runPipeline(options = {}) {
   console.log('╚════════════════════════════════════════════════════════════╝\n');
 
   try {
+    // Scrape RTTNews FDA Calendar first (primary PDUFA source)
+    console.log('── Scraping RTTNews FDA Calendar ──');
+    try {
+      await scrapeRTTNews();
+    } catch (err) {
+      console.log(`  Warning: RTTNews scrape failed (${err.message}), using cached data`);
+    }
+    console.log('');
+
     const result = await generateIntegratedReport(options);
 
     // Summary
