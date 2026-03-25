@@ -22,7 +22,8 @@ const OUTPUT_FILE = path.join(DATA_DIR, 'rttnews-catalysts.json');
  */
 function fetchPage(pageNum) {
   return new Promise((resolve, reject) => {
-    const pagePath = '/corpinfo/fdacalendar.aspx' + (pageNum > 1 ? '?PageNum=' + pageNum : '');
+    // Always use explicit PageNum — the default page shows old entries, not page 1
+    const pagePath = '/corpinfo/fdacalendar.aspx?PageNum=' + pageNum;
     const options = {
       hostname: 'www.rttnews.com',
       path: pagePath,
@@ -44,7 +45,8 @@ function fetchPage(pageNum) {
  * Parse FDA calendar rows from HTML
  */
 function parseRows(body) {
-  const rows = body.match(/<div class="grid-row border-bottom[\s\S]*?(?=<div class="grid-row border-bottom|<div class="paging|<\/form)/g) || [];
+  // Split on grid-row boundaries — use lookahead to keep all rows including last
+  const rows = body.match(/<div class="grid-row border-bottom[\s\S]*?(?=<div class="grid-row border-bottom|<div class="paging|<div class="footer|<\/form>)/g) || [];
 
   return rows.map(row => {
     // Company name
@@ -64,17 +66,24 @@ function parseRows(body) {
     const drug = drugParts ? drugParts[1].trim() : drugRaw;
     const submissionType = drugParts ? drugParts[2].trim() : '';
 
-    // PDUFA date
-    const dateMatch = row.match(/<span[^>]*>(\d{2}\/\d{2}\/\d{4})<\/span>/);
-    const dateStr = dateMatch ? dateMatch[1] : '';
+    // PDUFA date — exact (MM/DD/YYYY) or quarterly (Q1-Q4 YYYY)
     let pdufaDate = '';
-    if (dateStr) {
-      const [m, d, y] = dateStr.split('/');
+    let isQuarterlyEstimate = false;
+    const exactDateMatch = row.match(/<span[^>]*>(\d{2}\/\d{2}\/\d{4})<\/span>/);
+    const quarterMatch = row.match(/<span[^>]*>\s*(Q[1-4])\s+(\d{4})\s*<\/span>/);
+
+    if (exactDateMatch) {
+      const [m, d, y] = exactDateMatch[1].split('/');
       pdufaDate = `${y}-${m}-${d}`;
+    } else if (quarterMatch) {
+      // Use last day of quarter as estimated date
+      const quarterEnd = { 'Q1': '03-31', 'Q2': '06-30', 'Q3': '09-30', 'Q4': '12-31' };
+      pdufaDate = `${quarterMatch[2]}-${quarterEnd[quarterMatch[1]]}`;
+      isQuarterlyEstimate = true;
     }
 
-    // Event description
-    const eventMatch = row.match(/<span[^>]*>\d{2}\/\d{2}\/\d{4}<\/span>\s*<br \/>\s*([\s\S]*?)<\/div>/);
+    // Event description — match after either exact date or quarterly date
+    const eventMatch = row.match(/<span[^>]*>(?:\d{2}\/\d{2}\/\d{4}|Q[1-4]\s+\d{4})<\/span>\s*<br \/>\s*([\s\S]*?)<\/div>/);
     const indication = eventMatch
       ? eventMatch[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim()
       : '';
@@ -90,7 +99,8 @@ function parseRows(body) {
 
     // Drug status notes (hidden fields)
     const drugStatusMatch = row.match(/hdnDrugStatus"[^>]*value="([^"]*)"/);
-    const notes = drugStatusMatch ? drugStatusMatch[1].replace(/\s+/g, ' ').trim() : '';
+    let notes = drugStatusMatch ? drugStatusMatch[1].replace(/\s+/g, ' ').trim() : '';
+    if (isQuarterlyEstimate) notes = (notes ? notes + '; ' : '') + 'PDUFA date is quarterly estimate (exact date TBD)';
 
     return {
       company,
@@ -98,6 +108,7 @@ function parseRows(body) {
       drug,
       submissionType,
       pdufaDate,
+      isQuarterlyEstimate,
       indication,
       status,
       notes,

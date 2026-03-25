@@ -72,6 +72,8 @@ const BRAND_TO_GENERIC = {
   'leniolisib': 'leniolisib',
   // LNTH-2501 is a diagnostic, not a drug catalyst — keep as-is
   'lnth-2501 (ga 68 edotreotide), a pet diagnostic imaging kit': '68Ga-edotreotide PET kit',
+  'hympavzi': 'fitusiran',
+  'oveporexton (tak-861)': 'oveporexton',
 };
 
 /**
