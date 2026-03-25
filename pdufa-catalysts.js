@@ -34,6 +34,37 @@ const CURATED_CATALYSTS = [
     status: 'Approved',
     notes: 'Selective cortisol modulator; FDA approved March 25, 2026'
   },
+  // Newly added — previously missed
+  {
+    drug: 'trastuzumab deruxtecan',
+    brandName: 'ENHERTU',
+    company: 'AstraZeneca/Daiichi Sankyo',
+    indication: 'Neoadjuvant HER2-positive Breast Cancer',
+    pdufaDate: '2026-07-07',
+    submissionType: 'sBLA',
+    status: 'Pending',
+    notes: 'ADC; sBLA for neoadjuvant use'
+  },
+  {
+    drug: 'bezuclastinib',
+    brandName: null,
+    company: 'Cogent Biosciences',
+    indication: 'Systemic Mastocytosis',
+    pdufaDate: '2026-12-30',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'KIT inhibitor for non-advanced systemic mastocytosis'
+  },
+  {
+    drug: 'rusfertide',
+    brandName: null,
+    company: 'Protagonist Therapeutics',
+    indication: 'Polycythemia Vera',
+    pdufaDate: '2026-09-30',
+    submissionType: 'NDA',
+    status: 'Pending',
+    notes: 'Hepcidin mimetic; PDUFA date is quarterly estimate (Q3 2026, exact date TBD)'
+  },
   // Submitted - Awaiting FDA Acceptance (PDUFA TBD)
   {
     drug: 'lorundrostat',

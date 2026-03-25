@@ -128,11 +128,18 @@ const SPECIFIC_SEARCHES = [
   { term: 'Travere Therapeutics FDA', eventType: 'pdufa' },
   { term: 'Unicycive Therapeutics FDA', eventType: 'pdufa' },
   { term: 'Vera Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Cogent Biosciences FDA', eventType: 'pdufa' },
+  { term: 'Protagonist Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Minerva Neurosciences FDA', eventType: 'pdufa' },
   // ── Specific drugs of interest ──
   { term: 'lorundrostat FDA', eventType: 'submissions' },
   { term: 'relacorilant FDA', eventType: 'pdufa' },
   { term: 'iberdomide FDA', eventType: 'pdufa' },
   { term: 'mRNA-1010 FDA', eventType: 'pdufa' },
+  { term: 'Enhertu PDUFA', eventType: 'pdufa' },
+  { term: 'trastuzumab deruxtecan FDA', eventType: 'pdufa' },
+  { term: 'bezuclastinib FDA', eventType: 'pdufa' },
+  { term: 'rusfertide FDA', eventType: 'pdufa' },
 ];
 
 // Patterns
@@ -141,6 +148,16 @@ const PDUFA_DATE_PATTERNS = [
   /target\s+(?:action\s+)?date\s+(?:of\s+|is\s+)?(\w+\s+\d{1,2},?\s+\d{4})/gi,
   /(?:FDA\s+)?decision\s+(?:expected\s+)?by\s+(\w+\s+\d{1,2},?\s+\d{4})/gi,
   /(?:action|goal)\s+date\s+of\s+(\w+\s+\d{1,2},?\s+\d{4})/gi
+];
+
+// Quarterly PDUFA patterns — e.g., "PDUFA date in Q3 2026", "target action date in the third quarter of 2026"
+const PDUFA_QUARTER_PATTERNS = [
+  /PDUFA\s+(?:target\s+)?(?:action\s+)?(?:goal\s+)?date\s+(?:of|in|is)\s+(?:the\s+)?(Q[1-4])\s+(\d{4})/gi,
+  /PDUFA\s+(?:target\s+)?(?:action\s+)?(?:goal\s+)?date\s+(?:of|in|is)\s+(?:the\s+)?(first|second|third|fourth)\s+quarter\s+(?:of\s+)?(\d{4})/gi,
+  /target\s+(?:action\s+)?date\s+(?:of|in)\s+(?:the\s+)?(Q[1-4])\s+(\d{4})/gi,
+  /target\s+(?:action\s+)?date\s+(?:of|in)\s+(?:the\s+)?(first|second|third|fourth)\s+quarter\s+(?:of\s+)?(\d{4})/gi,
+  /(?:FDA\s+)?decision\s+(?:expected|anticipated)\s+(?:in|by)\s+(?:the\s+)?(Q[1-4])\s+(\d{4})/gi,
+  /(?:FDA\s+)?decision\s+(?:expected|anticipated)\s+(?:in|by)\s+(?:the\s+)?(first|second|third|fourth)\s+quarter\s+(?:of\s+)?(\d{4})/gi,
 ];
 
 const SUBMISSION_PATTERNS = [
@@ -226,7 +243,15 @@ const KNOWN_DRUGS = {
   'centanafadine': { drug: 'centanafadine', brandName: null },
   'otsuka': { drug: 'centanafadine', brandName: null },
   'relacorilant': { drug: 'relacorilant', brandName: null },
-  'corcept': { drug: 'relacorilant', brandName: null }
+  'corcept': { drug: 'relacorilant', brandName: null },
+  'enhertu': { drug: 'trastuzumab deruxtecan', brandName: 'ENHERTU' },
+  'trastuzumab deruxtecan': { drug: 'trastuzumab deruxtecan', brandName: 'ENHERTU' },
+  't-dxd': { drug: 'trastuzumab deruxtecan', brandName: 'ENHERTU' },
+  'ds-8201': { drug: 'trastuzumab deruxtecan', brandName: 'ENHERTU' },
+  'bezuclastinib': { drug: 'bezuclastinib', brandName: null },
+  'cogent biosciences': { drug: 'bezuclastinib', brandName: null },
+  'rusfertide': { drug: 'rusfertide', brandName: null },
+  'protagonist': { drug: 'rusfertide', brandName: null }
 };
 
 // Comprehensive INN (International Nonproprietary Name) drug suffixes
@@ -726,12 +751,14 @@ function extractDrug(textContent, title) {
   }
 
   // 5. Generic drug suffixes - comprehensive INN (International Nonproprietary Name) stems
-  // No /i flag — drug generics are lowercase; prevents matching fragments of capitalized English words
-  const genericMatch = textContent.match(new RegExp(
-    '(?:^|\\s)([a-z]{3,}(?:' + DRUG_SUFFIXES.join('|') + '))(?:\\s|$|[,;.)])'
+  // Match against lowercased text to catch title-case drug names (e.g., "Bezuclastinib")
+  // Use word boundaries via whitespace/punctuation to avoid matching inside English words
+  const lowerText = textContent.toLowerCase();
+  const genericMatch = lowerText.match(new RegExp(
+    '(?:^|[\\s(])([a-z]{3,}(?:' + DRUG_SUFFIXES.join('|') + '))(?:[\\s,;.):]|$)'
   ));
   if (genericMatch && !SKIP_WORDS.has(genericMatch[1].toUpperCase())) {
-    return { drugName: genericMatch[1].toLowerCase(), brandName: null };
+    return { drugName: genericMatch[1], brandName: null };
   }
 
   // 6. Look in title for all-caps product name (brand names are often all caps)
@@ -807,6 +834,22 @@ function parseDate(dateStr) {
 }
 
 /**
+ * Parse a quarterly date reference (e.g., "Q3 2026" or "third quarter 2026")
+ * Returns the last day of the quarter as the estimated PDUFA date
+ */
+function parseQuarterDate(quarter, year) {
+  const quarterMap = {
+    'Q1': '03-31', 'first': '03-31',
+    'Q2': '06-30', 'second': '06-30',
+    'Q3': '09-30', 'third': '09-30',
+    'Q4': '12-31', 'fourth': '12-31',
+  };
+  const suffix = quarterMap[quarter];
+  if (!suffix || !year) return null;
+  return `${year}-${suffix}`;
+}
+
+/**
  * Extract release date from URL
  */
 function extractReleaseDate(url) {
@@ -846,12 +889,27 @@ async function parseRelease(release, options = {}) {
 
     // Extract PDUFA date if present
     let pdufaDate = null;
+    let isQuarterlyEstimate = false;
     for (const pattern of PDUFA_DATE_PATTERNS) {
       pattern.lastIndex = 0;
       const match = pattern.exec(textContent);
       if (match && match[1]) {
         pdufaDate = parseDate(match[1]);
         if (pdufaDate) break;
+      }
+    }
+    // Fall back to quarterly PDUFA patterns (e.g., "Q3 2026", "third quarter of 2026")
+    if (!pdufaDate) {
+      for (const pattern of PDUFA_QUARTER_PATTERNS) {
+        pattern.lastIndex = 0;
+        const match = pattern.exec(textContent);
+        if (match && match[1] && match[2]) {
+          pdufaDate = parseQuarterDate(match[1], match[2]);
+          if (pdufaDate) {
+            isQuarterlyEstimate = true;
+            break;
+          }
+        }
       }
     }
 
@@ -891,6 +949,9 @@ async function parseRelease(release, options = {}) {
 
     if (pdufaDate) {
       result.pdufaDate = pdufaDate;
+      if (isQuarterlyEstimate) {
+        result.notes = (result.notes || '') + 'PDUFA date is quarterly estimate (exact date TBD)';
+      }
     }
 
     if (eventType === 'submission') {
