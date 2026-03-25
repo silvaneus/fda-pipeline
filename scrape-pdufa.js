@@ -60,14 +60,79 @@ const SEARCH_TERMS = {
 };
 
 // Additional company/drug-specific search terms
+// Covers major pharma, mid-cap biotech with active late-stage pipelines,
+// and specific drugs of interest
 const SPECIFIC_SEARCHES = [
-  { term: 'Moderna flu vaccine FDA', eventType: 'pdufa' },
-  { term: 'mRNA-1010 FDA', eventType: 'pdufa' },
-  { term: 'iberdomide FDA', eventType: 'pdufa' },
+  // ── Big Pharma (active NDA/BLA filers) ──
+  { term: 'Pfizer FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Merck FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Eli Lilly FDA submission', eventType: 'submissions' },
+  { term: 'Novo Nordisk FDA submission', eventType: 'submissions' },
+  { term: 'AstraZeneca FDA PDUFA', eventType: 'pdufa' },
   { term: 'Bristol-Myers Squibb FDA submission', eventType: 'submissions' },
-  { term: 'Celgene FDA submission', eventType: 'submissions' },
+  { term: 'Johnson Johnson FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Roche FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Sanofi FDA submission', eventType: 'submissions' },
+  { term: 'AbbVie FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Amgen FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Gilead Sciences FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Regeneron FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Takeda FDA submission', eventType: 'submissions' },
+  { term: 'Biogen FDA submission', eventType: 'submissions' },
+  { term: 'GSK FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Bayer FDA PDUFA', eventType: 'pdufa' },
+  { term: 'Novartis FDA PDUFA', eventType: 'pdufa' },
+  // ── Mid-cap biotech with late-stage pipelines ──
+  { term: 'Vertex Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'BioMarin FDA', eventType: 'pdufa' },
+  { term: 'Alnylam FDA', eventType: 'pdufa' },
+  { term: 'Argenx FDA', eventType: 'pdufa' },
+  { term: 'Blueprint Medicines FDA', eventType: 'pdufa' },
+  { term: 'Corcept Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Daiichi Sankyo FDA', eventType: 'pdufa' },
+  { term: 'Exact Sciences FDA', eventType: 'pdufa' },
+  { term: 'Halozyme FDA', eventType: 'pdufa' },
+  { term: 'Incyte FDA', eventType: 'pdufa' },
+  { term: 'Ionis Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'Jazz Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'Karuna Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Legend Biotech FDA', eventType: 'pdufa' },
+  { term: 'Madrigal Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'Neurocrine Biosciences FDA', eventType: 'pdufa' },
+  { term: 'Rocket Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'Sarepta Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Seagen FDA', eventType: 'pdufa' },
+  { term: 'SpringWorks Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Ultragenyx FDA', eventType: 'pdufa' },
+  { term: 'Viridian Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Xenon Pharmaceuticals FDA', eventType: 'pdufa' },
+  // ── Smaller biotech with known upcoming catalysts ──
+  { term: 'Axsome Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Celcuity FDA', eventType: 'pdufa' },
+  { term: 'Mineralys FDA', eventType: 'submissions' },
+  { term: 'Nuvalent FDA', eventType: 'pdufa' },
+  { term: 'Summit Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Veru FDA', eventType: 'pdufa' },
+  { term: 'Achieve Life Sciences FDA', eventType: 'pdufa' },
+  { term: 'Aldeyra Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Ascendis Pharma FDA', eventType: 'pdufa' },
+  { term: 'Capricor Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Deciphera Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'Geron Corporation FDA', eventType: 'pdufa' },
+  { term: 'HUTCHMED FDA', eventType: 'pdufa' },
+  { term: 'Inovio Pharmaceuticals FDA', eventType: 'pdufa' },
+  { term: 'MannKind FDA', eventType: 'pdufa' },
+  { term: 'Moderna FDA', eventType: 'pdufa' },
+  { term: 'Orca Bio FDA', eventType: 'pdufa' },
+  { term: 'PharmaEssentia FDA', eventType: 'pdufa' },
+  { term: 'Travere Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Unicycive Therapeutics FDA', eventType: 'pdufa' },
+  { term: 'Vera Therapeutics FDA', eventType: 'pdufa' },
+  // ── Specific drugs of interest ──
   { term: 'lorundrostat FDA', eventType: 'submissions' },
-  { term: 'Mineralys FDA', eventType: 'submissions' }
+  { term: 'relacorilant FDA', eventType: 'pdufa' },
+  { term: 'iberdomide FDA', eventType: 'pdufa' },
+  { term: 'mRNA-1010 FDA', eventType: 'pdufa' },
 ];
 
 // Patterns
@@ -97,13 +162,20 @@ const SUBMITTED_PATTERNS = [
   /announc(?:ed|es)\s+(?:the\s+)?submission/i
 ];
 
-// Skip words for drug name extraction
+// Skip words for drug name extraction — checked case-insensitively
 const SKIP_WORDS = new Set([
   'FDA', 'NDA', 'BLA', 'PDUFA', 'US', 'USA', 'INC', 'LLC', 'CORP', 'THE', 'FOR', 'AND', 'NEW', 'DRUG', 'APPLICATION',
   'SUPPLEMENTAL', 'FIRST', 'ORAL', 'INJECTABLE', 'TREATMENT', 'PATIENTS', 'ADULTS', 'CHILDREN',
   'ANNOUNCES', 'RECEIVES', 'ACCEPTS', 'GRANTS', 'APPROVAL', 'APPROVED', 'FILING', 'FILED',
   'HYPERSENSITIVITY', 'REACTIONS', 'LABELING', 'CHANGES', 'COMPASSIONATE', 'USE', 'NEXT', 'GENERATION',
-  'BEST', 'WEIGHT', 'LOSS', 'PILLS', 'ALTERNATIVE', 'OPTIONS', 'PATCH', 'PATCHES'
+  'BEST', 'WEIGHT', 'LOSS', 'PILLS', 'ALTERNATIVE', 'OPTIONS', 'PATCH', 'PATCHES',
+  // Regulatory/procedural words that false-positive as drug names
+  'ACCEPTANCE', 'ADMINISTRATION', 'BIOLOGICS', 'LICENSE', 'SUBMISSION', 'SUBMITTED',
+  'DESIGNATION', 'BREAKTHROUGH', 'PRIORITY', 'REVIEW', 'EXEMPTION', 'NOTIFICATION',
+  'GOVERNANCE', 'COMPLIANCE', 'COUNSEL', 'REPORT', 'CLINICAL', 'STAGE', 'PHASE',
+  'TRIAL', 'STUDY', 'DATA', 'RESULTS', 'COMPANY', 'CORPORATION', 'THERAPEUTICS',
+  'PHARMACEUTICALS', 'BIOSCIENCES', 'SCIENCES', 'MEDICAL', 'HEALTH', 'VALVE',
+  'COMBINATION', 'MONOTHERAPY', 'INVESTIGATIONAL', 'PREMARKET', 'MARKETING'
 ]);
 
 // Known drug name mappings from title keywords
@@ -152,7 +224,9 @@ const KNOWN_DRUGS = {
   'dexmethylphenidate': { drug: 'CTx-1301', brandName: null },
   'roluperidone': { drug: 'roluperidone', brandName: null },
   'centanafadine': { drug: 'centanafadine', brandName: null },
-  'otsuka': { drug: 'centanafadine', brandName: null }
+  'otsuka': { drug: 'centanafadine', brandName: null },
+  'relacorilant': { drug: 'relacorilant', brandName: null },
+  'corcept': { drug: 'relacorilant', brandName: null }
 };
 
 // Comprehensive INN (International Nonproprietary Name) drug suffixes
@@ -204,6 +278,7 @@ const DRUG_SUFFIXES = [
   'relin',       // GnRH related
   'lutamide',    // antiandrogens
   'estrant',     // estrogen receptor modulators
+  'corilant',    // cortisol modulators (e.g., relacorilant)
   // Antidiabetics / GLP-1 / metabolic
   'gliptin',     // DPP-4 inhibitors
   'gliflozin',   // SGLT2 inhibitors
@@ -544,7 +619,30 @@ function extractText(body) {
     .replace(/&quot;/g, '"')
     .replace(/&#\d+;/g, '')
     .replace(/\s+/g, ' ')
+    // Rejoin words split by tag stripping (e.g., "<a>A</a>pplication" → "A pplication" → "Application")
+    .replace(/\b([A-Z])\s+([a-z])/g, '$1$2')
     .trim();
+}
+
+// Common English words/fragments that are NOT drug names — catches false positives from text extraction
+const FALSE_POSITIVE_DRUGS = new Set([
+  'pplication', 'dministration', 'xemption', 'otification', 'overnance',
+  'pproval', 'cienture', 'ksfcounsel', 'eport', 'alve', 'ombination',
+  'esignation', 'ubmission', 'cceptance', 'ompliance', 'cancel',
+]);
+
+function isValidDrugName(name) {
+  if (!name || name === 'Unknown') return false;
+  const lower = name.toLowerCase();
+  // Reject known false positives
+  if (FALSE_POSITIVE_DRUGS.has(lower)) return false;
+  // Reject if it's a common English word fragment (starts with lowercase, no vowels in first 3 chars suggests garbled)
+  if (SKIP_WORDS.has(name.toUpperCase())) return false;
+  // Reject very long "drug names" that are clearly sentence fragments
+  if (name.length > 60) return false;
+  // Reject names that start with common sentence patterns
+  if (/^(a |an |the |as |also |its |in |on |to |for |with |this |that )/i.test(name)) return false;
+  return true;
 }
 
 /**
@@ -615,7 +713,8 @@ function extractDrug(textContent, title) {
   }
 
   // 3. "accepts/approves DRUG" pattern - improved to skip generic words
-  const acceptsMatch = textContent.match(/(?:FDA\s+)?(?:accepts|approves|approval\s+of)\s+(?:a\s+|the\s+)?(?:supplemental\s+)?(?:biologics?\s+license\s+application|new\s+drug\s+application|s?BLA|s?NDA)?\s*(?:for\s+)?([A-Z][a-z][a-z0-9\-]+)/i);
+  // Note: case-insensitive on the verb portion, but capture group requires actual uppercase start
+  const acceptsMatch = textContent.match(/(?:FDA\s+)?(?:[Aa]ccepts|[Aa]pproves|[Aa]pproval\s+of)\s+(?:a\s+|the\s+)?(?:[Ss]upplemental\s+)?(?:[Bb]iologics?\s+[Ll]icense\s+[Aa]pplication|[Nn]ew\s+[Dd]rug\s+[Aa]pplication|s?BLA|s?NDA)?\s*(?:for\s+)?([A-Z][a-z][a-z0-9\-]+)/);
   if (acceptsMatch && !SKIP_WORDS.has(acceptsMatch[1].toUpperCase()) && acceptsMatch[1].length > 3) {
     return { drugName: acceptsMatch[1], brandName: null };
   }
@@ -627,10 +726,11 @@ function extractDrug(textContent, title) {
   }
 
   // 5. Generic drug suffixes - comprehensive INN (International Nonproprietary Name) stems
+  // No /i flag — drug generics are lowercase; prevents matching fragments of capitalized English words
   const genericMatch = textContent.match(new RegExp(
-    '\\b([a-z]{3,}(?:' + DRUG_SUFFIXES.join('|') + '))\\b', 'i'
+    '(?:^|\\s)([a-z]{3,}(?:' + DRUG_SUFFIXES.join('|') + '))(?:\\s|$|[,;.)])'
   ));
-  if (genericMatch) {
+  if (genericMatch && !SKIP_WORDS.has(genericMatch[1].toUpperCase())) {
     return { drugName: genericMatch[1].toLowerCase(), brandName: null };
   }
 
@@ -770,8 +870,8 @@ async function parseRelease(release, options = {}) {
       status = 'Submitted - Awaiting PDUFA';
     }
 
-    // Skip if drug name couldn't be extracted
-    if (drugName === 'Unknown' && !brandName) {
+    // Skip if drug name couldn't be extracted or is a false positive
+    if ((drugName === 'Unknown' && !brandName) || !isValidDrugName(drugName)) {
       return null;
     }
 

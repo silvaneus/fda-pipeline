@@ -23,6 +23,17 @@ const APPROVAL_CACHE_FILE = path.join(__dirname, '.fda-approval-cache.json');
  * Sources: Company press releases, SEC filings, FDA announcements
  */
 const CURATED_CATALYSTS = [
+  // Recently Approved
+  {
+    drug: 'relacorilant',
+    brandName: null,
+    company: 'Corcept Therapeutics',
+    indication: "Cushing's Syndrome",
+    pdufaDate: '2026-03-25',
+    submissionType: 'NDA',
+    status: 'Approved',
+    notes: 'Selective cortisol modulator; FDA approved March 25, 2026'
+  },
   // Submitted - Awaiting FDA Acceptance (PDUFA TBD)
   {
     drug: 'lorundrostat',
