@@ -1297,6 +1297,50 @@ async function checkRecentFDAApproval(catalyst, verbose = false) {
 }
 
 /**
+ * Tier 3: Check Google News RSS for FDA approval announcements.
+ * Catches supplemental approvals (sNDA/sBLA) and biologics that don't appear
+ * on the FDA Novel Approvals page or in OpenFDA drugsfda.
+ */
+async function checkGoogleNewsApproval(catalyst, verbose = false) {
+  const { drug, brandName } = catalyst;
+  const searchTerms = [];
+  if (brandName) {
+    const clean = brandName.split(/[\(\+\/]/)[0].trim();
+    if (clean.length >= 3) searchTerms.push(clean);
+  }
+  if (drug) {
+    const clean = drug.split(/[\+\/]/)[0].trim();
+    if (clean.length >= 3) searchTerms.push(clean);
+  }
+
+  for (const term of searchTerms) {
+    try {
+      const query = encodeURIComponent(`FDA approves ${term}`);
+      const url = `https://news.google.com/rss/search?q=${query}&hl=en-US&gl=US&ceid=US:en`;
+      const xml = await fetchPage(url);
+      const items = xml.match(/<item>[\s\S]*?<\/item>/gi) || [];
+
+      // Check recent items (within last 60 days) for approval language
+      for (const item of items.slice(0, 10)) {
+        const title = ((item.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || '').toLowerCase();
+        const pubDate = (item.match(/<pubDate>([\s\S]*?)<\/pubDate>/i) || [])[1] || '';
+        const itemDate = pubDate ? new Date(pubDate) : null;
+        const daysSince = itemDate ? (Date.now() - itemDate.getTime()) / 86400000 : 999;
+
+        if (daysSince <= 60 && /fda\s+approv/i.test(title) && title.includes(term.toLowerCase())) {
+          if (verbose) console.log(`    ✓ ${drug}: found Google News approval — "${title.slice(0, 80)}"`);
+          return true;
+        }
+      }
+    } catch (e) {
+      // Google News may block — fail silently
+    }
+    await new Promise(r => setTimeout(r, 300));
+  }
+  return false;
+}
+
+/**
  * Filter out past-PDUFA catalysts that have been confirmed approved by FDA.
  * Uses a two-tier approach:
  *   1. Fast: Scrape FDA.gov novel approvals page + RSS feed (same-day data)
@@ -1357,6 +1401,14 @@ async function filterApprovedCatalysts(catalysts, verbose = false) {
         removedCount++;
         continue;
       }
+
+      // Tier 3: Check Google News for approval announcements (catches sNDA/sBLA/biologics)
+      const newsApproved = await checkGoogleNewsApproval(catalyst, verbose);
+      if (newsApproved) {
+        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — confirmed by Google News`);
+        removedCount++;
+        continue;
+      }
     }
 
     results.push(catalyst);
@@ -1405,12 +1457,18 @@ async function getPDUFACatalysts(options = {}) {
       const existingDrugs = new Set();
 
       for (const entry of rttData.entries || []) {
-        if (!entry.pdufaDate || entry.status === 'Approved' || entry.status === 'Rejected') continue;
+        if (!entry.pdufaDate) continue;
 
         const genericName = normalizeDrugName(entry.drug);
         const key = genericName.toLowerCase();
         if (existingDrugs.has(key)) continue;
         existingDrugs.add(key);
+
+        // Preserve RTTNews status (Approved/Rejected) so filterApprovedCatalysts can remove them
+        const rttStatus = (entry.status || 'pending').toLowerCase();
+        const status = (rttStatus === 'approved') ? 'Approved'
+          : (rttStatus === 'rejected') ? 'Rejected'
+          : 'Pending';
 
         allCatalysts.push({
           drug: genericName,
@@ -1419,7 +1477,7 @@ async function getPDUFACatalysts(options = {}) {
           indication: entry.indication || null,
           pdufaDate: entry.pdufaDate,
           submissionType: entry.submissionType || 'NDA',
-          status: 'Pending',
+          status,
           source: 'RTTNews',
           notes: entry.notes || null
         });
