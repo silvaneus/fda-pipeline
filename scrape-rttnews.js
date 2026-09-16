@@ -169,6 +169,25 @@ async function main() {
     console.log(`  ${e.pdufaDate}  ${e.company.slice(0, 28).padEnd(29)} ${e.drug.padEnd(25)} ${e.submissionType.padEnd(6)}${status}`);
   }
 
+  // This is the pipeline's only source for what is *coming up*, so a silent
+  // partial scrape — a layout change, a throttled page — would quietly shrink
+  // the calendar with no error. Compare against the last good run and refuse to
+  // overwrite it with a sharply smaller one.
+  const STATE_DIR = path.join(__dirname, 'state');
+  const HEALTH_FILE = path.join(STATE_DIR, 'rttnews-health.json');
+  let previous = null;
+  try { previous = JSON.parse(fs.readFileSync(HEALTH_FILE, 'utf8')); } catch { /* first run */ }
+
+  if (previous && previous.totalEntries >= 10 && unique.length < previous.totalEntries * 0.6) {
+    console.log(
+      `\n  WARNING: RTTNews returned ${unique.length} entries, down from ${previous.totalEntries} ` +
+      `on ${String(previous.scrapedAt).slice(0, 10)} — a drop that large usually means the page ` +
+      `changed or was throttled, not that the calendar emptied.`
+    );
+    console.log('  Keeping the previous data rather than overwriting it. Check the scraper.');
+    return null;
+  }
+
   // Save to JSON
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   const output = {
@@ -179,6 +198,18 @@ async function main() {
   };
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(output, null, 2));
   console.log(`\nSaved: ${OUTPUT_FILE}`);
+
+  try {
+    fs.mkdirSync(STATE_DIR, { recursive: true });
+    fs.writeFileSync(HEALTH_FILE, JSON.stringify({
+      scrapedAt: output.scrapedAt,
+      totalEntries: unique.length,
+      pending: pending.length,
+      decided: decided.length
+    }, null, 1));
+  } catch (e) {
+    console.log(`  Warning: could not record scrape health: ${e.message}`);
+  }
 
   return unique;
 }

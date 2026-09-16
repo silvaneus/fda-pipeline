@@ -2,3 +2,6 @@ node_modules/
 data/*.json
 data/*.txt
 .DS_Store
+
+# state/ is intentionally tracked: the rolling news window and the CBER
+# snapshot only work if they survive between nightly runs.
