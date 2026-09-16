@@ -101,7 +101,19 @@ function generateTrialStats(trials) {
   return { total: trials.length, byArea, topSponsors, timeline, byApprovalType };
 }
 
-function generateHTML(trials, trialStats, catalysts, catalystStats) {
+function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcomes = []) {
+  // A resubmission is the same application type coming back around, so folding
+  // it into its parent keeps the donut to six readable slices instead of twelve
+  // in near-identical colour pairs.
+  const submissionFolded = {};
+  for (const [rawType, n] of Object.entries(catalystStats.bySubmissionType || {})) {
+    const key = String(rawType).replace(/^\s*re-?submitted\s+/i, '').trim().toUpperCase() || 'OTHER';
+    submissionFolded[key] = (submissionFolded[key] || 0) + n;
+  }
+  const submissionSorted = Object.entries(submissionFolded).sort((a, b) => b[1] - a[1]);
+  const submissionLabels = submissionSorted.map(e => e[0]);
+  const submissionCounts = submissionSorted.map(e => e[1]);
+
   const successRates = getAllSuccessRates();
   const areas = getAllTherapeuticAreas();
   const timelineLabels = Object.keys(trialStats.timeline).sort();
@@ -162,8 +174,12 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
     .tab-content { display: none; }
     .tab-content.active { display: block; }
     .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 15px; margin-bottom: 30px; }
-    .summary-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    /* Column layout so a two-line heading doesn't push its number out of line
+       with the rest of the row. */
+    .summary-card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                    display: flex; flex-direction: column; }
     .summary-card h3 { margin: 0 0 10px 0; color: #666; font-size: 0.85em; text-transform: uppercase; }
+    .summary-card .value { margin-top: auto; }
     .summary-card .value { font-size: 1.8em; font-weight: bold; color: #2563eb; }
     .summary-card .subtext { color: #888; font-size: 0.85em; margin-top: 5px; }
     .summary-card.highlight .value { color: #7c3aed; }
@@ -218,6 +234,14 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
     .badge-purple { background: #f3e8ff; color: #7c3aed; }
     .badge-cyan { background: #cffafe; color: #0891b2; }
     .badge-gray { background: #f3f4f6; color: #6b7280; }
+    /* An unconfirmed verdict must not look like a confirmed one. */
+    .badge-unconfirmed { background: #fff; color: #92400e; border: 1px dashed #d97706; }
+    .certainty { display: block; margin-top: 4px; font-size: 0.72em; letter-spacing: .02em;
+                 text-transform: uppercase; color: #92400e; font-weight: 600; }
+    .flag { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.85em;
+            font-weight: 600; background: #fef3c7; color: #92400e; border: 1px solid #fcd34d;
+            cursor: help; white-space: nowrap; }
+    .flag-note { display: block; margin-top: 4px; font-size: 0.78em; color: #92400e; line-height: 1.35; }
     .truncate { max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .drug-name { font-weight: 600; color: #1e40af; }
     .sponsors-list { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px; }
@@ -245,8 +269,9 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
       <div class="summary-card"><h3>Active Trials</h3><div class="value">${trialStats.total.toLocaleString()}</div><div class="subtext">Phase 3 & Phase 2/3</div></div>
       <div class="summary-card highlight"><h3>New Drug Candidates</h3><div class="value">${(trialStats.byApprovalType['New Approval'] || 0).toLocaleString()}</div><div class="subtext">Novel therapies</div></div>
       <div class="summary-card"><h3>Line Extensions</h3><div class="value">${(trialStats.byApprovalType['Supplemental'] || 0).toLocaleString()}</div><div class="subtext">New indications</div></div>
-      <div class="summary-card warning"><h3>PDUFA Catalysts</h3><div class="value">${catalystStats.total}</div><div class="subtext">FDA decisions tracked</div></div>
-      <div class="summary-card success"><h3>Imminent (30d)</h3><div class="value">${catalystStats.imminent}</div><div class="subtext">Near-term decisions</div></div>
+      <div class="summary-card"><h3>PDUFA Catalysts</h3><div class="value">${catalystStats.total}</div><div class="subtext">FDA decisions tracked</div></div>
+      <div class="summary-card warning"><h3>Imminent (30d)</h3><div class="value">${catalystStats.imminent}</div><div class="subtext">Decisions due soon</div></div>
+      <div class="summary-card success"><h3>Decided (30d)</h3><div class="value">${recentOutcomes.length}</div><div class="subtext">${recentOutcomes.filter(o => o.outcome === 'Approved').length} approved &middot; ${recentOutcomes.filter(o => o.outcome === 'CRL').length} CRL</div></div>
       <div class="summary-card"><h3>Therapeutic Areas</h3><div class="value">${Object.keys(trialStats.byArea).length}</div><div class="subtext">Disease categories</div></div>
     </div>
 
@@ -393,6 +418,45 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
         </div>
       </div>
 
+      ${recentOutcomes.length ? `
+      <div class="table-container" style="margin-top:18px">
+        <div class="table-header">
+          <h3>Recently decided</h3>
+          <span class="result-count">${recentOutcomes.length} in the last 30 days</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr>
+              <th>Drug</th><th>Company</th><th>PDUFA</th><th>Outcome</th>
+              <th>Decided</th><th>Evidence</th><th>Source</th>
+            </tr></thead>
+            <tbody>
+            ${recentOutcomes.map(o => `<tr>
+              <td class="drug-name">${escapeHtml(o.drug)}${o.brandName ? ' <span style="color:#666;font-weight:normal">(' + escapeHtml(o.brandName) + ')</span>' : ''}${o.ambiguous ? '<span class="flag-note">' + escapeHtml(o.ambiguous) + '</span>' : o.note ? '<span class="flag-note">' + escapeHtml(o.note) + '</span>' : ''}</td>
+              <td class="truncate" title="${escapeHtml(o.company || '')}">${escapeHtml(o.company || '-')}</td>
+              <td>${o.pdufaDate || '-'}</td>
+              <td>${(() => {
+                const cert = o.certainty || 'resolved';
+                const label = escapeHtml(o.outcome || 'Unclear');
+                if (cert === 'resolved') {
+                  const cls = o.outcome === 'CRL' ? 'badge-danger' : o.outcome === 'Approved' ? 'badge-success' : o.outcome === 'No such action' ? 'badge-gray' : 'badge-warning';
+                  return `<span class="badge ${cls}">${label}</span>`;
+                }
+                // One source, or a weak one. Say so on the verdict itself rather
+                // than in an evidence cell that truncates.
+                const note = o.ambiguous ? 'which application?' : cert === 'likely' ? 'single source' : 'unconfirmed';
+                return `<span class="badge badge-unconfirmed" title="${escapeHtml(o.ambiguous || note)}">${label}?</span>` +
+                       `<span class="certainty">${note}</span>`;
+              })()}</td>
+              <td>${o.resolvedDate || '-'}</td>
+              <td class="truncate" title="${escapeHtml((o.evidence || []).map(e => e.source + ': ' + e.detail).join(' | '))}">${escapeHtml((o.evidence || []).map(e => e.source).join(' + '))}</td>
+              <td>${o.sourceUrl ? '<a href="' + escapeHtml(o.sourceUrl) + '" target="_blank" style="text-decoration:none">\u{1F517}</a>' : '-'}</td>
+            </tr>`).join('')}
+            </tbody>
+          </table>
+        </div>
+      </div>` : ''}
+
       <div class="info-box">
         <strong>Data Source:</strong> Curated PDUFA dates from company press releases, SEC filings, and FDA announcements.
         <br><em>This list is updated periodically. Cross-reference with company investor relations for the latest information.</em>
@@ -430,6 +494,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
   <script>
     const trials = ${JSON.stringify(trials)};
     const catalysts = ${JSON.stringify(catalysts)};
+    const recentOutcomes = ${JSON.stringify(recentOutcomes)};
     let trialSortCol = 'therapeuticArea', trialSortDir = 'asc';
     let catalystSortCol = 'daysUntilPDUFA', catalystSortDir = 'asc';
     const multiState = { areaFilter: [], approvalFilter: [], yearFilter: [], fdaYearFilter: [], catalystAreaFilter: [] };
@@ -540,6 +605,28 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
       filterTrials();
     }
 
+    // A search link is not a source. Show what kind of link it is so a Google
+    // fallback is never mistaken for a cited filing.
+    function sourceLink(c) {
+      if (!c.sourceUrl) return '-';
+      const kinds = {
+        news:   ['\u{1F4F0}', 'Trade press coverage'],
+        sec:    ['\u{1F4C4}', 'SEC 8-K filing'],
+        fda:    ['\u{1F3DB}', 'FDA record'],
+        search: ['\u{1F50E}', 'Search link \u2014 no source confirmed']
+      };
+      let k = c.sourceType;
+      if (!k) {
+        k = /sec\.gov/.test(c.sourceUrl) ? 'sec'
+          : /fda\.gov/.test(c.sourceUrl) ? 'fda'
+          : /google\./.test(c.sourceUrl) ? 'search' : 'news';
+      }
+      const [icon, label] = kinds[k] || kinds.news;
+      const dim = k === 'search' ? ';opacity:.45' : '';
+      return '<a href="' + escapeHtml(c.sourceUrl) + '" target="_blank" style="text-decoration:none' + dim +
+             '" title="' + escapeHtml(label + ' \u2014 ' + c.sourceUrl) + '">' + icon + '</a>';
+    }
+
     function renderCatalysts(data) {
       document.getElementById('catalystsBody').innerHTML = data.map(c => {
         const d = c.daysUntilPDUFA;
@@ -547,15 +634,15 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
         const dl = d===null?'TBD':d<0?\`\${Math.abs(d)}d ago\`:d===0?'Today':\`\${d}d\`;
         const sc = (c.status||'').toLowerCase()==='approved'?'badge-success':(c.status||'').toLowerCase()==='crl'?'badge-danger':'badge-warning';
         return \`<tr>
-          <td class="drug-name">\${escapeHtml(c.drug)}\${c.brandName ? ' <span style="color:#666;font-weight:normal">(' + escapeHtml(c.brandName) + ')</span>' : ''}</td>
+          <td class="drug-name">\${escapeHtml(c.drug)}\${c.brandName ? ' <span style="color:#666;font-weight:normal">(' + escapeHtml(c.brandName) + ')</span>' : ''}\${c.reviewNote ? '<span class="flag-note">'+escapeHtml(c.reviewNote)+'</span>' : ''}</td>
           <td class="truncate" title="\${escapeHtml(c.company)}">\${escapeHtml(c.company)}</td>
           <td>\${formatDate(c.pdufaDate)}</td>
           <td><span class="badge \${dc}">\${dl}</span></td>
-          <td><span class="badge \${sc}">\${c.status||'Pending'}</span></td>
+          <td><span class="badge \${sc}">\${c.status||'Pending'}</span>\${c.reviewNote ? '<span class="certainty">needs review</span>' : ''}</td>
           <td>\${c.submissionType?'<span class="badge badge-info">'+c.submissionType+'</span>':'-'}</td>
           <td>\${c.therapeuticArea?'<span class="badge badge-info">'+c.therapeuticArea+'</span>':'-'}</td>
           <td class="truncate" title="\${escapeHtml(c.indication)}">\${escapeHtml(c.indication)||'-'}</td>
-          <td>\${c.sourceUrl ? '<a href="'+escapeHtml(c.sourceUrl)+'" target="_blank" style="color:#2563eb;text-decoration:none" title="'+escapeHtml(c.sourceUrl)+'">🔗</a>' : '-'}</td>
+          <td>\${sourceLink(c)}</td>
         </tr>\`;
       }).join('');
       document.getElementById('catalystCount').textContent = data.length;
@@ -671,8 +758,8 @@ function generateHTML(trials, trialStats, catalysts, catalystStats) {
 
     new Chart(document.getElementById('catalystTypeChart'), {
       type: 'doughnut',
-      data: { labels: ${JSON.stringify(Object.keys(catalystStats.bySubmissionType))}, datasets: [{ data: ${JSON.stringify(Object.values(catalystStats.bySubmissionType))}, backgroundColor: ['#3b82f6','#8b5cf6','#06b6d4','#10b981','#f59e0b'] }] },
-      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } }
+      data: { labels: ${JSON.stringify(submissionLabels)}, datasets: [{ data: ${JSON.stringify(submissionCounts)}, backgroundColor: ['#2563eb','#7c3aed','#0891b2','#059669','#d97706','#be185d'], borderColor: '#fff', borderWidth: 2 }] },
+      options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' }, tooltip: { callbacks: { label: function(ctx) { return ctx.label + ': ' + ctx.parsed; } } } } }
     });
 
     filterTrials();
@@ -699,8 +786,21 @@ async function generateIntegratedReport(options = {}) {
   const catalysts = await getPDUFACatalysts({ forceRefresh, verbose });
   const catalystStats = getCatalystStats(catalysts);
 
+  // What came off the list recently, and on what evidence. Shown in the report
+  // so a removal is auditable rather than an entry quietly disappearing.
+  let recentOutcomes = [];
+  try {
+    const log = JSON.parse(fs.readFileSync(path.join(__dirname, 'state', 'outcomes.json'), 'utf8'));
+    const cutoff = new Date();
+    cutoff.setDate(cutoff.getDate() - 30);
+    const cutoffStr = cutoff.toISOString().slice(0, 10);
+    recentOutcomes = log
+      .filter(o => (o.recordedAt || '') >= cutoffStr)
+      .sort((a, b) => String(b.resolvedDate || b.recordedAt).localeCompare(String(a.resolvedDate || a.recordedAt)));
+  } catch { /* no log yet */ }
+
   if (verbose) console.log('Generating integrated report...');
-  const html = generateHTML(processedTrials, trialStats, catalysts, catalystStats);
+  const html = generateHTML(processedTrials, trialStats, catalysts, catalystStats, recentOutcomes);
 
   if (!fs.existsSync(REPORTS_DIR)) fs.mkdirSync(REPORTS_DIR, { recursive: true });
   fs.writeFileSync(outputPath, html);

@@ -1,0 +1,323 @@
+{
+ "products": [
+  {
+   "brandName": "ABECMA",
+   "genericName": "idecabtagene vicleucel",
+   "sponsor": "Celgene Corporation, a Bristol-Myers Squibb Company",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/abecma"
+  },
+  {
+   "brandName": "ADSTILADRIN",
+   "genericName": "nadofaragene firadenovec-vcng",
+   "sponsor": "Ferring Pharmaceuticals A/S",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/adstiladrin"
+  },
+  {
+   "brandName": "ALLOCORD",
+   "genericName": "HPC, Cord Blood",
+   "sponsor": "SSM Cardinal Glennon Children's Medical Center",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/allocord-hpc-cord-blood"
+  },
+  {
+   "brandName": "AMTAGVI",
+   "genericName": "lifileucel",
+   "sponsor": "Iovance Biotherapeutics, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/approved-blood-products/amtagvi"
+  },
+  {
+   "brandName": "TREGZI",
+   "genericName": "Allogeneic regulatory T cell immunotherapy with HSPC and T cells-vldq",
+   "sponsor": "Orca Biosystems Inc",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/tregzi"
+  },
+  {
+   "brandName": "AUCATZYL",
+   "genericName": "obecabtagene autoleucel",
+   "sponsor": "Autolus Limited",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/aucatzyl"
+  },
+  {
+   "brandName": "BEQVEZ",
+   "genericName": "fidanacogene elaparvovec-dzkt",
+   "sponsor": "Pfizer, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/beqvez"
+  },
+  {
+   "brandName": "BREYANZI",
+   "genericName": "lisocabtagene maraleucel",
+   "sponsor": "Juno Therapeutics, Inc., a Bristol-Myers Squibb Company",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/breyanzi"
+  },
+  {
+   "brandName": "CARVYKTI",
+   "genericName": "ciltacabtagene autoleucel",
+   "sponsor": "Janssen Biotech, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/carvykti"
+  },
+  {
+   "brandName": "CASGEVY",
+   "genericName": "exagamglogene autotemcel [exa-cel]",
+   "sponsor": "Vertex Pharmaceuticals Incorporated",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/casgevy"
+  },
+  {
+   "brandName": "CLEVECORD",
+   "genericName": "HPC Cord Blood",
+   "sponsor": "Cleveland Cord Blood Center",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/clevecord-hpc-cord-blood"
+  },
+  {
+   "brandName": "Ducord, HPC Cord Blood",
+   "genericName": "",
+   "sponsor": "Duke University School of Medicine",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/ducord"
+  },
+  {
+   "brandName": "ELEVIDYS",
+   "genericName": "delandistrogene moxeparvovec-rokl",
+   "sponsor": "Sarapeta Therapeutics, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/tissue-tissue-products/elevidys"
+  },
+  {
+   "brandName": "ENCELTO",
+   "genericName": "revakinagene taroretcel-lwey",
+   "sponsor": "Neurotech Pharmaceuticals, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/center-biologics-evaluation-and-research-cber-product-approval-information/encelto"
+  },
+  {
+   "brandName": "GENGLYCOS",
+   "genericName": "pariglasgene brecaparvovec-opnr",
+   "sponsor": "Ultragenyx Pharmaceutical Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/genglycos"
+  },
+  {
+   "brandName": "GINTUIT",
+   "genericName": "Allogeneic Cultured Keratinocytes and Fibroblasts in Bovine Collagen",
+   "sponsor": "Organogenesis Incorporated",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/gintuit-allogeneic-cultured-keratinocytes-and-fibroblasts-bovine-collagen"
+  },
+  {
+   "brandName": "HEMACORD",
+   "genericName": "HPC, cord blood",
+   "sponsor": "New York Blood Center",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/hemacord-hpc-cord-blood"
+  },
+  {
+   "brandName": "HEMGENIX",
+   "genericName": "etranacogene dezaparvovec-drlb",
+   "sponsor": "CSL Behring LLC",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/hemgenix"
+  },
+  {
+   "brandName": "HPC, Cord Blood",
+   "genericName": "",
+   "sponsor": "Clinimmune Labs, University of Colorado Cord Blood Bank",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/hpc-cord-blood"
+  },
+  {
+   "brandName": "HPC, Cord Blood - MD Anderson Cord Blood Bank",
+   "genericName": "",
+   "sponsor": "MD Anderson Cord Blood Bank",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/hpc-cord-blood-md-anderson-cord-blood-bank"
+  },
+  {
+   "brandName": "HPC, Cord Blood - LifeSouth",
+   "genericName": "",
+   "sponsor": "LifeSouth Community Blood Centers, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/hpc-cord-blood-lifesouth"
+  },
+  {
+   "brandName": "HPC, Cord Blood - Bloodworks",
+   "genericName": "",
+   "sponsor": "Bloodworks",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/hpc-cord-blood-bloodworks"
+  },
+  {
+   "brandName": "IMLYGIC",
+   "genericName": "talimogene laherparepvec",
+   "sponsor": "BioVex, Inc., a subsidiary of Amgen Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/imlygic"
+  },
+  {
+   "brandName": "ITVISMA",
+   "genericName": "onasemnogene abeparvovec-brve",
+   "sponsor": "Novartis Gene Therapies, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/itvisma"
+  },
+  {
+   "brandName": "KEBILIDI",
+   "genericName": "eladocagene exuparvovec-tneq",
+   "sponsor": "PTC Therapeutics",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/kebilidi"
+  },
+  {
+   "brandName": "KRESLADI",
+   "genericName": "marnetegragene autotemcel",
+   "sponsor": "Rocket Pharmaceuticals, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/kresladi"
+  },
+  {
+   "brandName": "KYMRIAH",
+   "genericName": "tisagenlecleucel",
+   "sponsor": "Novartis Pharmaceuticals Corporation",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/kymriah"
+  },
+  {
+   "brandName": "LANTIDRA",
+   "genericName": "donislecel",
+   "sponsor": "CellTrans Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/lantidra"
+  },
+  {
+   "brandName": "LAVIV",
+   "genericName": "Azficel-T",
+   "sponsor": "Fibrocell Technologies",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/laviv"
+  },
+  {
+   "brandName": "LENMELDY",
+   "genericName": "atidarsagene autotemcel",
+   "sponsor": "Orchard Therapeutics (Europe) Limited",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/lenmeldy"
+  },
+  {
+   "brandName": "LUXTURNA",
+   "genericName": "voretigene neparvovec-rzyl",
+   "sponsor": "Spark Therapeutics, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/luxturna"
+  },
+  {
+   "brandName": "LYFGENIA",
+   "genericName": "lovotibeglogene autotemcel [lovo-cel]",
+   "sponsor": "bluebird bio, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/lyfgenia"
+  },
+  {
+   "brandName": "MACI",
+   "genericName": "Autologous Cultured Chondrocytes on a Porcine Collagen Membrane",
+   "sponsor": "Vericel Corp.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/maci-autologous-cultured-chondrocytes-porcine-collagen-membrane"
+  },
+  {
+   "brandName": "OMISIRGE",
+   "genericName": "omidubicel-onlv",
+   "sponsor": "Gamida Cell Ltd.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/omisirge"
+  },
+  {
+   "brandName": "OTARMENI™",
+   "genericName": "lunsotogene parvec cwha",
+   "sponsor": "Regeneron Pharmaceuticals, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/otarmeni"
+  },
+  {
+   "brandName": "PAPZIMEOS",
+   "genericName": "zopapogene imadenovec-drba",
+   "sponsor": "Precigen, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/papzimeos"
+  },
+  {
+   "brandName": "PROVENGE",
+   "genericName": "sipuleucel-T",
+   "sponsor": "Dendreon Corp.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/provenge-sipuleucel-t"
+  },
+  {
+   "brandName": "REGENECYTE",
+   "genericName": "HPC, Cord Blood",
+   "sponsor": "StemCyte, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/regenecyte"
+  },
+  {
+   "brandName": "RETHYMIC",
+   "genericName": "allogeneic processed thymus tissue – agdc",
+   "sponsor": "Enzyvant Therapeutics GmbH",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/rethymic"
+  },
+  {
+   "brandName": "ROCTAVIAN",
+   "genericName": "valoctocogene roxaparvovec-rvox",
+   "sponsor": "BioMarin Pharmaceutical Inc",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/roctavian"
+  },
+  {
+   "brandName": "RYONCIL",
+   "genericName": "remestemcel-L-rknd",
+   "sponsor": "Mesoblast, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/ryoncil"
+  },
+  {
+   "brandName": "SYMVESS",
+   "genericName": "acellular tissue engineered vessel-tyod",
+   "sponsor": "Humacyte Global, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/symvess"
+  },
+  {
+   "brandName": "SKYSONA",
+   "genericName": "elivaldogene autotemcel",
+   "sponsor": "bluebird bio, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/skysona"
+  },
+  {
+   "brandName": "STRATAGRAFT",
+   "genericName": "allogeneic cultured keratinocytes and dermal fibroblasts in murine collagen-dsat",
+   "sponsor": "Stratatech Corporation",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/stratagraft"
+  },
+  {
+   "brandName": "TECARTUS",
+   "genericName": "brexucabtagene autoleucel",
+   "sponsor": "Kite Pharma, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/tecartus"
+  },
+  {
+   "brandName": "TECELRA",
+   "genericName": "afamitresgene autoleucel",
+   "sponsor": "Adaptimmune LLC",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/tecelra"
+  },
+  {
+   "brandName": "TUDRIQEV",
+   "genericName": "vusolimogene oderparepvec-wtpg",
+   "sponsor": "Replimune, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/tudriqev"
+  },
+  {
+   "brandName": "VYJUVEK",
+   "genericName": "beremagene geperpavec-svdt",
+   "sponsor": "Krystal Biotech, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/vyjuvek"
+  },
+  {
+   "brandName": "WASKYRA",
+   "genericName": "etuvetidigene autotemcel",
+   "sponsor": "Fondazione Telethon ETS",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/waskyra"
+  },
+  {
+   "brandName": "YESCARTA",
+   "genericName": "axicabtagene ciloleucel",
+   "sponsor": "Kite Pharma, Incorporated",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/yescarta"
+  },
+  {
+   "brandName": "ZEVASKYN",
+   "genericName": "prademagene zamikeracel",
+   "sponsor": "Abeona Therapeutics, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/zevaskyn"
+  },
+  {
+   "brandName": "ZYNTEGLO",
+   "genericName": "betibeglogene autotemcel",
+   "sponsor": "bluebird bio, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/zynteglo"
+  },
+  {
+   "brandName": "ZOLGENSMA",
+   "genericName": "onasemnogene abeparvovec-xioi",
+   "sponsor": "Novartis Gene Therapies, Inc.",
+   "url": "https://www.fda.gov/vaccines-blood-biologics/zolgensma"
+  }
+ ],
+ "updatedAt": "2026-09-16T20:32:18.117Z"
+}

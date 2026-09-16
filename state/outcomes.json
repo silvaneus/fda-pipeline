@@ -1,0 +1,975 @@
+[
+ {
+  "drug": "Sarclisa SC",
+  "brandName": null,
+  "company": "Sanofi SA",
+  "pdufaDate": "2026-07-23",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=Sarclisa%20SC%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=Sarclisa%20SC%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "furosemide",
+  "brandName": "FUROSCIX",
+  "company": "MannKind",
+  "pdufaDate": "2026-07-26",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-07-23",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209988Orig1s007correctedltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA209988 SUPPL7 approved 2026-07-23 as FUROSCIX",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/209988Orig1s007correctedltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Deramiocel",
+  "brandName": null,
+  "company": "Capricor Therapeutics, Inc.",
+  "pdufaDate": "2026-07-29",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1133869/000110465926057221/capr-20260507xex99d2.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1133869/000110465926057221/capr-20260507xex99d2.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "ONS-5010/LYTENAVA",
+  "brandName": null,
+  "company": "Outlook Therapeutics, Inc.",
+  "pdufaDate": "2026-07-29",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1649989/000110465923020751/tm236701d1_ex99-1.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1649989/000110465923020751/tm236701d1_ex99-1.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "RP1 (vusolimogene oderparepvec)",
+  "brandName": "TUDRIQEV",
+  "company": "Replimune Group Inc.",
+  "pdufaDate": "2026-07-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": null,
+  "sourceUrl": "https://www.fda.gov/vaccines-blood-biologics/tudriqev",
+  "evidence": [
+   {
+    "source": "FDA CBER licensed products",
+    "detail": "TUDRIQEV (vusolimogene oderparepvec-wtpg) — Replimune, Inc.",
+    "confidence": "high",
+    "url": "https://www.fda.gov/vaccines-blood-biologics/tudriqev"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "mRNA-1010",
+  "brandName": null,
+  "company": "Moderna, Inc",
+  "pdufaDate": "2026-08-05",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000147/exhibit9912026q2pressrelea.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1682852/000168285226000147/exhibit9912026q2pressrelea.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "MK-6240, a PET Imaging Agent",
+  "brandName": null,
+  "company": "Lantheus Holdings Inc.",
+  "pdufaDate": "2026-08-13",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.ophthalmologytimes.com/view/escrs-2026-jai-parekh-md-ma-faao-discusses-ai-s-expanding-role-across-eye-care",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.ophthalmologytimes.com/view/escrs-2026-jai-parekh-md-ma-faao-discusses-ai-s-expanding-role-across-eye-care"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "enfortumab vedotin",
+  "brandName": "PADCEV",
+  "company": "Pfizer Inc.",
+  "pdufaDate": "2026-08-17",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.urologytimes.com/view/mibc-treatment-timeline-and-skin-toxicity-what-urologists-should-know",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.urologytimes.com/view/mibc-treatment-timeline-and-skin-toxicity-what-urologists-should-know"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Iberdomide",
+  "brandName": null,
+  "company": "Bristol Myers Squibb Co.",
+  "pdufaDate": "2026-08-17",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.cancernetwork.com/view/iberdomide-in-lenalidomide-refractory-multiple-myeloma",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.cancernetwork.com/view/iberdomide-in-lenalidomide-refractory-multiple-myeloma"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "pembrolizumab",
+  "brandName": "KEYTRUDA",
+  "company": "Merck & Co Inc.",
+  "pdufaDate": "2026-08-17",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.targetedonc.com/view/sacituzumab-govitecan-pembrolizumab-first-line-pd-l1-high-metastatic-nsclc",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.targetedonc.com/view/sacituzumab-govitecan-pembrolizumab-first-line-pd-l1-high-metastatic-nsclc"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "DTX401",
+  "brandName": null,
+  "company": "Ultragenyx Pharmaceutical Inc",
+  "pdufaDate": "2026-08-23",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1515673/000119312526332802/rare-ex99_1.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1515673/000119312526332802/rare-ex99_1.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "lecanemab-irmb",
+  "brandName": "LEQEMBI IQLIK",
+  "company": "Eisai Co Ltd",
+  "pdufaDate": "2026-08-24",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=lecanemab-irmb%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=lecanemab-irmb%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Ziihera",
+  "brandName": null,
+  "company": "Zymeworks Inc.",
+  "pdufaDate": "2026-08-25",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1937653/000193765326000033/ex991q12026_earningsxrelea.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Bictegravir Plus Lenacapavir",
+  "brandName": "BIXLENVO",
+  "company": "Gilead Sciences Inc.",
+  "pdufaDate": "2026-08-27",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-08-27",
+  "sourceUrl": "https://www.contagionlive.com/view/fda-approves-gilead-s-bixlenvo-smallest-once-daily-single-tablet-regimen-for-hiv",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA221104 ORIG1 approved 2026-08-27 as BIXLENVO",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221104Orig1s000ltr.pdf"
+   },
+   {
+    "source": "Contagion Live",
+    "detail": "FDA Approves Gilead's Bixlenvo, Smallest Once-Daily Single Tablet Regimen for HIV",
+    "confidence": "high",
+    "url": "https://www.contagionlive.com/view/fda-approves-gilead-s-bixlenvo-smallest-once-daily-single-tablet-regimen-for-hiv",
+    "published": "2026-08-28"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "ropeginterferon alfa-2b",
+  "brandName": "BESREMI",
+  "company": "PharmaEssentia Corporation",
+  "pdufaDate": "2026-08-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-08-28",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761166Orig1s03ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761166 SUPPL13 approved 2026-08-28 as BESREMI, BESREMI PEN",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761166Orig1s03ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "TLX101-Px1",
+  "brandName": null,
+  "company": "Telix Pharmaceuticals Limited",
+  "pdufaDate": "2026-09-11",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.cancernetwork.com/view/fda-approves-tlx101-px-for-pet-imaging-in-patients-with-glioma",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.cancernetwork.com/view/fda-approves-tlx101-px-for-pet-imaging-in-patients-with-glioma"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Zidesamtinib",
+  "brandName": null,
+  "company": "Royalty Pharma plc",
+  "pdufaDate": "2026-09-18",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.targetedonc.com/view/zidesamtinib-frontline-activity-ros1-positive-nsclc",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.targetedonc.com/view/zidesamtinib-frontline-activity-ros1-positive-nsclc"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-18.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Winrevair",
+  "brandName": "WINREVAIR",
+  "company": "Merck & Co Inc.",
+  "pdufaDate": "2026-09-21",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-08-12",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761363Orig1s013ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761363 SUPPL13 approved 2026-08-12 as WINREVAIR",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761363Orig1s013ltr.pdf"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-21.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "zilganersen",
+  "brandName": null,
+  "company": "Ionis Pharmaceuticals, Inc.",
+  "pdufaDate": "2026-09-22",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.neurologylive.com/view/zilganersen-faqs-what-clinicians-should-know-about-first-approved-alexander-disease-treatment",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.neurologylive.com/view/zilganersen-faqs-what-clinicians-should-know-about-first-approved-alexander-disease-treatment"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-22.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Ameluz PDT",
+  "brandName": null,
+  "company": "Biofrontera Inc.",
+  "pdufaDate": "2026-09-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.targetedonc.com/view/fda-approves-aminolevulinic-acid-gel-with-pdt-for-superficial-basal-cell-carcinoma",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.targetedonc.com/view/fda-approves-aminolevulinic-acid-gel-with-pdt-for-superficial-basal-cell-carcinoma"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-28.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Apitegromab",
+  "brandName": null,
+  "company": "Scholar Rock Holding Corporation",
+  "pdufaDate": "2026-09-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.pharmacytimes.com/view/fda-approves-apitegromab-mstn-first-muscle-targeted-sma-therapy",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.pharmacytimes.com/view/fda-approves-apitegromab-mstn-first-muscle-targeted-sma-therapy"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-30.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "oveporexton",
+  "brandName": "Oveporexton (TAK-861)",
+  "company": "Takeda Pharmaceutical Company Limited",
+  "pdufaDate": "2026-09-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.neurologylive.com/view/oveporexton-symptom-improvement-phase-3-firstlight-radiantlight-trials-nt1",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.neurologylive.com/view/oveporexton-symptom-improvement-phase-3-firstlight-radiantlight-trials-nt1"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-30.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Rusfertide",
+  "brandName": null,
+  "company": "Takeda Pharmaceutical Company Limited",
+  "pdufaDate": "2026-09-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=Rusfertide%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=Rusfertide%20PDUFA%20FDA"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-30.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Brepocitinib",
+  "brandName": null,
+  "company": "Roivant Sciences Ltd.",
+  "pdufaDate": "2026-09-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.dermatologytimes.com/view/q-a-victoria-werth-md-on-brepocitinib-s-fda-approval-for-dermatomyositis",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.dermatologytimes.com/view/q-a-victoria-werth-md-on-brepocitinib-s-fda-approval-for-dermatomyositis"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-30.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Joenja",
+  "brandName": null,
+  "company": "Pharming Group N.V.",
+  "pdufaDate": "2026-10-24",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.contemporarypediatrics.com/view/fda-approves-leniolisib-for-children-aged-4-to-11-with-apds",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.contemporarypediatrics.com/view/fda-approves-leniolisib-for-children-aged-4-to-11-with-apds"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-10-24.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "ILUMYA",
+  "brandName": "ILUMYA",
+  "company": "Sun Pharmaceutical Industries Ltd.",
+  "pdufaDate": "2026-10-29",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-07-16",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761067Orig1s027ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761067 SUPPL27 approved 2026-07-16 as ILUMYA",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761067Orig1s027ltr.pdf"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-10-29.",
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "trastuzumab deruxtecan",
+  "brandName": "DATROWAY",
+  "company": "AstraZeneca/Daiichi Sankyo",
+  "pdufaDate": "2026-07-07",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-05-22",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761394 SUPPL3 approved 2026-05-22 as DATROWAY",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "desmopressin acetate",
+  "brandName": null,
+  "company": "Eton Pharmaceuticals",
+  "pdufaDate": "2026-02-25",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=desmopressin%20acetate%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "Curated",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=desmopressin%20acetate%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "pegvaliase-pqpz",
+  "brandName": "Palynziq",
+  "company": "BioMarin Pharmaceutical",
+  "pdufaDate": "2026-02-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1048477/000104847721000004/bmrn-21xfeb25xex991.htm",
+  "evidence": [
+   {
+    "source": "Curated",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1048477/000104847721000004/bmrn-21xfeb25xex991.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "navepegritide",
+  "brandName": "Yuviwel",
+  "company": "Ascendis Pharma",
+  "pdufaDate": "2026-02-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.contemporarypediatrics.com/view/navepegritide-shows-early-safety-and-growth-signals-in-infants-with-achondroplasia",
+  "evidence": [
+   {
+    "source": "Curated",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.contemporarypediatrics.com/view/navepegritide-shows-early-safety-and-growth-signals-in-infants-with-achondroplasia"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "dupilumab",
+  "brandName": "Dupixent",
+  "company": "Sanofi/Regeneron",
+  "pdufaDate": "2026-02-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.ajmc.com/view/earlier-dupilumab-use-cuts-asthma-costs-nicola-hanania-md",
+  "evidence": [
+   {
+    "source": "Curated",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.ajmc.com/view/earlier-dupilumab-use-cuts-asthma-costs-nicola-hanania-md"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "idebenone",
+  "brandName": null,
+  "company": "Chiesi",
+  "pdufaDate": "2026-02-28",
+  "outcome": "CRL",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=idebenone%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "Curated",
+    "detail": "Listed as Rejected",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=idebenone%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "deucravacitinib",
+  "brandName": "Sotyktu",
+  "company": "Bristol Myers Squibb",
+  "pdufaDate": "2026-03-06",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.ajmc.com/view/risankizumab-outperforms-deucravacitinib-in-moderate-plaque-psoriasis",
+  "evidence": [
+   {
+    "source": "Curated",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.ajmc.com/view/risankizumab-outperforms-deucravacitinib-in-moderate-plaque-psoriasis"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "marnetegragene autotemcel",
+  "brandName": "KRESLADI",
+  "company": "Rocket Pharmaceuticals",
+  "pdufaDate": "2026-03-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": null,
+  "sourceUrl": "https://www.fda.gov/vaccines-blood-biologics/kresladi",
+  "evidence": [
+   {
+    "source": "FDA CBER licensed products",
+    "detail": "KRESLADI (marnetegragene autotemcel) — Rocket Pharmaceuticals, Inc.",
+    "confidence": "high",
+    "url": "https://www.fda.gov/vaccines-blood-biologics/kresladi"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Orca-T",
+  "brandName": "TREGZI",
+  "company": "Orca Bio",
+  "pdufaDate": "2026-04-06",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": null,
+  "sourceUrl": "https://www.fda.gov/vaccines-blood-biologics/tregzi",
+  "evidence": [
+   {
+    "source": "FDA CBER licensed products",
+    "detail": "TREGZI (Allogeneic regulatory T cell immunotherapy with HSPC and T cells-vldq) — Orca Biosystems Inc",
+    "confidence": "high",
+    "url": "https://www.fda.gov/vaccines-blood-biologics/tregzi"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "nivolumab",
+  "brandName": "OPDIVO QVANTIG",
+  "company": "Bristol Myers Squibb",
+  "pdufaDate": "2026-04-08",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-05-12",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761381Orig1s012ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761381 SUPPL12 approved 2026-05-12 as OPDIVO QVANTIG",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761381Orig1s012ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "dextromethorphan/bupropion",
+  "brandName": "AUVELITY",
+  "company": "Axsome Therapeutics",
+  "pdufaDate": "2026-04-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-04-30",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215430Orig1s009, s018correctedltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA215430 SUPPL9 approved 2026-04-30 as AUVELITY",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215430Orig1s009, s018correctedltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "efgartigimod alfa",
+  "brandName": "VYVGART",
+  "company": "Argenx",
+  "pdufaDate": "2026-05-10",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-05-08",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761195Orig1s016; 761304Orig1s018ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761195 SUPPL16 approved 2026-05-08 as VYVGART",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761195Orig1s016; 761304Orig1s018ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "CTx-1301",
+  "brandName": null,
+  "company": "Cingulate",
+  "pdufaDate": "2026-05-31",
+  "outcome": "CRL",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-05-29",
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1862150/000149315226037605/ex99-1.htm",
+  "evidence": [
+   {
+    "source": "openFDA CRL",
+    "detail": "NDA220283 — Cingulate Therapeutics, LLC, letter dated 2026-05-29",
+    "confidence": "high",
+    "url": "https://open.fda.gov/apis/transparency/completeresponseletters/"
+   },
+   {
+    "source": "SEC 8-K",
+    "detail": "Company disclosure of the complete response",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1862150/000149315226037605/ex99-1.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "datopotamab deruxtecan",
+  "brandName": "DATROWAY",
+  "company": "AstraZeneca/Daiichi Sankyo",
+  "pdufaDate": "2026-05-20",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-05-22",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761394 SUPPL3 approved 2026-05-22 as DATROWAY",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761394Orig1s003ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "nilotinib",
+  "brandName": "CAVHANZA",
+  "company": "Xspray Pharma",
+  "pdufaDate": "2026-06-18",
+  "outcome": "CRL",
+  "certainty": "review",
+  "ambiguous": "Company had both a CRL (NDA217644) and an approval (NDA217379) near this date — confirm which application this entry tracks.",
+  "resolvedDate": "2026-06-04",
+  "sourceUrl": "https://open.fda.gov/apis/transparency/completeresponseletters/",
+  "evidence": [
+   {
+    "source": "openFDA CRL",
+    "detail": "NDA217644 — Xspray Pharma AB, letter dated 2026-06-04",
+    "confidence": "high",
+    "url": "https://open.fda.gov/apis/transparency/completeresponseletters/"
+   },
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA217379 ORIG1 approved 2026-05-29 as CAVHANZA",
+    "confidence": "medium",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/217379Orig1s000ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "cytisinicline",
+  "brandName": null,
+  "company": "Achieve Life Sciences",
+  "pdufaDate": "2026-06-20",
+  "outcome": "CRL",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-06-20",
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/949858/000119312526344571/achv-ex99_1.htm",
+  "evidence": [
+   {
+    "source": "openFDA CRL",
+    "detail": "NDA218995 — Achieve Life Sciences, Inc., letter dated 2026-06-20",
+    "confidence": "high",
+    "url": "https://open.fda.gov/apis/transparency/completeresponseletters/"
+   },
+   {
+    "source": "SEC 8-K",
+    "detail": "Company disclosure of the complete response",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/949858/000119312526344571/achv-ex99_1.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "roflumilast cream",
+  "brandName": "ZORYVE",
+  "company": "Arcutis Biotherapeutics",
+  "pdufaDate": "2026-06-29",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-06-29",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215985Orig1s015ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA215985 SUPPL15 approved 2026-06-29 as ZORYVE",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215985Orig1s015ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "veligrotug",
+  "brandName": "LUMVOA",
+  "company": "Viridian Therapeutics",
+  "pdufaDate": "2026-06-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-06-26",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761530Orig1s000ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761530 ORIG1 approved 2026-06-26 as LUMVOA",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761530Orig1s000ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "oxylanthanum carbonate",
+  "brandName": null,
+  "company": "Unicycive Therapeutics",
+  "pdufaDate": "2026-06-27",
+  "outcome": "CRL",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-06-29",
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1766140/000121390025059303/ea024746901ex99-1_unicycive.htm",
+  "evidence": [
+   {
+    "source": "openFDA CRL",
+    "detail": "NDA218607 — Unicycive Therapeutics Inc., letter dated 2026-06-29",
+    "confidence": "high",
+    "url": "https://open.fda.gov/apis/transparency/completeresponseletters/"
+   },
+   {
+    "source": "SEC 8-K",
+    "detail": "Company disclosure of the complete response",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1766140/000121390025059303/ea024746901ex99-1_unicycive.htm"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "atacicept",
+  "brandName": "TRUTAKNA",
+  "company": "Vera Therapeutics",
+  "pdufaDate": "2026-07-07",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-07-07",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761486Orig1s000ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761486 ORIG1 approved 2026-07-07 as TRUTAKNA",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761486Orig1s000ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "177Lu-edotreotide",
+  "brandName": null,
+  "company": "ITM Isotope Technologies",
+  "pdufaDate": "2026-08-28",
+  "outcome": "CRL",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-08-07",
+  "sourceUrl": "https://open.fda.gov/apis/transparency/completeresponseletters/",
+  "evidence": [
+   {
+    "source": "openFDA CRL",
+    "detail": "NDA218705 — ITM Solucin GmbH, letter dated 2026-08-07",
+    "confidence": "high",
+    "url": "https://open.fda.gov/apis/transparency/completeresponseletters/"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "capivasertib",
+  "brandName": "TRUQAP",
+  "company": "AstraZeneca",
+  "pdufaDate": "2026-08-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-06-12",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218197Orig1s004ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA218197 SUPPL4 approved 2026-06-12 as TRUQAP",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/218197Orig1s004ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-16"
+ }
+]

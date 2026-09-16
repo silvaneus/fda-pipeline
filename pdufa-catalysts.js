@@ -16,6 +16,8 @@ const CATALYSTS_LAST_FETCH = path.join(DATA_DIR, 'pdufa-catalysts-last-fetch.txt
 const SCRAPED_RESULTS_FILE = path.join(DATA_DIR, 'scraped-results.json');
 // Stored outside data/ so it's not gitignored — needed for GitHub Actions
 const APPROVAL_CACHE_FILE = path.join(__dirname, '.fda-approval-cache.json');
+// Tracked directory for state that must persist between nightly CI runs.
+const STATE_DIR = path.join(__dirname, 'state');
 
 /**
  * Brand-to-generic name mapping for deduplication and standardization.
@@ -24,6 +26,7 @@ const APPROVAL_CACHE_FILE = path.join(__dirname, '.fda-approval-cache.json');
  */
 const BRAND_TO_GENERIC = {
   // Exact brand → generic
+  'besremi': 'ropeginterferon alfa-2b',
   'kresladi': 'marnetegragene autotemcel',
   'inqovi': 'decitabine/cedazuridine + venetoclax',
   'enhertu': 'trastuzumab deruxtecan',
@@ -484,16 +487,7 @@ const CURATED_CATALYSTS = [
     status: 'Pending',
     notes: 'Expanded indication'
   },
-  {
-    drug: 'crovalimab',
-    brandName: null,
-    company: 'Roche',
-    indication: 'Paroxysmal Nocturnal Hemoglobinuria',
-    pdufaDate: '2026-07-22',
-    submissionType: 'BLA',
-    status: 'Pending',
-    notes: 'Anti-C5 antibody, subcutaneous'
-  },
+  
   {
     drug: 'centanafadine',
     brandName: null,
@@ -608,16 +602,7 @@ const CURATED_CATALYSTS = [
     notes: 'Myeloproliferative neoplasm expansion'
   },
   // September 2026
-  {
-    drug: 'omaveloxolone',
-    brandName: 'Skyclarys',
-    company: 'Biogen',
-    indication: 'Friedreich Ataxia',
-    pdufaDate: '2026-09-10',
-    submissionType: 'sNDA',
-    status: 'Pending',
-    notes: 'Pediatric expansion'
-  },
+  
   {
     drug: 'zidesamtinib',
     brandName: null,
@@ -844,7 +829,153 @@ function calculateDaysUntil(pdufaDate) {
 /**
  * Enrich catalyst with therapeutic area and success rate
  */
+/**
+ * Pull the actual indication out of RTTNews's boilerplate.
+ *
+ * Their text reads "FDA decision on {DRUG} for the treatment of {INDICATION}",
+ * which meant two thirds of the report's Indication column restated the row
+ * instead of saying what the drug treats. The indication is in there — it just
+ * has to be unwrapped.
+ */
+function cleanIndication(text, drugName) {
+  if (!text) return null;
+  let t = String(text).replace(/\s+/g, ' ').trim();
+
+  // Not boilerplate: leave a real indication alone.
+  if (!/^FDA\b/i.test(t)) return t;
+
+  const isPanel = /^FDA\s+(?:panel|advisory)/i.test(t);
+
+  // Drop the lead-in and the drug name that follows it.
+  t = t.replace(
+    /^FDA\s+(?:decision|action|panel to review|advisory committee(?:\s+to\s+review)?|panel)\s*(?:on|for|to review)?\s*/i,
+    ''
+  );
+  if (drugName) {
+    const esc = String(drugName).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    t = t.replace(new RegExp('^' + esc + '\\b[\\s,:-]*', 'i'), '');
+  }
+  // Whatever drug-ish token still leads, plus any parenthetical after it.
+  t = t.replace(/^[A-Za-z0-9-]+(?:\s*\([^)]*\))?[\s,:-]*/, (m) =>
+    /^(?:for|in|as|to|seeking|with)\b/i.test(m) ? m : ''
+  );
+
+  // The indication follows one of these connectors.
+  const connectors = [
+    /\b(?:for|in)\s+the\s+(?:proposed\s+)?(?:indication\s+of|treatment\s+of|prevention\s+of|management\s+of)\s+/i,
+    /\bas\s+(?:a|an)\b[^,]*?\b(?:treatment|therapy)\s+(?:for|of|in)\s+/i,
+    /\bfor\s+(?:the\s+)?treatment\s+of\s+/i,
+    /\b(?:for|in)\s+(?:adult\s+)?patients\s+with\s+/i,
+    /\bto\s+treat\s+/i,
+    /\bproduct\s+label\s+in\s+/i,
+    /\bfor\s+/i,
+    /\bin\s+/i,
+  ];
+  for (const re of connectors) {
+    const m = re.exec(t);
+    if (m) { t = t.slice(m.index + m[0].length); break; }
+  }
+
+  // Trim trailing clauses that describe the filing rather than the disease.
+  t = t
+    .replace(/\s+(?:to include|based on|following|seeking|supported by|per)\b[\s\S]*$/i, '')
+    .replace(/[\s,.;:]+$/, '')
+    .trim();
+
+  if (!t || t.length < 3) return isPanel ? 'Advisory committee review' : null;
+  if (/^(?:adults?|children|adolescents?|patients?)$/i.test(t)) return null;
+  if (t.length > 120) t = t.slice(0, 117).replace(/\s+\S*$/, '') + '\u2026';
+  return t.charAt(0).toUpperCase() + t.slice(1);
+}
+
+/**
+ * Merge entries that describe the same FDA decision.
+ *
+ * The same review reaches the pipeline from more than one source under
+ * different names — RTTNews says "Besremi", the curated list says
+ * "ropeginterferon alfa-2b" — and BRAND_TO_GENERIC only catches the pairs
+ * somebody thought to add. Two entries sharing a PDUFA date and a company are
+ * the same decision regardless of which name each source used, so match on
+ * that and keep the richer record.
+ */
+function dedupeCatalysts(catalysts, verbose = false) {
+  const { companyTokens } = require('./fda-actions');
+
+  const nameKeys = (c) => {
+    const out = new Set();
+    [c.drug, c.brandName].filter(Boolean).forEach((n) => {
+      const k = String(n).toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (k.length >= 4) out.add(k);
+      const g = normalizeDrugName(String(n)).toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (g.length >= 4) out.add(g);
+    });
+    return out;
+  };
+
+  // Richer record wins: more filled fields, and a real source URL over a search link.
+  const score = (c) => {
+    let n = 0;
+    ['brandName', 'indication', 'therapeuticArea', 'submissionType', 'notes'].forEach(f => { if (c[f]) n++; });
+    if (c.sourceUrl && !/google\./.test(c.sourceUrl)) n += 2;
+    if (c.status && c.status.toLowerCase() !== 'pending') n += 1;
+    return n;
+  };
+
+  const groups = [];
+  for (const c of catalysts) {
+    const keys = nameKeys(c);
+    const co = companyTokens(c.company);
+    const hit = groups.find((g) => {
+      if (g.date !== c.pdufaDate) return false;
+      // Names must actually relate. Matching on company alone collapsed
+      // genuinely different drugs — Takeda has several quarter-end estimates
+      // landing on the same day, and they are not the same decision.
+      return [...keys].some((k) =>
+        [...g.keys].some((gk) =>
+          k === gk ||
+          // "ameluz" vs "ameluzpdt": one is a qualified form of the other.
+          (k.length >= 5 && gk.length >= 5 && (k.startsWith(gk) || gk.startsWith(k)))
+        )
+      );
+    });
+
+    if (hit) {
+      hit.members.push(c);
+      keys.forEach((k) => hit.keys.add(k));
+      co.forEach((t) => { if (!hit.co.includes(t)) hit.co.push(t); });
+    } else {
+      groups.push({ date: c.pdufaDate, keys, co: [...co], members: [c] });
+    }
+  }
+
+  const merged = [];
+  let collapsed = 0;
+  for (const g of groups) {
+    if (g.members.length === 1) { merged.push(g.members[0]); continue; }
+    const sorted = [...g.members].sort((a, b) => score(b) - score(a));
+    const winner = { ...sorted[0] };
+    // Fill any gap in the winner from the others rather than discarding data.
+    for (const other of sorted.slice(1)) {
+      for (const [k, v] of Object.entries(other)) {
+        if ((winner[k] === null || winner[k] === undefined || winner[k] === '') && v) winner[k] = v;
+      }
+    }
+    if (verbose) {
+      console.log(`    Merged ${g.members.length} entries for ${winner.drug} (${winner.pdufaDate}): ` +
+        g.members.map(m => m.drug).join(' / '));
+    }
+    collapsed += g.members.length - 1;
+    merged.push(winner);
+  }
+
+  if (verbose && collapsed) console.log(`  Deduplicated ${collapsed} duplicate catalyst(s)`);
+  return merged;
+}
+
 function enrichCatalyst(catalyst) {
+  // Unwrap the source's boilerplate before anything reads the indication.
+  catalyst.indication = cleanIndication(catalyst.indication, catalyst.drug);
+
   // Classify therapeutic area
   if (catalyst.indication && !catalyst.therapeuticArea) {
     catalyst.therapeuticArea = classifyCondition([catalyst.indication]);
@@ -879,26 +1010,45 @@ function enrichCatalyst(catalyst) {
 /**
  * Fetch JSON from a URL (for OpenFDA API calls)
  */
-function fetchJSON(url) {
+function fetchJSON(url, retries = 3) {
+  // SEC EDGAR returns 500 when requests arrive too fast, and openFDA rate-limits
+  // with 429. Both are transient — without a retry a single burst silently loses
+  // the lookup and the caller falls back to a worse source.
   return new Promise((resolve, reject) => {
-    const request = https.get(url, {
-      headers: { 'User-Agent': 'FDA-Pipeline/1.0' }
-    }, (response) => {
-      let data = '';
-      response.on('data', chunk => data += chunk);
-      response.on('end', () => {
-        if (response.statusCode === 200) {
-          try { resolve(JSON.parse(data)); }
-          catch (e) { reject(new Error(`JSON parse error: ${e.message}`)); }
-        } else if (response.statusCode === 404) {
-          resolve({ results: [] });
-        } else {
-          reject(new Error(`HTTP ${response.statusCode}`));
+    const attempt = (n) => {
+      const request = https.get(url, {
+        headers: {
+          // SEC asks callers to identify themselves with a contact address.
+          'User-Agent': 'MJH Life Sciences FDA-Pipeline (sinman@mjhlifesciences.com)',
+          'Accept': 'application/json'
         }
+      }, (response) => {
+        let data = '';
+        response.on('data', chunk => data += chunk);
+        response.on('end', () => {
+          if (response.statusCode === 200) {
+            try { resolve(JSON.parse(data)); }
+            catch (e) { reject(new Error(`JSON parse error: ${e.message}`)); }
+          } else if (response.statusCode === 404) {
+            resolve({ results: [] });
+          } else if ((response.statusCode >= 500 || response.statusCode === 429) && n < retries) {
+            setTimeout(() => attempt(n + 1), 800 * Math.pow(2, n));
+          } else {
+            reject(new Error(`HTTP ${response.statusCode}`));
+          }
+        });
       });
-    });
-    request.on('error', reject);
-    request.setTimeout(15000, () => { request.destroy(); reject(new Error('Timeout')); });
+      request.on('error', (e) => {
+        if (n < retries) setTimeout(() => attempt(n + 1), 800 * Math.pow(2, n));
+        else reject(e);
+      });
+      request.setTimeout(20000, () => {
+        request.destroy();
+        if (n < retries) setTimeout(() => attempt(n + 1), 800 * Math.pow(2, n));
+        else reject(new Error('Timeout'));
+      });
+    };
+    attempt(0);
   });
 }
 
@@ -1061,8 +1211,11 @@ async function checkAwaitingPDUFA(catalysts, verbose = false) {
 
     try {
       // Search SEC EDGAR full-text search for 8-K filings mentioning drug + PDUFA
+      // No date range: the previous hardcoded `enddt=2026-12-31` would have
+      // started quietly dropping results at the start of 2027. EDGAR already
+      // returns newest first, so recency is handled by taking the top hits.
       const query = encodeURIComponent(`"${searchTerm}" "PDUFA"`);
-      const searchUrl = `https://efts.sec.gov/LATEST/search-index?q=${query}&forms=8-K&dateRange=custom&startdt=2025-01-01&enddt=2026-12-31`;
+      const searchUrl = `https://efts.sec.gov/LATEST/search-index?q=${query}&forms=8-K`;
       const searchData = await fetchJSON(searchUrl);
 
       if (!searchData || !searchData.hits || !searchData.hits.hits || searchData.hits.hits.length === 0) {
@@ -1147,60 +1300,117 @@ async function checkAwaitingPDUFA(catalysts, verbose = false) {
  * Auto-populate sourceUrl for catalysts that don't have one.
  * Searches SEC EDGAR for 8-K filings mentioning the drug + "PDUFA" or "FDA".
  */
-async function enrichSourceUrls(catalysts, verbose = false) {
+async function enrichSourceUrls(catalysts, verbose = false, newsItems = null) {
   const missing = catalysts.filter(c => !c.sourceUrl && c.drug);
   if (missing.length === 0) return;
 
   if (verbose) console.log(`  Finding source URLs for ${missing.length} catalysts...`);
-  let found = 0;
+
+  // First-party coverage is the most readable source, so try it before EDGAR.
+  let news = newsItems;
+  if (!news) {
+    try { news = JSON.parse(fs.readFileSync(path.join(STATE_DIR, 'mjh-news.json'), 'utf8')).items || []; }
+    catch { news = []; }
+  }
+  let mjhCount = 0, secCount = 0, fallbackCount = 0;
+
+  let findCoverage = null;
+  try { ({ findCoverage } = require('./mjh-news')); } catch { /* optional */ }
 
   for (const catalyst of missing) {
     const searchTerm = catalyst.drug.split(/[\+\/\(]/)[0].trim();
     if (searchTerm.length < 4) continue;
 
+    // 1. An MJH article about this drug.
+    if (findCoverage && news.length) {
+      const hits = findCoverage(catalyst, news, { sinceDays: 45 });
+      if (hits.length && hits[0].link) {
+        catalyst.sourceUrl = hits[0].link;
+        catalyst.sourceType = 'news';
+        mjhCount++;
+        continue;
+      }
+    }
+
+    // 2. The company's own 8-K announcing the filing or the date.
+    //
+    // EDGAR full-text search takes a single quoted phrase. The previous query
+    // wrapped the drug name in a boolean — `"drug" ("PDUFA" OR "FDA accepts")` —
+    // which EDGAR does not parse: every search returned zero hits and every
+    // catalyst fell through to the Google fallback below.
     try {
-      // Try drug name first, then brand name
       const terms = [searchTerm];
       if (catalyst.brandName) {
         const cleanBrand = catalyst.brandName.split(/[\(\+\/]/)[0].trim();
         if (cleanBrand.length >= 4 && cleanBrand !== searchTerm) terms.push(cleanBrand);
       }
 
-      let searchData = null;
+      // Two quoted phrases narrow this to filings that actually discuss the
+      // review; a bare name matches any mention. EDGAR supports both — what it
+      // does not support is the parenthesised OR the old query used.
+      // Prefer a filing by the company that actually owns the application. A
+      // bare drug name also matches partners and competitors discussing it —
+      // that is how capivasertib once resolved to a Relay Therapeutics 8-K.
+      const { companyMatch } = require('./fda-actions');
+      const pickHit = (hits) => {
+        const owned = hits.filter(h => {
+          const names = (h._source && h._source.display_names) || [];
+          return names.some(n => companyMatch(catalyst.company, String(n).replace(/\s*\(.*$/, '')));
+        });
+        // No fallback to a non-applicant filing: a bare drug name matches
+        // partners, licensees and competitors, and linking their press release
+        // is worse than offering no filing at all.
+        return owned[0] || null;                 // EDGAR returns newest first
+      };
+
+      let hit = null;
       for (const term of terms) {
-        const query = encodeURIComponent(`"${term}" ("PDUFA" OR "FDA accepts" OR "FDA acceptance")`);
-        const searchUrl = `https://efts.sec.gov/LATEST/search-index?q=${query}&forms=8-K&dateRange=custom&startdt=2024-01-01&enddt=2026-12-31`;
-        searchData = await fetchJSON(searchUrl);
-        if (searchData && searchData.hits && searchData.hits.hits && searchData.hits.hits.length > 0) break;
-        searchData = null;
-        await new Promise(r => setTimeout(r, 150));
-      }
-
-      if (searchData && searchData.hits && searchData.hits.hits && searchData.hits.hits.length > 0) {
-        const src = searchData.hits.hits[0]._source;
-        const rawCik = (src.ciks && src.ciks[0]) || '';
-        const cik = String(rawCik).replace(/^0+/, '');
-        const adsh = src.adsh || '';
-        if (cik && adsh) {
-          const adshClean = adsh.replace(/-/g, '');
-          catalyst.sourceUrl = `https://www.sec.gov/Archives/edgar/data/${cik}/${adshClean}/${adsh}-index.htm`;
-          found++;
+        for (const q of [`"${term}" "PDUFA"`, `"${term}"`]) {
+          const url = 'https://efts.sec.gov/LATEST/search-index' +
+            `?q=${encodeURIComponent(q)}&forms=8-K`;
+          const data = await fetchJSON(url);
+          const hits = (data && data.hits && data.hits.hits) || [];
+          if (hits.length) { hit = pickHit(hits); break; }
+          await new Promise(r => setTimeout(r, 200));
         }
-      } else {
-        // Fallback: Google News search link for manual verification
-        const q = encodeURIComponent(`${searchTerm} PDUFA FDA acceptance`);
-        catalyst.sourceUrl = `https://www.google.com/search?q=${q}&tbm=nws`;
-        found++;
+        if (hit) break;
       }
 
-      // SEC rate limit
+      if (hit) {
+        const cik = String((hit._source.ciks && hit._source.ciks[0]) || '').replace(/^0+/, '');
+        const adsh = hit._source.adsh || '';
+        // "0000939767-26-000096:exel20260630exhibit991.htm" — the part after the
+        // colon is the actual exhibit, usually the press release itself.
+        const docName = String(hit._id || '').split(':')[1] || '';
+        if (cik && adsh) {
+          const acc = adsh.replace(/-/g, '');
+          catalyst.sourceUrl = docName
+            ? `https://www.sec.gov/Archives/edgar/data/${cik}/${acc}/${docName}`
+            : `https://www.sec.gov/Archives/edgar/data/${cik}/${acc}/${adsh}-index.htm`;
+          catalyst.sourceType = 'sec';
+          secCount++;
+          await new Promise(r => setTimeout(r, 150));
+          continue;
+        }
+      }
       await new Promise(r => setTimeout(r, 150));
     } catch (e) {
-      // Skip failures silently
+      // Fall through to the search link.
     }
+
+    // 3. Last resort. Marked as such so it is obvious in the report that no
+    //    real source was found, rather than looking like a cited source.
+    const q = encodeURIComponent(`${searchTerm} PDUFA FDA`);
+    catalyst.sourceUrl = `https://news.google.com/search?q=${q}`;
+    catalyst.sourceType = 'search';
+    fallbackCount++;
   }
 
-  if (verbose && found > 0) console.log(`  Found ${found} source URLs from SEC EDGAR`);
+  if (verbose) {
+    console.log(
+      `  Source URLs — MJH coverage: ${mjhCount}, SEC filings: ${secCount}, search fallback: ${fallbackCount}`
+    );
+  }
 }
 
 /**
@@ -1348,74 +1558,223 @@ async function checkGoogleNewsApproval(catalyst, verbose = false) {
  */
 async function filterApprovedCatalysts(catalysts, verbose = false) {
   const results = [];
+  const outcomes = [];
   let removedCount = 0;
 
-  // Identify past-PDUFA pending entries that need checking
+  const today = new Date().toISOString().slice(0, 10);
   const pastPending = catalysts.filter(c => {
     const d = calculateDaysUntil(c.pdufaDate);
     return c.pdufaDate && d !== null && d < 0 && (c.status || 'Pending').toLowerCase() === 'pending';
   });
 
-  if (pastPending.length === 0) return catalysts;
+  // Entries already marked Approved/Rejected still need clearing out even when
+  // there is nothing new to resolve.
+  let resolutionsByKey = new Map();
+  let anomaliesByKey = new Map();
+  let staleByKey = new Map();
 
-  if (verbose) console.log(`  Checking ${pastPending.length} past-PDUFA entries for FDA approval...`);
-
-  // Fast check: fetch FDA.gov approval announcements (2 requests total)
-  const announcements = await fetchFDAApprovalAnnouncements(verbose);
+  if (pastPending.length > 0 || catalysts.length > 0) {
+    if (verbose && pastPending.length) {
+      console.log(`  Resolving ${pastPending.length} past-PDUFA entries against FDA + news sources...`);
+    }
+    try {
+      const { resolveAll } = require('./resolve-outcomes');
+      const { resolutions, anomalies, staleDates } = await resolveAll(catalysts, { verbose });
+      const key = c => `${c.drug}|${c.company}|${c.pdufaDate}`;
+      resolutions.forEach(r => resolutionsByKey.set(key(r.catalyst), r));
+      anomalies.forEach(a => anomaliesByKey.set(key(a.catalyst), a));
+      (staleDates || []).forEach(x => staleByKey.set(key(x.catalyst), x));
+    } catch (e) {
+      // A source outage must never drop entries; fall through and keep everything.
+      if (verbose) console.log(`  Warning: outcome resolution unavailable (${e.message}); keeping all entries`);
+    }
+  }
 
   for (const catalyst of catalysts) {
     const daysUntil = calculateDaysUntil(catalyst.pdufaDate);
+    const key = `${catalyst.drug}|${catalyst.company}|${catalyst.pdufaDate}`;
+    const status = (catalyst.status || 'Pending').toLowerCase();
 
-    // Keep future catalysts and ones without dates
+    // Future-dated entries FDA has already decided. Acting ahead of the goal
+    // date is routine, so this is a finished decision, not an anomaly.
     if (!catalyst.pdufaDate || daysUntil === null || daysUntil >= 0) {
+      // Already decided per the source, even though the listed date is still
+      // ahead. A decided entry does not belong under "upcoming" whichever way
+      // the pipeline learned about it.
+      if (status === 'approved' || status === 'rejected' || status === 'crl') {
+        outcomes.push({
+          drug: catalyst.drug,
+          brandName: catalyst.brandName || null,
+          company: catalyst.company,
+          pdufaDate: catalyst.pdufaDate,
+          outcome: status === 'approved' ? 'Approved' : 'CRL',
+          certainty: 'resolved',
+          resolvedDate: null,
+          sourceUrl: catalyst.sourceUrl || null,
+          evidence: [{ source: catalyst.source || 'Source feed', detail: `Listed as ${catalyst.status}`, confidence: 'high', url: catalyst.sourceUrl || null }],
+          note: `Decided ahead of the listed PDUFA date of ${catalyst.pdufaDate}.`,
+          recordedAt: today,
+        });
+        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — already marked ${catalyst.status}, ahead of its ${catalyst.pdufaDate} PDUFA date`);
+        removedCount++;
+        continue;
+      }
+
+      const early = resolutionsByKey.get(key);
+      if (early && early.decidedEarly) {
+        outcomes.push({
+          drug: catalyst.drug,
+          brandName: early.brandName || catalyst.brandName || null,
+          company: catalyst.company,
+          pdufaDate: catalyst.pdufaDate,
+          outcome: early.outcome,
+          certainty: early.certainty,
+          resolvedDate: early.resolvedDate,
+          sourceUrl: early.sourceUrl,
+          evidence: early.evidence,
+          note: `Decided ahead of the listed PDUFA date of ${catalyst.pdufaDate}.`,
+          recordedAt: today,
+        });
+        if (verbose) {
+          console.log(`    ✓ Removing ${catalyst.drug} — ${early.outcome} on ${early.resolvedDate || 'an earlier date'}, ` +
+            `ahead of its ${catalyst.pdufaDate} PDUFA date`);
+        }
+        removedCount++;
+        continue;
+      }
       results.push(catalyst);
       continue;
     }
 
-    // Remove entries already marked Approved or Rejected/CRL
-    const status = (catalyst.status || 'Pending').toLowerCase();
-    if (status === 'approved') {
-      if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — marked as Approved`);
+    if (status === 'approved' || status === 'rejected' || status === 'crl') {
+      // Record these too. They arrive already decided from the source, and
+      // without a log entry they disappear from the report with no trace of
+      // what happened to them.
+      outcomes.push({
+        drug: catalyst.drug,
+        brandName: catalyst.brandName || null,
+        company: catalyst.company,
+        pdufaDate: catalyst.pdufaDate,
+        outcome: status === 'approved' ? 'Approved' : 'CRL',
+        certainty: 'resolved',
+        resolvedDate: null,
+        sourceUrl: catalyst.sourceUrl || null,
+        evidence: [{ source: catalyst.source || 'Source feed', detail: `Listed as ${catalyst.status}`, confidence: 'high', url: catalyst.sourceUrl || null }],
+        recordedAt: today,
+      });
+      if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — already marked ${catalyst.status}`);
       removedCount++;
       continue;
     }
-    if (status === 'rejected' || status === 'crl') {
-      if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — marked as Rejected/CRL`);
+
+    const r = resolutionsByKey.get(key);
+    if (!r) {
+      const stale = staleByKey.get(key);
+      if (stale) {
+        // Past due, nothing resolved it, the drug is already marketed, and its
+        // entire FDA history sits far from this date. That is not a decision the
+        // pipeline missed — it is a date that does not correspond to anything.
+        //
+        // Only drop it when the curated list is the sole source. RTTNews mirrors
+        // FDA's own calendar; the curated list is hand-maintained and is where
+        // stale entries accumulate.
+        const curatedOnly = /curated/i.test(catalyst.source || '');
+        if (curatedOnly) {
+          outcomes.push({
+            drug: catalyst.drug,
+            brandName: catalyst.brandName || null,
+            company: catalyst.company,
+            pdufaDate: catalyst.pdufaDate,
+            outcome: 'No such action',
+            certainty: 'resolved',
+            resolvedDate: null,
+            sourceUrl: stale.url || catalyst.sourceUrl || null,
+            evidence: [{ source: 'openFDA drugsfda', detail: stale.note, confidence: 'high', url: stale.url }],
+            recordedAt: today,
+          });
+          if (verbose) console.log(`    ✗ Removing ${catalyst.drug} — no FDA action near ${catalyst.pdufaDate} (curated entry looks wrong)`);
+          removedCount++;
+          continue;
+        }
+        catalyst.reviewNote = stale.note;
+        if (stale.url) catalyst.sourceUrl = stale.url;
+        if (verbose) console.log(`    ? ${catalyst.drug} — no FDA action near ${catalyst.pdufaDate}`);
+      }
+      results.push(catalyst);
+      continue;
+    }
+
+    outcomes.push({
+      drug: catalyst.drug,
+      brandName: r.brandName || catalyst.brandName || null,
+      company: catalyst.company,
+      pdufaDate: catalyst.pdufaDate,
+      outcome: r.outcome,
+      certainty: r.certainty,
+      ambiguous: r.ambiguous || null,
+      resolvedDate: r.resolvedDate,
+      sourceUrl: r.sourceUrl,
+      evidence: r.evidence,
+      recordedAt: today,
+    });
+
+    // Two independent sources agree, or one names the exact product: act on it.
+    if (r.certainty === 'resolved' && (r.outcome === 'Approved' || r.outcome === 'CRL')) {
+      if (verbose) {
+        console.log(`    ✓ Removing ${catalyst.drug} — ${r.outcome}` +
+          `${r.brandName ? ' as ' + r.brandName : ''} (${r.evidence.map(e => e.source).join(' + ')})`);
+      }
       removedCount++;
       continue;
     }
 
-    // For past-PDUFA entries still marked Pending, check for approval
-    if (status === 'pending') {
-      // Tier 1: Check FDA.gov page + RSS (fast, same-day)
-      if (isInFDAAnnouncements(catalyst, announcements)) {
-        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — found on FDA.gov`);
-        removedCount++;
-        continue;
-      }
-
-      // Tier 2: Check OpenFDA API (slower, may lag 1-3 weeks)
-      const isApproved = await checkRecentFDAApproval(catalyst, verbose);
-      if (isApproved) {
-        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — confirmed by OpenFDA`);
-        removedCount++;
-        continue;
-      }
-
-      // Tier 3: Check Google News for approval announcements (catches sNDA/sBLA/biologics)
-      const newsApproved = await checkGoogleNewsApproval(catalyst, verbose);
-      if (newsApproved) {
-        if (verbose) console.log(`    ✓ Removing ${catalyst.drug} — confirmed by Google News`);
-        removedCount++;
-        continue;
-      }
+    // One decent source: mark it so it stops reading as Pending, but leave it on
+    // the report where a person can see the call and the evidence behind it.
+    if (r.certainty === 'likely' && (r.outcome === 'Approved' || r.outcome === 'CRL')) {
+      catalyst.status = r.outcome;
+      if (r.brandName && !catalyst.brandName) catalyst.brandName = r.brandName;
+      if (r.sourceUrl) catalyst.sourceUrl = r.sourceUrl;
+      catalyst.reviewNote = `${r.outcome} per ${r.evidence[0].source} — awaiting second source.`;
+      if (verbose) console.log(`    ~ ${catalyst.drug} — marked ${r.outcome} (single source)`);
+      results.push(catalyst);
+      continue;
     }
 
+    // Suggestive but unproven: change nothing, but say why it is worth a look.
+    catalyst.reviewNote =
+      `Possible ${r.outcome || 'FDA action'} — ${r.evidence[0].source}: ${r.evidence[0].detail}`;
+    if (r.sourceUrl) catalyst.sourceUrl = r.sourceUrl;
+    if (verbose) console.log(`    ? ${catalyst.drug} — needs review: ${r.evidence[0].source}`);
     results.push(catalyst);
   }
 
+  // Audit trail: what came off, when, and on what evidence.
+  if (outcomes.length) {
+    try {
+      const outPath = path.join(STATE_DIR, 'outcomes.json');
+      let log = [];
+      try { log = JSON.parse(fs.readFileSync(outPath, 'utf8')); } catch { /* first run */ }
+      // Key on the decision, not the name the source happened to use, so the
+      // same approval logged as "Besremi" and "ropeginterferon alfa-2b" appears once.
+      const key = (o) => `${String(o.brandName || o.drug).toLowerCase().replace(/[^a-z0-9]/g, '')}|${o.pdufaDate}`;
+      const seen = new Set(log.map(key));
+      const added = [];
+      for (const o of outcomes) {
+        if (seen.has(key(o))) continue;
+        seen.add(key(o));
+        added.push(o);
+      }
+      if (added.length) {
+        fs.mkdirSync(STATE_DIR, { recursive: true });
+        fs.writeFileSync(outPath, JSON.stringify([...log, ...added], null, 1));
+      }
+    } catch (e) {
+      if (verbose) console.log(`  Warning: could not write outcomes log: ${e.message}`);
+    }
+  }
+
   if (verbose && removedCount > 0) {
-    console.log(`  Removed ${removedCount} approved past-PDUFA catalyst(s)`);
+    console.log(`  Removed ${removedCount} resolved past-PDUFA catalyst(s)`);
   }
 
   return results;
@@ -1594,6 +1953,8 @@ async function getPDUFACatalysts(options = {}) {
   }
 
   // Check "Awaiting PDUFA" entries for newly announced dates
+  allCatalysts = dedupeCatalysts(allCatalysts, verbose);
+
   allCatalysts = await checkAwaitingPDUFA(allCatalysts, verbose);
 
   // Enrich all catalysts
@@ -1629,7 +1990,7 @@ async function getPDUFACatalysts(options = {}) {
 
   // Cache results
   if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
+    fs.mkdirSync(STATE_DIR, { recursive: true });
   }
   fs.writeFileSync(CATALYSTS_CACHE_FILE, JSON.stringify(allCatalysts, null, 2));
   fs.writeFileSync(CATALYSTS_LAST_FETCH, new Date().toISOString());
@@ -1720,5 +2081,7 @@ module.exports = {
   calculateDaysUntil,
   enrichCatalyst,
   filterApprovedCatalysts,
+  cleanIndication,
+  dedupeCatalysts,
   CURATED_CATALYSTS
 };
