@@ -1,6 +1,62 @@
 {
  "items": [
   {
+   "brand": "NeurologyLive",
+   "title": "RIPK1 Inhibitor Fails to Slow Functional Decline in Phase 2 ALS Trial",
+   "link": "https://www.neurologylive.com/view/ripk1-inhibitor-fails-to-slow-functional-decline-phase-2-als-trial",
+   "description": "Results recently published from the phase 2 HIMALAYA trial reported that SAR443820 did not slow functional decline, and was associated with more adverse events and treatment discontinuations in patients with ALS.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "PSMA-PET in clinical practice: Juan Gómez Rivas, MD, on barriers to access",
+   "link": "https://www.urologytimes.com/view/psma-pet-in-clinical-practice-juan-g-mez-rivas-md-on-barriers-to-access",
+   "description": "Juan Gómez-Rivas, MD, discusses barriers to PSMA-PET imaging and how disparities in access may affect prostate cancer staging and treatment planning.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Neutrogena Launches New Sunscreens With Newly Permitted UV Filter Bemotrizinol",
+   "link": "https://www.dermatologytimes.com/view/neutrogena-launches-new-sunscreens-with-newly-permitted-uv-filter-bemotrizinol",
+   "description": "Two new Neutrogena facial sunscreens incorporate bemotrizinol, the first new sunscreen active ingredient added to the US OTC monograph in decades.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "ESCRS 2026: AI is already improving IOL formulas, but caution is still needed in clinical decision-making",
+   "link": "https://www.ophthalmologytimes.com/view/ai-is-already-improving-iol-formulas-but-caution-is-still-needed-in-clinical-decision-making-says-muzychuk",
+   "description": "Adam Muzychuk, MD, discusses how AI like the Kane formula is improving outcomes, and why he still urges caution over relying on it for clinical decisions.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "When physicians know the right care and can't give it, with Rebecca Schoon of Pacific University",
+   "link": "https://www.medicaleconomics.com/view/when-physicians-know-the-right-care-and-can-t-give-it-with-rebecca-schoon-of-pacific-university",
+   "description": "Rebecca Schoon, Ph.D., who helped lead the Oregon arm of a national moral injury report, says patients can see what corporate ownership and insurer barriers are doing to their doctors.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Michigan man charged with billing Medicare for psychotherapy never provided; women less likely than men to receive intensive treatment; gambling disorder emergency visits nearly doubled in Ontario — Morning Medical Update",
+   "link": "https://www.medicaleconomics.com/view/michigan-man-charged-with-billing-medicare-for-psychotherapy-never-provided-women-less-likely-than-men-to-receive-intensive-treatment-gambling-disorder-emergency-visits-nearly-doubled-in-ontario-morning-medical-update",
+   "description": "The top news stories in medicine today.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "How AdventHealth is moving to assess cancer risk earlier",
+   "link": "https://www.chiefhealthcareexecutive.com/view/how-adventhealth-is-moving-to-assess-cancer-risk-earlier",
+   "description": "With a new program that uses AI and revamped workflows, the health system is looking to offer more personalized care.",
+   "published": "2026-09-17"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Hospital merger reviews miss key points, report says",
+   "link": "https://www.chiefhealthcareexecutive.com/view/hospital-merger-reviews-miss-key-points-report-says",
+   "description": "Regulators reject some consolidations due to fears of higher prices and reduced competition. A Kaufman Hall report cites other factors worth consideration.",
+   "published": "2026-09-17"
+  },
+  {
    "brand": "OncLive",
    "title": "European Approval Is Sought for Lirafugratinib in FGFR2-Altered Metastatic Cholangiocarcinoma",
    "link": "https://www.onclive.com/view/european-approval-is-sought-for-lirafugratinib-in-fgfr2-altered-metastatic-cholangiocarcinoma",
@@ -235,7 +291,7 @@
    "brand": "Targeted Oncology",
    "title": "Sacituzumab Govitecan Combo Misses PFS End Point in PD-L1–High NSCLC",
    "link": "https://www.targetedonc.com/view/sacituzumab-govitecan-pembrolizumab-first-line-pd-l1-high-metastatic-nsclc",
-   "description": "KEYNOTE-D46 shows sacituzumab govitecan plus pembrolizumab misses PFS/OS targets in PD-L1���high metastatic NSCLC, despite higher responses and toxicity.",
+   "description": "KEYNOTE-D46 shows sacituzumab govitecan plus pembrolizumab misses PFS/OS targets in PD-L1–high metastatic NSCLC, despite higher responses and toxicity.",
    "published": "2026-09-16"
   },
   {
@@ -726,6 +782,76 @@
    "title": "Trial Ended Early When Venetoclax Plus DA-EPOCH-R Did Not Improve Outcomes in Double-Hit Lymphoma",
    "link": "https://www.pharmacytimes.com/view/trial-ended-early-when-venetoclax-plus-da-epoch-r-did-not-improve-outcomes-in-double-hit-lymphoma",
    "description": "The randomized ALLIANCE A051701 trial closed early when treatment-related toxicity and mortality were increased without improving PFS in patients with newly diagnosed double-hit lymphoma.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "After the First ADC Fails, HR-Positive Breast Cancer Sequencing Runs on Judgment, Not Trial Data",
+   "link": "https://www.targetedonc.com/view/sequencing-adcs-after-ild-in-hr-positive-her2-negative-breast-cancer",
+   "description": "During a live event, Ruta Rao, MD, and participants discussed how toxicity history, rather than head-to-head trial data, drives the choice among 3 antibody-drug conjugates once the first one fails or becomes intolerable.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "What the FDA's Approval of Ameluz PDT Means for Skin Cancer",
+   "link": "https://www.hcplive.com/view/what-fda-approval-ameluz-pdt-means-skin-cancer",
+   "description": "What does FDA approval of Ameluz PDT for superficial BCC mean for dermatology? Neal Bhatia, MD, weighs in on the first-of-its-kind decision.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Immediate Coronary Angiography Does Not Improve Survival Outcomes in Cardiac Arrest",
+   "link": "https://www.hcplive.com/view/immediate-coronary-angiography-does-not-improve-survival-outcomes-in-cardiac-arrest",
+   "description": "Sten Rubertsson, MD, PhD, discusses the results of the DISCO study, which compared immediate to deferred angiography in patients without ST-elevation following cardiac arrest.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Across the US, Obesity Care Still Lacks an Owner",
+   "link": "https://www.ajmc.com/view/across-the-us-obesity-care-still-lacks-an-owner",
+   "description": "Obesity care surges with GLP-1 demand, but fragmented ownership, prior authorizations, and coverage rules stall treatment—pharmacists step in.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Aspirin's CRC Benefit Narrows to PIK3CA Exon 9/20 Mutations",
+   "link": "https://www.ajmc.com/view/aspirin-s-crc-benefit-narrows-to-pik3ca-exon-9-20-mutations",
+   "description": "ASCOLT finds no overall adjuvant aspirin benefit in colorectal cancer, but meta-analysis links improved disease-free survival to PIK3CA exon 9/20 mutations.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Tafasitamab Results in Real-World Study on Par With Those in L-MIND",
+   "link": "https://www.ajmc.com/view/tafasitamab-results-in-real-world-study-on-par-with-those-in-l-mind",
+   "description": "Real-world DLBCL data show Incyte’s tafasitamab matches L-MIND responses across diverse Non-Hodgkin lymphoma patients, per Cardinal Health review.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Rethinking Tan Maxing: How Clinicians Can Talk to Patients About UV Risk",
+   "link": "https://www.dermatologytimes.com/view/rethinking-tan-maxing-how-clinicians-can-talk-to-patients-about-uv-risk",
+   "description": "Vishal A. Patel, MD, FAAD, FACMS, discusses tan maxing, cumulative UV damage, and how clinicians can approach conversations about tanning habits.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Updated AAP guidance changes iron deficiency screening and treatment in children",
+   "link": "https://www.contemporarypediatrics.com/view/updated-aap-guidance-changes-iron-deficiency-screening-and-treatment-in-children",
+   "description": "Melissa Wallach, MD, FAAP, discusses what pediatricians should know about updated screening, supplementation, and treatment recommendations for iron deficiency.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Deborah Dempsey, Pharm.D., MBA, on appealing 340B claims | PBMI 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/deborah-dempsey-pharm-d-mba-on-appealing-340b-claims-pbmi-2026",
+   "description": "ProAct Chief Operating Offier Deborah Dempsey says plan sponsors still lack the data and visibility to know whether they were shorted on a 340B claim.",
+   "published": "2026-09-16"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "New AACR report has found U.S. Cancer death rate dropped 35% since 1991",
+   "link": "https://www.managedhealthcareexecutive.com/view/new-aacr-report-has-found-u-s-cancer-death-rate-dropped-35-since-1991",
+   "description": "AACR Cancer Progress Report 2026 highlights a 35% U.S. cancer death decline, new FDA advances, persistent disparities, and urgent calls for stronger NIH/NCI funding.",
    "published": "2026-09-16"
   },
   {
@@ -3445,5 +3571,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-09-16T20:32:19.115Z"
+ "updatedAt": "2026-09-17T11:01:07.710Z"
 }

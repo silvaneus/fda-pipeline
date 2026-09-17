@@ -971,5 +971,85 @@
    }
   ],
   "recordedAt": "2026-09-16"
+ },
+ {
+  "drug": "Bictegravir Plus Lenacapavir",
+  "brandName": "SUNLENCA",
+  "company": "Gilead Sciences Inc.",
+  "pdufaDate": "2026-08-27",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-08-27",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215974Orig1s017ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA215974 SUPPL17 approved 2026-08-27 as SUNLENCA",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/215974Orig1s017ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-17"
+ },
+ {
+  "drug": "trastuzumab deruxtecan",
+  "brandName": "ENHERTU",
+  "company": "AstraZeneca/Daiichi Sankyo",
+  "pdufaDate": "2026-07-07",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-04-27",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761139Orig1s039ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761139 SUPPL39 approved 2026-04-27 as ENHERTU",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761139Orig1s039ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-17"
+ },
+ {
+  "drug": "nivolumab",
+  "brandName": "OPDIVO",
+  "company": "Bristol Myers Squibb",
+  "pdufaDate": "2026-04-08",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-05-12",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125554Orig1s136ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA125554 SUPPL136 approved 2026-05-12 as OPDIVO",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/125554Orig1s136ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-17"
+ },
+ {
+  "drug": "datopotamab deruxtecan",
+  "brandName": "ENHERTU",
+  "company": "AstraZeneca/Daiichi Sankyo",
+  "pdufaDate": "2026-05-20",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-04-27",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761139Orig1s039ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761139 SUPPL39 approved 2026-04-27 as ENHERTU",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761139Orig1s039ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-09-17"
  }
 ]
