@@ -1051,5 +1051,45 @@
    }
   ],
   "recordedAt": "2026-09-17"
+ },
+ {
+  "drug": "UX111 AAV",
+  "brandName": null,
+  "company": "Ultragenyx Pharmaceutical Inc",
+  "pdufaDate": "2026-09-19",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025064473/rare-ex99_1.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1515673/000095017025064473/rare-ex99_1.htm"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-09-19.",
+  "recordedAt": "2026-09-18"
+ },
+ {
+  "drug": "IBTROZI",
+  "brandName": null,
+  "company": "Nuvation Bio Inc.",
+  "pdufaDate": "2027-01-04",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/1811063/000119312525174954/d909051dex991.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/1811063/000119312525174954/d909051dex991.htm"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2027-01-04.",
+  "recordedAt": "2026-09-18"
  }
 ]
