@@ -1091,5 +1091,26 @@
   ],
   "note": "Decided ahead of the listed PDUFA date of 2027-01-04.",
   "recordedAt": "2026-09-18"
+ },
+ {
+  "drug": "amivantamab + lazertinib",
+  "brandName": null,
+  "company": "Johnson & Johnson",
+  "pdufaDate": "2027-02-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-09-18",
+  "sourceUrl": "https://www.cancernetwork.com/view/subcutaneous-amivantamab-combo-is-a-clear-new-standard-in-egfr-nsclc",
+  "evidence": [
+   {
+    "source": "CancerNetwork",
+    "detail": "Subcutaneous Amivantamab Combo is a “Clear” New Standard in EGFR+ NSCLC",
+    "confidence": "high",
+    "url": "https://www.cancernetwork.com/view/subcutaneous-amivantamab-combo-is-a-clear-new-standard-in-egfr-nsclc",
+    "published": "2026-09-18"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2027-02-28.",
+  "recordedAt": "2026-09-19"
  }
 ]
