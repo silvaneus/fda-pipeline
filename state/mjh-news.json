@@ -1,10 +1,122 @@
 {
  "items": [
   {
+   "brand": "NeurologyLive",
+   "title": "NeurologyLive® Brain Games: September 20, 2026",
+   "link": "https://www.neurologylive.com/view/neurologylive-brain-games-september-20-2026",
+   "description": "Test your neurology knowledge with NeurologyLive®'s weekly quiz series, featuring questions on a variety of clinical and historical neurology topics. This week's topic is Parkinson disease biomarkers!",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Eichenbaum Acorns: A passion for retina science with Andrea Gibson, PhD, and Erin C. Henry, PhD",
+   "link": "https://www.ophthalmologytimes.com/view/eichenbaum-acorns-a-shared-passion-for-retina-science-with-andrea-gibson-phd-and-erin-c-henry-phd",
+   "description": "Andrea Gibson, PhD, and Erin C. Henry, PhD, trace 20 years in retina drug development—and the pathway gap still facing young scientists.",
+   "published": "2026-09-20"
+  },
+  {
    "brand": "Ophthalmology Times",
    "title": "Vienna calling: Inside the 26th EURETINA Congress",
    "link": "https://www.ophthalmologytimes.com/view/vienna-calling-inside-the-26th-euretina-congress",
    "description": "The 26th EURETINA Congress convenes in Vienna, Austria, from October 1–4, headlined by a new World Retina networking initiative and a revamped Free Paper Forum stage.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Pembrolizumab/Enfortumab Vedotin Earns Positive CHMP Opinion in MIBC",
+   "link": "https://www.cancernetwork.com/view/pembrolizumab-enfortumab-vedotin-earns-positive-chmp-opinion-in-mibc",
+   "description": "A positive CHMP opinion supports the perioperative use of pembrolizumab plus enfortumab vedotin in resectable MIBC regardless of cisplatin eligibility.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Screening for CHIP Mutations to Guide CAR T Cell Candidacy in Lymphoma",
+   "link": "https://www.cancernetwork.com/view/screening-for-chip-mutations-to-guide-car-t-cell-candidacy-in-lymphoma",
+   "description": "Jasmine Zain, MD, described how pre-existing CHIP mutations should inform pre-infusion risk counseling and treatment selection.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Interpreting CMR GUIDE’s Mixed Results for ICD Implantation, With Joseph Selvanayagam, MBBS",
+   "link": "https://www.hcplive.com/view/interpreting-cmr-guide-s-mixed-results-for-icd-implantation-with-joseph-selvanayagam-mbbs",
+   "description": "Selvanayagam shares his thoughts on whether ICDs’ improvements in sudden cardiac death are worth the reduced quality of life.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "AI and the Future of Health Care Interoperability",
+   "link": "https://www.targetedonc.com/view/ai-and-the-future-of-health-care-interoperability",
+   "description": "AI streamlines oncology workflows, cuts admin burden, and hints at smarter interoperability—linking fragmented records for quicker clinical decisions.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "A Look Inside CONVERGE: Intratumoral Therapy Comes to Locally Advanced NSCLC",
+   "link": "https://www.targetedonc.com/view/dibardino-converge-study-nbtxr3-intratumoral-therapy-nsclc-qa",
+   "description": "David DiBardino, MD, explains how intratumoral radioenhancer therapy works, why standardization remains a challenge, and what early CONVERGE study data suggest for locally advanced NSCLC.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "DTI-ALPS Glymphatic Marker Fails to Predict Survival in Glioblastoma",
+   "link": "https://www.neurologylive.com/view/dti-alps-glymphatic-marker-fails-to-predict-survival-glioblastoma",
+   "description": "A retrospective cohort study found DTI-ALPS, a glymphatic function marker, did not independently predict survival in glioblastoma beyond extent of resection and sex.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "This Week's Top 5 Infectious Disease News Stories: September 12-September 18, 2026",
+   "link": "https://www.contagionlive.com/view/this-week-s-top-5-infectious-disease-news-stories-september-12-september-18-2026",
+   "description": "In this week's top infectious disease stories, a Pennsylvania teen became the state's fourth measles death in weeks, the CDC reported a 17% summer surge in rabies exposure calls, new research revisited whether cefepime raises mortality risk, a multihospital review examined ceftriaxone's safety after state alerts, and examining Legionella pneumonia diagnostics.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Regorafenib Prescribing in Advanced GIST Deviates From Guidelines",
+   "link": "https://www.ajmc.com/view/regorafenib-prescribing-in-advanced-gist-deviates-from-guidelines",
+   "description": "Claims data show regorafenib is prescribed earlier than guidelines advise for a good share of patients with advanced GIST, with dosing also varying widely.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Secondary T-Cell Cancers After CAR T: Rare, Real, and Worth Watching",
+   "link": "https://www.ajmc.com/view/secondary-t-cell-cancers-after-car-t-rare-real-and-worth-watching",
+   "description": "However, the risk of these rare cancers is not enough to dissuade prescribing CAR T-cell therapy for CLL, explains Kerry Rogers, MD, The James.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Oveporexton Met Primary, Key Secondary End Points in Phase 3 Studies",
+   "link": "https://www.drugtopics.com/view/oveporexton-met-primary-key-secondary-end-points-in-phase-3-studies",
+   "description": "Results show consistent improvements in wakefulness, cataplexy, and quality of life with oveporexton for patients with narcolepsy.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Semaglutide Linked to Up to 40% Fewer Asthma Attacks, Real-World Data Show",
+   "link": "https://www.pharmacytimes.com/view/semaglutide-linked-to-up-to-40-fewer-asthma-attacks-real-world-data-show",
+   "description": "Findings presented at the European Respiratory Society Congress 2026 suggest semaglutide may offer respiratory benefits beyond its approved diabetes and obesity indications.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "How screen time and eyelid health affect dry eye risk",
+   "link": "https://www.ophthalmologytimes.com/view/how-screen-time-and-eyelid-health-affect-dry-eye-risk",
+   "description": "Ashraf Ahmad, MD, explains what's driving rising dry eye rates and why eyelid evaluation is often overlooked.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Maui Derm NP+PA Fall 2026 Day 2: GLP-1s, Inflammatory Disease, and Diagnostic Challenges",
+   "link": "https://www.dermatologytimes.com/view/maui-derm-np-pa-fall-2026-day-2-glp-1s-inflammatory-disease-and-diagnostic-challenges",
+   "description": "Day 2 explored infectious disease, challenging diagnoses, GLP-1s in psoriasis, and evolving approaches to inflammatory skin disease.",
+   "published": "2026-09-19"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "5 Highlights From the Dermatology Times Cutaneous Oncology Workshop",
+   "link": "https://www.dermatologytimes.com/view/5-highlights-from-the-dermatology-times-cutaneous-oncology-workshop",
+   "description": "From prevention and early detection to immunotherapy and radiation, revisit key takeaways from the Cutaneous Oncology Workshop.",
    "published": "2026-09-19"
   },
   {
@@ -5034,5 +5146,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-09-19T10:20:29.984Z"
+ "updatedAt": "2026-09-20T10:39:50.653Z"
 }
