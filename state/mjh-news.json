@@ -1,6 +1,111 @@
 {
  "items": [
   {
+   "brand": "CancerNetwork",
+   "title": "Clinical Implications, Open Questions, and Looking Ahead",
+   "link": "https://www.cancernetwork.com/view/clinical-implications-open-questions-and-looking-ahead",
+   "description": "The faculty synthesize the evidence into clinical positioning and outline the questions that remain open.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Iberdomide-Based Treatment in Lenalidomide-Refractory Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/iberdomide-based-treatment-in-lenalidomide-refractory-multiple-myeloma",
+   "description": "The discussion continues with the first clinical scenario involving lenalidomide-refractory multiple myeloma.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "How First-Line Treatment of EGFR-Mutated NSCLC Has Changed",
+   "link": "https://www.cancernetwork.com/view/how-first-line-treatment-of-egfr-mutated-nsclc-has-changed",
+   "description": "Estelamari Rodriguez, MD, MPH, of Sylvester Comprehensive Cancer Center opens this CancerNetwork Around the Practice discussion on first-line therapy for epidermal growth factor receptor (EGFR)-mutated advanced non–small cell lung cancer (NSCLC) with panelists Matthew Gumbleton, MD, PhD, of Huntsman Cancer Institute, and Siddhartha Devarakonda, MD, of Providence Swedish Cancer Institute.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "What Were the Key Hematologic Oncology Takeaways from SOHO 2026?",
+   "link": "https://www.cancernetwork.com/view/what-were-the-key-hematologic-oncology-takeaways-from-soho-2026-",
+   "description": "At SOHO 2026, experts highlighted new findings and advances across diseases including lymphoma, myelodysplastic syndrome, and leukemia.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "This Week on NeurologyLive® — September 21, 2026",
+   "link": "https://www.neurologylive.com/view/this-week-on-neurologylive-september-21-2026",
+   "description": "Here's some of what is coming soon to NeurologyLive® this week.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Anaphylm Is Back at the FDA: A Clinician FAQ on Needle-Free Epinephrine",
+   "link": "https://www.hcplive.com/view/anaphylm-fda-resubmission-clinician-faq-needle-free-epinephrine",
+   "description": "Aquestive has resubmitted its needle-free epinephrine film after an FDA rejection over usability, not efficacy. This FAQ covers what changed.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "AJMC",
+   "title": "New ASCO Data on CAR T-Cell Therapy Outcomes by Site Type",
+   "link": "https://www.ajmc.com/view/new-asco-data-on-car-t-cell-therapy-outcomes-by-site-type",
+   "description": "New ASCO data comparing FACT-accredited and non-accredited centers show similar patients, similar toxicities, and similar infection rates, though Dr. Porter cautions the claims-based analysis carries real limitations.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Where MAC and NTM Research Is Headed Next",
+   "link": "https://www.ajmc.com/view/where-mac-and-ntm-research-is-headed-next",
+   "description": "From host-directed therapies to inhaled drug delivery, Dr. Losier maps the research priorities that could finally match the right MAC and NTM treatment to the right patient.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Building the Curriculum: Training Clinicians to Prescribe Anti-Amyloid Therapy",
+   "link": "https://www.ajmc.com/view/building-the-curriculum-training-clinicians-to-prescribe-anti-amyloid-therapy",
+   "description": "Led by the moderator, the expert neurology and primary care panelists examined what an ideal training curriculum looks like.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Formula Feeding and the Gut Microbiome: Closing the Gap",
+   "link": "https://www.contemporarypediatrics.com/view/formula-feeding-and-the-gut-microbiome-closing-the-gap",
+   "description": "Formula can't fully replicate what breast milk provides for the gut microbiome — but the gap may be narrower than clinicians think. Here's what the data show.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Addressing geographic variation in dry eye disease care requires patient-centric approaches",
+   "link": "https://www.ophthalmologytimes.com/view/addressing-geographic-variation-in-dry-eye-disease-care-requires-patient-centric-approaches",
+   "description": "NESTS survey reveals patients often normalize dry eye symptoms, delaying care despite major impacts on daily life.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Prof. Anat Loewenstein on what to expect in Vienna",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-prof-anat-loewenstein-on-what-to-expect-in-vienna",
+   "description": "Anat Loewenstein, MD, previews EURETINA 2026 Vienna: the Innovation Spotlight, 17 sessions, symposia, and more.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Medicare's plan to pay half for same-day care, with Anders Gilberg of MGMA",
+   "link": "https://www.medicaleconomics.com/view/medicare-s-plan-to-pay-half-for-same-day-care-with-anders-gilberg-of-mgma",
+   "description": "Anders Gilberg of MGMA explains the same-day payment proposal sitting in Medicare's 2027 fee schedule, and why practices won't know its fate until the final rule lands around Nov. 1.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Act faster by listening more | Lessons for Leaders",
+   "link": "https://www.chiefhealthcareexecutive.com/view/act-faster-by-listening-more-lessons-for-leaders",
+   "description": "Maria Ghazal, president and CEO of the Healthcare Leadership Council, talks about taking the time to understand and building consensus.",
+   "published": "2026-09-21"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Maternal mental health is the silent epidemic we still aren't treating | Viewpoint",
+   "link": "https://www.chiefhealthcareexecutive.com/view/maternal-mental-health-is-the-silent-epidemic-we-still-aren-t-treating-viewpoint",
+   "description": "One in five mothers is affected, yet most cases go untreated. The problem isn't awareness—it's what happens next.",
+   "published": "2026-09-21"
+  },
+  {
    "brand": "NeurologyLive",
    "title": "NeurologyLive® Brain Games: September 20, 2026",
    "link": "https://www.neurologylive.com/view/neurologylive-brain-games-september-20-2026",
@@ -12,6 +117,55 @@
    "title": "Eichenbaum Acorns: A passion for retina science with Andrea Gibson, PhD, and Erin C. Henry, PhD",
    "link": "https://www.ophthalmologytimes.com/view/eichenbaum-acorns-a-shared-passion-for-retina-science-with-andrea-gibson-phd-and-erin-c-henry-phd",
    "description": "Andrea Gibson, PhD, and Erin C. Henry, PhD, trace 20 years in retina drug development—and the pathway gap still facing young scientists.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "DiBardino Outlines Phase 2 CONVERGE Trial Design of Radioenhancer in NSCLC",
+   "link": "https://www.targetedonc.com/view/converge-trial-nbtxr3-radioenconverge-trial-nbtxr3-radioenhancer-locally-advanced-nsclchancer-locally-advanced-nsclc",
+   "description": "David DiBardino, MD, explains how a hafnium compound is being tested alongside chemoradiation and durvalumab to address low response rates in locally advanced disease.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Key Takeaways for Multidisciplinary Lung Cancer Care From WCLC 2026",
+   "link": "https://www.cancernetwork.com/view/key-takeaways-for-multidisciplinary-lung-cancer-care-from-wclc-2026",
+   "description": "Poster sessions at WCLC 2026 detail how surgery, nursing, and pathology can contribute to the multidisciplinary care of patients with lung cancer.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "The HCPFive: Top News for Healthcare Providers from the Week of 09/13",
+   "link": "https://www.hcplive.com/view/the-hcpfive-top-news-for-healthcare-providers-from-the-week-of-09-13",
+   "description": "Stay updated with the latest healthcare breakthroughs, including Bayer's finerenone expanding to type 1 diabetes-associated CKD.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Defending Multidrug Masking in Psilocybin Trials, With Josh Woolley, MD, PhD",
+   "link": "https://www.hcplive.com/view/multidrug-masking-psilocybin-trials-josh-woolley",
+   "description": "Woolley separates intoxication from delirium and defends aggressive masking instead of a shift to comparative efficacy trial designs.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Ebola and the Ongoing Tale of US Failures",
+   "link": "https://www.contagionlive.com/view/ebola-and-the-ongoing-tale-of-us-failures",
+   "description": "In mid-May, as the world was still grappling with an unexpected hantavirus outbreak aboard a tourism vessel, news broke of an Ebola outbreak in the Ituri Province of the Democratic Republic of the Congo spanning at least 3 health zones, including Bunia, Rwampara, and Mongbwalu.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Study Finds No Neurodevelopmental Risk in Prenatal COVID-19, Except Speech",
+   "link": "https://www.drugtopics.com/view/study-findes-no-neurodevelopmental-risk-in-prenatal-covid-19-except-speech",
+   "description": "Researchers assess the neurological outcomes of over 200,000 children exposed to COVID-19 before birth.",
+   "published": "2026-09-20"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Ambulatory Pharmacists Convene in Boston at NEIAP's 2026 Annual Forum",
+   "link": "https://www.pharmacytimes.com/view/ambulatory-pharmacists-convene-in-boston-at-neiap-s-2026-annual-forum",
+   "description": "Experts from the NEIAP 2026 Annual Forum share how pharmacists are driving hypertension, lipid, cardiorenal, obesity, and CDTM care as primary clinical decision-makers.",
    "published": "2026-09-20"
   },
   {
@@ -4680,7 +4834,7 @@
    "brand": "Urology Times",
    "title": "The critical role of advocacy in urologic oncology",
    "link": "https://www.urologytimes.com/view/the-critical-role-of-advocacy-in-urologic-oncology",
-   "description": "Advocacy through groups like BCAN and the AUA shapes urologic oncology policy—driving funding, screening access, and equity in cancer care, the authors write.",
+   "description": "Advocacy through groups like BCAN and the AUA shapes urologic oncology policy���driving funding, screening access, and equity in cancer care, the authors write.",
    "published": "2026-09-09"
   },
   {
@@ -5146,5 +5300,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-09-20T10:39:50.653Z"
+ "updatedAt": "2026-09-21T12:03:34.713Z"
 }
