@@ -1151,5 +1151,26 @@
    }
   ],
   "recordedAt": "2026-09-24"
+ },
+ {
+  "drug": "Low Dose Estrogen Weekly Patch",
+  "brandName": null,
+  "company": "Viatris Inc.",
+  "pdufaDate": "2026-07-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-09-24",
+  "sourceUrl": "https://www.hcplive.com/view/insulin-efsitora-alfa-onswik-gains-fda-approval-for-type-2-diabetes",
+  "evidence": [
+   {
+    "source": "HCPLive",
+    "detail": "Weekly Insulin Efsitora Alfa (Onswik) Gains FDA approval for Type 2 Diabetes",
+    "confidence": "high",
+    "url": "https://www.hcplive.com/view/insulin-efsitora-alfa-onswik-gains-fda-approval-for-type-2-diabetes",
+    "published": "2026-09-24"
+   }
+  ],
+  "recordedAt": "2026-09-25"
  }
 ]
