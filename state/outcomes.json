@@ -1172,5 +1172,25 @@
    }
   ],
   "recordedAt": "2026-09-25"
+ },
+ {
+  "drug": "IMFINZI",
+  "brandName": "IMFINZI",
+  "company": "AstraZeneca PLC",
+  "pdufaDate": "2026-12-31",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-08-31",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s060ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "BLA761069 SUPPL60 approved 2026-08-31 as IMFINZI",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/761069Orig1s060ltr.pdf"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-12-31.",
+  "recordedAt": "2026-09-26"
  }
 ]
