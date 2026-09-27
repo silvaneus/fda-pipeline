@@ -1,10 +1,213 @@
 {
  "items": [
   {
+   "brand": "NeurologyLive",
+   "title": "NeurologyLive® Brain Games: September, 2026",
+   "link": "https://www.neurologylive.com/view/neurologylive-brain-games-september-2026",
+   "description": "Test your neurology knowledge with NeurologyLive®'s weekly quiz series, featuring questions on a variety of clinical and historical neurology topics. This week's topic is clinical trial results in Alzheimer disease!",
+   "published": "2026-09-27"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Subramanian, MD: anti-VEGF linked to kidney function decline",
+   "link": "https://www.ophthalmologytimes.com/view/subramanian-md-anti-vegf-linked-to-kidney-function-decline",
+   "description": "Study found anti-VEGF therapy was linked to kidney function decline in patients with diabetic retinopathy or retinal vein occlusion.",
+   "published": "2026-09-27"
+  },
+  {
    "brand": "Ophthalmology Times",
    "title": "Retina Society 2026: Non-invasive electrical stimulation therapy for intermediate dry AMD: improved retinal health and visual acuity",
    "link": "https://www.ophthalmologytimes.com/view/retina-society-2026-non-invasive-electrical-stimulation-therapy-intermediate-dry-amd-improved-retinal-health-and-visual-acuity",
    "description": "Non-invasive electrical stimulation delivered through closed eyelids improved retinal structure and photoreceptor function.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Iberdomide Triplet Improves MRD-Negative CRs in R/R Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/iberdomide-triplet-improves-mrd-negative-crs-in-r-r-multiple-myeloma",
+   "description": "The phase 3 EXCALIBER-RRMM trial supports iberdomide plus daratumumab and dexamethasone as a new standard of care in relapsed/refractory multiple myeloma.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "How Academic/Community Oncologists Improve Access to New Myeloma Therapies",
+   "link": "https://www.cancernetwork.com/view/how-academic-community-oncologists-improve-access-to-new-myeloma-therapies",
+   "description": "C. Ola Landgren, MD, PhD, discusses disparities in myeloma care access between academic and community practices and how his center works to bridge that gap.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Managing Sustained MRD Negativity After Multiple Myeloma Therapy Ends",
+   "link": "https://www.cancernetwork.com/view/managing-sustained-mrd-negativity-after-multiple-myeloma-therapy-ends",
+   "description": "Hans C. Lee, MD, discussed how he monitors patients with multiple myeloma who achieve deep, sustained MRD negativity after coming off therapy.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "PERSEUS Trial Shows Daratumumab Regimen Deepens Responses in NDMM",
+   "link": "https://www.cancernetwork.com/view/perseus-trial-shows-daratumumab-regimen-deepens-responses-in-ndmm",
+   "description": "No new safety signals were observed with the daratumumab regimen after an additional 3 years of follow-up in the phase 3 PERSEUS study.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Defining the Role of Neoadjuvant Radiation in Cholangiocarcinoma",
+   "link": "https://www.cancernetwork.com/view/defining-the-role-of-neoadjuvant-radiation-in-cholangiocarcinoma",
+   "description": "Ethan B. Ludmir, MD, discussed neoadjuvant radiation, advanced treatment techniques, the HYPERION CCA trial, and lirafugratinib in cholangiocarcinoma.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Etentamig Shows Superior Efficacy vs SOC in Relapsed/Refractory Myeloma",
+   "link": "https://www.cancernetwork.com/view/etentamig-shows-superior-efficacy-vs-soc-in-relapsed-refractory-myeloma",
+   "description": "In the phase 3 CERVINO trial, etentamig showed an early overall survival signal in patients with triple-class exposed relapsed/refractory multiple myeloma.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "CELMoD-Based Maintenance Deepens Responses After ASCT in Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/celmod-based-maintenance-deepens-responses-after-asct-in-multiple-myeloma",
+   "description": "In the phase 2 IBEX trial, iberdomide plus subcutaneous daratumumab post-transplant maintenance improved MRD status in patients with multiple myeloma.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Dr Matous on Moving T-Cell Redirection Into Frontline Myeloma Care",
+   "link": "https://www.targetedonc.com/view/dr-matous-on-moving-t-cell-redirection-into-frontline-myeloma-care",
+   "description": "Jeffrey V. Matous, MD, discusses moving fixed-duration T-cell–redirecting therapy into frontline multiple myeloma treatment and the persistent challenge of ultra-high-risk disease.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "IMS 2026 Day 4 Recap: MRD-Guided Regimens Highlight Final Sessions",
+   "link": "https://www.targetedonc.com/view/ims-2026-day-4-mrd-guided-regimens-real-world-car-t-data",
+   "description": "Closing sessions at IMS 2026 featured MRD-guided treatment strategies, real-world CAR T-cell data, and mixed results on cilta-cel neurotoxicity prevention in myeloma.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Luciano Costa, MD, Discusses the Changing Treatment Paradigm in Myeloma",
+   "link": "https://www.targetedonc.com/view/luciano-costa-md-changing-treatment-paradigm-myeloma-ims-2026",
+   "description": "Luciano Costa, MD, of UAB, explains why most patients with myeloma will soon need just 1 or 2 lines of therapy to restore normal life expectancy.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Azetukalner NDA Submitted, EMA Gives Approval Recommendation to Ocrelizumab, Phase 3 FUSION Trial Meets End Points",
+   "link": "https://www.neurologylive.com/view/azetukalner-nda-submitted-ema-gives-approval-recommendation-ocrelizumab-phase-3-fusion-trial-meets-end-points",
+   "description": "Neurology News Network for the week ending September 26th, 2026. [WATCH TIME: 4 minutes]",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Hereditary Angioedema Triggers, Prodromes Mapped in US HAEA Registry",
+   "link": "https://www.hcplive.com/view/hereditary-angioedema-triggers-prodromes-us-haea-registry",
+   "description": "Stress led all triggers, and a sense of an impending attack was the most reliable prodrome in patients with HAE-C1INH in the US HAEA Scientific Registry.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "The HCPFive: Top News for Healthcare Providers from the Week of 09/20",
+   "link": "https://www.hcplive.com/view/the-hcpfive-top-news-for-healthcare-providers-from-the-week-of-09-20",
+   "description": "Stay updated with the latest healthcare breakthroughs, including the FDA approval of insulin efsitora alfa-gobe (Onswik).",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Enivronmental Stewardship: The Role of Antimicrobials in Climate Change",
+   "link": "https://www.contagionlive.com/view/enivronmental-stewardship-the-role-of-antimicrobials-in-climate-change",
+   "description": "Widespread antimicrobial use disrupts vital microbial communities that regulate Earth’s biogeochemical cycles, driving antimicrobial resistance, worsening human and environmental health, and significantly contributing to climate change.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Tozorakimab Reduces COPD Exacerbations in Phase 3 Trials",
+   "link": "https://www.drugtopics.com/view/tozorakimab-reduces-copd-exacerbations-in-phase-3-trials",
+   "description": "The investigational anti–IL-33 antibody lowered exacerbation rates across all blood eosinophil levels, a benefit current COPD biologics do not offer.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Teclistamab-Daratumumab Intensification Achieves 73% MRD-Negative CR Rate in High-Risk Multiple Myeloma",
+   "link": "https://www.pharmacytimes.com/view/teclistamab-daratumumab-intensification-achieves-73-mrd-negative-cr-rate-in-high-risk-multiple-myeloma",
+   "description": "An MRD-guided strategy incorporating teclistamab-daratumumab intensification produced deep responses in newly diagnosed high-risk multiple myeloma, although infections affected more than three-quarters of treated patients.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "MRD-Guided Maintenance and the Question of When to Stop",
+   "link": "https://www.pharmacytimes.com/view/mrd-guided-maintenance-and-the-question-of-when-to-stop",
+   "description": "MRD-guided stopping in multiple myeloma shows many patients stay disease-free for 4 years.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Tec-Dara Cuts Death Risk 78% Without Raising Fatal Toxicity",
+   "link": "https://www.pharmacytimes.com/view/tec-dara-cuts-death-risk-78-without-raising-fatal-toxicity",
+   "description": "TecDara shows strong myeloma control, but early infection risk demands vigilant prophylaxis; safety improves after six months, supporting second-line use.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Social Media Mythbusters: At-Home Dermarollers",
+   "link": "https://www.dermatologytimes.com/view/social-media-mythbusters-at-home-dermarollers",
+   "description": "Can at-home dermarollers give the same results as in-office microneedling or is that just a myth? Read more about the latest social media trend and learn how to counsel your patients in the clinic.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Nimesh Patel, MD, on low-dose atropine and SYD-101",
+   "link": "https://www.ophthalmologytimes.com/view/nimesh-patel-md-on-low-dose-atropine-syd-101",
+   "description": "Nimesh A. Patel, MD, discusses compounded low-dose atropine and SYD-101 ahead of an October 30 FDA advisory committee meeting.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Retina Society 2026: Could statins reduce PVR risk after RD repair?",
+   "link": "https://www.ophthalmologytimes.com/view/retina-society-2026-could-statins-reduce-pvr-risk-after-rd-repair-",
+   "description": "Christina Y. Weng, MD, MBA, FASRS, highlights findings showing statin use reduced PVR risk by 25% in a propensity-matched cohort of nearly 10,000 patients.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Retina Society 2026: Exudate control similar in Coats disease and Coats-like disease in inherited retinal diseases",
+   "link": "https://www.ophthalmologytimes.com/view/retina-society-2026-exudate-control-similar-in-coats-disease-and-coats-like-disease-in-inherited-retinal-diseases",
+   "description": "At Retina Society 2026, Emily Eton, MD, discusses a 10-center study finding similar exudate control in Coats disease and Coats-like disease in inherited retinal diseases, with more injections needed in the IRD group.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "AJMC",
+   "title": "NCCN Journal Publishes Guidelines Update in Mantle Cell Lymphoma",
+   "link": "https://www.ajmc.com/view/nccn-journal-publishes-guidelines-update-in-mantle-cell-lymphoma",
+   "description": "The National Comprehensive Cancer Network update on mantle cell lymphoma puts covalent BTK inhibitors, MRD testing, and TP53 sequencing at the center of frontline care, while adding pirtobrutinib and a pair of CAR T-cell therapies for disease that progresses on a BTK inhibitor.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "AJMC",
+   "title": "AI and the Future of Community Oncology: Debra Patt, MD, PhD, MBA, MPH",
+   "link": "https://www.ajmc.com/view/ai-and-the-future-of-community-oncology-debra-patt-md-phd-mba-mph",
+   "description": "Debra Patt, MD, PhD, MBA, MPH, discusses how AI can streamline prior authorization and revenue cycle workflows in community oncology.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Community Care Consultations for Veterans with Diabetic Foot Ulcers",
+   "link": "https://www.ajmc.com/view/community-care-consultations-for-veterans-with-diabetic-foot-ulcers",
+   "description": "These findings demonstrate substantial but variable use of community care consultations for specialty care among patients with diabetic foot ulcers within the Veterans Health Administration.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Reimagining Value-Based Contracts for High-Cost Therapies",
+   "link": "https://www.ajmc.com/view/reimagining-value-based-contracts-for-high-cost-therapies",
+   "description": "Chester Good, MD, MPH, shares data and strategies used by UPMC to evaluate value-based contracting in specialty pharmacy.",
+   "published": "2026-09-26"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Advanced Primary Care Aids Cancer Prevention: Karen van Caulil, PhD",
+   "link": "https://www.ajmc.com/view/advanced-primary-care-aids-cancer-prevention-karen-van-caulil-phd",
+   "description": "Advanced primary care, return-to-work support, and survivorship follow-up are key employer cancer strategies, said Karen van Caulil, PhD.",
    "published": "2026-09-26"
   },
   {
@@ -333,7 +536,7 @@
    "brand": "AJMC",
    "title": "FDA Approves Belzutifan-Lenvatinib Combo for Advanced Kidney Cancer",
    "link": "https://www.ajmc.com/view/fda-approves-belzutifan-lenvatinib-combo-for-advanced-kidney-cancer",
-   "description": "FDA approved belzutifan plus lenvatinib for advanced ccRCC after PD-1/PD-L1 therapy, expanding treatment options for those with disease progression.",
+   "description": "The FDA has approved belzutifan plus lenvatinib for advanced ccRCC after PD-1/PD-L1 therapy, expanding treatments for those with disease progression.",
    "published": "2026-09-25"
   },
   {
@@ -8744,5 +8947,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-09-26T10:52:57.254Z"
+ "updatedAt": "2026-09-27T11:26:27.384Z"
 }
