@@ -1192,5 +1192,43 @@
   ],
   "note": "Decided ahead of the listed PDUFA date of 2026-12-31.",
   "recordedAt": "2026-09-26"
+ },
+ {
+  "drug": "RP1 (vusolimogene oderparepvec)",
+  "brandName": null,
+  "company": "Replimune Group Inc.",
+  "pdufaDate": "2026-08-02",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": null,
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": null
+   }
+  ],
+  "recordedAt": "2026-09-28"
+ },
+ {
+  "drug": "Zlurgisertib",
+  "brandName": null,
+  "company": "Incyte Corporation",
+  "pdufaDate": "2026-09-26",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=Zlurgisertib%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=Zlurgisertib%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-09-28"
  }
 ]
