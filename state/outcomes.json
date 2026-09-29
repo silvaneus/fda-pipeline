@@ -1230,5 +1230,44 @@
    }
   ],
   "recordedAt": "2026-09-28"
+ },
+ {
+  "drug": "WELIREG plus LENVIMA",
+  "brandName": "LENVIMA",
+  "company": "Eisai Co Ltd",
+  "pdufaDate": "2026-10-04",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-09-24",
+  "sourceUrl": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=206947",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA206947 SUPPL35 approved 2026-09-24 as LENVIMA",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=206947"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-10-04.",
+  "recordedAt": "2026-09-29"
+ },
+ {
+  "drug": "dextromethorphan/bupropion",
+  "brandName": "AXS-05",
+  "company": "Axsome Therapeutics",
+  "pdufaDate": "2026-04-30",
+  "outcome": "No such action",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018658",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "No FDA action found near this date. dextromethorphan is already approved (NDA018658, last action 2024-03-15, 776 days before this PDUFA date) and nothing was found at the date itself — verify this entry is real.",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=018658"
+   }
+  ],
+  "recordedAt": "2026-09-29"
  }
 ]
