@@ -1269,5 +1269,25 @@
    }
   ],
   "recordedAt": "2026-09-29"
+ },
+ {
+  "drug": "Mitapivat",
+  "brandName": "AQVESME",
+  "company": "Agios Pharmaceuticals, Inc.",
+  "pdufaDate": "2026-11-01",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-09-28",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216196Orig1s007ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA216196 SUPPL7 approved 2026-09-28 as AQVESME, PYRUKYND",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/216196Orig1s007ltr.pdf"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-11-01.",
+  "recordedAt": "2026-09-30"
  }
 ]
