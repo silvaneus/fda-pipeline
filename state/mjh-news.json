@@ -1,6 +1,223 @@
 {
  "items": [
   {
+   "brand": "OncLive",
+   "title": "Barriers to Transplant Access and Academic-Community Disparities",
+   "link": "https://www.onclive.com/view/barriers-to-transplant-access-and-academic-community-disparities",
+   "description": "Rawan Faramand, MD, addresses the uneven distribution of access to allogeneic transplant and to newer transplant technologies.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Gedatolisib Toxicity and Treatment Education in HR+/HER2− mBC",
+   "link": "https://www.cancernetwork.com/view/gedatolisib-toxicity-and-treatment-education-in-hr-her2-mbc",
+   "description": "The panel discusses the clinical and practical considerations surrounding the introduction of gedatolisib for patients with hormone receptor-positive, HER2-negative metastatic breast cancer (HR+/HER2− mBC), with particular emphasis on its mechanism, toxicity profile, intravenous administration, and patient education.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Managing Brain Metastases in HER2-Mutant NSCLC",
+   "link": "https://www.cancernetwork.com/view/managing-brain-metastases-in-her2-mutant-nsclc",
+   "description": "This episode addresses central nervous system metastases, which the panel notes may affect nearly half of patients with HER2-mutant non–small cell lung cancer.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "VIKTORIA-1 and Gedatolisib in HR+/HER2− mBC",
+   "link": "https://www.cancernetwork.com/view/viktoria-1-and-gedatolisib-in-hr-her2-mbc",
+   "description": "The panel examines the VIKTORIA-1 study and its implications for treatment selection in hormone receptor-positive, HER2-negative metastatic breast cancer (HR+/HER2− mBC) after CDK4/6 inhibitor therapy.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Managing Zongertinib Toxicities and Supporting Adherence",
+   "link": "https://www.cancernetwork.com/view/managing-zongertinib-toxicities-and-supporting-adherence",
+   "description": "This episode focuses on the safety profile of zongertinib and what it takes to keep patients on therapy.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Early Clinical Data Show KRAS Inhibitors Can Work in Cholangiocarcinoma",
+   "link": "https://www.cancernetwork.com/view/early-clinical-data-show-kras-inhibitors-can-work-in-cholangiocarcinoma",
+   "description": "Chih-Yi “Andy” Liao, MD, discusses early clinical data for KRAS G12C and G12D inhibitors in cholangiocarcinoma, noting that trials are just getting started.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Phase 4 OCTAGON Trial to Test Rapid Steroid Taper With Ravulizumab",
+   "link": "https://www.neurologylive.com/view/phase-4-octagon-trial-test-rapid-steroid-taper-with-ravulizumab",
+   "description": "A new phase 4 trial, OCTAGON, will test a rapid, predefined corticosteroid-tapering schedule in patients with generalized myasthenia gravis treated with ravulizumab.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "PETUNIA Study to Track Nipocalimab Use in Pregnancy",
+   "link": "https://www.neurologylive.com/view/petunia-study-to-track-nipocalimab-use-pregnancy",
+   "description": "PETUNIA, a new global pharmacovigilance study, will track pregnancy, maternal, and infant outcomes among patients with gMG exposed to nipocalimab.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Nail Detachment 4 Times More Common With GLP-1 Use",
+   "link": "https://www.hcplive.com/view/nail-detachment-4-times-more-common-with-glp-1-use",
+   "description": "The first controlled study of GLP-1 receptor agonists and nail health found nail detachment in 39% of users versus 9% of controls at EADV 2026.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "BE HEARD EXT: Bimekizumab Shows Improved HS Effects with Earlier Use",
+   "link": "https://www.hcplive.com/view/be-heard-ext-bimekizumab-shows-improved-hs-effects-earlier-use",
+   "description": "Earlier bimekizumab treatment was tied to higher IHS4-100 rates at 3 years in hidradenitis suppurativa, per post hoc BE HEARD data at EADV 2026.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Tips for Recognizing Hidradenitis Suppurativa in Skin of Color, With Julia Riley, MD",
+   "link": "https://www.hcplive.com/view/tips-recognizing-hidradenitis-suppurativa-skin-color-julia-riley-md",
+   "description": "At EADV 2026, Julia Mhlaba Riley, MD, discussed how hidradenitis suppurativa presents in skin of color and ways to close diagnostic and treatment gaps.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Protecting Patients Online and at Home: How NABP’s Safe Pharmacy Initiative Helps Patients Safely Buy Prescriptions Online",
+   "link": "https://www.drugtopics.com/view/protecting-patients-online-and-at-home-how-nabps-safe-pharmacy-initiative-helps-patients-safely-buy-prescriptions-online",
+   "description": "This article was sponsored by the National Association of Boards of Pharmacy (NABP)",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Open Access to Anti-VEGF Therapies in Retinal Vascular Diseases",
+   "link": "https://www.ajmc.com/view/open-access-to-anti-vegf-therapies-in-retinal-vascular-diseases",
+   "description": "How longer-lasting anti-VEGF therapies cut injections, visits, and vision loss risk—why payers may save overall by covering newer retinal drugs.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Closing Reflections on the Future of Vitiligo Care",
+   "link": "https://www.ajmc.com/view/closing-reflections-on-the-future-of-vitiligo-care",
+   "description": "As the panel closes, cautious optimism prevails: new mechanisms, expanding access, and a deeper understanding of vitiligo's psychosocial toll all point toward meaningful, if gradual, progress for patients across every skin tone.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Preparing Practices for the Next Era of Hepatitis B Care",
+   "link": "https://www.ajmc.com/view/preparing-practices-for-the-next-era-of-hepatitis-b-care",
+   "description": "Realizing functional cure at scale will take more than new drugs; it requires infrastructure, testing, and patient engagement working in concert. This episode closes the series with a roadmap for that shift.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Treatment Frequency in Retinal Vascular Diseases",
+   "link": "https://www.ajmc.com/view/treatment-frequency-in-retinal-vascular-diseases",
+   "description": "Rising anti‑VEGF drug prices, Medicare copays, and travel burdens reshape retinal disease care—see how affordability drives real‑world treatment choices.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Toward Standardized Sequencing in Vitiligo Care",
+   "link": "https://www.ajmc.com/view/toward-standardized-sequencing-in-vitiligo-care",
+   "description": "Will vitiligo treatment settle into a clear sequencing algorithm, or remain individualized? Dr. Lal and Jason weigh the absence of clinical guidelines against the reality that professional consensus typically lags well behind new therapies.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Dual Agonist Survodutide Delivers Up to 13.1% Weight Loss in T2D",
+   "link": "https://www.ajmc.com/view/dual-agonist-survodutide-delivers-up-to-13-1-weight-loss-in-t2d",
+   "description": "Survodutide achieved up to 13.1% weight loss vs 3.1% with placebo at 76 weeks in adults with obesity and T2D in the phase 3 SYNCHRONIZE-2 trial.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Denifanstat Sustains Acne Lesion Reductions Through 52 Weeks in Phase 3 OLE",
+   "link": "https://www.dermatologytimes.com/view/denifanstat-sustains-acne-lesion-reductions-through-52-weeks-in-phase-3-ole",
+   "description": "Treatment success reached 56.7% and total lesions fell 71.8% with up to 52 weeks of oral denifanstat, with no adverse event-related discontinuations.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Lebrikizumab Improves Hand and Foot Atopic Dermatitis in Phase 3b ADtouch Trial",
+   "link": "https://www.dermatologytimes.com/view/lebrikizumab-improves-hand-and-foot-atopic-dermatitis-in-phase-3b-adtouch-trial",
+   "description": "Late-breaking EADV 2026 data showed significant improvements in skin clearance, itch, pain, and patient satisfaction among patients treated with lebrikizumab.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "EADV 2026 Day 1: Late-Breaking Data, Emerging Therapies, and New Directions in Dermatology",
+   "link": "https://www.dermatologytimes.com/view/eadv-2026-day-1-late-breaking-data-emerging-therapies-and-new-directions-in-dermatology",
+   "description": "Day 1 of EADV 2026 brought new data across atopic dermatitis, cutaneous lupus, skin cancer, AI, climate-related skin disease, and more.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Lost between the payer and the pharmacy, with Dean Erhardt of D2 Solutions",
+   "link": "https://www.medicaleconomics.com/view/lost-between-the-payer-and-the-pharmacy-with-dean-erhardt-of-d2-solutions",
+   "description": "D2 Solutions President and CEO Dean Erhardt says most prior authorization rejections trace to administrative errors rather than clinical criteria, and that many patients caught in the delay don't know who to call.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "New ICD-10 codes take effect; counselor convicted in $26M TRICARE scheme; Pennsylvania, CDC measles death counts diverge — Morning Medical Update",
+   "link": "https://www.medicaleconomics.com/view/new-icd-10-codes-take-effect-counselor-convicted-in-26m-tricare-scheme-pennsylvania-cdc-measles-death-counts-diverge-morning-medical-update",
+   "description": "The top news stories in medicine today.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Q4 2026 Oncology Outlook: Key FDA Decisions to Watch",
+   "link": "https://www.targetedonc.com/view/q4-2026-oncology-fda-decisions-preview",
+   "description": "Late 2026 FDA oncology rulings may reshape care—from CSF-1R and ALK drugs to oral SERDs and BCMA CAR T breakthroughs.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Billing for lab tests, especially genetic tests, is a mess. Bill Kerr has ideas about how to clean it up.",
+   "link": "https://www.managedhealthcareexecutive.com/view/billing-for-lab-tests-especially-genetic-tests-is-a-mess-bill-kerr-has-ideas-about-how-to-clean-it-up-",
+   "description": "Bill Kerr of Avalon Heath Solutions says incorporating Z codes into CPT codes for lab and genetic testing would add needed specificity, reduce waste and possibly head off fraud.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Predicting geographic atrophy progression with DARC",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-predicting-geographic-atrophy-progression-with-darc",
+   "description": "Francesca Cordeiro, PhD, MD, FRCOphth, explains how Detection of Apoptosing Retinal Cells (DARC) imaging predicted the speed and direction of GA growth and could help stratify patients for treatment.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Retinal signs as diagnostic clues to systemic metabolic disease",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-retinal-signs-as-diagnostic-clues-to-systemic-metabolic-disease",
+   "description": "Inherited metabolic diseases affect the retina even before the systemic diagnosis is established.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "HealthPartners, Essentia plan merger to form 22-hospital system: Questions and answers",
+   "link": "https://www.chiefhealthcareexecutive.com/view/healthpartners-essentia-plan-merger-to-form-22-hospital-system-questions-and-answers",
+   "description": "The two nonprofit health systems have signed an agreement to come together, adding to the list of deals in Minnesota.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Hospitals team up to speed advances in diagnostic AI",
+   "link": "https://www.chiefhealthcareexecutive.com/view/hospitals-team-up-to-speed-advances-in-diagnostic-ai",
+   "description": "A dozen health systems have joined the collaborative. Elad Walach, CEO of Aidoc, talks with us about using AI for better and faster diagnosis.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "UPMC finalizes deal to acquire Ohio hospitals",
+   "link": "https://www.chiefhealthcareexecutive.com/view/upmc-finalizes-deal-to-acquire-ohio-hospitals",
+   "description": "The health system has closed a transaction with CommonSpirit Health to acquire Trinity Health System in Ohio.",
+   "published": "2026-10-01"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Aidoc CEO Elad Walach on AI, imaging and improving care | Data Book podcast",
+   "link": "https://www.chiefhealthcareexecutive.com/view/aidoc-ceo-elad-walach-on-ai-imaging-and-improving-care-data-book-podcast",
+   "description": "He talks about a new consortium of hospitals working to use AI to improve imaging and how health systems should be looking at AI.",
+   "published": "2026-10-01"
+  },
+  {
    "brand": "HCPLive",
    "title": "APEX Part B: Zumilokibart Achieves Primary Endpoint in Atopic Dermatitis",
    "link": "https://www.hcplive.com/view/apex-part-b-zumilokibart-achieves-primary-endpoint-atopic-dermatitis",
@@ -54,6 +271,1154 @@
    "title": "Pediatric hospital groups team up to prevent youth suicide",
    "link": "https://www.chiefhealthcareexecutive.com/view/pediatric-hospital-groups-team-up-to-prevent-youth-suicide",
    "description": "The Children’s Hospital Association is teaming with international partners to develop a coordinated approach to save lives.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "FDA Approval Insights: Daraxonrasib for Metastatic Pancreatic Ductal Adenocarcinoma",
+   "link": "https://www.onclive.com/view/fda-approval-insights-daraxonrasib-for-metastatic-pancreatic-ductal-adenocarcinoma",
+   "description": "Dr Reiss Binder discusses the significance of the FDA approval of daraxonrasib for pretreated metastatic pancreatic adenocarcinoma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Resistance Patterns Shape FGFR Inhibitor Sequencing in Cholangiocarcinoma",
+   "link": "https://www.onclive.com/view/resistance-patterns-shape-fgfr-inhibitor-sequencing-in-cholangiocarcinoma",
+   "description": "Dr Vogel highlights the rationale and growing evidence for sequential FGFR inhibition in FGFR2 fusion–positive cholangiocarcinoma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "LAG-3/PD-1 Blockade Aims to Tackle Immunotherapy Resistance Up Front in Nonsquamous NSCLC",
+   "link": "https://www.onclive.com/view/lag-3-pd-1-blockade-aims-to-tackle-immunotherapy-resistance-up-front-in-nonsquamous-nsclc",
+   "description": "Estelamari Rodriguez, MD, MPH, discusses the rationale, design, and practice implications of the phase 3 RELATIVITY-1093 trial in nonsquamous NSCLC.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Breast Cancer Experts Highlight Abstracts to Watch at ESMO 2026",
+   "link": "https://www.onclive.com/view/breast-cancer-experts-highlight-abstracts-to-watch-at-esmo-2026",
+   "description": "Experts spotlight the variety of breast cancer research being presented at the 2026 ESMO Congress.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Subcutaneous Therapies Bolster Administration Options in Multiple Myeloma",
+   "link": "https://www.onclive.com/view/subcutaneous-therapies-bolster-administration-options-in-multiple-myeloma",
+   "description": "Experts highlight the integration of subcutaneous therapies into the multiple myeloma treatment paradigm.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Navigating DLL3-Targeting T-Cell Engagers and the Evolving Small Cell Lung Cancer Treatment Landscape",
+   "link": "https://www.onclive.com/view/navigating-dll3-targeting-t-cell-engagers-and-the-evolving-small-cell-lung-cancer-treatment-landscape",
+   "description": "Drs Cooper and Choudhury discuss the evolving role of DLL3-targeting T-cell engagers in SCLC, with a focus on tarlatamab and how emerging trial data may reshape the current treatment paradigm across lines of therapy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "OncoBytes Adaptive Learning Pathways™: Decoding Precision Diagnostics and Targeted Therapies in Glioma",
+   "link": "https://www.onclive.com/view/oncobytes-adaptive-learning-pathways-decoding-precision-diagnostics-and-targeted-therapies-in-glioma",
+   "description": "OncLive On Air®",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "First-Line Amivantamab-chemotherapy vs Chemotherapy in NSCLC With EGFR Exon 20 Insertions: Overall Survival From PAPILLON",
+   "link": "https://www.onclive.com/view/first-line-amivantamab-chemotherapy-vs-chemotherapy-in-nsclc-with-egfr-exon-20-insertions-overall-survival-from-papillon",
+   "description": "The Phase 3 PAPILLON study evaluated first-line amivantamab plus chemotherapy versus chemotherapy alone in patients with advanced non-small cell lung cancer with EGFR Exon 20 insertion mutations. The amivantamab-chemotherapy group achieved the longest median overall survival reported to date in this population compared to chemotherapy alone. After adjusting for the high rate of crossover to second-line amivantamab among patients initially assigned to chemotherapy, the combination treatment demon",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Adjuvant Osimertinib in Resected EGFR-Mutated Stage IB-IIIA NSCLC: ADAURA Exploratory 8-Year Overall Survival Landmark Update",
+   "link": "https://www.onclive.com/view/adjuvant-osimertinib-in-resected-egfr-mutated-stage-ib-iiia-nsclc-adaura-exploratory-8-year-overall-survival-landmark-update",
+   "description": "Roy S. Herbst, MD, PhD, reviews the exploratory 8-year overall survival landmark update from the phase 3 ADAURA trial of adjuvant osimertinib versus placebo in patients with resected EGFR-mutated stage IB to IIIA non-small cell lung cancer, presented at the 2026 World Conference on Lung Cancer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Start Earlier and Find Your Community: Navigating the Fellowship-to-Faculty Transition Through Mentorship and Specialty-Focused Meetings",
+   "link": "https://www.onclive.com/view/start-earlier-and-find-your-community-navigating-the-fellowship-to-faculty-transition-through-mentorship-and-specialty-focused-meetings",
+   "description": "Drs Aredo and Bleiberg reflect on the experiences and relationships that shaped their transitions from fellowship into their first faculty positions in thoracic oncology.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Tabelecleucel BLA Is Resubmitted to FDA for EBV+ Post-Transplant Lymphoproliferative Disease",
+   "link": "https://www.onclive.com/view/tabelecleucel-bla-is-resubmitted-to-fda-for-ebv-post-transplant-lymphoproliferative-disease",
+   "description": "The third BLA submission for tabelecleucel follows 2 CRLs and includes updated ALLELE data with additional patients and longer follow-up.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "CARE Study Reports Complete Regression of Liver Cancer in a Child Treated With Novel Immunotherapy",
+   "link": "https://www.onclive.com/view/care-study-reports-complete-regression-of-liver-cancer-in-a-child-treated-with-novel-immunotherapy",
+   "description": "A New England Journal of Medicine report describes complete hepatoblastoma regression in a 3-year-old treated with a novel immunotherapy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "FDA Grants Fast Track Designation to Plinabulin Plus Docetaxel in Post-ICI Non-Squamous NSCLC",
+   "link": "https://www.onclive.com/view/fda-grants-fast-track-designation-to-plinabulin-plus-docetaxel-in-post-ici-non-squamous-nsclc",
+   "description": "Plinabulin plus docetaxel received fast track designation for pretreated nonsquamous NSCLC without actionable genomic alterations.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Positioning Bispecific Antibodies and Combinations in DLBCL Treatment",
+   "link": "https://www.onclive.com/view/positioning-bispecific-antibodies-and-combinations-in-dlbcl-treatment",
+   "description": "Dr. Chavez explains that for most patients with relapsed/refractory DLBCL in the third-line setting, including those who are not CAR T candidates, decline CAR T, or progress after CAR T, bispecific antibodies are his preferred option.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Glofitamab in Relapsed/Refractory DLBCL: Fixed-Duration Therapy and CRS Timing",
+   "link": "https://www.onclive.com/view/glofitamab-in-relapsed-refractory-dlbcl-fixed-duration-therapy-and-crs-timing",
+   "description": "Dr. Chavez reviews glofitamab, the second bispecific antibody approved for relapsed/refractory DLBCL, and compares its pivotal data with those of epcoritamab.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Administration Route and Infection Prevention With Bispecific Antibodies in DLBCL",
+   "link": "https://www.onclive.com/view/administration-route-and-infection-prevention-with-bispecific-antibodies-in-dlbcl",
+   "description": "Drs Chavez and Phillips discuss practical considerations beyond CRS and ICANS for patients with relapsed/refractory DLBCL receiving bispecific antibodies.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "FDA Approves Denosumab Biosimilar for Skeletal-Related Events, GCTB, and Hypercalcemia of Malignancy",
+   "link": "https://www.onclive.com/view/fda-approves-denosumab-biosimilar-for-skeletal-related-events-gctb-and-hypercalcemia-of-malignancy",
+   "description": "Denosumab-adet (Degevma) is FDA approved as an Xgeva biosimilar for SRE prevention in myeloma and bone metastases, giant cell tumor of bone, and HCM.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Treatment Options in Steroid-Refractory Chronic GVHD: Mechanisms, Evidence, and Trade-Offs",
+   "link": "https://www.onclive.com/view/treatment-options-in-steroid-refractory-chronic-gvhd-mechanisms-evidence-and-trade-offs",
+   "description": "Explore 2026 options for steroid-refractory chronic GVHD: four FDA-approved agents, key trial evidence, and where ECP fits in care.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "HERIZON-GEA-01 Efficacy Results and the Role of HER2 Expression in the FDA Label",
+   "link": "https://www.onclive.com/view/herizon-gea-01-efficacy-results-and-the-role-of-her2-expression-in-the-fda-label",
+   "description": "Dr. Kim reviews the primary results of HERIZON-GEA-01. Both zanidatamab-containing arms significantly improved progression-free survival vs trastuzumab plus chemotherapy, with a similar magnitude of benefit.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Treatment Selection and Sequencing in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.onclive.com/view/treatment-selection-and-sequencing-in-relapsed-refractory-multiple-myeloma",
+   "description": "Dr. Hans Lee and Dr. Douglas Sborov discuss how clinicians conceptualize the three major BCMA-directed treatment approaches in relapsed/refractory multiple myeloma: CAR T-cell therapy, bispecific antibodies, and antibody-drug conjugates.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Second-Line Sotorasib and Adagrasib Sequencing",
+   "link": "https://www.onclive.com/view/second-line-sotorasib-and-adagrasib-sequencing",
+   "description": "Rajwanth R. Veluswamy, MD, MSCR, and Chinmay Jani, MD, of the Perlmutter Cancer Center at NYU Langone Health and the University of Miami Sylvester Comprehensive Cancer Center, discuss second-line sequencing with sotorasib and adagrasib in KRAS G12C-mutated non-small cell lung cancer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Infection and Prophylaxis With Venetoclax Plus Obinutuzumab in CLL14",
+   "link": "https://www.onclive.com/view/infection-and-prophylaxis-with-venetoclax-plus-obinutuzumab-in-cll14",
+   "description": "Danielle M. Brander, MD, of Duke University School of Medicine, summarizes the CLL14 trial in chronic lymphocytic leukemia (CLL), which randomized patients to chlorambucil plus obinutuzumab or fixed-duration venetoclax plus obinutuzumab given for about 12 months.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Shared Decision-Making in Multiple Myeloma",
+   "link": "https://www.onclive.com/view/shared-decision-making-in-multiple-myeloma",
+   "description": "Jill Burke, NP, and Tanika Pittman, APRN, discuss incorporating shared decision-making into the long-term management of multiple myeloma, particularly as treatment goals expand beyond disease control to include quality of life and minimizing treatment burden.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Disease Burden and Metastatic Sites in Advanced Renal Cell Carcinoma",
+   "link": "https://www.onclive.com/view/disease-burden-and-metastatic-sites-in-advanced-renal-cell-carcinoma",
+   "description": "Dr. Voss and Dr. Serzan discuss how disease burden and the location of metastases can influence first-line treatment selection in advanced renal cell carcinoma (RCC).",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Evolving Treatment Landscape in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.onclive.com/view/evolving-treatment-landscape-in-relapsed-refractory-multiple-myeloma",
+   "description": "The discussion opens with an overview of the rapidly evolving treatment landscape in relapsed/refractory multiple myeloma, highlighting the expanding range of BCMA-directed therapeutic approaches.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "CNS Control and Daily Tolerability Guide Treatment Sequencing in HER2-Mutated NSCLC",
+   "link": "https://www.onclive.com/view/cns-control-and-daily-tolerability-guide-treatment-sequencing-in-her2-mutated-nsclc",
+   "description": "Faculty convened at an OncLive Scientific Interchange and Workshop to discuss individualized treatment and strategic sequencing in HER2-mutated NSCLC.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Treatment Selection in Advanced Clear Cell Renal Cell Carcinoma",
+   "link": "https://www.onclive.com/view/treatment-selection-in-advanced-clear-cell-renal-cell-carcinoma",
+   "description": "Dr. Voss and Dr. Serzan discuss factors that inform first-line treatment selection in advanced clear cell renal cell carcinoma (RCC) among established immune checkpoint inhibitor-based regimens.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "EMPOWER-Lung 1 Outcomes in KRAS G12C NSCLC",
+   "link": "https://www.onclive.com/view/empower-lung-1-outcomes-in-kras-g12c-nsclc",
+   "description": "Rajwanth R. Veluswamy, MD, MSCR, of the Perlmutter Cancer Center at NYU Langone Health, and Chinmay Jani, MD, of the University of Miami Sylvester Comprehensive Cancer Center, review first-line immunotherapy outcomes in KRAS G12C-mutated non-small cell lung cancer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Infection Risk With Continuous Acalabrutinib in ELEVATE-TN",
+   "link": "https://www.onclive.com/view/infection-risk-with-continuous-acalabrutinib-in-elevate-tn",
+   "description": "Danielle M. Brander, MD, of Duke University School of Medicine, turns to the ELEVATE-TN trial in chronic lymphocytic leukemia (CLL), which compared continuous acalabrutinib monotherapy with acalabrutinib plus 6 cycles of obinutuzumab.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "What Does TALAPRO-3 Mean for Frontline Treatment of HRR-Altered mHSPC?",
+   "link": "https://www.cancernetwork.com/view/what-does-talapro-3-mean-for-frontline-treatment-of-hrr-altered-mhspc-",
+   "description": "“When we give the most effective therapy at the time of new diagnosis, we get the most value out of the effort and time that we and our patients are spending,” said Neeraj Agarwal, MD, FASCO.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Practice Changes, Key Takeaways, and Closing Remarks",
+   "link": "https://www.cancernetwork.com/view/practice-changes-key-takeaways-and-closing-remarks",
+   "description": "Closing the program, Surbhi Sidana, MD, asks each panelist what has changed most in her practice this year.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Triaging Post-CAR T Complications in Two Practical Scenarios",
+   "link": "https://www.cancernetwork.com/view/triaging-post-car-t-complications-in-two-practical-scenarios",
+   "description": "Surbhi Sidana, MD, presents 2 practical scenarios: a patient 6 to 7 weeks post-infusion who develops a fever at a local emergency department 4 hours from the treating center, and a patient around 7 to 8 weeks post-infusion who develops facial droop, drooling, and behavioral changes noticed by a spouse.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Recognizing Delayed Neurotoxicity and Immune Effector Cell Enterocolitis",
+   "link": "https://www.cancernetwork.com/view/recognizing-delayed-neurotoxicity-and-immune-effector-cell-enterocolitis",
+   "description": "Surbhi Sidana, MD, asks about 2 less common but important delayed toxicities: delayed neurotoxicity and immune effector cell enterocolitis.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Long-Term Monitoring, Prophylaxis, and Vaccination After Cilta-Cel",
+   "link": "https://www.cancernetwork.com/view/long-term-monitoring-prophylaxis-and-vaccination-after-cilta-cel",
+   "description": "Doris Hansen, MD, and Prerna Mewawalla, MD, discuss long-term monitoring, infection prophylaxis, and vaccination after ciltacabtagene autoleucel (cilta-cel) therapy for patients with multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Day 28 Discharge and Transition to Shared Community Care",
+   "link": "https://www.cancernetwork.com/view/day-28-discharge-and-transition-to-shared-community-care",
+   "description": "Day 28 after ciltacabtagene autoleucel (cilta-cel) infusion marks an important transition for patients with multiple myeloma from center-led care to shared care with the community oncology team.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Timing Referral, Holding Therapy, and Bridging Therapy Definitions",
+   "link": "https://www.cancernetwork.com/view/timing-referral-holding-therapy-and-bridging-therapy-definitions",
+   "description": "Timing referral for chimeric antigen receptor (CAR) T-cell therapy is critical when patients with multiple myeloma experience relapse or progressive disease.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Building Referral Relationships With Community Oncology Practices",
+   "link": "https://www.cancernetwork.com/view/building-referral-relationships-with-community-oncology-practices",
+   "description": "Effective community referral pathways can improve access to chimeric antigen receptor (CAR) T-cell therapy for patients with multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Ciltacabtagene Autoleucel Manufacturing, Debulking, and Bridging in Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/ciltacabtagene-autoleucel-manufacturing-debulking-and-bridging-in-multiple-myeloma",
+   "description": "Doris Hansen, MD, and Prerna Mewawalla, MD, discuss ciltacabtagene autoleucel manufacturing, disease debulking, and bridging therapy before CAR T-cell infusion in patients with multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Referral Barriers to Chimeric Antigen Receptor T-Cell Therapy in Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/referral-barriers-to-chimeric-antigen-receptor-t-cell-therapy-in-multiple-myeloma",
+   "description": "Referral barriers can limit access to chimeric antigen receptor (CAR) T-cell therapy for patients with multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "EXCALIBER-RRMM: Iberdomide in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/excaliber-rrmm-iberdomide-in-relapsed-refractory-multiple-myeloma",
+   "description": "Dr. Joshua Richter reviews the EXCALIBER-RRMM study evaluating iberdomide in combination with daratumumab and dexamethasone in patients with relapsed/refractory multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Follow-Up After a One-Time Therapy and Shared Care With Community Practices",
+   "link": "https://www.cancernetwork.com/view/follow-up-after-a-one-time-therapy-and-shared-care-with-community-practices",
+   "description": "The faculty consider what level of follow-up they consider meaningful for a one-time therapy, pointing to the International Myeloma Working Group consensus benchmark of sustained minimal residual disease (MRD) negativity with imaging negativity.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Aglatimagene Combo Shows Sustained Immune Remodeling in Prostate Cancer",
+   "link": "https://www.cancernetwork.com/view/aglatimagene-combo-shows-sustained-immune-remodeling-in-prostate-cancer",
+   "description": "An aglatimagene besadenovec-based radiotherapy combination increased intratumoral lymphocyte fraction in intermediate- to high-risk localized prostate cancer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Introduction to CELMoDs in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/introduction-to-celmods-in-relapsed-refractory-multiple-myeloma",
+   "description": "Cancer Network’s FACE-OFF introduces the evolving role of cereblon E3 ligase modulators, or CELMoDs, in relapsed/refractory multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "CARTITUDE-2 Cohort A Follow-Up Data and Preparing Patients for CAR TCell Therapy",
+   "link": "https://www.cancernetwork.com/view/cartitude-2-cohort-a-follow-up-data-and-preparing-patients-for-car-tcell-therapy",
+   "description": "The program opens with panelist introductions and an overview of ciltacabtagene autoleucel (ciltacel), a BCMA-directed autologous CAR T-cell therapy given as a single infusion and approved for adults with relapsed or refractory multiple myeloma who have received at least 1 prior line of therapy, including a proteasome inhibitor and an immunomodulatory agent, and are refractory to lenalidomide.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Tile-Based Radiation Improves Surgical Bed Recurrence in Brain Metastases",
+   "link": "https://www.cancernetwork.com/view/tile-based-radiation-improves-surgical-bed-recurrence-in-brain-metastases",
+   "description": "The ROADS investigators reported no differences between cesium-131 tile-based radiation therapy and SRT in quality of life, functional status, or neurocognitive function.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "SBRT Matches Chemoradiation, Preserves QOL Before Pancreatic Surgery",
+   "link": "https://www.cancernetwork.com/view/sbrt-matches-chemoradiation-preserves-qol-before-pancreatic-surgery",
+   "description": "William A. Hall, MD, discussed the SOFT Preop study of preoperative SBRT vs conventional chemoradiation for pancreatic adenocarcinoma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: Case-Based Discussion — The Comorbid, Higher-Risk Patient, and Program Conclusions",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-case-based-discussion-the-comorbid-higher-risk-patient-and-program-conclusions",
+   "description": "Dr. Thomas Martin presents the final and most challenging case: an older patient being evaluated for BCMA-directed therapy after progression on prior anti-CD38 therapy, with baseline neuropathy, mild gait instability, recurrent infections, and significant caregiver concern about neurologic toxicity, infection, and logistics.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: Case-Based Discussion — The Fit, Immunotherapy-Eligible Patient in Second Line",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-case-based-discussion-the-fit-immunotherapy-eligible-patient-in-second-line",
+   "description": "Dr. Thomas Martin presents the second case: a younger, fit, lenalidomide-refractory patient with biochemical and radiologic progression after frontline therapy who is relatively asymptomatic with controlled disease burden and is an appropriate candidate for either CAR T-cell or bispecific therapy, with no urgency to treat.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: Case-Based Discussion — Rapidly Progressive Earlier-Relapse Disease",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-case-based-discussion-rapidly-progressive-earlier-relapse-disease",
+   "description": "Dr. Thomas Martin introduces the third section, a rapid case-based discussion applying the program's themes to real-world scenarios, and presents the first case: a fit, transplant-exposed patient progressing on lenalidomide maintenance with rapidly progressive, symptomatic, high-risk disease requiring prompt intervention.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: Debate — Contextualizing Safety and Sequencing BCMA-Directed Therapies",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-debate-contextualizing-safety-and-sequencing-bcma-directed-therapies",
+   "description": "The face-off debate continues with the second and third questions, moderated by Dr. Thomas Martin.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: Debate — Treatment Selection Between CAR T-Cell and Bispecific Approaches in Second-Line Disease",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-debate-treatment-selection-between-car-t-cell-and-bispecific-approaches-in-second-line-disease",
+   "description": "Dr. Thomas Martin opens the second section, the face-off debate, and introduces the first debate question on how clinicians should approach treatment selection between CAR T-cell therapy and bispecific antibody-based approaches in second-line disease.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: Safety and Real-World Management of BCMA-Directed Therapies",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-safety-and-real-world-management-of-bcma-directed-therapies",
+   "description": "Team Myeloma Mavericks presents the sixth abstract review, a real-world and safety-focused discussion of BCMA-directed therapies in earlier-relapse disease, closing out the data-and-landscape section.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: CARTITUDE-4 Long-Term Outcomes and Treatment-Free Remission With Cilta-cel",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-cartitude-4-long-term-outcomes-and-treatment-free-remission-with-cilta-cel",
+   "description": "Team Myeloma Mavericks presents the fifth abstract review, the updated long-term analysis of CARTITUDE-4 evaluating ciltacabtagene autoleucel against standard triplet therapy in earlier-relapse disease, framed by the durable remissions and cure signal seen in longer-term CARTITUDE-1 follow-up.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Relapsed/Refractory Multiple Myeloma: MajesTEC-9 and Teclistamab Monotherapy in Lenalidomide and Anti-CD38 Double-Refractory Disease",
+   "link": "https://www.cancernetwork.com/view/relapsed-refractory-multiple-myeloma-majestec-9-and-teclistamab-monotherapy-in-lenalidomide-and-anti-cd38-double-refractory-disease",
+   "description": "Dr. Thomas Martin introduces the fourth abstract review, and Team Myeloma Masters presents MajesTEC-9, the phase 3 study of teclistamab monotherapy versus investigator's choice of standard, non-CD38-containing regimens in patients who are both lenalidomide- and anti-CD38-refractory after prior lines of therapy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Vanda to Pursue sNDA for Tasimelteon in Delayed Sleep-Wake Phase Disorder After Positive Phase 3 Readout",
+   "link": "https://www.neurologylive.com/view/tasimelteon-advances-sleep-onset-phase-3-delayed-sleep-wake-trial",
+   "description": "In a pivotal phase 3 study, once-daily tasimelteon 20 mg shifted sleep onset 37.1 minutes earlier than placebo in adults with delayed sleep-wake phase disorder.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Single Infusion of Rese-Cel Yields Meaningful Responses Off Immunomodulators in Phase 1/2 RESET-MG Trial",
+   "link": "https://www.neurologylive.com/view/single-infusion-rese-cel-yields-meaningful-responses-off-immunomodulators-phase-1-2-reset-mg-trial",
+   "description": "Findings from the phase 1/2 RESET-MG trial, presented at AANEM 2026, showed that 10 of 13 patients with refractory generalized myasthenia gravis had clinically meaningful MG-ADL improvements after a single infusion of rese-cel.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Episode 176: BBP-418 and the Changing Treatment Landscape of LGMD",
+   "link": "https://www.neurologylive.com/view/episode-176-bbp-418-changing-treatment-landscape-of-lgmd",
+   "description": "Mind Moments®, a podcast from NeurologyLive®, brings you an exclusive interview with Katherine Matthews, MD. [LISTEN TIME: 17 minutes]",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "FDA Accepts Fenebrutinib NDA Under Priority Review for Relapsing and Primary Progressive MS",
+   "link": "https://www.neurologylive.com/view/fda-accepts-fenebrutinib-nda-under-priority-review-relapsing-primary-progressive-ms",
+   "description": "The FDA accepted fenebrutinib's new drug application under priority review for relapsing and primary progressive MS, based on 3 phase 3 trials comparing the BTK inhibitor with teriflunomide and ocrelizumab.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "ADHERE REAL Study to Assess Real-World Effectiveness of Efgartigimod in CIDP",
+   "link": "https://www.neurologylive.com/view/adhere-real-study-assess-real-world-effectiveness-efgartigimod-cidp",
+   "description": "A new study will follow adults with chronic inflammatory demyelinating polyradiculoneuropathy who start subcutaneous efgartigimod in routine practice in the US and Germany.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "FAQ: Rising Rabies Exposure Calls PEP Decisions Back in Focus",
+   "link": "https://www.contagionlive.com/view/faq-rising-rabies-exposure-calls-put-pep-decisions-back-in-focus",
+   "description": "Following World Rabies Day and a CDC health advisory on a 17% rise in exposure-related calls, Rodney E. Rohde, PhD, explains what the increase means, what people should do when they have an animal bite or scratch, and how clinicians should assess risk and administer post-exposure prophylaxis (PEP).",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "EASD 2026: EloraTZP Bests Tirzepatide on Weight Loss, A1C in Type 2 Diabetes",
+   "link": "https://www.hcplive.com/view/easd-2026-eloratzp-bests-tirzepatide-on-weight-loss-a1c-in-type-2-diabetes",
+   "description": "EloraTZP cut body weight by up to 23.3% and A1C by up to 2.9% at 48 weeks vs 14.8% and 2.4% with tirzepatide 15 mg in a phase 2b trial.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "FDA Approves Mavacamten for Pediatric Patients With Obstructive HCM",
+   "link": "https://www.hcplive.com/view/fda-approves-mavacamten-for-pediatric-patients-with-obstructive-hcm",
+   "description": "FDA approved mavacamten for oHCM in children weighing 30 kg or more after SCOUT-HCM showed a 48.0-mm Hg Valsalva LVOT gradient reduction vs placebo.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "US Alcohol Use Falls, but Not for Adults Aged 50 to 64, With Brian Lee, MD",
+   "link": "https://www.hcplive.com/view/us-alcohol-use-falls-but-not-for-adults-aged-50-to-64-with-brian-lee-md",
+   "description": "Heavy drinking rose >36% since 2018 among middle-aged adults. A hepatologist on screening, sex-specific thresholds, and pandemic effects.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Proteinuria Response in Fibrillary GN: What Defines a Non-Responder",
+   "link": "https://www.hcplive.com/view/proteinuria-response-in-fibrillary-gn-what-defines-a-non-responder",
+   "description": "Andrew Bomback, MD, MPH, opens the segment by asking Gerald Appel, MD, how he defines a non-responder in fibrillary glomerulonephritis (FGN) in practice, how long patients should remain on therapy, and what numbers signal that treatment is not working.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Cardiovascular Disease Still Top Cause of US Mortality Despite Recent Advancements",
+   "link": "https://www.hcplive.com/view/cardiovascular-disease-still-top-cause-of-us-mortality-despite-recent-advancements",
+   "description": "Jesus Almendral, MD, and Kanika Mody, MD, join the HCPLive team to discuss increases in hypertensive heart disease, heart failure, and other conditions.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Fibrillary Glomerulonephritis in 2026: Why Treatment Remains a Challenge",
+   "link": "https://www.hcplive.com/view/fibrillary-glomerulonephritis-in-2026-why-treatment-remains-a-challenge",
+   "description": "Fibrillary glomerulonephritis (FGN) remains one of the least-studied glomerular diseases in nephrology, accounting for less than 1% of kidney biopsies and offering clinicians few evidence-based treatment options.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "EADV Congress 2026: Day 1 Recap — 6 Headlines to Know",
+   "link": "https://www.hcplive.com/view/eadv-congress-2026-day-1-recap-6-headlines-to-know",
+   "description": "Check out highlights from news published on Day 1 of the EADV Congress 2026, spanning CSU, atopic dermatitis, HS, and more.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Denifanstat Sustains Acne Control Through 52 Weeks, With Neal Bhatia, MD",
+   "link": "https://www.hcplive.com/view/denifanstat-sustains-acne-control-52-weeks-bhatia",
+   "description": "Bhatia discusses 52-week extension data showing denifanstat sustained acne control with a favorable long-term safety profile, presented at EADV 2026.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Tulisokibart Shows Phase 2b Efficacy in Moderate to Severe HS",
+   "link": "https://www.hcplive.com/view/tulisokibart-phase-2b-efficacy-moderate-severe-hs",
+   "description": "Tulisokibart met its HiSCR50 primary endpoint at 16 weeks in the phase 2b MK-7240-012 trial assessing moderate to severe hidradenitis suppurativa.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Q4 2026 Preview: 7 FDA Decisions to Watch",
+   "link": "https://www.hcplive.com/view/q4-2026-preview-7-fda-decisions-to-watch",
+   "description": "Preview the biggest anticipated FDA decisions of Q4 2026, including bepirovirsen for CHB, obinutuzumab for pMN, bezuclastinib for systemic mastocytosis, and more.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Intralesional BO-112 Attains 61% Response in Basal Cell Carcinoma",
+   "link": "https://www.hcplive.com/view/intralesional-bo-112-attains-61-response-basal-cell-carcinoma",
+   "description": "Intralesional BO-112 met its main endpoint in the phase 2b SPOTLIGHT-204 trial, with 61% of patients with resectable basal cell carcinoma responding.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "EADV 2026: Zasocitinib Tops Deucravacitinib for PASI 100 in Plaque Psoriasis",
+   "link": "https://www.hcplive.com/view/eadv-2026-zasocitinib-tops-deucravacitinib-for-pasi-100-in-plaque-psoriasis",
+   "description": "Zasocitinib achieved PASI 100 in 36.5% of patients vs 13.9% with deucravacitinib at week 16 in the phase 3 LATITUDE Atlas psoriasis trial.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Climate Change Tied to Skin Disease Worsening in 42% of Countries",
+   "link": "https://www.hcplive.com/view/climate-change-skin-disease-worsening-42-of-countries",
+   "description": "The international SkinObservatory study found climate-related skin disease disproportionately affecting low-income nations at EADV 2026.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "September 2026 in Pain Management: 4 Updates on Treatment and Pharmacy Practice",
+   "link": "https://www.pharmacytimes.com/view/september-2026-in-pain-management-4-updates-on-treatment-and-pharmacy-practice",
+   "description": "September’s pain management coverage examined postoperative nonopioid options, lessons from sickle cell pain research, and pharmacists’ experiences with controlled-substance prescribing.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "September 2026 in Hematology: 5 Updates That Pharmacists Should Know",
+   "link": "https://www.pharmacytimes.com/view/september-2026-in-hematology-5-updates-that-pharmacists-should-know",
+   "description": "September’s hematology coverage examined a new definition of myeloma cure, patient preferences for treatment delivery, and emerging strategies for deepening responses.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Orforglipron Edges Oral Semaglutide 25 mg in T2D, Indirect Comparison Finds",
+   "link": "https://www.pharmacytimes.com/view/orforglipron-edges-oral-semaglutide-25-mg-in-t2d-indirect-comparison-finds",
+   "description": "Indirect comparison links orforglipron 17.2 mg to 1.5% more weight loss and 0.3% more A1C lowering than oral semaglutide 25 mg in adults with type 2 diabetes.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Expert Q&A: Vaccine Hesitancy Remains the Biggest Barrier to Flu Vaccination",
+   "link": "https://www.pharmacytimes.com/view/expert-q-a-vaccine-hesitancy-remains-the-biggest-barrier-to-flu-vaccination",
+   "description": "Pharmacists can help overcome influenza vaccine hesitancy by correcting common misconceptions, routinely asking every patient about vaccination, and leveraging their standing as trusted health care professionals.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "First-Line HIV Therapy: Integrase Inhibitors, Exceptions, and HLA-B*5701 Testing",
+   "link": "https://www.pharmacytimes.com/view/first-line-hiv-therapy-integrase-inhibitors-exceptions-and-hla-b-5701-testing",
+   "description": "Integrase inhibitors remain the clear first choice, yet prior long-acting PrEP exposure and the practical realities of same-day starts are reshaping when alternatives make more sense.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "HIV Treatment Basics: Mechanisms, 2026 Guideline Updates, and Rapid ART Start",
+   "link": "https://www.pharmacytimes.com/view/hiv-treatment-basics-mechanisms-2026-guideline-updates-and-rapid-art-start",
+   "description": "Before weighing new options, the panel resets the foundation: how antiretroviral classes work, what the 2026 DHHS update actually changed, and why therapy should start as soon as possible.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "September 2026 in Oncology: 5 Updates on Treatment Options and Patient Care",
+   "link": "https://www.pharmacytimes.com/view/september-2026-in-oncology-5-updates-on-treatment-options-and-patient-care",
+   "description": "September oncology coverage highlighted new breast and kidney cancer combinations, updated lung cancer labeling, and emerging evidence connecting antibiotic exposure with CAR T-cell outcomes.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Retatrutide Cuts Weight Up to 18.8% in Adults With T2D, Obesity",
+   "link": "https://www.pharmacytimes.com/view/retatrutide-cuts-weight-up-to-18-8-in-adults-with-t2d-obesity",
+   "description": "Phase 3 TRIUMPH-2 data presented at EASD show HbA1c reductions up to 1.6%, with GI effects, hypotension, and dysesthesia as key counseling points.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Finerenone Benefits Hold in Patients With a History of Cancer",
+   "link": "https://www.pharmacytimes.com/view/finerenone-benefits-hold-in-patients-with-a-history-of-cancer",
+   "description": "In a FINE-HEART analysis, cancer history raised the risk of death and hospitalization but did not blunt finerenone's cardiovascular and kidney benefits.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Intensive Chemotherapy in Combination With Quizartinib Versus Midostaurin for FLT3-ITD Mutated Acute Myeloid Leukemia: A Multicenter Cohort Study",
+   "link": "https://www.pharmacytimes.com/view/intensive-chemotherapy-in-combination-with-quizartinib-versus-midostaurin-for-flt3-itd-mutated-acute-myeloid-leukemia-a-multicenter-cohort-study",
+   "description": "In this Pharmacy Times Rapid Readout, Jeffrey Baron, PharmD, BCOP, DPLA, a clinical pharmacy specialist in the Leukemia Division at Roswell Park Comprehensive Cancer Center in Buffalo, New York, reviews findings from a multicenter retrospective cohort study comparing quizartinib and midostaurin, each given with 7+3 intensive induction chemotherapy, in patients with newly diagnosed FLT3-ITD–mutated acute myeloid leukemia (AML).",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "RSV Vaccine Coadministration Lowered Antibodies Despite Efficacy",
+   "link": "https://www.drugtopics.com/view/rsv-vaccine-coadministration-lowered-antibodies-despite-efficacy",
+   "description": "Researchers compared vaccine coadministration with single-dose, sequential vaccination for the RSVPreF3 OA vaccine formulation in adults.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Study Links Oral Menopausal Hormone Therapy to Thrombotic Risk",
+   "link": "https://www.drugtopics.com/view/study-links-oral-menopausal-hormone-therapy-to-thrombotic-risk",
+   "description": "A study of women aged 50 to 69 years found that thrombotic risk varied by route of administration, estradiol dose, and duration of use.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Q&A: Why Rural Pharmacies Prioritize Trust Over Technology",
+   "link": "https://www.drugtopics.com/view/why-rural-pharmacies-prioritize-trust-over-technology",
+   "description": "Despite technology fostering a new generation of health care delivery, experts believe rural health solutions should be sought elsewhere.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Medicaid Coverage of Obesity GLP-1s May Shift From Diabetes Version",
+   "link": "https://www.drugtopics.com/view/medicaid-coverage-of-obesity-glp-1s-may-shift-from-diabetes-version",
+   "description": "Medicaid coverage of obesity-labeled GLP-1 receptor agonists may substitute for, rather than simply add to, diabetes-labeled use, a new study finds.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "What Is HIV PrEP and Who Needs It Most?",
+   "link": "https://www.drugtopics.com/view/what-is-hiv-prep-and-who-needs-it-most-",
+   "description": "Clinicians break down HIV PrEP, its near-99% protection, and who’s missing out—women, youth, and Southern communities in PrEP deserts.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Proposed Medicare Rate Cuts Draw AASM Opposition Ahead of Final Rule",
+   "link": "https://www.ajmc.com/view/proposed-medicare-rate-cuts-draw-aasm-opposition-ahead-of-final-rule",
+   "description": "AASM urges CMS to reject proposed 2027 Medicare conversion factor cuts of 1.19% to 1.68% and revise sleep testing and remote monitoring policies.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Sarcoma-to-Heart Case Highlights Need for Multidisciplinary Care",
+   "link": "https://www.ajmc.com/view/sarcoma-to-heart-case-highlights-need-for-multidisciplinary-care",
+   "description": "A rare case of soft-tissue sarcoma spreading to the heart shows how multimodal imaging guided diagnosis and care in a 36-year-old man.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Routine Blood Test Ratio Linked to Higher Mortality Risk in Adults With CKD",
+   "link": "https://www.ajmc.com/view/routine-blood-test-ratio-linked-to-higher-mortality-risk-in-adults-with-ckd",
+   "description": "A higher ratio of red blood cell distribution width to albumin was tied to greater all-cause, cardiovascular, and cancer mortality in adults with CKD.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Sleep-Disordered Breathing Linked to MASLD, but Evidence Certainty Is Low",
+   "link": "https://www.ajmc.com/view/sleep-disordered-breathing-linked-to-masld-but-evidence-certainty-is-low",
+   "description": "A meta-analysis of 22 studies found steatotic liver disease in about three-quarters of patients with sleep-disordered breathing.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "FDA Accepts Inhaled Treprostinil sNDA for IPF: 4 FAQs for Payers",
+   "link": "https://www.ajmc.com/view/fda-accepts-inhaled-treprostinil-snda-for-ipf-4-faqs-for-payers",
+   "description": "FDA accepted United Therapeutics' sNDA for inhaled treprostinil in IPF. Here's what it could mean for patient access, coverage, and costs",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "What Actuarial Modeling Reveals About Value-Based Care in Oncology",
+   "link": "https://www.ajmc.com/view/what-actuarial-modeling-reveals-about-value-based-care-in-oncology",
+   "description": "Sustainable models require asking what a result shows, what design produced it, and whether the design was built to measure value or just produce a number.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Payers and Providers Map the Path to Community CAR T Access",
+   "link": "https://www.ajmc.com/view/payers-and-providers-map-the-path-to-community-car-t-access",
+   "description": "CAR T-cell therapy must be treated as a complete \"vein-to-vein\" episode, with community practices needing to take control of cases for a period of time.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Weekend Catch-Up Sleep Linked to Lower Odds of Overactive Bladder",
+   "link": "https://www.ajmc.com/view/weekend-catch-up-sleep-linked-to-lower-odds-of-overactive-bladder",
+   "description": "Weekend catch-up sleep was associated with lower odds of overactive bladder and milder symptoms, with the benefit concentrated in the first 1.5 hours.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "CMS Projects 16.5% Drop in 2027 Medicare Advantage Premiums",
+   "link": "https://www.ajmc.com/view/cms-projects-16-5-drop-in-2027-medicare-advantage-premiums",
+   "description": "Average stand-alone Part D premiums are projected to rise by less than $1 a month as a temporary subsidy program ends after 2026.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Patients With Cancer Are Building AI Tools to Provide Second Opinions and Treatment Options",
+   "link": "https://www.ajmc.com/view/patients-with-cancer-are-building-ai-tools-to-provide-second-opinions-and-treatment-options",
+   "description": "As AI proliferates, patients, caregivers, and others outside the medical world are using its tools to deal with cancer, but not always in obvious ways.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Oncologists Grapple With Sequencing, Access as Treatments Multiply",
+   "link": "https://www.ajmc.com/view/oncologists-grapple-with-sequencing-access-as-treatments-multiply",
+   "description": "Aligning financial incentives with patient-centered care is becoming an increasingly complex path to navigate within oncology.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Oveporexton Improves Wakefulness and Cataplexy in Narcolepsy Type 1",
+   "link": "https://www.ajmc.com/view/oveporexton-improves-wakefulness-and-cataplexy-in-narcolepsy-type-1",
+   "description": "Phase 3 trials found oveporexton improved wakefulness, sleepiness, and cataplexy in narcolepsy type 1, with insomnia and urinary frequency common.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "inSPire2026: AI, Patient Access in Specialty Pharmacy Practices Today",
+   "link": "https://www.ajmc.com/view/inspire2026-ai-patient-access-in-specialty-pharmacy-practices-today",
+   "description": "Pharmacy leaders examined AI for authorizations, adherence, patient access, and efficient specialty pharmacy benefits in health-system care.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Retatrutide Yields Up to 20.8% Weight Loss in Obesity With T2D",
+   "link": "https://www.ajmc.com/view/retatrutide-yields-up-to-20-8-weight-loss-in-obesity-with-t2d",
+   "description": "The triple agonist also lowered HbA1C by up to 1.6% over 80 weeks, with up to 40% of participants reaching normal levels.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Limited-Stage SCLC: Chemoradiotherapy Standards and Scheduling Decisions",
+   "link": "https://www.ajmc.com/view/limited-stage-sclc-chemoradiotherapy-standards-and-scheduling-decisions",
+   "description": "Concurrent chemoradiotherapy remains curative-intent therapy for limited-stage disease, yet cure rates without immunotherapy stall near thirty percent, a ceiling that scheduling choices and careful monitoring can only partly raise on their own.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Diagnosing AATD: Levels, Genotype, and the Diagnostic Gap",
+   "link": "https://www.ajmc.com/view/diagnosing-aatd-levels-genotype-and-the-diagnostic-gap",
+   "description": "A serum level is a snapshot, while genotype is the blueprint. Relying on levels alone misses carriers and mislabels patients, and the resulting diagnostic gap carries real clinical and economic costs.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Choosing a First-Line Chemotherapy Backbone and Maintenance Strategy in mCRC",
+   "link": "https://www.ajmc.com/view/choosing-a-first-line-chemotherapy-backbone-and-maintenance-strategy-in-mcrc",
+   "description": "Choosing between FOLFOX and FOLFIRI, and deciding when to shift to maintenance therapy, requires balancing prior treatment exposure, patient lifestyle, and the limited pool of active agents in colorectal cancer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Evaluating Suspected LEMS: Differential Diagnosis and Palliative Care's Role",
+   "link": "https://www.ajmc.com/view/evaluating-suspected-lems-differential-diagnosis-and-palliative-care-s-role",
+   "description": "Diagnosing LEMS does not change the small cell lung cancer treatment plan, but missing it means missing a chance to protect a patient's function and quality of life.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "LEMS in Small Cell Lung Cancer: Definition, Pathophysiology, and Prognosis",
+   "link": "https://www.ajmc.com/view/lems-in-small-cell-lung-cancer-definition-pathophysiology-and-prognosis",
+   "description": "An autoimmune response against small cell lung cancer produces a rare neuromuscular syndrome, and recognizing it early carries real prognostic weight for patients.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "AATD Genetics: Z Allele, Codominance, and Predisposition Risk",
+   "link": "https://www.ajmc.com/view/aatd-genetics-z-allele-codominance-and-predisposition-risk",
+   "description": "AATD is better understood as a genetic predisposition than a single disease. Genotype, codominant inheritance, and environmental exposure together shape who develops lung or liver disease and how severe it becomes.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "How Network Meta-Analyses Compare Adjunctive Antipsychotics in MDD",
+   "link": "https://www.ajmc.com/view/how-network-meta-analyses-compare-adjunctive-antipsychotics-in-mdd",
+   "description": "Before comparing therapies, clinicians need the statistical vocabulary: what a p-value actually measures, why effect size matters more, and how network meta-analysis links trials through a shared placebo comparison.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "SCLC Staging and Screening: Limited- vs Extensive-Stage Disease",
+   "link": "https://www.ajmc.com/view/sclc-staging-and-screening-limited--vs-extensive-stage-disease",
+   "description": "Small cell lung cancer's stark divide between curable, localized disease and systemic, incurable disease shapes every treatment decision that follows, and screening gains are slowly shifting how many patients get caught early enough to benefit.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Biomarker Testing and Molecular Subtyping in First-Line mCRC",
+   "link": "https://www.ajmc.com/view/biomarker-testing-and-molecular-subtyping-in-first-line-mcrc",
+   "description": "Comprehensive upfront biomarker testing, including RAS, BRAF, HER2, and MSI status, now anchors first-line treatment selection in metastatic colorectal cancer, though reflexive testing adoption still varies across practice settings nationwide.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "Behind the FDA approval of belzutifan plus lenvatinib in advanced ccRCC, with Robert Motzer, MD",
+   "link": "https://www.urologytimes.com/view/behind-the-fda-approval-of-belzutifan-plus-lenvatinib-in-advanced-ccrcc-with-robert-motzer-md",
+   "description": "Robert J. Motzer, MD, discusses the significance of the belzutifan plus lenvatinib approval, adverse event management with the combination, and the evolving role of HIF-2α inhibition in ccRCC.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "Brian Mazzarella, MD, reviews early data on water vapor therapy for localized prostate cancer",
+   "link": "https://www.urologytimes.com/view/brian-mazzarella-md-reviews-early-data-on-water-vapor-therapy-for-localized-prostate-cancer",
+   "description": "Brian Mazzarella, MD, discusses the landscape for intermediate-risk prostate cancer and early VAPOR 2 findings on water vapor ablation.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "FDA grants fast track designation to pre-biopsy 68Ga-PSMA-PET program",
+   "link": "https://www.urologytimes.com/view/fda-grants-fast-track-designation-to-pre-biopsy-68ga-psma-pet-program",
+   "description": "The phase 3 BiPASS trial is evaluating the use of 68Ga-PSMA-PET in combination with MRI for pre-biopsy prostate cancer detection.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Derm on Air: Recognizing HS Early, From Diagnosis to Disease Burden",
+   "link": "https://www.dermatologytimes.com/view/derm-on-air-recognizing-hs-early-from-diagnosis-to-disease-burden",
+   "description": "Cynthia Trickett, MPAS, PA-C, and Leigh Ann Pansch, MSN, FNP-BC, DCNP, discussed recognizing hidradenitis suppurativa early, screening for comorbidities, and assessing disease burden.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Don't Be Rash: What UV Filter Bemotrizinol Means for Children",
+   "link": "https://www.dermatologytimes.com/view/don-t-be-rash-what-uv-filter-bemotrizinol-means-for-children",
+   "description": "On this episode of Don't Be Rash, Andrew Krakowski, MD, spoke with Sheilagh Maguiness, MD, about the FDA's approval of bemotrizinol and what the new sunscreen filter means for pediatric patients.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Nemolizumab Sustains Atopic Dermatitis Responses Through 3 Years in ARCADIA",
+   "link": "https://www.dermatologytimes.com/view/nemolizumab-sustains-atopic-dermatitis-responses-through-3-years-in-arcadia",
+   "description": "Up to 91% of patients reached EASI-75 and up to 67% reached IGA 0/1 at week 152, with no new safety signals, according to Galderma's EADV 2026 data.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Nearly 95% of Viral Korean Skincare TikTok Videos Contain Misleading Claims",
+   "link": "https://www.dermatologytimes.com/view/nearly-95-of-viral-korean-skincare-tiktok-videos-contain-misleading-claims",
+   "description": "Two studies presented at EADV 2026 highlight misinformation and dermatologic complications linked to viral skincare routines on social media.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Why Hedgehog Inhibitors Remain Underused in Advanced BCC",
+   "link": "https://www.dermatologytimes.com/view/why-hedgehog-inhibitors-remain-underused-in-advanced-bcc",
+   "description": "Although hedgehog pathway inhibitors are considered first-line systemic therapy for locally advanced disease, surgical fatigue and patient preference may warrant earlier discussion of oral treatment than current practice patterns reflect.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "What Defines Locally Advanced BCC Beyond Tumor Size",
+   "link": "https://www.dermatologytimes.com/view/what-defines-locally-advanced-bcc-beyond-tumor-size",
+   "description": "Without a formal staging system, advanced basal cell carcinoma is defined by the interplay of tumor size, anatomic site, depth, histology, and host factors that may not be apparent on initial biopsy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Daxdilimab Improves Disease Activity in Treatment-Refractory Discoid Lupus in Phase 2 Trial",
+   "link": "https://www.dermatologytimes.com/view/daxdilimab-improves-disease-activity-in-treatment-refractory-discoid-lupus-in-phase-2-trial",
+   "description": "Phase 2 data presented at EADV 2026 showed daxdilimab significantly reduced disease activity and improved response rates in treatment-refractory DLE.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Late Breaking: Zumilokibart Meets Primary End Point in Phase 2 Atopic Dermatitis Trial",
+   "link": "https://www.dermatologytimes.com/view/late-breaking-zumilokibart-meets-primary-end-point-in-phase-2-atopic-dermatitis-trial",
+   "description": "Presented as a late breaker at EADV 2026, mid-dose zumilokibart achieved EASI-75 in 65.9% of adults with atopic dermatitis vs 23.4% with placebo at week 16.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "EPP Pathophysiology, Prevalence, and Why Accurate Protoporphyrin Testing Matters",
+   "link": "https://www.dermatologytimes.com/view/epp-pathophysiology-prevalence-and-why-accurate-protoporphyrin-testing-matters",
+   "description": "EPP arises from reduced ferrochelatase activity and excess protoporphyrin made largely in the bone marrow. Accurate diagnosis depends on choosing the right specimen and the right laboratory, a step commercial assays often get wrong.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Journal Digest: September 30, 2026",
+   "link": "https://www.dermatologytimes.com/view/journal-digest-september-30-2026",
+   "description": "This review of the latest dermatological studies includes insights on ruxolitinib for lichen planus, early vitiligo treatment, psoriasis response, AD disease control, and PFB management.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Former NFL player Jon Dorenbos tells burned-out physicians to remember why they started",
+   "link": "https://www.medicaleconomics.com/view/former-nfl-player-jon-dorenbos-tells-burned-out-physicians-to-remember-why-they-started",
+   "description": "Jon Dorenbos' NFL career ended when a team physical found an aortic aneurysm, and the care team that got him back on his feet shapes what he now tells physicians who feel stuck.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Practice leaders describe turning away Medicare patients as pay lags costs",
+   "link": "https://www.medicaleconomics.com/view/practice-leaders-describe-turning-away-medicare-patients-as-pay-lags-costs",
+   "description": "MGMA members described capping Medicare Advantage contracts and favoring commercial patients, while one Texas practice leader reluctantly called Medicare her best payer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Just when you thought antimicrobial resistance couldn't get worse: C. diff spores are learning to survive hospital disinfectants",
+   "link": "https://www.medicaleconomics.com/view/just-when-you-thought-antimicrobial-resistance-couldn-t-get-worse-c-diff-spores-are-learning-to-survive-hospital-disinfectants",
+   "description": "A Monash University study published in Nature Communications finds that an antibiotic resistance gene lets Clostridioides difficile keep forming spores tough enough to withstand hospital-grade cleaning products and high laundry temperatures.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Practice leaders want insurers to pay when downcoding audits come up empty",
+   "link": "https://www.medicaleconomics.com/view/practice-leaders-want-insurers-to-pay-when-downcoding-audits-come-up-empty",
+   "description": "At an MGMA Government Affairs town hall, attendees raised extrapolated audits, employer plans beyond state reach and denials with no reason codes.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "AI could be ‘the best thing we have’ for health care’s biggest problems,’ former CMS chief says",
+   "link": "https://www.medicaleconomics.com/view/ai-could-be-the-best-thing-we-have-for-health-care-s-biggest-problems-former-cms-chief-says",
+   "description": "Seema Verma, now leader at Oracle, describes the state of the technology for MGMA.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Tab-Cel BLA Resubmitted to FDA for EBV-Positive PTLD",
+   "link": "https://www.targetedonc.com/view/tabelecleucel-bla-resubmitted-fda-ebv-positive-ptld",
+   "description": "Resubmitted FDA filing advances off-the-shelf EBV-specific T-cell therapy tab-cel for relapsed EBV+ PTLD after transplant, with longer follow-up.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Molecular Testing in PIK3CA-Mutated HR+/HER2-Negative Advanced Breast Cancer",
+   "link": "https://www.targetedonc.com/view/molecular-testing-in-pik3ca-mutated-hr-her2-negative-advanced-breast-cancer",
+   "description": "Dr. Jason Mouabbi discusses the role of molecular testing in guiding treatment selection for patients with PIK3CA-mutated HR-positive/HER2-negative advanced breast cancer.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Tile-Based Radiation Improves Local Control in Resected Brain Metastases",
+   "link": "https://www.targetedonc.com/view/roads-trial-gammatile-resected-brain-metastases",
+   "description": "Resection with cesium-131 tile-based radiation therapy prolonged time to surgical bed recurrence vs resection with stereotactic radiation in the phase 3 ROADS trial.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Defining Endocrine Resistance in PIK3CA-Mutated HR+/HER2-Negative Advanced Breast Cancer",
+   "link": "https://www.targetedonc.com/view/defining-endocrine-resistance-in-pik3ca-mutated-hr-her2-negative-advanced-breast-cancer",
+   "description": "Dr. Jason Mouabbi introduces the discussion on managing PIK3CA-mutated HR-positive/HER2-negative advanced breast cancer in clinical practice, with a focus on treatment selection and practical adverse-event management.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Dr Kuykendall on VERIFY Trial of Rusfertide in Polycythemia Vera",
+   "link": "https://www.targetedonc.com/view/kuykendall-rusfertide-phase-3-verify-trial-polycythemia-vera",
+   "description": "Andrew Kuykendall, MD, reviews VERIFY trial that led to FDA approval of rusfertide in polycythemia vera.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Denosumab Biosimilar Approved For Existing Oncology Indications",
+   "link": "https://www.targetedonc.com/view/denosumab-biosimilar-approved-skeletal-gctb-hypercalcemia",
+   "description": "Degevma was approved for skeletal-related events in adults with bone metastases, giant cell tumor of bone, and the treatment of hypercalcemia of malignancy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Usmani Highlights Shift Toward MRD-Guided, Fixed-Duration Treatment in Multiple Myeloma at IMS",
+   "link": "https://www.targetedonc.com/view/usmani-mrd-negativity-fixed-duration-treatment-multiple-myeloma-ims",
+   "description": "Saad Usmani, MD, discusses how MRD negativity may define treatment duration and raise cure fractions in multiple myeloma, live from IMS.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Plinabulin Receives FDA Fast Track Designation in Post-ICI NSCLC",
+   "link": "https://www.targetedonc.com/view/plinabulin-fast-track-post-ici-nsclc-dublin-4",
+   "description": "FDA fast-tracks plinabulin plus docetaxel for post-immunotherapy non-squamous NSCLC, as DUBLIN-4 phase 3 targets survival gains.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Sequencing and Treatment Selection in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/sequencing-and-treatment-selection-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this closing segment, Dr. Peter Voorhees, Dr. Luciano Costa, and Dr. Doris Hansen discuss the limitations of available evidence for sequencing therapies in relapsed/refractory multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Treatment Selection After CD38 and Lenalidomide Refractoriness in Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/treatment-selection-after-cd38-and-lenalidomide-refractoriness-in-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees presents a modified case involving a patient in their early 70s with relapsed multiple myeloma whose disease has become refractory to both lenalidomide and daratumumab following frontline daratumumab, lenalidomide, and dexamethasone therapy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Sequencing Bispecific Antibodies and CAR T-Cell Therapy in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/sequencing-bispecific-antibodies-and-car-t-cell-therapy-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees opens the panel discussion on sequencing and patient selection across the multiple myeloma treatment continuum.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "CAR T-Cell Safety and Supportive Care in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/car-t-cell-safety-and-supportive-care-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees and Dr. Doris Hansen discuss the safety profile and post-treatment management of CAR T-cell therapy in relapsed/refractory multiple myeloma, with emphasis on considerations for community oncologists caring for patients after discharge from the CAR T-cell center.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "CAR T-Cell Therapy Selection in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/car-t-cell-therapy-selection-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees and Dr. Doris Hansen discuss how the findings from CARTITUDE-2 Cohort A relate to the randomized CARTITUDE-4 study and how these data inform consideration of CAR T-cell therapy in relapsed/refractory multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "BCMA-Directed CAR T-Cell Therapy in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/bcma-directed-car-t-cell-therapy-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees introduces the role of BCMA-directed CAR T-cell therapy in relapsed/refractory multiple myeloma and its movement into earlier lines of treatment.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Selecting Bispecific Antibodies in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/selecting-bispecific-antibodies-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees discusses treatment selection with bispecific antibodies in relapsed/refractory multiple myeloma, focusing on patients with prior CD38 antibody exposure.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "GPRC5D-Directed Bispecific Antibodies in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/gprc5d-directed-bispecific-antibodies-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees discusses the MonumenTAL-3 study evaluating the GPRC5D-directed bispecific antibody talquetamab in earlier-line relapsed/refractory multiple myeloma.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Bispecific Antibodies in Relapsed/Refractory Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/bispecific-antibodies-in-relapsed-refractory-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees introduces the evolving role of bispecific antibodies in relapsed/refractory multiple myeloma, highlighting the movement of these therapies into earlier lines of treatment.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Supportive Care With Frontline Therapy in Newly Diagnosed Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/supportive-care-with-frontline-therapy-in-newly-diagnosed-multiple-myeloma",
+   "description": "In this segment, Dr. Luciano Costa provides practical considerations for managing patients with newly diagnosed multiple myeloma receiving frontline quadruplet therapy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Individualizing Frontline Therapy in Newly Diagnosed Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/individualizing-frontline-therapy-in-newly-diagnosed-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees and Dr. Luciano Costa discuss how treatment selection can be individualized for patients with newly diagnosed multiple myeloma, including considerations when choosing between triplet and quadruplet regimens.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "CEPHEUS and Frontline Treatment in Newly Diagnosed Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/cepheus-and-frontline-treatment-in-newly-diagnosed-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees and Dr. Luciano Costa discuss the design and clinical implications of the CEPHEUS trial in newly diagnosed multiple myeloma, with particular attention to patients who were transplant-ineligible or transplant-deferred.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "EGFR-MET Dual Targeting Rationale in HNSCC",
+   "link": "https://www.targetedonc.com/view/egfr-met-dual-targeting-rationale-in-hnscc",
+   "description": "Paul L. Swiecicki, MD, of the University of Michigan Rogel Cancer Center, discusses the biological rationale for targeting epidermal growth factor receptor (EGFR) and MET in head and neck squamous cell carcinoma (HNSCC).",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Historical Outcomes with Cetuximab and Taxanes",
+   "link": "https://www.targetedonc.com/view/historical-outcomes-with-cetuximab-and-taxanes",
+   "description": "Paul L. Swiecicki, MD, of the University of Michigan Rogel Cancer Center, describes historical outcomes for patients with relapsed or recurrent metastatic head and neck squamous cell carcinoma (HNSCC) who progress after anti-PD-(L)1 therapy and platinum-based chemotherapy.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "FDA Oncology Recap: Approvals, Designations, and Decisions in September 2026",
+   "link": "https://www.targetedonc.com/view/fda-oncology-approvals-designations-decisions-september-2026-recap",
+   "description": "September brought accelerated approvals in ESR1-mutant breast cancer and HER2-mutant non–small cell lung cancer, a Galleri panel vote, and a withdrawn I-DXd application.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Frontline CD38-Directed Therapy in Newly Diagnosed Multiple Myeloma",
+   "link": "https://www.targetedonc.com/view/frontline-cd38-directed-therapy-in-newly-diagnosed-multiple-myeloma",
+   "description": "In this segment, Dr. Peter Voorhees introduces the Targeted™ Oncology Investigator Perspectives program and outlines the evolving treatment landscape in newly diagnosed multiple myeloma, including the movement of novel therapies into earlier lines of treatment.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "CMS defined a path for medical frailty. Now comes the hard part.",
+   "link": "https://www.managedhealthcareexecutive.com/view/cms-defined-a-path-for-medical-frailty-now-comes-the-hard-part-",
+   "description": "States have to turn that information into medical frailty determinations that are clinically credible, consistent, and workable across large Medicaid populations.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Sleep apnea linked to higher odds of fatty liver disease, but CPAP benefit limited to liver enzymes",
+   "link": "https://www.managedhealthcareexecutive.com/view/sleep-apnea-linked-to-higher-odds-of-fatty-liver-disease",
+   "description": "A meta-analysis found steatotic liver disease in 75% of patients with sleep-disordered breathing and that CPAP lowered liver enzymes but not liver fat.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "IRA drug price negotiation has not increased launch prices, study finds",
+   "link": "https://www.managedhealthcareexecutive.com/view/ira-drug-price-negotiation-has-not-increased-launch-prices-study-finds",
+   "description": "Some predicted that drugmakers might boost launch prices to make up for Medicare drug negotiations shrinking profits. Harvard researchers find no evidence of that happening so far.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "FAQ: State PBM reform in 2026—What's new since spring",
+   "link": "https://www.managedhealthcareexecutive.com/view/faq-state-pbm-reform-in-2026-what-s-new-since-spring",
+   "description": "State PBM reform accelerates through 2026, with Theresa Carnegie of Mintz unpacking new laws, rebate pass-through, spread pricing bans, and compliance risks.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "What retinal imaging reveals about the brain-eye connection with Sharon Fekrat, MD, FACS, FASRS",
+   "link": "https://www.ophthalmologytimes.com/view/what-retinal-imaging-reveals-about-the-brain-eye-connection-with-sharon-fekrat-md-facs-fasrs",
+   "description": "Sharon Fekrat, MD, FACS, FASRS, discusses how retinal imaging fits into the diagnostic picture for CVI, TBI, and neurodegenerative disease.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Gene therapy sessions to watch in Vienna",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-gene-therapy-sessions-to-watch-in-vienna",
+   "description": "An industry symposium on intravitreal 4D-150 and a course on subretinal delivery lead gene therapy content at EURETINA 2026, alongside IRD courses and trial readouts.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "What the Camzyos approval means for patients with obstructive HCM",
+   "link": "https://www.contemporarypediatrics.com/view/what-the-camzyos-approval-means-for-adolescents-with-obstructive-hcm",
+   "description": "Joseph Rossano, MD, discusses how FDA approval of mavacamten introduces a disease-targeted treatment option for adults and pediatric patients weighing 30 kg (66 lbs) or more with symptomatic oHCM.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "FDA approves Camzyos for pediatric patients with symptomatic obstructive hypertrophic cardiomyopathy",
+   "link": "https://www.contemporarypediatrics.com/view/fda-approves-camzyos-for-adolescents-with-symptomatic-obstructive-hypertrophic-cardiomyopathy",
+   "description": "Mavacamten becomes the first cardiac myosin inhibitor approved for adults and pediatric patients weighing 30 kg (66 lbs) or more with symptomatic oHCM.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Ecnoglutide shows favorable safety, BMI reduction in adolescents with obesity in phase 1b trial",
+   "link": "https://www.contemporarypediatrics.com/view/ecnoglutide-shows-favorable-safety-bmi-reduction-in-adolescents-with-obesity-in-phase-1b-trial",
+   "description": "In a 48-patient phase 1b trial, ecnoglutide was well tolerated in adolescents with obesity and reduced BMI up to 12.6% at 20 weeks.",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Can you diagnose this 16-month-old with a rash, earache, and fussiness?",
+   "link": "https://www.contemporarypediatrics.com/view/can-you-diagnose-this-16-month-old-with-a-rash-earache-and-fussiness-",
+   "description": "Can you guess the diagnosis?",
+   "published": "2026-09-30"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "BLA submitted to FDA for Viaskin peanut patch in children aged 4 to 7 years with peanut allergy",
+   "link": "https://www.contemporarypediatrics.com/view/bla-submitted-to-fda-for-viaskin-peanut-patch-in-children-aged-4-to-7-years-with-peanut-allergy",
+   "description": "DBV filed a BLA for the Viaskin peanut patch in peanut-allergic children aged 4-7, citing phase 3 VITESSE data, and requested priority review.",
    "published": "2026-09-30"
   },
   {
@@ -725,7 +2090,7 @@
    "brand": "Pharmacy Times",
    "title": "Expert Q&A: Researcher Urges Autonomic Assessment for Patients With Long COVID",
    "link": "https://www.pharmacytimes.com/view/expert-q-a-researcher-urges-autonomic-assessment-for-patients-with-long-covid",
-   "description": "Marie-Claire Seeley, RN, MNurs, PhD, discusses standing tests, medication review, and what inflammatory findings may mean for future POTS treatment.",
+   "description": "Marie-Claire Seeley, PhD, MNurs, RN, discusses standing tests, medication review, and what inflammatory findings may mean for future POTS treatment.",
    "published": "2026-09-29"
   },
   {
@@ -950,6 +2315,13 @@
    "title": "FDA approves tiratricol as first treatment for peripheral thyrotoxicosis in MCT8 deficiency",
    "link": "https://www.contemporarypediatrics.com/view/fda-approves-tiratricol-as-first-treatment-for-peripheral-thyrotoxicosis-in-mct8-deficiency",
    "description": "The FDA approved tiratricol (Emcitate) for peripheral thyrotoxicosis in MCT8 deficiency, the first approved therapy for the rare disorder.",
+   "published": "2026-09-29"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "FDA grants Breakthrough Device designation to microRNA blood test for predicting AIS curve progression",
+   "link": "https://www.contemporarypediatrics.com/view/fda-grants-breakthrough-device-designation-microrna-blood-test-predicting-ais-curve-progression",
+   "description": "ScolimiR-3D, a 6-microRNA blood test to predict severe curve progression in AIS, received FDA Breakthrough Device designation.",
    "published": "2026-09-29"
   },
   {
@@ -1962,6 +3334,13 @@
   },
   {
    "brand": "Ophthalmology Times",
+   "title": "EyeCon 2026: Devgan on surgery, co-management, and the whole eye care team",
+   "link": "https://www.ophthalmologytimes.com/view/eyecon-2026-devgan-on-surgery-co-management-and-the-eye-care-team",
+   "description": "Uday Devgan, MD, FACS, co-chair of EyeCon 2026, highlights what makes cataract surgery challenging, when to add MIGS, and why no patient is routine.",
+   "published": "2026-09-27"
+  },
+  {
+   "brand": "Ophthalmology Times",
    "title": "Retina Society 2026: Non-invasive electrical stimulation therapy for intermediate dry AMD: improved retinal health and visual acuity",
    "link": "https://www.ophthalmologytimes.com/view/retina-society-2026-non-invasive-electrical-stimulation-therapy-intermediate-dry-amd-improved-retinal-health-and-visual-acuity",
    "description": "Non-invasive electrical stimulation delivered through closed eyelids improved retinal structure and photoreceptor function.",
@@ -2844,7 +4223,7 @@
   },
   {
    "brand": "Ophthalmology Times",
-   "title": "Geographic atrophy in practice: Three cases that defined the textbook",
+   "title": "Geographic atrophy in practice: Three cases that defy the textbook",
    "link": "https://www.ophthalmologytimes.com/view/geographic-atrophy-in-practice-three-cases-that-defined-the-textbook",
    "description": "Concurrent exudative disease, early intervention, and a rare masquerader complicate the classic picture of geographic atrophy.",
    "published": "2026-09-25"
@@ -10977,5 +12356,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-09-30T11:56:59.154Z"
+ "updatedAt": "2026-10-01T12:33:58.349Z"
 }

@@ -1289,5 +1289,26 @@
   ],
   "note": "Decided ahead of the listed PDUFA date of 2026-11-01.",
   "recordedAt": "2026-09-30"
+ },
+ {
+  "drug": "Camzyos (mavacamten)",
+  "brandName": null,
+  "company": "Bristol Myers Squibb Co.",
+  "pdufaDate": "2026-09-30",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-09-30",
+  "sourceUrl": "https://www.hcplive.com/view/fda-approves-mavacamten-for-pediatric-patients-with-obstructive-hcm",
+  "evidence": [
+   {
+    "source": "HCPLive",
+    "detail": "FDA Approves Mavacamten for Pediatric Patients With Obstructive HCM",
+    "confidence": "high",
+    "url": "https://www.hcplive.com/view/fda-approves-mavacamten-for-pediatric-patients-with-obstructive-hcm",
+    "published": "2026-09-30"
+   }
+  ],
+  "recordedAt": "2026-10-01"
  }
 ]
