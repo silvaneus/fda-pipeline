@@ -1310,5 +1310,24 @@
    }
   ],
   "recordedAt": "2026-10-01"
+ },
+ {
+  "drug": "Lyrfigtu",
+  "brandName": null,
+  "company": "HLB Co., Ltd.",
+  "pdufaDate": "2026-09-25",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=Lyrfigtu%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=Lyrfigtu%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-10-02"
  }
 ]
