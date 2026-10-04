@@ -1,6 +1,55 @@
 {
  "items": [
   {
+   "brand": "NeurologyLive",
+   "title": "NeurologyLive® Brain Games: October 4, 2026",
+   "link": "https://www.neurologylive.com/view/neurologylive-brain-games-october-4-2026",
+   "description": "Test your neurology knowledge with NeurologyLive®'s weekly quiz series, featuring questions on a variety of clinical and historical neurology topics. This week's topic is the history of MDS!",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "What pediatricians should know about the 2026-27 AAP vaccine schedule",
+   "link": "https://www.contemporarypediatrics.com/view/what-pediatricians-should-know-about-the-2026-27-aap-vaccine-schedule",
+   "description": "Sean T. O'Leary, MD, MPH, outlines 2026-2027 AAP influenza, COVID-19, and RSV guidance.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Sporadic colorectal cancer in adolescents often presents at advanced stage",
+   "link": "https://www.contemporarypediatrics.com/view/sporadic-colorectal-cancer-in-adolescents-often-presents-at-advanced-stage",
+   "description": "In a multi-institutional cohort of 84 patients 21 years or younger with sporadic colorectal cancer, 67 presented with stage III or IV disease and 45.2% died of CRC.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Judicious strep testing can reduce unnecessary antibiotic use in children",
+   "link": "https://www.contemporarypediatrics.com/view/judicious-strep-testing-can-reduce-unnecessary-antibiotic-use-in-children",
+   "description": "At AAP 2026, Rana Hamdy, MD, discussed when to test children for group A strep, antibiotic selection, and strategies to improve prescribing.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Pediatric e-bike injuries are less common but more severe than e-scooters",
+   "link": "https://www.contemporarypediatrics.com/view/pediatric-e-bike-injuries-are-less-common-but-more-severe-than-e-scooters",
+   "description": "Bianca Edison, MD, MS, FAAP, FAMSSM, explains why e-bike injuries were more severe than e-scooter injuries and how pediatricians can open safety conversations.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: How a national registry is mapping inherited retinal disease in Portugal",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-how-a-national-registry-is-mapping-inherited-retinal-disease-in-portugal",
+   "description": "João Pedro Marques, MD, MSc, PhD, FEBOphth, discusses the IRD-PT, a web-based Portuguese registry of roughly 2,400 patients with inherited retinal diseases that supports research and identifies patients for clinical trials.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "FAQ: What clinicians need to know about OCU410 phase 2 ArMaDa results",
+   "link": "https://www.ophthalmologytimes.com/view/faq-what-clinicians-need-to-know-about-ocu410-phase-2-armada-results",
+   "description": "Could one surgery replace years of GA injections? Phase 2 ArMaDa data suggest gene therapy OCU410 slows lesion growth.",
+   "published": "2026-10-04"
+  },
+  {
    "brand": "HCPLive",
    "title": "EADV Congress 2026: Day 3 Recap—5 Headlines to Know",
    "link": "https://www.hcplive.com/view/eadv-congress-2026-day-3-recap-5-headlines-to-know",
@@ -47,6 +96,160 @@
    "title": "Acetaminophen-autism misinformation drew disproportionate views on TikTok",
    "link": "https://www.contemporarypediatrics.com/view/acetaminophen-autism-misinformation-drew-disproportionate-views-on-tiktok",
    "description": "TikTok misinformation about prenatal acetaminophen and autism represented 28.3% of analyzed videos but generated more than half of total views.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Alliance A071801 Supports Fractionated SRS After Brain Metastasis Surgery",
+   "link": "https://www.cancernetwork.com/view/alliance-a071801-supports-fractionated-srs-after-brain-metastasis-surgery",
+   "description": "Ayal Aizer, MD, MHS, discussed Alliance A071801 data favoring fractionated SRS over single-fraction SRS after brain metastasis resection.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Rectal Spacers May Reduce Toxicity of Proton Therapy in Prostate Cancer",
+   "link": "https://www.cancernetwork.com/view/rectal-spacers-may-reduce-toxicity-of-proton-therapy-in-prostate-cancer",
+   "description": "Marcio A. Fagundes, MD, explained how proton therapy and rectal spacers can reduce radiation exposure to the rectum, bowel, and bladder in prostate cancer.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "EADV 2026: Telikibart Attains EASI-75 in 70% at Week 16 in Atopic Dermatitis",
+   "link": "https://www.hcplive.com/view/eadv-2026-telikibart-attains-easi-75-70-week-16-atopic-dermatitis",
+   "description": "In a phase 3 study, telikibart achieved EASI-75 in 69.6% of adult patients with atopic dermatitis at Week 16, with rates above 94% by Week 52.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Q3 2026 Recap: Allergy News and Updates",
+   "link": "https://www.hcplive.com/view/q3-2026-recap-allergy-news-updates",
+   "description": "Ryaltris pediatric approval, lonvo-z and deucrictibant HAE filings, PVX108 Fast Track, and Palforzia's exit headline Q3 2026 allergy news.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Upadacitinib Tops Nemolizumab on Skin, Itch Targets in Indirect Analysis",
+   "link": "https://www.hcplive.com/view/upadacitinib-tops-nemolizumab-skin-itch-targets-indirect-analysis",
+   "description": "An indirect comparison finds higher placebo-adjusted skin and itch responses with upadacitinib vs nemolizumab in atopic dermatitis.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "8 Pulmonology Headlines You Missed in Q3 2026",
+   "link": "https://www.hcplive.com/view/8-pulmonology-headlines-you-missed-in-q3-2026",
+   "description": "Catch up on key FDA approvals, major trial updates, and critical clinician insights from the last 3 months.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Early Spinal Muscular Atrophy Treatment Tied to Milder Pediatric Phenotype",
+   "link": "https://www.neurologylive.com/view/early-spinal-muscular-atrophy-treatment-tied-milder-pediatric-phenotype",
+   "description": "New data from a Cure SMA survey showed that children treated with disease-modifying therapy soon after birth walk more often and have fewer comorbidities than those treated later.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Nipocalimab’s Safety Profile Slightly Favored Over Other Myasthenia Gravis Therapies, Indirect Comparison Shows",
+   "link": "https://www.neurologylive.com/view/nipocalimab-safety-profile-slightly-favored-over-other-myasthenia-gravis-therapies-indirect-comparison",
+   "description": "A new Bayesian network meta-analysis found nipocalimab's serious adverse event rates compared favorably with other gMG therapies, while overall adverse event rates were comparable.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "OncLive",
+   "title": "The OncFive: Top Oncology Articles for the Week of 9/27/2026",
+   "link": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-9-27-2026",
+   "description": "The FDA approved pirtobrutinib for untreated chronic lymphocytic leukemia, granted priority review to elinzanetant for breast cancer hot flashes, and more.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "OncLive",
+   "title": "AUA Releases Guideline Amendment for NMIBC",
+   "link": "https://www.onclive.com/view/aua-releases-guideline-amendment-for-nmibc",
+   "description": "The 2026 amendment adds 40 new recommendations, including active surveillance, office-based treatment, and chemoablation for select recurrent low-grade disease.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Clesrovimab Given in 1st and 2nd RSV Seasons for At-Risk Infants",
+   "link": "https://www.contagionlive.com/view/clesrovimab-given-in-1st-and-2nd-rsv-seasons-for-at-risk-infants",
+   "description": "A study finding clesrovimab comparable to palivizumab in protecting at-risk infants in their first RSV season was extended to demonstrate clesrovimab effective and well-tolerated when administered in their second season.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Durable Efficacy and Manageable Safety Reinforce Taletrectinib's Role in ROS1+ NSCLC",
+   "link": "https://www.targetedonc.com/view/taletrectinib-durable-efficacy-manageable-safety-ros1-nsclc",
+   "description": "Jorge Nieva, MD, reviews long-term taletrectinib data in ROS1+ non–small cell lung cancer, including about 90% response rates across fusion partners and manageable safety.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "FDA Grants Fast Track Designation to TRE-515 for KRAS G12C NSCLC",
+   "link": "https://www.targetedonc.com/view/fda-grants-fast-track-designation-to-tre-515-for-kras-g12c-nsclc",
+   "description": "TRE-515 could improve the durability of response in combination with KRAS inhibition in patients with advanced non–small cell lung cancer, investigators stated.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "What the 2025-2030 Dietary Guidelines Mean for Heart Health",
+   "link": "https://www.pharmacytimes.com/view/what-the-2025-2030-dietary-guidelines-mean-for-heart-health",
+   "description": "An expert outlines the new emphasis on protein, whole grains, and added sugars in the guidelines—and why some shifts call for careful counseling",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Indirect Comparison Links Tirzepatide to Greater Weight Loss Than Semaglutide",
+   "link": "https://www.drugtopics.com/view/indirect-comparison-links-tirzepatide-to-greater-weight-loss-than-semaglutide",
+   "description": "The analysis is not a head-to-head trial, and the weight loss gap reached statistical significance under 1 of 2 estimands.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Delgocitinib Shows Real-World Effectiveness and Improved Quality of Life in Chronic Hand Eczema",
+   "link": "https://www.dermatologytimes.com/view/delgocitinib-shows-real-world-effectiveness-and-improved-quality-of-life-in-chronic-hand-eczema",
+   "description": "New EADV 2026 data highlighted real-world outcomes in adults with chronic hand eczema and improvements in itch, pain, and quality of life among adolescents treated with delgocitinib cream.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Oral Targeted Anticancer Medication Use Following High-Deductible Health Plan Enrollment",
+   "link": "https://www.ajmc.com/view/oral-targeted-anticancer-medication-use-following-high-deductible-health-plan-enrollment",
+   "description": "Employer-mandated enrollment in a high-deductible health plan did not reduce use of oral targeted anticancer medications among patients commercially insured between 2007 and 2021.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Utilization of Social Determinants Z Codes and Health System Characteristics, 2015-2024",
+   "link": "https://www.ajmc.com/view/utilization-of-social-determinants-z-codes-and-health-system-characteristics-2015-2024",
+   "description": "We identify the health system characteristics associated with greater or lesser documentation of patients’ social determinants of health.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Pediatric institutions showed limited social media response to acetaminophen-autism claims",
+   "link": "https://www.contemporarypediatrics.com/view/pediatric-institutions-showed-limited-social-media-response-to-acetaminophen-autism-claims",
+   "description": "Only 21.5% of 65 health institutions posted on Instagram in response to claims linking prenatal acetaminophen use with autism.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Pediatric e-bike and e-scooter injuries nearly quadruple at California hospital",
+   "link": "https://www.contemporarypediatrics.com/view/pediatric-e-bike-and-e-scooter-injuries-nearly-quadruple-at-california-hospital",
+   "description": "E-bike and e-scooter injuries nearly quadrupled from 2019 to 2025 at a pediatric hospital, with e-bike injuries associated with greater severity.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Why half-dose PDT leads the treatment of central serous chorioretinopathy",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-why-half-dose-pdt-leads-the-treatment-of-central-serous-chorioretinopathy",
+   "description": "At EURETINA 2026, Elon van Dijk, MD, PhD, FEBOphth, reviewed trial evidence favouring half-dose PDT over micropulse laser and eplerenone for central serous chorioretinopathy.",
+   "published": "2026-10-03"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Global RETFound expands to 108 partners in effort to build a truly global foundation model",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-global-retfound-expands-to-108-partners-in-effort-to-build-a-truly-global-foundation-model",
+   "description": "Paul Nderitu, MBChB, MPhil, MBCS, FRCOphth, PhD, gives an update at EURETINA 2026 on Global RETFound, a foundation model being built with 108 partners from more than 40 countries",
    "published": "2026-10-03"
   },
   {
@@ -688,7 +891,7 @@
   },
   {
    "brand": "Dermatology Times",
-   "title": "EP. 2: Treatment Durability and Early Intervention in Psoriasis",
+   "title": "Treatment Durability and Early Intervention in Psoriasis",
    "link": "https://www.dermatologytimes.com/view/ep-2-treatment-durability-and-early-intervention-in-psoriasis",
    "description": "James Song, MD, discusses treatment durability, early intervention, and interpreting long-term clinical trial data in psoriasis.",
    "published": "2026-10-02"
@@ -13896,5 +14099,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-10-03T11:08:05.596Z"
+ "updatedAt": "2026-10-04T11:49:08.578Z"
 }
