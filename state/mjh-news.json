@@ -1,6 +1,286 @@
 {
  "items": [
   {
+   "brand": "OncLive",
+   "title": "Key Takeaways for Multiple Myeloma: Treatment Sequencing, Safety, and Patient-Centered Care",
+   "link": "https://www.onclive.com/view/key-takeaways-for-multiple-myeloma-treatment-sequencing-safety-and-patient-centered-care",
+   "description": "The panel concludes by sharing practical takeaways for clinicians managing patients with multiple myeloma.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Berzosertib Plus Carboplatin Fails to Improve Responses in Pretreated mCRPC",
+   "link": "https://www.onclive.com/view/berzosertib-plus-carboplatin-fails-to-improve-responses-in-pretreated-mcrpc",
+   "description": "A randomized phase 2 trial of berzosertib plus carboplatin in pretreated mCRPC stopped for futility amid fewer responses and more high-grade toxicity than the control arm.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "OncLive",
+   "title": "GVHD Prevention Strategies and the Underappreciated Toxicity of Post-Transplant Cyclophosphamide",
+   "link": "https://www.onclive.com/view/gvhd-prevention-strategies-and-the-underappreciated-toxicity-of-post-transplant-cyclophosphamide",
+   "description": "Caspian Oliai, MD, MS, reviews how graft-vs-host disease (GVHD) prophylaxis has evolved and where its toxicity is underappreciated.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "CNS Monitoring and When to Defer Local Therapy",
+   "link": "https://www.cancernetwork.com/view/cns-monitoring-and-when-to-defer-local-therapy",
+   "description": "Estelamari Rodriguez, MD, MPH, of Sylvester Comprehensive Cancer Center contrasts central nervous system (CNS) imaging in the phase 3 MARIPOSA and FLAURA2 studies of epidermal growth factor receptor (EGFR)-mutated advanced non–small cell lung cancer (NSCLC), noting that one scanned every patient on a set schedule while the other continued imaging mainly in patients with baseline brain metastases.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Defining High-Risk Disease and Outcomes With Brain Metastases",
+   "link": "https://www.cancernetwork.com/view/defining-high-risk-disease-and-outcomes-with-brain-metastases",
+   "description": "Siddhartha Devarakonda, MD, of Providence Swedish Cancer Institute pushes back on the high-risk label in epidermal growth factor receptor (EGFR)-mutated advanced non–small cell lung cancer (NSCLC), noting that when 89% of patients with analyzable circulating tumor DNA in the phase 3 MARIPOSA study carry at least 1 high-risk feature, the term loses meaning.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "What Does Sevabertinib’s Expanded Approval Mean for HER2+ NSCLC?",
+   "link": "https://www.cancernetwork.com/view/what-does-sevabertinib-s-expanded-approval-mean-for-her2-nsclc-",
+   "description": "Xiuning Le, MD, PhD, discusses the accelerated approval of frontline sevabertinib for patients with HER2-mutated non–small cell lung cancer.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Strategies to Improve Treatment Adherence in EoE Care",
+   "link": "https://www.hcplive.com/view/strategies-to-improve-treatment-adherence-in-eoe-care",
+   "description": "Adherence starts with finding a treatment patients can realistically sustain. The expert faculty discuss how shared decision-making and patient education can help translate an EoE treatment plan into long-term action.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Adjusting Treatment and Quality of Life in EoE",
+   "link": "https://www.hcplive.com/view/adjusting-treatment-and-quality-of-life-in-eoe",
+   "description": "Effective EoE management requires more than controlling disease activity. The panel explores how evolving clinical needs and quality-of-life considerations can guide treatment decisions over time.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "From Injectable to Oral: Optimal Durable Clearance Across the IL-23 Class",
+   "link": "https://www.hcplive.com/view/injectable-to-oral-optimal-durable-clearance-il-23",
+   "description": "Linda Stein Gold, MD, and Andrew Blauvelt, MD, MBA, discuss 2-year ICONIC-TOTAL data supporting icotrokinra's benefit for scalp, genital, and hand/foot PsO.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Advances in Treating High-Impact Psoriasis from EADV 2026",
+   "link": "https://www.hcplive.com/view/advances-treating-high-impact-psoriasis-eadv-2026",
+   "description": "Chris Bunick, MD, PhD, discusses 52-week UnlIMMited data showing risankizumab sustained clearance, itch relief, and quality-of-life gains.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Russian Lab Worker Dies in Suspected Pneumonic Plague Case",
+   "link": "https://www.contagionlive.com/view/russian-lab-worker-dies-in-suspected-pneumonic-plague-case",
+   "description": "Irkutsk anti-plague institute death prompts quarantines and conflicting official accounts.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "FAQ: Pneumonic Plague",
+   "link": "https://www.contagionlive.com/view/faq-plague",
+   "description": "A laboratory technician at a Siberian anti-plague institute has died of pneumonia of unknown cause, prompting quarantines and contact monitoring while Russian officials stop short of confirming plague.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Ecopipam Shows Early and Sustained Tic Reduction in New Pediatric Tourette Syndrome Analyses",
+   "link": "https://www.neurologylive.com/view/ecopipam-shows-early-sustained-tic-reduction-new-pediatric-tourette-syndrome-analyses",
+   "description": "New analyses from the D1AMOND clinical program found that 69.8% of participants achieved a clinically meaningful reduction in tic severity within 8 weeks of ecopipam treatment, while an interim 18-month analysis showed sustained improvement without new safety signals.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "This Week on NeurologyLive® — October 5, 2026",
+   "link": "https://www.neurologylive.com/view/this-week-on-neurologylive-october-5-2026",
+   "description": "Here's some of what is coming soon to NeurologyLive® this week.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Perspectives on Health-Related Social Needs for Medicare Advantage Beneficiaries",
+   "link": "https://www.ajmc.com/view/perspectives-on-health-related-social-needs-for-medicare-advantage-beneficiaries",
+   "description": "Medicare Advantage plans have varied motivations, strategies, and aspirations for addressing health-related social needs among home health beneficiaries, highlighting a need to expand the scope of supplemental benefits.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "AJMC",
+   "title": "From Screening to Systems Change: Final Reflections on Alzheimer's Disease Care",
+   "link": "https://www.ajmc.com/view/from-screening-to-systems-change-final-reflections-on-alzheimer-s-disease-care",
+   "description": "Led by the moderator, the panelists examined the core lessons from the series.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "AJMC",
+   "title": "IDSA's New Complicated UTI Guideline: Definitions and Rationale",
+   "link": "https://www.ajmc.com/view/idsa-s-new-complicated-uti-guideline-definitions-and-rationale",
+   "description": "The IDSA's first-ever complicated UTI guideline redefines the condition around systemic risk factors and severity, reflecting two decades of shifting resistance patterns, expanding indications, and new evidence supporting shorter courses of therapy.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Building the Case for New Complicated UTI Treatments",
+   "link": "https://www.ajmc.com/view/building-the-case-for-new-complicated-uti-treatments",
+   "description": "Adoption of a costlier antibiotic hinges on three factors: genuine unmet need, a clear cost justification, and an institutional champion, alongside prior authorization reform that turns formulary access into actual use at the bedside.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "AJMC",
+   "title": "The Next Frontier: Subcutaneous Therapy and the Future of Alzheimer's Disease Access",
+   "link": "https://www.ajmc.com/view/the-next-frontier-subcutaneous-therapy-and-the-future-of-alzheimer-s-disease-access",
+   "description": "The panelists examined whether a new subcutaneous monoclonal antibody formulation, paired with telehealth cognitive evaluations, at-home phlebotomy, and remote ARIA monitoring, could extend Alzheimer's disease treatment beyond brick-and-mortar infusion centers into rural and underserved communities.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "AJMC",
+   "title": "3 Scientists Share Nobel Prize in Physiology or Medicine for Optogenetics",
+   "link": "https://www.ajmc.com/view/3-scientists-share-nobel-prize-in-physiology-or-medicine-for-optogenetics",
+   "description": "2026 Nobel Prize in Medicine honors optogenetics pioneers who turn algae light-sensing protein into neural switches, transforming brain mapping and enabling vision-restoration trials.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "Avoiding False Positives on Prostate Cancer PSMA PET Scans",
+   "link": "https://www.urologytimes.com/view/avoiding-false-positives-on-prostate-cancer-psma-pet-scans",
+   "description": "Physiologic PSMA uptake in ganglia, ureters, and other normal structures can mimic disease, and the panel walks through the anatomic pitfalls that most often mislead inexperienced readers.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "Adjudicating Indeterminate Bone Lesions in Prostate Cancer Imaging",
+   "link": "https://www.urologytimes.com/view/adjudicating-indeterminate-bone-lesions-in-prostate-cancer-imaging",
+   "description": "An indeterminate bone lesion forces clinicians to weigh pretest probability, tracer type, and biopsy risk before committing to a diagnosis, with serial scanning often settling the question over time.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Balancing Speed of Onset, Durability, and Comorbidities in Psoriasis Therapy",
+   "link": "https://www.dermatologytimes.com/view/balancing-speed-of-onset-durability-and-comorbidities-in-psoriasis-therapy",
+   "description": "Speed of onset and long-term durability are often treated as competing priorities. Dr. Armstrong argues they are not mutually exclusive, and details how cardiometabolic comorbidities and how emerging incretin-therapy data may extend treatment options beyond skin clearance alone.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Dermatology Times Monthly FDA and Pipeline Review: September 2026",
+   "link": "https://www.dermatologytimes.com/view/dermatology-times-monthly-fda-and-pipeline-review-september-2026",
+   "description": "New indications for superficial basal cell carcinoma and adolescent alopecia areata expanded treatment options, while psoriasis and rare disease candidates advanced through FDA review.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Choosing First-Line Biologics for Treatment-Naive Plaque Psoriasis Patients",
+   "link": "https://www.dermatologytimes.com/view/choosing-first-line-biologics-for-treatment-naive-plaque-psoriasis-patients",
+   "description": "With more biologic classes available than ever, selecting a first-line agent for a treatment-naive patient increasingly depends on comorbidity screening, lifestyle fit, and realistic expectations rather than efficacy data alone.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "EADV 2026 in Review: The Research and Therapeutic Advances That Defined the Congress",
+   "link": "https://www.dermatologytimes.com/view/eadv-2026-in-review-the-research-and-therapeutic-advances-that-defined-the-congress",
+   "description": "From next-generation oral therapies and long-term disease control to precision medicine, EADV 2026 highlighted a dermatology landscape increasingly focused on deeper, durable, and individualized outcomes.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "2026 Nobel Prize in Physiology or Medicine awarded for optogenetics discovery",
+   "link": "https://www.ophthalmologytimes.com/view/2026-nobel-prize-in-physiology-or-medicine-awarded-for-optogenetics-discovery",
+   "description": "Three researchers share the prize for discovering channelrhodopsin, a light-sensitive protein now being tested to restore vision in retinal disease.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Duravyu misses LUGANO endpoint but cuts treatment burden by 42%",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-duravyu-misses-lugano-endpoint-but-cuts-treatment-burden-by-42-",
+   "description": "At EURETINA 2026, Roger Goldberg, MD, MBA, explains why EYP-1901 missed LUGANO's primary endpoint despite matched anatomy, clean safety and a 42% cut in treatment burden.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026 preview: Cataract and ocular surface sessions to watch",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-preview-cataract-ocular-surface-sessions",
+   "description": "Cataract original papers on intracameral antibiotics and IOL power, a guideline-based case symposium, and ocular surface sessions headline AAO 2026.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Eyestem interim Phase 2 results for clinical study of Eyecyte-RPE for GA secondary to dry AMD",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-eyestem-interim-phase-2-results-for-clinical-study-of-eyecyte-rpe-for-ga-secondary-to-dry-amd",
+   "description": "Ritesh Narula, MBBS, MS, discusses phase 1 and early phase 2 results of the Eyestem subretinal stem cell study in geographic atrophy, including an 11-letter mean visual acuity gain maintained at 18 months.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Adolescent suicidal ideation trend reversed around 2009, analysis finds",
+   "link": "https://www.contemporarypediatrics.com/view/adolescent-suicidal-ideation-trend-reversed-around-2009-analysis-finds",
+   "description": "A joinpoint analysis of 1991 to 2021 YRBSS data found suicidal ideation among US high school students declined through 2009, then increased through 2021.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Probiotics in pediatrics: Evidence, product quality, and safety",
+   "link": "https://www.contemporarypediatrics.com/view/probiotics-in-pediatrics-evidence-product-quality-and-safety",
+   "description": "Mark R. Corkins, MD, CNSC, FASPEN, AGAF, FAAP, reviews where pediatric probiotic evidence is strongest, why product quality varies, and which children should avoid them.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Constipation may be an overlooked driver of urinary symptoms in children",
+   "link": "https://www.contemporarypediatrics.com/view/constipation-may-be-an-overlooked-driver-of-urinary-symptoms-in-children",
+   "description": "At AAP 2026, Carmen Tong, DO, discussed evaluating pediatric urinary symptoms and why behavioral strategies often come before medication.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Complementary Feeding and Early Allergenic Food Introduction Explained",
+   "link": "https://www.contemporarypediatrics.com/view/complementary-feeding-and-early-allergenic-food-introduction-explained",
+   "description": "Knowing when to stop restricting a breastfeeding mother's diet — and when to start peanut and egg — puts clinicians in genuinely tricky territory. Jarvinen-Seppo walks through both decision points.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Clinician-reported misinformation tracking guides pediatric education",
+   "link": "https://www.contemporarypediatrics.com/view/clinician-reported-misinformation-tracking-guides-pediatric-education",
+   "description": "A clinician-reported misinformation tracker at Children's Hospital of Philadelphia found vaccines accounted for 53.8% of 234 entries and informed education on 28 topics.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Health systems should rethink board governance",
+   "link": "https://www.chiefhealthcareexecutive.com/view/health-systems-should-rethink-board-governance",
+   "description": "Hospitals are facing more complexity, rapid change, and financial headwinds. They need to position boards to help guide systems.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Lee Health’s new CEO takes over | MED MOVES",
+   "link": "https://www.chiefhealthcareexecutive.com/view/lee-health-s-new-ceo-takes-over-med-moves",
+   "description": "Ben Spence is now leading the Florida-based system.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "The invisible middle is healthcare’s biggest missed opportunity | Viewpoint",
+   "link": "https://www.chiefhealthcareexecutive.com/view/the-invisible-middle-is-healthcare-s-biggest-missed-opportunity-viewpoint",
+   "description": "The system is overlooking millions of people living with undiagnosed or under-treated diseases.",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Improving the Health Landscape Begins with Incentivizing Preventive Care",
+   "link": "https://www.medicaleconomics.com/view/improving-the-health-landscape-begins-with-incentivizing-preventive-care",
+   "description": "For decades, healthcare has been built around one central question: “How can I treat your condition today?”",
+   "published": "2026-10-05"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "When a negative review becomes defamation, with Michael Pelagalli of Minc Law",
+   "link": "https://www.medicaleconomics.com/view/when-a-negative-review-becomes-defamation-with-michael-pelagalli-of-minc-law",
+   "description": "Minc Law partner Michael Pelagalli explains where a negative review becomes defamation, why HIPAA limits what physicians can say in reply and how anonymous reviewers get unmasked.",
+   "published": "2026-10-05"
+  },
+  {
    "brand": "NeurologyLive",
    "title": "NeurologyLive® Brain Games: October 4, 2026",
    "link": "https://www.neurologylive.com/view/neurologylive-brain-games-october-4-2026",
@@ -47,6 +327,146 @@
    "title": "FAQ: What clinicians need to know about OCU410 phase 2 ArMaDa results",
    "link": "https://www.ophthalmologytimes.com/view/faq-what-clinicians-need-to-know-about-ocu410-phase-2-armada-results",
    "description": "Could one surgery replace years of GA injections? Phase 2 ArMaDa data suggest gene therapy OCU410 slows lesion growth.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Five Under 5: Top Oncology Videos for the Week of 9/27",
+   "link": "https://www.onclive.com/view/five-under-5-top-oncology-videos-for-the-week-of-9-27",
+   "description": "The top 5 OncLive TV videos of the week cover insights in MDS, multiple myeloma, pancreatic cancer, colorectal cancer, and uveal melanoma.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "OncLive",
+   "title": "INBRX-106 Plus Pembrolizumab Improves Responses and PFS in First-Line PD-L1–Positive HNSCC",
+   "link": "https://www.onclive.com/view/inbrx-106-plus-pembrolizumab-improves-responses-and-pfs-in-first-line-pd-l1-positive-hnscc",
+   "description": "The combination nearly doubled the confirmed response rate in the randomized phase 2 portion of HexAgon-HN, with the greatest benefit in HPV-positive disease.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "How Is Subcutaneous Administration Changing Oncology Care Delivery?",
+   "link": "https://www.cancernetwork.com/view/how-is-subcutaneous-administration-changing-oncology-care-delivery-",
+   "description": "“We want to make sure we are not producing a financial burden for patients in exchange for that convenience [with subcutaneous therapies],” said Thaddeus Beck, MD, FACP.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "How Well Does Radiotherapy Pair With Dual PD-1/LAG-3 Blockade in NSCLC?",
+   "link": "https://www.cancernetwork.com/view/how-well-does-radiotherapy-pair-with-dual-pd-1-lag-3-blockade-in-nsclc-",
+   "description": "Nitin Ohri, MD, MS, explains the rationale for combining thoracic radiotherapy with dual PD-1 and LAG-3 blockade in locally advanced NSCLC.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Prioritizing Proton Therapy for Pelvic Nodal Irradiation in Prostate Cancer",
+   "link": "https://www.cancernetwork.com/view/prioritizing-proton-therapy-for-pelvic-nodal-irradiation-in-prostate-cancer",
+   "description": "At the 2026 ASTRO Annual Meeting, Marcio A. Fagundes, MD, discussed when proton therapy is most justified over photon approaches in prostate cancer.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Extended Survival Raises New Questions on Imaging and Treatment Intensification in ROS1+ NSCLC",
+   "link": "https://www.targetedonc.com/view/taletrectinib-long-term-management-imaging-intensification-ros1-nsclc",
+   "description": "Jorge Nieva, MD, discusses how long-term responses in ROS1+ non–small cell lung cancer affect imaging frequency, MRD testing, and treatment intensification.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Behind the FDA Approval: Rusfertide Redefines the Polycythemia Vera Paradigm",
+   "link": "https://www.targetedonc.com/view/fda-rusfertide-kuykendall-polycythemia-vera",
+   "description": "Andrew T. Kuykendall, MD, explains the significance of the FDA approval of rusfertide for polycythemia vera.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "8 Endocrinology Headlines You Missed in Q3 2026",
+   "link": "https://www.hcplive.com/view/8-endocrinology-headlines-you-missed-in-q3-2026",
+   "description": "Catch up on key FDA approvals, major trial updates, and critical clinician insights from the last 3 months.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Recent Guideline Updates in the Management of Urinary Tract Infections",
+   "link": "https://www.contagionlive.com/view/recent-guideline-updates-in-the-management-of-urinary-tract-infections",
+   "description": "Recent urinary tract infection guideline updates from multiple international medical societies highlight evolving recommendations, including a major shift in classification, moving from anatomy- and risk factor–based definitions toward distinguishing localized from systemic infections.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Phase 3 PROPEL Trial to Test Imeroprubart in Generalized Myasthenia Gravis",
+   "link": "https://www.neurologylive.com/view/phase-3-propel-trial-to-test-imeroprubart-generalized-myasthenia-gravis",
+   "description": "PROPEL will test imeroprubart, an investigational FcRn blocker, against placebo in adults with mild to severe generalized myasthenia gravis.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Simulating the Impact of the Transforming Episode Accountability Model",
+   "link": "https://www.ajmc.com/view/simulating-the-impact-of-the-transforming-episode-accountability-model",
+   "description": "Medicare's Transforming Episode Accountability Model is projected to save $46.6 million by 2030, with safety-net hospitals potentially receiving the highest reconciliation payments.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Divergent Cost Trends for 3 Advanced Cancers, 2013 vs 2022: A Commercial Claims Analysis",
+   "link": "https://www.ajmc.com/view/divergent-cost-trends-for-3-advanced-cancers-2013-vs-2022-a-commercial-claims-analysis",
+   "description": "A comparison of 2013 and 2022 data shows that cancer costs are not uniformly rising. Costs decreased for metastatic colorectal cancer but increased for both metastatic non–small cell lung cancer and multiple myeloma.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "Technicians Aren't Asking for a Party",
+   "link": "https://www.drugtopics.com/view/technicians-aren-t-asking-for-a-party",
+   "description": "What pharmacy technicians say would actually make them feel seen on World Pharmacy Technician Day, and the other 364 days of the year.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Pharmacists Key to Lp(a) Counseling and Lipid Optimization",
+   "link": "https://www.pharmacytimes.com/view/pharmacists-key-to-lp-a-counseling-and-lipid-optimization",
+   "description": "Pharmacists can prompt once-in-a-lifetime Lp(a) testing, reinforce statin adherence, and put muscle aches in context, according to the NLA president.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "EADV 2026 Day 4: Precision Medicine, Real-World Evidence, and the Future of Dermatologic Care",
+   "link": "https://www.dermatologytimes.com/view/eadv-2026-day-4-precision-medicine-real-world-evidence-and-the-future-of-dermatologic-care",
+   "description": "The final day of EADV 2026 explored precision medicine, molecular profiling, atopic dermatitis research, real-world evidence, and emerging approaches to individualized dermatologic care.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: 3 gene therapy programmes for nAMD approaching phase 3 readouts",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-3-gene-therapy-programmes-for-namd-approaching-phase-3-readouts",
+   "description": "At EURETINA 2026, Arshad Khanani, MD, FASRS, reviews sura-vec, 4D-150 and ixo-vec, 3 nAMD gene therapies in phase 3 with readouts expected over the next 12 months.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "EURETINA 2026: Real-world evidence on retinal biosimilars",
+   "link": "https://www.ophthalmologytimes.com/view/euretina-2026-real-world-evidence-on-retinal-biosimilars",
+   "description": "Ashish Sharma, MD, on what real-world data show about switching and long-term outcomes with retinal biosimilars.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Household e-cigarette exposure linked to poorer asthma control in children",
+   "link": "https://www.contemporarypediatrics.com/view/household-e-cigarette-exposure-linked-to-poorer-asthma-control-in-children",
+   "description": "In a cross-sectional study of 48,118 pediatric primary care encounters, e-cigarette-only household exposure was associated with more asthma flares and activity-related symptoms.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Type 1 diabetes update: Immune therapy, screening, and new technology",
+   "link": "https://www.contemporarypediatrics.com/view/type-1-diabetes-update-immune-therapy-screening-and-new-technology",
+   "description": "Brittany S. Bruggeman, MD, reviews teplizumab (Tzield), islet autoantibody screening, and automated insulin delivery, and how pediatricians can help families.",
+   "published": "2026-10-04"
+  },
+  {
+   "brand": "Contemporary Pediatrics",
+   "title": "Pediatric no-shows rose most among Latine patients after ICE operation",
+   "link": "https://www.contemporarypediatrics.com/view/pediatric-no-shows-rose-most-among-latine-patients-after-ice-operation",
+   "description": "Latine and Spanish-speaking patients had the largest increases in pediatric no-show and cancellation rates after Operation Midway Blitz, a Chicago-area immigration enforcement operation.",
    "published": "2026-10-04"
   },
   {
@@ -14099,5 +14519,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-10-04T11:49:08.578Z"
+ "updatedAt": "2026-10-05T13:37:58.674Z"
 }
