@@ -1329,5 +1329,46 @@
    }
   ],
   "recordedAt": "2026-10-02"
+ },
+ {
+  "drug": "WELIREG plus LENVIMA",
+  "brandName": "WELIREG",
+  "company": "Eisai Co Ltd",
+  "pdufaDate": "2026-10-04",
+  "outcome": "Approved",
+  "certainty": "likely",
+  "ambiguous": null,
+  "resolvedDate": "2026-09-24",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215383s017lbl.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA215383 SUPPL17 approved 2026-09-24 as WELIREG",
+    "confidence": "medium",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/215383s017lbl.pdf"
+   }
+  ],
+  "recordedAt": "2026-10-08"
+ },
+ {
+  "drug": "trastuzumab duocarmazine",
+  "brandName": null,
+  "company": "AstraZeneca",
+  "pdufaDate": "2026-11-12",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-10-07",
+  "sourceUrl": "https://www.onclive.com/view/fda-approves-tucatinib-plus-trastuzumab-pertuzumab-as-first-line-maintenance-in-advanced-her2-breast-cancer",
+  "evidence": [
+   {
+    "source": "OncLive",
+    "detail": "FDA Approves Tucatinib Plus Trastuzumab/Pertuzumab as First-Line Maintenance in Advanced HER2+ Breast Cancer",
+    "confidence": "high",
+    "url": "https://www.onclive.com/view/fda-approves-tucatinib-plus-trastuzumab-pertuzumab-as-first-line-maintenance-in-advanced-her2-breast-cancer",
+    "published": "2026-10-07"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-11-12.",
+  "recordedAt": "2026-10-08"
  }
 ]
