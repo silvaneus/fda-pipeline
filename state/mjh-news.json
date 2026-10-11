@@ -1,6 +1,62 @@
 {
  "items": [
   {
+   "brand": "AJMC",
+   "title": "Closing the Gaps in Ocular Emergency Care: James D. Auran, MD",
+   "link": "https://www.ajmc.com/view/closing-the-gaps-in-ocular-emergency-care-james-d-auran-md",
+   "description": "Access to emergency eye care remains a public health challenge, with gaps that affect patients and communities across the country.",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "NeurologyLive® Brain Games: October 11, 2026",
+   "link": "https://www.neurologylive.com/view/neurologylive-brain-games-october-11-2026",
+   "description": "Test your neurology knowledge with NeurologyLive®'s weekly quiz series, featuring questions on a variety of clinical and historical neurology topics. This week's topic is recent therapeutic advances in MS!",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "HS Treatment Selection and Comorbidity Screening: Practical Tips With Jennifer Hsiao, MD",
+   "link": "https://www.dermatologytimes.com/view/hs-treatment-selection-and-comorbidity-screening-practical-tips-with-jennifer-hsiao-md",
+   "description": "Patient preference, comorbidities, and access guide HS treatment selection, Jennifer Hsiao, MD, said at Fall Clinical.",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Day 3 Recap: Fall Clinical 2026",
+   "link": "https://www.dermatologytimes.com/view/day-3-recap-fall-clinical-2026",
+   "description": "Day 3 of Fall Clinical 2026 featured roflumilast data in genital psoriasis, long-term JAK inhibitor safety in atopic dermatitis, and expert insights on setting expectations in HS, treating advanced cSCC, and screening aesthetic patients.",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Liver Function Test Elevations Rare With Biologics in Psoriasis and HS",
+   "link": "https://www.dermatologytimes.com/view/liver-function-test-elevations-rare-with-biologics-in-psoriasis-and-hs",
+   "description": "In a retrospective study of 393 patients, 51.9% had at least 1 abnormal LFT during follow-up, but only 1.1% had elevations above 3 times the upper limit of normal.",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Clinician Education Is the Foundation of Dermatology Innovation",
+   "link": "https://www.dermatologytimes.com/view/clinician-education-is-the-foundation-of-dermatology-innovation",
+   "description": "Ahmad Naim, MD, discussed clinician education, long-term data, and what is next in alopecia areata, HS, and psoriasis.",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: Are topical antibiotics necessary after intracameral prophylaxis in cataract surgery: is enough enough?",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-are-topical-antibiotics-necessary-after-intracameral-prophylaxis-in-cataract-surgery-is-enough-enough",
+   "description": "A cataract expert discussed if postoperative topical antibiotics add protection after intracameral prophylaxis.",
+   "published": "2026-10-11"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: BRUNELLO 1-year results for remigromig in DME",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-brunello-1-year-results-for-remigromig-in-dme",
+   "description": "Donald J. D’Amico, MD, presents 1-year pivotal results comparing a Wnt pathway agonist with ranibizumab in diabetic macular edema.",
+   "published": "2026-10-11"
+  },
+  {
    "brand": "OncLive",
    "title": "FDA Flashback: Hematologic Cancer Decisions and News From September 2026",
    "link": "https://www.onclive.com/view/fda-flashback-hematologic-cancer-decisions-and-news-from-september-2026",
@@ -33,6 +89,272 @@
    "title": "Day 2 Recap: Fall Clinical 2026",
    "link": "https://www.dermatologytimes.com/view/day-2-recap-fall-clinical-2026",
    "description": "The second day of Fall Clinical 2026 brought new psoriasis data on ixekizumab plus tirzepatide and 2-year icotrokinra results, along with 3-year nemolizumab findings, upadacitinib switch data, and expert guidance on choosing a biologic in atopic dermatitis.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "OncLive",
+   "title": "The OncFive: Top Oncology Articles for the Week of 10/4/2026",
+   "link": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-10-4-2026",
+   "description": "The FDA approved atezolizumab plus chemo for stage III colon cancer, cleared a tucatinib-based maintenance regimen for advanced breast cancer, and more.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Expanding the Role of Immunotherapy in Lymphoma",
+   "link": "https://www.targetedonc.com/view/expanding-the-role-of-immunotherapy-in-lymphoma",
+   "description": "Bispecific antibodies, CAR T therapy, and targeted drugs transform non-Hodgkin lymphoma care, with earlier use and MRD-guided strategies poised to boost outcomes.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Psilocybin-Assisted Therapy Aims at Existential Distress in Lung Cancer",
+   "link": "https://www.targetedonc.com/view/wagener-psilocybin-assisted-therapy-depression-lung-cancer",
+   "description": "Theodore Wagener, PhD, of Ohio State discusses the design of the phase 2 DREAM LUNG study of psilocybin-assisted therapy for depression in non–small cell lung cancer.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Sequencing Bispecifics and CAR T-Cell Therapy in Myeloma and AL Amyloidosis",
+   "link": "https://www.cancernetwork.com/view/sequencing-bispecifics-and-car-t-cell-therapy-in-myeloma-and-al-amyloidosis",
+   "description": "Ralph V. Boccia, MD, FACP, discusses CAR T and bispecific sequencing, fixed-duration therapy, MRD, and bispecifics in AL amyloidosis.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Pivotal Trial of Doraya Catheter in HF Planned After Success in Feasibility Trial",
+   "link": "https://www.hcplive.com/view/pivotal-trial-of-doraya-catheter-in-hf-planned-after-success-in-feasibility-trial",
+   "description": "Ulrich Jorde, MD, discusses the Doraya device’s positive results in the DORAYA-HF feasibility study and Revamp Medical’s plans for a pivotal trial in early 2027.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Why Early Advanced Therapy Matters in Hidradenitis Suppurativa",
+   "link": "https://www.hcplive.com/view/why-early-advanced-therapy-matters-hidradenitis-suppurativa",
+   "description": "In this interview, Iltefat Hamzavi, MD, explains why early advanced therapy in hidradenitis suppurativa matters beyond pivotal trial primary endpoints.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Finerenone Outperforms Spironolactone, Eplerenone in HFpEF, HFmrEF Renal Outcomes",
+   "link": "https://www.hcplive.com/view/finerenone-outperforms-spironolactone-eplerenone-in-hfpef-hfmref-renal-outcomes",
+   "description": "A recent network meta-analysis presented at HFSA 2026 displays finerenone’s favorable safety profile and comparatively greater reduction of acute kidney injury risk.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Hidradenitis Suppurativa Care: Expectations, Comorbidities, and Wound Care",
+   "link": "https://www.hcplive.com/view/hidradenitis-suppurativa-care-expectations-comorbidities-wound-care",
+   "description": "Iltefat Hamzavi, MD, outlines how symptom questionnaires, comorbidity screening, wound care, and procedures shape hidradenitis suppurativa care.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Fall Clinical 2026 First Half Recap: Psoriasis, Atopic Dermatitis, and More",
+   "link": "https://www.hcplive.com/view/fall-clinical-2026-first-half-recap-psoriasis-atopic-dermatitis-more",
+   "description": "Catch up on HCPLive’s first-half Fall Clinical 2026 coverage, including new psoriasis and atopic dermatitis data and expert insights on HS and vitiligo.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Cardiovascular Hospitalization Associated With Increased Mortality Risk in ATTR-CM",
+   "link": "https://www.hcplive.com/view/cardiovascular-hospitalization-associated-with-increased-mortality-risk-in-attr-cm",
+   "description": "A new analysis of the phase 3 ATTRibute-CM study, presented at HFSA 2026, may indicate a connection between the number of hospitalizations and mortality risk.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Nemolizumab Sustains Atopic Dermatitis Skin, Itch Control Through 3 Years",
+   "link": "https://www.hcplive.com/view/nemolizumab-sustains-atopic-dermatitis-skin-itch-control-through-3-years",
+   "description": "New ARCADIA and OLYMPIA LTE data show nemolizumab sustained skin clearance and itch relief for up to 3 years in atopic dermatitis and prurigo nodularis.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Keynote Address Tackles AI’s Role in Health Care, Eye Care",
+   "link": "https://www.ajmc.com/view/keynote-address-tackles-ai-s-role-in-health-care-eye-care",
+   "description": "The opening session of AAO 2026 featured a keynote speech discussing how artificial intelligence (AI) will play a part in health care.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Using AI to Advance Equity in Eye Care: Grayson W. Armstrong, MD, MPH",
+   "link": "https://www.ajmc.com/view/using-ai-to-advance-equity-in-eye-care-grayson-w-armstrong-md-mph",
+   "description": "Cost, staffing, unbiased training data, and strong referral partnerships will decide whether AI eye screening reaches patients at highest risk of vision loss.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "AJMC",
+   "title": "GLP-1s Have Protective Benefit Against DME, Glaucoma Surgery",
+   "link": "https://www.ajmc.com/view/glp-1s-have-protective-benefit-against-dme-glaucoma-surgery",
+   "description": "Incidence of diabetic macular edema and the need for glaucoma surgery were reduced after treatment with glucagon-like peptide-1 receptor agonists.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Medicaid Expansion Associated With Lower Colorectal Cancer Mortality",
+   "link": "https://www.ajmc.com/view/medicaid-expansion-associated-with-lower-colorectal-cancer-mortality",
+   "description": "Medicaid expansion was associated with lower colorectal cancer mortality, with the largest reductions in Hispanic patients and stage IV disease.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Pairing VYD2311 With mRNA COVID-19 Vaccines: Michael Mina, MD, PhD",
+   "link": "https://www.ajmc.com/view/pairing-vyd2311-with-mrna-covid-19-vaccines-michael-mina-md-phd",
+   "description": "Michael Mina, MD, PhD, explains LIBERTY trial findings on VYD2311 tolerability alone and given with an mRNA COVID-19 vaccine.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "AJMC",
+   "title": "NEI Director Highlights Pediatric Advances, AI’s Promise in Eye Care",
+   "link": "https://www.ajmc.com/view/nei-director-highlights-pediatric-advances-ai-s-promise-in-eye-care",
+   "description": "The director of the National Eye Institute discusses recent advances, AI, and evolving standards of care in ophthalmology.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "FDA Approves Pritelivir for Refractory HSV in Immunocompromised Adults",
+   "link": "https://www.contagionlive.com/view/fda-approves-pritelivir-refractory-hsv-immunocompromised-adults",
+   "description": "Pritelivir (Hovilpri) healed all lesions by day 28 in 63% of immunocompromised adults with refractory HSV versus 34% with investigator's choice in the phase 3 PRIOH-1 trial.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Active Outbreaks Tied to Sprouts, Cheese and Turtles",
+   "link": "https://www.contagionlive.com/view/active-outbreaks-tied-to-sprouts-cheese-and-turtles",
+   "description": "CDC is continuing its investigation into 4 multistate Salmonella and E coli outbreaks, led by a 76-case alfalfa sprout cluster across 16 states and a recalled raw milk cheese.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Patients Report Early, Sustained Functional Gains With First-Line Zongertinib in HER2-Mutant NSCLC",
+   "link": "https://www.pharmacytimes.com/view/patients-report-early-sustained-functional-gains-with-first-line-zongertinib-in-her2-mutant-nsclc",
+   "description": "Patients reported that zongertinib resulted in improvements in physical functioning within 1 week of initiating therapy.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "From Binder to Action: Making Infectious Disease Outbreak Plans Operational",
+   "link": "https://www.drugtopics.com/view/from-binder-to-action-making-infectious-disease-outbreak-plans-operational",
+   "description": "Infectious disease readiness depends on rehearsed workflows, bidirectional public health communication, and rapid access to care.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Beyond MRI: The Role of Serum Biomarkers in Multiple Sclerosis",
+   "link": "https://www.neurologylive.com/view/beyond-mri-the-role-serum-biomarkers-in-ms",
+   "description": "Neurologists Robert Bermel, MD; Rebecca Cebull, CNP; and Marisa McGinley, DO, discuss where serum neurofilament light and GFAP fit into MS care today and why the field is still waiting on a biomarker that captures progression.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Aesthetic Patient Screening and Alopecia Care Tip",
+   "link": "https://www.dermatologytimes.com/view/aesthetic-patient-screening-and-alopecia-care-tips-from-fall-clinical",
+   "description": "At Fall Clinical 2026, Glynis Ablon, MD, recommends body dysmorphic disorder screening and systematic documentation in aesthetics, plus early combination therapy for multifactorial alopecia.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Dermatologists’ Role in Locally Advanced and Metastatic cSCC",
+   "link": "https://www.dermatologytimes.com/view/dermatologists-role-in-locally-advanced-and-metastatic-cscc",
+   "description": "At Fall Clinical 2026, Shannon Trotter, DO, reviews locally advanced and metastatic cutaneous squamous cell carcinoma, immune checkpoint inhibitors, and proposed Medicare cuts affecting skin cancer care.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Roflumilast Eases Sexual Difficulties in Psoriasis With Genital Involvement",
+   "link": "https://www.dermatologytimes.com/view/roflumilast-eases-sexual-difficulties-in-psoriasis-with-genital-involvement",
+   "description": "Patients with plaque psoriasis treated with roflumilast cream or foam reported greater improvements in sexual function and relationships vs vehicle, including those with genital involvement at baseline.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "JAK Inhibitor Safety in Atopic Dermatitis: Long-Term Epidemiology Data",
+   "link": "https://www.dermatologytimes.com/view/jak-inhibitor-safety-in-atopic-dermatitis-long-term-epidemiology-data",
+   "description": "Christopher Bunick, MD, PhD, presented long-term safety data for JAK inhibitors upadacitinib and abrocitinib in atopic dermatitis at Fall Clinical 2026.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Managing Treatment Expectations in Hidradenitis Suppurativa: What to Tell Patients Before Starting Therapy",
+   "link": "https://www.dermatologytimes.com/view/managing-treatment-expectations-in-hidradenitis-suppurativa-what-to-tell-patients-before-starting-therapy",
+   "description": "Jennifer Hsiao, MD, explains how defining HS treatment response improves adherence and success.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Experts urge earlier JAK inhibitor use in AD and vitiligo | Fall Clinical Derm 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/experts-urge-earlier-jak-inhibitor-use-in-ad-and-vitiligo-fall-clinical-derm-2026",
+   "description": "Experts at Fall Clinical Derm 2026 urge early JAK inhibitors over systemic steroids for atopic dermatitis and long-term vitiligo treatment, saying boxed-warning risks are overstated.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "CEO of VisualDx touches on a decades-old blind spot in diagnosing skin of color | Fall Clinical Derm 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/ceo-of-visualdx-touches-on-a-decades-old-blind-spot-in-diagnosing-skin-of-color-fall-clinical-derm-2026",
+   "description": "Art Papier, M.D., CEO of VisualDx, says darker skin tones have been underrepresented in dermatology resources for decades and explains how his company works backward from known diagnostic errors.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "AAO 2026 opening session spotlights AI, workforce gaps and physician burnout | AAO 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/aao-2026-opening-session-spotlights-ai-workforce-gaps-and-physician-burnout",
+   "description": "The 2026 American Academy of Ophthalmology Meeting got started today in New Orleans with a mix of celebration and candor about the challenges facing ophthalmology today.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Art Papier, M.D., warns dermatologists not to assume AI is always right | Fall Clinical Derm 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/art-papier-m-d-warns-dermatologists-not-to-assume-ai-is-always-right-fall-clinical-derm-2026",
+   "description": "How LLM decision support reshapes dermatology care, helping non-specialists diagnose while navigating trust gaps, ambiguity, and hallucination risks at Fall Clinical Derm.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Dupilumab linked to lower risk of new allergic conditions in children with atopic dermatitis | Fall Clinical Derm 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/dupilumab-linked-to-lower-risk-of-new-allergic-conditions-in-children-with-atopic-dermatitis-2026-fall-clinical-derm",
+   "description": "Real-world data at the 2026 Fall Clinical Dermatology Conference show dupilumab in children with atopic dermatitis cuts new allergies and asthma risk versus steroids.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: 24-month outcomes of excimer laser trabeculostomy",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-24-month-outcomes-of-excimer-laser-trabeculostomy",
+   "description": "Mark J. Gallardo, MD, discusses how the laser performed alongside cataract surgery in open-angle glaucoma, including medication burden and safety.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Neoadjuvant darovasertib preserves eyes in primary uveal melanoma",
+   "link": "https://www.ophthalmologytimes.com/view/neoadjuvant-darovasertib-preserves-eyes-primary-uveal-melanoma",
+   "description": "Oral PKC inhibitor darovasertib preserved the eye in 57% of patients facing enucleation and cut projected radiation doses in 70.3% in the phase 2 OptimUM-09 trial.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: NeuroOp Guru co-hosts recap subspecialty day takeaways",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-neuroop-guru-co-hosts-recap-subspecialty-day-takeaways",
+   "description": "Drew Carey, MD, and Andrew G. Lee, MD, discuss triage, visual fields, double vision, and cataract topics from Neuro-Ophthalmology Subspecialty Day.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "New IOL formula, LAL piggyback data target accuracy in complex eyes",
+   "link": "https://www.ophthalmologytimes.com/view/new-iol-formula-lal-data-target-accuracy-complex-eyes",
+   "description": "Noguchi FS formula error was 0.280 D in 486 eyes, LAL piggyback cut residual cylinder to 0.1 D, and Yamane and Gore-Tex fixation showed distinct complication profiles.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: New metrics for geographic atrophy progression account for lesion location and direction",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-new-metrics-for-geographic-atrophy-progression-account-for-lesion-location-and-direction",
+   "description": "At AAO 2026 Retina Subspecialty Day, SriniVas Sadda, MD, outlined limits of current GA growth metrics and introduced border advancement pace and a location-weighted GA severity score.",
+   "published": "2026-10-10"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "SYCUME meets primary end point in inactive thyroid eye disease",
+   "link": "https://www.ophthalmologytimes.com/view/sycume-meets-primary-end-point-in-inactive-thyroid-eye-disease",
+   "description": "In the phase 3 RESTORE-3 trial of 116 Chinese participants, the anti-IGF-1R antibody produced a 60.4% proptosis response rate vs 23.5% with placebo at week 24.",
    "published": "2026-10-10"
   },
   {
@@ -585,7 +907,7 @@
    "brand": "Contagion Live",
    "title": "Measles Update: October 9, 2026",
    "link": "https://www.contagionlive.com/view/measles-update-october-9-2026",
-   "description": "The latest CDC numbers show a 5.0% increase of measles cases from week-to-week. The US total reached 4,080 confirmed cases, 78% above all of 2025.",
+   "description": "The latest CDC numbers show a 5.0% increase of measles cases from week-to-week. The US total reached 4080 confirmed cases, 78% above all of 2025.",
    "published": "2026-10-09"
   },
   {
@@ -18663,5 +18985,5 @@
    "published": "2026-08-28"
   }
  ],
- "updatedAt": "2026-10-10T11:56:39.125Z"
+ "updatedAt": "2026-10-11T12:08:20.838Z"
 }
