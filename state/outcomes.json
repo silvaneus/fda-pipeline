@@ -1370,5 +1370,44 @@
   ],
   "note": "Decided ahead of the listed PDUFA date of 2026-11-12.",
   "recordedAt": "2026-10-08"
+ },
+ {
+  "drug": "Enspryng",
+  "brandName": null,
+  "company": "Roche Holding AG",
+  "pdufaDate": "2026-10-15",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://news.google.com/search?q=Enspryng%20PDUFA%20FDA",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://news.google.com/search?q=Enspryng%20PDUFA%20FDA"
+   }
+  ],
+  "recordedAt": "2026-10-16"
+ },
+ {
+  "drug": "iberdomide",
+  "brandName": "ZENBEXUS",
+  "company": "Bristol Myers Squibb",
+  "pdufaDate": "2026-08-17",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "ambiguous": null,
+  "resolvedDate": "2026-08-13",
+  "sourceUrl": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221075Orig1s000ltr.pdf",
+  "evidence": [
+   {
+    "source": "openFDA drugsfda",
+    "detail": "NDA221075 ORIG1 approved 2026-08-13 as ZENBEXUS",
+    "confidence": "high",
+    "url": "https://www.accessdata.fda.gov/drugsatfda_docs/appletter/2026/221075Orig1s000ltr.pdf"
+   }
+  ],
+  "recordedAt": "2026-10-16"
  }
 ]
