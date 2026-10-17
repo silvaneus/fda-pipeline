@@ -1409,5 +1409,46 @@
    }
   ],
   "recordedAt": "2026-10-16"
+ },
+ {
+  "drug": "Ryzumvi (phentolamine ophthalmic solution 0.75%)",
+  "brandName": null,
+  "company": "Opus Genetics, Inc.",
+  "pdufaDate": "2026-10-17",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": "2026-10-16",
+  "sourceUrl": "https://www.ophthalmologytimes.com/view/fda-approves-phentolamine-ophthalmic-solution-0-75-ryzumvi-for-presbyopia",
+  "evidence": [
+   {
+    "source": "Ophthalmology Times",
+    "detail": "FDA approves phentolamine ophthalmic solution 0.75% (Ryzumvi) for presbyopia",
+    "confidence": "high",
+    "url": "https://www.ophthalmologytimes.com/view/fda-approves-phentolamine-ophthalmic-solution-0-75-ryzumvi-for-presbyopia",
+    "published": "2026-10-16"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-10-17.",
+  "recordedAt": "2026-10-17"
+ },
+ {
+  "drug": "Ryzumvi (MR-141) (phentolamine ophthalmic solution 0.75%)",
+  "brandName": null,
+  "company": "Viatris Inc.",
+  "pdufaDate": "2026-10-17",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.managedhealthcareexecutive.com/view/iris-photography-helps-separate-pigment-from-pathology-ophthalmic-imager-says-aao-2026",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.managedhealthcareexecutive.com/view/iris-photography-helps-separate-pigment-from-pathology-ophthalmic-imager-says-aao-2026"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-10-17.",
+  "recordedAt": "2026-10-17"
  }
 ]
