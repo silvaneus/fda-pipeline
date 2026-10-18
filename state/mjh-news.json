@@ -1,6 +1,20 @@
 {
  "items": [
   {
+   "brand": "NeurologyLive",
+   "title": "NeurologyLive® Brain Games: October 18, 2026",
+   "link": "https://www.neurologylive.com/view/neurologylive-brain-games-october-18-2026",
+   "description": "Test your neurology knowledge with NeurologyLive®'s weekly quiz series, featuring questions on a variety of clinical and historical neurology topics. This week's topic is biomarkers in multiple sclerosis!",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "STK-002 completes first two phase 1 dose cohorts in ADOA",
+   "link": "https://www.ophthalmologytimes.com/view/stk-002-completes-first-two-phase-1-dose-cohorts-in-adoa",
+   "description": "Two phase 1 OSPREY cohorts of intravitreal STK-002 for ADOA are dosed; first safety and efficacy data are expected by mid-2027.",
+   "published": "2026-10-18"
+  },
+  {
    "brand": "AJMC",
    "title": "AI Moves From Evaluation to Implementation at AAO 2026",
    "link": "https://www.ajmc.com/view/ai-moves-from-evaluation-to-implementation-at-aao-2026",
@@ -19,6 +33,146 @@
    "title": "Chad Hatfield, Pharm.D., on the 340B uncertainty facing health systems| HSES 2026",
    "link": "https://www.managedhealthcareexecutive.com/view/chad-hatfield-pharm-d-340b-uncertainty-facing-health-systems",
    "description": "Chad Hatfield, Pharm.D., of UC Davis Health, says 340B savings fund free clinics and mental health care that could shrink as the program’s future shifts.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "OncLive",
+   "title": "The OncFive: Top Oncology Articles for the Week of 10/11",
+   "link": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-10-11",
+   "description": "The FDA expands nogapendekin alfa inbakicept in bladder cancer, European regulators back daraxonrasib in pancreatic cancer, and more.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Alternative Cemiplimab Dosing Strategy Receives CHMP Recommendation in Multiple Cancer Types",
+   "link": "https://www.onclive.com/view/cemiplimab-receives-chmp-recommendation-in-multiple-cancer-types",
+   "description": "The opinion supports 700 mg every 6 weeks after 12 weeks of 350 mg every 3 weeks; a European Commission decision is expected in the coming months.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Ponatinib/Blinatumomab Regimen Improves EFS in Ph-Positive ALL",
+   "link": "https://www.cancernetwork.com/view/ponatinib-blinatumomab-regimen-improves-efs-in-ph-positive-all",
+   "description": "Ponatinib plus blinatumomab may help “a meaningful subset of patients” forego transplant for Ph-positive acute lymphoblastic leukemia.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Why KEYNOTE-B96 Succeeded Where Single-Agent Pembrolizumab Did Not",
+   "link": "https://www.cancernetwork.com/view/why-keynote-b96-succeeded-where-single-agent-pembrolizumab-did-not",
+   "description": "Ursula A. Matulonis, MD, broke down the trial design, backbone regimen, and preclinical rationale that she believes made KEYNOTE-B96 a positive study.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Radiation Omission in Favorable Breast Cancer Hinges on Endocrine Adherence",
+   "link": "https://www.cancernetwork.com/view/radiation-omission-in-favorable-breast-cancer-hinges-on-endocrine-adherence",
+   "description": "Leah Katz, MD, MPH, discusses long-term IDEA trial data on omitting radiation and why endocrine therapy tolerance matters in this decision.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "How Psycho-Oncology Addresses Existential Distress, Body Image, and Intimacy",
+   "link": "https://www.cancernetwork.com/view/how-psycho-oncology-addresses-existential-distress-body-image-and-intimacy",
+   "description": "Erik Bengtsen, MD, described what sets psycho-oncology apart and how clinicians can open conversations on body image and sexual health.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Designing Clinical Trials for Real-World Access",
+   "link": "https://www.targetedonc.com/view/clinical-trial-design-community-oncology-access",
+   "description": "Rethink trial design with decentralized, community-based models to cut barriers, let patients enroll closer to home, and preserve high-quality safety data.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Weighing Logistics and Time Savings of Subcutaneous Drug Delivery",
+   "link": "https://www.targetedonc.com/view/subcutaneous-oncology-drug-delivery-logistics-patient-preference",
+   "description": "J. Thaddeus Beck, MD, discusses how the shift from intravenous to subcutaneous formulations is changing oncology practice, from clinic logistics to patient preferences.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "FAQ: Ebola Prevention, Treatment and the Chances of a US Outbreak",
+   "link": "https://www.contagionlive.com/view/faq-ebola-prevention-treatment-and-the-chances-of-a-us-outbreak",
+   "description": "As the Bundibugyo virus outbreak in the Democratic Republic of the Congo surpasses 9300 confirmed cases and 4400 deaths, this FAQ explains how the virus spreads, how it presents, why it is hard to diagnose and treat, which vaccines and therapies are being tested, and why CDC considers the risk to the United States low.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Ebola Outbreak in DRC Tops 9235 Confirmed Cases, CDC Reports",
+   "link": "https://www.contagionlive.com/view/ebola-outbreak-in-drc-tops-9235-confirmed-cases-cdc-reports",
+   "description": "As of October 15, CDC reports 9235 confirmed cases and 4444 deaths in the Bundibugyo virus Ebola outbreak in the DRC, now the second-largest on record.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Automated HCV Surveillance Shows Promise But Needs Validation",
+   "link": "https://www.ajmc.com/view/automated-hcv-surveillance-shows-promise-but-needs-validation",
+   "description": "SaTScan detects an acute HCV outbreak cluster in California, showing the potential of automated surveillance, though real-time testing is needed.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Diuretics, eGFR, and Intensive BP Lowering in CKD: What to Watch",
+   "link": "https://www.pharmacytimes.com/view/diuretics-egfr-and-intensive-bp-lowering-in-ckd-what-to-watch",
+   "description": "Parminder K. Judge, PhD, explains why eGFR and electrolytes should be monitored when diuretics are added to reach intensive BP targets in patients with CKD",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Nipocalimab in Myasthenia Gravis: Real-World Use, Long-Term Safety, and the Road Ahead",
+   "link": "https://www.neurologylive.com/view/nipocalimab-myasthenia-gravis-real-world-use-long-term-safety-the-road-ahead",
+   "description": "Leonard Dragone, MD, PhD, Disease Area Leader at Johnson &amp; Johnson, discusses how nipocalimab is being incorporated into generalized MG care, what long-term data show, and where J&amp;J sees the therapy’s role evolving.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "ELEVIDYS Shows Functional Benefits in Patients With DMD, Dompé Launches Phase 2 Trial of Intranasal Nerve Growth Factor in CP, NeurologyLive Roundtable: The Road Ahead for Precision Medicine in MS",
+   "link": "https://www.neurologylive.com/view/elevidys-functional-benefits-patients-dmd-domp-launches-phase-2-trial-intranasal-nerve-growth-factor-cp-neurologylive-roundtable-road-ahead-precision-medicine-ms",
+   "description": "Neurology News Network for the week ending October 17th, 2026. [WATCH TIME: 4 minutes]",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Social Media Mythbusters: Can Castor Oil Really Grow Hair?",
+   "link": "https://www.dermatologytimes.com/view/social-media-mythbusters-can-castor-oil-really-grow-hair-",
+   "description": "Castor oil has become a popular social media remedy for thicker, longer hair, but evidence supporting its ability to stimulate hair growth remains limited.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: Setting realistic expectations with refractive IOLs",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-setting-realistic-expectations-refractive-iols",
+   "description": "David F. Chang, MD, shares how to set realistic refractive IOL expectations and streamline patient counseling.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: Comprehensive ophthalmologists are the uveitis front line",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-comprehensive-ophthalmologists-uveitis-front-line",
+   "description": "Timothy Janetos, MD, explained when to refer uveitis to a specialist and why access to uveitis care remains limited.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "The One Thing: Teaching, optic nerve regeneration, and retina trainees | Episode 2",
+   "link": "https://www.ophthalmologytimes.com/view/the-one-thing-teaching-optic-nerve-regeneration-and-retina-trainees-episode-2",
+   "description": "Himani Goyal, MD, John J. Chen, MD, PhD, and Mark P. Breazzano, MD, FACS, point to academic compensation, optic nerve damage, and who chooses retina.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "FAQ: Scaling Pharmacy Services Through GLP-1 Care | NCPA 2026",
+   "link": "https://www.drugtopics.com/view/scaling-pharmacy-services-through-glp-1-care-ncpa-2026",
+   "description": "Nicole Pezzino, PharmD, BCACP, BC-ADM, CDCES, details how pharmacies can utilize the booming GLP-1 medication class for greater revenue opportunities.",
+   "published": "2026-10-17"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "More pluses for GLP-1s for obstructive sleep apnea | CHEST 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/more-pluses-for-glp-1s-for-obstructive-sleep-apnea-chest-2026",
+   "description": "Research findings scheduled to be presented at the CHEST meeting show broad positive cardiopulmonary effects from GLP-1s and an association with a reduced risk of acute respiratory failure.",
    "published": "2026-10-17"
   },
   {
@@ -23351,35 +23505,7 @@
    "link": "https://www.chiefhealthcareexecutive.com/view/wellstar-looks-to-acquire-another-georgia-hospital",
    "description": "The system and Stephens County Hospital have reached an agreement on a deal, the latest in a busy period for Wellstar.",
    "published": "2026-09-03"
-  },
-  {
-   "brand": "Contagion Live",
-   "title": "Beyond Approval: Finding the Right Place for Emerging Gram-Negative Antibiotics",
-   "link": "https://www.contagionlive.com/view/beyond-approval-finding-the-right-place-for-emerging-gram-negative-antibiotics",
-   "description": "The expanding gram-negative antibiotic pipeline offers important new treatment options; however, FDA approval alone does not define a drug’s place in therapy. Clinicians must weigh the clinical problems that each agent solves, the strength of the evidence behind it, and what remains unknown before incorporating these therapies into routine practice.",
-   "published": "2026-09-02"
-  },
-  {
-   "brand": "Contagion Live",
-   "title": "Paxlovid Shows No Benefit for Long COVID",
-   "link": "https://www.contagionlive.com/view/paxlovid-shows-no-benefit-for-long-covid",
-   "description": "The antiviral did not produce greater symptom improvement than placebo in patients with the condition in the RECOVER-VITAL trial.",
-   "published": "2026-09-02"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "Doctors report spike in misinformation from patients",
-   "link": "https://www.chiefhealthcareexecutive.com/view/doctors-report-spike-in-misinformation-from-patients",
-   "description": "The Physicians Foundation says more doctors say misinformation is affecting their ability to provide care.",
-   "published": "2026-09-02"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "Sanford Health finalizes merger with North Memorial Health",
-   "link": "https://www.chiefhealthcareexecutive.com/view/sanford-health-finalizes-merger-with-north-memorial-health",
-   "description": "The Minnesota system will become part of Sanford Health, and Sanford will invest $600 million in facility upgrades.",
-   "published": "2026-09-02"
   }
  ],
- "updatedAt": "2026-10-17T10:10:59.553Z"
+ "updatedAt": "2026-10-18T10:24:51.425Z"
 }
