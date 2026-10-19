@@ -1,6 +1,195 @@
 {
  "items": [
   {
+   "brand": "OncLive",
+   "title": "Recognizing TGCT and Shifting Referral Patterns",
+   "link": "https://www.onclive.com/view/recognizing-tgct-and-shifting-referral-patterns",
+   "description": "R. Lor Randall, MD, FACS, of UC Davis Health, opens this OncLive Insights discussion on tenosynovial giant cell tumor (TGCT) with Dale R. Shepard, MD, PhD, of Cleveland Clinic, and Alexander B. Christ, MD, of UCLA Health.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Selecting First-Line Therapy and Prioritizing Biomarkers in HER2-Positive GEA",
+   "link": "https://www.onclive.com/view/selecting-first-line-therapy-and-prioritizing-biomarkers-in-her2-positive-gea",
+   "description": "Dr. Kim shares that she favors the zanidatamab triplet for patients with HER2-positive, PD-L1-negative disease.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Updated CARTITUDE-2 Data Support Earlier Cilta-Cel Use in Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/updated-cartitude-2-data-support-earlier-cilta-cel-use-in-multiple-myeloma",
+   "description": "Adam D. Cohen, MD, reviews 5-year data from cohort A of CARTITUDE-2 for cilta-cel and how bridging therapy may lower the risk of late neurotoxicity.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Acquired Resistance Mechanisms After First-Line Therapy",
+   "link": "https://www.cancernetwork.com/view/acquired-resistance-mechanisms-after-first-line-therapy",
+   "description": "Estelamari Rodriguez, MD, MPH, of Sylvester Comprehensive Cancer Center presents long-term resistance data from the phase 3 MARIPOSA study in epidermal growth factor receptor (EGFR)-mutated advanced non–small cell lung cancer (NSCLC), where amivantamab plus lazertinib reduced acquired MET amplification approximately fourfold and secondary EGFR resistance mutations approximately fivefold compared with osimertinib.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Sequencing CAR T-Cell Therapy and Bispecifics to Preserve T-Cell Fitness",
+   "link": "https://www.cancernetwork.com/view/sequencing-car-t-cell-therapy-and-bispecifics-to-preserve-t-cell-fitness",
+   "description": "With both CAR T-cell therapy and bispecific antibodies now available in early relapse, Adam D. Cohen, MD, director of Myeloma Immunotherapy and professor of medicine at the Hospital of the University of Pennsylvania, asked how clinicians should decide which modality comes first.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "NCCN Guidelines Position CAR T Cells in Early Relapsed Multiple Myeloma",
+   "link": "https://www.cancernetwork.com/view/nccn-guidelines-position-car-t-cells-in-early-relapsed-multiple-myeloma",
+   "description": "Matthew J. Frigault, MD, and Adam D. Cohen, MD, outline how updated NCCN guidelines position CAR T-cell therapy in early relapsed multiple myeloma.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Subcutaneous Amivantamab in Everyday Practice",
+   "link": "https://www.cancernetwork.com/view/subcutaneous-amivantamab-in-everyday-practice",
+   "description": "Siddhartha Devarakonda, MD, of Providence Swedish Cancer Institute says he sees no remaining role for intravenous amivantamab in epidermal growth factor receptor (EGFR)-mutated advanced non–small cell lung cancer (NSCLC), with subcutaneous administration taking 10 to 15 minutes and easing chair time and scheduling.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Psycho-Oncology and Palliative Care: Treating the Person, Not Just the Tumor",
+   "link": "https://www.cancernetwork.com/view/psycho-oncology-and-palliative-care-treating-the-person-not-just-the-tumor",
+   "description": "Daniel C. McFarland, DO, and Ramy Sedhom, MD, discussed co-located psycho-oncology and palliative care, warm handoffs, and proactive distress screening.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Monitoring Late CAR T Toxicities and Treating High-Risk Myeloma Earlier",
+   "link": "https://www.cancernetwork.com/view/monitoring-late-car-t-toxicities-and-treating-high-risk-myeloma-earlier",
+   "description": "Matthew J. Frigault, MD, clinical director of the Cellular Immunotherapy Program at Mass General Brigham Cancer Institute, explained that some toxicities of CAR T-cell therapy emerge within the first 30 days, while others can appear 90 days or later after infusion.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Diagnosing TK2D: Clinical Red Flags and Genetic Testing First",
+   "link": "https://www.neurologylive.com/view/diagnosing-tk2d-clinical-red-flags-and-genetic-testing-first",
+   "description": "A shortened diagnostic odyssey depends on recognizing red flags such as small stature and gastrointestinal symptoms, then moving promptly to exome or genome sequencing with careful, planned delivery of results.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "TK2D Case 1: Severe Early-Onset Presentation in a Four-Year-Old",
+   "link": "https://www.neurologylive.com/view/tk2d-case-1-severe-early-onset-presentation-in-a-four-year-old",
+   "description": "A four-year-old with regression, ptosis, and feeding problems illustrates the textbook features of severe early-onset TK2D and the laboratory and genetic findings that confirm the diagnosis.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "This Week on NeurologyLive® — October 19, 2026",
+   "link": "https://www.neurologylive.com/view/this-week-on-neurologylive-october-19-2026",
+   "description": "Here's some of what is coming soon to NeurologyLive® this week.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Sphingolipid Profiles May Distinguish IPF from Fibrotic HP",
+   "link": "https://www.hcplive.com/view/sphingolipid-profiles-may-distinguish-ipf-from-fibrotic-hp",
+   "description": "Plasma and exhaled breath sphingolipid signatures differed between IPF and fibrotic hypersensitivity pneumonitis.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "ASPEN: Sputum Color Associated With Bronchiectasis Disease Activity",
+   "link": "https://www.hcplive.com/view/aspen-sputum-color-associated-with-bronchiectasis-disease-activity",
+   "description": "A post hoc analysis linked more purulent patient-reported sputum to higher neutrophil elastase activity and greater bronchiectasis disease activity.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Today's IV Antibiotic Options for Complicated UTI: Strengths and Limitations",
+   "link": "https://www.ajmc.com/view/today-s-iv-antibiotic-options-for-complicated-uti-strengths-and-limitations",
+   "description": "Third-generation cephalosporins and aminoglycosides anchor today's intravenous options for complicated UTI, but rising extended-spectrum beta-lactamase rates and an outdated assumption that intravenous therapy requires hospitalization both limit how effectively clinicians can use them.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Barriers to Implementing New Complicated UTI Treatment Guidelines",
+   "link": "https://www.ajmc.com/view/barriers-to-implementing-new-complicated-uti-treatment-guidelines",
+   "description": "Guideline-concordant care runs into real-world friction: persistent overtreatment of asymptomatic bacteriuria, unfamiliar local antibiogram data, and clinician discomfort with shorter courses all complicate the path from published recommendation to bedside practice.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "AJMC",
+   "title": "New CHEST Guidelines Offer a Road Map for Bronchiectasis",
+   "link": "https://www.ajmc.com/view/new-chest-guidelines-offer-a-road-map-for-bronchiectasis",
+   "description": "Speakers at CHEST 2026 walked through the first CHEST guideline for non CF adult bronchiectasis, then took up the harder question it leaves open: which preventive therapy to start first.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "AJMC",
+   "title": "CHEST Journal Highlights Practice-Changing Therapy and Strategies",
+   "link": "https://www.ajmc.com/view/chest-journal-highlights-practice-changing-therapy-and-strategies",
+   "description": "On the opening day of CHEST 2026 in Phoenix, Arizona, the organization's flagship journal highlights a trio of key papers with practice-changing results.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Barriers to Access – Screening, Step Therapy, and the Pharmacist's Role",
+   "link": "https://www.pharmacytimes.com/view/barriers-to-access-screening-step-therapy-and-the-pharmacist-s-role",
+   "description": "Justin Arnall, Breanna Taylor, and Jeff Goff examine how step therapy, prior authorizations, and logistical hurdles delay IV iron treatment, and where pharmacists can intervene to secure overrides and streamline access for patients.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "Prostate Cancer Case Review: Selecting Radioligand Therapy Candidates",
+   "link": "https://www.urologytimes.com/view/prostate-cancer-case-review-selecting-radioligand-therapy-candidates",
+   "description": "Selecting candidates for radioligand therapy requires more than a positive PSMA scan, and the panel details how tracer avidity, disease volume, and sequencing with hormonal therapy affect outcomes.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "Prostate Cancer Case Review: PSMA PET Before Definitive Therapy",
+   "link": "https://www.urologytimes.com/view/prostate-cancer-case-review-psma-pet-before-definitive-therapy",
+   "description": "A high-risk, newly diagnosed patient's PSMA PET results reshape surgical planning, nerve-sparing decisions, and the choice between surgery and radiation for definitive local therapy.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Access, Adherence, and Dosing Frequency in Older Psoriasis Patients",
+   "link": "https://www.dermatologytimes.com/view/access-adherence-and-dosing-frequency-in-older-psoriasis-patients",
+   "description": "Injection anxiety, transportation barriers, and Medicare Part B eligibility converge in this case to make office-administered biologic therapy not a fallback, but often the most realistic path to sustained treatment.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Anti-Inflammatory Effects of GLP-1 Medications in Psoriasis and Obesity",
+   "link": "https://www.dermatologytimes.com/view/anti-inflammatory-effects-of-glp-1-medications-in-psoriasis-and-obesity",
+   "description": "At Fall Clinical 2026, Angela Fitch, MD, discussed GLP-1 prescribing by dermatologists and the metabolic and inflammatory link to psoriasis.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "Beyond slowing atrophy: Optogenetic therapy targets vision lost to GA",
+   "link": "https://www.ophthalmologytimes.com/view/beyond-slowing-atrophy-optogenetic-therapy-targets-vision-lost-to-ga",
+   "description": "Jordi Monés, MD, PhD, explains why RP and Stargardt data support testing son-vec to restore vision in advanced GA.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Medical Economics",
+   "title": "Using AI to fix the hiring mess AI made, with Dina Taylor of HireVue",
+   "link": "https://www.medicaleconomics.com/view/using-ai-to-fix-the-hiring-mess-ai-made-with-dina-taylor-of-hirevue",
+   "description": "Dina Taylor of HireVue explains how physicians can use AI to sort through a flood of AI-written job applications while a human still makes the hiring decision.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Tackling the physician shortage in Maine",
+   "link": "https://www.chiefhealthcareexecutive.com/view/tackling-the-physician-shortage-in-maine",
+   "description": "MaineHealth and Tufts University School of Medicine are working to train more doctors to practice in the state.",
+   "published": "2026-10-19"
+  },
+  {
+   "brand": "Chief Healthcare Executive",
+   "title": "Atrium Health’s $340 million behavioral health initiative",
+   "link": "https://www.chiefhealthcareexecutive.com/view/atrium-health-s-340-million-behavioral-health-initiative",
+   "description": "The health system says it’s building a hospital and expanding virtual care to meet rising needs in Charlotte and beyond.",
+   "published": "2026-10-19"
+  },
+  {
    "brand": "NeurologyLive",
    "title": "NeurologyLive® Brain Games: October 18, 2026",
    "link": "https://www.neurologylive.com/view/neurologylive-brain-games-october-18-2026",
@@ -12,6 +201,146 @@
    "title": "STK-002 completes first two phase 1 dose cohorts in ADOA",
    "link": "https://www.ophthalmologytimes.com/view/stk-002-completes-first-two-phase-1-dose-cohorts-in-adoa",
    "description": "Two phase 1 OSPREY cohorts of intravitreal STK-002 for ADOA are dosed; first safety and efficacy data are expected by mid-2027.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Five Under 5: Top Oncology Videos for the Week of 10/12",
+   "link": "https://www.onclive.com/view/five-under-5-top-oncology-videos-for-the-week-of-10-12",
+   "description": "The top 5 OncLive TV videos of the week cover insights in multiple myeloma, HR+ breast cancer, CAR T-cell therapy, CLL, and oral SERDs.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Early-Phase INCA33890 Data Lay the Foundation for Phase 3 Combination Research in MSS CRC",
+   "link": "https://www.onclive.com/view/early-phase-inca33890-data-lay-the-foundation-for-phase-3-combination-research-in-mss-crc",
+   "description": "Moh’d Khushman, MD, discusses INCA33890’s mechanism of action, phase 1 safety and efficacy data, and the design of NEXERA-303 in MSS colorectal cancer.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "TARGIT-B IORT Boost Blunts Distant Relapse in Young Patients With Breast Cancer",
+   "link": "https://www.cancernetwork.com/view/targit-b-iort-boost-blunts-distant-relapse-in-young-patients-with-breast-cancer",
+   "description": "Leah Katz, MD, MPH, explained how an intraoperative tumor bed boost in TARGIT-B may reduce distant relapse in young patients with breast cancer.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Meaning-Centered Therapy, Psychiatry Referrals, and Humanistic Cancer Care",
+   "link": "https://www.cancernetwork.com/view/meaning-centered-therapy-psychiatry-referrals-and-humanistic-cancer-care",
+   "description": "Erik Bengtsen, MD, discussed meaning-centered therapy at the bedside, framing psychiatry referrals, and a more humanistic approach to care.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Targeting Cyclin E1, KRAS, and DNA Repair Beyond PARP in Ovarian Cancer",
+   "link": "https://www.cancernetwork.com/view/targeting-cyclin-e1-kras-and-dna-repair-beyond-parp-in-ovarian-cancer",
+   "description": "Ursula A. Matulonis, MD, surveyed the exploitable genetic changes driving the next wave of ovarian cancer trials, from CDK2 and WEE1 inhibitors to PARG inhibitors.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Ocrelizumab Shows MRI Benefits vs Fingolimod in Phase 3 Pediatric-Onset Multiple Sclerosis Study",
+   "link": "https://www.neurologylive.com/view/ocrelizumab-shows-mri-benefits-fingolimod-phase-3-pediatric-onset-ms-study",
+   "description": "Ocrelizumab demonstrated noninferiority to fingolimod for relapse control but displayed greater reductions in MRI lesion activity among pediatric patients with relapsing-remitting multiple sclerosis.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Dr Beck on the Practical Realities of Subcutaneous Oncology Drug Delivery",
+   "link": "https://www.targetedonc.com/view/dr-beck-on-the-practical-realities-of-subcutaneous-oncology-drug-delivery",
+   "description": "J. Thaddeus Beck, MD, discusses clinic logistics, patient preferences, and the future of on-body applicators as oncology shifts from intravenous to subcutaneous delivery.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "2026 AACR Report Highlights Advances and New Directions in Cancer Treatment",
+   "link": "https://www.targetedonc.com/view/aacr-cancer-progress-report-2026-treatment-advances-future-cancer-care",
+   "description": "Breakthrough targeted therapies—from KRAS and PROTACs to CAR T—plus ctDNA monitoring and personalized vaccines push earlier detection and smarter cancer treatment.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Tailoring Pulmonary Rehab to Close the COPD Gap, With Omid Pourshahid, MD",
+   "link": "https://www.hcplive.com/view/tailoring-pulmonary-rehab-close-copd-gap",
+   "description": "At CHEST 2026, Pourshahid argued for matching patients to center-based, hybrid, or virtual pulmonary rehab based on a structured assessment.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Can Nemolizumab Help Children Under 12 with Moderate-to-Severe Eczema?",
+   "link": "https://www.hcplive.com/view/can-nemolizumab-help-children-under-12-moderate-severe-eczema-",
+   "description": "Children aged 2 - 11 with atopic dermatitis saw early, lasting itch and sleep gains with nemolizumab through 1 year in phase 2 data shared at PeDRA 2026.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Mepolizumab Reduces Systemic Corticosteroid Exposure in Eosinophilic COPD",
+   "link": "https://www.hcplive.com/view/mepolizumab-reduces-systemic-corticosteroid-exposure-eosinophilic-copd",
+   "description": "In pooled phase 3 data, mepolizumab lowered mean yearly systemic corticosteroid exposure by 178.97 mg in patients with a BEC of ≥150 cells/µL.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Chronic Proton Pump Inhibitor Use Linked to More Asthma Exacerbations",
+   "link": "https://www.hcplive.com/view/chronic-proton-pump-inhibitor-linked-more-asthma-exacerbations",
+   "description": "Chronic proton pump inhibitor use carried 60% greater odds of asthma exacerbation and nearly 4-fold odds of rescue corticosteroid use in a matched cohort of 2456 patients.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "I-124 Evuzamitide PET/CT Highly Sensitive, Specific in Amyloid Detection",
+   "link": "https://www.hcplive.com/view/i-124-evuzamitide-pet-ct-highly-sensitive-specific-in-amyloid-detection",
+   "description": "Mathew Maurer, MD, discusses the results of the phase 3 REVEAL study, which highlighted this novel scanning technology’s capacity for identifying amyloidosis early.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "HHS Updates Guidelines for Antiretroviral Treatment of HIV",
+   "link": "https://www.contagionlive.com/view/hhs-updates-guidelines-for-antiretroviral-treatment-of-hiv",
+   "description": "The guidelines issued by the Department of Health and Human Services (HHS) have been updated with recent, evidence-based consensus of The Panel for the Use of Antiretroviral Agents in Adults and Adolescents.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "AJMC",
+   "title": "CHEST Investigations Explore COPD Guideline Adherence, Adding Ensifentrine, and Use of AI in Education",
+   "link": "https://www.ajmc.com/view/chest-investigations-explore-copd-guideline-adherence-adding-ensifentrine-and-use-of-ai-in-education",
+   "description": "Selected presentations from “Reframing COPD: Phenotypes, Outcomes, Therapeutics, and the Future of Care Delivery,” a session on the opening day of CHEST 2026.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Income, Education NHL Mortality Gaps Widened in Canada in 2 Decades",
+   "link": "https://www.ajmc.com/view/income-education-nhl-mortality-gaps-widened-in-canada-in-2-decades",
+   "description": "Non-Hodgkin lymphoma mortality trends impact lower-income, less-educated communities, highlighting health disparities and needs for health equity.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "Breast Cancer Treatment Ends, But The Medication Questions Don’t",
+   "link": "https://www.pharmacytimes.com/view/breast-cancer-treatment-ends-but-the-medication-questions-don-t",
+   "description": "After initial breast cancer treatment, pharmacists can help patients navigate ongoing endocrine therapy, manage persistent adverse effects, and address medication concerns that affect long-term care.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "PBM Underpayment Persists as Cost-Plus Brings New Strain | NCPA 2026",
+   "link": "https://www.drugtopics.com/view/pbm-underpayment-persists-as-cost-plus-brings-new-strain-ncpa-2026",
+   "description": "AJ Barbarito, Esq, provides nuance to the evolving pharmacy reimbursement landscape and how PBMs and pharmacies alike are adapting as they approach 2027.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: Preventing complications in uveitic cataract surgery",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-preventing-complications-uveitic-cataract-surgery",
+   "description": "At AAO 2026, Anjum F. Koreishi, MD, shared how to prevent complications after cataract surgery in patients with uveitis.",
+   "published": "2026-10-18"
+  },
+  {
+   "brand": "Managed Healthcare Executive",
+   "title": "Is there a dangerous 'weekend effect' to hospitals admissions? The verdict is split | CHEST 2026",
+   "link": "https://www.managedhealthcareexecutive.com/view/dangerous-weekend-effect-hospitals-admissions-verdict-split-chest-2026",
+   "description": "10 research abstracts presented at the CHEST meeting are split on whether hospital admission during the weekend is assoicated with worse outcomes than admission on weekdays.",
    "published": "2026-10-18"
   },
   {
@@ -23456,56 +23785,7 @@
    "link": "https://www.chiefhealthcareexecutive.com/view/making-digital-tools-work-for-patients-and-doctors",
    "description": "Dr. Vanessa Diaz of MUSC Health talks about digital transformation in the latest episode of Data Book, a podcast from Chief Healthcare Executive.",
    "published": "2026-09-04"
-  },
-  {
-   "brand": "Contagion Live",
-   "title": "Latest Vaccine and Immunization Efficacy, Safety for RSV, Influenza, and COVID-19",
-   "link": "https://www.contagionlive.com/view/latest-vaccine-and-immunization-efficacy-safety-for-rsv-influenza-and-covid-19",
-   "description": "The Vaccine Integrity Project, in collaboration with the American Medical Association, conducted a vaccine and immunization effectiveness and safety review for RSV, Influenza, and COVID-19 for the 2026-2027 season. JAMA published the review, and here is an overview of the data going into this year's seasonal respiratory virus season.",
-   "published": "2026-09-03"
-  },
-  {
-   "brand": "Contagion Live",
-   "title": "New Olive Oil Recall, Update on Rice Recall",
-   "link": "https://www.contagionlive.com/view/new-olive-oil-recall-update-on-rice-recall",
-   "description": "Kofinas Mediterranean olive oil was recalled over an unapproved garlic flavoring ingredient, and a new update on Lundberg Family Farms' jasmine rice recall tied to foreign material contamination.",
-   "published": "2026-09-03"
-  },
-  {
-   "brand": "Contemporary Pediatrics",
-   "title": "FDA approves zilganersen (Zanvastro) as first treatment for Alexander disease",
-   "link": "https://www.contemporarypediatrics.com/view/fda-approves-zilganersen-zanvastro-alexander-disease",
-   "description": "The FDA approved zilganersen (Zanvastro) for Alexander disease in patients from infancy through adulthood, based on Phase 1-3 gait speed data.",
-   "published": "2026-09-03"
-  },
-  {
-   "brand": "Contemporary Pediatrics",
-   "title": "Evidence review supports respiratory virus immunizations for 2026-2027 season",
-   "link": "https://www.contemporarypediatrics.com/view/evidence-review-supports-respiratory-virus-immunizations-for-2026-2027-season",
-   "description": "New evidence supports influenza, COVID-19, and RSV immunizations for reducing severe respiratory illness and hospitalization.",
-   "published": "2026-09-03"
-  },
-  {
-   "brand": "Contemporary Pediatrics",
-   "title": "HPV vaccination coverage stalls for fourth straight year as rural-urban gap persists, CDC finds",
-   "link": "https://www.contemporarypediatrics.com/view/hpv-vaccination-coverage-2025-nis-teen",
-   "description": "CDC's 2025 NIS-Teen data show HPV vaccine coverage flat for a fourth year, with rural adolescents 12 points behind urban peers in receiving ≥1 dose.",
-   "published": "2026-09-03"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "Expanding AI while ensuring patient safety",
-   "link": "https://www.chiefhealthcareexecutive.com/view/expanding-ai-while-ensuring-patient-safety",
-   "description": "Health systems are accelerating clinical uses of AI, but leaders stress the need for safegauards.",
-   "published": "2026-09-03"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "Wellstar plans to acquire another Georgia hospital",
-   "link": "https://www.chiefhealthcareexecutive.com/view/wellstar-looks-to-acquire-another-georgia-hospital",
-   "description": "The system and Stephens County Hospital have reached an agreement on a deal, the latest in a busy period for Wellstar.",
-   "published": "2026-09-03"
   }
  ],
- "updatedAt": "2026-10-18T10:24:51.425Z"
+ "updatedAt": "2026-10-19T12:08:53.285Z"
 }
