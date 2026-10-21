@@ -1450,5 +1450,44 @@
   ],
   "note": "Decided ahead of the listed PDUFA date of 2026-10-17.",
   "recordedAt": "2026-10-17"
+ },
+ {
+  "drug": "Ameluz",
+  "brandName": null,
+  "company": "Biofrontera AG",
+  "pdufaDate": "2026-09-28",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.hcplive.com/view/q-a-gene-expression-testing-ameluz-pdt-psoriasis-pipeline",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.hcplive.com/view/q-a-gene-expression-testing-ameluz-pdt-psoriasis-pipeline"
+   }
+  ],
+  "recordedAt": "2026-10-21"
+ },
+ {
+  "drug": "Bepirovirsen",
+  "brandName": null,
+  "company": "GSK plc",
+  "pdufaDate": "2026-10-26",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.hcplive.com/view/q4-2026-preview-7-fda-decisions-to-watch",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.hcplive.com/view/q4-2026-preview-7-fda-decisions-to-watch"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-10-26.",
+  "recordedAt": "2026-10-21"
  }
 ]
