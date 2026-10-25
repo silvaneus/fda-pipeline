@@ -1,10 +1,444 @@
 {
  "items": [
   {
+   "brand": "NeurologyLive",
+   "title": "NeurologyLive® Brain Games: October 25, 2026",
+   "link": "https://www.neurologylive.com/view/neurologylive-brain-games-october-25-2026",
+   "description": "Test your neurology knowledge with NeurologyLive®'s weekly quiz series, featuring questions on a variety of clinical and historical neurology topics. This week's topic is recent advances in gene therapies.",
+   "published": "2026-10-25"
+  },
+  {
    "brand": "Ophthalmology Times",
    "title": "Teprotumumab and TED: Sarah Cheng, MD, PhD, on orbital tissue changes",
    "link": "https://www.ophthalmologytimes.com/view/aao-2026-sarah-cheng-teprotumumab-thyroid-eye-disease-orbital-tissue",
    "description": "Sarah Cheng, MD, PhD, discusses findings on orbital tissue changes in thyroid eye disease after teprotumumab treatment.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Tovecimig Plus Paclitaxel Improves ORR vs Paclitaxel Alone in Biliary Tract Cancer",
+   "link": "https://www.onclive.com/view/tovecimig-plus-paclitaxel-improves-orr-vs-paclitaxel-alone-in-biliary-tract-cancer",
+   "description": "Tovecimig plus paclitaxel improved objective response over paclitaxel alone in previously treated advanced biliary tract cancer in COMPANION-002.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "LK101 Plus Tislelizumab Elicits Responses in Advanced NSCLC",
+   "link": "https://www.onclive.com/view/lk101-plus-tislelizumab-elicits-responses-in-advanced-nsclc",
+   "description": "Adding LK101 to tislelizumab-based first-line maintenance yielded early antitumor activity and signs of immune activation in advanced NSCLC.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Durvalumab Plus Enfortumab Vedotin Improves Survival in Cisplatin-Ineligible MIBC",
+   "link": "https://www.onclive.com/view/durvalumab-plus-enfortumab-vedotin-improves-survival-in-cisplatin-ineligible-mibc",
+   "description": "Adding durvalumab and enfortumab vedotin around cystectomy extended survival in muscle-invasive bladder cancer without cisplatin options.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Pembrolizumab Plus Radiation Fails to Improve Recurrence-Free Survival in Early-Stage High-Intermediate–Risk dMMR Endometrial Cancer",
+   "link": "https://www.onclive.com/view/nrg-gy020-pembrolizumab-plus-radiation-fails-to-improve-rfs-in-dmmr-endometrial-cancer",
+   "description": "Adding pembrolizumab to adjuvant radiation did not meet prespecified superiority criteria in patients with stage I/II high-intermediate–risk dMMR endometrioid endometrial cancer in the phase 3 NRG-GY020 trial.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "DeLLphi-305 Data Support Frontline Maintenance Tarlatamab Plus Durvalumab as a New SOC in ES-SCLC",
+   "link": "https://www.onclive.com/view/dellphi-305-data-support-frontline-maintenance-tarlatamab-plus-durvalumab-as-a-new-soc-in-es-sclc",
+   "description": "Adding tarlatamab-dlle to durvalumab maintenance extended survival in extensive-stage small cell lung cancer in the phase 3 DeLLphi-305 trial.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Adjuvant Intismeran Autogene Plus Pembrolizumab Improves RFS and DMFS in Melanoma",
+   "link": "https://www.onclive.com/view/adjuvant-intismeran-autogene-plus-pembrolizumab-improves-rfs-and-dmfs-in-melanoma",
+   "description": "Adding intismeran autogene to pembrolizumab cut the risk of recurrence and distant metastasis in resected high-risk melanoma in INTerpath-001.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "DASL-HiCaP: Darolutamide Plus ADT and Radiation Therapy Improves MFS in Very High-Risk Localized Prostate Cancer",
+   "link": "https://www.onclive.com/view/dasl-hicap-darolutamide-plus-adt-and-radiation-therapy-improves-mfs-in-very-high-risk-localized",
+   "description": "Adding darolutamide to androgen deprivation and primary or salvage radiation lowered metastasis risk in very high-risk localized prostate cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "INCA33890 Plus SOC Elicits Responses and Is Tolerable Across In First- and Third-Line MSS CRC",
+   "link": "https://www.onclive.com/view/inca33890-plus-soc-elicits-responses-and-is-tolerable-across-in-first--and-third-line-mss-crc",
+   "description": "INCA33890 combined with standard-of-care therapy produced responses in first- and third-line metastatic microsatellite stable colorectal cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Dr Feldman on Ixotatug Vedotin in Heavily Pretreated Recurrent Germ Cell Tumors",
+   "link": "https://www.onclive.com/view/dr-feldman-on-ixotatug-vedotin-in-heavily-pretreated-recurrent-germ-cell-tumors",
+   "description": "Darren R. Feldman, MD, details early response and disease control findings with a claudin 6–directed antibody-drug conjugate in relapsed germ cell tumors.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "First-Line Dato-DXd Improves Intracranial Outcomes in Immunotherapy-Ineligible TNBC With Brain Metastases",
+   "link": "https://www.onclive.com/view/first-line-dato-dxd-improves-intracranial-outcomes-in-immunotherapy-ineligible-tnbc-with-brain",
+   "description": "An exploratory TROPION-Breast02 analysis showed CNS PFS and intracranial response benefits with datopotamab deruxtecan in TNBC with brain metastases.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Durvalumab Plus BCG Improves DFS in Papillary-Only, BCG-Naive High-Risk NMIBC in POTOMAC",
+   "link": "https://www.onclive.com/view/durvalumab-plus-bcg-improves-dfs-in-papillary-only-bcg-naive-high-risk-nmibc-in-potomac",
+   "description": "Adding durvalumab to BCG induction and maintenance reduced high-risk recurrences in patients with papillary-only bladder tumors in POTOMAC.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Durvalumab Plus Olaparib Improves Numerical OS in Advanced Endometrial Cancer",
+   "link": "https://www.onclive.com/view/durvalumab-plus-olaparib-improves-os-in-advanced-endometrial-cancer",
+   "description": "Interim DUO-E data showed longer median survival with chemotherapy plus durvalumab and olaparib maintenance that did not reach significance.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Perioperative Enfortumab Vedotin Plus Pembrolizumab Does Not Compromise QOL in Cisplatin-Eligible MIBC",
+   "link": "https://www.onclive.com/view/perioperative-enfortumab-vedotin-plus-pembrolizumab-does-not-compromise-qol-in-cisplatin-eligible-mibc",
+   "description": "Perioperative enfortumab vedotin plus pembrolizumab showed no clinically meaningful HRQOL detriment in cisplatin-eligible MIBC.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "CROWN: ctDNA Analyses Help Predict Early Progression With First-Line Lorlatinib in ALK+ NSCLC",
+   "link": "https://www.onclive.com/view/ctdna-analyses-from-crown-identify-predictors-of-early-progression-with-first-line-lorlatinib",
+   "description": "Circulating tumor DNA findings from CROWN tied TP53 status and tumor fraction to outcomes with first-line lorlatinib in ALK-positive lung cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Dr Enke on Interim Safety Data for Lutetium Lu 177 Vipivotide Tetraxetan Retreatment in mCRPC",
+   "link": "https://www.onclive.com/view/dr-enke-on-interim-safety-data-for-lutetium-lu-177-vipivotide-tetraxetan-retreatment-in-mcrpc",
+   "description": "Johanna Enke, MD, discusses safety findings from a phase 2 study of lutetium Lu 177 vipivotide tetraxetan rechallenge in mCRPC.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "T-DXd Followed by THP Elicits Deep MRI Responses in HER2+ Early Breast Cancer",
+   "link": "https://www.onclive.com/view/t-dxd-followed-by-thp-elicits-deep-mri-responses-in-her2-early-breast-cancer",
+   "description": "Neoadjuvant T-DXd produced faster imaging responses vs ddAC in DESTINY-Breast11, but imaging poorly predicted pCR.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Final postMONARCH OS Favors Abemaciclib Plus Fulvestrant in HR+/HER2–Advanced Breast Cancer",
+   "link": "https://www.onclive.com/view/final-os-postmonarch-favors-abemaciclib-plus-fulvestrant-hr-her2-advanced",
+   "description": "Abemaciclib plus fulvestrant showed a numerical yet nonsignificant overall survival trend after CDK4/6 inhibitor progression in final postMONARCH data.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "INCB123667 Plus Bevacizumab Shows Antitumor Activity in Recurrent Epithelial Ovarian Cancer",
+   "link": "https://www.onclive.com/view/incb123667-plus-bevacizumab-shows-antitumor-activity-in-recurrent-epithelial-ovarian-cancer",
+   "description": "INCB123667 with bevacizumab showed antitumor activity in heavily pretreated, cyclin E1–overexpressing platinum-resistant ovarian cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Atirmociclib Plus Fulvestrant Improves PFS in HR+/HER2– Advanced Breast Cancer",
+   "link": "https://www.onclive.com/view/atirmociclib-plus-fulvestrant-improves-pfs-hr-her2-advanced-breast-cancer",
+   "description": "Selective CDK4 inhibitor atirmociclib plus fulvestrant reduced risk of progression or death by 40% vs investigator's choice of therapy in the phase 2 FOURLIGHT-1 trial.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Iza-Bren Significantly Improves PFS vs Chemotherapy in Pretreated HR+/HER2– Advanced Breast Cancer",
+   "link": "https://www.onclive.com/view/panku-breast01-iza-bren-improves-pfs-vs-chemotherapy-pretreated-hr-her2-advanced-breast-cancer",
+   "description": "Signifcant efficacy improvements were shown with iza-bren in HR+/HER2-negative breast cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "The OncFive: Top Oncology Articles for the Week of 10/18",
+   "link": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-10-18-2026",
+   "description": "The FDA approved dostarlimab in rectal cancer and pembrolizumab in tumors with high mutational burden, Europe cleared teclistamab in myeloma, and more.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "OncLive",
+   "title": "Ixotatug Vedotin Elicits Responses in Heavily Pretreated Recurrent Germ Cell Tumors",
+   "link": "https://www.onclive.com/view/ixotatug-vedotin-elicits-responses-in-heavily-pretreated-recurrent-germ-cell-tumors",
+   "description": "The claudin 6–targeted antibody-drug conjugate ixotatug vedotin showed antitumor activity in recurrent germ cell tumors, including after transplant.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Apalutamide/ADT Improves EFS vs Surgery Alone in High-Risk Prostate Cancer",
+   "link": "https://www.cancernetwork.com/view/apalutamide-adt-improves-efs-vs-surgery-alone-in-high-risk-prostate-cancer",
+   "description": "Adding perioperative apalutamide and ADT to radical prostatectomy reduced the risk of an oncologic event or death by 62% in high-risk prostate cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Tarlatamab Maintenance Combo Extends Survival in Extensive-Stage SCLC",
+   "link": "https://www.cancernetwork.com/view/tarlatamab-maintenance-combo-extends-survival-in-extensive-stage-sclc",
+   "description": "The phase 3 DeLLphi-305 trial may support tarlatamab plus durvalumab as a new standard-of-care frontline maintenance option in extensive-stage SCLC.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "INTerpath-001 Data Detail Survival, Subgroup, and Safety Findings in Melanoma",
+   "link": "https://www.cancernetwork.com/view/interpath-001-data-detail-survival-subgroup-and-safety-findings-in-melanoma",
+   "description": "Full INTerpath-001 data at ESMO 2026 detail OS, subgroup, and safety results with intismeran plus pembrolizumab in resected stage IIB to IV melanoma.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Belantamab Mafodotin Combo Yields High MRD Negativity in NDMM",
+   "link": "https://www.cancernetwork.com/view/belantamab-mafodotin-combo-yields-high-mrd-negativity-in-ndmm",
+   "description": "In the phase 1/2 Bela-DRd study, over 90% of patients responded to belantamab mafodotin plus daratumumab, lenalidomide, and dexamethasone.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Narrowing Breast Cancer Disparities Through Collaborative Research and Trial Representation",
+   "link": "https://www.cancernetwork.com/view/narrowing-breast-cancer-disparities-through-collaborative-research-and-trial-representation",
+   "description": "“The more representation, the more people we have participating in clinical trials, the more applicable the data,” said Patricia A. Robinson, MD.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "CancerNetwork",
+   "title": "Emactuzumab Yields Improved Response Rates in Tenosynovial Giant Cell Tumor",
+   "link": "https://www.cancernetwork.com/view/emactuzumab-yields-improved-response-rates-in-tenosynovial-giant-cell-tumor",
+   "description": "In the phase 3 TANGENT trial, an 8-week course of emactuzumab improved objective response rate vs placebo in patients with tenosynovial giant cell tumor.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Tenecteplase Benefit Before Thrombectomy Varies by Stroke Cause, Study Shows",
+   "link": "https://www.neurologylive.com/view/tenecteplase-benefit-before-thrombectomy-varies-by-stroke-cause",
+   "description": "A secondary analysis of the BRIDGE-TNK trial found tenecteplase before thrombectomy improved functional outcomes in cardioembolic but not atherosclerotic stroke.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "NeurologyLive",
+   "title": "Houston Forum Highlights Awareness Gaps in NF1 Plexiform Neurofibroma Care",
+   "link": "https://www.neurologylive.com/view/houston-forum-highlights-awareness-gaps-nf1-plexiform-neurofibroma-care",
+   "description": "At a NeurologyLive and Targeted Oncology Clinical Forum in Houston, Kevin J. Bielamowicz, MD, of Arkansas Children’s Hospital, discussed how incidental diagnosis and limited awareness of systemic therapy continue to delay care for patients with NF1-associated plexiform neurofibromas.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Investigating Novel Immunotherapy Targets in Metastatic RCC",
+   "link": "https://www.targetedonc.com/view/rahul-winayak-emerging-therapeutic-targets-metastatic-renal-cell-carcinoma",
+   "description": "Rahul Winayak, MD, explains new mRCC targets—GPR65, HPK1, ENPP3, CD70—that aim to overcome immunotherapy resistance.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Claudin 6–Targeted ADC Shows Activity in Germ Cell Tumors",
+   "link": "https://www.targetedonc.com/view/ixotatug-vedotin-claudin-6-adc-germ-cell-tumors-darren-feldman",
+   "description": "Darren Feldman, MD, discusses phase 1 data showing ixotatug vedotin drives notable responses in heavily pretreated germ cell tumors, with manageable ADC safety and potential phase 2 plans.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "Late-Breaking Phase 3 Data Headline ESMO 2026 Presidential Symposium I",
+   "link": "https://www.targetedonc.com/view/esmo-2026-presidential-symposium-i-late-breaking-recap",
+   "description": "Recap the 4 late-breaking phase 3 trials from ESMO 2026 Presidential Symposium I in melanoma, bladder cancer, small cell lung cancer, and prostate cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Targeted Oncology",
+   "title": "B7-H4 ADCs: Key Questions for Clinical Integration",
+   "link": "https://www.targetedonc.com/view/shannon-westin-b7-h4-adc-biomarker-testing-toxicity-sequencing",
+   "description": "Shannon Westin, MD, MPH, weighs in on B7-H4 ADCs in gynecologic cancers, focusing on testing, toxicity in maintenance use, and sequencing amid resistance, target shifts, and expanding options.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Early Antibiotic Stop in Neutropenic Fever Did Not Raise Severe Events",
+   "link": "https://www.contagionlive.com/view/early-antibiotic-stop-neutropenic-fever-not-raise-severe-events",
+   "description": "Stopping empiric antibiotics early nearly tripled antibiotic-free days in neutropenic fever, and 5-day oseltamivir prophylaxis matched 10 days in hospital exposures.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Asuptegravir Lowers HIV-1 RNA up to 2.36 Logs in Early Monotherapy",
+   "link": "https://www.contagionlive.com/view/asuptegravir-lowers-hiv-1-rna-2-36-logs-early-monotherapy",
+   "description": "Investigational asuptegravir cut HIV-1 RNA by up to 2.36 log10 copies/mL in 10 days, and adding fostemsavir boosted CD4 gains in immunologic nonresponders.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Fecal Microbiota Spores Cut Early Hospitalizations in Recurrent C diff",
+   "link": "https://www.contagionlive.com/view/fecal-microbiota-spores-cut-early-hospitalizations-recurrent-c-diff",
+   "description": "In an ECOSPOR III analysis, all-cause hospitalization by week 4 fell to 3.4% with fecal microbiota spores vs 16.1% with placebo in recurrent C difficile infection.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "CDC Tracking 5 Active Food-Borne Outbreaks Tied to Oysters, Cheese, Sprouts",
+   "link": "https://www.contagionlive.com/view/cdc-5-active-food-borne-outbreaks-oysters-cheese-sprouts",
+   "description": "CDC lists 5 active multistate outbreaks tied to oysters, raw milk cheese, sprouts, and pet turtles, with recalls in effect for 4 of them.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Contagion Live",
+   "title": "Ensitrelvir PEP Eases Symptom Severity in COVID-19 Breakthrough Cases",
+   "link": "https://www.contagionlive.com/view/ensitrelvir-pep-eases-symptom-severity-in-covid-19-breakthrough-cases",
+   "description": "Exploratory SCORPIO-PEP data presented at IDWeek 2026 show household contacts with breakthrough COVID-19 on ensitrelvir had lower peak viral RNA and fewer severe symptoms than placebo recipients.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "AJMC",
+   "title": "One-Size Dialysis Volume Goals Fall Short in CKD: Jennifer Flythe, MD",
+   "link": "https://www.ajmc.com/view/one-size-dialysis-volume-goals-fall-short-in-ckd-jennifer-flythe-md",
+   "description": "Jennifer Flythe, MD, MPH, discusses individualizing dialysis volume management and why guideline-directed therapy use lags in advanced CKD.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Povetacicept Cuts Proteinuria by 52% in IgA Nephropathy at Week 36",
+   "link": "https://www.ajmc.com/view/povetacicept-cuts-proteinuria-by-52-in-iga-nephropathy-at-week-36",
+   "description": "Povetacicept reduced proteinuria by 52% vs 4.3% with placebo at week 36 in adults with IgA nephropathy in the phase 3 RAINIER trial’s interim analysis.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Dialysis Access, Church CKD Screening Address Kidney Care Inequities",
+   "link": "https://www.ajmc.com/view/dialysis-access-church-ckd-screening-address-kidney-care-inequities",
+   "description": "Outpatient dialysis for unfunded patients with ESKD cut ED reliance and costs, while church-based CKD screening improved blood pressure.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Expert Panel Updates Consensus on Mantle Cell Lymphoma Care Using Pan-Asian Data",
+   "link": "https://www.ajmc.com/view/expert-panel-updates-consensus-on-mantle-cell-lymphoma-care-using-pan-asian-data",
+   "description": "Asian expert consensus updates mantle cell lymphoma treatment guidelines, highlighting uneven BTK inhibitor, ibrutinib and CAR T-cell access across Asia.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "AJMC",
+   "title": "Nephrologists Weigh Wins, Losses From 5 Years of Value-Based Kidney Care",
+   "link": "https://www.ajmc.com/view/nephrologists-weigh-wins-losses-from-5-years-of-value-based-kidney-care",
+   "description": "At ASN Kidney Week 2026, nephrologists said value-based kidney models improved dialysis starts, but payment cuts and MA growth are pushing practices out.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Kidney Compass: New FIND-CKD Finerenone Data From ASN Kidney Week 2026",
+   "link": "https://www.hcplive.com/view/kidney-compass-new-find-ckd-finerenone-data-from-asn-kidney-week-2026",
+   "description": "Katherine Tuttle, MD, joins Brendon Neuen, MBBS, PhD, and Shikha Wadhwani, MD, MS, to unpack new FIND-CKD finerenone analyses from ASN 2026.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "GLP-1s Tied to Weight Loss in Peritoneal Dialysis, With Steven Brunelli, MD",
+   "link": "https://www.hcplive.com/view/glp-1s-tied-to-weight-loss-in-peritoneal-dialysis-with-steven-brunelli-md",
+   "description": "Longer GLP-1 RA exposure was also associated with a lower hospitalization burden in a cohort of 5,897 patients with type 2 diabetes.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Upacicalcet Lowers PTH in Secondary Hyperparathyroidism on Hemodialysis",
+   "link": "https://www.hcplive.com/view/upacicalcet-lowers-pth-in-secondary-hyperparathyroidism-on-hemodialysis",
+   "description": "Jessica Kendrick, MD, MPH, discusses phase 3 PATH data showing upacicalcet reduced iPTH in hemodialysis patients with secondary hyperparathyroidism.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Matching CKD Education to Patient Readiness for Home Dialysis, With Christopher Chan, MD",
+   "link": "https://www.hcplive.com/view/matching-ckd-education-to-patient-readiness-for-home-dialysis-with-christopher-chan-md",
+   "description": "Christopher Chan, MD, discusses why digital counseling was linked to higher home KRT uptake only among motivationally ready patients with CKD.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "RENEW-HD: Portable Hemodialysis Data, With Karin Gerritsen, MD, PhD",
+   "link": "https://www.hcplive.com/view/renew-hd-portable-hemodialysis-data-with-karin-gerritsen-md-phd",
+   "description": "Early RENEW-HD data support moving the 13 kg Neokidney to autonomous use testing, with dialysate calcium adjustments planned.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Kidney Compass: Final 2-Year TELIGAN Data for Telitacicept in IgA Nephropathy",
+   "link": "https://www.hcplive.com/view/kidney-compass-final-2-year-teligan-data-for-telitacicept-in-iga-nephropathy",
+   "description": "Jicheng Lv, MD, joins Brendon Neuen, MBBS, PhD, and Shikha Wadhwani, MD, MS, to discuss 2-year TELIGAN data for telitacicept in IgAN.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "HCPLive",
+   "title": "Sparsentan Lowers Inflammatory, Complement Biomarkers in IgAN",
+   "link": "https://www.hcplive.com/view/sparsentan-lowers-inflammatory-complement-biomarkers-in-igan",
+   "description": "A PROTECT biomarker analysis shows sparsentan reduced urinary sCD163, BAFF, C5b-9, and IL-6 vs irbesartan through 110 weeks in IgA nephropathy.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Drug Topics",
+   "title": "EloraTZP Shows Greater Weight Loss, A1C Reduction Than Tirzepatide",
+   "link": "https://www.drugtopics.com/view/eloratzp-shows-greater-weight-loss-a1c-reduction-than-tirzepatide",
+   "description": "Eli Lilly released phase 2b trial results comparing the investigational eloralintide-tirzepatide combo with tirzepatide 15 mg alone in patients with T2D and obesity.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Eczema Awareness Month: Moving Beyond One-Size-Fits-All Care",
+   "link": "https://www.dermatologytimes.com/view/eczema-awareness-month-moving-beyond-one-size-fits-all-care",
+   "description": "Stratman discusses individualized eczema care, expanding treatment options, and the potential of precision medicine to guide therapy.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Type 2 Inflammation, Growth Curve, and HS Guidance for Advanced Practice",
+   "link": "https://www.dermatologytimes.com/view/type-2-inflammation-growth-curve-and-hs-guidance-for-advanced-practice",
+   "description": "At the 2026 Horizons in Advanced Practice meeting, Omar Noor, MD, discussed viewing atopic dermatitis patients as type 2 inflammatory patients, growth curve data, and recent hidradenitis suppurativa guidelines.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "Social Media Mythbusters: Can Face Taping Really Prevent Wrinkles?",
+   "link": "https://www.dermatologytimes.com/view/social-media-mythbusters-can-face-taping-really-prevent-wrinkles-",
+   "description": "Face taping promises smoother skin and fewer wrinkles without injectables, but evidence suggests any visible benefits are largely temporary.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Dermatology Times",
+   "title": "COSMETIC CONUNDRUMS: The New Ingredient Landscape",
+   "link": "https://www.dermatologytimes.com/view/cosmetic-conundrums-the-new-ingredient-landscape",
+   "description": "Explore trending plant oils in skincare and haircare, plus 2026’s hottest actives like ectoin and hypochlorous acid—balancing glow, barrier repair, and irritation risks.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Ophthalmology Times",
+   "title": "AAO 2026: GLP-1RA initiation not linked to anti-VEGF burden in DME",
+   "link": "https://www.ophthalmologytimes.com/view/aao-2026-glp-1ra-initiation-not-linked-anti-vegf-burden-dme",
+   "description": "IRIS Registry data showed no change in anti-VEGF frequency, vision, or retinal thickness after patients with DME began a GLP-1RA.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Pharmacy Times",
+   "title": "CKM Syndrome Stage Linked to CKD Odds, But Primary Care Hurdles Remain",
+   "link": "https://www.pharmacytimes.com/view/ckm-syndrome-stage-linked-to-ckd-odds-but-primary-care-hurdles-remain",
+   "description": "Two Kidney Week 2026 abstracts show a dose-response link between cardiovascular-kidney-metabolic syndrome (CKM) stage and chronic kidney disease (CKD), while primary care clinicians cite evidence and workflow barriers.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "In situ immunotherapy shows encouraging survival findings in prostate cancer",
+   "link": "https://www.urologytimes.com/view/in-situ-immunotherapy-shows-encouraging-survival-findings-in-prostate-cancer",
+   "description": "Carlos A. Vargas, MD, discusses updated survival outcomes, safety, and the mechanism of SYNC-T SV-102, an investigational in situ immunotherapy for metastatic prostate cancer.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "VOLGA: Durvalumab plus enfortumab vedotin improves EFS, OS in MIBC",
+   "link": "https://www.urologytimes.com/view/volga-durvalumab-plus-enfortumab-vedotin-improves-efs-os-in-mibc",
+   "description": "Perioperative durvalumab (Imfinzi) plus neoadjuvant enfortumab vedotin-ejfv (Padcev) cut the risk of EFS events by 49% and death by 42% in cisplatin-ineligible MIBC.",
+   "published": "2026-10-24"
+  },
+  {
+   "brand": "Urology Times",
+   "title": "PROTEUS Substudy: Perioperative apalutamide plus ADT improves EFS vs surgery alone",
+   "link": "https://www.urologytimes.com/view/proteus-substudy-perioperative-apalutamide-plus-adt-improves-efs-vs-surgery-alone",
+   "description": "The PROTEUS substudy addresses a key limitation of the main study, which had no surgery-alone control arm.",
    "published": "2026-10-24"
   },
   {
@@ -27873,105 +28307,7 @@
    "link": "https://www.chiefhealthcareexecutive.com/view/the-case-for-continuous-intelligence-in-healthcare-operations-viewpoint",
    "description": "The goal is not to replace strategic optimization projects, but to extend their value by monitoring how real operations are changing.",
    "published": "2026-09-10"
-  },
-  {
-   "brand": "Contagion Live",
-   "title": "Peggy Lillis Foundation Will Honor C diff Advocates at Annual Gala",
-   "link": "https://www.contagionlive.com/view/peggy-lillis-foundation-will-honor-c-diff-advocates-at-annual-gala",
-   "description": "The Peggy Lillis Foundation will host its 17th Annual Changing the Odds Gala this month in New York City, and it will include a casino, fellowship amongst the C diff community, and an award ceremony honoring a physician-scientist, philanthropist, a researcher, and a patient advocate for their contributions to C difficile awareness, treatment, and prevention.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Contagion Live",
-   "title": "REMAP-CAP and the Tamiflu “Pre-Release”: A Set-Up for Disaster",
-   "link": "https://www.contagionlive.com/view/remap-cap-and-the-tamiflu-pre-release-a-set-up-for-disaster",
-   "description": "Preliminary REMAP-CAP data suggesting oseltamivir may increase mortality in critically ill ICU influenza patients has sparked polarized reactions, but clinicians should await the full peer-reviewed manuscript before drawing broad conclusions, since the signal comes from a narrow, severely ill population and may reflect a therapeutic window effect rather than a blanket lack of efficacy.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Drug Topics",
-   "title": "Measles Resurgence Exposes US Vaccine Policy Risks, Experts Warn",
-   "link": "https://www.drugtopics.com/view/measles-resurgence-exposes-us-vaccine-policy-risks-experts-warn",
-   "description": "Jesse Goodman, MD, MPH, provides nuance regarding HHS’ suggestion to separate MMR combination vaccines as well as the looming elimination status review in November.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Drug Topics",
-   "title": "Study Identifies Patients at Risk for Severe COVID-19 Post-Vaccination",
-   "link": "https://www.drugtopics.com/view/study-identifies-patients-at-risk-for-severe-covid-19-post-vaccination",
-   "description": "A population-level analysis finds that age, comorbidity burden, and long-term care residence continue to drive severe outcomes.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Urology Times",
-   "title": "John Sfakianos, MD, discusses evolving management of recurrent LG-IR-NMIBC",
-   "link": "https://www.urologytimes.com/view/john-sfakianos-md-discusses-evolving-management-of-recurrent-lg-ir-nmibc",
-   "description": "John P. Sfakianos, MD, discusses the challenges of managing recurrent LG-IR-NMIBC and the role of chemoablation.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Urology Times",
-   "title": "App-based intervention aims to increase PSA screening among Black men",
-   "link": "https://www.urologytimes.com/view/app-based-intervention-aims-to-increase-psa-screening-among-black-men",
-   "description": "A randomized trial will test whether an app-guided, at-home PSA screening approach can improve prostate cancer screening among Black men.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Urology Times",
-   "title": "Dabogratinib shows early activity in FGFR3-altered LG-IR-NMIBC",
-   "link": "https://www.urologytimes.com/view/dabogratinib-shows-early-activity-in-fgfr3-altered-lg-ir-nmibc",
-   "description": "Dabogratinib showed early activity and manageable safety in FGFR3-altered LG-IR-NMIBC, supporting advancement to a planned registrational study in the adjuvant setting.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Urology Times",
-   "title": "The critical role of advocacy in urologic oncology",
-   "link": "https://www.urologytimes.com/view/the-critical-role-of-advocacy-in-urologic-oncology",
-   "description": "Advocacy through groups like BCAN and the AUA shapes urologic oncology policy���driving funding, screening access, and equity in cancer care, the authors write.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Contemporary Pediatrics",
-   "title": "A teenaged girl with flat-topped papules",
-   "link": "https://www.contemporarypediatrics.com/view/a-teenaged-girl-with-flat-topped-papules",
-   "description": "Can you guess the diagnosis?",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Contemporary Pediatrics",
-   "title": "Vosoritide improves growth velocity in children with hypochondroplasia, phase 3 trial shows",
-   "link": "https://www.contemporarypediatrics.com/view/vosoritide-improves-growth-velocity-children-hypochondroplasia-phase-3-trial",
-   "description": "Phase 3 CANOPY-HCH-3 data show vosoritide significantly improved growth velocity, height, and arm span in children with hypochondroplasia.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Contemporary Pediatrics",
-   "title": "CDC-backed surveillance finds 4 in 5 child deaths preventable across 7 high-mortality countries",
-   "link": "https://www.contemporarypediatrics.com/view/champs-surveillance-child-mortality-causes-preventability",
-   "description": "A CDC-backed CHAMPS surveillance report across 7 countries finds 80% of child deaths were preventable, with gram-negative bacteria driving neonatal sepsis.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "5 Shifts Redefining Automation",
-   "link": "https://www.chiefhealthcareexecutive.com/view/5-shifts-redefining-automation",
-   "description": "Automation is reshaping patient access and financial clearance. But when tools are disconnected, they can create fragmented workflows, delayed decisions and added staff burden.Our new e-book explores five shifts that can help health systems move beyond point solutions and build a more connected pre-care automation strategy. You’ll learn how real-time insight, strategic workflows and human expertise can help simplify access, reduce rework and support stronger financial performance.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "Changes: Brad Goettl, American Nurses Enterprise, on AI and nursing",
-   "link": "https://www.chiefhealthcareexecutive.com/view/changes-brad-goettl-american-nurses-enterprise-on-ai-and-nursing",
-   "description": "In a new episode of our video series, we discuss a partnership with the Johnson &amp; Johnson Foundation and Google to boost AI skills in the nursing workforce.",
-   "published": "2026-09-09"
-  },
-  {
-   "brand": "Chief Healthcare Executive",
-   "title": "The leadership advantage hospitals can't afford to ignore | Viewpoint",
-   "link": "https://www.chiefhealthcareexecutive.com/view/the-leadership-advantage-hospitals-can-t-afford-to-ignore-viewpoint",
-   "description": "In many industries, organizations build credibility by showing efficiency with resources before asking for more. Healthcare should be no exception.",
-   "published": "2026-09-09"
   }
  ],
- "updatedAt": "2026-10-24T10:19:26.406Z"
+ "updatedAt": "2026-10-25T10:45:02.799Z"
 }
