@@ -1529,5 +1529,25 @@
    }
   ],
   "recordedAt": "2026-10-23"
+ },
+ {
+  "drug": "TALZENNA Plus XTANDI",
+  "brandName": null,
+  "company": "Pfizer Inc.",
+  "pdufaDate": "2026-12-31",
+  "outcome": "Approved",
+  "certainty": "resolved",
+  "resolvedDate": null,
+  "sourceUrl": "https://www.sec.gov/Archives/edgar/data/78003/000007800323000085/pfe-07022023xex99.htm",
+  "evidence": [
+   {
+    "source": "RTTNews",
+    "detail": "Listed as Approved",
+    "confidence": "high",
+    "url": "https://www.sec.gov/Archives/edgar/data/78003/000007800323000085/pfe-07022023xex99.htm"
+   }
+  ],
+  "note": "Decided ahead of the listed PDUFA date of 2026-12-31.",
+  "recordedAt": "2026-10-27"
  }
 ]
