@@ -1,0 +1,11 @@
+{
+  "name": "biotech-tracker",
+  "version": "1.0.0",
+  "description": "Emerging US biotechs entering the clinic and advancing to Phase 2, from ClinicalTrials.gov + SEC EDGAR",
+  "main": "run.js",
+  "scripts": {
+    "start": "node run.js",
+    "cached": "node run.js --cached"
+  },
+  "license": "MIT"
+}

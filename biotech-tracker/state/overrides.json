@@ -1,0 +1,5 @@
+{
+  "_readme": "exclude: display names to drop. hq: {\"Name\": {\"us\": true, \"place\": \"Boston, MA\"}} to fix a headquarters.",
+  "exclude": [],
+  "hq": {}
+}

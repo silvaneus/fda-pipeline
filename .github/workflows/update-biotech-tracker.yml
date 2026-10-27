@@ -1,0 +1,38 @@
+name: Update Biotech Tracker
+
+on:
+  schedule:
+    # Daily at 7 AM UTC, an hour after the FDA pipeline run
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Never overlap with itself; the FDA job pushes to the same branch.
+concurrency: biotech-tracker
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: biotech-tracker
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '22'
+      - name: Run pipeline
+        run: node run.js
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add reports/ state/
+          git diff --staged --quiet && exit 0
+          git commit -m "Update biotech tracker - $(date +'%Y-%m-%d')"
+          # The FDA job may have pushed while this one ran.
+          git pull --rebase origin main
+          git push

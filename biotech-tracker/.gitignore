@@ -1,0 +1,6 @@
+node_modules/
+data/
+.DS_Store
+
+# state/ is tracked: the SEC lookup cache saves ~10 minutes of requests a run,
+# and overrides.json holds manual corrections.
