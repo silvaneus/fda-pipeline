@@ -18,12 +18,26 @@ const US_STATES = new Set('AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+// SEC fair access: at most 10 requests/s across all workers. Space request
+// starts 125 ms apart no matter how many lookups run at once.
+let nextSlot = 0;
+async function pace() {
+  const now = Date.now();
+  const wait = Math.max(0, nextSlot - now);
+  nextSlot = Math.max(now, nextSlot) + 125;
+  if (wait) await sleep(wait);
+}
+
 async function getJson(url) {
   for (let i = 1; i <= 4; i++) {
+    await pace();
     const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(30000) }).catch(() => null);
-    if (res?.ok) return res.json();
     if (res?.status === 404) return null;
-    await sleep(1500 * i); // EDGAR answers bursts with 429/500
+    if (res?.ok) {
+      const j = await res.json().catch(() => null);
+      if (j && !j.errorType) return j; // error bodies arrive with a 200
+    }
+    await sleep(800 * i); // EDGAR answers bursts with 429/500
   }
   throw new Error(`EDGAR failed: ${url}`);
 }
@@ -35,24 +49,38 @@ function loadCache() {
 async function lookup(sponsorName) {
   const name = splitParent(sponsorName).name;
   const want = normalize(name);
-  const q = encodeURIComponent(name.replace(/[,.]/g, ' ').replace(/\s+/g, ' ').trim());
-  const hits = (await getJson(`https://efts.sec.gov/LATEST/search-index?keysTyped=${q}`))?.hits?.hits || [];
+  const ascii = name.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[,.]/g, ' ').replace(/\s+/g, ' ').trim();
+  // EDGAR search sometimes fails for one exact query string while close
+  // variants work (seen: "Lexeo Therapeutics"), so fall back to rephrasings.
+  // Every query failing throws, so the name is retried next run rather than
+  // cached as "not found".
+  const queries = [...new Set([ascii, `${ascii} Inc`, ascii.split(' ').slice(0, 2).join(' '), ascii.split(' ')[0]])];
+  let hits = null;
+  for (const q of queries) {
+    try {
+      hits = (await getJson(`https://efts.sec.gov/LATEST/search-index?keysTyped=${encodeURIComponent(q)}`)).hits.hits;
+      if (hits.some(h => normalize(h._source.entity.replace(/\([A-Z.\-, ]+\)\s*$/, '')) === want)) break;
+    } catch { /* try the next phrasing */ }
+  }
+  if (!hits) throw new Error(`EDGAR search failed for ${name}`);
   const hit = hits.find(h => normalize(h._source.entity.replace(/\([A-Z.\-, ]+\)\s*$/, '')) === want);
   if (!hit) return { found: false };
-  await sleep(120);
   const sub = await getJson(`https://data.sec.gov/submissions/CIK${String(hit._id).padStart(10, '0')}.json`);
   if (!sub) return { found: false };
   const a = sub.addresses?.business || {};
   const forms = sub.filings?.recent?.form || [];
   const dates = sub.filings?.recent?.filingDate || [];
   const lastD = forms.findIndex(f => f === 'D' || f === 'D/A');
+  const formDDates = forms.map((f, i) => f === 'D' ? dates[i] : null).filter(Boolean);
   return {
     found: true,
+    formDDates,
     cik: Number(hit._id),
     edgarName: sub.name,
     city: a.city ? a.city.replace(/\w\S*/g, w => w[0] + w.slice(1).toLowerCase()) : null,
     state: a.stateOrCountry || null,
     us: US_STATES.has(a.stateOrCountry),
+    country: US_STATES.has(a.stateOrCountry) ? 'United States' : (a.stateOrCountryDescription || null),
     tickers: sub.tickers || [],
     lastFormD: lastD >= 0 ? dates[lastD] : null,
   };
@@ -69,18 +97,21 @@ async function enrich(names, { log = console.log } = {}) {
   });
   log(`  EDGAR: ${names.length - todo.length} cached, ${todo.length} to look up`);
   let done = 0;
-  for (const n of todo) {
-    try {
-      cache[n] = { ...(await lookup(n)), checked: new Date().toISOString().slice(0, 10) };
-    } catch (e) {
-      log(`  EDGAR skip ${n}: ${e.message}`);
+  const queue = [...todo];
+  const worker = async () => {
+    for (let n; (n = queue.shift()) !== undefined;) {
+      try {
+        cache[n] = { ...(await lookup(n)), checked: new Date().toISOString().slice(0, 10) };
+      } catch (e) {
+        log(`  EDGAR skip ${n}: ${e.message}`);
+      }
+      if (++done % 200 === 0) {
+        log(`  EDGAR ${done}/${todo.length}`);
+        fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
+      }
     }
-    if (++done % 100 === 0) {
-      log(`  EDGAR ${done}/${todo.length}`);
-      fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
-    }
-    await sleep(120); // SEC fair-access limit is 10 req/s
-  }
+  };
+  await Promise.all(Array.from({ length: 4 }, worker));
   fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
   return cache;
 }

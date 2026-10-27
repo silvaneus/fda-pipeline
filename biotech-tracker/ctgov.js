@@ -10,6 +10,7 @@ const FIELDS = [
   'NCTId', 'BriefTitle', 'LeadSponsorName', 'LeadSponsorClass', 'Phase',
   'StudyType', 'OverallStatus', 'StudyFirstPostDate', 'StartDate',
   'Condition', 'InterventionName', 'InterventionType', 'LocationCountry',
+  'CentralContactPhone', 'CentralContactEMail',
 ].join(',');
 
 async function getJson(url, tries = 4) {
@@ -46,6 +47,9 @@ function flatten(s) {
     interventions: (p.armsInterventionsModule?.interventions || []).map(x => x.name),
     interventionTypes: [...new Set((p.armsInterventionsModule?.interventions || []).map(x => x.type))],
     countries: [...countries],
+    contacts: (p.contactsLocationsModule?.centralContacts || [])
+      .map(c => ({ phone: c.phone || null, email: c.email || null }))
+      .filter(c => c.phone || c.email),
   };
 }
 

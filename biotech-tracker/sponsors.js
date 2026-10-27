@@ -11,7 +11,7 @@ const LEGAL_FORMS = new Set([
   'inc', 'incorporated', 'llc', 'llp', 'lp', 'ltd', 'limited', 'corp', 'corporation',
   'co', 'company', 'plc', 'gmbh', 'ag', 'sa', 'sas', 'sarl', 'srl', 'spa', 'nv', 'bv',
   'ab', 'as', 'asa', 'aps', 'oy', 'oyj', 'kk', 'pte', 'pty', 'pvt', 'private', 'se',
-  'usa', 'us', 'the', 'and',
+  'usa', 'us', 'the', 'and', 'operating',
 ]);
 
 // Legal forms that place a company outside the US. Used only when SEC EDGAR
@@ -35,6 +35,7 @@ function normalize(name) {
     .toLowerCase()
     .normalize('NFKD').replace(/[̀-ͯ]/g, '')
     .replace(/\([^)]*\)/g, ' ')
+    .replace(/\/[a-z]{2,3}\b/g, ' ') // EDGAR state tag: "Surrozen, Inc./DE"
     .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, ' ')
     .trim()

@@ -82,6 +82,63 @@ function buildCompanies(studies) {
   return companies;
 }
 
+// Interventions that are comparators, not the company's own program.
+const NON_PROGRAM = /placebo|vehicle|saline|sham|standard[- ]of[- ]care|best supportive|usual care|matching|\bcontrol\b|observation|no intervention|dummy/i;
+// Development codes ("MTX-531", "ABC123") are the surest sign of an in-house drug.
+const DEV_CODE = /\b[A-Z]{1,6}[- ]?\d{2,}[A-Z0-9-]*\b/;
+const PHASE_RANK = { 'Early Phase 1': 1, 'Phase 1': 2, 'Phase 1/2': 3, 'Phase 2': 4, 'Phase 2/3': 5, 'Phase 3': 6, 'Phase 4': 7, 'N/A': 0 };
+const ACTIVE = new Set(['RECRUITING', 'NOT_YET_RECRUITING', 'ACTIVE_NOT_RECRUITING', 'ENROLLING_BY_INVITATION']);
+
+/** Group a company's studies by lead drug: the closest thing to a pipeline chart. */
+function buildPipeline(c) {
+  const groups = new Map();
+  for (const s of c.studies) {
+    const ivs = s.interventions.filter(x => x && !NON_PROGRAM.test(x));
+    const primary = ivs.find(x => DEV_CODE.test(x)) || ivs[0];
+    if (!primary) continue;
+    const code = primary.match(DEV_CODE)?.[0];
+    const key = (code || primary).toLowerCase().replace(/[^a-z0-9]/g, '');
+    let g = groups.get(key);
+    if (!g) groups.set(key, g = { names: new Map(), with: new Set(), conditions: new Set(), studies: [] });
+    g.names.set(primary, (g.names.get(primary) || 0) + 1);
+    // Dose arms ("Mid Dose LX2006") repeat the lead code; they are not partners.
+    const sameDrug = x => (x.match(DEV_CODE)?.[0] || x).toLowerCase().replace(/[^a-z0-9]/g, '') === key;
+    ivs.filter(x => x !== primary && !sameDrug(x)).forEach(x => g.with.add(x));
+    s.conditions.forEach(x => g.conditions.add(x));
+    g.studies.push(s);
+  }
+  return [...groups.values()].map(g => {
+    const latest = g.studies[g.studies.length - 1];
+    const top = g.studies.map(stageOf).sort((a, b) => PHASE_RANK[b] - PHASE_RANK[a])[0];
+    return {
+      drug: [...g.names.entries()].sort((a, b) => b[1] - a[1] || a[0].length - b[0].length)[0][0],
+      with: [...g.with].slice(0, 4),
+      conditions: [...g.conditions].slice(0, 6),
+      area: classifyCondition([...g.conditions]),
+      phase: top,
+      status: latest.status,
+      active: g.studies.some(s => ACTIVE.has(s.status)),
+      trials: g.studies.map(s => s.nct),
+      firstPosted: g.studies[0].firstPosted,
+      lastPosted: latest.firstPosted,
+    };
+  }).sort((a, b) => PHASE_RANK[b.phase] - PHASE_RANK[a.phase] || b.lastPosted.localeCompare(a.lastPosted));
+}
+
+function buildProfile(c) {
+  const areas = {};
+  for (const s of c.studies) { const a = classifyCondition(s.conditions); areas[a] = (areas[a] || 0) + 1; }
+  return {
+    key: c.key, name: c.name, otherNames: [...c.names.keys()].filter(n => n !== c.name).slice(0, 5),
+    parent: c.parentName, area: c.area, areas, trialCount: c.trialCount, highest: c.highest,
+    firstTrialDate: c.firstTrial.firstPosted, firstP2Date: c.firstP2?.firstPosted || null, lastPosted: c.lastPosted,
+    activeCount: c.studies.filter(s => ACTIVE.has(s.status)).length,
+    usSites: c.studies.some(hasUS),
+    pipeline: buildPipeline(c).slice(0, 20),
+    studies: c.studies.slice(-40).map(slimStudy).reverse(),
+  };
+}
+
 function summarize(c, extra = {}) {
   return {
     key: c.key, name: c.name, parent: c.parentName, area: c.area,
@@ -144,7 +201,7 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
   newToP2.sort(byDate(c => c.firstP2Date));
   p2Starts.sort(byDate(s => s.posted));
   directory.sort(byDate(c => c.lastPosted));
-  return { newCompanies, newToP2, p2Starts, directory, config: cfg, companyCount: companies.size };
+  return { newCompanies, newToP2, p2Starts, directory, config: cfg, companyCount: companies.size, companies };
 }
 
-module.exports = { buildViews, CONFIG };
+module.exports = { buildViews, buildProfile, CONFIG };

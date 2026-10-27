@@ -17,10 +17,19 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
    sponsor name ("Acme Bio, Inc." = "Acme Bio"); a "subsidiary of X" sponsor is
    folded into X. Only studies with a phase and a drug/biologic/genetic
    intervention count (device studies are excluded).
-3. **Headquarters** (`edgar.js`): SEC EDGAR exact-name match → city/state,
-   public ticker, latest Form D (private fundraising). Cached in
-   `state/edgar.json`; misses are rechecked every 30 days.
-4. **Render** (`render.js`) → `reports/index.html`.
+3. **Headquarters**, strongest source first:
+   - SEC EDGAR (`edgar.js`): exact-name match → city/state, public ticker,
+     Form D dates (private fundraising). Cached in `state/edgar.json`.
+   - Trial contacts (`locate.js`): when a study's contact email is on the
+     company's own domain, the phone's US area code → state (or country code
+     → country). Also gives the company website. CRO/hospital contacts ignored.
+   - GLEIF legal-entity registry, only for companies the first two can't place
+     (`state/gleif.json`; ~1 request/s).
+   - Legal form in the name (Ltd, GmbH, Co., Ltd.) → outside US.
+   Misses are rechecked every 30 days. SEC search sometimes returns an error
+   body with HTTP 200; that is retried, never cached as "not found".
+4. **Render** (`render.js`) → `reports/index.html` plus `reports/profiles.js`
+   (company profiles, loaded on first click; `#c=<key>` links open one).
 
 ## Definitions (`CONFIG` in analyze.js)
 
@@ -49,8 +58,8 @@ node run.js --cached   # reuse data/all-industry.json
 
 ## Known limits
 
-- No sponsor-address field on ClinicalTrials.gov; "Not verified" HQ = no SEC
-  filing under that exact name (common for foreign and very early companies).
+- No sponsor-address field on ClinicalTrials.gov; a dash for HQ means none of
+  the sources above could place the company.
 - A company whose first trial is registered only elsewhere (e.g., Australia's
   ANZCTR) can look newer than it is.
 - Renamed companies without a "subsidiary of" note appear as separate companies.
