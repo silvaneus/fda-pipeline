@@ -19,7 +19,10 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
    intervention count (device studies are excluded).
 3. **Headquarters**, strongest source first:
    - SEC EDGAR (`edgar.js`): exact-name match → city/state, public ticker,
-     Form D dates (private fundraising). Cached in `state/edgar.json`.
+     and Form D private-fundraising filings with amounts. Each D/A names the
+     filing it amends, so a round is counted once at its latest amount sold.
+     Cached in `state/edgar.json`; amounts refetch only when the filing list
+     changes. SEC requires a contact email in the User-Agent for documents.
    - Trial contacts (`locate.js`): when a study's contact email is on the
      company's own domain, the phone's US area code → state (or country code
      → country). Also gives the company website. CRO/hospital contacts ignored.
@@ -42,6 +45,16 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
 
 Newly posted studies often list no sites for weeks, so "sites pending" studies
 are included; the headquarters filter does the US screening.
+
+## Filters
+
+- **Indication** (`indications.js`): second-level tags under each therapeutic
+  area (e.g., Oncology › Lung cancer), regex-matched on trial conditions. A
+  company appears under an area if any of its trials does. ~71% of recent
+  drug trials get a tag; most of the rest are healthy-volunteer/PK studies.
+- **Raised at least**: total from Form D filings. Public companies' stock
+  offerings are not in Form D, so their totals understate funding.
+- **Search** covers names, every trial condition and lead drug codes.
 
 ## Manual corrections
 

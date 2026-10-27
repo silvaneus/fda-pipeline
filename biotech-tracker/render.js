@@ -114,12 +114,15 @@ function renderDashboard(views, meta) {
   <div class="filters">
     <div class="filter-group"><label for="q">Search</label><input id="q" type="search" placeholder="Company, drug, condition…" style="min-width:240px"></div>
     <div class="filter-group"><label for="area">Therapeutic area</label><select id="area"><option value="">All areas</option></select></div>
+    <div class="filter-group"><label for="ind">Indication</label><select id="ind" style="max-width:260px"><option value="">All indications</option></select></div>
     <div class="filter-group"><label for="hq">Headquarters</label>
       <select id="hq">
         <option value="us-or-unknown">US + unknown</option>
         <option value="us">US confirmed only</option>
         <option value="all">All, including non-US</option>
       </select></div>
+    <div class="filter-group"><label for="raised" title="Total reported in SEC private-fundraising filings (Form D). Public stock offerings are not included.">Raised at least</label>
+      <select id="raised"><option value="0">Any amount</option><option value="1e6">$1M</option><option value="1e7">$10M</option><option value="2.5e7">$25M</option><option value="5e7">$50M</option><option value="1e8">$100M</option><option value="2.5e8">$250M</option></select></div>
     <div class="filter-group"><label for="own">Ownership</label>
       <select id="own"><option value="">Any</option><option value="public">Public</option><option value="private">Private</option></select></div>
     <label class="check" id="smallWrap"><input type="checkbox" id="small" checked> Smaller companies only (≤ <span id="smallN"></span> trials)</label>
@@ -170,15 +173,18 @@ function hqCell(h) {
   const inner = soft ? '<span class="soft" title="' + esc(hqSourceNote(h)) + '">' + esc(t) + '</span>' : esc(t);
   return h.us === false ? '<span class="muted">' + inner + '</span>' : inner;
 }
+const money = n => !n ? '' : n >= 1e9 ? '$' + (n / 1e9).toFixed(1) + 'B' : n >= 1e6 ? '$' + (n / 1e6).toFixed(n >= 1e8 ? 0 : 1) + 'M' : '$' + Math.round(n / 1e3) + 'K';
 function ownText(h) {
-  if (h.public) return 'Public' + (h.ticker ? ' (' + h.ticker + ')' : '');
-  if (h.source === 'sec') return 'Private' + (h.lastFormD ? ', last raise ' + fmtMonth(h.lastFormD) : '');
-  return '';
+  const parts = [h.public ? 'Public' + (h.ticker ? ' (' + h.ticker + ')' : '') : h.source === 'sec' ? 'Private' : ''];
+  if (h.totalRaised) parts.push(money(h.totalRaised) + ' raised');
+  return parts.filter(Boolean).join(', ');
 }
 function ownCell(h) {
-  if (h.public) return '<span class="badge b-public">' + esc(h.ticker || 'Public') + '</span>';
-  if (h.source === 'sec') return 'Private' + (h.lastFormD ? '<div class="muted">last raise ' + fmtMonth(h.lastFormD) + '</div>' : '');
-  return '<span class="muted">—</span>';
+  const last = h.raises?.[0];
+  const tag = h.public ? '<span class="badge b-public">' + esc(h.ticker || 'Public') + '</span>' : h.source === 'sec' ? 'Private' : '';
+  if (h.totalRaised) return '<b>' + money(h.totalRaised) + '</b> ' + tag +
+    '<div class="muted nowrap">last ' + money(last.amount) + ', ' + fmtMonth(last.date) + '</div>';
+  return tag || '<span class="unknown">—</span>';
 }
 function sitesBadge(s) {
   return s.sites === 'Pending' ? ' <span class="badge b-pending" title="No trial sites listed yet">sites pending</span>'
@@ -206,7 +212,7 @@ const TABS = {
     cols: [
       ['Company', c => c.name, c => companyCell(c)],
       ['Headquarters', c => hqText(c.hq), c => hqCell(c.hq)],
-      ['Ownership', c => ownText(c.hq), c => ownCell(c.hq)],
+      ['Funding', c => c.hq.totalRaised || 0, c => ownCell(c.hq), 'num'],
       ['Area', c => c.area, c => esc(c.area)],
       ['First trial posted', c => c.firstTrialDate, c => '<span class="nowrap">' + fmtDate(c.firstTrialDate) + '</span>'],
       ['Lead study', c => c.studies[0].title, c => { const s = c.studies[0]; return esc(s.title) + sitesBadge(s) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(s.conditions.slice(0, 2).join('; ')) + '</div>'; }],
@@ -222,7 +228,7 @@ const TABS = {
     cols: [
       ['Company', c => c.name, c => companyCell(c)],
       ['Headquarters', c => hqText(c.hq), c => hqCell(c.hq)],
-      ['Ownership', c => ownText(c.hq), c => ownCell(c.hq)],
+      ['Funding', c => c.hq.totalRaised || 0, c => ownCell(c.hq), 'num'],
       ['Area', c => c.area, c => esc(c.area)],
       ['First Phase 2 posted', c => c.firstP2Date, c => '<span class="nowrap">' + fmtDate(c.firstP2Date) + '</span>'],
       ['Path', c => c.priorP1Count ? c.monthsToP2 : -1, c => c.priorP1Count
@@ -240,7 +246,7 @@ const TABS = {
       ['Posted', s => s.posted, s => '<span class="nowrap">' + fmtDate(s.posted) + '</span>'],
       ['Company', s => s.company, s => '<span class="co-link">' + esc(s.company) + '</span>' + (s.firstP2ForCompany ? ' <span class="badge b-p2">First Phase 2</span>' : '')],
       ['Headquarters', s => hqText(s.hq), s => hqCell(s.hq)],
-      ['Ownership', s => ownText(s.hq), s => ownCell(s.hq)],
+      ['Funding', s => s.hq.totalRaised || 0, s => ownCell(s.hq), 'num'],
       ['Area', s => s.area, s => esc(s.area)],
       ['Study', s => s.title, s => esc(s.title) + sitesBadge(s) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(s.conditions.slice(0, 3).join('; ')) + (s.interventions.length ? ' · ' + esc(s.interventions.join(', ')) : '') + '</div>'],
       ['Status', s => s.status, s => '<span class="nowrap">' + esc(title(s.status)) + '</span>'],
@@ -255,7 +261,7 @@ const TABS = {
     cols: [
       ['Company', c => c.name, c => '<span class="co-link">' + esc(c.name) + '</span>' + (c.isNew ? ' <span class="badge b-new">New</span>' : '') + (c.isNewP2 ? ' <span class="badge b-p2">New to Phase 2</span>' : '')],
       ['Headquarters', c => hqText(c.hq), c => hqCell(c.hq)],
-      ['Ownership', c => ownText(c.hq), c => ownCell(c.hq)],
+      ['Funding', c => c.hq.totalRaised || 0, c => ownCell(c.hq), 'num'],
       ['Area', c => c.area, c => esc(c.area)],
       ['Furthest phase', c => c.highest, c => esc(c.highest)],
       ['First trial', c => c.firstTrialDate, c => '<span class="nowrap">' + fmtDate(c.firstTrialDate) + '</span>'],
@@ -279,11 +285,17 @@ function passes(r) {
   const own = $('own').value;
   if (own === 'public' && !h.public) return false;
   if (own === 'private' && (h.public || h.source !== 'sec')) return false;
-  if ($('area').value && r.area !== $('area').value) return false;
+  if (+$('raised').value && !((h.totalRaised || 0) >= +$('raised').value)) return false;
+  const area = $('area').value;
+  // A company counts for an area if any of its indications falls there, not
+  // just its main one: a neurology company with one lung-cancer drug shows
+  // up under Oncology.
+  if (area && r.area !== area && !(r.indications || []).some(t => t.startsWith(area + ' › '))) return false;
+  if ($('ind').value && !(r.indications || []).includes($('ind').value)) return false;
   if (TABS[tab].small && $('small').checked && r.trialCount > C.smallCompanyMaxTrials) return false;
   const q = $('q').value.trim().toLowerCase();
   if (q) {
-    const hay = JSON.stringify([r.name, r.company, r.title, r.conditions, r.interventions, r.studies, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
+    const hay = JSON.stringify([r.name, r.company, r.title, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
     if (!hay.includes(q)) return false;
   }
   return true;
@@ -332,6 +344,17 @@ function setup() {
   $('tabs').innerHTML = Object.entries(TABS).map(([t, T]) => '<button class="tab" data-t="' + t + '">' + T.label + '<span class="n" data-t="' + t + '"></span></button>').join('');
   const areas = [...new Set([...D.directory, ...D.newCompanies, ...D.newToP2, ...D.p2Starts].map(r => r.area))].sort();
   $('area').innerHTML += areas.map(a => '<option>' + esc(a) + '</option>').join('');
+  const allTags = [...new Set([...D.directory, ...D.newCompanies, ...D.newToP2, ...D.p2Starts].flatMap(r => r.indications || []))].sort();
+  const fillInd = () => {
+    const area = $('area').value, cur = $('ind').value;
+    const byArea = {};
+    for (const t of allTags) { const [a, n] = t.split(' › '); if (!area || a === area) (byArea[a] = byArea[a] || []).push([t, n]); }
+    $('ind').innerHTML = '<option value="">All indications</option>' + Object.entries(byArea).map(([a, list]) =>
+      '<optgroup label="' + esc(a) + '">' + list.map(([t, n]) => '<option value="' + esc(t) + '">' + esc(n) + '</option>').join('') + '</optgroup>').join('');
+    $('ind').value = allTags.includes(cur) && (!area || cur.startsWith(area + ' › ')) ? cur : '';
+  };
+  fillInd();
+  $('area').addEventListener('input', fillInd);
   $('footer').innerHTML = 'Sources: ClinicalTrials.gov (all industry-sponsored interventional studies; Phase 1/2 studies count as Phase 1) and SEC EDGAR (headquarters, public listing, funding filings). ' +
     'Headquarters comes from SEC filings first, then the global legal-entity registry (GLEIF), then the phone number on the company\\'s own trial contacts (dotted underline = inferred). A dash means no public record was found. ' +
     'Companies whose first trial was registered only outside ClinicalTrials.gov (e.g., Australia\\'s registry) can appear newer than they are.';
@@ -348,8 +371,8 @@ function setup() {
     const tr = e.target.closest('tr.row');
     if (tr && !e.target.closest('a')) openProfile(tr.dataset.key);
   });
-  ['q', 'area', 'hq', 'own', 'small'].forEach(id => $(id).addEventListener('input', render));
-  $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; render(); };
+  ['q', 'area', 'ind', 'raised', 'hq', 'own', 'small'].forEach(id => $(id).addEventListener('input', render));
+  $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('area').dispatchEvent(new Event('input')); $('raised').value = '0'; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; render(); };
   $('export').onclick = exportCsv;
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile(); });
   window.addEventListener('hashchange', fromHash);
@@ -379,6 +402,7 @@ function bio(p) {
   const where = h.us === true ? (h.place ? 'based in ' + h.place : 'US-based') : h.us === false && (h.place || h.country) ? 'based in ' + (h.place || h.country) : '';
   let t = esc(p.name) + ' is a ' + (own ? own + ' ' : '') + 'drug developer' + (where ? ' ' + esc(where) : '') +
     ' that registered its first trial on ClinicalTrials.gov in ' + fmtMonth(p.firstTrialDate) + '. ';
+  if (h.totalRaised) t += 'It has reported raising ' + money(h.totalRaised) + ' in SEC filings, most recently ' + money(h.raises[0].amount) + ' in ' + fmtMonth(h.raises[0].date) + '. ';
   t += 'It has ' + p.trialCount + ' drug trial' + (p.trialCount === 1 ? '' : 's') + ' on record' + (p.activeCount ? ' (' + p.activeCount + ' active)' : '') +
     ', and its furthest program has reached ' + esc(p.highest) + '. ';
   const lead = p.pipeline[0];
@@ -400,7 +424,7 @@ function profileHtml(p) {
   const site = h.website ? '<a class="nct" target="_blank" rel="noopener" href="https://' + esc(h.website) + '">' + esc(h.website) + '</a>' : '<span class="unknown">—</span>';
   const pipe = p.pipeline.length ? '<div class="table-wrapper" style="max-height:none"><table><thead><tr><th>Drug</th><th>Indications</th><th>Phase</th><th>Status</th><th>Trials</th></tr></thead><tbody>' +
     p.pipeline.map(g => '<tr><td><b>' + esc(g.drug) + '</b>' + (g.with.length ? '<div class="muted">with ' + esc(g.with.join(', ')) + '</div>' : '') +
-      '</td><td>' + esc(g.conditions.slice(0, 3).join('; ')) + '<div class="muted">' + esc(g.area) + '</div></td><td class="nowrap">' + esc(g.phase) +
+      '</td><td>' + esc(g.conditions.slice(0, 3).join('; ')) + '<div class="muted">' + esc((g.indications.length ? g.indications.map(t => t.split(' › ')[1]) : [g.area]).join(', ')) + '</div></td><td class="nowrap">' + esc(g.phase) +
       '</td><td class="nowrap">' + esc(title(g.status || '')) + '</td><td>' + g.trials.slice(-4).map(nctLink).join('<br>') + (g.trials.length > 4 ? '<div class="muted">+' + (g.trials.length - 4) + ' more</div>' : '') + '</td></tr>').join('') +
     '</tbody></table></div><div class="src">Grouped by lead drug in each trial; combination partners listed under "with".</div>' : '<p class="muted">No drug names listed on its trials.</p>';
   const q = encodeURIComponent(p.name.replace(/,?\s*(Inc|LLC|Ltd|Corp)\.?$/i, ''));
@@ -420,7 +444,11 @@ function profileHtml(p) {
       fact('Headquarters', (hqText(h) ? esc(hqText(h)) : '<span class="unknown">Unknown</span>') + '<div class="src">' + esc(hqSourceNote(h)) + '</div>') +
       fact('Ownership', h.public ? 'Public' + (h.ticker ? ' · ' + esc(h.ticker) : '') : h.source === 'sec' ? 'Private' : '<span class="unknown">Unknown</span>') +
       fact('Website', site) +
-      fact('SEC funding filings', raises.length ? raises.slice(0, 4).join(', ') + (raises.length > 4 ? ' …' : '') + '<div class="src">Dates of private fundraising disclosures</div>' : '<span class="unknown">None found</span>') +
+      fact('Raised (SEC filings)', h.totalRaised
+        ? '<b>' + money(h.totalRaised) + '</b> across ' + h.raises.length + ' round' + (h.raises.length > 1 ? 's' : '') +
+          '<div class="muted">' + h.raises.slice(0, 4).map(r => money(r.amount) + ' ' + fmtMonth(r.date)).join(' · ') + (h.raises.length > 4 ? ' …' : '') + '</div>' +
+          '<div class="src">From private fundraising filings (Form D); public stock offerings not included</div>'
+        : raises.length ? raises.slice(0, 4).join(', ') + '<div class="src">Filing dates; amounts not reported</div>' : '<span class="unknown">None found</span>') +
       fact('In the clinic since', fmtMonth(p.firstTrialDate)) +
       fact('First Phase 2', p.firstP2Date ? fmtMonth(p.firstP2Date) : '<span class="unknown">Not yet</span>') +
       fact('Trials', p.trialCount + (p.activeCount ? ' · ' + p.activeCount + ' active' : '')) +
@@ -461,11 +489,11 @@ function exportCsv() {
   const rows = filtered(tab);
   const cell = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
   const head = tab === 'starts'
-    ? ['Posted', 'Company', 'Headquarters', 'Ownership', 'Area', 'NCT', 'Phase', 'Study', 'Conditions', 'Interventions', 'Status', 'Company trials', 'First Phase 2']
-    : ['Company', 'Headquarters', 'Ownership', 'Area', 'Furthest phase', 'First trial', 'First Phase 2', 'Latest trial', 'Trials', 'Studies'];
+    ? ['Posted', 'Company', 'Headquarters', 'Funding', 'Raised (USD)', 'Area', 'NCT', 'Phase', 'Study', 'Conditions', 'Interventions', 'Status', 'Company trials', 'First Phase 2']
+    : ['Company', 'Headquarters', 'Funding', 'Raised (USD)', 'Area', 'Indications', 'Lead drugs', 'Furthest phase', 'First trial', 'First Phase 2', 'Latest trial', 'Trials', 'Studies'];
   const lines = rows.map(r => tab === 'starts'
-    ? [r.posted, r.company, hqText(r.hq), ownText(r.hq), r.area, r.nct, r.phase, r.title, r.conditions.join('; '), r.interventions.join('; '), r.status, r.trialCount, r.firstP2ForCompany ? 'Yes' : '']
-    : [r.name, hqText(r.hq), ownText(r.hq), r.area, r.highest, r.firstTrialDate, r.firstP2Date, r.lastPosted, r.trialCount, (r.studies || []).map(s => s.nct).join(' ')]);
+    ? [r.posted, r.company, hqText(r.hq), ownText(r.hq), r.hq.totalRaised || '', r.area, r.nct, r.phase, r.title, r.conditions.join('; '), r.interventions.join('; '), r.status, r.trialCount, r.firstP2ForCompany ? 'Yes' : '']
+    : [r.name, hqText(r.hq), ownText(r.hq), r.hq.totalRaised || '', r.area, (r.indications || []).map(t => t.split(' › ')[1]).join('; '), (r.drugs || []).join('; '), r.highest, r.firstTrialDate, r.firstP2Date, r.lastPosted, r.trialCount, (r.studies || []).map(s => s.nct).join(' ')]);
   const csv = [head, ...lines].map(l => l.map(cell).join(',')).join('\\n');
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv' }));

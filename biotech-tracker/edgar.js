@@ -12,7 +12,8 @@ const path = require('path');
 const { normalize, splitParent } = require('./sponsors');
 
 const CACHE_FILE = path.join(__dirname, 'state', 'edgar.json');
-const UA = 'MJH Life Sciences biotech tracker (research use)';
+// SEC requires a contact email in the User-Agent for document downloads.
+const UA = 'MJH Life Sciences Biotech Tracker sinman@mjhlifesciences.com';
 const MISS_RECHECK_DAYS = 30;
 const US_STATES = new Set('AL AK AZ AR CA CO CT DE DC FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS MO MT NE NV NH NJ NM NY NC ND OH OK OR PA PR RI SC SD TN TX UT VT VA WA WV WI WY'.split(' '));
 
@@ -72,9 +73,12 @@ async function lookup(sponsorName) {
   const dates = sub.filings?.recent?.filingDate || [];
   const lastD = forms.findIndex(f => f === 'D' || f === 'D/A');
   const formDDates = forms.map((f, i) => f === 'D' ? dates[i] : null).filter(Boolean);
+  const accs = sub.filings?.recent?.accessionNumber || [];
+  const formD = forms.map((f, i) => (f === 'D' || f === 'D/A') ? { acc: accs[i], form: f, date: dates[i] } : null).filter(Boolean);
   return {
     found: true,
     formDDates,
+    formD,
     cik: Number(hit._id),
     edgarName: sub.name,
     city: a.city ? a.city.replace(/\w\S*/g, w => w[0] + w.slice(1).toLowerCase()) : null,
@@ -116,4 +120,91 @@ async function enrich(names, { log = console.log } = {}) {
   return cache;
 }
 
-module.exports = { enrich, lookup, loadCache };
+// --- Fundraising amounts (Form D) ---------------------------------------------
+
+function xmlTag(xml, tag) {
+  const m = xml.match(new RegExp(`<${tag}>([\\s\\S]*?)</${tag}>`));
+  return m ? m[1].replace(/<[^>]+>/g, '').trim() : null;
+}
+
+async function getText(url) {
+  for (let i = 1; i <= 4; i++) {
+    await pace();
+    const res = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(30000) }).catch(() => null);
+    if (res?.status === 404) return null;
+    if (res?.ok) {
+      const t = await res.text();
+      if (t.includes('<edgarSubmission')) return t;
+    }
+    await sleep(800 * i);
+  }
+  throw new Error(`EDGAR document failed: ${url}`);
+}
+
+/**
+ * Raise amounts from a company's Form D filings. An amendment (D/A) names the
+ * filing it updates, so each round is counted once, at its latest reported
+ * amount sold. Rounds are dated by their original filing.
+ */
+async function fetchRaises(cik, formD) {
+  const docs = [];
+  for (const f of formD.slice(0, 25)) {
+    const xml = await getText(`https://www.sec.gov/Archives/edgar/data/${cik}/${f.acc.replace(/-/g, '')}/primary_doc.xml`);
+    if (!xml) continue;
+    const num = t => { const v = xmlTag(xml, t); return v && /^\d+(\.\d+)?$/.test(v) ? Number(v) : null; };
+    docs.push({ acc: f.acc, date: f.date, prev: xmlTag(xml, 'previousAccessionNumber'), sold: num('totalAmountSold'), offered: num('totalOfferingAmount') });
+  }
+  const byAcc = new Map(docs.map(d => [d.acc, d]));
+  const root = d => { const seen = new Set(); while (d.prev && byAcc.has(d.prev) && !seen.has(d.acc)) { seen.add(d.acc); d = byAcc.get(d.prev); } return d; };
+  const rounds = new Map();
+  for (const d of docs) {
+    const r = root(d);
+    const cur = rounds.get(r.acc) || { date: r.date, amount: 0, offered: null, updated: d.date };
+    // Latest filing in the chain wins; amounts sold only grow within a round.
+    if (d.date >= cur.updated || cur.amount === 0) {
+      cur.amount = Math.max(cur.amount, d.sold || 0);
+      cur.offered = d.offered ?? cur.offered;
+      cur.updated = d.date;
+    }
+    rounds.set(r.acc, cur);
+  }
+  const list = [...rounds.values()].filter(r => r.amount > 0).sort((a, b) => b.date.localeCompare(a.date))
+    .map(({ date, amount, offered }) => ({ date, amount, offered }));
+  return { raises: list, totalRaised: list.reduce((n, r) => n + r.amount, 0) };
+}
+
+/** Add raise amounts to every SEC match whose Form D list changed since last time. */
+async function enrichRaises(names, { log = console.log } = {}) {
+  const cache = loadCache();
+  const todo = names.filter(n => {
+    const c = cache[n];
+    if (!c?.found) return false;
+    if (!c.formD) return true; // cached before accession numbers were kept
+    return c.formD.length && c.raisesFor !== c.formD.map(f => f.acc).join(',');
+  });
+  log(`  Form D amounts: ${todo.length} companies to fetch`);
+  let done = 0;
+  const queue = [...todo];
+  const worker = async () => {
+    for (let n; (n = queue.shift()) !== undefined;) {
+      const c = cache[n];
+      try {
+        if (!c.formD) Object.assign(c, await lookup(n));
+        if (c.found && c.formD?.length) {
+          Object.assign(c, await fetchRaises(c.cik, c.formD), { raisesFor: c.formD.map(f => f.acc).join(',') });
+        }
+      } catch (e) {
+        log(`  Form D skip ${n}: ${e.message}`);
+      }
+      if (++done % 100 === 0) {
+        log(`  Form D ${done}/${todo.length}`);
+        fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 4 }, worker));
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
+  return cache;
+}
+
+module.exports = { enrich, enrichRaises, lookup, loadCache, fetchRaises };

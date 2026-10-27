@@ -6,6 +6,7 @@
 
 const { sponsorKey, parentKey, splitParent } = require('./sponsors');
 const { classifyCondition } = require('./classify-disease');
+const { tagIndications } = require('./indications');
 
 const CONFIG = {
   newWindowDays: 183,      // how long a company keeps its "new" flag
@@ -111,6 +112,7 @@ function buildPipeline(c) {
     const latest = g.studies[g.studies.length - 1];
     const top = g.studies.map(stageOf).sort((a, b) => PHASE_RANK[b] - PHASE_RANK[a])[0];
     return {
+      indications: tagIndications([...g.conditions]),
       drug: [...g.names.entries()].sort((a, b) => b[1] - a[1] || a[0].length - b[0].length)[0][0],
       with: [...g.with].slice(0, 4),
       conditions: [...g.conditions].slice(0, 6),
@@ -140,8 +142,14 @@ function buildProfile(c) {
 }
 
 function summarize(c, extra = {}) {
+  const conds = [...new Set(c.studies.flatMap(s => s.conditions))];
   return {
     key: c.key, name: c.name, parent: c.parentName, area: c.area,
+    indications: tagIndications(conds),
+    // Search fields: every condition and lead drug, so "NSCLC" or a drug
+    // code finds a company even from the directory.
+    conds: conds.slice(-30),
+    drugs: buildPipeline(c).slice(0, 15).map(g => g.drug),
     trialCount: c.trialCount, highest: c.highest,
     firstTrialDate: c.firstTrial.firstPosted,
     firstP2Date: c.firstP2?.firstPosted || null,
@@ -183,7 +191,7 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
     for (const s of usP2) {
       if (s.firstPosted >= startsCut) {
         p2Starts.push({ ...slimStudy(s), companyKey: c.key, company: c.name, trialCount: c.trialCount,
-          area: classifyCondition(s.conditions), firstP2ForCompany: s === c.firstP2 });
+          area: classifyCondition(s.conditions), indications: tagIndications(s.conditions), firstP2ForCompany: s === c.firstP2 });
       }
     }
 

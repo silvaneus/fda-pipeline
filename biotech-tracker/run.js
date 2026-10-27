@@ -36,6 +36,7 @@ function resolveHq(company, sec, gleif, overrides) {
   const secInfo = e?.found ? {
     public: e.tickers.length > 0, ticker: e.tickers[0] || null, cik: e.cik,
     lastFormD: e.lastFormD, formDDates: (e.formDDates || []).slice(0, 8),
+    totalRaised: e.totalRaised || 0, raises: (e.raises || []).slice(0, 10),
   } : {};
   if (e?.found) {
     return { ...base, ...secInfo, us: e.us, country: e.country, source: 'sec',
@@ -82,7 +83,8 @@ async function main() {
   const shown = [...keys].map(k => companies.get(k));
   const names = shown.map(c => c.name);
 
-  const sec = lookups ? await edgar.enrich(names) : edgar.loadCache();
+  if (lookups) await edgar.enrich(names);
+  const sec = lookups ? await edgar.enrichRaises(names) : edgar.loadCache();
   // GLEIF is slow (~1 request/s) and rarely knows small private biotechs, so
   // ask it only about companies neither SEC nor the trial contacts could place.
   const gleifNames = shown.filter(c => !sec[c.name]?.found && !overrides.hq?.[c.name] &&
