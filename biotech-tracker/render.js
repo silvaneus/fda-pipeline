@@ -403,8 +403,8 @@ function bio(p) {
   let t = esc(p.name) + ' is a ' + (own ? own + ' ' : '') + 'drug developer' + (where ? ' ' + esc(where) : '') +
     ' that registered its first trial on ClinicalTrials.gov in ' + fmtMonth(p.firstTrialDate) + '. ';
   if (h.totalRaised) t += 'It has reported raising ' + money(h.totalRaised) + ' in SEC filings, most recently ' + money(h.raises[0].amount) + ' in ' + fmtMonth(h.raises[0].date) + '. ';
-  t += 'It has ' + p.trialCount + ' drug trial' + (p.trialCount === 1 ? '' : 's') + ' on record' + (p.activeCount ? ' (' + p.activeCount + ' active)' : '') +
-    ', and its furthest program has reached ' + esc(p.highest) + '. ';
+  t += 'It has ' + p.liveCount + ' current drug trial' + (p.liveCount === 1 ? '' : 's') + (p.activeCount ? ' (' + p.activeCount + ' active)' : '') +
+    (p.highest === 'None active' ? ', and no programs that have not been terminated or withdrawn. ' : ', and its furthest program has reached ' + esc(p.highest) + '. ');
   const lead = p.pipeline[0];
   if (lead) t += 'Its most advanced drug, <b>' + esc(lead.drug) + '</b>, is in ' + esc(lead.phase) + ' for ' + esc(lead.conditions.slice(0, 2).join(' and ') || 'an undisclosed indication') + '. ';
   if (p.pipeline.length > 1) t += 'It has ' + (p.pipeline.length - 1) + ' other program' + (p.pipeline.length > 2 ? 's' : '') + ' in the clinic. ';
@@ -426,7 +426,7 @@ function profileHtml(p) {
     p.pipeline.map(g => '<tr><td><b>' + esc(g.drug) + '</b>' + (g.with.length ? '<div class="muted">with ' + esc(g.with.join(', ')) + '</div>' : '') +
       '</td><td>' + esc(g.conditions.slice(0, 3).join('; ')) + '<div class="muted">' + esc((g.indications.length ? g.indications.map(t => t.split(' › ')[1]) : [g.area]).join(', ')) + '</div></td><td class="nowrap">' + esc(g.phase) +
       '</td><td class="nowrap">' + esc(title(g.status || '')) + '</td><td>' + g.trials.slice(-4).map(nctLink).join('<br>') + (g.trials.length > 4 ? '<div class="muted">+' + (g.trials.length - 4) + ' more</div>' : '') + '</td></tr>').join('') +
-    '</tbody></table></div><div class="src">Grouped by lead drug in each trial; combination partners listed under "with".</div>' : '<p class="muted">No drug names listed on its trials.</p>';
+    '</tbody></table></div><div class="src">Grouped by lead drug in each trial; combination partners listed under "with". Terminated and withdrawn trials excluded.</div>' : '<p class="muted">No drug names listed on its trials.</p>';
   const q = encodeURIComponent(p.name.replace(/,?\s*(Inc|LLC|Ltd|Corp)\.?$/i, ''));
   const links = '<div class="links">' +
     '<a target="_blank" rel="noopener" href="https://clinicaltrials.gov/search?spons=' + encodeURIComponent(p.name) + '">ClinicalTrials.gov</a>' +
@@ -451,11 +451,14 @@ function profileHtml(p) {
         : raises.length ? raises.slice(0, 4).join(', ') + '<div class="src">Filing dates; amounts not reported</div>' : '<span class="unknown">None found</span>') +
       fact('In the clinic since', fmtMonth(p.firstTrialDate)) +
       fact('First Phase 2', p.firstP2Date ? fmtMonth(p.firstP2Date) : '<span class="unknown">Not yet</span>') +
-      fact('Trials', p.trialCount + (p.activeCount ? ' · ' + p.activeCount + ' active' : '')) +
+      fact('Trials', p.liveCount + (p.activeCount ? ' · ' + p.activeCount + ' active' : '') +
+        (p.droppedCount ? '<div class="src">' + p.droppedCount + ' terminated or withdrawn not shown</div>' : '')) +
       fact('Main areas', esc(areas)) +
     '</dl>' +
     '<h3>Pipeline</h3>' + pipe +
-    '<h3>Trials</h3>' + studiesTable(p.studies.slice().reverse()) + (p.trialCount > p.studies.length ? '<div class="src">Showing the ' + p.studies.length + ' most recent of ' + p.trialCount + '.</div>' : '') +
+    '<h3>Trials</h3>' + studiesTable(p.studies.slice().reverse()) +
+      '<div class="src">' + (p.liveCount > p.studies.length ? 'Showing the ' + p.studies.length + ' most recent of ' + p.liveCount + '. ' : '') +
+      (p.droppedCount ? p.droppedCount + ' terminated or withdrawn trial' + (p.droppedCount > 1 ? 's are' : ' is') + ' left out of the pipeline, indications and filters.' : '') + '</div>' +
     '<h3>Links</h3>' + links;
 }
 async function openProfile(key) {

@@ -27,6 +27,10 @@ const isDrug = s => s.interventionTypes.some(t => DRUG_TYPES.has(t));
 const hasUS = s => s.countries.includes('United States');
 // New postings often list no sites for weeks. Counting them keeps the freshest
 // studies visible; the company-HQ check does the US filtering instead.
+// Terminated or withdrawn studies usually mean a dropped program. They still
+// count as history (when a company entered the clinic) but never as a
+// current program, indication or Phase 2 start.
+const isDead = s => s.status === 'TERMINATED' || s.status === 'WITHDRAWN';
 const usOrPending = s => hasUS(s) || s.countries.length === 0;
 const siteStatus = s => hasUS(s) ? 'US' : s.countries.length ? 'Non-US' : 'Pending';
 
@@ -76,9 +80,12 @@ function buildCompanies(studies) {
     c.firstP3 = c.studies.find(isP3) || null;
     c.lastPosted = c.studies[c.studies.length - 1].firstPosted;
     c.trialCount = c.studies.length;
-    c.area = classifyCondition(c.studies.slice(-5).flatMap(s => s.conditions));
-    c.highest = c.firstP3 ? (c.studies.some(s => s.phases.includes('PHASE4')) ? 'Phase 4' : 'Phase 3')
-      : c.firstP2 ? 'Phase 2' : 'Phase 1';
+    c.live = c.studies.filter(s => !isDead(s));
+    c.area = classifyCondition((c.live.length ? c.live : c.studies).slice(-5).flatMap(s => s.conditions));
+    // Furthest phase among programs still alive: a Phase 3 that was
+    // terminated doesn't make a company late-stage.
+    c.highest = c.live.some(s => s.phases.includes('PHASE4')) ? 'Phase 4'
+      : c.live.some(isP3) ? 'Phase 3' : c.live.some(isP2) ? 'Phase 2' : c.live.length ? 'Phase 1' : 'None active';
   }
   return companies;
 }
@@ -93,7 +100,7 @@ const ACTIVE = new Set(['RECRUITING', 'NOT_YET_RECRUITING', 'ACTIVE_NOT_RECRUITI
 /** Group a company's studies by lead drug: the closest thing to a pipeline chart. */
 function buildPipeline(c) {
   const groups = new Map();
-  for (const s of c.studies) {
+  for (const s of c.live) {
     const ivs = s.interventions.filter(x => x && !NON_PROGRAM.test(x));
     const primary = ivs.find(x => DEV_CODE.test(x)) || ivs[0];
     if (!primary) continue;
@@ -129,20 +136,22 @@ function buildPipeline(c) {
 
 function buildProfile(c) {
   const areas = {};
-  for (const s of c.studies) { const a = classifyCondition(s.conditions); areas[a] = (areas[a] || 0) + 1; }
+  for (const s of c.live) { const a = classifyCondition(s.conditions); areas[a] = (areas[a] || 0) + 1; }
   return {
     key: c.key, name: c.name, otherNames: [...c.names.keys()].filter(n => n !== c.name).slice(0, 5),
     parent: c.parentName, area: c.area, areas, trialCount: c.trialCount, highest: c.highest,
     firstTrialDate: c.firstTrial.firstPosted, firstP2Date: c.firstP2?.firstPosted || null, lastPosted: c.lastPosted,
-    activeCount: c.studies.filter(s => ACTIVE.has(s.status)).length,
-    usSites: c.studies.some(hasUS),
+    activeCount: c.live.filter(s => ACTIVE.has(s.status)).length,
+    usSites: c.live.some(hasUS),
     pipeline: buildPipeline(c).slice(0, 20),
-    studies: c.studies.slice(-40).map(slimStudy).reverse(),
+    studies: c.live.slice(-40).map(slimStudy).reverse(),
+    liveCount: c.live.length,
+    droppedCount: c.trialCount - c.live.length,
   };
 }
 
 function summarize(c, extra = {}) {
-  const conds = [...new Set(c.studies.flatMap(s => s.conditions))];
+  const conds = [...new Set(c.live.flatMap(s => s.conditions))];
   return {
     key: c.key, name: c.name, parent: c.parentName, area: c.area,
     indications: tagIndications(conds),
@@ -170,21 +179,23 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
   const directory = [];
 
   for (const c of companies.values()) {
-    const usP1 = c.studies.filter(s => isP1(s) && usOrPending(s));
-    const usP2 = c.studies.filter(s => isP2(s) && usOrPending(s));
+    const usP1 = c.live.filter(s => isP1(s) && usOrPending(s));
+    const usP2 = c.live.filter(s => isP2(s) && usOrPending(s));
 
     if (c.firstTrial.firstPosted >= newCut && usP1.length) {
-      newCompanies.push(summarize(c, { studies: c.studies.map(slimStudy) }));
+      newCompanies.push(summarize(c, { studies: c.live.map(slimStudy) }));
     }
 
-    if (c.firstP2 && c.firstP2.firstPosted >= newCut && usP2.length) {
+    // First-ever Phase 2 is recent, and a Phase 2 from that window is still alive.
+    const liveNewP2 = usP2.find(s => s.firstPosted >= newCut);
+    if (c.firstP2 && c.firstP2.firstPosted >= newCut && liveNewP2) {
       const priorP1 = c.studies.filter(s => isP1(s) && s.firstPosted < c.firstP2.firstPosted);
       const monthsInClinic = (new Date(c.firstP2.firstPosted) - new Date(c.firstTrial.firstPosted)) / (30.44 * 864e5);
       newToP2.push(summarize(c, {
         priorP1Count: priorP1.length,
         monthsToP2: Math.round(monthsInClinic),
-        p2Study: slimStudy(c.firstP2),
-        studies: c.studies.map(slimStudy),
+        p2Study: slimStudy(liveNewP2),
+        studies: c.live.map(slimStudy),
       }));
     }
 
@@ -199,7 +210,7 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
       directory.push(summarize(c, {
         usP1: usP1.length, usP2: usP2.length,
         isNew: c.firstTrial.firstPosted >= newCut,
-        isNewP2: !!(c.firstP2 && c.firstP2.firstPosted >= newCut),
+        isNewP2: !!(c.firstP2 && c.firstP2.firstPosted >= newCut && usP2.some(s => s.firstPosted >= newCut)),
       }));
     }
   }
