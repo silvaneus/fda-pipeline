@@ -8,7 +8,8 @@ const PAGE_SIZE = 1000;
 
 const FIELDS = [
   'NCTId', 'BriefTitle', 'OfficialTitle', 'LeadSponsorName', 'LeadSponsorClass', 'Phase',
-  'StudyType', 'OverallStatus', 'StudyFirstPostDate', 'StartDate',
+  'StudyType', 'OverallStatus', 'StudyFirstPostDate', 'StartDate', 'CompletionDate',
+  'PrimaryCompletionDate', 'LastUpdatePostDate',
   'Condition', 'InterventionName', 'InterventionType', 'LocationCountry',
   'CentralContactPhone', 'CentralContactEMail',
 ].join(',');
@@ -44,6 +45,8 @@ function flatten(s) {
     status: st.overallStatus,
     firstPosted: st.studyFirstPostDateStruct?.date,
     start: st.startDateStruct?.date,
+    completion: st.completionDateStruct?.date || st.primaryCompletionDateStruct?.date || null,
+    lastUpdate: st.lastUpdatePostDateStruct?.date || null,
     conditions: p.conditionsModule?.conditions || [],
     interventions: (p.armsInterventionsModule?.interventions || []).map(x => x.name),
     interventionTypes: [...new Set((p.armsInterventionsModule?.interventions || []).map(x => x.type))],

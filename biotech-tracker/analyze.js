@@ -13,6 +13,7 @@ const CONFIG = {
   startsWindowDays: 90,    // Phase 2 starts feed
   smallCompanyMaxTrials: 25, // size proxy: total phased industry trials
   directoryActiveYears: 5, // directory: posted a trial within this many years
+  currentYears: 2,         // a completed study keeps its indication "current" this long
 };
 
 const isP1 = s => s.phases.includes('PHASE1') || s.phases.includes('EARLY_PHASE1');
@@ -31,6 +32,12 @@ const hasUS = s => s.countries.includes('United States');
 // count as history (when a company entered the clinic) but never as a
 // current program, indication or Phase 2 start.
 const isDead = s => s.status === 'TERMINATED' || s.status === 'WITHDRAWN';
+// "Current" = still pursued: running now, or finished recently enough that a
+// follow-on study may not be posted yet. A Phase 1 completed in 2019 with
+// nothing since is a dormant program and shouldn't put a company under that
+// indication today (Shattuck Labs: one 2019 basket study tagged it lung cancer).
+const RUNNING = new Set(['RECRUITING', 'NOT_YET_RECRUITING', 'ACTIVE_NOT_RECRUITING', 'ENROLLING_BY_INVITATION']);
+const isCurrent = (s, cut) => RUNNING.has(s.status) || (s.completion || s.lastUpdate || '') >= cut;
 const usOrPending = s => hasUS(s) || s.countries.length === 0;
 const siteStatus = s => hasUS(s) ? 'US' : s.countries.length ? 'Non-US' : 'Pending';
 
@@ -58,7 +65,8 @@ function slimStudy(s) {
   };
 }
 
-function buildCompanies(studies) {
+function buildCompanies(studies, today = new Date(), cfg = CONFIG) {
+  const currentCut = daysAgo(today, cfg.currentYears * 365);
   const phased = studies.filter(s => s.sponsor && isPhased(s) && isDrug(s) && s.firstPosted);
   const keys = new Set(phased.map(s => sponsorKey(s.sponsor)));
   const companies = new Map();
@@ -84,7 +92,9 @@ function buildCompanies(studies) {
     c.lastPosted = c.studies[c.studies.length - 1].firstPosted;
     c.trialCount = c.studies.length;
     c.live = c.studies.filter(s => !isDead(s));
-    c.area = classifyCondition((c.live.length ? c.live : c.studies).slice(-5).flatMap(s => s.conditions));
+    c.current = c.live.filter(s => isCurrent(s, currentCut));
+    c.currentCut = currentCut;
+    c.area = classifyCondition((c.current.length ? c.current : c.live.length ? c.live : c.studies).slice(-5).flatMap(s => s.conditions));
     // Furthest phase among programs still alive: a Phase 3 that was
     // terminated doesn't make a company late-stage.
     c.highest = c.live.some(s => s.phases.includes('PHASE4')) ? 'Phase 4'
@@ -119,6 +129,8 @@ function buildPipeline(c) {
     g.studies.push(s);
   }
   return [...groups.values()].map(g => {
+    const current = g.studies.some(s => isCurrent(s, c.currentCut));
+    const lastActivity = g.studies.map(s => s.completion || s.lastUpdate || s.firstPosted).sort().pop();
     const latest = g.studies[g.studies.length - 1];
     const top = g.studies.map(stageOf).sort((a, b) => PHASE_RANK[b] - PHASE_RANK[a])[0];
     return {
@@ -130,16 +142,17 @@ function buildPipeline(c) {
       phase: top,
       status: latest.status,
       active: g.studies.some(s => ACTIVE.has(s.status)),
+      current, lastActivity,
       trials: g.studies.map(s => s.nct),
       firstPosted: g.studies[0].firstPosted,
       lastPosted: latest.firstPosted,
     };
-  }).sort((a, b) => PHASE_RANK[b.phase] - PHASE_RANK[a.phase] || b.lastPosted.localeCompare(a.lastPosted));
+  }).sort((a, b) => (b.current - a.current) || PHASE_RANK[b.phase] - PHASE_RANK[a.phase] || b.lastPosted.localeCompare(a.lastPosted));
 }
 
 function buildProfile(c) {
   const areas = {};
-  for (const s of c.live) { const a = classifyCondition(s.conditions); areas[a] = (areas[a] || 0) + 1; }
+  for (const s of (c.current.length ? c.current : c.live)) { const a = classifyCondition(s.conditions); areas[a] = (areas[a] || 0) + 1; }
   return {
     key: c.key, name: c.name, otherNames: [...c.names.keys()].filter(n => n !== c.name).slice(0, 5),
     parent: c.parentName, area: c.area, areas, trialCount: c.trialCount, highest: c.highest,
@@ -149,6 +162,7 @@ function buildProfile(c) {
     pipeline: buildPipeline(c).slice(0, 20),
     studies: c.live.slice(-40).map(slimStudy).reverse(),
     liveCount: c.live.length,
+    currentCount: c.current.length,
     droppedCount: c.trialCount - c.live.length,
   };
 }
@@ -157,7 +171,8 @@ function summarize(c, extra = {}) {
   const conds = [...new Set(c.live.flatMap(s => s.conditions))];
   return {
     key: c.key, name: c.name, parent: c.parentName, area: c.area,
-    indications: tagIndications(conds),
+    // Filters use current programs only; search still covers every live trial.
+    indications: tagIndications([...new Set(c.current.flatMap(s => s.conditions))]),
     // Search fields: every condition and lead drug, so "NSCLC" or a drug
     // code finds a company even from the directory.
     conds: conds.slice(-30),
@@ -171,7 +186,7 @@ function summarize(c, extra = {}) {
 }
 
 function buildViews(studies, today = new Date(), cfg = CONFIG) {
-  const companies = buildCompanies(studies);
+  const companies = buildCompanies(studies, today, cfg);
   const newCut = daysAgo(today, cfg.newWindowDays);
   const startsCut = daysAgo(today, cfg.startsWindowDays);
   const dirCut = daysAgo(today, cfg.directoryActiveYears * 365);
@@ -194,7 +209,11 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
     if (c.firstP2 && c.firstP2.firstPosted >= newCut && liveNewP2) {
       const priorP1 = c.studies.filter(s => isP1(s) && s.firstPosted < c.firstP2.firstPosted);
       const monthsInClinic = (new Date(c.firstP2.firstPosted) - new Date(c.firstTrial.firstPosted)) / (30.44 * 864e5);
+      const newP2s = usP2.filter(s => s.firstPosted >= newCut);
       newToP2.push(summarize(c, {
+        // On this tab the indication is the new Phase 2's, not the company's.
+        p2Indications: tagIndications(newP2s.flatMap(s => s.conditions)),
+        p2Area: classifyCondition(newP2s.flatMap(s => s.conditions)),
         priorP1Count: priorP1.length,
         monthsToP2: Math.round(monthsInClinic),
         p2Study: slimStudy(liveNewP2),

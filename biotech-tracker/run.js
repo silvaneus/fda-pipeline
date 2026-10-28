@@ -149,9 +149,15 @@ async function main() {
   console.log('  HQ sources:', JSON.stringify(sources));
 
   const meta = { generated: new Date().toISOString(), studyCount: studies.length };
+  const page = renderDashboard(views, meta);
+  const outputs = { 'profiles.js': renderProfiles(profiles) };
+  // Never publish a page whose script won't parse: a stray quote in render.js
+  // or a merge-conflict marker would otherwise ship a blank dashboard.
+  new Function(page.match(/<script>([\s\S]*)<\/script>/)[1]);
+  new Function(outputs['profiles.js']);
   fs.mkdirSync(OUT_DIR, { recursive: true });
-  fs.writeFileSync(path.join(OUT_DIR, 'index.html'), renderDashboard(views, meta));
-  fs.writeFileSync(path.join(OUT_DIR, 'profiles.js'), renderProfiles(profiles));
+  fs.writeFileSync(path.join(OUT_DIR, 'index.html'), page);
+  fs.writeFileSync(path.join(OUT_DIR, 'profiles.js'), outputs['profiles.js']);
   // Full-text search over official titles, loaded on first search.
   const search = {};
   for (const c of shown) search[c.key] = [...new Set(c.live.map(s => s.officialTitle).filter(Boolean))].join(' | ').toLowerCase();

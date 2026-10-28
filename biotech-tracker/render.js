@@ -240,7 +240,7 @@ const TABS = {
       ['Company', c => c.name, c => companyCell(c)],
       ['Headquarters', c => hqText(c.hq), c => hqCell(c.hq)],
       ['Funding', c => c.hq.totalRaised || 0, c => ownCell(c.hq), 'num'],
-      ['Area', c => c.area, c => esc(c.area)],
+      ['Area', c => c.p2Area, c => esc(c.p2Area)],
       ['First Phase 2 posted', c => c.firstP2Date, c => '<span class="nowrap">' + fmtDate(c.firstP2Date) + '</span>'],
       ['Path', c => c.priorP1Count ? c.monthsToP2 : -1, c => c.priorP1Count
         ? '<span class="badge b-p2">Graduated</span><div class="muted">' + c.priorP1Count + ' Phase 1 ' + (c.priorP1Count > 1 ? 'studies' : 'study') + ', ' + c.monthsToP2 + ' mo in clinic</div>'
@@ -301,11 +301,13 @@ function passes(r, t = tab) {
   if (own === 'private' && (h.public || h.source !== 'sec')) return false;
   if (+$('raised').value && !((h.totalRaised || 0) >= +$('raised').value)) return false;
   const area = $('area').value;
-  // A company counts for an area if any of its indications falls there, not
-  // just its main one: a neurology company with one lung-cancer drug shows
-  // up under Oncology.
-  if (area && r.area !== area && !(r.indications || []).some(t => t.startsWith(area + ' › '))) return false;
-  if ($('ind').value && !(r.indications || []).includes($('ind').value)) return false;
+  // New to Phase 2 filters on the new Phase 2 study itself; elsewhere a
+  // company counts for an area if any current indication falls there, so a
+  // neurology company with one lung-cancer drug shows up under Oncology.
+  const tags = (t === 'p2' ? r.p2Indications : r.indications) || [];
+  const mainArea = t === 'p2' ? r.p2Area : r.area;
+  if (area && mainArea !== area && !tags.some(x => x.startsWith(area + ' › '))) return false;
+  if ($('ind').value && !tags.includes($('ind').value)) return false;
   if (TABS[t].small && $('small').checked && r.trialCount > C.smallCompanyMaxTrials) return false;
   if (t === 'dir' && !$('mkt').checked && r.marketed) return false;
   const q = $('q').value.trim().toLowerCase();
@@ -432,9 +434,12 @@ function bio(p) {
   if (h.totalRaised) t += 'It has reported ' + money(h.totalRaised) + ' in funding rounds in SEC filings, most recently a ' + money(h.raises[0].amount) + ' round in ' + fmtMonth(h.raises[0].date) + '. ';
   t += 'It has ' + p.liveCount + ' current drug trial' + (p.liveCount === 1 ? '' : 's') + (p.activeCount ? ' (' + p.activeCount + ' active)' : '') +
     (p.highest === 'None active' ? ', and no programs that have not been terminated or withdrawn. ' : ', and its furthest program has reached ' + esc(p.highest) + '. ');
-  const lead = p.pipeline[0];
-  if (lead) t += 'Its most advanced drug, <b>' + esc(lead.drug) + '</b>, is in ' + esc(lead.phase) + ' for ' + esc(lead.conditions.slice(0, 2).join(' and ') || 'an undisclosed indication') + '. ';
-  if (p.pipeline.length > 1) t += 'It has ' + (p.pipeline.length - 1) + ' other program' + (p.pipeline.length > 2 ? 's' : '') + ' in the clinic. ';
+  const lead = p.pipeline.find(g => g.current);
+  if (!lead && p.pipeline.length) t += 'None of its programs has a trial running or completed in the last ' + C.currentYears + ' years. ';
+  if (lead) t += 'Its most advanced current drug, <b>' + esc(lead.drug) + '</b>, is in ' + esc(lead.phase) + ' for ' + esc(lead.conditions.slice(0, 2).join(' and ') || 'an undisclosed indication') + '. ';
+  const others = p.pipeline.filter(g => g.current && g !== lead).length, dormant = p.pipeline.filter(g => !g.current).length;
+  if (others) t += 'It has ' + others + ' other current program' + (others > 1 ? 's' : '') + '. ';
+  if (dormant) t += dormant + ' earlier program' + (dormant > 1 ? 's look' : ' looks') + ' dormant. ';
   const f = flagsFor(p.key);
   if (f.isNew) t += 'New to the clinic: flagged until ' + fmtDate(new Date(new Date(p.firstTrialDate + 'T12:00:00').getTime() + C.newWindowDays * 864e5).toISOString().slice(0, 10)) + '. ';
   if (f.isNewP2) t += 'Posted its first Phase 2 trial on ' + fmtDate(p.firstP2Date) + '.';
@@ -451,10 +456,11 @@ function profileHtml(p) {
   const raises = (h.formDDates || []).map(fmtMonth);
   const site = h.website ? '<a class="nct" target="_blank" rel="noopener" href="https://' + esc(h.website) + '">' + esc(h.website) + '</a>' : '<span class="unknown">—</span>';
   const pipe = p.pipeline.length ? '<div class="table-wrapper" style="max-height:none"><table><thead><tr><th>Drug</th><th>Indications</th><th>Phase</th><th>Status</th><th>Trials</th></tr></thead><tbody>' +
-    p.pipeline.map(g => '<tr><td><b>' + esc(g.drug) + '</b>' + (g.with.length ? '<div class="muted">with ' + esc(g.with.join(', ')) + '</div>' : '') +
+    p.pipeline.map(g => '<tr' + (g.current ? '' : ' style="opacity:.6"') + '><td><b>' + esc(g.drug) + '</b>' +
+      (g.current ? '' : ' <span class="badge b-gray" title="No trial running or completed in the last ' + C.currentYears + ' years">Dormant since ' + esc((g.lastActivity || '').slice(0, 4)) + '</span>') + (g.with.length ? '<div class="muted">with ' + esc(g.with.join(', ')) + '</div>' : '') +
       '</td><td>' + esc(g.conditions.slice(0, 3).join('; ')) + '<div class="muted">' + esc((g.indications.length ? g.indications.map(t => t.split(' › ')[1]) : [g.area]).join(', ')) + '</div></td><td class="nowrap">' + esc(g.phase) +
       '</td><td class="nowrap">' + esc(title(g.status || '')) + '</td><td>' + g.trials.slice(-4).map(nctLink).join('<br>') + (g.trials.length > 4 ? '<div class="muted">+' + (g.trials.length - 4) + ' more</div>' : '') + '</td></tr>').join('') +
-    '</tbody></table></div><div class="src">Grouped by lead drug in each trial; combination partners listed under "with". Terminated and withdrawn trials excluded.</div>' : '<p class="muted">No drug names listed on its trials.</p>';
+    '</tbody></table></div><div class="src">Grouped by lead drug in each trial; combination partners listed under "with". Terminated and withdrawn trials excluded. Dormant programs (nothing running or completed in ' + C.currentYears + ' years) do not count toward the indication filters.</div>' : '<p class="muted">No drug names listed on its trials.</p>';
   const q = encodeURIComponent(p.name.replace(/,?\s*(Inc|LLC|Ltd|Corp)\.?$/i, ''));
   const links = '<div class="links">' +
     '<a target="_blank" rel="noopener" href="https://clinicaltrials.gov/search?spons=' + encodeURIComponent(p.name) + '">ClinicalTrials.gov</a>' +

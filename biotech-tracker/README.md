@@ -31,7 +31,9 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
    - Legal form in the name (Ltd, GmbH, Co., Ltd.) → outside US.
    Misses are rechecked every 30 days. SEC search sometimes returns an error
    body with HTTP 200; that is retried, never cached as "not found".
-4. **Render** (`render.js`) → `reports/index.html` plus `reports/profiles.js`
+4. **Render** (`render.js`); the run fails without publishing if a generated
+   script doesn't parse.
+   Output: → `reports/index.html` plus `reports/profiles.js`
    (company profiles, loaded on first click; `#c=<key>` links open one).
 
 ## Definitions (`CONFIG` in analyze.js)
@@ -45,6 +47,15 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
 
 Newly posted studies often list no sites for weeks, so "sites pending" studies
 are included; the headquarters filter does the US screening.
+
+## Current vs. dormant programs
+
+Indication filters use **current** programs only: a study that is running
+(recruiting, not yet recruiting, active) or that completed within
+`currentYears` (2). A 2019 Phase 1 with nothing since is dormant: it still
+shows in the profile (greyed, "Dormant since 2023") but doesn't tag the
+company. On **New to Phase 2**, the indication filter matches the new Phase 2
+study itself, not the company's whole history.
 
 ## When a company stops being "emerging"
 
