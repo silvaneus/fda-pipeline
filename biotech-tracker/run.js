@@ -53,6 +53,18 @@ async function findMarketed(companies, overrides) {
 }
 
 /**
+ * Form D is filed within 15 days of a round's first sale, so "amount sold"
+ * is often only the first tranche (TwoStep: $62.2M Series A, $21.1M sold at
+ * filing). Companies rarely amend as later tranches close. The round size
+ * ("total offering amount") is what press releases report, so it is the
+ * headline; amount sold is kept for the profile. Indefinite size -> sold.
+ */
+function roundSizes(raises) {
+  const list = raises.map(r => ({ date: r.date, amount: Math.max(r.offered || 0, r.amount), sold: r.amount }));
+  return { raises: list.slice(0, 10), totalRaised: list.reduce((n, r) => n + r.amount, 0) };
+}
+
+/**
  * Best available headquarters, strongest source first:
  * manual override > SEC EDGAR > GLEIF > trial contact (own domain) > legal form in the name.
  */
@@ -67,7 +79,7 @@ function resolveHq(company, sec, gleif, overrides) {
   const secInfo = e?.found ? {
     public: e.tickers.length > 0, ticker: e.tickers[0] || null, cik: e.cik,
     lastFormD: e.lastFormD, formDDates: (e.formDDates || []).slice(0, 8),
-    totalRaised: e.totalRaised || 0, raises: (e.raises || []).slice(0, 10),
+    ...roundSizes(e.raises || []),
   } : {};
   if (e?.found) {
     return { ...base, ...secInfo, us: e.us, country: e.country, source: 'sec',

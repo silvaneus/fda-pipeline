@@ -128,7 +128,7 @@ function renderDashboard(views, meta) {
         <option value="us">US confirmed only</option>
         <option value="all">All, including non-US</option>
       </select></div>
-    <div class="filter-group"><label for="raised" title="Total reported in SEC private-fundraising filings (Form D). Public stock offerings are not included.">Raised at least</label>
+    <div class="filter-group"><label for="raised" title="Sum of round sizes in SEC private-fundraising filings (Form D). Public stock offerings are not included.">Raised at least</label>
       <select id="raised"><option value="0">Any amount</option><option value="1e6">$1M</option><option value="1e7">$10M</option><option value="2.5e7">$25M</option><option value="5e7">$50M</option><option value="1e8">$100M</option><option value="2.5e8">$250M</option></select></div>
     <div class="filter-group"><label for="own">Ownership</label>
       <select id="own"><option value="">Any</option><option value="public">Public</option><option value="private">Private</option></select></div>
@@ -427,7 +427,7 @@ function bio(p) {
   const where = h.us === true ? (h.place ? 'based in ' + h.place : 'US-based') : h.us === false && (h.place || h.country) ? 'based in ' + (h.place || h.country) : '';
   let t = esc(p.name) + ' is a ' + (own ? own + ' ' : '') + 'drug developer' + (where ? ' ' + esc(where) : '') +
     ' that registered its first trial on ClinicalTrials.gov in ' + fmtMonth(p.firstTrialDate) + '. ';
-  if (h.totalRaised) t += 'It has reported raising ' + money(h.totalRaised) + ' in SEC filings, most recently ' + money(h.raises[0].amount) + ' in ' + fmtMonth(h.raises[0].date) + '. ';
+  if (h.totalRaised) t += 'It has reported ' + money(h.totalRaised) + ' in funding rounds in SEC filings, most recently a ' + money(h.raises[0].amount) + ' round in ' + fmtMonth(h.raises[0].date) + '. ';
   t += 'It has ' + p.liveCount + ' current drug trial' + (p.liveCount === 1 ? '' : 's') + (p.activeCount ? ' (' + p.activeCount + ' active)' : '') +
     (p.highest === 'None active' ? ', and no programs that have not been terminated or withdrawn. ' : ', and its furthest program has reached ' + esc(p.highest) + '. ');
   const lead = p.pipeline[0];
@@ -472,8 +472,9 @@ function profileHtml(p) {
       fact('Website', site) +
       fact('Raised (SEC filings)', h.totalRaised
         ? '<b>' + money(h.totalRaised) + '</b> across ' + h.raises.length + ' round' + (h.raises.length > 1 ? 's' : '') +
-          '<div class="muted">' + h.raises.slice(0, 4).map(r => money(r.amount) + ' ' + fmtMonth(r.date)).join(' · ') + (h.raises.length > 4 ? ' …' : '') + '</div>' +
-          '<div class="src">From private fundraising filings (Form D); public stock offerings not included</div>'
+          '<div class="muted">' + h.raises.slice(0, 4).map(r => money(r.amount) + ' ' + fmtMonth(r.date) +
+            (r.sold < r.amount * 0.95 ? ' (' + money(r.sold) + ' closed at filing)' : '')).join('<br>') + (h.raises.length > 4 ? '<br>…' : '') + '</div>' +
+          '<div class="src">Round sizes from private fundraising filings (Form D). A filing is due within 15 days of the first sale, so later tranches are often not in the "closed" figure. Public stock offerings not included.</div>'
         : raises.length ? raises.slice(0, 4).join(', ') + '<div class="src">Filing dates; amounts not reported</div>' : '<span class="unknown">None found</span>') +
       fact('Marketed drug', !p.marketed ? '<span class="unknown">None found</span>'
         : (p.marketed.approvals.length ? p.marketed.approvals.map(a => esc(a.brand || a.app) + ' <span class="muted">FDA ' + esc((a.date || '').slice(0, 4)) + '</span>').join(', ') : '') +

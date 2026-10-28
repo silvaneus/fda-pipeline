@@ -69,7 +69,10 @@ these companies back into the view. The last good result is kept in
   area (e.g., Oncology › Lung cancer), regex-matched on trial conditions. A
   company appears under an area if any of its trials does. ~71% of recent
   drug trials get a tag; most of the rest are healthy-volunteer/PK studies.
-- **Raised at least**: total from Form D filings. Public companies' stock
+- **Raised at least**: sum of Form D round sizes ("total offering amount").
+  Form D is due within 15 days of a round's first sale, so "amount sold" is
+  often just the first tranche (35% of rounds: size > 1.25x sold) and is rarely
+  amended later. Round size matches press releases; profiles show both. Public companies' stock
   offerings are not in Form D, so their totals understate funding.
 - **Search** covers names, every trial condition, lead drug codes and every
   trial's official title (`reports/search.js`, loaded on the first search).
