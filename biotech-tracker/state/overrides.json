@@ -1,5 +1,11 @@
 {
-  "_readme": "exclude: display names to drop. hq: {\"Name\": {\"us\": true, \"place\": \"Boston, MA\"}} to fix a headquarters.",
+  "_readme": "exclude: display names to drop. hq: {\"Name\": {\"us\": true, \"place\": \"Boston, MA\"}} to fix a headquarters. marketed / notMarketed: display names to force into or out of 'has a marketed drug' (hidden from the emerging directory).",
   "exclude": [],
-  "hq": {}
+  "hq": {},
+  "marketed": [
+    "Amylyx Pharmaceuticals Inc.",
+    "Zevra Therapeutics",
+    "Kiniksa Pharmaceuticals International, plc"
+  ],
+  "notMarketed": []
 }

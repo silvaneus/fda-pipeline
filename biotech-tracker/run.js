@@ -14,12 +14,43 @@ const { fetchStudies } = require('./ctgov');
 const { buildViews, buildProfile } = require('./analyze');
 const edgar = require('./edgar');
 const locate = require('./locate');
+const fda = require('./fda');
 const { inferNonUS } = require('./sponsors');
 const { renderDashboard, renderProfiles } = require('./render');
 
 const DATA_FILE = path.join(__dirname, 'data', 'all-industry.json');
 const OVERRIDES_FILE = path.join(__dirname, 'state', 'overrides.json');
 const OUT_DIR = path.join(__dirname, 'reports');
+const MARKETED_FILE = path.join(__dirname, 'state', 'marketed.json');
+
+/**
+ * Companies with a marketed drug: an FDA approval (Drugs@FDA, see fda.js) or
+ * any Phase 4 trial (post-marketing, which also covers drugs sold only abroad
+ * and CBER-licensed products missing from Drugs@FDA). If the FDA download
+ * fails, the last good result is reused so graduated companies don't all
+ * reappear for a night.
+ */
+async function findMarketed(companies, overrides) {
+  let byCore = null;
+  try { byCore = await fda.loadApprovals(); } catch (e) { console.log(`  ${e.message}; reusing last FDA match`); }
+  const last = (() => { try { return JSON.parse(fs.readFileSync(MARKETED_FILE, 'utf8')); } catch { return {}; } })();
+  const force = new Set(overrides.marketed || []);
+  const deny = new Set(overrides.notMarketed || []);
+  const out = {};
+  for (const c of companies) {
+    const approvals = byCore
+      ? fda.approvalsFor([...c.names.keys()], byCore, c.studies.flatMap(s => [...s.interventions, s.title]).join(' '))
+          // One line per brand, dated by its first approval.
+          .filter((a, i, all) => all.findLastIndex(b => (b.brand || b.app) === (a.brand || a.app)) === i)
+          .slice(0, 3).map(({ brand, date, app, status }) => ({ brand, date, app, status }))
+      : (last[c.key]?.approvals || []);
+    const phase4 = c.studies.filter(s => s.phases.includes('PHASE4')).length;
+    if (deny.has(c.name)) continue;
+    if (approvals.length || phase4 || force.has(c.name)) out[c.key] = { approvals, phase4, manual: force.has(c.name) };
+  }
+  fs.writeFileSync(MARKETED_FILE, JSON.stringify(out));
+  return out;
+}
 
 /**
  * Best available headquarters, strongest source first:
@@ -92,11 +123,14 @@ async function main() {
   const gleif = lookups ? await locate.enrichGleif(gleifNames) : (() => { try { return require('./state/gleif.json'); } catch { return {}; } })();
 
   const hq = new Map(shown.map(c => [c.key, resolveHq(c, sec, gleif, overrides)]));
+  const marketed = await findMarketed(shown, overrides);
+  for (const k of ['newCompanies', 'newToP2', 'directory']) views[k].forEach(c => { c.marketed = marketed[c.key] || null; });
+  console.log(`  Marketed drug: ${views.directory.filter(c => c.marketed).length} of ${views.directory.length} directory companies`);
   for (const k of ['newCompanies', 'newToP2', 'directory']) views[k].forEach(c => { c.hq = hq.get(c.key); });
   views.p2Starts.forEach(s => { s.hq = hq.get(s.companyKey); });
 
   const profiles = {};
-  for (const c of shown) profiles[c.key] = { ...buildProfile(c), hq: hq.get(c.key) };
+  for (const c of shown) profiles[c.key] = { ...buildProfile(c), hq: hq.get(c.key), marketed: marketed[c.key] || null };
 
   const sources = {};
   for (const h of hq.values()) sources[h.source || 'unknown'] = (sources[h.source || 'unknown'] || 0) + 1;

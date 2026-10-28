@@ -69,6 +69,7 @@ function renderDashboard(views, meta) {
   .b-direct { background: #fef3c7; color: #92400e; }
   .b-public { background: #dbeafe; color: #1e40af; }
   .b-gray { background: #f3f4f6; color: #6b7280; }
+  .b-mkt { background: #fee2e2; color: #991b1b; }
   .b-pending { background: #fff; color: #92400e; border: 1px dashed #d97706; }
   .studies { width: 100%; font-size: .95em; }
   .studies td { border: none; padding: 4px 10px 4px 0; background: transparent; }
@@ -126,6 +127,7 @@ function renderDashboard(views, meta) {
     <div class="filter-group"><label for="own">Ownership</label>
       <select id="own"><option value="">Any</option><option value="public">Public</option><option value="private">Private</option></select></div>
     <label class="check" id="smallWrap"><input type="checkbox" id="small" checked> Smaller companies only (≤ <span id="smallN"></span> trials)</label>
+    <label class="check" id="mktWrap" title="A company with an FDA-approved drug or a Phase 4 (post-marketing) trial is no longer counted as emerging"><input type="checkbox" id="mkt"> Include companies with a marketed drug</label>
     <button class="btn reset-btn" id="reset">Reset</button>
   </div>
 
@@ -257,9 +259,10 @@ const TABS = {
   dir: {
     label: 'All Emerging Companies', rows: () => D.directory,
     explain: 'Smaller companies (≤ ' + C.smallCompanyMaxTrials + ' drug trials on ClinicalTrials.gov) that posted a trial in the last ' + C.directoryActiveYears +
-      ' years and have a Phase 1 or Phase 2 study in the US. Use this view to look up a company or browse by area.',
+      ' years and have a Phase 1 or Phase 2 study in the US. A company graduates out once it has a marketed drug (an FDA approval or a Phase 4 trial); ' +
+      D.directory.filter(r => r.marketed).length + ' are hidden for that reason unless you tick "Include companies with a marketed drug".',
     cols: [
-      ['Company', c => c.name, c => '<span class="co-link">' + esc(c.name) + '</span>' + (c.isNew ? ' <span class="badge b-new">New</span>' : '') + (c.isNewP2 ? ' <span class="badge b-p2">New to Phase 2</span>' : '')],
+      ['Company', c => c.name, c => '<span class="co-link">' + esc(c.name) + '</span>' + (c.marketed ? ' <span class="badge b-mkt">Marketed</span>' : '') + (c.isNew ? ' <span class="badge b-new">New</span>' : '') + (c.isNewP2 ? ' <span class="badge b-p2">New to Phase 2</span>' : '')],
       ['Headquarters', c => hqText(c.hq), c => hqCell(c.hq)],
       ['Funding', c => c.hq.totalRaised || 0, c => ownCell(c.hq), 'num'],
       ['Area', c => c.area, c => esc(c.area)],
@@ -293,6 +296,7 @@ function passes(r) {
   if (area && r.area !== area && !(r.indications || []).some(t => t.startsWith(area + ' › '))) return false;
   if ($('ind').value && !(r.indications || []).includes($('ind').value)) return false;
   if (TABS[tab].small && $('small').checked && r.trialCount > C.smallCompanyMaxTrials) return false;
+  if (tab === 'dir' && !$('mkt').checked && r.marketed) return false;
   const q = $('q').value.trim().toLowerCase();
   if (q) {
     const hay = JSON.stringify([r.name, r.company, r.title, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
@@ -316,6 +320,7 @@ function render() {
   const T = TABS[tab];
   $('explain').innerHTML = T.explain;
   $('smallWrap').hidden = !T.small;
+  $('mktWrap').hidden = tab !== 'dir';
   const [ci, dir] = sortState[tab] || T.sort;
   $('thead').innerHTML = '<tr>' + T.cols.map((c, i) => '<th data-i="' + i + '" class="' + (i === ci ? 'sorted-' + dir : '') + '">' + c[0] + '</th>').join('') + '</tr>';
   const rows = filtered(tab);
@@ -336,7 +341,7 @@ function setup() {
     ['new', 'New to the clinic', D.newCompanies, 'first trial in last ' + Math.round(C.newWindowDays / 30.4) + ' months'],
     ['p2', 'New to Phase 2', D.newToP2, 'first Phase 2 in last ' + Math.round(C.newWindowDays / 30.4) + ' months'],
     ['starts', 'Phase 2 starts', D.p2Starts.filter(s => s.trialCount <= C.smallCompanyMaxTrials), 'smaller companies, last ' + C.startsWindowDays + ' days'],
-    ['dir', 'Emerging companies', D.directory, 'Phase 1 or 2 in the US'],
+    ['dir', 'Emerging companies', D.directory.filter(r => !r.marketed), 'Phase 1 or 2 in the US, no marketed drug'],
   ];
   const usOk = r => r.hq?.us !== false;
   $('summary').innerHTML = cards.map(([t, h, rows, sub]) =>
@@ -371,8 +376,8 @@ function setup() {
     const tr = e.target.closest('tr.row');
     if (tr && !e.target.closest('a')) openProfile(tr.dataset.key);
   });
-  ['q', 'area', 'ind', 'raised', 'hq', 'own', 'small'].forEach(id => $(id).addEventListener('input', render));
-  $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('area').dispatchEvent(new Event('input')); $('raised').value = '0'; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; render(); };
+  ['q', 'area', 'ind', 'raised', 'hq', 'own', 'small', 'mkt'].forEach(id => $(id).addEventListener('input', render));
+  $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('area').dispatchEvent(new Event('input')); $('raised').value = '0'; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; $('mkt').checked = false; render(); };
   $('export').onclick = exportCsv;
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile(); });
   window.addEventListener('hashchange', fromHash);
@@ -417,7 +422,8 @@ function profileHtml(p) {
   const h = p.hq || {};
   const f = flagsFor(p.key);
   const badges = (f.isNew ? '<span class="badge b-new">New to the clinic</span> ' : '') + (f.isNewP2 ? '<span class="badge b-p2">New to Phase 2</span> ' : '') +
-    (h.public ? '<span class="badge b-public">' + esc(h.ticker || 'Public') + '</span>' : '');
+    (h.public ? '<span class="badge b-public">' + esc(h.ticker || 'Public') + '</span> ' : '') +
+    (p.marketed ? '<span class="badge b-mkt">Marketed drug</span>' : '');
   const areas = Object.entries(p.areas).filter(([a]) => a !== 'Other').sort((a, b) => b[1] - a[1]).slice(0, 3).map(([a]) => a).join(', ') || '—';
   const fact = (k, v) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>';
   const raises = (h.formDDates || []).map(fmtMonth);
@@ -449,6 +455,11 @@ function profileHtml(p) {
           '<div class="muted">' + h.raises.slice(0, 4).map(r => money(r.amount) + ' ' + fmtMonth(r.date)).join(' · ') + (h.raises.length > 4 ? ' …' : '') + '</div>' +
           '<div class="src">From private fundraising filings (Form D); public stock offerings not included</div>'
         : raises.length ? raises.slice(0, 4).join(', ') + '<div class="src">Filing dates; amounts not reported</div>' : '<span class="unknown">None found</span>') +
+      fact('Marketed drug', !p.marketed ? '<span class="unknown">None found</span>'
+        : (p.marketed.approvals.length ? p.marketed.approvals.map(a => esc(a.brand || a.app) + ' <span class="muted">FDA ' + esc((a.date || '').slice(0, 4)) + '</span>').join(', ') : '') +
+          (p.marketed.phase4 ? (p.marketed.approvals.length ? '<br>' : '') + p.marketed.phase4 + ' Phase 4 trial' + (p.marketed.phase4 > 1 ? 's' : '') + ' on record' : '') +
+          (p.marketed.manual && !p.marketed.approvals.length && !p.marketed.phase4 ? 'Yes (set manually)' : '') +
+          '<div class="src">Not counted as emerging</div>') +
       fact('In the clinic since', fmtMonth(p.firstTrialDate)) +
       fact('First Phase 2', p.firstP2Date ? fmtMonth(p.firstP2Date) : '<span class="unknown">Not yet</span>') +
       fact('Trials', p.liveCount + (p.activeCount ? ' · ' + p.activeCount + ' active' : '') +

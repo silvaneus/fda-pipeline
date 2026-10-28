@@ -46,6 +46,23 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
 Newly posted studies often list no sites for weeks, so "sites pending" studies
 are included; the headquarters filter does the US screening.
 
+## When a company stops being "emerging"
+
+The All Emerging Companies view hides companies with a **marketed drug**:
+- an FDA approval in Drugs@FDA (`fda.js`). FDA sponsor names are abbreviated
+  ("ARCUTIS", "VERTEX PHARMS"), so names match on their distinctive core. A
+  one-word core is shared by unrelated firms (Hope, United, Antares), so it
+  only counts when a branded (NDA/BLA) product's ingredient or brand also
+  appears in the company's own trials. Or
+- any Phase 4 (post-marketing) trial. This covers drugs sold only abroad and
+  CBER products (cell/gene therapy, vaccines) that Drugs@FDA lacks.
+
+Phase 4 alone misses most recent approvals (Revolution Medicines, Nuvalent,
+Arcutis had none), which is why both are used. Fix misses or false matches
+with `marketed` / `notMarketed` in `state/overrides.json`. A checkbox brings
+these companies back into the view. The last good result is kept in
+`state/marketed.json` in case the FDA download fails.
+
 ## Filters
 
 - **Indication** (`indications.js`): second-level tags under each therapeutic
@@ -61,6 +78,7 @@ are included; the headquarters filter does the US screening.
 `state/overrides.json`:
 - `exclude`: display names to drop
 - `hq`: `{"Company Name": {"us": true, "place": "Boston, MA"}}`
+- `marketed` / `notMarketed`: display names to force in or out of "has a marketed drug"
 
 ## Run locally
 
