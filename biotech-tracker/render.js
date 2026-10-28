@@ -289,7 +289,9 @@ let tab = 'new';
 const sortState = {};
 const $ = id => document.getElementById(id);
 
-function passes(r) {
+// t = the tab the row belongs to. Tab badges count every tab at once, so the
+// tab-specific checkboxes must follow the row's tab, not the open one.
+function passes(r, t = tab) {
   const h = r.hq || {};
   const hq = $('hq').value;
   if (hq === 'us' && h.us !== true) return false;
@@ -304,8 +306,8 @@ function passes(r) {
   // up under Oncology.
   if (area && r.area !== area && !(r.indications || []).some(t => t.startsWith(area + ' › '))) return false;
   if ($('ind').value && !(r.indications || []).includes($('ind').value)) return false;
-  if (TABS[tab].small && $('small').checked && r.trialCount > C.smallCompanyMaxTrials) return false;
-  if (tab === 'dir' && !$('mkt').checked && r.marketed) return false;
+  if (TABS[t].small && $('small').checked && r.trialCount > C.smallCompanyMaxTrials) return false;
+  if (t === 'dir' && !$('mkt').checked && r.marketed) return false;
   const q = $('q').value.trim().toLowerCase();
   if (q) {
     const hay = JSON.stringify([r.name, r.company, r.title, r.officialTitle, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
@@ -318,7 +320,7 @@ function filtered(t) {
   const T = TABS[t];
   const [ci, dir] = sortState[t] || T.sort;
   const key = T.cols[ci][1];
-  return T.rows().filter(passes).sort((a, b) => {
+  return T.rows().filter(r => passes(r, t)).sort((a, b) => {
     const x = key(a), y = key(b);
     const c = typeof x === 'number' && typeof y === 'number' ? x - y : String(x ?? '').localeCompare(String(y ?? ''));
     return dir === 'asc' ? c : -c;
@@ -338,7 +340,7 @@ function render() {
     return '<tr class="row" data-key="' + esc(r.key || r.companyKey) + '">' + T.cols.map(c => '<td>' + c[2](r) + '</td>').join('') + '</tr>';
   }).join('') : '<tr><td class="empty" colspan="' + T.cols.length + '">No matches for these filters.</td></tr>';
   document.querySelectorAll('.tab').forEach(b => b.classList.toggle('active', b.dataset.t === tab));
-  document.querySelectorAll('.tab .n').forEach(n => n.textContent = TABS[n.dataset.t].rows().filter(passes).length);
+  document.querySelectorAll('.tab .n').forEach(n => n.textContent = TABS[n.dataset.t].rows().filter(r => passes(r, n.dataset.t)).length);
 }
 
 function setup() {
