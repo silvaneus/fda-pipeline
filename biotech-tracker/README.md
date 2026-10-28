@@ -43,7 +43,7 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
 | New to the Clinic | First-ever phased drug trial posted ≤ 183 days ago, with a Phase 1 study (incl. 1/2) at US sites or sites not yet listed |
 | New to Phase 2 | First Phase 2 or 2/3 (not 1/2) posted ≤ 183 days ago. "Graduated" = had earlier Phase 1; "Direct" = none on record |
 | Phase 2 Starts | All industry Phase 2/2-3 posted ≤ 90 days, US or pending sites; default filter ≤ 25 trials |
-| Emerging Companies | ≤ 25 trials, trial posted within 5 years, US Phase 1 or 2 |
+| Emerging Companies | ≤ 25 trials, trial posted within 5 years, US Phase 1, 2 or 3 |
 
 Newly posted studies often list no sites for weeks, so "sites pending" studies
 are included; the headquarters filter does the US screening.

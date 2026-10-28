@@ -1,11 +1,18 @@
 {
   "_readme": "exclude: display names to drop. hq: {\"Name\": {\"us\": true, \"place\": \"Boston, MA\"}} to fix a headquarters. marketed / notMarketed: display names to force into or out of 'has a marketed drug' (hidden from the emerging directory).",
-  "exclude": [],
+  "exclude": [
+    "FrieslandCampina"
+  ],
   "hq": {},
   "marketed": [
     "Amylyx Pharmaceuticals Inc.",
     "Zevra Therapeutics",
-    "Kiniksa Pharmaceuticals International, plc"
+    "Kiniksa Pharmaceuticals International, plc",
+    "Avadel",
+    "Organogenesis",
+    "Lannett Company, Inc.",
+    "Mylan Technologies Inc.",
+    "Albireo, an Ipsen Company"
   ],
   "notMarketed": []
 }

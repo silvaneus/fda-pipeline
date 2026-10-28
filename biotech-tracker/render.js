@@ -268,7 +268,7 @@ const TABS = {
   dir: {
     label: 'All Emerging Companies', rows: () => D.directory,
     explain: 'Smaller companies (≤ ' + C.smallCompanyMaxTrials + ' drug trials on ClinicalTrials.gov) that posted a trial in the last ' + C.directoryActiveYears +
-      ' years and have a Phase 1 or Phase 2 study in the US. A company graduates out once it has a marketed drug (an FDA approval or a Phase 4 trial); ' +
+      ' years and have a Phase 1, 2 or 3 study in the US. A company graduates out once it has a marketed drug (an FDA approval or a Phase 4 trial); ' +
       D.directory.filter(r => r.marketed).length + ' are hidden for that reason unless you tick "Include companies with a marketed drug".',
     cols: [
       ['Company', c => c.name, c => '<span class="co-link">' + esc(c.name) + '</span>' + (c.marketed ? ' <span class="badge b-mkt">Marketed</span>' : '') + (c.isNew ? ' <span class="badge b-new">New</span>' : '') + (c.isNewP2 ? ' <span class="badge b-p2">New to Phase 2</span>' : '')],
@@ -354,7 +354,7 @@ function setup() {
     ['new', 'New to the clinic', D.newCompanies, 'first trial in last ' + Math.round(C.newWindowDays / 30.4) + ' months'],
     ['p2', 'New to Phase 2', D.newToP2, 'first Phase 2 in last ' + Math.round(C.newWindowDays / 30.4) + ' months'],
     ['starts', 'Phase 2 starts', D.p2Starts.filter(s => s.trialCount <= C.smallCompanyMaxTrials), 'smaller companies, last ' + C.startsWindowDays + ' days'],
-    ['dir', 'Emerging companies', D.directory.filter(r => !r.marketed), 'Phase 1 or 2 in the US, no marketed drug'],
+    ['dir', 'Emerging companies', D.directory.filter(r => !r.marketed), 'Phase 1–3 in the US, no marketed drug'],
   ];
   const usOk = r => r.hq?.us !== false;
   $('summary').innerHTML = cards.map(([t, h, rows, sub]) =>

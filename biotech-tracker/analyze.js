@@ -228,9 +228,12 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
       }
     }
 
-    if (c.trialCount <= cfg.smallCompanyMaxTrials && c.lastPosted >= dirCut && (usP1.length || usP2.length)) {
+    // Phase 3 counts too: a company stops being emerging once it has a marketed
+    // drug (run.js), not once it reaches Phase 3.
+    const usP3 = c.live.filter(s => s.phases.includes('PHASE3') && usOrPending(s));
+    if (c.trialCount <= cfg.smallCompanyMaxTrials && c.lastPosted >= dirCut && (usP1.length || usP2.length || usP3.length)) {
       directory.push(summarize(c, {
-        usP1: usP1.length, usP2: usP2.length,
+        usP1: usP1.length, usP2: usP2.length, usP3: usP3.length,
         isNew: c.firstTrial.firstPosted >= newCut,
         isNewP2: !!(c.firstP2 && c.firstP2.firstPosted >= newCut && usP2.some(s => s.firstPosted >= newCut)),
       }));
