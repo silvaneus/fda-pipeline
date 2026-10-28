@@ -12,7 +12,7 @@ const CONFIG = {
   newWindowDays: 183,      // how long a company keeps its "new" flag
   startsWindowDays: 90,    // Phase 2 starts feed
   smallCompanyMaxTrials: 25, // size proxy: total phased industry trials
-  directoryActiveYears: 5, // directory: posted a trial within this many years
+  directoryActiveYears: 3, // directory: posted a trial within this many years, or has one still running
   currentYears: 2,         // a completed study keeps its indication "current" this long
 };
 
@@ -231,7 +231,13 @@ function buildViews(studies, today = new Date(), cfg = CONFIG) {
     // Phase 3 counts too: a company stops being emerging once it has a marketed
     // drug (run.js), not once it reaches Phase 3.
     const usP3 = c.live.filter(s => s.phases.includes('PHASE3') && usOrPending(s));
-    if (c.trialCount <= cfg.smallCompanyMaxTrials && c.lastPosted >= dirCut && (usP1.length || usP2.length || usP3.length)) {
+    // A company with nothing new in 3 years and nothing still running has gone
+    // quiet (MEI Pharma: last trial 2023, now a crypto treasury company). A
+    // "running" study only counts if its record was touched in the last 2
+    // years; defunct sponsors leave studies marked active (Medicago).
+    const curCut = daysAgo(today, cfg.currentYears * 365);
+    const active = c.lastPosted >= dirCut || c.live.some(s => RUNNING.has(s.status) && s.lastUpdate >= curCut);
+    if (c.trialCount <= cfg.smallCompanyMaxTrials && active && (usP1.length || usP2.length || usP3.length)) {
       directory.push(summarize(c, {
         usP1: usP1.length, usP2: usP2.length, usP3: usP3.length,
         isNew: c.firstTrial.firstPosted >= newCut,
