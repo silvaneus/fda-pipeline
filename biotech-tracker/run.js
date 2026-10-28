@@ -16,7 +16,7 @@ const edgar = require('./edgar');
 const locate = require('./locate');
 const fda = require('./fda');
 const { inferNonUS } = require('./sponsors');
-const { renderDashboard, renderProfiles } = require('./render');
+const { renderDashboard, renderProfiles, renderSearch } = require('./render');
 
 const DATA_FILE = path.join(__dirname, 'data', 'all-industry.json');
 const OVERRIDES_FILE = path.join(__dirname, 'state', 'overrides.json');
@@ -140,6 +140,10 @@ async function main() {
   fs.mkdirSync(OUT_DIR, { recursive: true });
   fs.writeFileSync(path.join(OUT_DIR, 'index.html'), renderDashboard(views, meta));
   fs.writeFileSync(path.join(OUT_DIR, 'profiles.js'), renderProfiles(profiles));
+  // Full-text search over official titles, loaded on first search.
+  const search = {};
+  for (const c of shown) search[c.key] = [...new Set(c.live.map(s => s.officialTitle).filter(Boolean))].join(' | ').toLowerCase();
+  fs.writeFileSync(path.join(OUT_DIR, 'search.js'), renderSearch(search));
   console.log(`Wrote reports/: ${views.newCompanies.length} new, ${views.newToP2.length} new to P2, ` +
     `${views.p2Starts.length} P2 starts, ${views.directory.length} in directory, ${shown.length} profiles ` +
     `(${Math.round((Date.now() - t0) / 1000)}s)`);

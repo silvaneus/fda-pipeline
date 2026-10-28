@@ -7,7 +7,7 @@ const BASE_URL = 'https://clinicaltrials.gov/api/v2/studies';
 const PAGE_SIZE = 1000;
 
 const FIELDS = [
-  'NCTId', 'BriefTitle', 'LeadSponsorName', 'LeadSponsorClass', 'Phase',
+  'NCTId', 'BriefTitle', 'OfficialTitle', 'LeadSponsorName', 'LeadSponsorClass', 'Phase',
   'StudyType', 'OverallStatus', 'StudyFirstPostDate', 'StartDate',
   'Condition', 'InterventionName', 'InterventionType', 'LocationCountry',
   'CentralContactPhone', 'CentralContactEMail',
@@ -36,6 +36,7 @@ function flatten(s) {
   return {
     nct: id.nctId,
     title: id.briefTitle,
+    officialTitle: id.officialTitle || null,
     sponsor: sp.leadSponsor?.name,
     sponsorClass: sp.leadSponsor?.class,
     phases: d.phases || [],

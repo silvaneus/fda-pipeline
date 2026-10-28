@@ -50,6 +50,9 @@ function stageOf(s) {
 function slimStudy(s) {
   return {
     nct: s.nct, title: s.title, phase: stageOf(s), status: s.status,
+    // Often names the mechanism, line of therapy and population; skip when it
+    // just repeats the brief title.
+    officialTitle: s.officialTitle && s.officialTitle.toLowerCase() !== (s.title || '').toLowerCase() ? s.officialTitle : null,
     posted: s.firstPosted, start: s.start || null, sites: siteStatus(s),
     conditions: s.conditions.slice(0, 4), interventions: s.interventions.slice(0, 3),
   };

@@ -71,7 +71,8 @@ these companies back into the view. The last good result is kept in
   drug trials get a tag; most of the rest are healthy-volunteer/PK studies.
 - **Raised at least**: total from Form D filings. Public companies' stock
   offerings are not in Form D, so their totals understate funding.
-- **Search** covers names, every trial condition and lead drug codes.
+- **Search** covers names, every trial condition, lead drug codes and every
+  trial's official title (`reports/search.js`, loaded on the first search).
 
 ## Manual corrections
 

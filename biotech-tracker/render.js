@@ -7,6 +7,10 @@ function renderProfiles(profiles) {
   return 'window.PROFILES = ' + JSON.stringify(profiles).replace(/</g, '\\u003c') + ';\n';
 }
 
+function renderSearch(index) {
+  return 'window.SEARCH = ' + JSON.stringify(index).replace(/</g, '\\u003c') + ';\n';
+}
+
 function renderDashboard(views, meta) {
   const data = JSON.stringify({ ...views, meta }).replace(/</g, '\\u003c');
   return `<!DOCTYPE html>
@@ -100,6 +104,8 @@ function renderDashboard(views, meta) {
   .links a { display: inline-block; margin: 0 16px 6px 0; color: #0f766e; text-decoration: none; font-weight: 500; }
   .links a:hover { text-decoration: underline; }
   .src { color: #9ca3af; font-size: .8em; }
+  .otitle { color: #4b5563; font-size: .86em; font-style: italic; margin-top: 2px; line-height: 1.35; }
+  .clamp { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 </style>
 </head>
 <body>
@@ -113,7 +119,7 @@ function renderDashboard(views, meta) {
   <p class="explain" id="explain"></p>
 
   <div class="filters">
-    <div class="filter-group"><label for="q">Search</label><input id="q" type="search" placeholder="Company, drug, condition…" style="min-width:240px"></div>
+    <div class="filter-group"><label for="q">Search</label><input id="q" type="search" placeholder="Company, drug, condition, title…" style="min-width:260px"></div>
     <div class="filter-group"><label for="area">Therapeutic area</label><select id="area"><option value="">All areas</option></select></div>
     <div class="filter-group"><label for="ind">Indication</label><select id="ind" style="max-width:260px"><option value="">All indications</option></select></div>
     <div class="filter-group"><label for="hq">Headquarters</label>
@@ -188,13 +194,16 @@ function ownCell(h) {
     '<div class="muted nowrap">last ' + money(last.amount) + ', ' + fmtMonth(last.date) + '</div>';
   return tag || '<span class="unknown">—</span>';
 }
+function officialLine(s, clamp) {
+  return s.officialTitle ? '<div class="otitle' + (clamp ? ' clamp' : '') + '" title="' + esc(s.officialTitle) + '">' + esc(s.officialTitle) + '</div>' : '';
+}
 function sitesBadge(s) {
   return s.sites === 'Pending' ? ' <span class="badge b-pending" title="No trial sites listed yet">sites pending</span>'
     : s.sites === 'Non-US' ? ' <span class="badge b-gray">non-US sites</span>' : '';
 }
 function studyLine(s) {
   return '<tr><td class="nowrap">' + nctLink(s.nct) + '</td><td class="nowrap">' + esc(s.phase) + '</td><td class="nowrap">' + fmtDate(s.posted) +
-    '</td><td>' + esc(s.title) + sitesBadge(s) + '<div class="muted">' + esc(s.conditions.join('; ')) +
+    '</td><td>' + esc(s.title) + sitesBadge(s) + officialLine(s) + '<div class="muted">' + esc(s.conditions.join('; ')) +
     (s.interventions.length ? ' · ' + esc(s.interventions.join(', ')) : '') + '</div></td><td class="nowrap muted">' + esc(title(s.status || '')) + '</td></tr>';
 }
 function studiesTable(list) {
@@ -217,7 +226,7 @@ const TABS = {
       ['Funding', c => c.hq.totalRaised || 0, c => ownCell(c.hq), 'num'],
       ['Area', c => c.area, c => esc(c.area)],
       ['First trial posted', c => c.firstTrialDate, c => '<span class="nowrap">' + fmtDate(c.firstTrialDate) + '</span>'],
-      ['Lead study', c => c.studies[0].title, c => { const s = c.studies[0]; return esc(s.title) + sitesBadge(s) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(s.conditions.slice(0, 2).join('; ')) + '</div>'; }],
+      ['Lead study', c => c.studies[0].title, c => { const s = c.studies[0]; return esc(s.title) + sitesBadge(s) + officialLine(s, true) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(s.conditions.slice(0, 2).join('; ')) + '</div>'; }],
       ['New flag', c => daysLeft(c.firstTrialDate), c => '<span class="badge b-new">' + daysLeft(c.firstTrialDate) + ' days left</span>', 'num'],
     ],
     sort: [4, 'desc'],
@@ -236,7 +245,7 @@ const TABS = {
       ['Path', c => c.priorP1Count ? c.monthsToP2 : -1, c => c.priorP1Count
         ? '<span class="badge b-p2">Graduated</span><div class="muted">' + c.priorP1Count + ' Phase 1 ' + (c.priorP1Count > 1 ? 'studies' : 'study') + ', ' + c.monthsToP2 + ' mo in clinic</div>'
         : '<span class="badge b-direct">Direct to Phase 2</span>', 'num'],
-      ['Phase 2 study', c => c.p2Study.title, c => { const s = c.p2Study; return esc(s.title) + sitesBadge(s) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(title(s.status)) + '</div>'; }],
+      ['Phase 2 study', c => c.p2Study.title, c => { const s = c.p2Study; return esc(s.title) + sitesBadge(s) + officialLine(s, true) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(title(s.status)) + '</div>'; }],
     ],
     sort: [4, 'desc'],
   },
@@ -250,7 +259,7 @@ const TABS = {
       ['Headquarters', s => hqText(s.hq), s => hqCell(s.hq)],
       ['Funding', s => s.hq.totalRaised || 0, s => ownCell(s.hq), 'num'],
       ['Area', s => s.area, s => esc(s.area)],
-      ['Study', s => s.title, s => esc(s.title) + sitesBadge(s) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(s.conditions.slice(0, 3).join('; ')) + (s.interventions.length ? ' · ' + esc(s.interventions.join(', ')) : '') + '</div>'],
+      ['Study', s => s.title, s => esc(s.title) + sitesBadge(s) + officialLine(s, true) + '<div class="muted">' + nctLink(s.nct) + ' · ' + esc(s.phase) + ' · ' + esc(s.conditions.slice(0, 3).join('; ')) + (s.interventions.length ? ' · ' + esc(s.interventions.join(', ')) : '') + '</div>'],
       ['Status', s => s.status, s => '<span class="nowrap">' + esc(title(s.status)) + '</span>'],
       ['Company trials', s => s.trialCount, s => s.trialCount, 'num'],
     ],
@@ -299,8 +308,8 @@ function passes(r) {
   if (tab === 'dir' && !$('mkt').checked && r.marketed) return false;
   const q = $('q').value.trim().toLowerCase();
   if (q) {
-    const hay = JSON.stringify([r.name, r.company, r.title, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
-    if (!hay.includes(q)) return false;
+    const hay = JSON.stringify([r.name, r.company, r.title, r.officialTitle, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
+    if (!hay.includes(q) && !(window.SEARCH?.[r.key || r.companyKey] || '').includes(q)) return false;
   }
   return true;
 }
@@ -377,6 +386,15 @@ function setup() {
     if (tr && !e.target.closest('a')) openProfile(tr.dataset.key);
   });
   ['q', 'area', 'ind', 'raised', 'hq', 'own', 'small', 'mkt'].forEach(id => $(id).addEventListener('input', render));
+  // Official-title search text is large, so fetch it on the first search.
+  $('q').addEventListener('input', () => {
+    if (window.SEARCH || loadSearch.started) return;
+    loadSearch.started = true;
+    const sc = document.createElement('script');
+    sc.src = 'search.js?v=' + encodeURIComponent(D.meta.generated);
+    sc.onload = render;
+    document.head.appendChild(sc);
+  }, { once: false });
   $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('area').dispatchEvent(new Event('input')); $('raised').value = '0'; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; $('mkt').checked = false; render(); };
   $('export').onclick = exportCsv;
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile(); });
@@ -384,6 +402,8 @@ function setup() {
   render();
   fromHash();
 }
+
+function loadSearch() {}
 
 // --- Company profiles ------------------------------------------------------
 // Profiles live in profiles.js, loaded on first open so the table stays fast.
@@ -522,4 +542,4 @@ setup();
 `;
 }
 
-module.exports = { renderDashboard, renderProfiles };
+module.exports = { renderDashboard, renderProfiles, renderSearch };
