@@ -1,50 +1,6 @@
 {
- "generated": "2026-10-29T21:25:26.639Z",
+ "generated": "2026-10-29T21:31:15.115Z",
  "catalysts": [
-  {
-   "drug": "relabotulinumtoxinA",
-   "brandName": null,
-   "company": null,
-   "indication": "Glabellar and Lateral Canthal Lines",
-   "pdufaDate": "2026-08-02",
-   "dateLabel": null,
-   "dateBasis": "Estimated",
-   "dateBasisDetail": "estimated from resubmission",
-   "submissionType": null,
-   "status": "Overdue",
-   "confidence": "Low",
-   "confidenceWhy": "MJH headline on the filing · date estimated · date passed with no outcome reported",
-   "origin": "MJH only",
-   "flags": [],
-   "source": "MJH only",
-   "sourceUrl": "https://www.hcplive.com/view/fda-accepts-resubmitted-bla-relabotulinumtoxina-glabellar-lateral-canthal-lines",
-   "sourceTitle": "FDA Accepts Resubmitted BLA for RelabotulinumtoxinA for Glabellar and Lateral Canthal Lines",
-   "sourceType": "news",
-   "mjhStories": 6
-  },
-  {
-   "drug": "NAI",
-   "brandName": null,
-   "company": null,
-   "indication": "Papillary NMIBC",
-   "pdufaDate": "2026-09-09",
-   "dateLabel": null,
-   "dateBasis": "Estimated",
-   "dateBasisDetail": "estimated from resubmission",
-   "submissionType": "sNDA/sBLA",
-   "status": "Overdue",
-   "confidence": "Low",
-   "confidenceWhy": "MJH headline on the filing · date estimated · date passed with no outcome reported",
-   "origin": "MJH only",
-   "flags": [
-    "new use of an approved drug"
-   ],
-   "source": "MJH only",
-   "sourceUrl": "https://www.urologytimes.com/view/fda-receives-resubmitted-sbla-for-nai-plus-bcg-in-papillary-nmibc",
-   "sourceTitle": "FDA receives resubmitted sBLA for NAI plus BCG in papillary NMIBC",
-   "sourceType": "news",
-   "mjhStories": 3
-  },
   {
    "drug": "tildrakizumab",
    "brandName": null,

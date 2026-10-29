@@ -55,12 +55,16 @@ function similarity(a, b) {
   return n / Math.min(a.size, b.size);
 }
 
+const KNOWN_ALIASES = [['NAI', 'nogapendekin alfa inbakicept'], ['N-803', 'nogapendekin alfa inbakicept'], ['NAI', 'nogapendekin alfa inbakicept-pmln']];
+
 export async function buildPipeline({ today = new Date().toISOString().slice(0, 10), useFDA = true } = {}) {
   const { articles, events, pairs } = extractAll();
 
   // 1. Drug identity: merge names the articles themselves equate, e.g. "obinutuzumab (Gazyva)".
   const uf = new UnionFind();
   const counts = new Map();
+  // Short names the articles never spell out next to the full one.
+  for (const [a, b] of KNOWN_ALIASES) pairs.push([a, b]);
   for (const [a, b] of pairs) {
     const x = normName(a), y = normName(b);
     // A brand that is paired with more than one generic is a combination; do not chain through it.

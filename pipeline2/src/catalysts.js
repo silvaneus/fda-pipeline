@@ -149,7 +149,10 @@ export async function buildCatalysts({ sync = true, verbose = true } = {}) {
   }
   const pipe = await buildPipeline();
   const merged = await mergeSources();
-  const rows = merged.rows.filter(r => r.confidence === 'high' && (r.status === 'Pending' || r.status === 'Overdue') && r.pdufaDate);
+  // A date more than 30 days gone with no outcome reported is not an upcoming decision; the old tab
+  // dropped these too. They stay on the 2.0 report under "past date, no outcome".
+  const cutoff = new Date(Date.parse(pipe.today) - RECENT_DAYS * 864e5).toISOString().slice(0, 10);
+  const rows = merged.rows.filter(r => r.confidence === 'high' && (r.status === 'Pending' || r.status === 'Overdue') && r.pdufaDate && r.pdufaDate >= cutoff);
   const catalysts = [...rows.map(toCatalyst), ...recentDecisions(pipe)];
   const report = renderReport();
   const by = {};
