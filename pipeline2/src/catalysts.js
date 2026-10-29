@@ -1,10 +1,8 @@
 // Bridge to the FDA Catalysts tab: runs the pipeline and returns its rows in the shape
 // generate-integrated-report.js renders.
 //
-// Two tiers:
-//   main  - RTTNews entries (with MJH outcomes, extensions and dates applied) and MJH filings
-//           confirmed by an RTTNews listing
-//   mjh   - filings MJH reported in a headline that RTTNews does not list
+// One list: RTTNews entries (with MJH outcomes, extensions and dates applied) and filings MJH
+// reported in a headline, each with a confidence level saying how well-evidenced it is.
 // MJH filings seen only in passing ("signals to verify") stay on the 2.0 report, not the tab.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -39,10 +37,47 @@ function dateBasis(basis) {
 
 const latestSource = r => [...(r.sources || [])].sort((a, b) => (b.published || '').localeCompare(a.published || ''))[0];
 
+// The story that is about this decision: an MJH headline on the filing itself, in the current review
+// cycle. A trial-results story that mentions the PDUFA date in passing is the fallback, not the source.
+const BRAND_ORDER = ['onclive', 'targetedonc', 'cancernetwork', 'hcplive', 'neurolive', 'dermatologytimes', 'ophtalmology', 'contagion', 'urologytimes', 'psychtimes', 'contpeds', 'contobgyn', 'curetoday', 'ajmc', 'pharmacytimes', 'pharmexec'];
+const HEADLINE_RANK = { extended: 5, pdufa: 4, accepted: 4, resubmitted: 3, submitted: 2 };
+function primaryStory(r) {
+  const lastCrl = (r.events || []).filter(e => e.type === 'crl' && e.where === 'headline').map(e => e.published).sort().at(-1) || '';
+  const heads = (r.events || []).filter(e => e.where === 'headline' && HEADLINE_RANK[e.type] && e.published >= lastCrl && e.url);
+  // A headline naming a different date is another filing's story.
+  const fits = heads.filter(e => !e.pdufaDate || e.pdufaDate === r.pdufaDate);
+  // The original news, not a later recap: earliest report (latest, for an extension), specialty brands first.
+  const brand = e => { const i = BRAND_ORDER.indexOf(e.brand); return i < 0 ? 99 : i; };
+  const best = (fits.length ? fits : heads).sort((x, y) => HEADLINE_RANK[y.type] - HEADLINE_RANK[x.type]
+    || (x.type === 'extended' ? y.published.localeCompare(x.published) : x.published.localeCompare(y.published))
+    || brand(x) - brand(y))[0];
+  return best ? { url: best.url, title: best.title } : null;
+}
+
+// How far to trust a row, from the evidence behind it.
+function confidence(r, story, basis, overdue) {
+  const why = [];
+  if (r.rtt) why.push('on RTTNews');
+  if (story) why.push('MJH headline on the filing');
+  else if ((r.sources || []).length) why.push('MJH mention only');
+  why.push(basis === 'Announced' ? 'date announced' : basis === 'Company guidance' ? 'company date window' : 'date estimated');
+  let level;
+  if (overdue) { level = 'Low'; why.push('date passed with no outcome reported'); }
+  else if (story && (r.rtt || basis === 'Announced')) level = 'High';
+  else if (story || (r.rtt && basis !== 'Estimated')) level = 'Medium';
+  else level = 'Low';
+  return { level, why: why.join(' · ') };
+}
+
 function toCatalyst(r) {
   const basis = dateBasis(r.basis);
-  const src = r.basisUrl || latestSource(r)?.url || null;
+  const story = primaryStory(r);
+  const src = story?.url || r.basisUrl || latestSource(r)?.url || null;
+  const overdue = r.pdufaDate < new Date().toISOString().slice(0, 10);
+  const conf = confidence(r, story, basis, overdue);
+  const supplemental = /^s(NDA|BLA)/i.test(r.rtt?.type || '') || (!r.rtt?.type && r.supplemental);
   const flags = [];
+  if (supplemental) flags.push('new use of an approved drug');
   if (r.priorCRLs) flags.push('after CRL');
   if (r.priority) flags.push('priority review');
   if (r.note) flags.push(r.note);
@@ -56,12 +91,14 @@ function toCatalyst(r) {
     dateBasis: basis,
     dateBasisDetail: r.basis,
     submissionType: r.rtt?.type || (r.supplemental ? 'sNDA/sBLA' : null),
-    status: r.pdufaDate < new Date().toISOString().slice(0, 10) ? 'Overdue' : 'Pending',
-    tier: r.origin === 'MJH only' ? 'mjh' : 'main',
+    status: overdue ? 'Overdue' : 'Pending',
+    confidence: conf.level,
+    confidenceWhy: conf.why,
     origin: r.origin,
     flags,
     source: r.origin,
     sourceUrl: src || (r.rtt ? RTT_PAGE : null),
+    sourceTitle: story?.title || null,
     sourceType: 'news',
     mjhStories: (r.sources || []).length,
   };
@@ -95,7 +132,7 @@ function recentDecisions(pipe) {
       pdufaDate: d.when, scheduledDate: a.pdufaDate, decisionTitle: d.title || null, dateLabel: null, dateBasis: 'Decision', dateBasisDetail: d.title || null,
       submissionType: a.supplemental ? 'sNDA/sBLA' : null,
       status: d.type === 'approved' ? 'Approved' : 'CRL',
-      tier: 'main', origin: d.source === 'FDA' ? 'FDA record' : 'MJH', flags: [],
+      origin: d.source === 'FDA' ? 'FDA record' : 'MJH', flags: [],
       source: d.source === 'FDA' ? 'FDA' : 'MJH', sourceUrl: d.url || null, sourceType: d.source === 'FDA' ? 'fda' : 'news',
       mjhStories: (a.sources || []).length,
     });
@@ -116,7 +153,7 @@ export async function buildCatalysts({ sync = true, verbose = true } = {}) {
   const catalysts = [...rows.map(toCatalyst), ...recentDecisions(pipe)];
   const report = renderReport();
   const by = {};
-  for (const c of catalysts) by[c.tier + ':' + c.status] = (by[c.tier + ':' + c.status] || 0) + 1;
+  for (const c of catalysts) by[c.status + (c.confidence ? ':' + c.confidence : '')] = (by[c.status + (c.confidence ? ':' + c.confidence : '')] || 0) + 1;
   log(`  Catalysts: ${catalysts.length}`, by, `| ${merged.removed.length} RTTNews entries removed as already decided`);
   fs.writeFileSync(OUT, JSON.stringify({ generated: new Date().toISOString(), catalysts }, null, 1));
   return { catalysts, report };

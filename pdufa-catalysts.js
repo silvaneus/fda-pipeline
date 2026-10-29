@@ -2003,7 +2003,7 @@ async function getLegacyPDUFACatalysts(options = {}) {
 /**
  * FDA catalysts from Pipeline 2.0 (pipeline2/): MJH's own coverage (via Sanity) combined with the
  * RTTNews calendar. MJH outcomes take approved and rejected drugs off, MJH-reported extensions
- * move dates, and MJH-only filings get a separate tier. There is no curated list.
+ * move dates, and each row carries a confidence level. There is no curated list.
  * If the build fails (Sanity or RTTNews unreachable), the last good list is used.
  */
 async function getPDUFACatalysts(options = {}) {
@@ -2031,11 +2031,11 @@ async function getPDUFACatalysts(options = {}) {
     if (verbose) console.log(`  Warning: Pipeline 2.0 build failed (${err.message}); using the last good list`);
   }
 
-  catalysts = catalysts.map(enrichCatalyst);
+  catalysts = catalysts.map(enrichCatalyst).map(c => ({ ...c, confidenceRank: { High: 0, Medium: 1, Low: 2 }[c.confidence] ?? null }));
   catalysts.sort((a, b) => (a.pdufaDate || '9999').localeCompare(b.pdufaDate || '9999'));
   if (verbose) {
-    const main = catalysts.filter(c => c.tier === 'main').length;
-    console.log(`  Total catalysts: ${catalysts.length} (${main} main list, ${catalysts.length - main} MJH-only)`);
+    const n = l => catalysts.filter(c => c.confidence === l).length;
+    console.log(`  Total catalysts: ${catalysts.length} (confidence: ${n('High')} high, ${n('Medium')} medium, ${n('Low')} low)`);
   }
   if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
   fs.writeFileSync(CATALYSTS_CACHE_FILE, JSON.stringify(catalysts, null, 2));

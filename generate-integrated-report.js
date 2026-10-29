@@ -383,6 +383,11 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
             ${Object.keys(catalystStats.byStatus).map(s => `<option value="${s}">${s}</option>`).join('')}
           </select>
         </div>
+        <div class="filter-group"><label>Confidence</label>
+          <select id="catalystConfFilter" onchange="filterCatalysts()">
+            <option value="">All</option><option value="High">High</option><option value="Medium">High + Medium</option>
+          </select>
+        </div>
         <div class="filter-group"><label>Submission Type</label>
           <select id="catalystTypeFilter" onchange="filterCatalysts()">
             <option value="">All Types</option>
@@ -408,6 +413,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
               <th data-sort="pdufaDate">PDUFA Date</th>
               <th data-sort="daysUntilPDUFA">Days Until</th>
               <th data-sort="status">Status</th>
+              <th data-sort="confidenceRank">Confidence</th>
               <th data-sort="submissionType">Type</th>
               <th data-sort="therapeuticArea">Disease Area</th>
               <th data-sort="indication">Indication</th>
@@ -418,20 +424,6 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
         </div>
       </div>
 
-      ${catalysts.some(c => c.tier === 'mjh') ? `
-      <div class="table-container" style="margin-top:18px">
-        <div class="table-header"><h3>MJH-reported, not on RTTNews</h3><span class="result-count"><span id="catalystCount2">0</span> filings</span></div>
-        <p style="margin:0 16px 10px;color:#666;font-size:.88em">Filings an MJH brand ran a headline about (submission, acceptance, PDUFA date) that the RTTNews calendar does not list. Dates without an announced PDUFA are estimated from the filing date.</p>
-        <div class="table-wrapper">
-          <table id="catalystsTable2">
-            <thead><tr>
-              <th>Drug</th><th>Company</th><th>PDUFA Date</th><th>Days Until</th><th>Status</th>
-              <th>Type</th><th>Disease Area</th><th>Indication</th><th>Source</th>
-            </tr></thead>
-            <tbody id="catalystsBody2"></tbody>
-          </table>
-        </div>
-      </div>` : ''}
 
       ${recentOutcomes.length ? `
       <div class="table-container" style="margin-top:18px">
@@ -473,7 +465,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
       </div>` : ''}
 
       <div class="info-box">
-        <strong>Data Source:</strong> The RTTNews FDA calendar, checked against MJH's own coverage (OncLive, HCPLive, Targeted Oncology, CancerNetwork, CURE and 11 other MJH brands). Drugs MJH has reported approved or rejected come off the list, extensions MJH reported move the date, and filings only MJH reported are listed separately. Dates marked est. follow the FDA review clock from the filing date. <a href="pipeline-2.0.html" target="_blank">Full MJH pipeline report and method</a>.
+        <strong>Data Source:</strong> The RTTNews FDA calendar, checked against MJH's own coverage (OncLive, HCPLive, Targeted Oncology, CancerNetwork, CURE and 11 other MJH brands). Drugs MJH has reported approved or rejected come off the list, extensions MJH reported move the date, and filings MJH reported that RTTNews does not list are included. Confidence says how well-evidenced each row is. Dates marked est. follow the FDA review clock from the filing date. <a href="pipeline-2.0.html" target="_blank">Full MJH pipeline report and method</a>.
         <br><em>Updated nightly.</em>
       </div>
     </div>
@@ -639,7 +631,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
       const [icon, label] = kinds[k] || kinds.news;
       const dim = k === 'search' ? ';opacity:.45' : '';
       return '<a href="' + escapeHtml(c.sourceUrl) + '" target="_blank" style="text-decoration:none' + dim +
-             '" title="' + escapeHtml(label + ' \u2014 ' + c.sourceUrl) + '">' + icon + '</a>';
+             '" title="' + escapeHtml(label + ' \u2014 ' + (c.sourceTitle || c.sourceUrl)) + '">' + icon + '</a>';
     }
 
     // An estimated or guided date says so next to the date.
@@ -649,14 +641,16 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
       return main + (sub ? '<span class="certainty" title="' + escapeHtml(c.dateBasisDetail || '') + '">' + sub + '</span>' : '');
     }
 
+    // How well-evidenced a row is: an MJH headline on the filing plus an RTTNews listing or an
+    // announced date is High; one of those is Medium; a passing mention or a lapsed date is Low.
+    function confidenceCell(c) {
+      if (!c.confidence) return '-';
+      const cls = c.confidence === 'High' ? 'badge-success' : c.confidence === 'Medium' ? 'badge-warning' : 'badge-gray';
+      return '<span class="badge ' + cls + '" title="' + escapeHtml(c.confidenceWhy || '') + '">' + c.confidence + '</span>'
+        + '<span class="certainty">' + escapeHtml(c.confidenceWhy || '') + '</span>';
+    }
+
     function renderCatalysts(data) {
-      const second = document.getElementById('catalystsBody2');
-      if (second) {
-        const mjh = data.filter(c => c.tier === 'mjh');
-        second.innerHTML = catalystRows(mjh);
-        document.getElementById('catalystCount2').textContent = mjh.length;
-        data = data.filter(c => c.tier !== 'mjh');
-      }
       document.getElementById('catalystsBody').innerHTML = catalystRows(data);
       document.getElementById('catalystCount').textContent = data.length;
     }
@@ -673,6 +667,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
           <td>\${catalystDate(c)}</td>
           <td><span class="badge \${dc}">\${dl}</span></td>
           <td><span class="badge \${sc}">\${c.status||'Pending'}</span>\${c.reviewNote ? '<span class="certainty">needs review</span>' : ''}</td>
+          <td>\${confidenceCell(c)}</td>
           <td>\${c.submissionType?'<span class="badge badge-info">'+c.submissionType+'</span>':'-'}</td>
           <td>\${c.therapeuticArea?'<span class="badge badge-info">'+c.therapeuticArea+'</span>':'-'}</td>
           <td class="truncate" title="\${escapeHtml(c.indication)}">\${escapeHtml(c.indication)||'-'}</td>
@@ -687,12 +682,15 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
       const status = document.getElementById('catalystStatusFilter').value;
       const type = document.getElementById('catalystTypeFilter').value;
       const time = parseInt(document.getElementById('catalystTimeFilter').value) || 0;
+      const conf = document.getElementById('catalystConfFilter').value;
 
       let filtered = catalysts.filter(c => {
         if (search && !(\`\${c.drug} \${c.company} \${c.indication||''} \${c.brandName||''}\`.toLowerCase().includes(search))) return false;
         if (areas.length && !areas.includes(c.therapeuticArea)) return false;
         if (status && c.status !== status) return false;
         if (type && c.submissionType !== type) return false;
+        if (conf === 'High' && c.confidence !== 'High') return false;
+        if (conf === 'Medium' && c.confidence === 'Low') return false;
         if (time && (c.daysUntilPDUFA === null || c.daysUntilPDUFA < 0 || c.daysUntilPDUFA > time)) return false;
         return true;
       });
@@ -714,6 +712,7 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
       document.getElementById('catalystStatusFilter').value = '';
       document.getElementById('catalystTypeFilter').value = '';
       document.getElementById('catalystTimeFilter').value = '';
+      document.getElementById('catalystConfFilter').value = '';
       multiState.catalystAreaFilter = [];
       const drop = document.getElementById('catalystAreaFilterDrop');
       if (drop) {
@@ -818,7 +817,7 @@ async function generateIntegratedReport(options = {}) {
   if (verbose) console.log('Loading PDUFA catalysts...');
   const allCatalysts = await getPDUFACatalysts({ forceRefresh, verbose });
   // Pipeline 2.0 returns recent decisions alongside upcoming ones; they belong in "Recently decided".
-  const fromP2 = allCatalysts.some(c => c.tier);
+  const fromP2 = allCatalysts.some(c => c.confidence || c.dateBasis);
   const catalysts = fromP2 ? allCatalysts.filter(c => c.status !== 'Approved' && c.status !== 'CRL') : allCatalysts;
   const catalystStats = getCatalystStats(catalysts);
 

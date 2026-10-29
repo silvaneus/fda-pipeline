@@ -277,6 +277,12 @@ export async function buildPipeline({ today = new Date().toISOString().slice(0, 
     const lastCrl = a.events.filter(e => e.type === 'crl').map(e => e.when).sort().at(-1);
     const reopened = !!lastCrl && !a.decision && a.events.some(e => e.type === 'resubmitted' && e.when > lastCrl);
     const cycleStart = a.cycles.length || reopened ? lastCrl : '0000';
+    // A CRL headline with no resubmission or acceptance after it closes the application, even when
+    // folding rows together (3b, 3c) lost the decision record (oxylanthanum carbonate, second CRL).
+    const crlHead = a.events.filter(e => e.type === 'crl' && e.where === 'headline').sort((x, y) => x.published.localeCompare(y.published)).at(-1);
+    if (!a.decision && crlHead && !a.events.some(e => e.published > crlHead.published && ['resubmitted', 'accepted', 'pdufa', 'extended', 'submitted', 'approved'].includes(e.type))
+      && !a.events.some(e => e.pdufaDate && e.pdufaDate > crlHead.published))
+      a.decision = { type: 'crl', when: crlHead.published, url: crlHead.url, title: crlHead.title, where: 'headline' };
     const cur = a.events.filter(e => e.when >= cycleStart && !(e.pdufaDate && e.pdufaDate <= cycleStart));
     const priority = cur.some(e => e.priority);
     // A reported extension wins over later stories that restate the original date.

@@ -229,6 +229,9 @@ function drugShaped(name, article) {
 }
 
 const HEADLINE_SLOT_AFTER = /\bFDA\s+(?:Grants?\s+)?(?:Accelerated\s+|Full\s+|Traditional\s+)?(?:Approves|Approval\s+(?:to|for|of)|Expands(?:\s+Approval\s+(?:for|of))?|Accepts\s+(?:an?\s+)?s?(?:NDA|BLA)\s+(?:Resubmission\s+)?for|Grants\s+Priority\s+Review\s+(?:to|for)|Clears|OKs|Receives\s+(?:an?\s+)?s?(?:NDA|BLA)\s+for|Issues\s+(?:a\s+)?CRL\s+(?:to|for))\s+([A-Z][\w-]*(?:\s+[A-Za-z][\w-]*){0,3}?)(?=\s+(?:Plus|for|in|as|With|Indication|Combination|Regimen)\b|,|$)/;
+// "FDA Accepts Troriluzole NDA Resubmission": one drug-shaped word right before the application type.
+const HEADLINE_SLOT_APP = /\bFDA\s+Accepts\s+([A-Z][\w-]+)\s+s?(?:NDA|BLA)\b/;
+const NOT_SLOT_NAME = /^(application|applications|resubmitted|resubmission|supplemental|new|biologics|drug|regulatory|marketing|priority|filing|letter|nebulized|inhaled|oral|subcutaneous|intravenous|topical)$/i;
 const HEADLINE_SLOT_BEFORE = /^([A-Z][\w-]*(?:\s+[A-Za-z][\w-]*){0,3}?)\s+(?:Receives|Gains|Wins|Earns|Nets|Secures|Lands|Approved|NDA|BLA|sNDA|sBLA)\b/;
 
 // "Updated NMOSD Criteria, Tavapadon NDA Submitted, MIL-62 Shows Promise": three stories in one
@@ -287,11 +290,12 @@ export function extractArticle(a) {
   // Unrecognised names ("Nogapendekin Alfa Inbakicept") still sit in the headline's verb slot.
   if (!tDrugs.length && !isRoundup) {
     const after = a.title.match(HEADLINE_SLOT_AFTER);
-    const m = after || a.title.match(HEADLINE_SLOT_BEFORE);
+    const app = !after && a.title.match(HEADLINE_SLOT_APP);
+    const m = after || (app && !NOT_SLOT_NAME.test(app[1]) && (fullText.match(new RegExp(`\\b${app[1]}\\b`, 'gi')) || []).length >= 3 ? app : null) || a.title.match(HEADLINE_SLOT_BEFORE);
     const name = m?.[1]?.replace(/\s+(Combo|Combination|Regimen|Therapy|Injection|Tablets?)$/i, '').replace(SETTING_PREFIX, '').trim();
     const strongShape = n => !isCompany(n.split(/\s+/)[0], fullText) && new RegExp(`^${INN.source}$`, 'i').test(n.split(/\s+/)[0]) || /^[A-Z]{1,6}-?\d{2,6}/.test(n) || /^[A-Z][a-z]+[A-Z][a-z]+$/.test(n.split(/\s+/)[0]) || mentions.some(x => lc(x) === lc(n));
     // The "X Receives…" slot is looser, so it needs a stronger drug shape than the "FDA Approves X" slot.
-    const ok = m && (after ? drugShaped(name, fullText) : strongShape(name));
+    const ok = m && (after || m === app ? after ? drugShaped(name, fullText) : true : strongShape(name));
     if (name && ok && name.split(/\s+/).length <= 4 && !/\b(submits?|developers?|company|announces?)\b/i.test(name)) tDrugs = [{ name, at: a.title.indexOf(name), len: name.length }];
   }
   const primary = tDrugs[0] || null;
@@ -310,6 +314,8 @@ export function extractArticle(a) {
   if (tt === 'approved' && /\bJapan|China|EU\b|Europe|Canada|\bUK\b/.test(a.title)) tt = null;
   if ((tt === 'submitted' || tt === 'accepted' || tt === 'resubmitted') && (HEADLINE_PLAN.test(a.title) || NOT_FILING.test(a._fullTitle || a.title)
     || (/voucher/i.test(a.title) && !/\b(s?NDA|s?BLA)\b/.test(a.title)) || /\b(proceeding|despite)\b/i.test(a.title)
+    // A pre-submission meeting package is not a filing.
+    || /\bpre-?(?:supplemental|s?NDA|s?BLA|submission)\b/i.test(a.title)
     // A rolling submission that has only begun is not yet a filing; the clock starts when it completes.
     || (/\b(begins?|initiated|initiates?|starts?|rolling)\b/i.test(a.title) && !/\bcomplet/i.test(a.title))
     // "Submits Additional Benefit-Risk Data": material for an existing review, not a new filing.
