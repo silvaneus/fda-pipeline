@@ -1,0 +1,554 @@
+{
+ "1": {
+  "id": 1,
+  "verdict": "confirmed",
+  "actual_pdufa": "2026-11-17",
+  "note": "Adrabetadex NDA extended Aug 17 -> Nov 17, 2026.",
+  "source_url": "https://www.thepharmaletter.com/pharma-news/fda-extends-review-timeline-of-beren-s-adrabetadex-nda"
+ },
+ "2": {
+  "id": 2,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Asundexian NDA priority review May 2026; exact date not public.",
+  "source_url": "https://www.businesswire.com/news/home/20260518787299/en/Bayer-Granted-Priority-Review-by-U.S.-FDA-for-Asundexian-in-Patients-After-a-Non-Cardioembolic-Ischemic-Stroke-or-Transient-Ischemic-Attack"
+ },
+ "3": {
+  "id": 3,
+  "verdict": "confirmed",
+  "actual_pdufa": "2026-11-27",
+  "note": "Saroglitazar PBC, priority, PDUFA Nov 27, 2026.",
+  "source_url": "https://www.biospace.com/press-releases/zydus-therapeutics-new-drug-application-nda-for-saroglitazar-to-treat-primary-biliary-cholangitis-pbc-granted-priority-review-by-the-us-fda"
+ },
+ "4": {
+  "id": 4,
+  "verdict": "duplicate",
+  "correct_drug": "saroglitazar",
+  "actual_pdufa": "2026-11-27",
+  "note": "UDCA is background therapy; date is saroglitazar's (row 3).",
+  "source_url": "https://www.hcplive.com/view/q2-2026-recap-hepatology-news-updates"
+ },
+ "5": {
+  "id": 5,
+  "verdict": "duplicate",
+  "correct_drug": "bezuclastinib + sunitinib",
+  "actual_pdufa": "2026-11-30",
+  "note": "Imatinib is prior therapy; date is bezuclastinib's GIST NDA.",
+  "source_url": "https://investors.cogentbio.com/news-releases/news-release-details/cogent-biosciences-announces-fda-acceptance-new-drug-0"
+ },
+ "6": {
+  "id": 6,
+  "verdict": "duplicate",
+  "correct_drug": "bezuclastinib + sunitinib",
+  "actual_pdufa": "2026-11-30",
+  "note": "Sunitinib is the partner; NDA is bezuclastinib's.",
+  "source_url": "https://investors.cogentbio.com/news-releases/news-release-details/cogent-biosciences-announces-fda-acceptance-new-drug-0"
+ },
+ "7": {
+  "id": 7,
+  "verdict": "confirmed",
+  "actual_pdufa": "2026-11-30",
+  "note": "Gazyva PMN sBLA, priority; decision Nov 2026.",
+  "source_url": "https://www.roche.com/media/releases/med-cor-2026-07-15"
+ },
+ "8": {
+  "id": 8,
+  "verdict": "duplicate",
+  "correct_drug": "zanzalintinib + atezolizumab",
+  "actual_pdufa": "2027-03-03",
+  "note": "Not irinotecan; zanzalintinib NDA extended to Mar 3, 2027.",
+  "source_url": "https://www.onclive.com/view/fda-extends-review-period-for-zanzalintinib-plus-atezolizumab-nda-in-pretreated-mcrc"
+ },
+ "9": {
+  "id": 9,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Upadacitinib vitiligo sNDA filed Feb 3, 2026; no public date.",
+  "source_url": "https://news.abbvie.com/2026-02-03-AbbVie-Submits-Regulatory-Applications-to-FDA-and-EMA-for-Upadacitinib-RINVOQ-R-in-Adults-and-Adolescents-With-Vitiligo"
+ },
+ "10": {
+  "id": 10,
+  "verdict": "uncertain",
+  "correct_drug": "TRN-257 (low-sodium oxybate)",
+  "actual_pdufa": "2026-06-20",
+  "note": "TRN-257 PDUFA was Jun 20, 2026; outcome not found. Tracker's Dec 7 estimate is wrong.",
+  "source_url": "https://www.neurologylive.com/view/fda-accepts-nda-low-sodium-oxybate-trn257-narcolepsy-idiopathic-hypersomnia"
+ },
+ "11": {
+  "id": 11,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Delgocitinib adolescent sNDA accepted Apr 15, 2026; no public date.",
+  "source_url": "https://www.hcplive.com/view/fda-accepts-delgocitinib-snda-for-chronic-hand-eczema-in-adolescents-aged-12-17"
+ },
+ "12": {
+  "id": 12,
+  "verdict": "duplicate",
+  "actual_pdufa": null,
+  "note": "Same delgocitinib sNDA as row 11.",
+  "source_url": "https://www.dermatologytimes.com/view/fda-accepts-snda-for-delgocitinib-cream-to-treat-pediatric-chronic-hand-eczema"
+ },
+ "13": {
+  "id": 13,
+  "verdict": "already_decided",
+  "correct_drug": "iberdomide",
+  "decision": "approved 2026-08-13",
+  "note": "NDA was iberdomide (not daratumumab); approved Aug 13, 2026.",
+  "source_url": "https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-iberdomide-daratumumab-and-hyaluronidase-fihj-and-dexamethasone"
+ },
+ "14": {
+  "id": 14,
+  "verdict": "confirmed",
+  "actual_pdufa": "2026-12-18",
+  "note": "Tirabrutinib PCNSL, PDUFA Dec 18, 2026.",
+  "source_url": "https://www.businesswire.com/news/home/20260217277627/en/Deciphera-Pharmaceuticals-Announces-U.S.-Food-and-Drug-Administration-Acceptance-for-Filing-of-New-Drug-Application-for-Tirabrutinib-in-Patients-with-Relapsed-or-Refractory-PCNSL"
+ },
+ "15": {
+  "id": 15,
+  "verdict": "already_decided",
+  "decision": "approved 2026-10-07",
+  "note": "Remibrutinib (Rhapsido) approved Oct 7, 2026.",
+  "source_url": "https://practicaldermatology.com/news/fda-approves-remibrutinib-as-first-treatment-for-symptomatic-dermographism/2488642/"
+ },
+ "16": {
+  "id": 16,
+  "verdict": "uncertain",
+  "actual_pdufa": "October 2026",
+  "note": "Cristcot ngHCA PDUFA target October 2026; no decision found.",
+  "source_url": "https://www.hcplive.com/view/fda-accepts-nda-for-next-generation-hydrocortisone-acetate-in-ulcerative-colitis-of-the-rectum"
+ },
+ "17": {
+  "id": 17,
+  "verdict": "confirmed",
+  "actual_pdufa": "November 2026",
+  "note": "Cemdisiran gMG priority voucher; target Nov 2026 (tracker Dec 22).",
+  "source_url": "https://pmlive.com/regenerons-new-drug-application-for-cemdisiran-accepted-for-review-by-fda-and-ema/"
+ },
+ "18": {
+  "id": 18,
+  "verdict": "confirmed",
+  "actual_pdufa": "~late Mar 2027",
+  "note": "Oxylanthanum carbonate resubmitted Sep 29, 2026 after second CRL.",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001766140/000121390026104314/ea030696701ex99-1.htm"
+ },
+ "19": {
+  "id": 19,
+  "verdict": "confirmed",
+  "actual_pdufa": "2026-12-30",
+  "note": "SL1009 resubmission accepted, PDUFA Dec 30, 2026.",
+  "source_url": "https://www.biospace.com/press-releases/saol-therapeutics-announces-the-acceptance-of-resubmission-of-sl1009-dca-by-the-fda-with-pdufa-date-of-dec-30-2026"
+ },
+ "20": {
+  "id": 20,
+  "verdict": "already_decided",
+  "decision": "approved 2026-10-09 (per HCPLive)",
+  "note": "Checker said pending (Q4 2026 guidance), but HCPLive reported 'FDA Approves Once-Monthly Subcutaneous Olanzapine for Schizophrenia' on Oct 9, 2026.",
+  "source_url": "https://www.hcplive.com/view/fda-approves-monthly-subcutaneous-olanzapine-schizophrenia"
+ },
+ "21": {
+  "id": 21,
+  "verdict": "confirmed",
+  "actual_pdufa": "by end of Feb 2027",
+  "note": "Dersimelagon NDA priority review; tracker's 2H-2026 came from acquisition timing.",
+  "source_url": "https://www.dermatologytimes.com/view/dersimelagon-nda-accepted-fda-priority-review-epp-xlp"
+ },
+ "22": {
+  "id": 22,
+  "verdict": "confirmed",
+  "actual_pdufa": "January 2027 (guidance)",
+  "note": "Tegoprazan NDA submitted Jan 9, 2026.",
+  "source_url": "https://www.biospace.com/press-releases/sebela-pharmaceuticals-announces-submission-of-new-drug-application-to-fda-for-tegoprazan-for-the-treatment-of-gastroesophageal-reflux-disease"
+ },
+ "23": {
+  "id": 23,
+  "verdict": "already_decided",
+  "decision": "approved 2026-04-27",
+  "note": "Lumateperone relapse-prevention already approved; no pending sNDA found.",
+  "source_url": "https://www.consultant360.com/fda-alerts/lumateperone-caplyta-gains-fda-approval-relapse-prevention-schizophrenia"
+ },
+ "24": {
+  "id": 24,
+  "verdict": "uncertain",
+  "actual_pdufa": null,
+  "note": "RGX-121: CRL Feb 2026, resubmission planned Q3 2026; not confirmed.",
+  "source_url": "https://ir.regenxbio.com/news-releases/news-release-details/regenxbio-reports-second-quarter-2026-financial-results-and"
+ },
+ "25": {
+  "id": 25,
+  "verdict": "duplicate",
+  "actual_pdufa": "2026-12-30",
+  "note": "SL1009 duplicate of row 19.",
+  "source_url": "https://www.biospace.com/press-releases/saol-therapeutics-announces-the-acceptance-of-resubmission-of-sl1009-dca-by-the-fda-with-pdufa-date-of-dec-30-2026"
+ },
+ "26": {
+  "id": 26,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Elinzanetant sNDA priority review accepted Sep 28, 2026.",
+  "source_url": "https://www.targetedonc.com/view/elinzanetant-priority-review-vms-breast-cancer-endocrine-therapy"
+ },
+ "27": {
+  "id": 27,
+  "verdict": "duplicate",
+  "correct_drug": "leniolisib (Joenja)",
+  "actual_pdufa": "2027-01-30",
+  "note": "'Phosphoinositide' is a stray word; it's Joenja's pediatric sNDA (already listed via RTTNews).",
+  "source_url": "https://www.nasdaq.com/articles/fda-accepts-pharmings-snda-leniolisib-pediatric-apds-priority-review-granted"
+ },
+ "28": {
+  "id": 28,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "MDMA NDA resubmitted ~Aug 2026; no public acceptance/date.",
+  "source_url": "https://www.hcplive.com/view/mdma-assisted-therapy-nda-resubmitted-fda-ptsd"
+ },
+ "29": {
+  "id": 29,
+  "verdict": "confirmed",
+  "actual_pdufa": "late April 2027 (guidance)",
+  "note": "Tyvaso IPF sNDA accepted Sep 2, 2026.",
+  "source_url": "https://ir.unither.com/~/media/Files/U/United-Therapeutics-IR/documents/press-releases/2026/tyvaso-ipf-snda-acceptance-press-release.pdf"
+ },
+ "30": {
+  "id": 30,
+  "verdict": "duplicate",
+  "correct_drug": "roflumilast cream 0.05%",
+  "actual_pdufa": "2027-02-23",
+  "note": "Date belongs to roflumilast infant sNDA, not lebrikizumab.",
+  "source_url": "https://www.contemporarypediatrics.com/view/fda-accepts-roflumilast-snda-for-ad-in-infants-aged-3-to-24-months"
+ },
+ "31": {
+  "id": 31,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-02-23",
+  "note": "Fetroja pediatric sNDA, PDUFA Feb 23, 2027.",
+  "source_url": "https://www.contagionlive.com/view/fda-accepts-shionogi-s-snda-to-expand-cefiderocol-use-to-pediatric-patients-with-drug-resistant-gram-negative-infections"
+ },
+ "32": {
+  "id": 32,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-02-27",
+  "note": "Zipalertinib exon 20 NDA, PDUFA Feb 27, 2027.",
+  "source_url": "https://www.onclive.com/view/fda-accepts-nda-for-zipalertinib-in-locally-advanced-or-metastatic-egfr-exon-20-nsclc"
+ },
+ "33": {
+  "id": 33,
+  "verdict": "duplicate",
+  "correct_drug": "zipalertinib",
+  "actual_pdufa": "2027-02-27",
+  "note": "Amivantamab is prior therapy; duplicate of row 32.",
+  "source_url": "https://www.onclive.com/view/fda-accepts-nda-for-zipalertinib-in-locally-advanced-or-metastatic-egfr-exon-20-nsclc"
+ },
+ "34": {
+  "id": 34,
+  "verdict": "duplicate",
+  "correct_drug": "roflumilast cream 0.05%",
+  "actual_pdufa": "2027-02-23",
+  "note": "'Lunsotogene' stray term; roflumilast infant sNDA.",
+  "source_url": "https://www.contemporarypediatrics.com/view/fda-accepts-roflumilast-snda-for-ad-in-infants-aged-3-to-24-months"
+ },
+ "35": {
+  "id": 35,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Upadacitinib alopecia areata sNDA submitted Apr 28, 2026.",
+  "source_url": "https://news.abbvie.com/2026-04-28-AbbVie-Submits-Application-to-FDA-for-Upadacitinib-RINVOQ-R-for-Adults-and-Adolescents-with-Severe-Alopecia-Areata"
+ },
+ "36": {
+  "id": 36,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-02-28",
+  "note": "AD109 NDA, PDUFA Feb 28, 2027.",
+  "source_url": "https://www.neurologylive.com/view/fda-accepts-nda-apnimed-ad109-treatment-obstructive-sleep-apnea"
+ },
+ "37": {
+  "id": 37,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-02-28",
+  "note": "Casimersen traditional-approval sNDA, PDUFA Feb 28, 2027.",
+  "source_url": "https://www.neurologylive.com/view/fda-accepts-sarepta-sndas-casimersen-golodirsen-dmd"
+ },
+ "38": {
+  "id": 38,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-02-28",
+  "note": "Golodirsen traditional-approval sNDA, PDUFA Feb 28, 2027.",
+  "source_url": "https://www.neurologylive.com/view/fda-accepts-sarepta-sndas-casimersen-golodirsen-dmd"
+ },
+ "39": {
+  "id": 39,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-02-28",
+  "note": "Vosoritide full-approval sNDA, PDUFA Feb 28, 2027.",
+  "source_url": "https://hoodline.com/2026/07/san-rafael-s-biomarin-snags-crucial-fda-shot-at-full-voxzogo-approval/"
+ },
+ "40": {
+  "id": 40,
+  "verdict": "duplicate",
+  "correct_drug": "zanzalintinib",
+  "actual_pdufa": "2027-03-03",
+  "note": "Atezolizumab is the partner; zanzalintinib already listed.",
+  "source_url": "https://www.onclive.com/view/fda-extends-review-period-for-zanzalintinib-plus-atezolizumab-nda-in-pretreated-mcrc"
+ },
+ "41": {
+  "id": 41,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-03-10",
+  "note": "lonvo-z BLA accepted, priority, PDUFA Mar 10, 2027.",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001652130/000119312526385194/ntla-ex99_1.htm"
+ },
+ "42": {
+  "id": 42,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Azetukalner NDA submitted ~Sep 17, 2026; tracker's Mar 2027 came from an earlier data article; ~Q3 2027 expected.",
+  "source_url": "https://www.neurologylive.com/view/xenon-submits-new-drug-application-azetukalner-treatment-focal-seizures"
+ },
+ "43": {
+  "id": 43,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-03-22",
+  "note": "Enflonsia sBLA, PDUFA Mar 22, 2027.",
+  "source_url": "https://www.merck.com/news/u-s-fda-accepts-sbla-for-enflonsia-clesrovimab-cfor-to-update-its-respiratory-syncytial-virus-rsv-lower-respiratory-tract-disease-indication-to-include-children-under-two-years-at-increa/"
+ },
+ "44": {
+  "id": 44,
+  "verdict": "duplicate",
+  "correct_drug": "Viaskin Peanut",
+  "actual_pdufa": null,
+  "note": "'chosen' is a stray word; it is the Viaskin Peanut BLA (duplicate of row 64).",
+  "source_url": "https://www.taiwannews.com.tw/en/news/6448807"
+ },
+ "45": {
+  "id": 45,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-03-31",
+  "note": "Tab-cel resubmission accepted Oct 14, 2026; PDUFA Mar 31, 2027.",
+  "source_url": "https://www.onclive.com/view/fda-accepts-bla-resubmission-for-tabelecleucel-in-ebv-post-transplant-lymphoproliferative-disease"
+ },
+ "46": {
+  "id": 46,
+  "verdict": "confirmed",
+  "actual_pdufa": "late Q1 2027",
+  "note": "Ecopipam NDA accepted with priority review Aug 19, 2026.",
+  "source_url": "https://www.thepharmaletter.com/pharma-news/fda-accepts-teva-s-nda-for-ecopipam-grants-priority-review-for-pediatric-tourette-syndrome"
+ },
+ "47": {
+  "id": 47,
+  "verdict": "confirmed",
+  "actual_pdufa": "Q1 2027",
+  "note": "Tozorakimab COPD BLA accepted, priority voucher.",
+  "source_url": "https://pharmaphorum.com/news/fda-starts-review-azs-copd-blockbuster-hope"
+ },
+ "48": {
+  "id": 48,
+  "verdict": "confirmed",
+  "actual_pdufa": "Q1 2027",
+  "note": "Troriluzole resubmission accepted; Q1 2027 goal; adcomm planned.",
+  "source_url": "https://www.neurologylive.com/view/fda-accepts-troriluzole-nda-resubmission-spinocerebellar-ataxia"
+ },
+ "49": {
+  "id": 49,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-04-01",
+  "note": "Pitolisant GR NDA, PDUFA Apr 1, 2027.",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001802665/000110465926090090/hrmy-20260630x10q.htm"
+ },
+ "50": {
+  "id": 50,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-03-16",
+  "note": "Anaphylm resubmission accepted Oct 15, 2026; PDUFA Mar 16, 2027 (tracker estimate Apr 1).",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001398733/000139873326000058/a2026-10x19aquestivepduf.htm"
+ },
+ "51": {
+  "id": 51,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "BOTOX Cosmetic masseter sBLA accepted Aug 4, 2026; no date disclosed.",
+  "source_url": "https://news.abbvie.com/2026-08-04-Allergan-Aesthetics-Announces-U-S-FDA-Acceptance-of-Supplemental-Biologics-License-Application-for-BOTOX-R-Cosmetic-for-Masseter-Muscle-Prominence"
+ },
+ "52": {
+  "id": 52,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Rivoceranib+camrelizumab resubmitted Oct 9, 2026 after third CRL; not yet accepted.",
+  "source_url": "https://www.onclive.com/view/elevar-resubmits-nda-for-rivoceranib-plus-camrelizumab-frontline-unresectable-metastatic-hcc"
+ },
+ "53": {
+  "id": 53,
+  "verdict": "duplicate",
+  "actual_pdufa": null,
+  "note": "Camrelizumab row duplicates rivoceranib (52).",
+  "source_url": "https://www.onclive.com/view/elevar-resubmits-nda-for-rivoceranib-plus-camrelizumab-frontline-unresectable-metastatic-hcc"
+ },
+ "54": {
+  "id": 54,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-04-14",
+  "note": "Ozekibart BLA, PDUFA Apr 14, 2027.",
+  "source_url": "https://www.biospace.com/press-releases/inhibrx-announces-u-s-fda-acceptance-of-bla-for-ozekibart-in-patients-with-conventional-chondrosarcoma"
+ },
+ "55": {
+  "id": 55,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-04-23",
+  "note": "Deucrictibant NDA, PDUFA Apr 23, 2027.",
+  "source_url": "https://www.biospace.com/press-releases/pharvaris-announces-fda-acceptance-of-new-drug-application-for-deucrictibant-ir-for-on-demand-treatment-of-hereditary-angioedema-attacks"
+ },
+ "56": {
+  "id": 56,
+  "verdict": "not_a_filing",
+  "actual_pdufa": null,
+  "note": "AD04: priority voucher pilot application, not an NDA.",
+  "source_url": "https://www.psychiatrictimes.com/view/ad04-application-submitted-to-fda-commissioners-national-priority-voucher-pilot-program-for-potential-expedited-review"
+ },
+ "57": {
+  "id": 57,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-04-28",
+  "note": "Varegacestat NDA, PDUFA Apr 28, 2027.",
+  "source_url": "https://www.biospace.com/press-releases/immunome-announces-u-s-fda-acceptance-of-new-drug-application-for-varegacestat-for-the-treatment-of-adults-with-desmoid-tumors"
+ },
+ "58": {
+  "id": 58,
+  "verdict": "not_a_filing",
+  "actual_pdufa": null,
+  "note": "COMP360 rolling NDA incomplete; no review clock yet.",
+  "source_url": "https://www.biospace.com/press-releases/compass-pathways-announces-second-quarter-and-first-half-2026-financial-results-and-business-highlights"
+ },
+ "59": {
+  "id": 59,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-05-01",
+  "note": "AXS-12 NDA, PDUFA May 1, 2027.",
+  "source_url": "https://www.biospace.com/press-releases/axsome-therapeutics-announces-fda-acceptance-of-new-drug-application-for-axs-12-for-the-treatment-of-cataplexy-in-narcolepsy"
+ },
+ "60": {
+  "id": 60,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-05-08",
+  "note": "Encaleret NDA, PDUFA May 8, 2027.",
+  "source_url": "https://www.biospace.com/press-releases/bridgebio-announces-fda-acceptance-of-nda-for-encaleret-for-adh1"
+ },
+ "61": {
+  "id": 61,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-05-13",
+  "note": "BMS mezigdomide NDA accepted Jul 13, 2026; PDUFA May 13, 2027.",
+  "source_url": "https://www.businesswire.com/news/home/20260713597234/en/U.S.-Food-and-Drug-Administration-Accepts-Bristol-Myers-Squibbs-New-Drug-Application-for-Mezigdomide-in-Patients-with-Relapsed-or-Refractory-Multiple-Myeloma"
+ },
+ "62": {
+  "id": 62,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "PIK3CA-mutant sNDA submitted Aug 26, 2026; no PDUFA public.",
+  "source_url": "https://www.targetedonc.com/view/gedatolisib-snda-submitted-to-fda-in-pik3ca-mutant-advanced-breast-cancer"
+ },
+ "63": {
+  "id": 63,
+  "verdict": "duplicate",
+  "actual_pdufa": "2027-02-28",
+  "note": "Aroxybutynin is AD109 (OSA), PDUFA Feb 28, 2027; duplicates the AD109 row.",
+  "source_url": "https://www.biospace.com/press-releases/apnimed-announces-fda-acceptance-of-new-drug-application-for-ad109-an-investigational-oral-pill-to-treat-adults-with-obstructive-sleep-apnea-osa"
+ },
+ "64": {
+  "id": 64,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "BLA submitted Sep 29, 2026 with priority review requested; not yet accepted.",
+  "source_url": "https://www.contemporarypediatrics.com/view/bla-submitted-to-fda-for-viaskin-peanut-patch-in-children-aged-4-to-7-years-with-peanut-allergy"
+ },
+ "65": {
+  "id": 65,
+  "verdict": "duplicate",
+  "actual_pdufa": "2027-01-21",
+  "note": "z-rostudirsen is for DMD exon 51 (not NMOSD), PDUFA Jan 21, 2027; already listed via RTTNews.",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001818794/000119312526308343/dyn-20260720.htm"
+ },
+ "66": {
+  "id": 66,
+  "verdict": "confirmed",
+  "actual_pdufa": "1H 2027 (no new date)",
+  "note": "Denecimig BLA extended over manufacturing; no new action date.",
+  "source_url": "https://www.novonordisk-us.com/media/news-archive/news-details.html?id=916431"
+ },
+ "67": {
+  "id": 67,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Lonafarnib HDV NDA accepted Aug 11, 2026; no PDUFA disclosed.",
+  "source_url": "https://www.contagionlive.com/view/fda-accepts-nda-lonafarnib-chronic-hepatitis-d"
+ },
+ "68": {
+  "id": 68,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-06-14",
+  "note": "UGN-103 NDA accepted Oct 19, 2026; PDUFA Jun 14, 2027.",
+  "source_url": "https://www.onclive.com/view/fda-accepts-nda-for-ugn-103-in-recurrent-low-grade-intermediate-risk-nmibc"
+ },
+ "69": {
+  "id": 69,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-06-15",
+  "note": "sac-TMT BLA under priority review; PDUFA Jun 15, 2027.",
+  "source_url": "https://www.onclive.com/view/sac-tmt-improves-pfs-and-os-is-under-fda-priority-review-in-previously-treated-endometrial-cancer"
+ },
+ "70": {
+  "id": 70,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-06-18",
+  "note": "Zalunfiban NDA accepted; PDUFA Jun 18, 2027.",
+  "source_url": "https://www.hcplive.com/view/fda-accepts-nda-for-zalunfiban-in-prehospital-stemi-treatment"
+ },
+ "71": {
+  "id": 71,
+  "verdict": "wrong_drug",
+  "correct_drug": "ecopipam",
+  "actual_pdufa": "late Q1 2027",
+  "note": "ATH434 has no filing; the accepted NDA in that headline is ecopipam.",
+  "source_url": "https://www.neurologylive.com/view/fda-accepts-nda-grants-priority-review-ecopipam-pediatric-tourette-syndrome"
+ },
+ "72": {
+  "id": 72,
+  "verdict": "confirmed",
+  "actual_pdufa": "2027-06-24",
+  "note": "Ralinepag NDA accepted Aug 24, 2026; PDUFA Jun 24, 2027.",
+  "source_url": "https://ir.unither.com/~/media/Files/U/United-Therapeutics-IR/documents/press-releases/2026/ral-nda-acceptance-press-release.pdf"
+ },
+ "73": {
+  "id": 73,
+  "verdict": "confirmed",
+  "actual_pdufa": "1H 2027",
+  "note": "Efzimfotase alfa BLA accepted with priority review Sep 18, 2026.",
+  "source_url": "https://www.astrazeneca.com/media-centre/press-releases/2026/efzimfotase-alfa-granted-priority-review-us-as-treatment-for-patients-with-hypophosphatasia-aged-2-years-and-older.html"
+ },
+ "74": {
+  "id": 74,
+  "verdict": "not_a_filing",
+  "actual_pdufa": null,
+  "note": "ALXN1840: Monopar only began a rolling NDA Jul 22, 2026; not complete.",
+  "source_url": "https://www.sec.gov/Archives/edgar/data/0001645469/000143774926027165/ex_1003235.htm"
+ },
+ "75": {
+  "id": 75,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Savolitinib+osimertinib NDA submitted ~Sep 28, 2026; no PDUFA yet.",
+  "source_url": "https://www.onclive.com/view/savolitinib-plus-osimertinib-nda-submitted-to-fda-for-met-driven-egfr-mutated-nsclc"
+ },
+ "76": {
+  "id": 76,
+  "verdict": "not_a_filing",
+  "actual_pdufa": null,
+  "note": "Tovecimig: FDA asked for an OS trial before filing; BLA only planned.",
+  "source_url": "https://www.targetedonc.com/view/tovecimig-biliary-tract-cancer-fda-bla"
+ },
+ "77": {
+  "id": 77,
+  "verdict": "confirmed",
+  "actual_pdufa": null,
+  "note": "Etentamig BLA submitted Oct 27, 2026; not yet accepted.",
+  "source_url": "https://news.abbvie.com/2026-10-27-AbbVie-Submits-Biologics-License-Application-BLA-for-Etentamig-to-U-S-FDA-for-Adults-Living-With-Relapsed-Refractory-Multiple-Myeloma"
+ }
+}

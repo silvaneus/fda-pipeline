@@ -1,0 +1,208 @@
+[
+ {
+  "id": 61,
+  "drug": "mezigdomide",
+  "aliases": [
+   "cc 92480"
+  ],
+  "indication": "R/R Myeloma",
+  "pdufaDate": "2027-05-13",
+  "basis": "announced",
+  "evidence": "A Prescription Drug User Fee Act target action date has been set to May 13, 2027.",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-7-12"
+ },
+ {
+  "id": 62,
+  "drug": "gedatolisib",
+  "aliases": [
+   "pf 05212384",
+   "revtorpyk",
+   "pki 587"
+  ],
+  "indication": "PIK3CA-Mutant Advanced Breast Cancer",
+  "pdufaDate": "2027-05-18",
+  "basis": "estimated from submission",
+  "evidence": "The gedatolisib new drug application (NDA) was submitted under the FDA’s Real-Time Oncology Review program.",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-7-12"
+ },
+ {
+  "id": 63,
+  "drug": "aroxybutynin",
+  "aliases": [],
+  "indication": "Phase 3 SynAIRgy",
+  "pdufaDate": "2027-05-20",
+  "basis": "estimated from acceptance",
+  "evidence": "The FDA accepted for review the new drug application (NDA) for aroxybutynin 2.3 mg/atomoxetine 75 mg (AD109; Apnimed, Inc) for the treatment of adults with obstructive sleep apnea (OSA), according to a news release from ",
+  "source": "https://www.pharmacytimes.com/view/fda-accepts-nda-for-ad109-to-treatment-of-adults-with-obstructive-sleep-apnea"
+ },
+ {
+  "id": 64,
+  "drug": "Viaskin Peanut Patch",
+  "aliases": [
+   "vp250",
+   "viaskin"
+  ],
+  "indication": "Peanut Allergy in Children Aged 4-7 Years",
+  "pdufaDate": "2027-05-29",
+  "basis": "estimated from submission",
+  "evidence": "Young children with peanut allergy may gain a noninvasive immunotherapy option after DBV Technologies submitted a biologics license application (BLA) to the FDA for the Viaskin peanut patch in patients aged 4 through 7 y",
+  "source": "https://www.contemporarypediatrics.com/view/bla-submitted-to-fda-for-viaskin-peanut-patch-in-children-aged-4-to-7-years-with-peanut-allergy"
+ },
+ {
+  "id": 65,
+  "drug": "zeleciment rostudirsen",
+  "aliases": [
+   "z rostudirsen",
+   "dyne 251",
+   "rostudirsen",
+   "zelecimentrostudirsen"
+  ],
+  "indication": "NMOSD Study",
+  "pdufaDate": "2027-05-29",
+  "basis": "estimated from submission",
+  "evidence": "GLP-1s Improve MS Physical Activity, BLA Submitted for Z-Rostudirsen, Ofatumumab Outperforms Rituximab in NMOSD Study",
+  "source": "https://www.neurologylive.com/view/glp-1s-improve-ms-physical-activity-bla-submitted-z-rostudirsen-ofatumumab-outperforms-rituximab-nmosd-study"
+ },
+ {
+  "id": 66,
+  "drug": "denecimig",
+  "aliases": [
+   "mim8"
+  ],
+  "indication": "Hemophilia A",
+  "pdufaDate": "2027-05-31",
+  "basis": "estimated from acceptance",
+  "evidence": "A biologics license application is under FDA review for routine prophylaxis in adult and pediatric patients with hemophilia A, with or without inhibitors.",
+  "source": "https://www.pharmacytimes.com/view/july-2026-in-hematology-15-developments-that-advanced-and-challenged-patient-care"
+ },
+ {
+  "id": 67,
+  "drug": "lonafarnib",
+  "aliases": [],
+  "indication": "Chronic Hepatitis D",
+  "pdufaDate": "2027-06-11",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts NDA for Lonafarnib to Treat Chronic Hepatitis D",
+  "source": "https://www.contagionlive.com/view/fda-accepts-nda-lonafarnib-chronic-hepatitis-d"
+ },
+ {
+  "id": 68,
+  "drug": "mitomycin",
+  "aliases": [
+   "ugn 102",
+   "zusduri",
+   "mitomycin intravesical solution",
+   "ugn 103"
+  ],
+  "indication": "Recurrent LG-IR-NMIBC",
+  "pdufaDate": "2027-06-14",
+  "basis": "announced",
+  "evidence": "The FDA accepted a new drug application (NDA) for UGN-103 (mitomycin) intravesical solution for the treatment of adult patients with recurrent low-grade, intermediate-risk non–muscle-invasive bladder cancer (NMIBC), and ",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-10-18-2026"
+ },
+ {
+  "id": 69,
+  "drug": "sac-TMT",
+  "aliases": [
+   "sacituzumab tirumotecan",
+   "skb264 mk 2870",
+   "sac tmt",
+   "sacituzumabtirumotecan"
+  ],
+  "indication": "Previously Treated Endometrial Cancer",
+  "pdufaDate": "2027-06-15",
+  "basis": "announced",
+  "evidence": "Based on these findings, the FDA has accepted for priority review a biologics license application seeking the approval of sac-TMT for the treatment of adult patients with endometrial cancer who have previously received p",
+  "source": "https://www.onclive.com/view/sac-tmt-improves-pfs-and-os-is-under-fda-priority-review-in-previously-treated-endometrial-cancer"
+ },
+ {
+  "id": 70,
+  "drug": "zalunfiban",
+  "aliases": [],
+  "indication": "Prehospital STEMI",
+  "pdufaDate": "2027-06-18",
+  "basis": "announced",
+  "evidence": "The agency assigned a Prescription Drug User Fee Act (PDUFA) target action date of June 18, 2027.",
+  "source": "https://www.hcplive.com/view/fda-accepts-nda-for-zalunfiban-in-prehospital-stemi-treatment"
+ },
+ {
+  "id": 71,
+  "drug": "ATH434",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-06-22",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts Ecopipam NDA for Tourette Syndrome, Remlifanserin Receives Fast Track Designation for AD Psychosis, Alterity Reaches FDA Alignment on ATH434",
+  "source": "https://www.neurologylive.com/view/fda-accepts-ecopipam-nda-tourette-syndrome-remlifanserin-receives-fast-track-designation-ad-psychosis-alterity-reaches-fda-alignment-ath434"
+ },
+ {
+  "id": 72,
+  "drug": "ralinepag",
+  "aliases": [],
+  "indication": "Pulmonary Arterial Hypertension",
+  "pdufaDate": "2027-06-24",
+  "basis": "announced",
+  "evidence": "United Therapeutics' new drug application for ralinepag in pulmonary arterial hypertension (PAH) is under United States Food and Drug Administration (FDA) review, with a target action date of June 24, 2027, based on the ",
+  "source": "https://www.hcplive.com/view/ralinepag-benefit-spans-broad-pah-population-elwing"
+ },
+ {
+  "id": 73,
+  "drug": "efzimfotase",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-06-30",
+  "basis": "company guidance (first half of 2027)",
+  "evidence": "Also on September 18, 2026, the FDA granted priority review to the biologics license application for efzimfotase alfa, an enzyme-replacement candidate for hypophosphatasia in patients 2 and older, positioning it as a pot",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-september-2026"
+ },
+ {
+  "id": 74,
+  "drug": "ALXN1840",
+  "aliases": [
+   "bis choline tetrathiomolybdate",
+   "tmc"
+  ],
+  "indication": "Wilson Disease",
+  "pdufaDate": "2027-07-20",
+  "basis": "estimated from submission",
+  "evidence": "Monopar Therapeutics Inc. has initiated the rolling submission of a New Drug Application (NDA) to the US Food and Drug Administration (FDA) for ALXN1840 (bis-choline tetrathiomolybdate; TMC) in Wilson disease.",
+  "source": "https://www.hcplive.com/view/monopar-files-rolling-nda-alxn1840-wilson-disease"
+ },
+ {
+  "id": 75,
+  "drug": "savolitinib",
+  "aliases": [
+   "orpathys"
+  ],
+  "indication": "MET-Driven, EGFR-Mutated NSCLC After EGFR TKI",
+  "pdufaDate": "2027-08-31",
+  "basis": "estimated from submission",
+  "evidence": "In August 2026, topline results showed that SAFFRON met its primary end point of PFS and its key secondary end point of OS.2 A new drug application seeking approval of savolitinib plus osimertinib for patients with local",
+  "source": "https://www.onclive.com/view/saffron-data-reveal-new-global-soc-in-egfr-nsclc-with-met-overexpression-and-or-amplification-after-osimertinib"
+ },
+ {
+  "id": 76,
+  "drug": "tovecimig",
+  "aliases": [
+   "ctx 009"
+  ],
+  "indication": "Biliary Tract Cancer",
+  "pdufaDate": "2027-09-22",
+  "basis": "estimated from submission",
+  "evidence": "Tovecimig Submission for Biliary Tract Cancer Is Proceeding Despite FDA Request for New Trial ",
+  "source": "https://www.targetedonc.com/view/tovecimig-biliary-tract-cancer-fda-bla"
+ },
+ {
+  "id": 77,
+  "drug": "etentamig",
+  "aliases": [
+   "abbv 383",
+   "tnb 383b"
+  ],
+  "indication": "R/R Multiple Myeloma",
+  "pdufaDate": "2027-10-26",
+  "basis": "estimated from submission",
+  "evidence": "FDA Receives BLA for Etentamig in Relapsed/Refractory Multiple Myeloma",
+  "source": "https://www.cancernetwork.com/view/fda-receives-bla-for-etentamig-in-relapsed-refractory-multiple-myeloma"
+ }
+]

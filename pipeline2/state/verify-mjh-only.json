@@ -1,0 +1,928 @@
+[
+ {
+  "id": 1,
+  "drug": "adrabetadex",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2026-11-17",
+  "basis": "announced",
+  "evidence": "On May 28, 2026, the FDA extended the review period for the new drug application for investigational intrathecal adrabetadex in infantile-onset Niemann-Pick disease type C, moving the Prescription Drug User Fee Act targe",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-may-2026"
+ },
+ {
+  "id": 2,
+  "drug": "asundexian",
+  "aliases": [],
+  "indication": "Secondary Prevention After Ischemic Stroke",
+  "pdufaDate": "2026-11-19",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Grants Priority Review to Bayer’s Asundexian for Secondary Stroke Prevention",
+  "source": "https://www.neurologylive.com/view/fda-grants-priority-review-bayer-asundexian-secondary-stroke-prevention"
+ },
+ {
+  "id": 3,
+  "drug": "saroglitazar",
+  "aliases": [],
+  "indication": "Primary Biliary Cholangitis",
+  "pdufaDate": "2026-11-27",
+  "basis": "announced",
+  "evidence": "The application was assigned a PDUFA target action date of November 27, 2026, positioning the therapy as a potential new treatment option for patients with limited alternatives.",
+  "source": "https://www.hcplive.com/view/first-half-2026-recap-hepatology"
+ },
+ {
+  "id": 4,
+  "drug": "ursodeoxycholic acid",
+  "aliases": [
+   "udca",
+   "ursodeoxycholic acid udca"
+  ],
+  "indication": null,
+  "pdufaDate": "2026-11-27",
+  "basis": "announced",
+  "evidence": "The FDA has also assigned a Prescription Drug User Fee Act target action date of November 27, 2026.",
+  "source": "https://www.hcplive.com/view/q2-2026-recap-hepatology-news-updates"
+ },
+ {
+  "id": 5,
+  "drug": "imatinib (Gleevec)",
+  "aliases": [
+   "imatinib gleevec"
+  ],
+  "indication": null,
+  "pdufaDate": "2026-11-30",
+  "basis": "announced",
+  "evidence": "Importantly, in May 2026, the FDA accepted a new drug application for the combination for previously treated GISTs with priority review and set a target action date of November 30, 2026.7",
+  "source": "https://www.onclive.com/view/sot106-lands-dual-fda-designations-for-osteosarcoma-and-soft-tissue-sarcoma"
+ },
+ {
+  "id": 6,
+  "drug": "sunitinib",
+  "aliases": [
+   "sutent"
+  ],
+  "indication": null,
+  "pdufaDate": "2026-11-30",
+  "basis": "announced",
+  "evidence": "In gastrointestinal stromal tumors (GIST), the FDA accepted a new drug application with priority review for bezuclastinib plus sunitinib (Sutent) in previously treated disease and set a target action date of November 30,",
+  "source": "https://www.onclive.com/view/utrxmycn-m1-14-nets-fda-dual-designations-in-soft-tissue-sarcoma"
+ },
+ {
+  "id": 7,
+  "drug": "obinutuzumab",
+  "aliases": [
+   "gazyva gazyvaro"
+  ],
+  "indication": "Primary Membranous Nephropathy’s Potential First Therapy",
+  "pdufaDate": "2026-11-30",
+  "basis": "announced",
+  "evidence": "PDUFA Date: November 30, 2026",
+  "source": "https://www.hcplive.com/view/q4-2026-preview-7-fda-decisions-to-watch"
+ },
+ {
+  "id": 8,
+  "drug": "irinotecan",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2026-12-03",
+  "basis": "announced",
+  "evidence": "CancerNetwork® previously covered the FDA’s acceptance of the new drug application for zanzalintinib in combination with atezolizumab for the treatment of patients with metastatic colorectal cancer who had been previousl",
+  "source": "https://www.cancernetwork.com/view/zanzalintinib-atezolizumab-misses-survival-end-point-in-non-msi-h-mcrc-subgroup"
+ },
+ {
+  "id": 9,
+  "drug": "upadacitinib",
+  "aliases": [
+   "rinvoq"
+  ],
+  "indication": "Adults, Adolescents with Vitiligo",
+  "pdufaDate": "2026-12-03",
+  "basis": "estimated from submission",
+  "evidence": "AbbVie submits FDA, EMA applications for upadacitinib (RINVOQ) in non-segmental vitiligo for 12 years and older",
+  "source": "https://www.contemporarypediatrics.com/view/abbvie-submits-fda-ema-applications-for-upadacitinib-rinvoq-in-non-segmental-vitiligo-for-12-years-and-older"
+ },
+ {
+  "id": 10,
+  "drug": "oxybate",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2026-12-07",
+  "basis": "estimated from submission",
+  "evidence": "According to Tris Pharma, the submission also references the agency's prior safety and efficacy findings for currently marketed oxybate products.",
+  "source": "https://www.neurologylive.com/view/fda-accepts-nda-low-sodium-oxybate-trn257-narcolepsy-idiopathic-hypersomnia"
+ },
+ {
+  "id": 11,
+  "drug": "delgocitinib",
+  "aliases": [
+   "anzupgo"
+  ],
+  "indication": "Chronic Hand Eczema in Adolescents Aged 12–17",
+  "pdufaDate": "2026-12-14",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA accepts sNDA for delgocitinib in adolescents with chronic hand eczema",
+  "source": "https://www.contemporarypediatrics.com/view/fda-accepts-snda-for-delgocitinib-in-adolescents-with-chronic-hand-eczema"
+ },
+ {
+  "id": 12,
+  "drug": "delgocitinib cream",
+  "aliases": [
+   "anzupgo leo pharma"
+  ],
+  "indication": null,
+  "pdufaDate": "2026-12-14",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts sNDA for Delgocitinib Cream to Treat Pediatric Chronic Hand Eczema",
+  "source": "https://www.dermatologytimes.com/view/fda-accepts-snda-for-delgocitinib-cream-to-treat-pediatric-chronic-hand-eczema"
+ },
+ {
+  "id": 13,
+  "drug": "daratumumab",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2026-12-17",
+  "basis": "estimated from acceptance",
+  "evidence": "The FDA has accepted a new drug application (NDA) seeking approval for iberdomide plus daratumumab (Darzalex) and dexamethasone as a treatment for patients with relapsed/refractory multiple myeloma, according to a press ",
+  "source": "https://www.cancernetwork.com/view/fda-accepts-nda-for-iberdomide-combination-in-r-r-multiple-myeloma"
+ },
+ {
+  "id": 14,
+  "drug": "tirabrutinib",
+  "aliases": [
+   "velexbru",
+   "ono 4059"
+  ],
+  "indication": "Relapsed/Refractory PCNSL",
+  "pdufaDate": "2026-12-18",
+  "basis": "announced",
+  "evidence": "The application is being reviewed under the FDA’s accelerated approval pathway, with a designated PDUFA action date of December 18, 2026.",
+  "source": "https://www.targetedonc.com/view/oncology-frontiers-recapping-a-milestone-february-for-fda-approvals"
+ },
+ {
+  "id": 15,
+  "drug": "remibrutinib",
+  "aliases": [
+   "rhapsido"
+  ],
+  "indication": "Phase 3 Trial for Chronic Inducible Urticaria Subtypes",
+  "pdufaDate": "2026-12-18",
+  "basis": "estimated from submission",
+  "evidence": "Novartis reports RemIND phase 3 success and submits a supplemental New Drug Application to the FDA for symptomatic dermographism.",
+  "source": "https://www.dermatologytimes.com/view/remibrutinib-meets-primary-endpoints-in-phase-3-trial-for-chronic-inducible-urticaria-subtypes"
+ },
+ {
+  "id": 16,
+  "drug": "hydrocortisone acetate",
+  "aliases": [
+   "nghca",
+   "hca"
+  ],
+  "indication": "Ulcerative Colitis of the Rectum",
+  "pdufaDate": "2026-12-20",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts NDA For Next-Generation Hydrocortisone Acetate in Ulcerative Colitis of the Rectum",
+  "source": "https://www.hcplive.com/view/fda-accepts-nda-for-next-generation-hydrocortisone-acetate-in-ulcerative-colitis-of-the-rectum"
+ },
+ {
+  "id": 17,
+  "drug": "cemdisiran",
+  "aliases": [],
+  "indication": "Generalized Myasthenia Gravis",
+  "pdufaDate": "2026-12-22",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA and EMA Accepts Regulatory Applications for Cemdisiran in Generalized Myasthenia Gravis",
+  "source": "https://www.neurologylive.com/view/fda-ema-accepts-regulatory-applications-cemdisiran-generalized-myasthenia-gravis"
+ },
+ {
+  "id": 18,
+  "drug": "oxylanthanum carbonate",
+  "aliases": [
+   "olc",
+   "oxylanthanum carbonate olc"
+  ],
+  "indication": "Chronic Kidney Disease",
+  "pdufaDate": "2026-12-30",
+  "basis": "estimated from resubmission",
+  "evidence": "The decision, announced on June 30, 2026, by Unicycive Therapeutics, is based on deficiencies previously identified at a third-party manufacturing vendor, with the company noting an FDA inspection of the third-party faci",
+  "source": "https://www.hcplive.com/view/fda-issues-crl-for-oxylanthanum-carbonate-in-hyperphosphatemia-for-ckd-patients-on-dialysis"
+ },
+ {
+  "id": 19,
+  "drug": "SL1009",
+  "aliases": [
+   "sodium dichloroacetate",
+   "dca"
+  ],
+  "indication": "PDCD",
+  "pdufaDate": "2026-12-30",
+  "basis": "announced",
+  "evidence": "The FDA has acknowledged Saol Therapeutics' resubmission of its New Drug Application (NDA) for SL1009 (sodium dichloroacetate, DCA) for pyruvate dehydrogenase complex deficiency (PDCD), classifying it as a complete, Clas",
+  "source": "https://www.neurologylive.com/view/fda-accepts-sl1009-resubmission-pdcd-sets-december-pdufa-date"
+ },
+ {
+  "id": 20,
+  "drug": "olanzapine extended-release injectable suspension",
+  "aliases": [
+   "olanzapine extended release injectable suspension",
+   "tev 749"
+  ],
+  "indication": "Schizophrenia",
+  "pdufaDate": "2026-12-31",
+  "basis": "company guidance (fourth quarter of 2026)",
+  "evidence": "Its Prescription Drug User Fee Act target action date falls in the fourth quarter of 2026.",
+  "source": "https://www.psychiatrictimes.com/view/long-acting-injectables-in-schizophrenia-closing-the-gap-between-evidence-and-practice"
+ },
+ {
+  "id": 21,
+  "drug": "dersimelagon",
+  "aliases": [],
+  "indication": "EPP, XLP",
+  "pdufaDate": "2026-12-31",
+  "basis": "company guidance (second half of 2026)",
+  "evidence": "Next milestone: FDA decision on the pending NDA; the acquisition is expected to close in the second half of 2026, with a potential launch in 2027 if approved.",
+  "source": "https://www.dermatologytimes.com/view/dermatology-times-monthly-fda-pipeline-review-august-2026"
+ },
+ {
+  "id": 22,
+  "drug": "tegoprazan",
+  "aliases": [],
+  "indication": "3 GERD Indications",
+  "pdufaDate": "2027-01-02",
+  "basis": "estimated from submission",
+  "evidence": "Sebela Pharmaceuticals submitted a new drug application for tegoprazan in January 2026 covering NERD, healing of erosive esophagitis, and maintenance of healing, with a decision anticipated in January 2027.3",
+  "source": "https://www.hcplive.com/view/tegoprazan-phase-3-data-in-non-erosive-reflux-disease-with-ronnie-fass-md"
+ },
+ {
+  "id": 23,
+  "drug": "lumateperone",
+  "aliases": [
+   "caplyta",
+   "lumateperone tosylate"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-01-06",
+  "basis": "estimated from acceptance",
+  "evidence": "The US Food & Drug Administration (FDA) expanded lumateperone (Caplyta) for schizophrenia relapse prevention, approved milsaperidone (Bysanti) for bipolar I disorder and schizophrenia, cleared ProlivRx as the first at-ho",
+  "source": "https://www.hcplive.com/view/first-half-2026-recap-psychiatry"
+ },
+ {
+  "id": 24,
+  "drug": "RGX-121",
+  "aliases": [
+   "rgx 121",
+   "clemidsogene lanparvovec",
+   "lanparvovec",
+   "navsunli"
+  ],
+  "indication": "mucopolysaccharidosis type II",
+  "pdufaDate": "2027-01-06",
+  "basis": "estimated from resubmission",
+  "evidence": "FDA Clears Path for NAVSUNLI BLA Resubmission in MPS II, No Additional Studies Required",
+  "source": "https://www.neurologylive.com/view/fda-action-update-june-2026-acceptances-clearances-alignments"
+ },
+ {
+  "id": 25,
+  "drug": "SL1009",
+  "aliases": [
+   "sodium dichloroacetate",
+   "dca"
+  ],
+  "indication": "pyruvate dehydrogenase complex deficiency",
+  "pdufaDate": "2027-01-08",
+  "basis": "estimated from resubmission",
+  "evidence": "SL1009 resubmitted to FDA for pyruvate dehydrogenase complex deficiency",
+  "source": "https://www.contemporarypediatrics.com/view/sl1009-resubmitted-to-fda-for-pyruvate-dehydrogenase-complex-deficiency"
+ },
+ {
+  "id": 26,
+  "drug": "elinzanetant",
+  "aliases": [
+   "lynkuet"
+  ],
+  "indication": "Endocrine Therapy–Associated Vasomotor Symptoms in HR+ Breast Cancer",
+  "pdufaDate": "2027-01-30",
+  "basis": "estimated from acceptance",
+  "evidence": "Elinzanetant Gets Priority Review for VMS From Breast Cancer Endocrine Therapy",
+  "source": "https://www.targetedonc.com/view/elinzanetant-priority-review-vms-breast-cancer-endocrine-therapy"
+ },
+ {
+  "id": 27,
+  "drug": "phosphoinositide",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-01-30",
+  "basis": "announced",
+  "evidence": "The FDA also accepted, on September 28, 2026, a supplemental new drug application with priority review for leniolisib (Joenja) to extend its use to children with activated phosphoinositide 3-kinase δ syndrome (APDS) ages",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-september-2026"
+ },
+ {
+  "id": 28,
+  "drug": "midomafetamine",
+  "aliases": [
+   "mdma",
+   "3 4 methylenedioxymethamphetamine",
+   "midomafetamine capsules"
+  ],
+  "indication": "PTSD",
+  "pdufaDate": "2027-02-10",
+  "basis": "estimated from resubmission",
+  "evidence": "MDMA-Assisted Therapy NDA Resubmitted to FDA for PTSD",
+  "source": "https://www.hcplive.com/view/mdma-assisted-therapy-nda-resubmitted-fda-ptsd"
+ },
+ {
+  "id": 29,
+  "drug": "treprostinil",
+  "aliases": [
+   "yutrepia",
+   "tyvaso",
+   "liq861"
+  ],
+  "indication": "IPF",
+  "pdufaDate": "2027-02-17",
+  "basis": "estimated from acceptance",
+  "evidence": "Inhaled treprostinil would be the first inhaled drug approved for IPF, should United Therapeutics’ submission be accepted by the FDA.",
+  "source": "https://www.ajmc.com/view/united-therapeutics-plans-fda-submission-for-inhaled-treprostinil-in-ipf"
+ },
+ {
+  "id": 30,
+  "drug": "lebrikizumab",
+  "aliases": [
+   "ebglyss"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-02-23",
+  "basis": "announced",
+  "evidence": "The Prescription Drug User Fee Act target action date is February 23, 2027, and no advisory committee meeting is currently planned.2 The filing is supported by the phase 2 INTEGUMENT-INFANT study (NCT06998056), in which ",
+  "source": "https://www.dermatologytimes.com/view/how-approvals-setbacks-and-a-crowded-pipeline-are-reshaping-the-ad-treatment-landscape"
+ },
+ {
+  "id": 31,
+  "drug": "cefiderocol",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-02-23",
+  "basis": "announced",
+  "evidence": "The FDA has assigned a Prescription Drug User Fee Act (PDUFA) target action date of February 23, 2027.",
+  "source": "https://www.contagionlive.com/view/fda-accepts-shionogi-s-snda-to-expand-cefiderocol-use-to-pediatric-patients-with-drug-resistant-gram-negative-infections"
+ },
+ {
+  "id": 32,
+  "drug": "zipalertinib",
+  "aliases": [
+   "cln 081",
+   "cln 081 tas6417",
+   "tas6417",
+   "zipalertinib cln 081 tas6417"
+  ],
+  "indication": "EGFR Exon 20-Mutant Lung Cancer",
+  "pdufaDate": "2027-02-27",
+  "basis": "announced",
+  "evidence": "A separate NDA seeking accelerated approval for zipalertinib monotherapy in that previously treated population remains under FDA review, with a Prescription Drug User Fee Act target action date of February 27, 2027.",
+  "source": "https://www.cancernetwork.com/view/nda-submission-begins-for-zipalertinib-combo-in-first-line-egfr-nsclc"
+ },
+ {
+  "id": 33,
+  "drug": "amivantamab-vmjw (Rybrevant)",
+  "aliases": [
+   "amivantamab rybrevant"
+  ],
+  "indication": "HNSCC?",
+  "pdufaDate": "2027-02-27",
+  "basis": "announced",
+  "evidence": "Cullinan Therapeutics and Taiho Oncology intend to pursue first-line US approval, separate from an accepted NDA for zipalertinib monotherapy in the pretreated setting—with or without amivantamab-vmjw (Rybrevant)—based on",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-8-9"
+ },
+ {
+  "id": 34,
+  "drug": "lunsotogene",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-02-27",
+  "basis": "estimated from submission",
+  "evidence": "On April 27, 2026, Arcutis Biotherapeutics announced submission of a supplemental new drug application to the FDA seeking to expand the indication for roflumilast (Zoryve) cream 0.05% to infants aged 3 months to less tha",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-april-2026"
+ },
+ {
+  "id": 35,
+  "drug": "upadacitinib",
+  "aliases": [
+   "rinvoq"
+  ],
+  "indication": "Severe Alopecia Areata",
+  "pdufaDate": "2027-02-28",
+  "basis": "estimated from submission",
+  "evidence": "AbbVie Submits sNDA for Upadacitinib in Adults and Adolescents With Severe Alopecia Areata",
+  "source": "https://www.dermatologytimes.com/view/abbvie-submits-snda-for-upadacitinib-in-adults-and-adolescents-with-severe-alopecia-areata"
+ },
+ {
+  "id": 36,
+  "drug": "AD109",
+  "aliases": [
+   "atomoxetine",
+   "strattera",
+   "aroxybutynin atomoxetine",
+   "aroxybutynin 2 5 mg atomoxetine 75 mg"
+  ],
+  "indication": "Adults With Obstructive Sleep Apnea",
+  "pdufaDate": "2027-02-28",
+  "basis": "announced",
+  "evidence": "Apnimed’s new drug application for AD109 is under FDA review, with a Prescription Drug User Fee Act goal date of February 28, 2027.",
+  "source": "https://www.hcplive.com/view/ad109-cuts-ahi-postmenopausal-women-osa"
+ },
+ {
+  "id": 37,
+  "drug": "casimersen",
+  "aliases": [
+   "amondys 45"
+  ],
+  "indication": "Duchenne Muscular Dystrophy",
+  "pdufaDate": "2027-02-28",
+  "basis": "announced",
+  "evidence": "FDA Accepts Sarepta's sNDAs for Casimersen and Golodirsen for Duchenne Muscular Dystrophy",
+  "source": "https://www.neurologylive.com/view/fda-accepts-sarepta-sndas-casimersen-golodirsen-dmd"
+ },
+ {
+  "id": 38,
+  "drug": "golodirsen",
+  "aliases": [
+   "vyondys 53"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-02-28",
+  "basis": "announced",
+  "evidence": "At the end of the month, on June 30, 2026, the FDA accepted Sarepta Therapeutics’ supplemental new drug applications (sNDAs) for casimersen (Amondys 45) and golodirsen (Vyondys 53), 2 exon-skipping therapies indicated fo",
+  "source": "https://www.neurologylive.com/view/fda-action-update-june-2026-acceptances-clearances-alignments"
+ },
+ {
+  "id": 39,
+  "drug": "vosoritide",
+  "aliases": [
+   "voxzogo"
+  ],
+  "indication": "children with achondroplasia",
+  "pdufaDate": "2027-02-28",
+  "basis": "announced",
+  "evidence": "On July 13, 2026, the FDA accepted BioMarin's supplemental new drug application seeking to convert vosoritide's (Voxzogo) achondroplasia indication from accelerated to full approval, with a PDUFA date of February 28, 202",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-july-2026"
+ },
+ {
+  "id": 40,
+  "drug": "atezolizumab",
+  "aliases": [
+   "tecentriq",
+   "atezolizumab and hyaluronidase",
+   "tecentriq hybreza",
+   "subcutaneous atezolizumab"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-03-03",
+  "basis": "announced",
+  "evidence": "The FDA extended the review of the new drug application for zanzalintinib plus atezolizumab by 3 months, moving the target action date from December 3, 2026, to March 3, 2027, after classifying updated data from the comp",
+  "source": "https://www.onclive.com/view/gi-cancer-monthly-rewind-key-news-and-expert-insights-you-may-have-missed-in-september-2026"
+ },
+ {
+  "id": 41,
+  "drug": "lonvo-z",
+  "aliases": [
+   "lonvoguran ziclumeran",
+   "lonvo z",
+   "lonvoguran ziclumeran lonvo z"
+  ],
+  "indication": "HAE",
+  "pdufaDate": "2027-03-10",
+  "basis": "announced",
+  "evidence": "The FDA accepted the Biologics License Application for lonvoguran ziclumeran (lonvo-z; Intellia Therapeutics) with priority review for HAE in patients aged ≥16 years, setting a PDUFA date of March 10, 2027.",
+  "source": "https://www.hcplive.com/view/q3-2026-recap-allergy-news-updates"
+ },
+ {
+  "id": 42,
+  "drug": "azetukalner",
+  "aliases": [
+   "xen1101"
+  ],
+  "indication": "Treatment for Focal Seizures",
+  "pdufaDate": "2027-03-12",
+  "basis": "estimated from submission",
+  "evidence": "Phase 3 X-TOLE2 Data Support NDA Submission for Azetukalner in Focal Onset Seizures",
+  "source": "https://www.neurologylive.com/view/phase-3-x-tole2-data-support-nda-submission-azetukalner-focal-onset-seizures"
+ },
+ {
+  "id": 43,
+  "drug": "clesrovimab",
+  "aliases": [
+   "enflonsia",
+   "mk 1654"
+  ],
+  "indication": "Second RSV Season",
+  "pdufaDate": "2027-03-22",
+  "basis": "announced",
+  "evidence": "Announced by parent company Merck, the FDA has set a PDUFA target action date of March 22, 2027.",
+  "source": "https://www.hcplive.com/view/8-pulmonology-headlines-you-missed-in-q3-2026"
+ },
+ {
+  "id": 44,
+  "drug": "chosen",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-03-30",
+  "basis": "estimated from acceptance",
+  "evidence": "The FDA has not yet announced whether it will accept the application or grant priority review.",
+  "source": "https://www.contemporarypediatrics.com/view/bla-submitted-to-fda-for-viaskin-peanut-patch-in-children-aged-4-to-7-years-with-peanut-allergy"
+ },
+ {
+  "id": 45,
+  "drug": "tabelecleucel",
+  "aliases": [
+   "ebvallo",
+   "tab cel"
+  ],
+  "indication": "EBV-Positive PTLD",
+  "pdufaDate": "2027-03-31",
+  "basis": "announced",
+  "evidence": "The FDA accepted the resubmitted biologics license application (BLA) for tabelecleucel (Ebvallo), an allogeneic, off-the-shelf, Epstein-Barr virus (EBV)–specific T-cell immunotherapy, as monotherapy for patients aged 2 y",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-10-11"
+ },
+ {
+  "id": 46,
+  "drug": "ecopipam",
+  "aliases": [
+   "ebs 101",
+   "ecopipam ebs 101"
+  ],
+  "indication": "Pediatric Tourette Syndrome",
+  "pdufaDate": "2027-03-31",
+  "basis": "company guidance (first quarter of 2027)",
+  "evidence": "The FDA accepted Teva's new drug application (NDA) in August 2026 and established a Prescription Drug User Fee Act target action date for late in the first quarter of 2027.4",
+  "source": "https://www.neurologylive.com/view/ecopipam-shows-early-sustained-tic-reduction-new-pediatric-tourette-syndrome-analyses"
+ },
+ {
+  "id": 47,
+  "drug": "tozorakimab",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-03-31",
+  "basis": "company guidance (first quarter of 2027)",
+  "evidence": "The FDA accepted the company’s Biologics License Application for tozorakimab 300 mg as add-on maintenance treatment for adults with COPD under Priority Review, with a decision anticipated in the first quarter of 2027.",
+  "source": "https://www.hcplive.com/view/tozorakimab-improves-daily-respiratory-symptoms-copd-oberon-titania"
+ },
+ {
+  "id": 48,
+  "drug": "troriluzole",
+  "aliases": [],
+  "indication": "Potential First Treatment for Spinocerebellar Ataxia",
+  "pdufaDate": "2027-03-31",
+  "basis": "company guidance (first quarter of 2027)",
+  "evidence": "The agency accepted the resubmission for review and set a user fee goal date in the first quarter of 2027 without specifying a day; the company noted the goal date does not guarantee action or approval, and that the FDA ",
+  "source": "https://www.neurologylive.com/view/fda-accepts-troriluzole-nda-resubmission-spinocerebellar-ataxia"
+ },
+ {
+  "id": 49,
+  "drug": "pitolisant",
+  "aliases": [
+   "wakix"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-04-01",
+  "basis": "announced",
+  "evidence": "In July 2026, the FDA accepted the new drug application for pitolisant gastro-resistant tablets, with a Prescription Drug User Fee Act target action date of April 1, 2027.",
+  "source": "https://www.neurologylive.com/view/favorable-phase-1-data-orexin-2-agonist-bp-205-broader-pipeline-progress-headline-harmony-q2-update"
+ },
+ {
+  "id": 50,
+  "drug": "epinephrine",
+  "aliases": [
+   "epinephrine nasal spray",
+   "epinephrine nasal solution"
+  ],
+  "indication": "Type 1 Allergic Reactions",
+  "pdufaDate": "2027-04-01",
+  "basis": "estimated from resubmission",
+  "evidence": "Aquestive resubmits NDA for sublingual epinephrine film Anaphylm after FDA CRL",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-september-2026"
+ },
+ {
+  "id": 51,
+  "drug": "onabotulinumtoxinA",
+  "aliases": [
+   "botox",
+   "botox cosmetic"
+  ],
+  "indication": "Masseter Muscle",
+  "pdufaDate": "2027-04-05",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts sBLA for OnabotulinumtoxinA in Masseter Muscle, Pursuing Fifth Aesthetic Indication",
+  "source": "https://www.dermatologytimes.com/view/fda-accepts-sbla-for-onabotulinumtoxina-in-masseter-muscle-pursuing-fifth-aesthetic-indication"
+ },
+ {
+  "id": 52,
+  "drug": "rivoceranib",
+  "aliases": [
+   "apatinib"
+  ],
+  "indication": "Frontline Unresectable or Metastatic HCC",
+  "pdufaDate": "2027-04-13",
+  "basis": "estimated from resubmission",
+  "evidence": "Rivoceranib Plus Camrelizumab Resubmitted to FDA in Frontline HCC",
+  "source": "https://www.targetedonc.com/view/rivoceranib-plus-camrelizumab-resubmitted-to-fda-in-frontline-hcc"
+ },
+ {
+  "id": 53,
+  "drug": "camrelizumab",
+  "aliases": [
+   "shr 1210"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-04-14",
+  "basis": "estimated from resubmission",
+  "evidence": "A new drug application (NDA) has been resubmitted to the FDA, seeking the approval of camrelizumab plus rivoceranib for the first-line systemic treatment of patients with unresectable or metastatic hepatocellular carcino",
+  "source": "https://www.onclive.com/view/elevar-resubmits-nda-for-rivoceranib-plus-camrelizumab-frontline-unresectable-metastatic-hcc"
+ },
+ {
+  "id": 54,
+  "drug": "ozekibart",
+  "aliases": [
+   "inbrx 109",
+   "ozekibart inbrx 109"
+  ],
+  "indication": "Unresectable or Metastatic Chondrosarcoma",
+  "pdufaDate": "2027-04-14",
+  "basis": "announced",
+  "evidence": "A Prescription Drug User Fee Act goal date has been set for April 14, 2027.",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-6-14"
+ },
+ {
+  "id": 55,
+  "drug": "deucrictibant",
+  "aliases": [
+   "deucrictibant immediate release"
+  ],
+  "indication": "HAE Attacks",
+  "pdufaDate": "2027-04-23",
+  "basis": "announced",
+  "evidence": "Pharvaris reported a New Drug Application (NDA) for deucrictibant for on-demand treatment is under FDA review, with a Prescription Drug User Fee Act (PDUFA) target action date of April 23, 2027.",
+  "source": "https://www.hcplive.com/view/oral-deucrictibant-speeds-relief-hereditary-angioedema-attacks"
+ },
+ {
+  "id": 56,
+  "drug": "AD04",
+  "aliases": [],
+  "indication": "Potential Expedited Review",
+  "pdufaDate": "2027-04-26",
+  "basis": "estimated from submission",
+  "evidence": "AD04 Application Submitted to FDA Commissioner’s National Priority Voucher Pilot Program for Potential Expedited Review",
+  "source": "https://www.psychiatrictimes.com/view/ad04-application-submitted-to-fda-commissioners-national-priority-voucher-pilot-program-for-potential-expedited-review"
+ },
+ {
+  "id": 57,
+  "drug": "varegacestat",
+  "aliases": [
+   "al102",
+   "varegacestat al102"
+  ],
+  "indication": "Desmoid Tumors",
+  "pdufaDate": "2027-04-28",
+  "basis": "announced",
+  "evidence": "The broader sarcoma field has seen recent regulatory and clinical activity: In July 2026, the FDA accepted a new drug application for varegacestat in desmoid tumors, a form of soft tissue sarcoma, and set a Prescription ",
+  "source": "https://www.onclive.com/view/fda-grants-fast-track-designation-to-sot106-in-soft-tissue-sarcoma"
+ },
+ {
+  "id": 58,
+  "drug": "psilocybin",
+  "aliases": [
+   "comp360"
+  ],
+  "indication": null,
+  "pdufaDate": "2027-04-30",
+  "basis": "company guidance (early 2027)",
+  "evidence": "Compass Pathways' COMP360, a synthetic formulation of psilocybin, delivered 2 positive phase 3 results in TRD,3 strengthening the evidence base supporting psilocybin’s use and advancing the program toward regulatory revi",
+  "source": "https://www.psychiatrictimes.com/view/psychedelics-as-a-catalyst-for-change-the-evolving-competitive-landscape-in-depression"
+ },
+ {
+  "id": 59,
+  "drug": "reboxetine",
+  "aliases": [
+   "roboxetine",
+   "axs 12"
+  ],
+  "indication": "Cataplexy in Narcolepsy",
+  "pdufaDate": "2027-05-01",
+  "basis": "announced",
+  "evidence": "The FDA has set a Prescription Drug User Fee Act (PDUFA) target action date of May 1, 2027.",
+  "source": "https://www.psychiatrictimes.com/view/the-psychiatric-pipeline-in-review-quarter-3-2026"
+ },
+ {
+  "id": 60,
+  "drug": "encaleret",
+  "aliases": [],
+  "indication": "Autosomal Dominant Hypocalcemia Type 1",
+  "pdufaDate": "2027-05-08",
+  "basis": "announced",
+  "evidence": "Encaleret has been assigned a Prescription Drug User Fee Act (PDUFA) date of May 8, 2027.",
+  "source": "https://www.hcplive.com/view/5-endocrinology-headlines-you-missed-in-july-2026"
+ },
+ {
+  "id": 61,
+  "drug": "mezigdomide",
+  "aliases": [
+   "cc 92480"
+  ],
+  "indication": "R/R Myeloma",
+  "pdufaDate": "2027-05-13",
+  "basis": "announced",
+  "evidence": "A Prescription Drug User Fee Act target action date has been set to May 13, 2027.",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-7-12"
+ },
+ {
+  "id": 62,
+  "drug": "gedatolisib",
+  "aliases": [
+   "pf 05212384",
+   "revtorpyk",
+   "pki 587"
+  ],
+  "indication": "PIK3CA-Mutant Advanced Breast Cancer",
+  "pdufaDate": "2027-05-18",
+  "basis": "estimated from submission",
+  "evidence": "The gedatolisib new drug application (NDA) was submitted under the FDA’s Real-Time Oncology Review program.",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-7-12"
+ },
+ {
+  "id": 63,
+  "drug": "aroxybutynin",
+  "aliases": [],
+  "indication": "Phase 3 SynAIRgy",
+  "pdufaDate": "2027-05-20",
+  "basis": "estimated from acceptance",
+  "evidence": "The FDA accepted for review the new drug application (NDA) for aroxybutynin 2.3 mg/atomoxetine 75 mg (AD109; Apnimed, Inc) for the treatment of adults with obstructive sleep apnea (OSA), according to a news release from ",
+  "source": "https://www.pharmacytimes.com/view/fda-accepts-nda-for-ad109-to-treatment-of-adults-with-obstructive-sleep-apnea"
+ },
+ {
+  "id": 64,
+  "drug": "Viaskin Peanut Patch",
+  "aliases": [
+   "vp250",
+   "viaskin"
+  ],
+  "indication": "Peanut Allergy in Children Aged 4-7 Years",
+  "pdufaDate": "2027-05-29",
+  "basis": "estimated from submission",
+  "evidence": "Young children with peanut allergy may gain a noninvasive immunotherapy option after DBV Technologies submitted a biologics license application (BLA) to the FDA for the Viaskin peanut patch in patients aged 4 through 7 y",
+  "source": "https://www.contemporarypediatrics.com/view/bla-submitted-to-fda-for-viaskin-peanut-patch-in-children-aged-4-to-7-years-with-peanut-allergy"
+ },
+ {
+  "id": 65,
+  "drug": "zeleciment rostudirsen",
+  "aliases": [
+   "z rostudirsen",
+   "dyne 251",
+   "rostudirsen",
+   "zelecimentrostudirsen"
+  ],
+  "indication": "NMOSD Study",
+  "pdufaDate": "2027-05-29",
+  "basis": "estimated from submission",
+  "evidence": "GLP-1s Improve MS Physical Activity, BLA Submitted for Z-Rostudirsen, Ofatumumab Outperforms Rituximab in NMOSD Study",
+  "source": "https://www.neurologylive.com/view/glp-1s-improve-ms-physical-activity-bla-submitted-z-rostudirsen-ofatumumab-outperforms-rituximab-nmosd-study"
+ },
+ {
+  "id": 66,
+  "drug": "denecimig",
+  "aliases": [
+   "mim8"
+  ],
+  "indication": "Hemophilia A",
+  "pdufaDate": "2027-05-31",
+  "basis": "estimated from acceptance",
+  "evidence": "A biologics license application is under FDA review for routine prophylaxis in adult and pediatric patients with hemophilia A, with or without inhibitors.",
+  "source": "https://www.pharmacytimes.com/view/july-2026-in-hematology-15-developments-that-advanced-and-challenged-patient-care"
+ },
+ {
+  "id": 67,
+  "drug": "lonafarnib",
+  "aliases": [],
+  "indication": "Chronic Hepatitis D",
+  "pdufaDate": "2027-06-11",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts NDA for Lonafarnib to Treat Chronic Hepatitis D",
+  "source": "https://www.contagionlive.com/view/fda-accepts-nda-lonafarnib-chronic-hepatitis-d"
+ },
+ {
+  "id": 68,
+  "drug": "mitomycin",
+  "aliases": [
+   "ugn 102",
+   "zusduri",
+   "mitomycin intravesical solution",
+   "ugn 103"
+  ],
+  "indication": "Recurrent LG-IR-NMIBC",
+  "pdufaDate": "2027-06-14",
+  "basis": "announced",
+  "evidence": "The FDA accepted a new drug application (NDA) for UGN-103 (mitomycin) intravesical solution for the treatment of adult patients with recurrent low-grade, intermediate-risk non–muscle-invasive bladder cancer (NMIBC), and ",
+  "source": "https://www.onclive.com/view/the-oncfive-top-oncology-articles-for-the-week-of-10-18-2026"
+ },
+ {
+  "id": 69,
+  "drug": "sac-TMT",
+  "aliases": [
+   "sacituzumab tirumotecan",
+   "skb264 mk 2870",
+   "sac tmt",
+   "sacituzumabtirumotecan"
+  ],
+  "indication": "Previously Treated Endometrial Cancer",
+  "pdufaDate": "2027-06-15",
+  "basis": "announced",
+  "evidence": "Based on these findings, the FDA has accepted for priority review a biologics license application seeking the approval of sac-TMT for the treatment of adult patients with endometrial cancer who have previously received p",
+  "source": "https://www.onclive.com/view/sac-tmt-improves-pfs-and-os-is-under-fda-priority-review-in-previously-treated-endometrial-cancer"
+ },
+ {
+  "id": 70,
+  "drug": "zalunfiban",
+  "aliases": [],
+  "indication": "Prehospital STEMI",
+  "pdufaDate": "2027-06-18",
+  "basis": "announced",
+  "evidence": "The agency assigned a Prescription Drug User Fee Act (PDUFA) target action date of June 18, 2027.",
+  "source": "https://www.hcplive.com/view/fda-accepts-nda-for-zalunfiban-in-prehospital-stemi-treatment"
+ },
+ {
+  "id": 71,
+  "drug": "ATH434",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-06-22",
+  "basis": "estimated from acceptance",
+  "evidence": "FDA Accepts Ecopipam NDA for Tourette Syndrome, Remlifanserin Receives Fast Track Designation for AD Psychosis, Alterity Reaches FDA Alignment on ATH434",
+  "source": "https://www.neurologylive.com/view/fda-accepts-ecopipam-nda-tourette-syndrome-remlifanserin-receives-fast-track-designation-ad-psychosis-alterity-reaches-fda-alignment-ath434"
+ },
+ {
+  "id": 72,
+  "drug": "ralinepag",
+  "aliases": [],
+  "indication": "Pulmonary Arterial Hypertension",
+  "pdufaDate": "2027-06-24",
+  "basis": "announced",
+  "evidence": "United Therapeutics' new drug application for ralinepag in pulmonary arterial hypertension (PAH) is under United States Food and Drug Administration (FDA) review, with a target action date of June 24, 2027, based on the ",
+  "source": "https://www.hcplive.com/view/ralinepag-benefit-spans-broad-pah-population-elwing"
+ },
+ {
+  "id": 73,
+  "drug": "efzimfotase",
+  "aliases": [],
+  "indication": null,
+  "pdufaDate": "2027-06-30",
+  "basis": "company guidance (first half of 2027)",
+  "evidence": "Also on September 18, 2026, the FDA granted priority review to the biologics license application for efzimfotase alfa, an enzyme-replacement candidate for hypophosphatasia in patients 2 and older, positioning it as a pot",
+  "source": "https://www.contemporarypediatrics.com/view/fda-news-in-pediatrics-september-2026"
+ },
+ {
+  "id": 74,
+  "drug": "ALXN1840",
+  "aliases": [
+   "bis choline tetrathiomolybdate",
+   "tmc"
+  ],
+  "indication": "Wilson Disease",
+  "pdufaDate": "2027-07-20",
+  "basis": "estimated from submission",
+  "evidence": "Monopar Therapeutics Inc. has initiated the rolling submission of a New Drug Application (NDA) to the US Food and Drug Administration (FDA) for ALXN1840 (bis-choline tetrathiomolybdate; TMC) in Wilson disease.",
+  "source": "https://www.hcplive.com/view/monopar-files-rolling-nda-alxn1840-wilson-disease"
+ },
+ {
+  "id": 75,
+  "drug": "savolitinib",
+  "aliases": [
+   "orpathys"
+  ],
+  "indication": "MET-Driven, EGFR-Mutated NSCLC After EGFR TKI",
+  "pdufaDate": "2027-08-31",
+  "basis": "estimated from submission",
+  "evidence": "In August 2026, topline results showed that SAFFRON met its primary end point of PFS and its key secondary end point of OS.2 A new drug application seeking approval of savolitinib plus osimertinib for patients with local",
+  "source": "https://www.onclive.com/view/saffron-data-reveal-new-global-soc-in-egfr-nsclc-with-met-overexpression-and-or-amplification-after-osimertinib"
+ },
+ {
+  "id": 76,
+  "drug": "tovecimig",
+  "aliases": [
+   "ctx 009"
+  ],
+  "indication": "Biliary Tract Cancer",
+  "pdufaDate": "2027-09-22",
+  "basis": "estimated from submission",
+  "evidence": "Tovecimig Submission for Biliary Tract Cancer Is Proceeding Despite FDA Request for New Trial ",
+  "source": "https://www.targetedonc.com/view/tovecimig-biliary-tract-cancer-fda-bla"
+ },
+ {
+  "id": 77,
+  "drug": "etentamig",
+  "aliases": [
+   "abbv 383",
+   "tnb 383b"
+  ],
+  "indication": "R/R Multiple Myeloma",
+  "pdufaDate": "2027-10-26",
+  "basis": "estimated from submission",
+  "evidence": "FDA Receives BLA for Etentamig in Relapsed/Refractory Multiple Myeloma",
+  "source": "https://www.cancernetwork.com/view/fda-receives-bla-for-etentamig-in-relapsed-refractory-multiple-myeloma"
+ }
+]

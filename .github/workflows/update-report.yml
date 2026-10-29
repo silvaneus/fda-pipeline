@@ -22,6 +22,15 @@ jobs:
         with:
           node-version: '22'
 
+      # Pipeline 2.0 reads MJH articles from Sanity and keeps them in a local cache. Restoring it
+      # means only new and edited articles are fetched; with no cache the first run backfills from 2024.
+      - name: Restore MJH article cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline2/state/articles
+          key: mjh-articles-${{ github.run_id }}
+          restore-keys: mjh-articles-
+
       - name: Run pipeline
         run: node run-pipeline.js --force
 
@@ -29,6 +38,6 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add reports/ state/
+          git add reports/ state/ pipeline2/state/
           git diff --staged --quiet || git commit -m "Update FDA pipeline report - $(date +'%Y-%m-%d')"
           git push

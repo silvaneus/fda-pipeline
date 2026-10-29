@@ -1783,7 +1783,9 @@ async function filterApprovedCatalysts(catalysts, verbose = false) {
 /**
  * Get all PDUFA catalysts
  */
-async function getPDUFACatalysts(options = {}) {
+// The previous catalyst list (RTTNews + curated + scraped). No longer used for the report; kept so
+// CATALYST_SOURCE=legacy can bring it back for comparison.
+async function getLegacyPDUFACatalysts(options = {}) {
   const { forceRefresh = false, verbose = true, includeWebScrape = false } = options;
 
   // Check cache
@@ -1999,6 +2001,49 @@ async function getPDUFACatalysts(options = {}) {
 }
 
 /**
+ * FDA catalysts from Pipeline 2.0 (pipeline2/): MJH's own coverage (via Sanity) combined with the
+ * RTTNews calendar. MJH outcomes take approved and rejected drugs off, MJH-reported extensions
+ * move dates, and MJH-only filings get a separate tier. There is no curated list.
+ * If the build fails (Sanity or RTTNews unreachable), the last good list is used.
+ */
+async function getPDUFACatalysts(options = {}) {
+  const { forceRefresh = false, verbose = true } = options;
+  if (process.env.CATALYST_SOURCE === 'legacy') return getLegacyPDUFACatalysts(options);
+
+  if (!forceRefresh && fs.existsSync(CATALYSTS_CACHE_FILE) && fs.existsSync(CATALYSTS_LAST_FETCH)) {
+    const hours = (Date.now() - new Date(fs.readFileSync(CATALYSTS_LAST_FETCH, 'utf-8').trim()).getTime()) / 36e5;
+    if (hours < 24) {
+      if (verbose) console.log(`Using cached PDUFA catalysts (${hours.toFixed(1)} hours old)`);
+      return JSON.parse(fs.readFileSync(CATALYSTS_CACHE_FILE, 'utf-8'));
+    }
+  }
+
+  if (verbose) console.log('Building PDUFA catalysts (Pipeline 2.0: MJH coverage + RTTNews)...');
+  const p2 = await import(require('url').pathToFileURL(path.join(__dirname, 'pipeline2', 'src', 'catalysts.js')).href);
+  let catalysts;
+  try {
+    ({ catalysts } = await p2.buildCatalysts({ sync: true, verbose }));
+    const report = path.join(__dirname, 'pipeline2', 'reports', 'pipeline-2.0.html');
+    if (fs.existsSync(report)) fs.copyFileSync(report, path.join(__dirname, 'reports', 'pipeline-2.0.html'));
+  } catch (err) {
+    catalysts = p2.lastCatalysts();
+    if (!catalysts) throw err;
+    if (verbose) console.log(`  Warning: Pipeline 2.0 build failed (${err.message}); using the last good list`);
+  }
+
+  catalysts = catalysts.map(enrichCatalyst);
+  catalysts.sort((a, b) => (a.pdufaDate || '9999').localeCompare(b.pdufaDate || '9999'));
+  if (verbose) {
+    const main = catalysts.filter(c => c.tier === 'main').length;
+    console.log(`  Total catalysts: ${catalysts.length} (${main} main list, ${catalysts.length - main} MJH-only)`);
+  }
+  if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+  fs.writeFileSync(CATALYSTS_CACHE_FILE, JSON.stringify(catalysts, null, 2));
+  fs.writeFileSync(CATALYSTS_LAST_FETCH, new Date().toISOString());
+  return catalysts;
+}
+
+/**
  * Get summary statistics for catalysts
  */
 function getCatalystStats(catalysts) {
@@ -2077,6 +2122,7 @@ if (require.main === module) {
 
 module.exports = {
   getPDUFACatalysts,
+  getLegacyPDUFACatalysts,
   getCatalystStats,
   calculateDaysUntil,
   enrichCatalyst,
