@@ -1,0 +1,4 @@
+{
+  "about": "Weekly web verification of FDA Catalysts rows, written by a scheduled Claude routine. pipeline2/src/catalysts.js applies these on the nightly build. Key: drug + pdufaDate exactly as in catalysts.json.",
+  "checks": []
+}

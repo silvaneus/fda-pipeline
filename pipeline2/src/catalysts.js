@@ -140,6 +140,31 @@ function recentDecisions(pipe) {
   return out;
 }
 
+// Verdicts from the weekly web check (a scheduled Claude routine writes state/web-checks.json).
+// A verdict applies to the row it was made for: same drug and same date. When the date moves,
+// the row is checked again.
+//   confirmed  -> confidence High
+//   decided / not_real -> row removed (the verdict and its evidence stay in the file)
+//   wrong_date -> row kept, flagged with the date the check found
+//   uncertain  -> no change
+const WEB_CHECKS = path.join(ROOT, 'state', 'web-checks.json');
+const checkKey = c => `${c.drug.toLowerCase()}|${c.pdufaDate}`;
+function applyWebChecks(catalysts) {
+  const checks = fs.existsSync(WEB_CHECKS) ? JSON.parse(fs.readFileSync(WEB_CHECKS, 'utf8')).checks || [] : [];
+  const byKey = new Map(checks.map(v => [`${String(v.drug).toLowerCase()}|${v.pdufaDate}`, v]));
+  const out = [];
+  for (const c of catalysts) {
+    const v = byKey.get(checkKey(c));
+    if (!v) { out.push(c); continue; }
+    c.webCheck = { verdict: v.verdict, checkedAt: v.checkedAt, url: v.url || null, note: v.note || null };
+    if (v.verdict === 'decided' || v.verdict === 'not_real') continue;
+    if (v.verdict === 'confirmed') { c.confidence = 'High'; c.confidenceWhy += ' · confirmed by web check'; }
+    if (v.verdict === 'wrong_date' && v.correctDate) c.flags.push(`web check found ${v.correctDate}`);
+    out.push(c);
+  }
+  return out;
+}
+
 export async function buildCatalysts({ sync = true, verbose = true } = {}) {
   const log = (...a) => verbose && console.log(...a);
   if (sync) {
@@ -153,7 +178,7 @@ export async function buildCatalysts({ sync = true, verbose = true } = {}) {
   // dropped these too. They stay on the 2.0 report under "past date, no outcome".
   const cutoff = new Date(Date.parse(pipe.today) - RECENT_DAYS * 864e5).toISOString().slice(0, 10);
   const rows = merged.rows.filter(r => r.confidence === 'high' && (r.status === 'Pending' || r.status === 'Overdue') && r.pdufaDate && r.pdufaDate >= cutoff);
-  const catalysts = [...rows.map(toCatalyst), ...recentDecisions(pipe)];
+  const catalysts = [...applyWebChecks(rows.map(toCatalyst)), ...recentDecisions(pipe)];
   const report = renderReport();
   const by = {};
   for (const c of catalysts) by[c.status + (c.confidence ? ':' + c.confidence : '')] = (by[c.status + (c.confidence ? ':' + c.confidence : '')] || 0) + 1;

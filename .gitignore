@@ -10,6 +10,7 @@ data/*.txt
 # Only the small files a nightly run needs to fall back on are tracked.
 pipeline2/state/*
 !pipeline2/state/catalysts.json
+!pipeline2/state/web-checks.json
 !pipeline2/state/rttnews.json
 !pipeline2/state/openfda-brands.json
 !pipeline2/state/verify-*.json
