@@ -243,6 +243,8 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
             cursor: help; white-space: nowrap; }
     .flag-note { display: block; margin-top: 4px; font-size: 0.78em; color: #92400e; line-height: 1.35; }
     .truncate { max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* Indications wrap instead of truncating, so the full text is readable. */
+    .ind-cell { min-width: 260px; max-width: 420px; white-space: normal; line-height: 1.35; }
     .drug-name { font-weight: 600; color: #1e40af; }
     .sponsors-list { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 30px; }
     .sponsors-list h3 { margin: 0 0 15px 0; }
@@ -404,13 +406,13 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
           <table id="catalystsTable">
             <thead><tr>
               <th data-sort="drug">Drug</th>
-              <th data-sort="company">Company</th>
+              <th data-sort="indication">Indication</th>
               <th data-sort="pdufaDate">PDUFA Date</th>
               <th data-sort="daysUntilPDUFA">Days Until</th>
               <th data-sort="status">Status</th>
               <th data-sort="submissionType">Type</th>
               <th data-sort="therapeuticArea">Disease Area</th>
-              <th data-sort="indication">Indication</th>
+              <th data-sort="company">Company</th>
               <th>Source</th>
             </tr></thead>
             <tbody id="catalystsBody"></tbody>
@@ -648,13 +650,13 @@ function generateHTML(trials, trialStats, catalysts, catalystStats, recentOutcom
         const sc = (c.status||'').toLowerCase()==='approved'?'badge-success':(c.status||'').toLowerCase()==='crl'?'badge-danger':'badge-warning';
         return \`<tr>
           <td class="drug-name">\${escapeHtml(c.drug)}\${c.brandName ? ' <span style="color:#666;font-weight:normal">(' + escapeHtml(c.brandName) + ')</span>' : ''}\${c.reviewNote ? '<span class="flag-note">'+escapeHtml(c.reviewNote)+'</span>' : ''}\${(c.flags||[]).length ? '<span class="certainty">'+escapeHtml(c.flags.join(' · '))+'</span>' : ''}</td>
-          <td class="truncate" title="\${escapeHtml(c.company)}">\${escapeHtml(c.company)||'-'}</td>
+          <td class="ind-cell" title="\${escapeHtml(c.indication)}">\${escapeHtml(c.indication)||'-'}</td>
           <td>\${catalystDate(c)}</td>
           <td><span class="badge \${dc}">\${dl}</span></td>
           <td><span class="badge \${sc}">\${c.status||'Pending'}</span>\${c.reviewNote ? '<span class="certainty">needs review</span>' : ''}</td>
           <td>\${c.submissionType?'<span class="badge badge-info">'+c.submissionType+'</span>':'-'}</td>
           <td>\${c.therapeuticArea?'<span class="badge badge-info">'+c.therapeuticArea+'</span>':'-'}</td>
-          <td class="truncate" title="\${escapeHtml(c.indication)}">\${escapeHtml(c.indication)||'-'}</td>
+          <td class="truncate" title="\${escapeHtml(c.company)}">\${escapeHtml(c.company)||'-'}</td>
           <td>\${sourceLink(c)}</td>
         </tr>\`;
       }).join('');
