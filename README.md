@@ -11,7 +11,24 @@ node run-pipeline.js           # use cached data where available
 node run-pipeline.js --force   # refresh everything
 ```
 
-## How a catalyst moves through the pipeline
+## FDA Catalysts: Pipeline 2.0
+
+The FDA Catalysts tab is built by `pipeline2/` (see `pipeline2/README.md`): MJH's own
+coverage, read from Sanity across 16 brands, combined with the RTTNews calendar.
+
+- MJH approval and CRL stories take decided drugs off the list; MJH-reported extensions move dates.
+- RTTNews entries MJH never covered stay on the list.
+- Filings only MJH reported get their own table, "MJH-reported, not on RTTNews".
+- Dates without an announced PDUFA are estimated from the filing (marked *est.*) or taken from company guidance ("Q4 2026").
+- There is no curated list. Every invented entry in the audit of the old tab came from it.
+- If Sanity or RTTNews is unreachable, the last good list (`pipeline2/state/catalysts.json`) is used.
+- The full MJH report, with method and recent decisions, is written to `reports/pipeline-2.0.html`.
+
+The MJH article cache (~70 MB) is kept in the Actions cache, not in git. `node pipeline2/src/score-verified.js`
+checks the build against hand-verified cases. `CATALYST_SOURCE=legacy` brings back the previous flow
+described below.
+
+## How a catalyst moves through the pipeline (legacy)
 
 ```
   RTTNews FDA calendar ──┐
