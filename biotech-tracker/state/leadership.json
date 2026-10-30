@@ -1,4 +1,362 @@
 {
  "about": "Written by the leadership-check routine. One entry per company, keyed by the company key in leadership-queue.json. status: ok | no_site | no_team | acquired | defunct. people: current executive team and founders as listed on the company's own website (or a press release when the site has no team page). founder is true only when a source says so. sources: the pages read. checked: YYYY-MM-DD.",
- "checks": {}
+ "checks": {
+  "sachi bioworks": {
+   "name": "Sachi Bioworks Inc.",
+   "website": "sachibio.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Anushree Chatterjee, Ph.D.",
+     "title": "Co-founder, Chairperson, CEO",
+     "founder": true
+    },
+    {
+     "name": "Prashant Nagpal, Ph.D.",
+     "title": "Co-founder, COO, CTO",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.sachibio.com/about-us"
+   ],
+   "checked": "2026-10-30"
+  },
+  "cytogel pharma": {
+   "name": "Cytogel Pharma, LLC",
+   "website": "cytogelpharma.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Dean Maglaris",
+     "title": "CEO & Chair of Board of Managers",
+     "founder": false
+    },
+    {
+     "name": "Theodore Maione, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://cytogelpharma.com/about-us/leadership/"
+   ],
+   "checked": "2026-10-30"
+  },
+  "superluminal medicines": {
+   "name": "Superluminal Medicines, Inc.",
+   "website": "superluminalrx.com",
+   "status": "no_team",
+   "note": "Site blocked automated fetch (403); no leadership read",
+   "people": [],
+   "sources": [
+    "https://superluminalrx.com"
+   ],
+   "checked": "2026-10-30"
+  },
+  "mabsoft therapeutics": {
+   "name": "Mabsoft Therapeutics (Shanghai) Co., Ltd.",
+   "website": null,
+   "status": "no_site",
+   "note": "Queue site mabsoftbio.com did not resolve",
+   "people": [],
+   "sources": [],
+   "checked": "2026-10-30"
+  },
+  "siren biotechnology": {
+   "name": "Siren Biotechnology",
+   "website": "sirenbiotechnology.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Nicole K. Paulk, PhD",
+     "title": "CEO, Founder, and President",
+     "founder": true
+    },
+    {
+     "name": "Nathalie Clément, PhD",
+     "title": "SVP of Vector Development",
+     "founder": false
+    },
+    {
+     "name": "Ed Schnipper, MD",
+     "title": "Clinical Lead",
+     "founder": false
+    },
+    {
+     "name": "Akela Kuwahara, PhD",
+     "title": "Chief of Staff, Director of Corporate Strategy",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://sirenbiotechnology.com/team/"
+   ],
+   "checked": "2026-10-30"
+  },
+  "paulex bio": {
+   "name": "Paulex Bio Inc.",
+   "website": "paulexbio.com",
+   "status": "ok",
+   "note": "Leadership section on site is largely empty; founders named on about page",
+   "people": [
+    {
+     "name": "Miguel Sanjuan",
+     "title": "CEO",
+     "founder": true
+    },
+    {
+     "name": "Francisco Leon",
+     "title": "Co-founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://paulexbio.com/about"
+   ],
+   "checked": "2026-10-30"
+  },
+  "ray therapeutics": {
+   "name": "Ray Therapeutics, Inc.",
+   "website": "raytherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Paul Bresge",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Whitmore, CPA",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Peter Francis, MD, PhD",
+     "title": "Chief Medical & Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Jenny Holt",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Mike Murtagh",
+     "title": "Chief Regulatory Officer",
+     "founder": false
+    },
+    {
+     "name": "Sonya Weigle",
+     "title": "Chief of Staff and Chief Corporate Affairs Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://raytherapeutics.com"
+   ],
+   "checked": "2026-10-30"
+  },
+  "apreo health": {
+   "name": "Apreo Health, Inc.",
+   "website": "apreohealth.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Karun D. Naga",
+     "title": "Chief Executive Officer, Co-founder",
+     "founder": true
+    },
+    {
+     "name": "Marty Mayse, MD",
+     "title": "Chief Scientific Officer, Co-founder",
+     "founder": true
+    },
+    {
+     "name": "Patrick Wu",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "James Stambaugh",
+     "title": "SVP, Clinical Affairs",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://apreohealth.com"
+   ],
+   "checked": "2026-10-30"
+  },
+  "metaclipse therapeutics": {
+   "name": "Metaclipse Therapeutics Corporation",
+   "website": "metaclipse.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Shaker J.C. Reddy, M.S.",
+     "title": "President",
+     "founder": false
+    },
+    {
+     "name": "Periasamy Selvaraj, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Michael Coleman, Ph.D.",
+     "title": "Senior Vice President, Strategy",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://metaclipse.com/company/"
+   ],
+   "checked": "2026-10-30"
+  },
+  "medsyn biopharma": {
+   "name": "Medsyn Biopharma, LLC",
+   "website": null,
+   "status": "no_site",
+   "note": "Queue site medsynbio.com did not resolve",
+   "people": [],
+   "sources": [],
+   "checked": "2026-10-30"
+  },
+  "inventisbio yiqi beijing": {
+   "name": "InventisBio Yiqi Beijing Limited",
+   "website": "inventisbio.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "王耀林 博士",
+     "title": "董事长、总经理 (Chairman, General Manager); 联合创始人 (co-founder)",
+     "founder": true
+    },
+    {
+     "name": "江岳恒 博士",
+     "title": "副总经理、董事会秘书、董事",
+     "founder": false
+    },
+    {
+     "name": "代星 博士",
+     "title": "副总经理、董事",
+     "founder": false
+    },
+    {
+     "name": "张灵 博士",
+     "title": "首席医学官、副总经理",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.inventisbio.com/management-team/"
+   ],
+   "checked": "2026-10-30"
+  },
+  "pharmasaga": {
+   "name": "Pharmasaga Co. Ltd.",
+   "website": "pharmasaga.com",
+   "status": "no_team",
+   "note": "Taiwan-listed (TPEx 7878); site names no leadership on homepage",
+   "people": [],
+   "sources": [
+    "https://pharmasaga.com"
+   ],
+   "checked": "2026-10-30"
+  },
+  "ethyreal bio": {
+   "name": "Ethyreal Bio, Inc.",
+   "website": "ethyrealbio.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Niranjan Kameswaran, Ph.D.",
+     "title": "CHIEF EXECUTIVE OFFICER",
+     "founder": false
+    },
+    {
+     "name": "Phillip Samayoa, Ph.D.",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Jessica Stromme",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Kelly Foster, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Stephen Huang, M.D.",
+     "title": "Senior Vice President, Head of Clinical Development",
+     "founder": false
+    },
+    {
+     "name": "Simon Read, Ph.D.",
+     "title": "Chairman & Independent Board Member",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.ethyrealbio.com/about-us/"
+   ],
+   "checked": "2026-10-30"
+  },
+  "imagion biosystems": {
+   "name": "Imagion Biosystems, Inc.",
+   "website": "imagionbiosystems.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Robert Proulx",
+     "title": "Executive Chairman",
+     "founder": false
+    },
+    {
+     "name": "Ward Detwiler",
+     "title": "Chief Business Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://imagionbiosystems.com/about-us/leadership/"
+   ],
+   "checked": "2026-10-30"
+  },
+  "dignify therapeutics": {
+   "name": "Dignify Therapeutics",
+   "website": "dignifytherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Anthony DiTonno",
+     "title": "CEO",
+     "founder": false
+    },
+    {
+     "name": "Karl Thor, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Ed Burgard, Ph.D.",
+     "title": "President",
+     "founder": false
+    },
+    {
+     "name": "Jeff Welch",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://dignifytherapeutics.com/senior-management/"
+   ],
+   "checked": "2026-10-30"
+  }
+ }
 }
