@@ -1,29 +1,6 @@
 {
- "generated": "2026-10-29T21:39:27.983Z",
+ "generated": "2026-10-30T12:09:58.851Z",
  "catalysts": [
-  {
-   "drug": "tildrakizumab",
-   "brandName": null,
-   "company": "Sun Pharmaceutical Industries Ltd.",
-   "indication": "Active Psoriatic Arthritis in adults",
-   "pdufaDate": "2026-10-29",
-   "dateLabel": null,
-   "dateBasis": "Announced",
-   "dateBasisDetail": "announced",
-   "submissionType": "sBLA",
-   "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · MJH mention only · date announced",
-   "origin": "MJH + RTTNews",
-   "flags": [
-    "new use of an approved drug"
-   ],
-   "source": "MJH + RTTNews",
-   "sourceUrl": "https://www.hcplive.com/view/tildrakizumab-sustains-nail-psoriasis-efficacy-52-weeks-phase-3b-extension-data",
-   "sourceTitle": null,
-   "sourceType": "news",
-   "mjhStories": 4
-  },
   {
    "drug": "INO-3107",
    "brandName": null,
@@ -103,7 +80,8 @@
    "origin": "MJH + RTTNews",
    "flags": [
     "new use of an approved drug",
-    "priority review"
+    "priority review",
+    "RTTNews still lists 2027-02-01"
    ],
    "source": "MJH + RTTNews",
    "sourceUrl": "https://www.hcplive.com/view/fda-grants-priority-review-to-agios-mitapivat-snda-for-sickle-cell-disease",
@@ -400,7 +378,7 @@
    "sourceUrl": "https://www.hcplive.com/view/fda-accepts-bla-for-povetacicept-in-iga-nephropathy",
    "sourceTitle": "FDA Accepts BLA for Povetacicept in IgA Nephropathy",
    "sourceType": "news",
-   "mjhStories": 6
+   "mjhStories": 7
   },
   {
    "drug": "giredestrant",
@@ -1186,6 +1164,27 @@
    "mjhStories": 24
   },
   {
+   "drug": "zipalertinib",
+   "brandName": null,
+   "company": "Cullinan Therapeutics, Inc.",
+   "indication": "Locally Advanced or Metastatic EGFR Exon 20+ NSCLC",
+   "pdufaDate": "2027-02-27",
+   "dateLabel": null,
+   "dateBasis": "Announced",
+   "dateBasisDetail": "announced",
+   "submissionType": "NDA",
+   "status": "Pending",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH headline on the filing · date announced",
+   "origin": "MJH + RTTNews",
+   "flags": [],
+   "source": "MJH + RTTNews",
+   "sourceUrl": "https://www.onclive.com/view/fda-accepts-nda-for-zipalertinib-in-locally-advanced-or-metastatic-egfr-exon-20-nsclc",
+   "sourceTitle": "FDA Accepts NDA for Zipalertinib in Locally Advanced or Metastatic EGFR Exon 20+ NSCLC",
+   "sourceType": "news",
+   "mjhStories": 15
+  },
+  {
    "drug": "amivantamab",
    "brandName": null,
    "company": null,
@@ -1208,27 +1207,6 @@
    "sourceTitle": "FDA Grants Priority Review to Subcutaneous Amivantamab in Head and Neck Cancer",
    "sourceType": "news",
    "mjhStories": 6
-  },
-  {
-   "drug": "zipalertinib",
-   "brandName": null,
-   "company": null,
-   "indication": "Locally Advanced or Metastatic EGFR Exon 20+ NSCLC",
-   "pdufaDate": "2027-02-27",
-   "dateLabel": null,
-   "dateBasis": "Announced",
-   "dateBasisDetail": "announced",
-   "submissionType": null,
-   "status": "Pending",
-   "confidence": "High",
-   "confidenceWhy": "MJH headline on the filing · date announced",
-   "origin": "MJH only",
-   "flags": [],
-   "source": "MJH only",
-   "sourceUrl": "https://www.onclive.com/view/fda-accepts-nda-for-zipalertinib-in-locally-advanced-or-metastatic-egfr-exon-20-nsclc",
-   "sourceTitle": "FDA Accepts NDA for Zipalertinib in Locally Advanced or Metastatic EGFR Exon 20+ NSCLC",
-   "sourceType": "news",
-   "mjhStories": 14
   },
   {
    "drug": "upadacitinib",
@@ -1543,7 +1521,7 @@
    "sourceUrl": "https://www.onclive.com/view/fda-accepts-bla-resubmission-for-tabelecleucel-in-ebv-post-transplant-lymphoproliferative-disease",
    "sourceTitle": "FDA Accepts BLA Resubmission for Tabelecleucel in EBV+ Posttransplant Lymphoproliferative Disease",
    "sourceType": "news",
-   "mjhStories": 35
+   "mjhStories": 36
   },
   {
    "drug": "ecopipam",
@@ -1635,7 +1613,7 @@
    "sourceUrl": "https://www.targetedonc.com/view/rivoceranib-plus-camrelizumab-resubmitted-to-fda-in-frontline-hcc",
    "sourceTitle": "Rivoceranib Plus Camrelizumab Resubmitted to FDA in Frontline HCC",
    "sourceType": "news",
-   "mjhStories": 33
+   "mjhStories": 34
   },
   {
    "drug": "ozekibart",
@@ -2000,7 +1978,7 @@
    "sourceUrl": "https://www.onclive.com/view/fda-receives-bla-for-etentamig-in-r-r-multiple-myeloma",
    "sourceTitle": "FDA Receives BLA for Etentamig in R/R Multiple Myeloma",
    "sourceType": "news",
-   "mjhStories": 3
+   "mjhStories": 4
   },
   {
    "drug": "nogapendekin alfa inbakicept-pmln",

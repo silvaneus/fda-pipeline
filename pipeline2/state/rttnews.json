@@ -1,30 +1,6 @@
 {
- "scrapedAt": "2026-10-29T21:40:21.789Z",
+ "scrapedAt": "2026-10-30T12:09:39.773Z",
  "entries": [
-  {
-   "company": "Insmed Inc",
-   "tickers": [],
-   "drug": "ARIKAYCE",
-   "submissionType": "sNDA",
-   "pdufaDate": "2027-01-28",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on ARIKAYCE SNDA for treatment of MAC Lung Disease",
-   "status": "pending",
-   "notes": "Priority Review",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Praxis Precision Medicines, Inc",
-   "tickers": [],
-   "drug": "Ulixacaltamide HCl",
-   "submissionType": "NDA",
-   "pdufaDate": "2027-01-29",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on ulixacaltamide HCl for the treatment of essential tremor in adults",
-   "status": "pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
   {
    "company": "Pharming Group N.V.",
    "tickers": [],
@@ -35,6 +11,18 @@
    "indication": "FDA decision on lower doses of Joenja for children aged 4 years and older who weigh between 13 kg and 27 kg with activated phosphoinositide 3-kinase delta syndrome (APDS)",
    "status": "Pending",
    "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Agios Pharmaceuticals, Inc.",
+   "tickers": [],
+   "drug": "Mitapivat",
+   "submissionType": "sNDA",
+   "pdufaDate": "2027-02-01",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Mitapivat for the treatment Of Sickle Cell Disease",
+   "status": "pending",
+   "notes": "If approved, mitapivat is positioned to become the first oral PK activator for patients with sickle cell disease",
    "source": "RTTNews"
   },
   {
@@ -98,25 +86,13 @@
    "source": "RTTNews"
   },
   {
-   "company": "Viatris Inc.",
+   "company": "Cullinan Therapeutics, Inc.",
    "tickers": [],
-   "drug": "MR-107A-02",
+   "drug": "Zipalertinib",
    "submissionType": "NDA",
-   "pdufaDate": "2026-12-27",
+   "pdufaDate": "2027-02-27",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on MR-107A-02 for the treatment of moderate-to-severe acute pain",
-   "status": "Pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Cogent Biosciences, Inc.",
-   "tickers": [],
-   "drug": "bezuclastinib",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-12-30",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on bezuclastinib for treatment of NonAdvanced Systemic Mastocytosis",
+   "indication": "FDA decision on zipalertinib to treat patients with non-small cell lung cancer with EGFR exon 20 insertion mutations",
    "status": "pending",
    "notes": "",
    "source": "RTTNews"
@@ -206,25 +182,25 @@
    "source": "RTTNews"
   },
   {
-   "company": "VANDA PHARMACEUTICALS",
+   "company": "Insmed Inc",
    "tickers": [],
-   "drug": "Imsidolimab",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-12-12",
+   "drug": "ARIKAYCE",
+   "submissionType": "sNDA",
+   "pdufaDate": "2027-01-28",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on imsidolimab for the treatment of Generalized Pustular Psoriasis (GPP)",
+   "indication": "FDA decision on ARIKAYCE SNDA for treatment of MAC Lung Disease",
    "status": "pending",
-   "notes": "Vanda holds an exclusive global license for the development and commercialization of imsidolimab from AnaptysBio",
+   "notes": "Priority Review",
    "source": "RTTNews"
   },
   {
-   "company": "AnaptysBio, Inc.",
+   "company": "Praxis Precision Medicines, Inc",
    "tickers": [],
-   "drug": "Imsidolimab",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-12-12",
+   "drug": "Ulixacaltamide HCl",
+   "submissionType": "NDA",
+   "pdufaDate": "2027-01-29",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on imsidolimab for the treatment of Generalized Pustular Psoriasis (GPP)",
+   "indication": "FDA decision on ulixacaltamide HCl for the treatment of essential tremor in adults",
    "status": "pending",
    "notes": "",
    "source": "RTTNews"
@@ -314,6 +290,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Viatris Inc.",
+   "tickers": [],
+   "drug": "MR-107A-02",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-12-27",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on MR-107A-02 for the treatment of moderate-to-severe acute pain",
+   "status": "Pending",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
    "company": "Praxis Precision Medicines, Inc",
    "tickers": [],
    "drug": "Relutrigine",
@@ -326,15 +314,15 @@
    "source": "RTTNews"
   },
   {
-   "company": "Savara Inc",
+   "company": "Cogent Biosciences, Inc.",
    "tickers": [],
-   "drug": "Molgramostim",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-11-22",
+   "drug": "bezuclastinib",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-12-30",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Molgramostim for the treatment of Autoimmune Pulmonary Alveolar Proteinosis",
-   "status": "Pending",
-   "notes": "In April 2026, the FDA extended the review period by three months to November 22, 2026 for the Molgramostim Inhalation Solution (Molgramostim) Biologics License Application in Autoimmune Pulmonary Alveolar Proteinosis. In March 2026, the company received the Day 74 Letter from the FDA which indicated that an Advisory Committee meeting was not planned for the MOLBREEVI Biologics License Application (BLA) and the review is ongoing with a Prescription Drug User Fee Act (PDUFA) target action date of August 22, 2026.",
+   "indication": "FDA decision on bezuclastinib for treatment of NonAdvanced Systemic Mastocytosis",
+   "status": "pending",
+   "notes": "",
    "source": "RTTNews"
   },
   {
@@ -434,15 +422,27 @@
    "source": "RTTNews"
   },
   {
-   "company": "GSK plc",
+   "company": "VANDA PHARMACEUTICALS",
    "tickers": [],
-   "drug": "Bepirovirsen",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-10-26",
+   "drug": "Imsidolimab",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-12-12",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Bepirovirsen for the treatment of adults with chronic hepatitis B",
-   "status": "Approved",
-   "notes": "Priority Review",
+   "indication": "FDA decision on imsidolimab for the treatment of Generalized Pustular Psoriasis (GPP)",
+   "status": "pending",
+   "notes": "Vanda holds an exclusive global license for the development and commercialization of imsidolimab from AnaptysBio",
+   "source": "RTTNews"
+  },
+  {
+   "company": "AnaptysBio, Inc.",
+   "tickers": [],
+   "drug": "Imsidolimab",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-12-12",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on imsidolimab for the treatment of Generalized Pustular Psoriasis (GPP)",
+   "status": "pending",
+   "notes": "",
    "source": "RTTNews"
   },
   {
@@ -467,18 +467,6 @@
    "indication": "FDA decision on INO-3107 for the treatment of adults with Recurrent Respiratory Papillomatosis",
    "status": "Pending",
    "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Agios Pharmaceuticals, Inc.",
-   "tickers": [],
-   "drug": "Mitapivat",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-11-01",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Mitapivat for the treatment Of Sickle Cell Disease",
-   "status": "pending",
-   "notes": "If approved, mitapivat is positioned to become the first oral PK activator for patients with sickle cell disease",
    "source": "RTTNews"
   },
   {
@@ -530,6 +518,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Savara Inc",
+   "tickers": [],
+   "drug": "Molgramostim",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-11-22",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Molgramostim for the treatment of Autoimmune Pulmonary Alveolar Proteinosis",
+   "status": "Pending",
+   "notes": "In April 2026, the FDA extended the review period by three months to November 22, 2026 for the Molgramostim Inhalation Solution (Molgramostim) Biologics License Application in Autoimmune Pulmonary Alveolar Proteinosis. In March 2026, the company received the Day 74 Letter from the FDA which indicated that an Advisory Committee meeting was not planned for the MOLBREEVI Biologics License Application (BLA) and the review is ongoing with a Prescription Drug User Fee Act (PDUFA) target action date of August 22, 2026.",
+   "source": "RTTNews"
+  },
+  {
    "company": "Capricor Therapeutics, Inc.",
    "tickers": [],
    "drug": "Deramiocel",
@@ -539,18 +539,6 @@
    "indication": "FDA decision on Deramiocel to treat Duchenne muscular dystrophy cardiomyopathy",
    "status": "Pending",
    "notes": "On 24th Aug. 2026, FDA extended PDUFA target action date for its BLA for Deramiocel, investigational cell therapy for Duchenne muscular dystrophy from August 22, 2026 to November 22, 2026. FDA declined to approve Deramiocel for Duchenne Muscular Dystrophy on July 11, 2025.",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Pfizer Inc.",
-   "tickers": [],
-   "drug": "TALZENNA Plus XTANDI",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-12-31",
-   "isQuarterlyEstimate": true,
-   "indication": "",
-   "status": "Approved",
-   "notes": "Priority Review; PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
   {
@@ -650,6 +638,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "GSK plc",
+   "tickers": [],
+   "drug": "Bepirovirsen",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-10-26",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Bepirovirsen for the treatment of adults with chronic hepatitis B",
+   "status": "Approved",
+   "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
    "company": "Ionis Pharmaceuticals, Inc.",
    "tickers": [],
    "drug": "Bepirovirsen",
@@ -659,18 +659,6 @@
    "indication": "FDA decision on Bepirovirsen for the treatment of adults with chronic hepatitis B",
    "status": "Approved",
    "notes": "Priority Review GSK licensed bepirovirsen from Ionis in 2019 under a collaborative development and licensing agreement.",
-   "source": "RTTNews"
-  },
-  {
-   "company": "HLB Co., Ltd.",
-   "tickers": [],
-   "drug": "Lyrfigtu",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-09-25",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Elevar Therapeutics' Lyrfigtu as a treatment option for patients with advanced/metastatic cholangiocarcinoma (CCA) harboring FGFR2 fusion or other rearrangement",
-   "status": "Approved",
-   "notes": "Priority Review",
    "source": "RTTNews"
   },
   {
@@ -755,6 +743,18 @@
    "indication": "FDA decision on Apitegromab for treatment of Children and Adults with Spinal Muscular Atrophy",
    "status": "Approved",
    "notes": "Priority Review FDA issued a Complete Response Letter for Apitegromab on Sep.23, 2025.",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Pfizer Inc.",
+   "tickers": [],
+   "drug": "TALZENNA Plus XTANDI",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-12-31",
+   "isQuarterlyEstimate": true,
+   "indication": "",
+   "status": "Approved",
+   "notes": "Priority Review; PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
   {
@@ -875,6 +875,18 @@
    "indication": "FDA panel to review Galleri",
    "status": "Approved",
    "notes": "",
+   "source": "RTTNews"
+  },
+  {
+   "company": "HLB Co., Ltd.",
+   "tickers": [],
+   "drug": "Lyrfigtu",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-09-25",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Elevar Therapeutics' Lyrfigtu as a treatment option for patients with advanced/metastatic cholangiocarcinoma (CCA) harboring FGFR2 fusion or other rearrangement",
+   "status": "Approved",
+   "notes": "Priority Review",
    "source": "RTTNews"
   },
   {
