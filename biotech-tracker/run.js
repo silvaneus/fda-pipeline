@@ -15,6 +15,8 @@ const { buildViews, buildProfile } = require('./analyze');
 const edgar = require('./edgar');
 const locate = require('./locate');
 const fda = require('./fda');
+const website = require('./website');
+const leadership = require('./leadership');
 const { inferNonUS } = require('./sponsors');
 const { renderDashboard, renderProfiles, renderSearch } = require('./render');
 
@@ -65,13 +67,28 @@ function roundSizes(raises) {
 }
 
 /**
+ * Website, strongest source first: manual override > the leadership check
+ * (read the site itself) > trial contact on the company's own domain > a
+ * domain guessed from the name and verified against the page (website.js).
+ */
+function resolveWebsite(company, fromContacts, checks, guesses, overrides) {
+  const o = overrides.website?.[company.name];
+  if (o) return { website: o, websiteSource: 'manual' };
+  const c = checks[company.key];
+  if (c?.website) return { website: c.website.replace(/^https?:\/\//, '').replace(/\/$/, ''), websiteSource: 'check' };
+  if (fromContacts.website) return { website: fromContacts.website, websiteSource: 'contact' };
+  if (guesses[company.name]?.website) return { website: guesses[company.name].website, websiteSource: 'guess' };
+  return { website: null, websiteSource: null };
+}
+
+/**
  * Best available headquarters, strongest source first:
  * manual override > SEC EDGAR > GLEIF > trial contact (own domain) > legal form in the name.
  */
-function resolveHq(company, sec, gleif, overrides) {
+function resolveHq(company, sec, gleif, overrides, checks = {}, guesses = {}) {
   const contacts = company.studies.flatMap(s => s.contacts || []);
   const fromContacts = locate.fromContacts(contacts, [...company.names.keys()]);
-  const base = { website: fromContacts.website || null };
+  const base = resolveWebsite(company, fromContacts, checks, guesses, overrides);
   const o = overrides.hq?.[company.name];
   if (o) return { ...base, ...o, source: 'manual' };
 
@@ -127,14 +144,21 @@ async function main() {
   const names = shown.map(c => c.name);
 
   if (lookups) await edgar.enrich(names);
-  const sec = lookups ? await edgar.enrichRaises(names) : edgar.loadCache();
+  if (lookups) await edgar.enrichRaises(names);
+  const sec = lookups ? await edgar.enrichPeople(names) : edgar.loadCache();
   // GLEIF is slow (~1 request/s) and rarely knows small private biotechs, so
   // ask it only about companies neither SEC nor the trial contacts could place.
   const gleifNames = shown.filter(c => !sec[c.name]?.found && !overrides.hq?.[c.name] &&
     !locate.fromContacts(c.studies.flatMap(s => s.contacts || []), [...c.names.keys()]).country).map(c => c.name);
   const gleif = lookups ? await locate.enrichGleif(gleifNames) : (() => { try { return require('./state/gleif.json'); } catch { return {}; } })();
 
-  const hq = new Map(shown.map(c => [c.key, resolveHq(c, sec, gleif, overrides)]));
+  const checks = leadership.loadChecks();
+  // Guess a website only where nothing better exists.
+  const noSite = shown.filter(c => !overrides.website?.[c.name] && !checks[c.key]?.website &&
+    !locate.fromContacts(c.studies.flatMap(s => s.contacts || []), [...c.names.keys()]).website).map(c => c.name);
+  const guesses = lookups ? await website.enrich(noSite) : website.loadCache();
+
+  const hq = new Map(shown.map(c => [c.key, resolveHq(c, sec, gleif, overrides, checks, guesses)]));
   const marketed = await findMarketed(shown, overrides);
   for (const k of ['newCompanies', 'newToP2', 'directory']) views[k].forEach(c => { c.marketed = marketed[c.key] || null; });
   console.log(`  Marketed drug: ${views.directory.filter(c => c.marketed).length} of ${views.directory.length} directory companies`);
@@ -142,7 +166,16 @@ async function main() {
   views.p2Starts.forEach(s => { s.hq = hq.get(s.companyKey); });
 
   const profiles = {};
-  for (const c of shown) profiles[c.key] = { ...buildProfile(c), hq: hq.get(c.key), marketed: marketed[c.key] || null };
+  const leaders = new Map(shown.map(c => [c.key, leadership.leadersFor(c.key, c.name, checks, sec)]).filter(([, l]) => l));
+  for (const c of shown) profiles[c.key] = { ...buildProfile(c), hq: hq.get(c.key), marketed: marketed[c.key] || null, leaders: leaders.get(c.key) || null };
+  const companyRows = [...new Map([...views.newCompanies, ...views.newToP2, ...views.directory].map(c => [c.key, c])).values()];
+  views.leaders = leadership.tabRows(companyRows, leaders);
+  const queued = leadership.writeQueue(views, k => profiles[k], checks, sec);
+  const siteSources = {};
+  for (const h of hq.values()) siteSources[h.websiteSource || 'none'] = (siteSources[h.websiteSource || 'none'] || 0) + 1;
+  console.log('  Website sources:', JSON.stringify(siteSources));
+  console.log(`  Leadership: ${[...leaders.values()].filter(l => l.source === 'web').length} from the leadership check, ` +
+    `${[...leaders.values()].filter(l => l.source === 'sec').length} from Form D; ${views.leaders.length} tab rows; ${queued} queued for the check`);
 
   const sources = {};
   for (const h of hq.values()) sources[h.source || 'unknown'] = (sources[h.source || 'unknown'] || 0) + 1;

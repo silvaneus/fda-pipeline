@@ -1,0 +1,4 @@
+{
+ "about": "Written by the leadership-check routine. One entry per company, keyed by the company key in leadership-queue.json. status: ok | no_site | no_team | acquired | defunct. people: current executive team and founders as listed on the company's own website (or a press release when the site has no team page). founder is true only when a source says so. sources: the pages read. checked: YYYY-MM-DD.",
+ "checks": {}
+}

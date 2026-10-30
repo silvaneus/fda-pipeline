@@ -36,6 +36,36 @@ https://silvaneus.github.io/fda-pipeline/biotech-tracker/
    Output: → `reports/index.html` plus `reports/profiles.js`
    (company profiles, loaded on first click; `#c=<key>` links open one).
 
+## Websites and leadership
+
+**Website**, strongest source first: a manual fix (`overrides.json` → `website`),
+the leadership check below, a trial contact email on the company's own domain,
+then a guess (`website.js`). A guess tries the usual biotech domains built from
+the name (`arunabio.com`, `ratiotx.com`, `santaana.bio`) and is kept only when
+the domain is the company's own name (a redirect to "Fulcrum Genomics" is
+rejected), the page title names the company, and the page reads like a drug
+developer. A bare short domain (`prescient.com`) must also carry the full
+company name somewhere on the page. Cached in `state/websites.json`; misses
+are retried after 60 days. Profiles say which source each website came from.
+
+**Leadership**, strongest source first:
+1. The **leadership check**, a Claude routine (claude.ai/code/routines) that runs
+   daily. It takes the first 50 companies in `state/leadership-queue.json`, reads
+   each company's own website (team/leadership pages), and records the
+   executive team with titles and founders in `state/leadership.json`, along
+   with the pages it read. It commits only that file.
+2. The company's latest **SEC Form D**, which names executive officers and
+   directors but no titles (`edgar.js` → `enrichPeople`; refetched only when a
+   newer Form D appears).
+
+Every nightly run rewrites the queue: companies never checked, or checked more
+than 180 days ago. New to the Clinic / New to Phase 2 come first, then emerging
+US companies by latest trial, then unknown headquarters, then the rest.
+
+The **Founders & Leadership** tab has one row per person: leadership-check people,
+plus Form D executive officers for companies not yet checked (Form D directors
+are left out, since board seats are often investors).
+
 ## Definitions (`CONFIG` in analyze.js)
 
 | View | Rule |
@@ -94,6 +124,7 @@ these companies back into the view. The last good result is kept in
 - `exclude`: display names to drop
 - `hq`: `{"Company Name": {"us": true, "place": "Boston, MA"}}`
 - `marketed` / `notMarketed`: display names to force in or out of "has a marketed drug"
+- `website`: `{"Company Name": "example.com"}`
 
 ## Run locally
 

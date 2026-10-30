@@ -207,4 +207,54 @@ async function enrichRaises(names, { log = console.log } = {}) {
   return cache;
 }
 
-module.exports = { enrich, enrichRaises, lookup, loadCache, fetchRaises };
+// --- Executive officers and directors (Form D "related persons") -------------
+
+// Filers often type names in capitals ("JOHN A. SMITH"); only those get recased.
+const recase = s => s && s === s.toUpperCase() && /[A-Z]{2}/.test(s)
+  ? s.toLowerCase().replace(/(^|[\s'-])([a-z])/g, (m, p, c) => p + c.toUpperCase()).replace(/\bMc([a-z])/g, (m, c) => 'Mc' + c.toUpperCase())
+  : s;
+
+/** People named in one Form D: executive officers, directors and promoters. */
+function parsePeople(xml) {
+  return [...xml.matchAll(/<relatedPersonInfo>([\s\S]*?)<\/relatedPersonInfo>/g)].map(([, b]) => {
+    // Full middle names ("Karun Durgam Naga") read oddly; keep an initial.
+    const mid = (xmlTag(b, 'middleName') || '').replace(/\W/g, '')[0];
+    const name = [xmlTag(b, 'firstName'), mid && !/^n\/?a$/i.test(xmlTag(b, 'middleName')) ? mid + '.' : null, xmlTag(b, 'lastName')].filter(Boolean).map(recase).join(' ');
+    const roles = [...b.matchAll(/<relationship>([^<]+)<\/relationship>/g)].map(m => m[1].trim());
+    return { name, roles, note: xmlTag(b, 'relationshipClarification') || undefined };
+  }).filter(p => p.name && !/^(n\/?a|none)$/i.test(p.name));
+}
+
+/**
+ * Leadership from each company's most recent Form D. Refetched only when a
+ * newer filing appears, so after the first run this costs a few requests.
+ */
+async function enrichPeople(names, { log = console.log } = {}) {
+  const cache = loadCache();
+  const todo = names.filter(n => { const c = cache[n]; return c?.found && c.formD?.length && c.peopleFor !== c.formD[0].acc; });
+  log(`  Form D people: ${todo.length} companies to fetch`);
+  let done = 0;
+  const queue = [...todo];
+  const worker = async () => {
+    for (let n; (n = queue.shift()) !== undefined;) {
+      const c = cache[n], f = c.formD[0];
+      try {
+        const xml = await getText(`https://www.sec.gov/Archives/edgar/data/${c.cik}/${f.acc.replace(/-/g, '')}/primary_doc.xml`);
+        c.people = xml ? parsePeople(xml) : [];
+        c.peopleDate = f.date;
+        c.peopleFor = f.acc;
+      } catch (e) {
+        log(`  Form D people skip ${n}: ${e.message}`);
+      }
+      if (++done % 200 === 0) {
+        log(`  Form D people ${done}/${todo.length}`);
+        fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
+      }
+    }
+  };
+  await Promise.all(Array.from({ length: 4 }, worker));
+  fs.writeFileSync(CACHE_FILE, JSON.stringify(cache));
+  return cache;
+}
+
+module.exports = { enrich, enrichRaises, enrichPeople, lookup, loadCache, fetchRaises, parsePeople };

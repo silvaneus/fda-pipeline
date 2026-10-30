@@ -75,6 +75,10 @@ function renderDashboard(views, meta) {
   .b-gray { background: #f3f4f6; color: #6b7280; }
   .b-mkt { background: #fee2e2; color: #991b1b; }
   .b-pending { background: #fff; color: #92400e; border: 1px dashed #d97706; }
+  .b-founder { background: #fef3c7; color: #92400e; }
+  .people td { padding: 6px 14px 6px 0; }
+  .people a { color: #111827; text-decoration: none; border-bottom: 1px dotted #94a3b8; }
+  .people a:hover { color: #0f766e; border-bottom-color: #0f766e; }
   .studies { width: 100%; font-size: .95em; }
   .studies td { border: none; padding: 4px 10px 4px 0; background: transparent; }
   .caret { display: inline-block; width: 12px; color: #9ca3af; }
@@ -132,6 +136,8 @@ function renderDashboard(views, meta) {
       <select id="raised"><option value="0">Any amount</option><option value="1e6">$1M</option><option value="1e7">$10M</option><option value="2.5e7">$25M</option><option value="5e7">$50M</option><option value="1e8">$100M</option><option value="2.5e8">$250M</option></select></div>
     <div class="filter-group"><label for="own">Ownership</label>
       <select id="own"><option value="">Any</option><option value="public">Public</option><option value="private">Private</option></select></div>
+    <div class="filter-group" id="roleWrap"><label for="role">Role</label>
+      <select id="role"><option value="">Everyone listed</option><option value="founder">Founders</option><option value="ceo">CEOs</option><option value="csuite">C-suite and founders</option></select></div>
     <label class="check" id="smallWrap"><input type="checkbox" id="small" checked> Smaller companies only (≤ <span id="smallN"></span> trials)</label>
     <label class="check" id="mktWrap" title="A company with an FDA-approved drug or a Phase 4 (post-marketing) trial is no longer counted as emerging"><input type="checkbox" id="mkt"> Include companies with a marketed drug</label>
     <button class="btn reset-btn" id="reset">Reset</button>
@@ -283,7 +289,33 @@ const TABS = {
     ],
     sort: [7, 'desc'],
   },
+  lead: {
+    label: 'Founders & Leadership', rows: () => leaderRows(), people: true,
+    explain: 'The people running the companies on the other tabs, one row per person. Titles and founders come from each company\\'s own website, read by a scheduled check that works through about 50 companies a day (newest companies first). ' +
+      'Until a company has been checked, its executive officers come from its latest SEC fundraising filing (Form D), which gives names but no titles. Click a row for the company profile.',
+    cols: [
+      ['Name', r => r.person, r => '<b>' + esc(r.person) + '</b>' + (r.founder ? ' <span class="badge b-founder">Founder</span>' : '')],
+      ['Title', r => r.role, r => r.src === 'sec' ? '<span class="muted" title="From the company\\'s SEC Form D, which lists executive officers without titles">Executive officer (SEC filing)</span>' : esc(r.role)],
+      ['Company', r => r.name, r => '<span class="co-link">' + esc(r.name) + '</span>' + (r.isNew ? ' <span class="badge b-new">New</span>' : '') + (r.isNewP2 ? ' <span class="badge b-p2">New to Phase 2</span>' : '')],
+      ['Headquarters', r => hqText(r.hq), r => hqCell(r.hq)],
+      ['Funding', r => r.hq.totalRaised || 0, r => ownCell(r.hq), 'num'],
+      ['Area', r => r.area, r => esc(r.area)],
+      ['Furthest phase', r => r.highest || '', r => esc(r.highest || '')],
+      ['Latest trial', r => r.lastPosted || r.firstTrialDate, r => '<span class="nowrap">' + fmtDate(r.lastPosted || r.firstTrialDate) + '</span>'],
+    ],
+    sort: [7, 'desc'],
+  },
 };
+
+// Leadership rows carry only the person; company fields come from the
+// company's row on the other tabs (the directory first, which has the most).
+let LEAD = null;
+function leaderRows() {
+  if (LEAD) return LEAD;
+  const byKey = {};
+  for (const c of [...D.newCompanies.map(x => ({ ...x, isNew: true })), ...D.newToP2.map(x => ({ ...x, isNewP2: true })), ...D.directory]) byKey[c.key] = { ...byKey[c.key], ...c, isNew: byKey[c.key]?.isNew || c.isNew, isNewP2: byKey[c.key]?.isNewP2 || c.isNewP2 };
+  return LEAD = D.leaders.filter(l => byKey[l.key]).map(l => ({ ...byKey[l.key], ...l }));
+}
 
 let tab = 'new';
 const sortState = {};
@@ -309,10 +341,12 @@ function passes(r, t = tab) {
   if (area && mainArea !== area && !tags.some(x => x.startsWith(area + ' › '))) return false;
   if ($('ind').value && !tags.includes($('ind').value)) return false;
   if (TABS[t].small && $('small').checked && r.trialCount > C.smallCompanyMaxTrials) return false;
-  if (t === 'dir' && !$('mkt').checked && r.marketed) return false;
+  if ((t === 'dir' || t === 'lead') && !$('mkt').checked && r.marketed) return false;
+  const role = $('role').value;
+  if (t === 'lead' && role && !r[role]) return false;
   const q = $('q').value.trim().toLowerCase();
   if (q) {
-    const hay = JSON.stringify([r.name, r.company, r.title, r.officialTitle, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
+    const hay = JSON.stringify([r.person, r.role, r.name, r.company, r.title, r.officialTitle, r.conditions, r.interventions, r.conds, r.drugs, r.p2Study, r.hq?.place, r.hq?.ticker]).toLowerCase();
     if (!hay.includes(q) && !(window.SEARCH?.[r.key || r.companyKey] || '').includes(q)) return false;
   }
   return true;
@@ -333,11 +367,12 @@ function render() {
   const T = TABS[tab];
   $('explain').innerHTML = T.explain;
   $('smallWrap').hidden = !T.small;
-  $('mktWrap').hidden = tab !== 'dir';
+  $('mktWrap').hidden = tab !== 'dir' && tab !== 'lead';
+  $('roleWrap').hidden = tab !== 'lead';
   const [ci, dir] = sortState[tab] || T.sort;
   $('thead').innerHTML = '<tr>' + T.cols.map((c, i) => '<th data-i="' + i + '" class="' + (i === ci ? 'sorted-' + dir : '') + '">' + c[0] + '</th>').join('') + '</tr>';
   const rows = filtered(tab);
-  $('count').textContent = rows.length + ' of ' + T.rows().length + (tab === 'starts' ? ' studies' : ' companies');
+  $('count').textContent = rows.length + ' of ' + T.rows().length + (tab === 'starts' ? ' studies' : T.people ? ' people' : ' companies');
   $('tbody').innerHTML = rows.length ? rows.map((r, i) => {
     return '<tr class="row" data-key="' + esc(r.key || r.companyKey) + '">' + T.cols.map(c => '<td>' + c[2](r) + '</td>').join('') + '</tr>';
   }).join('') : '<tr><td class="empty" colspan="' + T.cols.length + '">No matches for these filters.</td></tr>';
@@ -375,6 +410,7 @@ function setup() {
   $('area').addEventListener('input', fillInd);
   $('footer').innerHTML = 'Sources: ClinicalTrials.gov (all industry-sponsored interventional studies; Phase 1/2 studies count as Phase 1) and SEC EDGAR (headquarters, public listing, funding filings). ' +
     'Headquarters comes from SEC filings first, then the global legal-entity registry (GLEIF), then the phone number on the company\\'s own trial contacts (dotted underline = inferred). A dash means no public record was found. ' +
+    'Websites come from the leadership check, the company\\'s own trial contact emails, or a domain matched to the company name and checked against the site itself. ' +
     'Companies whose first trial was registered only outside ClinicalTrials.gov (e.g., Australia\\'s registry) can appear newer than they are.';
 
   document.addEventListener('click', e => {
@@ -389,7 +425,7 @@ function setup() {
     const tr = e.target.closest('tr.row');
     if (tr && !e.target.closest('a')) openProfile(tr.dataset.key);
   });
-  ['q', 'area', 'ind', 'raised', 'hq', 'own', 'small', 'mkt'].forEach(id => $(id).addEventListener('input', render));
+  ['q', 'area', 'ind', 'raised', 'hq', 'own', 'small', 'mkt', 'role'].forEach(id => $(id).addEventListener('input', render));
   // Official-title search text is large, so fetch it on the first search.
   $('q').addEventListener('input', () => {
     if (window.SEARCH || loadSearch.started) return;
@@ -399,7 +435,7 @@ function setup() {
     sc.onload = render;
     document.head.appendChild(sc);
   }, { once: false });
-  $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('area').dispatchEvent(new Event('input')); $('raised').value = '0'; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; $('mkt').checked = false; render(); };
+  $('reset').onclick = () => { $('q').value = ''; $('area').value = ''; $('area').dispatchEvent(new Event('input')); $('raised').value = '0'; $('hq').value = 'us-or-unknown'; $('own').value = ''; $('small').checked = true; $('mkt').checked = false; $('role').value = ''; render(); };
   $('export').onclick = exportCsv;
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProfile(); });
   window.addEventListener('hashchange', fromHash);
@@ -454,14 +490,24 @@ function profileHtml(p) {
   const areas = Object.entries(p.areas).filter(([a]) => a !== 'Other').sort((a, b) => b[1] - a[1]).slice(0, 3).map(([a]) => a).join(', ') || '—';
   const fact = (k, v) => '<div><dt>' + k + '</dt><dd>' + v + '</dd></div>';
   const raises = (h.formDDates || []).map(fmtMonth);
-  const site = h.website ? '<a class="nct" target="_blank" rel="noopener" href="https://' + esc(h.website) + '">' + esc(h.website) + '</a>' : '<span class="unknown">—</span>';
+  const SITE_SOURCE = { check: 'Confirmed by the leadership check', contact: "From the company's trial contact emails", guess: 'Matched to the company name; not yet confirmed', manual: 'Set manually' };
+  const site = h.website ? '<a class="nct" target="_blank" rel="noopener" href="https://' + esc(h.website) + '">' + esc(h.website) + '</a>' +
+    (SITE_SOURCE[h.websiteSource] ? '<div class="src">' + SITE_SOURCE[h.websiteSource] + '</div>' : '') : '<span class="unknown">—</span>';
+  const L = p.leaders;
+  const li = n => 'https://www.linkedin.com/search/results/people/?keywords=' + encodeURIComponent(n + ' ' + p.name.replace(/,?\\s*(Inc|LLC|Ltd|Corp)\.?$/i, ''));
+  const leadersHtml = !L ? '<p class="muted">No leadership on record yet. The leadership check reads company websites about 50 companies a day, newest companies first.</p>'
+    : '<table class="people">' + L.people.map(x => '<tr><td><a target="_blank" rel="noopener" title="Search LinkedIn" href="' + li(x.name) + '">' + esc(x.name) + '</a>' +
+        (x.founder ? ' <span class="badge b-founder">Founder</span>' : '') + '</td><td>' + esc(x.title) + (x.note ? ' <span class="muted">(' + esc(x.note) + ')</span>' : '') + '</td></tr>').join('') + '</table>' +
+      '<div class="src">' + (L.source === 'web'
+        ? 'From the company website' + (L.url ? ' (<a class="nct" target="_blank" rel="noopener" href="' + esc(L.url) + '">source</a>)' : '') + ', checked ' + fmtDate(L.checked) + '. Names link to a LinkedIn search.'
+        : 'From the company\\'s latest SEC Form D (' + fmtMonth(L.checked) + '), which names executive officers and directors but not titles. The leadership check will add titles and founders. Names link to a LinkedIn search.') + '</div>';
   const pipe = p.pipeline.length ? '<div class="table-wrapper" style="max-height:none"><table><thead><tr><th>Drug</th><th>Indications</th><th>Phase</th><th>Status</th><th>Trials</th></tr></thead><tbody>' +
     p.pipeline.map(g => '<tr' + (g.current ? '' : ' style="opacity:.6"') + '><td><b>' + esc(g.drug) + '</b>' +
       (g.current ? '' : ' <span class="badge b-gray" title="No trial running or completed in the last ' + C.currentYears + ' years">Dormant since ' + esc((g.lastActivity || '').slice(0, 4)) + '</span>') + (g.with.length ? '<div class="muted">with ' + esc(g.with.join(', ')) + '</div>' : '') +
       '</td><td>' + esc(g.conditions.slice(0, 3).join('; ')) + '<div class="muted">' + esc((g.indications.length ? g.indications.map(t => t.split(' › ')[1]) : [g.area]).join(', ')) + '</div></td><td class="nowrap">' + esc(g.phase) +
       '</td><td class="nowrap">' + esc(title(g.status || '')) + '</td><td>' + g.trials.slice(-4).map(nctLink).join('<br>') + (g.trials.length > 4 ? '<div class="muted">+' + (g.trials.length - 4) + ' more</div>' : '') + '</td></tr>').join('') +
     '</tbody></table></div><div class="src">Grouped by lead drug in each trial; combination partners listed under "with". Terminated and withdrawn trials excluded. Dormant programs (nothing running or completed in ' + C.currentYears + ' years) do not count toward the indication filters.</div>' : '<p class="muted">No drug names listed on its trials.</p>';
-  const q = encodeURIComponent(p.name.replace(/,?\s*(Inc|LLC|Ltd|Corp)\.?$/i, ''));
+  const q = encodeURIComponent(p.name.replace(/,?\\s*(Inc|LLC|Ltd|Corp)\.?$/i, ''));
   const links = '<div class="links">' +
     '<a target="_blank" rel="noopener" href="https://clinicaltrials.gov/search?spons=' + encodeURIComponent(p.name) + '">ClinicalTrials.gov</a>' +
     (h.cik ? '<a target="_blank" rel="noopener" href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=' + h.cik + '">SEC filings</a>' : '') +
@@ -495,6 +541,7 @@ function profileHtml(p) {
         (p.droppedCount ? '<div class="src">' + p.droppedCount + ' terminated or withdrawn not shown</div>' : '')) +
       fact('Main areas', esc(areas)) +
     '</dl>' +
+    '<h3>Leadership</h3>' + leadersHtml +
     '<h3>Pipeline</h3>' + pipe +
     '<h3>Trials</h3>' + studiesTable(p.studies.slice().reverse()) +
       '<div class="src">' + (p.liveCount > p.studies.length ? 'Showing the ' + p.studies.length + ' most recent of ' + p.liveCount + '. ' : '') +
@@ -531,6 +578,15 @@ function exportCsv() {
   const T = TABS[tab];
   const rows = filtered(tab);
   const cell = v => '"' + String(v ?? '').replace(/"/g, '""') + '"';
+  if (tab === 'lead') {
+    const out = [['Name', 'Title', 'Founder', 'Company', 'Headquarters', 'Website', 'Funding', 'Raised (USD)', 'Area', 'Furthest phase', 'Source'],
+      ...rows.map(r => [r.person, r.src === 'sec' ? 'Executive officer (SEC Form D)' : r.role, r.founder ? 'Yes' : '', r.name, hqText(r.hq), r.hq.website || '', ownText(r.hq), r.hq.totalRaised || '', r.area, r.highest, r.src === 'sec' ? 'SEC Form D' : 'Company website'])];
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([out.map(l => l.map(cell).join(',')).join('\\n')], { type: 'text/csv' }));
+    a.download = 'biotech-tracker-leadership-' + D.meta.generated.slice(0, 10) + '.csv';
+    a.click();
+    return;
+  }
   const head = tab === 'starts'
     ? ['Posted', 'Company', 'Headquarters', 'Funding', 'Raised (USD)', 'Area', 'NCT', 'Phase', 'Study', 'Conditions', 'Interventions', 'Status', 'Company trials', 'First Phase 2']
     : ['Company', 'Headquarters', 'Funding', 'Raised (USD)', 'Area', 'Indications', 'Lead drugs', 'Furthest phase', 'First trial', 'First Phase 2', 'Latest trial', 'Trials', 'Studies'];

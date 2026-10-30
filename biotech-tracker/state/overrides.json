@@ -1,5 +1,5 @@
 {
-  "_readme": "exclude: display names to drop. hq: {\"Name\": {\"us\": true, \"place\": \"Boston, MA\"}} to fix a headquarters. marketed / notMarketed: display names to force into or out of 'has a marketed drug' (hidden from the emerging directory).",
+  "_readme": "exclude: display names to drop. hq: {\"Name\": {\"us\": true, \"place\": \"Boston, MA\"}} to fix a headquarters. marketed / notMarketed: display names to force into or out of 'has a marketed drug' (hidden from the emerging directory). website: {\"Name\": \"example.com\"} to fix a company's website.",
   "exclude": [
     "FrieslandCampina"
   ],
@@ -14,5 +14,6 @@
     "Mylan Technologies Inc.",
     "Albireo, an Ipsen Company"
   ],
-  "notMarketed": []
+  "notMarketed": [],
+  "website": {}
 }
