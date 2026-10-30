@@ -58,9 +58,11 @@ are retried after 60 days. Profiles say which source each website came from.
    directors but no titles (`edgar.js` → `enrichPeople`; refetched only when a
    newer Form D appears).
 
-Every nightly run rewrites the queue: companies never checked, or checked more
-than 180 days ago. New to the Clinic / New to Phase 2 come first, then emerging
-US companies by latest trial, then unknown headquarters, then the rest.
+Every nightly run rewrites the queue: US-headquartered companies never checked,
+or checked more than 180 days ago. New to the Clinic / New to Phase 2 come
+first, then emerging companies by latest trial, then companies with a marketed
+drug. Companies outside the US or with an unknown headquarters are not queued,
+to keep the routine's usage down; they keep their Form D names, if any.
 
 The **Founders & Leadership** tab has one row per person: leadership-check people,
 plus Form D executive officers for companies not yet checked (Form D directors

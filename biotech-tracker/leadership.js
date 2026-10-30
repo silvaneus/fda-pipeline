@@ -7,8 +7,9 @@
  *      directors but gives no titles.
  *
  * The routine works through state/leadership-queue.json, which every nightly
- * run rewrites: companies never checked or last checked more than
- * RECHECK_DAYS ago, most useful first.
+ * run rewrites: US-headquartered companies never checked or last checked more
+ * than RECHECK_DAYS ago, most useful first. Companies outside the US or with
+ * an unknown headquarters are left out to keep the routine's usage down.
  */
 
 const fs = require('fs');
@@ -60,23 +61,20 @@ function tabRows(companies, leaders) {
 }
 
 /**
- * Rewrite the routine's work list. Order: new to the clinic / new to Phase 2,
- * then emerging US companies (most recent trial first), then unknown HQ,
- * then the rest.
+ * Rewrite the routine's work list (US headquarters only). Order: new to the
+ * clinic / new to Phase 2, then emerging companies (most recent trial first),
+ * then companies with a marketed drug.
  */
 function writeQueue(views, profileOf, checks, sec) {
   const now = Date.now();
   const due = key => { const c = checks[key]; return !c || now - new Date(c.checked) > RECHECK_DAYS * 864e5; };
-  const tier = c => {
-    if (c.isNew || c.isNewP2) return 0;
-    if (c.marketed) return c.hq?.us ? 3 : 4;
-    return c.hq?.us === true ? 1 : c.hq?.us == null ? 2 : 4;
-  };
+  const tier = c => c.isNew || c.isNewP2 ? 0 : c.marketed ? 2 : 1;
   const seen = new Map();
   for (const c of [...views.newCompanies.map(x => ({ ...x, isNew: true })), ...views.newToP2.map(x => ({ ...x, isNewP2: true })), ...views.directory]) {
     if (!seen.has(c.key)) seen.set(c.key, c);
   }
-  const list = [...seen.values()].filter(c => due(c.key))
+  const usDue = [...seen.values()].filter(c => c.hq?.us === true && due(c.key));
+  const list = usDue
     .sort((a, b) => tier(a) - tier(b) || String(b.lastPosted || b.firstTrialDate).localeCompare(String(a.lastPosted || a.firstTrialDate)))
     .slice(0, QUEUE_SIZE)
     .map(c => {
@@ -93,7 +91,7 @@ function writeQueue(views, profileOf, checks, sec) {
   fs.writeFileSync(QUEUE_FILE, JSON.stringify({
     about: 'Companies due for a leadership check, most useful first. Rewritten every night by run.js; do not edit by hand. Results go in leadership.json.',
     generated: new Date().toISOString().slice(0, 10),
-    remaining: [...seen.values()].filter(c => due(c.key)).length,
+    remaining: usDue.length,
     companies: list,
   }, null, 1));
   return list.length;
