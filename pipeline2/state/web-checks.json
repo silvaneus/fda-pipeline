@@ -1,4 +1,155 @@
 {
   "about": "Weekly web verification of FDA Catalysts rows, written by a scheduled Claude routine. pipeline2/src/catalysts.js applies these on the nightly build. Key: drug + pdufaDate exactly as in catalysts.json.",
-  "checks": []
+  "checks": [
+    {
+      "drug": "MYQORZO",
+      "pdufaDate": "2026-11-14",
+      "indication": "Hypertrophic cardiomyopathy (HCM) (MAPLE-HCM)",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Cytokinetics states the MAPLE-HCM sNDA was accepted with a PDUFA date of Nov 14, 2026; Q2 coverage says it remains under review.",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001061983/000119312526206360/cytk-ex99_1.htm",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "asundexian",
+      "pdufaDate": "2026-11-19",
+      "indication": "Secondary Prevention After Ischemic Stroke",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Bayer announced FDA acceptance with Priority Review on May 19, 2026 (no exact date disclosed; decision expected late 2026, consistent).",
+      "url": "https://www.businesswire.com/news/home/20260518787299/en/Bayer-Granted-Priority-Review-by-U.S.-FDA-for-Asundexian-in-Patients-After-a-Non-Cardioembolic-Ischemic-Stroke-or-Transient-Ischemic-Attack",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "Molgramostim",
+      "pdufaDate": "2026-11-22",
+      "indication": "Autoimmune Pulmonary Alveolar Proteinosis",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Savara announced on Apr 15, 2026 that the PDUFA date was extended from Aug 22 to Nov 22, 2026.",
+      "url": "https://secure.businesswire.com/news/home/20260415775650/en/Savara-Announces-the-U.S.-Food-Drug-Administration-FDA-Has-Extended-the-Review-Period-for-the-Molgramostim-Inhalation-Solution-Molgramostim-Biologics-License-Application-BLA-in-Autoimmune-Pulmonary-Alveolar-Proteinosis-Autoimmune-PAP",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "venglustat",
+      "pdufaDate": "2026-11-25",
+      "indication": "Type 3 Gaucher disease (GD3)",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Sanofi's NDA for GD3 was accepted with Priority Review and a Nov 25, 2026 target action date; no decision reported.",
+      "url": "https://gaucherdiseasenews.com/2026/06/01/fda-grants-priority-review-treatment-aimed-type-3-gaucher/",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "obinutuzumab",
+      "pdufaDate": "2026-11-30",
+      "indication": "Primary Membranous Nephropathy",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Genentech announced Jul 14, 2026 Priority Review of the pMN sBLA with a decision expected by November 2026.",
+      "url": "https://secure.businesswire.com/news/home/20260714394570/en/FDA-Grants-Priority-Review-to-Genentechs-Gazyva-for-Adults-With-Primary-Membranous-Nephropathy",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "cemdisiran",
+      "pdufaDate": "2026-11-30",
+      "indication": "Generalized Myasthenia Gravis",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Regeneron announced Jun 22, 2026 FDA acceptance under priority review with a target decision in November 2026.",
+      "url": "https://www.neurologylive.com/view/fda-ema-accepts-regulatory-applications-cemdisiran-generalized-myasthenia-gravis",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "upadacitinib",
+      "pdufaDate": "2026-12-03",
+      "indication": "Vitiligo",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "AbbVie submitted the vitiligo applications on Feb 3, 2026 and no decision is reported; a standard review implies about December 2026.",
+      "url": "https://news.abbvie.com/2026-02-03-AbbVie-Submits-Regulatory-Applications-to-FDA-and-EMA-for-Upadacitinib-RINVOQ-R-in-Adults-and-Adolescents-With-Vitiligo",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "delgocitinib",
+      "pdufaDate": "2026-12-14",
+      "indication": "Chronic Hand Eczema in Adolescents Aged 12–17",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "LEO Pharma announced FDA acceptance of the adolescent CHE sNDA on Apr 15, 2026; no PDUFA date published, timing consistent with December.",
+      "url": "https://www.hcplive.com/view/fda-accepts-delgocitinib-snda-for-chronic-hand-eczema-in-adolescents-aged-12-17",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "relacorilant",
+      "pdufaDate": "2026-12-17",
+      "indication": "Endogenous hypercortisolism (Cushing’s syndrome)",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Corcept resubmitted the NDA on Jun 17, 2026 expecting a six-month review (about mid-December); no exact date stated in sources found.",
+      "url": "https://ir.corcept.com/news-releases/news-release-details/corcept-resubmits-new-drug-application-relacorilant-treatment",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "imlifidase",
+      "pdufaDate": "2026-12-19",
+      "indication": "Desensitization treatment of highly sensitized adult kidney transplant patients",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Hansa announced the BLA PDUFA action date as Dec 19, 2026.",
+      "url": "https://news.cision.com/hansa-biopharma-ab/r/pdufa-action-date-for-hansa-biopharma-s-imlifidase-bla-set-for-december-19--2026,c4317024",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "hydrocortisone acetate",
+      "pdufaDate": "2026-12-20",
+      "indication": "Ulcerative Colitis of the Rectum",
+      "verdict": "uncertain",
+      "correctDate": null,
+      "note": "Sources report the Cristcot NDA accepted Apr 21, 2026 with an October 2026 PDUFA target (not Dec 20), and no decision was found.",
+      "url": "https://www.hcplive.com/view/fda-accepts-nda-for-next-generation-hydrocortisone-acetate-in-ulcerative-colitis-of-the-rectum",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "anito-cel",
+      "pdufaDate": "2026-12-23",
+      "indication": "Fourth-line relapsed or refractory multiple myeloma",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Arcellx's 10-K states the BLA was accepted with an anticipated PDUFA date of Dec 23, 2026.",
+      "url": "https://www.sec.gov/Archives/edgar/data/1786205/000119312526076876/aclx-20251231.htm",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "MR-107A-02",
+      "pdufaDate": "2026-12-27",
+      "indication": "Moderate-to-severe acute pain",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Viatris announced FDA acceptance of the NDA with a PDUFA goal date of Dec 27, 2026.",
+      "url": "https://investor.viatris.com/news-releases/news-release-details/us-fda-accepts-viatris-new-drug-application-fast-acting",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "CagriSema",
+      "pdufaDate": "2026-12-31",
+      "indication": "Weight management",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "Novo submitted the NDA Dec 18, 2025 and guidance points to a Q4 2026 decision, consistent with the row; no PDUFA date publicly confirmed.",
+      "url": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
+      "checkedAt": "2026-11-01"
+    },
+    {
+      "drug": "durvalumab + Enfortumab",
+      "pdufaDate": "2026-12-31",
+      "indication": "Muscle invasive bladder cancer (MIBC)",
+      "verdict": "confirmed",
+      "correctDate": null,
+      "note": "FDA granted Priority Review to AstraZeneca's sBLA in Sept 2026 with an action date in Q4 2026; no decision reported.",
+      "url": "https://www.targetedonc.com/view/durvalumab-enfortumab-regimen-fda-priority-review-mibc",
+      "checkedAt": "2026-11-01"
+    }
+  ]
 }
