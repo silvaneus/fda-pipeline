@@ -1,18 +1,6 @@
 {
- "scrapedAt": "2026-10-31T11:42:32.768Z",
+ "scrapedAt": "2026-11-01T12:43:53.711Z",
  "entries": [
-  {
-   "company": "BridgeBio Pharma, Inc.",
-   "tickers": [],
-   "drug": "Oral infigratinib",
-   "submissionType": "NDA",
-   "pdufaDate": "2027-02-04",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on oral infigratinib for children with achondroplasia",
-   "status": "pending",
-   "notes": "Priority Review",
-   "source": "RTTNews"
-  },
   {
    "company": "Roche Holding AG",
    "tickers": [],
@@ -62,6 +50,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Palvella Therapeutics, Inc.",
+   "tickers": [],
+   "drug": "QTORIN 3.9% rapamycin  anhydrous gel",
+   "submissionType": "NDA",
+   "pdufaDate": "2027-02-28",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on QTORIN 3.9% rapamycin anhydrous gel for the treatment of microcystic lymphatic malformations",
+   "status": "Pending",
+   "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
    "company": "Sarepta Therapeutics",
    "tickers": [],
    "drug": "AMONDYS 45 and VYONDYS 53",
@@ -94,42 +94,6 @@
    "isQuarterlyEstimate": false,
    "indication": "FDA decision on AD109 for the treatment of mild, moderate and severe obstructive sleep apnea",
    "status": "Pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Palvella Therapeutics, Inc.",
-   "tickers": [],
-   "drug": "QTORIN 3.9% rapamycin  anhydrous gel",
-   "submissionType": "NDA",
-   "pdufaDate": "2027-02-28",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on QTORIN 3.9% rapamycin anhydrous gel for the treatment of microcystic lymphatic malformations",
-   "status": "Pending",
-   "notes": "Priority Review",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Nuvation Bio Inc.",
-   "tickers": [],
-   "drug": "IBTROZI",
-   "submissionType": "sNDA",
-   "pdufaDate": "2027-01-04",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on updated efficacy information of IBTROZI in Advanced ROS1-Positive Non-Small Cell Lung Cancer",
-   "status": "Approved",
-   "notes": "The sNDA submission fulfils an FDA post-marketing commitment and is intended to update the efficacy information provided in the IBTROZI label, and it includes an additional 10 months of data from the pivotal TRUST-I and TRUST-II studies as of an August 2025 data cutoff",
-   "source": "RTTNews"
-  },
-  {
-   "company": "ImmunityBio, Inc",
-   "tickers": [],
-   "drug": "ANKTIVA",
-   "submissionType": "sBLA",
-   "pdufaDate": "2027-01-06",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on ANKTIVA in combination with Bacillus Calmette-Guerin for patients with BCG-unresponsive non-muscle invasive bladder cancer (NMIBC) with papillary disease without carcinoma in situ (CIS)",
-   "status": "pending",
    "notes": "",
    "source": "RTTNews"
   },
@@ -218,31 +182,19 @@
    "source": "RTTNews"
   },
   {
-   "company": "Mineralys Therapeutics, Inc.",
+   "company": "BridgeBio Pharma, Inc.",
    "tickers": [],
-   "drug": "Lorundrostat",
+   "drug": "Oral infigratinib",
    "submissionType": "NDA",
-   "pdufaDate": "2026-12-22",
+   "pdufaDate": "2027-02-04",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Lorundrostat for the treatment of adult patients with hypertension in combination with other antihypertensive drugs",
-   "status": "Pending",
-   "notes": "",
+   "indication": "FDA decision on oral infigratinib for children with achondroplasia",
+   "status": "pending",
+   "notes": "Priority Review",
    "source": "RTTNews"
   },
   {
    "company": "Gilead Sciences Inc.",
-   "tickers": [],
-   "drug": "Anito-cel",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-12-23",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on anito-cel as a fourth-line treatment for patients with relapsed or refractory multiple myeloma",
-   "status": "pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Arcellx, Inc.",
    "tickers": [],
    "drug": "Anito-cel",
    "submissionType": "BLA",
@@ -326,6 +278,30 @@
    "source": "RTTNews"
   },
   {
+   "company": "Nuvation Bio Inc.",
+   "tickers": [],
+   "drug": "IBTROZI",
+   "submissionType": "sNDA",
+   "pdufaDate": "2027-01-04",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on updated efficacy information of IBTROZI in Advanced ROS1-Positive Non-Small Cell Lung Cancer",
+   "status": "Approved",
+   "notes": "The sNDA submission fulfils an FDA post-marketing commitment and is intended to update the efficacy information provided in the IBTROZI label, and it includes an additional 10 months of data from the pivotal TRUST-I and TRUST-II studies as of an August 2025 data cutoff",
+   "source": "RTTNews"
+  },
+  {
+   "company": "ImmunityBio, Inc",
+   "tickers": [],
+   "drug": "ANKTIVA",
+   "submissionType": "sBLA",
+   "pdufaDate": "2027-01-06",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on ANKTIVA in combination with Bacillus Calmette-Guerin for patients with BCG-unresponsive non-muscle invasive bladder cancer (NMIBC) with papillary disease without carcinoma in situ (CIS)",
+   "status": "pending",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
    "company": "Cogent Biosciences, Inc.",
    "tickers": [],
    "drug": "bezuclastinib plus sunitinib",
@@ -335,30 +311,6 @@
    "indication": "FDA decision on bezuclastinib in combination with sunitinib for patients with Gastrointestinal Stromal Tumors",
    "status": "Pending",
    "notes": "Priority Review",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Vertex Pharmaceuticals Inc.",
-   "tickers": [],
-   "drug": "Povetacicept",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-11-30",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Povetacicept for treatment of immunoglobulin A nephropathy",
-   "status": "Pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Roche Holding AG",
-   "tickers": [],
-   "drug": "giredestrant",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-11-30",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on giredestrant for treatment of ER-positive early-stage breast cancer",
-   "status": "Pending",
-   "notes": "Priority review",
    "source": "RTTNews"
   },
   {
@@ -446,6 +398,30 @@
    "source": "RTTNews"
   },
   {
+   "company": "Mineralys Therapeutics, Inc.",
+   "tickers": [],
+   "drug": "Lorundrostat",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-12-22",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Lorundrostat for the treatment of adult patients with hypertension in combination with other antihypertensive drugs",
+   "status": "Pending",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Arcellx, Inc.",
+   "tickers": [],
+   "drug": "Anito-cel",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-12-23",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on anito-cel as a fourth-line treatment for patients with relapsed or refractory multiple myeloma",
+   "status": "pending",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
    "company": "Cytokinetics Inc.",
    "tickers": [],
    "drug": "MYQORZO",
@@ -454,30 +430,6 @@
    "isQuarterlyEstimate": false,
    "indication": "FDA decision on MYQORZO for MAPLE-HCM (Metoprolol vs Aficamten in Patients with LVOT Obstruction on Exercise Capacity in HCM)",
    "status": "Pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "BioXcel Therapeutics, Inc.",
-   "tickers": [],
-   "drug": "IGALMI",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-11-14",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on IGALMI for at-home use in the acute treatment of agitation associated with bipolar disorders or schizophrenia",
-   "status": "pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Summit Therapeutics plc",
-   "tickers": [],
-   "drug": "Ivonescimab",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-11-14",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on ivonescimab in combination with chemotherapy in patients with EGFR-mutated NSCLC post-TKI therapy",
-   "status": "pending",
    "notes": "",
    "source": "RTTNews"
   },
@@ -554,51 +506,27 @@
    "source": "RTTNews"
   },
   {
-   "company": "Roche Holding AG",
+   "company": "Vertex Pharmaceuticals Inc.",
    "tickers": [],
-   "drug": "Enspryng",
-   "submissionType": "sBLA",
-   "pdufaDate": "2026-10-15",
+   "drug": "Povetacicept",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-11-30",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Enspryng for the treatment of Thyroid Eye Disease",
-   "status": "Approved",
-   "notes": "Priority Review",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Viatris Inc.",
-   "tickers": [],
-   "drug": "Ryzumvi (MR-141) (phentolamine ophthalmic solution 0.75%)",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-10-17",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Ryzumvi for the Treatment of Presbyopia",
-   "status": "Approved",
+   "indication": "FDA decision on Povetacicept for treatment of immunoglobulin A nephropathy",
+   "status": "Pending",
    "notes": "",
    "source": "RTTNews"
   },
   {
-   "company": "Opus Genetics, Inc.",
+   "company": "Roche Holding AG",
    "tickers": [],
-   "drug": "Ryzumvi (phentolamine ophthalmic solution 0.75%)",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-10-17",
+   "drug": "giredestrant",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-11-30",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Ryzumvi for the treatment of presbyopia",
-   "status": "Approved",
-   "notes": "Opus Genetics and Viatris, Inc. are parties to a global licensing agreement which provides for the development of phentolamine ophthalmic solution 0.75% and grants exclusive rights to Viatris to commercialize phentolamine ophthalmic solution 0.75% in the U.S.",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Pharming Group N.V.",
-   "tickers": [],
-   "drug": "Joenja",
-   "submissionType": "resubmitted sNDA",
-   "pdufaDate": "2026-10-24",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Joenja as a treatment for children aged 4 to 11 years with activated phosphoinositide 3-kinase delta syndrome",
-   "status": "Approved",
-   "notes": "FDA declined to approve sNDA for Joenja (leniolisib) in children aged 4–11 with activated phosphoinositide 3-kinase delta syndrome (APDS) on 1st Feb. 2026. If approved, Joenja will be the first approved treatment in the U.S. for children with activated phosphoinositide 3-kinase delta (PI3Kd) syndrome (APDS), a rare primary immunodeficiency.",
+   "indication": "FDA decision on giredestrant for treatment of ER-positive early-stage breast cancer",
+   "status": "Pending",
+   "notes": "Priority review",
    "source": "RTTNews"
   },
   {
@@ -657,44 +585,32 @@
    "pdufaDate": "2026-11-10",
    "isQuarterlyEstimate": false,
    "indication": "FDA decision on KETAFREE, a preservative-free intravenous ketamine formulation.",
-   "status": "Pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Biofrontera Inc.",
-   "tickers": [],
-   "drug": "Ameluz PDT",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-09-28",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Ameluz PDT in Superficial Basal Cell Carcinoma",
    "status": "Approved",
    "notes": "",
    "source": "RTTNews"
   },
   {
-   "company": "Scholar Rock Holding Corporation",
+   "company": "BioXcel Therapeutics, Inc.",
    "tickers": [],
-   "drug": "Apitegromab",
-   "submissionType": "Resubmitted BLA",
-   "pdufaDate": "2026-09-30",
+   "drug": "IGALMI",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-11-14",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Apitegromab for treatment of Children and Adults with Spinal Muscular Atrophy",
-   "status": "Approved",
-   "notes": "Priority Review FDA issued a Complete Response Letter for Apitegromab on Sep.23, 2025.",
+   "indication": "FDA decision on IGALMI for at-home use in the acute treatment of agitation associated with bipolar disorders or schizophrenia",
+   "status": "pending",
+   "notes": "",
    "source": "RTTNews"
   },
   {
-   "company": "Bristol Myers Squibb Co.",
+   "company": "Summit Therapeutics plc",
    "tickers": [],
-   "drug": "Camzyos (mavacamten)",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-09-30",
+   "drug": "Ivonescimab",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-11-14",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Camzyos as a potential treatment for adolescents aged 12 years to less than 18 years with obstructive hypertrophic cardiomyopathy (oHCM).",
-   "status": "Approved",
-   "notes": "If approved, Camzyos would be the first cardiac myosin inhibitor (CMI) to treat adolescents with oHCM.",
+   "indication": "FDA decision on ivonescimab in combination with chemotherapy in patients with EGFR-mutated NSCLC post-TKI therapy",
+   "status": "pending",
+   "notes": "",
    "source": "RTTNews"
   },
   {
@@ -706,18 +622,6 @@
    "isQuarterlyEstimate": true,
    "indication": "",
    "status": "Approved",
-   "notes": "Priority Review; PDUFA date is quarterly estimate (exact date TBD)",
-   "source": "RTTNews"
-  },
-  {
-   "company": "AstraZeneca PLC",
-   "tickers": [],
-   "drug": "IMFINZI",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-12-31",
-   "isQuarterlyEstimate": true,
-   "indication": "",
-   "status": "pending",
    "notes": "Priority Review; PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
@@ -782,51 +686,51 @@
    "source": "RTTNews"
   },
   {
-   "company": "Ultragenyx Pharmaceutical Inc",
+   "company": "Roche Holding AG",
    "tickers": [],
-   "drug": "UX111 AAV",
-   "submissionType": "Resubmitted BLA",
-   "pdufaDate": "2026-09-19",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on UX111 AAV gene therapy for treatment of Sanfilippo syndrome type A (MPS IIIA)",
-   "status": "Approved",
-   "notes": "FDA declined to approve UX111 on July 11, 2025, citing specific chemistry, manufacturing, and controls (CMC) related observations that are resolvable. The product was originally developed by Abeona Therapeutics and transferred to Ultragenyx to complete development.",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Abeona Therapeutics Inc.",
-   "tickers": [],
-   "drug": "UX111 AAV",
-   "submissionType": "Resubmitted BLA",
-   "pdufaDate": "2026-09-19",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Ultragenyx Pharmaceutical's UX111 AAV gene therapy for treatment of Sanfilippo syndrome type A (MPS IIIA)",
-   "status": "Approved",
-   "notes": "FDA declined to approve UX111 on July 11, 2025, citing specific chemistry, manufacturing, and controls (CMC) related observations that are resolvable. The product was originally developed by Abeona Therapeutics and transferred to Ultragenyx to complete development. Under the terms of the agreement with Ultragenyx, Abeona is eligible to receive payments based on the achievement of certain sales milestones and royalties on net sales.",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Merck & Co Inc.",
-   "tickers": [],
-   "drug": "Winrevair",
+   "drug": "Enspryng",
    "submissionType": "sBLA",
-   "pdufaDate": "2026-09-21",
+   "pdufaDate": "2026-10-15",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on WINREVAIR seeking approval to update the U.S. product label in pulmonary arterial hypertension to include Phase 3 HYPERION trial results",
-   "status": "pending",
+   "indication": "FDA decision on Enspryng for the treatment of Thyroid Eye Disease",
+   "status": "Approved",
+   "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Viatris Inc.",
+   "tickers": [],
+   "drug": "Ryzumvi (MR-141) (phentolamine ophthalmic solution 0.75%)",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-10-17",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Ryzumvi for the Treatment of Presbyopia",
+   "status": "Approved",
    "notes": "",
    "source": "RTTNews"
   },
   {
-   "company": "Ionis Pharmaceuticals, Inc.",
+   "company": "Opus Genetics, Inc.",
    "tickers": [],
-   "drug": "zilganersen",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-09-22",
+   "drug": "Ryzumvi (phentolamine ophthalmic solution 0.75%)",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-10-17",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on zilganersen for treatment of Alexander disease",
+   "indication": "FDA decision on Ryzumvi for the treatment of presbyopia",
    "status": "Approved",
-   "notes": "Priority Review",
+   "notes": "Opus Genetics and Viatris, Inc. are parties to a global licensing agreement which provides for the development of phentolamine ophthalmic solution 0.75% and grants exclusive rights to Viatris to commercialize phentolamine ophthalmic solution 0.75% in the U.S.",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Pharming Group N.V.",
+   "tickers": [],
+   "drug": "Joenja",
+   "submissionType": "resubmitted sNDA",
+   "pdufaDate": "2026-10-24",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Joenja as a treatment for children aged 4 to 11 years with activated phosphoinositide 3-kinase delta syndrome",
+   "status": "Approved",
+   "notes": "FDA declined to approve sNDA for Joenja (leniolisib) in children aged 4–11 with activated phosphoinositide 3-kinase delta syndrome (APDS) on 1st Feb. 2026. If approved, Joenja will be the first approved treatment in the U.S. for children with activated phosphoinositide 3-kinase delta (PI3Kd) syndrome (APDS), a rare primary immunodeficiency.",
    "source": "RTTNews"
   },
   {
@@ -890,6 +794,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Biofrontera Inc.",
+   "tickers": [],
+   "drug": "Ameluz PDT",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-09-28",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Ameluz PDT in Superficial Basal Cell Carcinoma",
+   "status": "Approved",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
    "company": "Biofrontera AG",
    "tickers": [],
    "drug": "Ameluz",
@@ -899,6 +815,42 @@
    "indication": "FDA decision on the expanded indication of Ameluz PDT in Superficial Basal Cell Carcinoma",
    "status": "Approved",
    "notes": "",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Scholar Rock Holding Corporation",
+   "tickers": [],
+   "drug": "Apitegromab",
+   "submissionType": "Resubmitted BLA",
+   "pdufaDate": "2026-09-30",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Apitegromab for treatment of Children and Adults with Spinal Muscular Atrophy",
+   "status": "Approved",
+   "notes": "Priority Review FDA issued a Complete Response Letter for Apitegromab on Sep.23, 2025.",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Bristol Myers Squibb Co.",
+   "tickers": [],
+   "drug": "Camzyos (mavacamten)",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-09-30",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Camzyos as a potential treatment for adolescents aged 12 years to less than 18 years with obstructive hypertrophic cardiomyopathy (oHCM).",
+   "status": "Approved",
+   "notes": "If approved, Camzyos would be the first cardiac myosin inhibitor (CMI) to treat adolescents with oHCM.",
+   "source": "RTTNews"
+  },
+  {
+   "company": "AstraZeneca PLC",
+   "tickers": [],
+   "drug": "IMFINZI",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-12-31",
+   "isQuarterlyEstimate": true,
+   "indication": "",
+   "status": "pending",
+   "notes": "Priority Review; PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
   {
@@ -938,30 +890,6 @@
    "source": "RTTNews"
   },
   {
-   "company": "Pfizer Inc.",
-   "tickers": [],
-   "drug": "Brepocitinib",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-09-30",
-   "isQuarterlyEstimate": true,
-   "indication": "",
-   "status": "Pending",
-   "notes": "Priority Review Brepocitinib was developed by Priovant Therapeutics Priovant was established in September 2021 through a transaction between Roivant and Pfizer; PDUFA date is quarterly estimate (exact date TBD)",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Novo Nordisk B A/S",
-   "tickers": [],
-   "drug": "Denecimig",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-09-30",
-   "isQuarterlyEstimate": true,
-   "indication": "",
-   "status": "Pending",
-   "notes": "PDUFA date is quarterly estimate (exact date TBD)",
-   "source": "RTTNews"
-  },
-  {
    "company": "Telix Pharmaceuticals Limited",
    "tickers": [],
    "drug": "TLX101-Px1",
@@ -995,6 +923,78 @@
    "indication": "FDA decision on Zidesamtinib for the treatment of locally advanced or metastatic ROS1-positive non-small cell lung cancer in adults",
    "status": "Approved",
    "notes": "Zidesamtinib is developed by Nuvalent. In December 2025, Royalty Pharma acquired a pre-existing royalty interest in Nuvalent’s zidesamtinib from an undisclosed third party",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Ultragenyx Pharmaceutical Inc",
+   "tickers": [],
+   "drug": "UX111 AAV",
+   "submissionType": "Resubmitted BLA",
+   "pdufaDate": "2026-09-19",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on UX111 AAV gene therapy for treatment of Sanfilippo syndrome type A (MPS IIIA)",
+   "status": "Approved",
+   "notes": "FDA declined to approve UX111 on July 11, 2025, citing specific chemistry, manufacturing, and controls (CMC) related observations that are resolvable. The product was originally developed by Abeona Therapeutics and transferred to Ultragenyx to complete development.",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Abeona Therapeutics Inc.",
+   "tickers": [],
+   "drug": "UX111 AAV",
+   "submissionType": "Resubmitted BLA",
+   "pdufaDate": "2026-09-19",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on Ultragenyx Pharmaceutical's UX111 AAV gene therapy for treatment of Sanfilippo syndrome type A (MPS IIIA)",
+   "status": "Approved",
+   "notes": "FDA declined to approve UX111 on July 11, 2025, citing specific chemistry, manufacturing, and controls (CMC) related observations that are resolvable. The product was originally developed by Abeona Therapeutics and transferred to Ultragenyx to complete development. Under the terms of the agreement with Ultragenyx, Abeona is eligible to receive payments based on the achievement of certain sales milestones and royalties on net sales.",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Merck & Co Inc.",
+   "tickers": [],
+   "drug": "Winrevair",
+   "submissionType": "sBLA",
+   "pdufaDate": "2026-09-21",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on WINREVAIR seeking approval to update the U.S. product label in pulmonary arterial hypertension to include Phase 3 HYPERION trial results",
+   "status": "pending",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Ionis Pharmaceuticals, Inc.",
+   "tickers": [],
+   "drug": "zilganersen",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-09-22",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on zilganersen for treatment of Alexander disease",
+   "status": "Approved",
+   "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Pfizer Inc.",
+   "tickers": [],
+   "drug": "Brepocitinib",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-09-30",
+   "isQuarterlyEstimate": true,
+   "indication": "",
+   "status": "Pending",
+   "notes": "Priority Review Brepocitinib was developed by Priovant Therapeutics Priovant was established in September 2021 through a transaction between Roivant and Pfizer; PDUFA date is quarterly estimate (exact date TBD)",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Novo Nordisk B A/S",
+   "tickers": [],
+   "drug": "Denecimig",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-09-30",
+   "isQuarterlyEstimate": true,
+   "indication": "",
+   "status": "Pending",
+   "notes": "PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   }
  ]
