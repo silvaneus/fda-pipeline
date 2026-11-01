@@ -2603,6 +2603,376 @@
     "https://tearsolutions.com"
    ],
    "checked": "2026-10-31"
+  },
+  "cenna biosciences": {
+   "name": "Cenna Biosciences Inc.",
+   "website": "cennabiosciences.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Nazneen Dewji, Ph.D.",
+     "title": "Founder, President and CEO",
+     "founder": true
+    },
+    {
+     "name": "Robert Alexander, MD",
+     "title": "CMO",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://cennabiosciences.com/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "pelage pharmaceuticals": {
+   "name": "Pelage Pharmaceuticals, Inc.",
+   "website": "pelagepharma.com",
+   "status": "ok",
+   "note": "Team profiles not readable on site; names from press release/trade press",
+   "people": [
+    {
+     "name": "Daniel Gil, Ph.D.",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Nathan Wheeler, MPH",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://pelagepharma.com/about-us/",
+    "https://www.businesswire.com/news/home/20260222871585/en",
+    "https://endpts.com/gv-backs-hair-loss-biotech-out-of-ucla-with-phii-set-for-mid-2024"
+   ],
+   "checked": "2026-11-01"
+  },
+  "immunis": {
+   "name": "Immunis, Inc.",
+   "website": "immunisbiomedical.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Hans S. Keirstead, Ph.D.",
+     "title": "Chairman",
+     "founder": false
+    },
+    {
+     "name": "Tom Lane, Ph.D.",
+     "title": "Chief Science Officer",
+     "founder": false
+    },
+    {
+     "name": "Mark Cabato, CFA",
+     "title": "Chief Business Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://immunisbiomedical.com/leadership/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "enliven therapeutics": {
+   "name": "Enliven Therapeutics",
+   "website": "enliventherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Rick Fair",
+     "title": "Chief Executive Officer and Member of the Board of Directors",
+     "founder": false
+    },
+    {
+     "name": "Sam Kintz, MBA",
+     "title": "Co-founder and Head of Pipeline",
+     "founder": true
+    },
+    {
+     "name": "Joe Lyssikatos, PhD",
+     "title": "Co-founder and Research Fellow",
+     "founder": true
+    },
+    {
+     "name": "Anish Patel, PharmD",
+     "title": "Co-founder and Chief Operating Officer",
+     "founder": true
+    },
+    {
+     "name": "Helen Collins, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Ben Hohl",
+     "title": "Chief Financial Officer and Head of Corporate Development",
+     "founder": false
+    },
+    {
+     "name": "Galya Blachman, PhD, Esq",
+     "title": "Chief Legal Officer and Head of Business Development",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://enliventherapeutics.com/about/team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "x4 pharmaceuticals": {
+   "name": "X4 Pharmaceuticals",
+   "website": "x4pharma.com",
+   "status": "ok",
+   "note": "Site lists overlapping/older titles; verify",
+   "people": [
+    {
+     "name": "Adam Craig, MD, PhD, MBA",
+     "title": "Executive Chair",
+     "founder": false
+    },
+    {
+     "name": "John Volpone",
+     "title": "President, Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "David Kirske",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Christophe Arbet-Engels, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Art Taveras, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.x4pharma.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "prelude therapeutics": {
+   "name": "Prelude Therapeutics Incorporated",
+   "website": "preludetx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Kris Vaddi, Ph.D.",
+     "title": "Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Bryant Lim",
+     "title": "Chief Financial Officer & Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Andrew Combs, Ph.D.",
+     "title": "Chief Chemistry Officer",
+     "founder": false
+    },
+    {
+     "name": "Charles Morris, MBChB, MRCP",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Peggy Scherle, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Sean Brusky, M.B.A.",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Michele Porreca, M.B.A.",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://preludetx.com/about-us/leadership"
+   ],
+   "checked": "2026-11-01"
+  },
+  "jade biosciences": {
+   "name": "Jade Biosciences, Inc.",
+   "website": "jadebiosciences.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Tom Frohlich",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Andrew King, BVMS, Ph.D.",
+     "title": "President, Research & Development",
+     "founder": false
+    },
+    {
+     "name": "Edward R. Conner, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Brad Dahms",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Elizabeth Balta",
+     "title": "Chief Legal Officer & Corporate Secretary",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://jadebiosciences.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "beeline medicines": {
+   "name": "Beeline Medicines Corporation",
+   "website": "beelinemedicines.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Saqib Islam",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Badreddin Edris, Ph.D.",
+     "title": "President & Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Nathalie Franchimont, M.D., Ph.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Kristin Patterson, Ph.D.",
+     "title": "Chief Technical Operations Officer",
+     "founder": false
+    },
+    {
+     "name": "Daniel Pichl",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://beelinemedicines.com/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "biohaven therapeutics": {
+   "name": "Biohaven Therapeutics Ltd.",
+   "website": "biohaven.com",
+   "status": "ok",
+   "note": "Site is biohaven.com (queue had biohavenpharma.com)",
+   "people": [
+    {
+     "name": "Vlad Coric, M.D.",
+     "title": "Chairman & Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Matthew Buten",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Irfan Qureshi, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Bruce D. Car, DVM, Ph.D., DACVP",
+     "title": "Chief Innovation Officer",
+     "founder": false
+    },
+    {
+     "name": "Warren Volles, J.D.",
+     "title": "General Counsel & Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Tova Gardin, M.D., MPP",
+     "title": "Chief Translational Officer",
+     "founder": false
+    },
+    {
+     "name": "John McGill",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "George Clark, CPA",
+     "title": "Chief Accounting Officer",
+     "founder": false
+    },
+    {
+     "name": "Cliff Bechtold, M.S.",
+     "title": "President & General Manager, Biohaven Ireland, Chief Compliance Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.biohaven.com/about/our-people/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "cytomx therapeutics": {
+   "name": "CytomX Therapeutics",
+   "website": "cytomx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Sean A. McCarthy, D.Phil.",
+     "title": "Chief Executive Officer and Chairman",
+     "founder": false
+    },
+    {
+     "name": "Marcia P. Belvin, Ph.D.",
+     "title": "SVP, Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Wayne Chu, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Rachael Lester",
+     "title": "SVP, Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Ogden",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Alejandra Carvajal, J.D.",
+     "title": "Chief Legal Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://cytomx.com/about/"
+   ],
+   "checked": "2026-11-01"
   }
  }
 }
