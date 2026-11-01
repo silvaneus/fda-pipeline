@@ -3730,6 +3730,507 @@
     "https://tectonictx.com/"
    ],
    "checked": "2026-11-01"
+  },
+  "trevi therapeutics": {
+   "name": "Trevi Therapeutics",
+   "website": "trevitherapeutics.com",
+   "status": "ok",
+   "note": "Site blocked fetch (403); names from search snippets of company leadership page",
+   "people": [
+    {
+     "name": "Jennifer Good",
+     "title": "Co-founder, President and CEO",
+     "founder": true
+    },
+    {
+     "name": "Thomas Sciascia",
+     "title": "Co-founder, Chief Science Officer",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://trevitherapeutics.com/leadership/",
+    "https://hartfordbusiness.com/honoree/2026-power-25-healthcare-jennifer-good/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "sagimet biosciences": {
+   "name": "Sagimet Biosciences Inc.",
+   "website": "sagimet.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "David Happel",
+     "title": "Chief Executive Officer & Director",
+     "founder": false
+    },
+    {
+     "name": "Andreas Grauer, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Thierry Chauche",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Marie O'Farrell, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Elizabeth Rozek, Esq",
+     "title": "Chief Legal & Administrative Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://sagimet.com/about/executives/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "harmony biosciences management": {
+   "name": "Harmony Biosciences Management, Inc.",
+   "website": "harmonybiosciences.com",
+   "status": "ok",
+   "note": "CEO transition announced Oct 12, 2026 per site",
+   "people": [
+    {
+     "name": "Jeffrey M. Dayno, MD",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Peter Anastasiou",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Kumar Budur, MD, MS",
+     "title": "Chief Medical and Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Adam Zaeske, MBA",
+     "title": "Executive Vice President and Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Christian Ulrich",
+     "title": "Executive Vice President, General Counsel & Corporate Secretary",
+     "founder": false
+    },
+    {
+     "name": "Cate McCanless",
+     "title": "Senior Vice President and Chief Corporate Affairs Officer",
+     "founder": false
+    },
+    {
+     "name": "Andrew Serafin, JD, MBA",
+     "title": "Chief Strategy Officer",
+     "founder": false
+    },
+    {
+     "name": "Tricia Glover",
+     "title": "Chief Compliance Officer",
+     "founder": false
+    },
+    {
+     "name": "Audrey Murphy",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    },
+    {
+     "name": "Jeffrey S. Aronin",
+     "title": "Harmony Founder and Non-Executive Chairman",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.harmonybiosciences.com/about-us/senior-leadership/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "acepodia biotech": {
+   "name": "Acepodia Biotech, Inc.",
+   "website": "acepodiabio.com",
+   "status": "no_team",
+   "note": "Site returned 503 on both attempts",
+   "people": [],
+   "sources": [],
+   "checked": "2026-11-01"
+  },
+  "ambros therapeutics": {
+   "name": "Ambros Therapeutics, Inc.",
+   "website": "ambrostherapeutics.com",
+   "status": "ok",
+   "note": "Site is ambrostherapeutics.com (queue had ambrostx.com)",
+   "people": [
+    {
+     "name": "Joseph (Jay) Hagan",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Cris Calsada",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Gail Cawkwell, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://ambrostherapeutics.com/teams/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "lumen bioscience": {
+   "name": "Lumen Bioscience, Inc.",
+   "website": "lumen.bio",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Brian Finrow",
+     "title": "Co-Founder and Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Jim Roberts",
+     "title": "Co-Founder and Chief Scientific Officer",
+     "founder": true
+    },
+    {
+     "name": "Craig Behnke",
+     "title": "EVP, Production / Development",
+     "founder": false
+    },
+    {
+     "name": "Eric Orse",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "John Morrow",
+     "title": "COO and General Counsel",
+     "founder": false
+    },
+    {
+     "name": "Nhi Khuong",
+     "title": "EVP, Preclinical Development",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://lumen.bio/about"
+   ],
+   "checked": "2026-11-01"
+  },
+  "corium innovations": {
+   "name": "Corium Innovations, Inc.",
+   "website": "coriumintl.com",
+   "status": "no_team",
+   "note": "Site returned 503 on both attempts",
+   "people": [],
+   "sources": [],
+   "checked": "2026-11-01"
+  },
+  "assembly biosciences": {
+   "name": "Assembly Biosciences",
+   "website": "assemblybio.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Jason Okazaki",
+     "title": "Chief Executive Officer & President, Director",
+     "founder": false
+    },
+    {
+     "name": "William Delaney, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Anuj Gaggar, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Jennifer Troia",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    },
+    {
+     "name": "Nicole S. White, PhD",
+     "title": "Chief Manufacturing Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.assemblybio.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "applied biologics": {
+   "name": "Applied Biologics, LLC",
+   "website": "appliedbiologics.com",
+   "status": "no_team",
+   "note": "Site content did not load; searches found no named leadership",
+   "people": [],
+   "sources": [],
+   "checked": "2026-11-01"
+  },
+  "biora therapeutics": {
+   "name": "Biora Therapeutics, Inc.",
+   "website": "bioratherapeutics.com",
+   "status": "defunct",
+   "note": "Chapter 11 filed Dec 2024, converted to Chapter 7 May 2025 per case trackers; assets sold to lenders",
+   "people": [],
+   "sources": [
+    "https://www.bioratherapeutics.com/company/about"
+   ],
+   "checked": "2026-11-01"
+  },
+  "newleos therapeutics": {
+   "name": "Newleos Therapeutics, Inc.",
+   "website": "newleos.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Timothy Noyes",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Federico Bolognani, MD, PhD",
+     "title": "Co-founder, Chief Medical Officer",
+     "founder": true
+    },
+    {
+     "name": "John McCabe",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Christoph Westphal, MD, PhD",
+     "title": "Co-founder and Executive Chair",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://newleos.com/team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "palisade bio": {
+   "name": "Palisade Bio",
+   "website": "palisadebio.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "JD Finley, MT",
+     "title": "Chief Executive Officer and Director",
+     "founder": false
+    },
+    {
+     "name": "Mitch Jones, BSc, MEng, PhD, MD",
+     "title": "President and Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Julien E. Capers, JD",
+     "title": "General Counsel & Corporate Secretary",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://palisadebio.com/leadership-team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "ollin biosciences": {
+   "name": "Ollin Biosciences, Inc.",
+   "website": "ollin.bio",
+   "status": "no_team",
+   "note": "Team section names not readable",
+   "people": [],
+   "sources": [
+    "https://ollin.bio/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "fortvita biologics": {
+   "name": "Fortvita Biologics (USA)Inc.",
+   "website": "fortvitabio.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Hui Zhou, MD, PhD",
+     "title": "President",
+     "founder": false
+    },
+    {
+     "name": "Jamie Freedman, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://fortvitabio.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "transcend therapeutics": {
+   "name": "Transcend Therapeutics",
+   "website": "transcendtherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Martin Stogniew, PhD",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Amanda Jones, PharmD",
+     "title": "Senior Vice President, Head of Transcend Development",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://transcendtherapeutics.com/about-us/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "eledon pharmaceuticals": {
+   "name": "Eledon Pharmaceuticals",
+   "website": "eledon.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "David-Alexandre C. Gros, MD",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Steven Perrin, PhD",
+     "title": "President and Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "David Hovland, PhD",
+     "title": "Chief Regulatory Officer",
+     "founder": false
+    },
+    {
+     "name": "Paul Little",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Bryan Smith",
+     "title": "General Counsel",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://eledon.com/about/team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "thetis pharmaceuticals": {
+   "name": "Thetis Pharmaceuticals LLC",
+   "website": "thetispharma.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Gary Mathias",
+     "title": "Co-Founder and CEO",
+     "founder": true
+    },
+    {
+     "name": "Frank C. Sciavolino, PhD",
+     "title": "Co-Founder and CSO Emeritus",
+     "founder": true
+    },
+    {
+     "name": "John Parkinson, PhD",
+     "title": "Chief Science Officer",
+     "founder": false
+    },
+    {
+     "name": "Joyce Steinberg, MD, FACP",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://thetispharma.com/company"
+   ],
+   "checked": "2026-11-01"
+  },
+  "kriya therapeutics": {
+   "name": "Kriya Therapeutics, Inc.",
+   "website": "kriyatx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Shankar Ramaswamy, MD",
+     "title": "Co-Founder, Chairman and CEO",
+     "founder": true
+    },
+    {
+     "name": "Fraser Wright, PhD",
+     "title": "Scientific Co-Founder and Chief Gene Therapy Officer",
+     "founder": true
+    },
+    {
+     "name": "Sachiyo Minegishi",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Greg Di Russo, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Britt Petty",
+     "title": "Chief Manufacturing Officer",
+     "founder": false
+    },
+    {
+     "name": "Michele Stone, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Brian Furmanski, PhD",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Mark Chen",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Katherine Eade, JD",
+     "title": "Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Roger Jeffs, PhD",
+     "title": "Co-Founder and Vice Chairman",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.kriyatx.com/people"
+   ],
+   "checked": "2026-11-01"
   }
  }
 }
