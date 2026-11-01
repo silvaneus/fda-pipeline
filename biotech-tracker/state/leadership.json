@@ -2973,6 +2973,763 @@
     "https://cytomx.com/about/"
    ],
    "checked": "2026-11-01"
+  },
+  "tango therapeutics": {
+   "name": "Tango Therapeutics, Inc.",
+   "website": "tangotx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Malte Peters, MD",
+     "title": "President & Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Adam Crystal, MD, PhD",
+     "title": "President, Research & Development",
+     "founder": false
+    },
+    {
+     "name": "Philippe Serrano",
+     "title": "Chief Regulatory Officer",
+     "founder": false
+    },
+    {
+     "name": "Matthew Gall",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Julie Carretero",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    },
+    {
+     "name": "Fatma Ocak",
+     "title": "Chief Commercialization Officer",
+     "founder": false
+    },
+    {
+     "name": "Yen-Ching Chua",
+     "title": "Chief Development Operations Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.tangotx.com/leadership/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "invivyd": {
+   "name": "Invivyd, Inc.",
+   "website": "invivyd.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Marc Elia",
+     "title": "Chairman and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Robert Allen, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Jill Andersen, J.D.",
+     "title": "Chief Legal Officer & Corporate Secretary",
+     "founder": false
+    },
+    {
+     "name": "William Duke, M.B.A.",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Julie Green, M.B.A.",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    },
+    {
+     "name": "Timothy Lee",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Michael Mina, M.D., Ph.D.",
+     "title": "Chief Medical Officer and Chief Epidemiologist",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.invivyd.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "editas medicine": {
+   "name": "Editas Medicine, Inc.",
+   "website": "editasmedicine.com",
+   "status": "ok",
+   "note": "Site is editasmedicine.com (queue had editasmed.com)",
+   "people": [
+    {
+     "name": "Gilmore O'Neill, M.B, M.M.Sc.",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Linda C. Burkly, Ph.D.",
+     "title": "Executive Vice President and Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Dan Ory, M.D.",
+     "title": "Executive Vice President and Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Frank Panaccio",
+     "title": "Senior Vice President and Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Amy Parison",
+     "title": "Senior Vice President and Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Gregory Whitehead",
+     "title": "Executive Vice President and Chief Technical and Quality Officer",
+     "founder": false
+    },
+    {
+     "name": "Feng Zhang, Ph.D.",
+     "title": "Scientific Founder",
+     "founder": true
+    },
+    {
+     "name": "George Church, Ph.D.",
+     "title": "Scientific Founder",
+     "founder": true
+    },
+    {
+     "name": "J. Keith Joung, M.D., Ph.D.",
+     "title": "Scientific Founder",
+     "founder": true
+    },
+    {
+     "name": "David R. Liu, Ph.D.",
+     "title": "Scientific Founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.editasmedicine.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "an2 therapeutics": {
+   "name": "AN2 Therapeutics, Inc",
+   "website": "an2therapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Eric Easom",
+     "title": "Co-founder, President, CEO, and Chair",
+     "founder": true
+    },
+    {
+     "name": "Josh Eizen",
+     "title": "Chief Legal and Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Lucy Day",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Sanjay Chanda, Ph.D.",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Cameron Trenor, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "George H. Talbot, M.D.",
+     "title": "Co-Founder and Senior Clinical Advisor",
+     "founder": true
+    },
+    {
+     "name": "MRK (Dickon) Alley, Ph.D.",
+     "title": "Co-founder and Head of Biology",
+     "founder": true
+    },
+    {
+     "name": "Joseph S. Zakrzewski",
+     "title": "Co-founder and Director",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://an2therapeutics.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "ascletis pharma": {
+   "name": "Ascletis Pharma (China) Co., Limited",
+   "website": "ascletis.com",
+   "status": "ok",
+   "note": "Team page not readable; name from annual report/search results",
+   "people": [
+    {
+     "name": "Jinzi Jason Wu, Ph.D.",
+     "title": "Chairman and Chief Executive Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.ascletis.com/",
+    "https://www1.hkexnews.hk/listedco/listconews/sehk/2024/0426/2024042601346.pdf"
+   ],
+   "checked": "2026-11-01"
+  },
+  "immunome": {
+   "name": "Immunome, Inc.",
+   "website": "immunome.com",
+   "status": "ok",
+   "note": "Site content did not load; names from press releases",
+   "people": [
+    {
+     "name": "Clay B. Siegall, Ph.D.",
+     "title": "Chairman and Chief Executive Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.biospace.com/immunome-appoints-bob-lechleider-m-d-as-chief-medical-officer"
+   ],
+   "checked": "2026-11-01"
+  },
+  "aktis oncology": {
+   "name": "Aktis Oncology, Inc.",
+   "website": "aktisoncology.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Matthew Roden, PhD",
+     "title": "President, Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Tyler Benedum, PhD",
+     "title": "Chief Technical Officer",
+     "founder": false
+    },
+    {
+     "name": "Akos Czibere, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Paul L. Feldman, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Kyle Kuvalanka",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Shulamit Ron-Bigger, PhD",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Todd Foley",
+     "title": "Co-founder and Chairman",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.aktisoncology.com/our-team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "irulya therapeutics": {
+   "name": "IRulya Therapeutics Inc.",
+   "website": "irulya.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Brigette Roberts, M.D.",
+     "title": "Chief Executive Officer & Board Member",
+     "founder": false
+    },
+    {
+     "name": "John Militello, CPA",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Keith Fandrick, Ph.D., M.B.A., RAC",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Joan Edwards",
+     "title": "Chief Quality Assurance Officer",
+     "founder": false
+    },
+    {
+     "name": "Eric Fink",
+     "title": "Chief People Officer",
+     "founder": false
+    },
+    {
+     "name": "Edwin L. Parsley, D.O.",
+     "title": "Acting Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://irulya.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "prime medicine": {
+   "name": "Prime Medicine, Inc.",
+   "website": "primemedicine.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Allan Reine, MD",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Mohammed Asmal, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Ann Lee, PhD",
+     "title": "Chief Technical Officer",
+     "founder": false
+    },
+    {
+     "name": "Svetlana Makhni",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Matthew Hawryluk, PhD",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Ryan Brown",
+     "title": "Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Niamh Alix",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    },
+    {
+     "name": "Andrew Anzalone, MD, PhD",
+     "title": "Co-founder and Head of Platform",
+     "founder": true
+    },
+    {
+     "name": "David Liu, PhD",
+     "title": "Co-founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://primemedicine.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "summit therapeutics": {
+   "name": "Summit Therapeutics",
+   "website": "smmttx.com",
+   "status": "ok",
+   "note": "Site is smmttx.com (queue had summitplc.com)",
+   "people": [
+    {
+     "name": "Bob Duggan",
+     "title": "Co-CEO & Chairman",
+     "founder": false
+    },
+    {
+     "name": "Dr. Maky Zanganeh",
+     "title": "Co-CEO & President",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.smmttx.com/",
+    "https://www.biospace.com/summit-therapeutics-appoints-dr-maky-zanganeh-as-co-ceo-and-president"
+   ],
+   "checked": "2026-11-01"
+  },
+  "ltz therapeutics": {
+   "name": "LTZ Therapeutics, Inc.",
+   "website": "ltztherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Robert Li, PhD",
+     "title": "Founder, Chairman & Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Phillip Lee",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Martin Treder, PhD",
+     "title": "Co-founder & Chief Scientific Officer",
+     "founder": true
+    },
+    {
+     "name": "Jianhui Zhou, PhD",
+     "title": "Co-founder & SVP, Discovery",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://ltztherapeutics.com/team/index.html"
+   ],
+   "checked": "2026-11-01"
+  },
+  "full life technologies uk": {
+   "name": "Full-Life Technologies UK Limited",
+   "website": "t-full.com",
+   "status": "ok",
+   "note": "Domain did not resolve from checker; people from trade press",
+   "people": [
+    {
+     "name": "Lanny Sun",
+     "title": "Co-founder, Chairman and CEO",
+     "founder": true
+    },
+    {
+     "name": "Hong-hoi Ting",
+     "title": "Co-founder, Chief Strategy Officer",
+     "founder": true
+    },
+    {
+     "name": "Fa Liu, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://endpts.com/with-ops-spanning-belgium-and-china-full-life-inks-245m-buyout-to-beef-up-radiopharma-pipeline",
+    "https://www.fiercebiotech.com/biotech/full-life-wants-more-acquires-new-jersey-biotech-efforts-dominate-radiopharmaceutical-rd"
+   ],
+   "checked": "2026-11-01"
+  },
+  "graviton bioscience": {
+   "name": "Graviton Bioscience Corporation",
+   "website": "graviton.bio",
+   "status": "no_team",
+   "note": "Management page names no individuals",
+   "people": [],
+   "sources": [
+    "https://graviton.bio/about-us/management/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "systimmune": {
+   "name": "SystImmune Inc.",
+   "website": "systimmune.com",
+   "status": "ok",
+   "note": "Names from homepage news items; no team page",
+   "people": [
+    {
+     "name": "Jie D'Elia",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Jonathan Cheng",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://systimmune.com/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "smsbiotech": {
+   "name": "SMSbiotech",
+   "website": "smsbiotech.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Abdulkader Rahmo, PhD.",
+     "title": "Co-Founder, President, CSO",
+     "founder": true
+    },
+    {
+     "name": "Jason P. Kirkness, PhD",
+     "title": "Chief Clinical Officer",
+     "founder": false
+    },
+    {
+     "name": "Michael Swartzburg",
+     "title": "Chief Financial Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://smsbiotech.com/leadership"
+   ],
+   "checked": "2026-11-01"
+  },
+  "4d molecular therapeutics": {
+   "name": "4D Molecular Therapeutics",
+   "website": "4dmoleculartherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "David Kirn, MD",
+     "title": "Chief Executive Officer, President, and Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Julie Clark, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Dhaval Desai, PharmD",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Kim Maplestone",
+     "title": "Chief Clinical Operations Officer",
+     "founder": false
+    },
+    {
+     "name": "Katy Barglow, PhD",
+     "title": "Chief Technical Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Simms",
+     "title": "Chief Commercial & Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Kristian Humer",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Scott Bizily, JD, PhD",
+     "title": "Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Theresa Janke",
+     "title": "Chief of Staff, Co-Founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://4dmoleculartherapeutics.com/about/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "atossa therapeutics": {
+   "name": "Atossa Therapeutics, Inc.",
+   "website": "atossatherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Steven C. Quay, M.D., Ph.D.",
+     "title": "Chairman of the Board and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Mark Daniel",
+     "title": "Chief Financial Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://atossatherapeutics.com/about/who-we-are/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "viking therapeutics": {
+   "name": "Viking Therapeutics, Inc.",
+   "website": "vikingtherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Brian Lian, Ph.D.",
+     "title": "President and Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Greg Zante",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Geoffrey Barker, Ph.D.",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Hubert C. Chen, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://vikingtherapeutics.com/about/management/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "aobiome": {
+   "name": "AOBiome LLC",
+   "website": "aobiome.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Todd Krueger",
+     "title": "President & CEO",
+     "founder": false
+    },
+    {
+     "name": "Jim Hoffman",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.aobiome.com/aobiome-leadership-team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "alpheus medical": {
+   "name": "Alpheus Medical, Inc.",
+   "website": "alpheusmedical.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Vijay Agarwal, MD",
+     "title": "Founder, President and CEO",
+     "founder": true
+    },
+    {
+     "name": "Imran Eba",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Jeremy Ling",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "Klaus Veitinger, MD, Ph.D",
+     "title": "Executive Chairman of the Board",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://alpheusmedical.com/about-us/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "rayzebio": {
+   "name": "RayzeBio, Inc.",
+   "website": "rayzebio.com",
+   "status": "acquired",
+   "note": "Acquired by Bristol Myers Squibb (2024)",
+   "people": [
+    {
+     "name": "Ben Hickey",
+     "title": "President",
+     "founder": false
+    },
+    {
+     "name": "Amreen Husain, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Eric Bischoff",
+     "title": "Chief of Product Development & Operations",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://rayzebio.com/about/team/"
+   ],
+   "checked": "2026-11-01"
+  },
+  "tectonic": {
+   "name": "Tectonic Operating Company, Inc.",
+   "website": "tectonictx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Alise Reicin, M.D.",
+     "title": "President and CEO, Director",
+     "founder": false
+    },
+    {
+     "name": "Daniel Lochner",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Peter McNamara, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Anthony Muslin, M.D.",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Marcella K Ruddy, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Marc Schwabish, Ph.D.",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Christian Cortis, Ph.D.",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://tectonictx.com/"
+   ],
+   "checked": "2026-11-01"
   }
  }
 }
