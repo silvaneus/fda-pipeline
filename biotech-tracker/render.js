@@ -19,6 +19,12 @@ function renderDashboard(views, meta) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Emerging Biotech Tracker</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0f766e"/>
+  <path d="M32 52 V30" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M32 34 C32 22 24 15 13 15 C13 27 20 34 32 34 Z" fill="white"/>
+  <path d="M32 29 C32 19 39 12 51 12 C51 23 44 29 32 29 Z" fill="#99f6e4"/>
+</svg>`)}">
 <style>
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
