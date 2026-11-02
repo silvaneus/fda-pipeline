@@ -323,8 +323,14 @@ export async function buildPipeline({ today = new Date().toISOString().slice(0, 
     }
     else if (guided) { pdufa = guided.pdufaTimeframeEnd; basis = `company guidance (${guided.pdufaTimeframe})`; basisEvent = guided; }
     // Company guidance beats a formula when there is no announced date.
-    // ...unless that window has already closed while the formula still points ahead (a stale mention).
-    if (guided && basis?.startsWith('estimated') && !(guided.pdufaTimeframeEnd < today && pdufa >= today)) { pdufa = guided.pdufaTimeframeEnd; basis = `company guidance (${guided.pdufaTimeframe})`; basisEvent = guided; }
+    // ...unless that window has already closed while the formula still points ahead (a stale mention,
+    // or a preview's guess: asundexian "third quarter" in a PDUFA-watch roundup). A window given in
+    // the filing story itself stands even once it has passed (Cristcot: "PDUFA target date in
+    // October 2026" in the acceptance headline story), so the row shows as overdue.
+    const filingStories = new Set(cur.filter(e => e.where === 'headline' && ['accepted', 'submitted', 'resubmitted'].includes(e.type)).map(e => e.articleId));
+    const fromFilingStory = guided && cur.some(e => e.pdufaTimeframeEnd === guided.pdufaTimeframeEnd && filingStories.has(e.articleId));
+    const staleGuide = guided && guided.pdufaTimeframeEnd < today && pdufa >= today && !fromFilingStory;
+    if (guided && basis?.startsWith('estimated') && !staleGuide) { pdufa = guided.pdufaTimeframeEnd; basis = `company guidance (${guided.pdufaTimeframe})`; basisEvent = guided; }
 
     let status = a.decision ? { approved: 'Approved', crl: 'CRL', withdrawn: 'Withdrawn' }[a.decision.type] : 'Pending';
     if (status === 'Pending' && pdufa && pdufa < today) status = daysBetween(pdufa, today) > 120 ? 'Unresolved' : 'Overdue';
