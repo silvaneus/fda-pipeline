@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-01T12:44:12.922Z",
+ "generated": "2026-11-02T14:47:14.885Z",
  "catalysts": [
   {
    "drug": "pimicotinib",
@@ -23,29 +23,25 @@
    "mjhStories": 6
   },
   {
-   "drug": "mitapivat",
+   "drug": "hydrocortisone acetate",
    "brandName": null,
-   "company": "Agios Pharmaceuticals, Inc.",
-   "indication": "Sickle Cell Disease",
-   "pdufaDate": "2026-11-01",
-   "dateLabel": null,
-   "dateBasis": "Announced",
-   "dateBasisDetail": "announced",
-   "submissionType": "sNDA",
-   "status": "Pending",
-   "confidence": "High",
-   "confidenceWhy": "on RTTNews · MJH headline on the filing · date announced",
-   "origin": "MJH + RTTNews",
-   "flags": [
-    "new use of an approved drug",
-    "priority review",
-    "RTTNews still lists 2027-02-01"
-   ],
-   "source": "MJH + RTTNews",
-   "sourceUrl": "https://www.hcplive.com/view/fda-grants-priority-review-to-agios-mitapivat-snda-for-sickle-cell-disease",
-   "sourceTitle": "FDA Grants Priority Review to Agios’ Mitapivat sNDA for Sickle Cell Disease",
+   "company": null,
+   "indication": "Ulcerative Colitis of the Rectum",
+   "pdufaDate": "2026-10-31",
+   "dateLabel": "Oct 2026",
+   "dateBasis": "Company guidance",
+   "dateBasisDetail": "company guidance (target date in October 2026)",
+   "submissionType": null,
+   "status": "Overdue",
+   "confidence": "Low",
+   "confidenceWhy": "MJH headline on the filing · company date window · date passed with no outcome reported",
+   "origin": "MJH only",
+   "flags": [],
+   "source": "MJH only",
+   "sourceUrl": "https://www.hcplive.com/view/fda-accepts-nda-for-next-generation-hydrocortisone-acetate-in-ulcerative-colitis-of-the-rectum",
+   "sourceTitle": "FDA Accepts NDA For Next-Generation Hydrocortisone Acetate in Ulcerative Colitis of the Rectum",
    "sourceType": "news",
-   "mjhStories": 7
+   "mjhStories": 3
   },
   {
    "drug": "dexmedetomidine",
@@ -104,8 +100,8 @@
    "dateBasisDetail": "announced (RTTNews)",
    "submissionType": "sNDA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · date announced · confirmed by web check",
    "origin": "RTTNews only",
    "flags": [
     "new use of an approved drug"
@@ -114,7 +110,13 @@
    "sourceUrl": "https://www.rttnews.com/corpinfo/fdacalendar.aspx",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 0
+   "mjhStories": 0,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.sec.gov/Archives/edgar/data/0001061983/000119312526206360/cytk-ex99_1.htm",
+    "note": "Cytokinetics states the MAPLE-HCM sNDA was accepted with a PDUFA date of Nov 14, 2026; Q2 coverage says it remains under review."
+   }
   },
   {
    "drug": "asundexian",
@@ -127,8 +129,8 @@
    "dateBasisDetail": "estimated from acceptance",
    "submissionType": null,
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · date estimated",
+   "confidence": "High",
+   "confidenceWhy": "MJH headline on the filing · date estimated · confirmed by web check",
    "origin": "MJH only",
    "flags": [
     "priority review"
@@ -137,7 +139,13 @@
    "sourceUrl": "https://www.hcplive.com/view/fda-priority-review-asundexian-secondary-prevention-after-ischemic-stroke",
    "sourceTitle": "FDA Grants Priority Review to Asundexian for Secondary Prevention After Ischemic Stroke",
    "sourceType": "news",
-   "mjhStories": 5
+   "mjhStories": 5,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.businesswire.com/news/home/20260518787299/en/Bayer-Granted-Priority-Review-by-U.S.-FDA-for-Asundexian-in-Patients-After-a-Non-Cardioembolic-Ischemic-Stroke-or-Transient-Ischemic-Attack",
+    "note": "Bayer announced FDA acceptance with Priority Review on May 19, 2026 (no exact date disclosed; decision expected late 2026, consistent)."
+   }
   },
   {
    "drug": "deramiocel",
@@ -173,15 +181,21 @@
    "dateBasisDetail": "announced (RTTNews)",
    "submissionType": "BLA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · date announced · confirmed by web check",
    "origin": "RTTNews only",
    "flags": [],
    "source": "RTTNews only",
    "sourceUrl": "https://www.rttnews.com/corpinfo/fdacalendar.aspx",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 0
+   "mjhStories": 0,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://secure.businesswire.com/news/home/20260415775650/en/Savara-Announces-the-U.S.-Food-Drug-Administration-FDA-Has-Extended-the-Review-Period-for-the-Molgramostim-Inhalation-Solution-Molgramostim-Biologics-License-Application-BLA-in-Autoimmune-Pulmonary-Alveolar-Proteinosis-Autoimmune-PAP",
+    "note": "Savara announced on Apr 15, 2026 that the PDUFA date was extended from Aug 22 to Nov 22, 2026."
+   }
   },
   {
    "drug": "venglustat",
@@ -194,15 +208,21 @@
    "dateBasisDetail": "announced (RTTNews)",
    "submissionType": "NDA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · date announced · confirmed by web check",
    "origin": "RTTNews only",
    "flags": [],
    "source": "RTTNews only",
    "sourceUrl": "https://www.rttnews.com/corpinfo/fdacalendar.aspx",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 0
+   "mjhStories": 0,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://gaucherdiseasenews.com/2026/06/01/fda-grants-priority-review-treatment-aimed-type-3-gaucher/",
+    "note": "Sanofi's NDA for GD3 was accepted with Priority Review and a Nov 25, 2026 target action date; no decision reported."
+   }
   },
   {
    "drug": "BBP-418",
@@ -372,8 +392,8 @@
    "dateBasisDetail": "company guidance (expected by November 2026)",
    "submissionType": "sNDA/sBLA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · company date window",
+   "confidence": "High",
+   "confidenceWhy": "MJH headline on the filing · company date window · confirmed by web check",
    "origin": "MJH only",
    "flags": [
     "new use of an approved drug",
@@ -383,7 +403,13 @@
    "sourceUrl": "https://www.hcplive.com/view/fda-grants-obinutuzumab-priority-review-primary-membranous-nephropathy-s-potential-first-therapy",
    "sourceTitle": "FDA Grants Obinutuzumab Priority Review as Primary Membranous Nephropathy’s Potential First Therapy ",
    "sourceType": "news",
-   "mjhStories": 4
+   "mjhStories": 4,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://secure.businesswire.com/news/home/20260714394570/en/FDA-Grants-Priority-Review-to-Genentechs-Gazyva-for-Adults-With-Primary-Membranous-Nephropathy",
+    "note": "Genentech announced Jul 14, 2026 Priority Review of the pMN sBLA with a decision expected by November 2026."
+   }
   },
   {
    "drug": "cemdisiran",
@@ -396,8 +422,8 @@
    "dateBasisDetail": "company guidance (target action date in November 2026)",
    "submissionType": null,
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · company date window",
+   "confidence": "High",
+   "confidenceWhy": "MJH headline on the filing · company date window · confirmed by web check",
    "origin": "MJH only",
    "flags": [
     "priority review"
@@ -406,7 +432,13 @@
    "sourceUrl": "https://www.neurologylive.com/view/fda-ema-accepts-regulatory-applications-cemdisiran-generalized-myasthenia-gravis",
    "sourceTitle": "FDA and EMA Accepts Regulatory Applications for Cemdisiran in Generalized Myasthenia Gravis",
    "sourceType": "news",
-   "mjhStories": 5
+   "mjhStories": 5,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.neurologylive.com/view/fda-ema-accepts-regulatory-applications-cemdisiran-generalized-myasthenia-gravis",
+    "note": "Regeneron announced Jun 22, 2026 FDA acceptance under priority review with a target decision in November 2026."
+   }
   },
   {
    "drug": "upadacitinib",
@@ -419,8 +451,8 @@
    "dateBasisDetail": "estimated from submission",
    "submissionType": "sNDA/sBLA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · date estimated",
+   "confidence": "High",
+   "confidenceWhy": "MJH headline on the filing · date estimated · confirmed by web check",
    "origin": "MJH only",
    "flags": [
     "new use of an approved drug"
@@ -429,7 +461,13 @@
    "sourceUrl": "https://www.hcplive.com/view/upadacitinib-regulatory-applications-submitted-adults-adolescents-vitiligo",
    "sourceTitle": "Upadacitinib Regulatory Applications Submitted for Adults, Adolescents with Vitiligo",
    "sourceType": "news",
-   "mjhStories": 4
+   "mjhStories": 4,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://news.abbvie.com/2026-02-03-AbbVie-Submits-Regulatory-Applications-to-FDA-and-EMA-for-Upadacitinib-RINVOQ-R-in-Adults-and-Adolescents-With-Vitiligo",
+    "note": "AbbVie submitted the vitiligo applications on Feb 3, 2026 and no decision is reported; a standard review implies about December 2026."
+   }
   },
   {
    "drug": "imsidolimab",
@@ -463,8 +501,8 @@
    "dateBasisDetail": "estimated from acceptance",
    "submissionType": "sNDA/sBLA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · date estimated",
+   "confidence": "High",
+   "confidenceWhy": "MJH headline on the filing · date estimated · confirmed by web check",
    "origin": "MJH only",
    "flags": [
     "new use of an approved drug"
@@ -473,7 +511,13 @@
    "sourceUrl": "https://www.hcplive.com/view/fda-accepts-delgocitinib-snda-for-chronic-hand-eczema-in-adolescents-aged-12-17",
    "sourceTitle": "FDA Accepts Delgocitinib sNDA for Chronic Hand Eczema in Adolescents Aged 12–17",
    "sourceType": "news",
-   "mjhStories": 11
+   "mjhStories": 11,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.hcplive.com/view/fda-accepts-delgocitinib-snda-for-chronic-hand-eczema-in-adolescents-aged-12-17",
+    "note": "LEO Pharma announced FDA acceptance of the adolescent CHE sNDA on Apr 15, 2026; no PDUFA date published, timing consistent with December."
+   }
   },
   {
    "drug": "relacorilant",
@@ -486,8 +530,8 @@
    "dateBasisDetail": "announced (RTTNews)",
    "submissionType": "resubmitted NDA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · MJH mention only · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH mention only · date announced · confirmed by web check",
    "origin": "MJH + RTTNews",
    "flags": [
     "after CRL"
@@ -496,7 +540,13 @@
    "sourceUrl": "https://www.hcplive.com/view/lower-kidney-function-linked-to-hypercortisolism-in-resistant-hypertension",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 5
+   "mjhStories": 5,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://ir.corcept.com/news-releases/news-release-details/corcept-resubmits-new-drug-application-relacorilant-treatment",
+    "note": "Corcept resubmitted the NDA on Jun 17, 2026 expecting a six-month review (about mid-December); no exact date stated in sources found."
+   }
   },
   {
    "drug": "giredestrant + everolimus",
@@ -574,36 +624,21 @@
    "dateBasisDetail": "announced",
    "submissionType": "BLA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · MJH mention only · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH mention only · date announced · confirmed by web check",
    "origin": "MJH + RTTNews",
    "flags": [],
    "source": "MJH + RTTNews",
    "sourceUrl": "https://www.hcplive.com/view/imlifidase-opens-a-transplant-window-with-oriol-bestard-md-phd",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 1
-  },
-  {
-   "drug": "hydrocortisone acetate",
-   "brandName": null,
-   "company": null,
-   "indication": "Ulcerative Colitis of the Rectum",
-   "pdufaDate": "2026-12-20",
-   "dateLabel": null,
-   "dateBasis": "Estimated",
-   "dateBasisDetail": "estimated from acceptance",
-   "submissionType": null,
-   "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · date estimated",
-   "origin": "MJH only",
-   "flags": [],
-   "source": "MJH only",
-   "sourceUrl": "https://www.hcplive.com/view/fda-accepts-nda-for-next-generation-hydrocortisone-acetate-in-ulcerative-colitis-of-the-rectum",
-   "sourceTitle": "FDA Accepts NDA For Next-Generation Hydrocortisone Acetate in Ulcerative Colitis of the Rectum",
-   "sourceType": "news",
-   "mjhStories": 3
+   "mjhStories": 1,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://news.cision.com/hansa-biopharma-ab/r/pdufa-action-date-for-hansa-biopharma-s-imlifidase-bla-set-for-december-19--2026,c4317024",
+    "note": "Hansa announced the BLA PDUFA action date as Dec 19, 2026."
+   }
   },
   {
    "drug": "lorundrostat",
@@ -637,15 +672,21 @@
    "dateBasisDetail": "announced",
    "submissionType": "BLA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · MJH mention only · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH mention only · date announced · confirmed by web check",
    "origin": "MJH + RTTNews",
    "flags": [],
    "source": "MJH + RTTNews",
    "sourceUrl": "https://www.targetedonc.com/view/ims-2026-day-3-recap-cervino-etentamig-milestone-iraklia-anito-cel",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 4
+   "mjhStories": 4,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.sec.gov/Archives/edgar/data/1786205/000119312526076876/aclx-20251231.htm",
+    "note": "Arcellx's 10-K states the BLA was accepted with an anticipated PDUFA date of Dec 23, 2026."
+   }
   },
   {
    "drug": "MR-107A-02",
@@ -658,15 +699,21 @@
    "dateBasisDetail": "announced",
    "submissionType": "NDA",
    "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "on RTTNews · MJH mention only · date announced",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH mention only · date announced · confirmed by web check",
    "origin": "MJH + RTTNews",
    "flags": [],
    "source": "MJH + RTTNews",
    "sourceUrl": "https://www.pharmacytimes.com/view/fast-acting-meloxicam-demonstrates-postoperative-pain-relief-and-opioid-sparing-potential",
    "sourceTitle": null,
    "sourceType": "news",
-   "mjhStories": 1
+   "mjhStories": 1,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://investor.viatris.com/news-releases/news-release-details/us-fda-accepts-viatris-new-drug-application-fast-acting",
+    "note": "Viatris announced FDA acceptance of the NDA with a PDUFA goal date of Dec 27, 2026."
+   }
   },
   {
    "drug": "relutrigine",
@@ -747,14 +794,20 @@
    "submissionType": "NDA",
    "status": "Pending",
    "confidence": "High",
-   "confidenceWhy": "on RTTNews · MJH headline on the filing · company date window",
+   "confidenceWhy": "on RTTNews · MJH headline on the filing · company date window · confirmed by web check",
    "origin": "MJH + RTTNews",
    "flags": [],
    "source": "MJH + RTTNews",
    "sourceUrl": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
    "sourceTitle": "Novo Nordisk Submits NDA to FDA for CagriSema ",
    "sourceType": "news",
-   "mjhStories": 7
+   "mjhStories": 7,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
+    "note": "Novo submitted the NDA Dec 18, 2025 and guidance points to a Q4 2026 decision, consistent with the row; no PDUFA date publicly confirmed."
+   }
   },
   {
    "drug": "durvalumab + Enfortumab",
@@ -768,7 +821,7 @@
    "submissionType": "BLA",
    "status": "Pending",
    "confidence": "High",
-   "confidenceWhy": "on RTTNews · MJH headline on the filing · company date window",
+   "confidenceWhy": "on RTTNews · MJH headline on the filing · company date window · confirmed by web check",
    "origin": "MJH + RTTNews",
    "flags": [
     "priority review"
@@ -777,7 +830,13 @@
    "sourceUrl": "https://www.onclive.com/view/fda-grants-priority-review-to-perioperative-durvalumab-plus-neoadjuvant-enfortumab-vedotin-in-mibc",
    "sourceTitle": "FDA Grants Priority Review to Perioperative Durvalumab Plus Neoadjuvant Enfortumab Vedotin in MIBC",
    "sourceType": "news",
-   "mjhStories": 9
+   "mjhStories": 9,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.targetedonc.com/view/durvalumab-enfortumab-regimen-fda-priority-review-mibc",
+    "note": "FDA granted Priority Review to AstraZeneca's sBLA in Sept 2026 with an action date in Q4 2026; no decision reported."
+   }
   },
   {
    "drug": "obinutuzumab",
@@ -963,6 +1022,31 @@
    "sourceTitle": "Tegoprazan NDA Seeks FDA Approval for 3 GERD Indications",
    "sourceType": "news",
    "mjhStories": 2
+  },
+  {
+   "drug": "mitapivat",
+   "brandName": null,
+   "company": "Agios Pharmaceuticals, Inc.",
+   "indication": "Sickle Cell Disease",
+   "pdufaDate": "2027-02-01",
+   "dateLabel": null,
+   "dateBasis": "Announced",
+   "dateBasisDetail": "announced (RTTNews)",
+   "submissionType": "sNDA",
+   "status": "Pending",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH headline on the filing · date announced",
+   "origin": "MJH + RTTNews",
+   "flags": [
+    "new use of an approved drug",
+    "priority review",
+    "MJH last reported 2026-11-01"
+   ],
+   "source": "MJH + RTTNews",
+   "sourceUrl": "https://www.hcplive.com/view/mitapivat-snda-fda-accelerated-approval-sickle-cell-disease",
+   "sourceTitle": "Mitapivat sNDA Seeks FDA Accelerated Approval in Sickle Cell Disease",
+   "sourceType": "news",
+   "mjhStories": 7
   },
   {
    "drug": "Yeztugo",
@@ -1852,7 +1936,7 @@
    "sourceUrl": "https://www.onclive.com/view/fda-accepts-nda-for-ugn-103-in-recurrent-low-grade-intermediate-risk-nmibc",
    "sourceTitle": "FDA Accepts NDA for UGN-103 in Recurrent Low-Grade Intermediate-Risk NMIBC",
    "sourceType": "news",
-   "mjhStories": 15
+   "mjhStories": 16
   },
   {
    "drug": "sac-TMT",
@@ -2020,7 +2104,7 @@
    "source": "MJH",
    "sourceUrl": "https://www.curetoday.com/view/fda-approves-talzenna-xtandi-in-hormone-sensitive-prostate-cancer",
    "sourceType": "news",
-   "mjhStories": 23
+   "mjhStories": 24
   },
   {
    "drug": "bepirovirsen",
@@ -2141,26 +2225,6 @@
    "sourceUrl": "https://www.ajmc.com/view/fda-approves-first-at-home-subcutaneous-thyroid-eye-disease-treatment",
    "sourceType": "news",
    "mjhStories": 8
-  },
-  {
-   "drug": "pirtobrutinib",
-   "brandName": null,
-   "company": null,
-   "indication": "Previously Untreated CLL/SLL",
-   "pdufaDate": "2026-10-02",
-   "scheduledDate": "2026-12-31",
-   "decisionTitle": "FDA Approves Jaypirca as First-Line Treatment for CLL and SLL",
-   "dateLabel": null,
-   "dateBasis": "Decision",
-   "dateBasisDetail": "FDA Approves Jaypirca as First-Line Treatment for CLL and SLL",
-   "submissionType": "sNDA/sBLA",
-   "status": "Approved",
-   "origin": "MJH",
-   "flags": [],
-   "source": "MJH",
-   "sourceUrl": "https://www.curetoday.com/view/fda-approves-jaypirca-as-first-line-treatment-for-cll-and-sll",
-   "sourceType": "news",
-   "mjhStories": 7
   },
   {
    "drug": "tildrakizumab",
