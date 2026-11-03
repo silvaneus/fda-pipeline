@@ -124,6 +124,7 @@
     .cal-nav .count { color: var(--muted); font-size: .88em; margin-right: 6px; }
     .icon-btn { width: 32px; height: 32px; border-radius: 6px; border: 1px solid #d1d5db; background: white; cursor: pointer; font-size: 1.1em; line-height: 1; color: var(--ink-2); }
     .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .icon-btn:disabled { opacity: .35; cursor: default; border-color: #d1d5db; color: var(--ink-2); }
     .btn.small { padding: 6px 12px; font-size: .88em; }
     .legend { display: flex; gap: 8px; align-items: center; font-size: .85em; color: var(--muted); flex-wrap: wrap; }
     .legend .chip { cursor: default; width: auto; }
@@ -141,6 +142,9 @@
     .cal-window { margin: 0 20px 10px; padding: 10px 12px; border: 1px dashed var(--accent-line); border-radius: 8px; background: #fafcff; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
     .cal-window:empty { display: none; }
     .cal-window .wlabel { font-size: .8em; color: var(--muted); margin-right: 4px; }
+    .cal-window.overdue { border: 1px solid #fcd34d; background: var(--warn-soft); }
+    .cal-window.overdue .wlabel { color: var(--warn); font-weight: 600; }
+    .cal-window.overdue .chip.over { background: #fff; }
     .cal-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); border-top: 1px solid var(--line); }
     .dow { padding: 8px 10px; font-size: .75em; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); background: #f8fafc; border-bottom: 1px solid var(--line); }
     .day { min-height: 118px; padding: 6px 6px 8px; border-right: 1px solid var(--line-2); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 3px; min-width: 0; }
@@ -163,7 +167,7 @@
     .chip.est { background: white; border-style: dashed; }
     .chip.over { background: var(--warn-soft); color: var(--warn); border-color: #fcd34d; }
     .chip.over .brand { color: #a16207; }
-    .cal-window .chip { width: auto; max-width: 100%; display: inline-block; }
+    .cal-window .chip, .cal-window.overdue .chip { width: auto; max-width: 100%; display: inline-block; }
     .chip .when { color: var(--muted); font-weight: 400; margin-left: 4px; }
     .agenda { display: none; padding: 0 16px 12px; }
     .aday { padding: 10px 0; border-top: 1px solid var(--line); }
@@ -310,6 +314,7 @@
             </div>
             <div class="legend"><span class="chip">Announced date</span><span class="chip est">Estimated</span><span class="chip over">Past due, no decision yet</span></div>
           </div>
+          <div class="cal-window overdue" id="calOverdue"></div>
           <div class="months" id="calMonths"></div>
           <div class="cal-window" id="calWindow"></div>
           <div class="cal-grid" id="calGrid"></div>
@@ -733,7 +738,11 @@
     // ---- Calendar view ----
     const now = new Date();
     let calMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+    // Past-due items sit in their own box above the calendar, so the months
+    // start at the current one; a quarter window keeps only its months still ahead.
+    const calMonthsOf = c => isWindow(c) ? windowMonths(c).filter(k => k >= thisMonth) : [c.pdufaDate.slice(0, 7)];
     const monthKey = d => d.getFullYear() + '-' + pad(d.getMonth() + 1);
+    const thisMonth = monthKey(now);
     function chip(c, cls, extra) {
       const k = 'chip' + (isEst(c) ? ' est' : '') + (isOver(c) ? ' over' : '') + (cls ? ' ' + cls : '');
       const tip = [c.drug + (c.brandName ? ' (' + c.brandName + ')' : ''), c.indication, c.company].filter(Boolean).join(' · ');
@@ -743,8 +752,8 @@
     function monthCounts() {
       const counts = {};
       shown.forEach(c => {
-        if (!c.pdufaDate) return;
-        (isWindow(c) ? windowMonths(c) : [c.pdufaDate.slice(0, 7)]).forEach(k => { counts[k] = (counts[k] || 0) + 1; });
+        if (!c.pdufaDate || isOver(c)) return;
+        calMonthsOf(c).forEach(k => { counts[k] = (counts[k] || 0) + 1; });
       });
       return counts;
     }
@@ -772,12 +781,19 @@
       document.getElementById('calCount').textContent = plural(counts[key] || 0, 'decision');
       renderMonths(counts);
 
-      const byDay = {}, windows = [];
+      const byDay = {}, windows = [], overdue = [];
       shown.forEach(c => {
         if (!c.pdufaDate) return;
-        if (isWindow(c)) { if (windowMonths(c).indexOf(key) >= 0) windows.push(c); }
+        if (isOver(c)) overdue.push(c);
+        else if (isWindow(c)) { if (calMonthsOf(c).indexOf(key) >= 0) windows.push(c); }
         else (byDay[c.pdufaDate] = byDay[c.pdufaDate] || []).push(c);
       });
+      overdue.sort((a, b) => a.pdufaDate.localeCompare(b.pdufaDate));
+      document.getElementById('calOverdue').innerHTML = overdue.length
+        ? '<span class="wlabel">Past due, no decision reported yet:</span>' + overdue.map(c => chip(c, '', '<span class="when">' +
+            esc(isWindow(c) ? c.dateLabel : fmtDay(c.pdufaDate, { month: 'short', day: 'numeric' })) + '</span>')).join('')
+        : '';
+      document.getElementById('calPrev').disabled = key <= thisMonth;
       document.getElementById('calWindow').innerHTML = windows.length
         ? '<span class="wlabel">Expected this month, no exact day announced:</span>' + windows.map(c => chip(c, '', '<span class="when">' + esc(c.dateLabel) + '</span>')).join('')
         : '';
@@ -800,7 +816,11 @@
         byDay[k].map(c => chip(c, '', '<span class="ind">' + esc([c.indication, c.company].filter(Boolean).join(' · ')) + '</span>')).join('') + '</div>').join('')
         : '<div class="none">No exact-date decisions this month' + (windows.length ? ' (see the month-only ones above).' : '.') + '</div>';
     }
-    function moveMonth(delta) { calMonth = new Date(calMonth.getFullYear(), calMonth.getMonth() + delta, 1); renderCalendar(); }
+    function moveMonth(delta) {
+      const next = new Date(calMonth.getFullYear(), calMonth.getMonth() + delta, 1);
+      if (monthKey(next) < thisMonth) return;
+      calMonth = next; renderCalendar();
+    }
     document.getElementById('calPrev').addEventListener('click', () => moveMonth(-1));
     document.getElementById('calNext').addEventListener('click', () => moveMonth(1));
     document.getElementById('calToday').addEventListener('click', () => { calMonth = new Date(now.getFullYear(), now.getMonth(), 1); renderCalendar(); });
