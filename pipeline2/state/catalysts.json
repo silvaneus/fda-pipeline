@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-02T14:47:14.885Z",
+ "generated": "2026-11-03T13:40:21.667Z",
  "catalysts": [
   {
    "drug": "pimicotinib",
@@ -382,36 +382,6 @@
    "mjhStories": 14
   },
   {
-   "drug": "obinutuzumab",
-   "brandName": null,
-   "company": null,
-   "indication": "Primary Membranous Nephropathy",
-   "pdufaDate": "2026-11-30",
-   "dateLabel": "Nov 2026",
-   "dateBasis": "Company guidance",
-   "dateBasisDetail": "company guidance (expected by November 2026)",
-   "submissionType": "sNDA/sBLA",
-   "status": "Pending",
-   "confidence": "High",
-   "confidenceWhy": "MJH headline on the filing · company date window · confirmed by web check",
-   "origin": "MJH only",
-   "flags": [
-    "new use of an approved drug",
-    "priority review"
-   ],
-   "source": "MJH only",
-   "sourceUrl": "https://www.hcplive.com/view/fda-grants-obinutuzumab-priority-review-primary-membranous-nephropathy-s-potential-first-therapy",
-   "sourceTitle": "FDA Grants Obinutuzumab Priority Review as Primary Membranous Nephropathy’s Potential First Therapy ",
-   "sourceType": "news",
-   "mjhStories": 4,
-   "webCheck": {
-    "verdict": "confirmed",
-    "checkedAt": "2026-11-01",
-    "url": "https://secure.businesswire.com/news/home/20260714394570/en/FDA-Grants-Priority-Review-to-Genentechs-Gazyva-for-Adults-With-Primary-Membranous-Nephropathy",
-    "note": "Genentech announced Jul 14, 2026 Priority Review of the pMN sBLA with a decision expected by November 2026."
-   }
-  },
-  {
    "drug": "cemdisiran",
    "brandName": null,
    "company": null,
@@ -439,6 +409,27 @@
     "url": "https://www.neurologylive.com/view/fda-ema-accepts-regulatory-applications-cemdisiran-generalized-myasthenia-gravis",
     "note": "Regeneron announced Jun 22, 2026 FDA acceptance under priority review with a target decision in November 2026."
    }
+  },
+  {
+   "drug": "Zanzalintinib",
+   "brandName": null,
+   "company": "Exelixis, Inc.",
+   "indication": "Metastatic colorectal cancer",
+   "pdufaDate": "2026-12-03",
+   "dateLabel": null,
+   "dateBasis": "Announced",
+   "dateBasisDetail": "announced (RTTNews)",
+   "submissionType": "NDA",
+   "status": "Pending",
+   "confidence": "Medium",
+   "confidenceWhy": "on RTTNews · date announced",
+   "origin": "RTTNews only",
+   "flags": [],
+   "source": "RTTNews only",
+   "sourceUrl": "https://www.rttnews.com/corpinfo/fdacalendar.aspx",
+   "sourceTitle": null,
+   "sourceType": "news",
+   "mjhStories": 0
   },
   {
    "drug": "upadacitinib",
@@ -783,33 +774,6 @@
    "mjhStories": 5
   },
   {
-   "drug": "CagriSema",
-   "brandName": null,
-   "company": "Novo Nordisk B A/S",
-   "indication": "Weight management",
-   "pdufaDate": "2026-12-31",
-   "dateLabel": "Q4 2026",
-   "dateBasis": "Company guidance",
-   "dateBasisDetail": "company guidance (fourth quarter of 2026)",
-   "submissionType": "NDA",
-   "status": "Pending",
-   "confidence": "High",
-   "confidenceWhy": "on RTTNews · MJH headline on the filing · company date window · confirmed by web check",
-   "origin": "MJH + RTTNews",
-   "flags": [],
-   "source": "MJH + RTTNews",
-   "sourceUrl": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
-   "sourceTitle": "Novo Nordisk Submits NDA to FDA for CagriSema ",
-   "sourceType": "news",
-   "mjhStories": 7,
-   "webCheck": {
-    "verdict": "confirmed",
-    "checkedAt": "2026-11-01",
-    "url": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
-    "note": "Novo submitted the NDA Dec 18, 2025 and guidance points to a Q4 2026 decision, consistent with the row; no PDUFA date publicly confirmed."
-   }
-  },
-  {
    "drug": "durvalumab + Enfortumab",
    "brandName": null,
    "company": "AstraZeneca PLC",
@@ -836,6 +800,33 @@
     "checkedAt": "2026-11-01",
     "url": "https://www.targetedonc.com/view/durvalumab-enfortumab-regimen-fda-priority-review-mibc",
     "note": "FDA granted Priority Review to AstraZeneca's sBLA in Sept 2026 with an action date in Q4 2026; no decision reported."
+   }
+  },
+  {
+   "drug": "CagriSema",
+   "brandName": null,
+   "company": "Novo Nordisk B A/S",
+   "indication": "Weight management",
+   "pdufaDate": "2026-12-31",
+   "dateLabel": "Q4 2026",
+   "dateBasis": "Company guidance",
+   "dateBasisDetail": "company guidance (fourth quarter of 2026)",
+   "submissionType": "NDA",
+   "status": "Pending",
+   "confidence": "High",
+   "confidenceWhy": "on RTTNews · MJH headline on the filing · company date window · confirmed by web check",
+   "origin": "MJH + RTTNews",
+   "flags": [],
+   "source": "MJH + RTTNews",
+   "sourceUrl": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
+   "sourceTitle": "Novo Nordisk Submits NDA to FDA for CagriSema ",
+   "sourceType": "news",
+   "mjhStories": 7,
+   "webCheck": {
+    "verdict": "confirmed",
+    "checkedAt": "2026-11-01",
+    "url": "https://www.pharmexec.com/view/novo-nordisk-submits-nda-fda-cagrisema",
+    "note": "Novo submitted the NDA Dec 18, 2025 and guidance points to a Q4 2026 decision, consistent with the row; no PDUFA date publicly confirmed."
    }
   },
   {
@@ -1419,9 +1410,7 @@
    "confidence": "High",
    "confidenceWhy": "on RTTNews · MJH headline on the filing · date announced",
    "origin": "MJH + RTTNews",
-   "flags": [
-    "RTTNews still lists 2026-12-03"
-   ],
+   "flags": [],
    "source": "MJH + RTTNews",
    "sourceUrl": "https://www.cancernetwork.com/view/fda-extends-review-of-zanzalintinib-combo-in-pretreated-metastatic-crc",
    "sourceTitle": "FDA Extends Review of Zanzalintinib Combo in Pretreated Metastatic CRC",
@@ -1492,6 +1481,30 @@
    "sourceTitle": "Aquestive Resubmits Anaphylm NDA for Anaphylaxis Treatment",
    "sourceType": "news",
    "mjhStories": 6
+  },
+  {
+   "drug": "obinutuzumab",
+   "brandName": null,
+   "company": null,
+   "indication": "Primary Membranous Nephropathy",
+   "pdufaDate": "2027-03-16",
+   "dateLabel": null,
+   "dateBasis": "Announced",
+   "dateBasisDetail": "announced",
+   "submissionType": "sNDA/sBLA",
+   "status": "Pending",
+   "confidence": "High",
+   "confidenceWhy": "MJH headline on the filing · date announced",
+   "origin": "MJH only",
+   "flags": [
+    "new use of an approved drug",
+    "priority review"
+   ],
+   "source": "MJH only",
+   "sourceUrl": "https://www.hcplive.com/view/fda-grants-obinutuzumab-priority-review-primary-membranous-nephropathy-s-potential-first-therapy",
+   "sourceTitle": "FDA Grants Obinutuzumab Priority Review as Primary Membranous Nephropathy’s Potential First Therapy ",
+   "sourceType": "news",
+   "mjhStories": 5
   },
   {
    "drug": "clesrovimab",
@@ -2265,6 +2278,26 @@
    "sourceUrl": "https://www.targetedonc.com/view/fda-grants-traditional-approval-pembrolizumab-tmb-high-solid-tumors",
    "sourceType": "news",
    "mjhStories": 4
+  },
+  {
+   "drug": "pritelivir",
+   "brandName": null,
+   "company": null,
+   "indication": "Women's health from October 2026",
+   "pdufaDate": "2026-10-30",
+   "scheduledDate": "2027-04-09",
+   "decisionTitle": "Top headlines in women's health from October 2026",
+   "dateLabel": null,
+   "dateBasis": "Decision",
+   "dateBasisDetail": "Top headlines in women's health from October 2026",
+   "submissionType": null,
+   "status": "Approved",
+   "origin": "MJH",
+   "flags": [],
+   "source": "MJH",
+   "sourceUrl": "https://www.contemporaryobgyn.net/view/top-headlines-in-womens-health-from-october-2026",
+   "sourceType": "news",
+   "mjhStories": 2
   },
   {
    "drug": "phentolamine ophthalmic solution",

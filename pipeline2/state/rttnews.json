@@ -1,18 +1,6 @@
 {
- "scrapedAt": "2026-11-02T14:47:00.582Z",
+ "scrapedAt": "2026-11-03T13:40:02.727Z",
  "entries": [
-  {
-   "company": "Roche Holding AG",
-   "tickers": [],
-   "drug": "Lunsumio VELO",
-   "submissionType": "sBLA",
-   "pdufaDate": "2027-02-09",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Lunsumio VELO in combination with Polivy for the treatment of adult patients with relapsed or refractory large B-cell lymphoma (LBCL)",
-   "status": "pending",
-   "notes": "",
-   "source": "RTTNews"
-  },
   {
    "company": "Belite Bio, Inc",
    "tickers": [],
@@ -98,15 +86,15 @@
    "source": "RTTNews"
   },
   {
-   "company": "Roche Holding AG",
+   "company": "Exelixis, Inc.",
    "tickers": [],
-   "drug": "Enspryng",
-   "submissionType": "sBLA",
-   "pdufaDate": "2027-01-10",
+   "drug": "Zanzalintinib",
+   "submissionType": "NDA",
+   "pdufaDate": "2027-03-03",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Enspryng (satralizumab) for the treatment of myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
-   "status": "pending",
-   "notes": "Priority Review",
+   "indication": "FDA decision on Zanzalintinib in combination with Tecentriq for metastatic colorectal cancer",
+   "status": "Pending",
+   "notes": "",
    "source": "RTTNews"
   },
   {
@@ -194,13 +182,13 @@
    "source": "RTTNews"
   },
   {
-   "company": "Gilead Sciences Inc.",
+   "company": "Roche Holding AG",
    "tickers": [],
-   "drug": "Anito-cel",
-   "submissionType": "BLA",
-   "pdufaDate": "2026-12-23",
+   "drug": "Lunsumio VELO",
+   "submissionType": "sBLA",
+   "pdufaDate": "2027-02-09",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on anito-cel as a fourth-line treatment for patients with relapsed or refractory multiple myeloma",
+   "indication": "FDA decision on Lunsumio VELO in combination with Polivy for the treatment of adult patients with relapsed or refractory large B-cell lymphoma (LBCL)",
    "status": "pending",
    "notes": "",
    "source": "RTTNews"
@@ -302,14 +290,14 @@
    "source": "RTTNews"
   },
   {
-   "company": "Cogent Biosciences, Inc.",
+   "company": "Roche Holding AG",
    "tickers": [],
-   "drug": "bezuclastinib plus sunitinib",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-11-30",
+   "drug": "Enspryng",
+   "submissionType": "sBLA",
+   "pdufaDate": "2027-01-10",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on bezuclastinib in combination with sunitinib for patients with Gastrointestinal Stromal Tumors",
-   "status": "Pending",
+   "indication": "FDA decision on Enspryng (satralizumab) for the treatment of myelin oligodendrocyte glycoprotein antibody-associated disease (MOGAD)",
+   "status": "pending",
    "notes": "Priority Review",
    "source": "RTTNews"
   },
@@ -410,7 +398,7 @@
    "source": "RTTNews"
   },
   {
-   "company": "Arcellx, Inc.",
+   "company": "Gilead Sciences Inc.",
    "tickers": [],
    "drug": "Anito-cel",
    "submissionType": "BLA",
@@ -422,14 +410,14 @@
    "source": "RTTNews"
   },
   {
-   "company": "Cytokinetics Inc.",
+   "company": "Arcellx, Inc.",
    "tickers": [],
-   "drug": "MYQORZO",
-   "submissionType": "sNDA",
-   "pdufaDate": "2026-11-14",
+   "drug": "Anito-cel",
+   "submissionType": "BLA",
+   "pdufaDate": "2026-12-23",
    "isQuarterlyEstimate": false,
-   "indication": "FDA decision on MYQORZO for MAPLE-HCM (Metoprolol vs Aficamten in Patients with LVOT Obstruction on Exercise Capacity in HCM)",
-   "status": "Pending",
+   "indication": "FDA decision on anito-cel as a fourth-line treatment for patients with relapsed or refractory multiple myeloma",
+   "status": "pending",
    "notes": "",
    "source": "RTTNews"
   },
@@ -506,6 +494,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Cogent Biosciences, Inc.",
+   "tickers": [],
+   "drug": "bezuclastinib plus sunitinib",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-11-30",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on bezuclastinib in combination with sunitinib for patients with Gastrointestinal Stromal Tumors",
+   "status": "Pending",
+   "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
    "company": "Vertex Pharmaceuticals Inc.",
    "tickers": [],
    "drug": "Povetacicept",
@@ -539,18 +539,6 @@
    "indication": "FDA decision on Bepirovirsen for the treatment of adults with chronic hepatitis B",
    "status": "Approved",
    "notes": "Priority Review",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Ionis Pharmaceuticals, Inc.",
-   "tickers": [],
-   "drug": "Bepirovirsen",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-10-26",
-   "isQuarterlyEstimate": false,
-   "indication": "FDA decision on Bepirovirsen for the treatment of adults with chronic hepatitis B",
-   "status": "Approved",
-   "notes": "Priority Review GSK licensed bepirovirsen from Ionis in 2019 under a collaborative development and licensing agreement.",
    "source": "RTTNews"
   },
   {
@@ -590,6 +578,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Cytokinetics Inc.",
+   "tickers": [],
+   "drug": "MYQORZO",
+   "submissionType": "sNDA",
+   "pdufaDate": "2026-11-14",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA decision on MYQORZO for MAPLE-HCM (Metoprolol vs Aficamten in Patients with LVOT Obstruction on Exercise Capacity in HCM)",
+   "status": "Pending",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
    "company": "BioXcel Therapeutics, Inc.",
    "tickers": [],
    "drug": "IGALMI",
@@ -623,18 +623,6 @@
    "indication": "",
    "status": "Approved",
    "notes": "Priority Review; PDUFA date is quarterly estimate (exact date TBD)",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Novo Nordisk B A/S",
-   "tickers": [],
-   "drug": "CagriSema",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-12-31",
-   "isQuarterlyEstimate": true,
-   "indication": "",
-   "status": "Pending",
-   "notes": "PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
   {
@@ -734,15 +722,15 @@
    "source": "RTTNews"
   },
   {
-   "company": "GRAIL, Inc.",
+   "company": "Ionis Pharmaceuticals, Inc.",
    "tickers": [],
-   "drug": "Galleri multi-cancer early detection (MCED) blood test.",
-   "submissionType": "PMA",
-   "pdufaDate": "2026-09-23",
+   "drug": "Bepirovirsen",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-10-26",
    "isQuarterlyEstimate": false,
-   "indication": "FDA panel to review Galleri",
+   "indication": "FDA decision on Bepirovirsen for the treatment of adults with chronic hepatitis B",
    "status": "Approved",
-   "notes": "",
+   "notes": "Priority Review GSK licensed bepirovirsen from Ionis in 2019 under a collaborative development and licensing agreement.",
    "source": "RTTNews"
   },
   {
@@ -854,6 +842,18 @@
    "source": "RTTNews"
   },
   {
+   "company": "Novo Nordisk B A/S",
+   "tickers": [],
+   "drug": "CagriSema",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-12-31",
+   "isQuarterlyEstimate": true,
+   "indication": "",
+   "status": "Pending",
+   "notes": "PDUFA date is quarterly estimate (exact date TBD)",
+   "source": "RTTNews"
+  },
+  {
    "company": "Takeda Pharmaceutical Company Limited",
    "tickers": [],
    "drug": "Oveporexton (TAK-861)",
@@ -875,18 +875,6 @@
    "indication": "",
    "status": "Approved",
    "notes": "Priority Review Rusfertide is being developed by Protagonist Therapeutics in partnership with Takeda; PDUFA date is quarterly estimate (exact date TBD)",
-   "source": "RTTNews"
-  },
-  {
-   "company": "Roivant Sciences Ltd.",
-   "tickers": [],
-   "drug": "Brepocitinib",
-   "submissionType": "NDA",
-   "pdufaDate": "2026-09-30",
-   "isQuarterlyEstimate": true,
-   "indication": "",
-   "status": "Approved",
-   "notes": "Priority Review Brepocitinib was developed by Priovant Therapeutics Priovant was established in September 2021 through a transaction between Roivant and Pfizer; PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
   {
@@ -971,6 +959,30 @@
    "indication": "FDA decision on zilganersen for treatment of Alexander disease",
    "status": "Approved",
    "notes": "Priority Review",
+   "source": "RTTNews"
+  },
+  {
+   "company": "GRAIL, Inc.",
+   "tickers": [],
+   "drug": "Galleri multi-cancer early detection (MCED) blood test.",
+   "submissionType": "PMA",
+   "pdufaDate": "2026-09-23",
+   "isQuarterlyEstimate": false,
+   "indication": "FDA panel to review Galleri",
+   "status": "Approved",
+   "notes": "",
+   "source": "RTTNews"
+  },
+  {
+   "company": "Roivant Sciences Ltd.",
+   "tickers": [],
+   "drug": "Brepocitinib",
+   "submissionType": "NDA",
+   "pdufaDate": "2026-09-30",
+   "isQuarterlyEstimate": true,
+   "indication": "",
+   "status": "Approved",
+   "notes": "Priority Review Brepocitinib was developed by Priovant Therapeutics Priovant was established in September 2021 through a transaction between Roivant and Pfizer; PDUFA date is quarterly estimate (exact date TBD)",
    "source": "RTTNews"
   },
   {
