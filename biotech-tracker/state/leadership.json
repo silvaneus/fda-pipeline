@@ -7767,6 +7767,327 @@
     "https://autobahntx.com/about-us/"
    ],
    "checked": "2026-11-03"
+  },
+  "tavo biotherapeutics": {
+   "name": "Tavo Biotherapeutics",
+   "website": "tavobio.com",
+   "status": "ok",
+   "note": "Glaucoma candidate listed as TAV-001",
+   "people": [
+    {
+     "name": "Gary Berman",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Lukas Scheibler, PhD",
+     "title": "Chief Research & Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Graham Cooper",
+     "title": "Chief Financial Officer & Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Federico Grossi, MD, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://tavobio.com/#team"
+   ],
+   "checked": "2026-11-04"
+  },
+  "ensem therapeutics": {
+   "name": "Ensem Therapeutics",
+   "website": "ensemtx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Shengfang Jin, Ph.D.",
+     "title": "President and CEO, Board of Director",
+     "founder": true
+    },
+    {
+     "name": "Jeff Kutok, M.D., Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Ron Peck, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Janaki Parameswaran, M.D.",
+     "title": "Vice President and Head of Clinical Development",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://ensemtx.com/about/#leadership"
+   ],
+   "checked": "2026-11-04"
+  },
+  "corxel pharmaceuticals": {
+   "name": "Corxel Pharmaceuticals",
+   "website": "corxelbio.com",
+   "status": "no_team",
+   "note": "Site returned HTTP 403; searches returned only aggregator sources",
+   "people": [],
+   "sources": [
+    "https://corxelbio.com"
+   ],
+   "checked": "2026-11-04"
+  },
+  "clasp therapeutics": {
+   "name": "Clasp Therapeutics, Inc.",
+   "website": "clasptx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Robert Ross, MD",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Julie DeSander, MBA, MS",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Shannon Devens, MS",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Lauren Harshman, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Vipin Suri, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Bert Vogelstein, MD",
+     "title": "Founder; Director of Ludwig Center, Johns Hopkins University",
+     "founder": true
+    },
+    {
+     "name": "Drew Pardoll, MD, PhD",
+     "title": "Founder; Director of Bloomberg-Kimmel Institute for Cancer Immunotherapy, Johns Hopkins University",
+     "founder": true
+    },
+    {
+     "name": "Shibin Zhou, MD, PhD",
+     "title": "Founder; Director Experimental Therapeutics, Ludwig Center, Johns Hopkins University",
+     "founder": true
+    },
+    {
+     "name": "Kellie Smith, PhD",
+     "title": "Founder; Associate Prof. of Oncology, Johns Hopkins University",
+     "founder": true
+    },
+    {
+     "name": "Kenneth Kinzler, PhD",
+     "title": "Founder; Co-Director of Ludwig Center, Johns Hopkins University",
+     "founder": true
+    },
+    {
+     "name": "Nick Papadopoulos, PhD",
+     "title": "Founder; Prof. of Oncology and Pathology, Johns Hopkins University",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.clasptx.com/home#team"
+   ],
+   "checked": "2026-11-04"
+  },
+  "dianthus therapeutics": {
+   "name": "Dianthus Therapeutics",
+   "website": "dianthustx.com",
+   "status": "no_team",
+   "note": "Site team section lists no names in fetched content",
+   "people": [],
+   "sources": [
+    "https://dianthustx.com/#our-team"
+   ],
+   "checked": "2026-11-04"
+  },
+  "enveda therapeutics": {
+   "name": "Enveda Therapeutics",
+   "website": "enveda.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Viswa Colluru, PhD",
+     "title": "Founder & CEO",
+     "founder": true
+    },
+    {
+     "name": "August Allen",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "Daniel Wee, PhD",
+     "title": "Chief eXecution Officer",
+     "founder": false
+    },
+    {
+     "name": "Hannah Gordon, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Inhwan Kim, PharmD",
+     "title": "Chief Strategy Officer",
+     "founder": false
+    },
+    {
+     "name": "Jason Kim",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Niranjan Rao, PhD, FCP",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Robert Buckley",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://enveda.com/people/"
+   ],
+   "checked": "2026-11-04"
+  },
+  "pleopharma": {
+   "name": "PleoPharma, Inc.",
+   "website": "pleopharma.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Ginger Constantine, M.D.",
+     "title": "Chief Executive Officer, Co-Founder and Chairperson of the Board",
+     "founder": true
+    },
+    {
+     "name": "Jay Constantine, M.D.",
+     "title": "Chief Medical Officer, Co-Founder and Director",
+     "founder": true
+    },
+    {
+     "name": "Daniel A. Cartwright",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Jason Goodson",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Bridget Martell",
+     "title": "Chief Therapeutic Officer",
+     "founder": false
+    },
+    {
+     "name": "Adeyinka Abinusawa, Ph.D., R.Ph.",
+     "title": "Chief CMC Officer, Consultant",
+     "founder": false
+    },
+    {
+     "name": "Ashley Slagle, M.S., Ph.D.",
+     "title": "Chief Clinical Outcome Officer, Consultant",
+     "founder": false
+    },
+    {
+     "name": "Lois Rosenberger, M.S., Ph.D.",
+     "title": "Chief Regulatory Officer, Consultant",
+     "founder": false
+    },
+    {
+     "name": "Thomas Poché, J.D., Ph.D.",
+     "title": "General Counsel and Head of Intellectual Property",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.pleopharma.com/management"
+   ],
+   "checked": "2026-11-04"
+  },
+  "trellis bioscience": {
+   "name": "Trellis Bioscience LLC",
+   "website": "trellisbio.com",
+   "status": "no_team",
+   "note": "Site names no leadership; searches returned only aggregator profiles",
+   "people": [],
+   "sources": [
+    "https://trellisbio.com"
+   ],
+   "checked": "2026-11-04"
+  },
+  "marea therapeutics": {
+   "name": "Marea Therapeutics",
+   "website": "mareatx.com",
+   "status": "no_team",
+   "note": "Fetched pages showed no names",
+   "people": [],
+   "sources": [
+    "http://www.mareatx.com/about/"
+   ],
+   "checked": "2026-11-04"
+  },
+  "spyglass pharma": {
+   "name": "SpyGlass Pharma, Inc.",
+   "website": "spyglasspharma.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Patrick Mooney",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Malik Y. Kahook, MD",
+     "title": "Co-founder, President, Chief Medical Officer, and Executive Chair of the Board",
+     "founder": true
+    },
+    {
+     "name": "Glenn Sussman",
+     "title": "Co-founder",
+     "founder": true
+    },
+    {
+     "name": "James Dennewill",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Jean-Frédéric Viret",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Chetan Pujara, PhD",
+     "title": "Chief Research and Development Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://spyglasspharma.com/about-us/"
+   ],
+   "checked": "2026-11-04"
   }
  }
 }
