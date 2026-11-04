@@ -8088,6 +8088,292 @@
     "https://spyglasspharma.com/about-us/"
    ],
    "checked": "2026-11-04"
+  },
+  "astria therapeutics": {
+   "name": "Astria Therapeutics, Inc.",
+   "website": "astriatx.com",
+   "status": "acquired",
+   "note": "Site states Astria was acquired by BioCryst Pharmaceuticals",
+   "people": [],
+   "sources": [
+    "https://astriatx.com"
+   ],
+   "checked": "2026-11-04"
+  },
+  "inhibikase therapeutics": {
+   "name": "Inhibikase Therapeutics",
+   "website": "inhibikase.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Mark Iwicki",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "David McIntyre",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Cabell, MD MHS FACC",
+     "title": "President, Head of Research & Development, Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "John Adams, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Jeffrey J. Kagy",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    },
+    {
+     "name": "Chad Orevillo, MPH",
+     "title": "Executive VP, Head of Development Operations",
+     "founder": false
+    },
+    {
+     "name": "Timothy Pigot",
+     "title": "Chief Commercial and Strategy Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.inhibikase.com/about/management-team"
+   ],
+   "checked": "2026-11-04"
+  },
+  "adverum biotechnologies": {
+   "name": "Adverum Biotechnologies, Inc.",
+   "website": "adverum.com",
+   "status": "acquired",
+   "note": "Acquired by Eli Lilly; tender offer completed Dec 9, 2025. Site returned HTTP 403",
+   "people": [],
+   "sources": [
+    "https://www.streetinsider.com/Basic+Content/Lilly+completes+Adverum+acquisition+for+%243.56+per+share+plus+CVRs/25715510.html"
+   ],
+   "checked": "2026-11-04"
+  },
+  "direct biologics": {
+   "name": "Direct Biologics, LLC",
+   "website": "directbiologics.com",
+   "status": "no_team",
+   "note": "Site loads but company page returned 404 and names no leadership",
+   "people": [],
+   "sources": [
+    "https://directbiologics.com"
+   ],
+   "checked": "2026-11-04"
+  },
+  "river 2 renal": {
+   "name": "River 2 Renal Corp.",
+   "website": null,
+   "status": "no_site",
+   "note": "Queue website narrowrivermgmt.com returned HTTP 503; one search found no official site or leadership",
+   "people": [],
+   "sources": [],
+   "checked": "2026-11-04"
+  },
+  "forte biosciences": {
+   "name": "Forte Biosciences, Inc.",
+   "website": "fortebiorx.com",
+   "status": "acquired",
+   "note": "Queue site forterx.com is an unrelated pharmacy. Official site banner: 'Forte Biosciences is now part of argenx'",
+   "people": [
+    {
+     "name": "Paul A. Wagner, Ph.D.",
+     "title": "Chief Executive Officer and Chairperson of the Board",
+     "founder": false
+    },
+    {
+     "name": "Antony A. Riley",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Christopher Roenfeldt",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.fortebiorx.com/about-us/management/management/default.aspx"
+   ],
+   "checked": "2026-11-04"
+  },
+  "oculis": {
+   "name": "Oculis",
+   "website": "oculis.com",
+   "status": "ok",
+   "note": "Only executives named on homepage; governance page text had no names",
+   "people": [
+    {
+     "name": "Riad Sherif, M.D.",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Björn Tackenberg, M.D., Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://oculis.com",
+    "https://oculis.com/our-company/governance/"
+   ],
+   "checked": "2026-11-04"
+  },
+  "evommune": {
+   "name": "Evommune, Inc.",
+   "website": "evommune.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Luis Peña",
+     "title": "President & Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Eugene A. Bauer, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Kyle Carver, M.B.A., C.P.A.",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Gregory S. Moss, Esq.",
+     "title": "Chief Business and Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Jeegar Patel, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Janice Drew, M.P.H.",
+     "title": "Chief of Development Operations",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.evommune.com/leadership/"
+   ],
+   "checked": "2026-11-04"
+  },
+  "vtv therapeutics": {
+   "name": "vTv Therapeutics",
+   "website": "vtvtherapeutics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Paul Sekhri",
+     "title": "Chairman, President, and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Michael Tung, M.D., M.B.A.",
+     "title": "Executive Vice President, Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Thomas Strack, M.D., Ph.D.",
+     "title": "Executive Vice President, Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Carmen Valcarce, Ph.D.",
+     "title": "Executive Vice President, Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Rich Nelson, J.D.",
+     "title": "Executive Vice President, Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Martin Lafontaine",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Elizabeth Keiley, J.D.",
+     "title": "Executive Vice President, General Counsel",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://vtvtherapeutics.com/about/"
+   ],
+   "checked": "2026-11-04"
+  },
+  "vaxcyte": {
+   "name": "Vaxcyte, Inc.",
+   "website": "vaxcyte.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Grant Pickering, MBA",
+     "title": "Chief Executive Officer, Director and Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Andrew Guggenhime, MBA",
+     "title": "President and Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Jim Wassil, MS, MBA",
+     "title": "Executive Vice President, Chief Operating Officer and Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Luis Jodar, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Mike Mullette, MBA",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Harp Dhaliwal, MBA",
+     "title": "Chief Technical Operations Officer",
+     "founder": false
+    },
+    {
+     "name": "Whitney Jones",
+     "title": "Chief People Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Griffith, MS, MBA",
+     "title": "Chief Business and Strategy Officer",
+     "founder": false
+    },
+    {
+     "name": "David McAvoy, JD",
+     "title": "Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Jeff Fairman, PhD",
+     "title": "Vice President of Research and Co-Founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://vaxcyte.com/about-us/"
+   ],
+   "checked": "2026-11-04"
   }
  }
 }
