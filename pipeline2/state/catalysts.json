@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-03T13:40:21.667Z",
+ "generated": "2026-11-04T13:48:37.536Z",
  "catalysts": [
   {
    "drug": "pimicotinib",
@@ -87,7 +87,7 @@
    "sourceUrl": "https://www.onclive.com/view/fda-accepts-bla-for-ivonescimab-plus-chemotherapy-in-egfr-mutant-nsclc-after-tki-progression",
    "sourceTitle": "FDA Accepts BLA for Ivonescimab Plus Chemotherapy in EGFR-Mutant NSCLC After TKI Progression",
    "sourceType": "news",
-   "mjhStories": 16
+   "mjhStories": 17
   },
   {
    "drug": "MYQORZO",
@@ -356,7 +356,7 @@
    "sourceUrl": "https://www.hcplive.com/view/fda-accepts-bla-for-povetacicept-in-iga-nephropathy",
    "sourceTitle": "FDA Accepts BLA for Povetacicept in IgA Nephropathy",
    "sourceType": "news",
-   "mjhStories": 7
+   "mjhStories": 8
   },
   {
    "drug": "giredestrant",
@@ -2137,7 +2137,7 @@
    "source": "MJH",
    "sourceUrl": "https://www.ajmc.com/view/bepirovirsen-approval-offers-new-option-for-chronic-hbv-treatment",
    "sourceType": "news",
-   "mjhStories": 15
+   "mjhStories": 16
   },
   {
    "drug": "dostarlimab",
@@ -2243,7 +2243,7 @@
    "drug": "tildrakizumab",
    "brandName": null,
    "company": null,
-   "indication": "Active Psoriatic Arthritis",
+   "indication": "Psoriatic Arthritis",
    "pdufaDate": "2026-10-30",
    "scheduledDate": "2026-10-29",
    "decisionTitle": "FDA Approves Ilumya for Adults With Active Psoriatic Arthritis",
@@ -2257,7 +2257,7 @@
    "source": "MJH",
    "sourceUrl": "https://www.pharmexec.com/view/fda-approves-ilumya-tildrakizumab-active-psoriatic-arthritis",
    "sourceType": "news",
-   "mjhStories": 6
+   "mjhStories": 7
   },
   {
    "drug": "pembrolizumab",
@@ -2278,6 +2278,26 @@
    "sourceUrl": "https://www.targetedonc.com/view/fda-grants-traditional-approval-pembrolizumab-tmb-high-solid-tumors",
    "sourceType": "news",
    "mjhStories": 4
+  },
+  {
+   "drug": "lenacapavir",
+   "brandName": null,
+   "company": null,
+   "indication": "120 LMICs",
+   "pdufaDate": "2026-11-03",
+   "scheduledDate": "2026-08-27",
+   "decisionTitle": "FDA Tentatively Approves First Generic Lenacapavir PrEP for 120 LMICs",
+   "dateLabel": null,
+   "dateBasis": "Decision",
+   "dateBasisDetail": "FDA Tentatively Approves First Generic Lenacapavir PrEP for 120 LMICs",
+   "submissionType": "sNDA/sBLA",
+   "status": "Approved",
+   "origin": "MJH",
+   "flags": [],
+   "source": "MJH",
+   "sourceUrl": "https://www.contagionlive.com/view/fda-tentatively-approves-first-generic-lenacapavir-prep-for-120-lmics",
+   "sourceType": "news",
+   "mjhStories": 2
   },
   {
    "drug": "pritelivir",
