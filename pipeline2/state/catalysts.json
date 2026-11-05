@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-04T13:48:37.536Z",
+ "generated": "2026-11-05T14:02:02.779Z",
  "catalysts": [
   {
    "drug": "pimicotinib",
@@ -245,7 +245,7 @@
    "sourceUrl": "https://www.neurologylive.com/view/bridgebio-submits-nda-bbp-418-lgmd2i-r9-potentially-first-approved-therapy-form-limb-girdle-muscular-dystrophy",
    "sourceTitle": " BridgeBio Submits NDA for BBP-418 in LGMD2I/R9, Potentially the First Approved Therapy for Any Form of Limb-Girdle Muscular Dystrophy",
    "sourceType": "news",
-   "mjhStories": 2
+   "mjhStories": 3
   },
   {
    "drug": "neladalkib",
@@ -1416,6 +1416,30 @@
    "sourceTitle": "FDA Extends Review of Zanzalintinib Combo in Pretreated Metastatic CRC",
    "sourceType": "news",
    "mjhStories": 15
+  },
+  {
+   "drug": "zanubrutinib + Rituximab",
+   "brandName": null,
+   "company": null,
+   "indication": "Previously Untreated MCL",
+   "pdufaDate": "2027-03-05",
+   "dateLabel": null,
+   "dateBasis": "Estimated",
+   "dateBasisDetail": "estimated from acceptance",
+   "submissionType": "sNDA/sBLA",
+   "status": "Pending",
+   "confidence": "Medium",
+   "confidenceWhy": "MJH headline on the filing · date estimated",
+   "origin": "MJH only",
+   "flags": [
+    "new use of an approved drug",
+    "priority review"
+   ],
+   "source": "MJH only",
+   "sourceUrl": "https://www.onclive.com/view/fda-grants-priority-review-to-zanubrutinib-plus-rituximab-for-previously-untreated-mcl",
+   "sourceTitle": "FDA Grants Priority Review to Zanubrutinib Plus Rituximab for Previously Untreated MCL",
+   "sourceType": "news",
+   "mjhStories": 2
   },
   {
    "drug": "lonvo-z",
