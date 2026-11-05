@@ -9376,6 +9376,1645 @@
     "https://dispatchbio.com/about-us/"
    ],
    "checked": "2026-11-04"
+  },
+  "latigo biotherapeutics": {
+   "name": "Latigo Biotherapeutics",
+   "website": "latigobio.com",
+   "status": "ok",
+   "note": "Site confirmed; LTG-001 not named on pages read; founders not identified",
+   "people": [
+    {
+     "name": "Nima Farzan",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Neil Singla, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Neha Krishnamohan",
+     "title": "Chief Financial Officer and Chief Business Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://latigobio.com/team",
+    "https://latigobio.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "kumquat biosciences": {
+   "name": "Kumquat Biosciences Inc.",
+   "website": "kumquatbiosciences.com",
+   "status": "ok",
+   "note": "kumquatbio.com redirects to kumquatbiosciences.com; founders not identified",
+   "people": [
+    {
+     "name": "Yi Liu, Ph.D.",
+     "title": "CEO",
+     "founder": false
+    },
+    {
+     "name": "Pingda Ren, Ph.D.",
+     "title": "President & Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Karen Wong, Ph.D., J.D.",
+     "title": "General Counsel and Chief Business Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://kumquatbiosciences.com/company/leadership/",
+    "https://kumquatbiosciences.com/"
+   ],
+   "checked": "2026-11-05"
+  },
+  "alzamend neuro": {
+   "name": "Alzamend Neuro, Inc.",
+   "website": "alzamend.com",
+   "status": "ok",
+   "note": "AL001 confirmed on site; founders not identified",
+   "people": [
+    {
+     "name": "Stephan Jackman",
+     "title": "Chief Executive Officer and Director",
+     "founder": false
+    },
+    {
+     "name": "David J. Katzoff",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Henry C.W. Nisser",
+     "title": "Executive Vice President, General Counsel and Director",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.alzamend.com/management",
+    "https://www.alzamend.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "quoin pharmaceuticals": {
+   "name": "Quoin Pharmaceuticals",
+   "website": "quoinpharma.com",
+   "status": "ok",
+   "note": "QRX003 confirmed",
+   "people": [
+    {
+     "name": "Dr. Michael Myers",
+     "title": "Co-Founder, Chairman, Chief Executive Officer and Director",
+     "founder": true
+    },
+    {
+     "name": "Denise Carter",
+     "title": "Co-Founder, Chief Operating Officer and Director",
+     "founder": true
+    },
+    {
+     "name": "Sally Lawlor",
+     "title": "Chief Financial Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://quoinpharma.com/company/",
+    "https://quoinpharma.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "skyhawk therapeutics": {
+   "name": "Skyhawk Therapeutics, Inc.",
+   "website": "skyhawktx.com",
+   "status": "ok",
+   "note": "SKY-0515 confirmed; Aaron Deves appointed to lead SKY-0515 commercialization (title not stated on page)",
+   "people": [
+    {
+     "name": "Bill Haney",
+     "title": "Co-Founder, Chief Executive Officer, & Chairman",
+     "founder": true
+    },
+    {
+     "name": "Sergey Paushkin, M.D., Ph.D.",
+     "title": "Co-Founder, Chief Science Officer, & Head of R & D",
+     "founder": true
+    },
+    {
+     "name": "Kathleen McCarthy",
+     "title": "Co-Founder & Distinguished Senior Scientist",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://skyhawktx.com/about-us/leadership",
+    "https://skyhawktx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "crystalys therapeutics": {
+   "name": "Crystalys Therapeutics",
+   "website": "crystalystx.com",
+   "status": "ok",
+   "note": "Site is gout-focused; team page 404; leadership from trade press. Lead asset is dotinurad (allopurinol is comparator)",
+   "people": [
+    {
+     "name": "James Mackay, Ph.D.",
+     "title": "Co-Founder, CEO and President",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.fiercebiotech.com/biotech/james-mackay-tending-unfinished-business-new-gout-biotech-and-205m-fundraise",
+    "https://crystalystx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "kinaset therapeutics": {
+   "name": "Kinaset Therapeutics Inc",
+   "website": "kinasettherapeutics.com",
+   "status": "ok",
+   "note": "Site confirmed; frevecitinib (KN-002 on site)",
+   "people": [
+    {
+     "name": "Robert Clarke, PhD",
+     "title": "Chief Executive Officer / Board Member / Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Roger Heerman, MBA",
+     "title": "Chief Business/Operating Officer / Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Frazer Morgan",
+     "title": "Chief Development Officer / Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Christopher O'Brien, MD, PhD, FCCP",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://kinasettherapeutics.com/about-us",
+    "https://kinasettherapeutics.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "virogen biotechnology": {
+   "name": "Virogen Biotechnology Inc.",
+   "website": "virogenbio.com",
+   "status": "ok",
+   "note": "VG712 confirmed",
+   "people": [
+    {
+     "name": "Su Chen",
+     "title": "CEO",
+     "founder": true
+    },
+    {
+     "name": "Patricia Golkowski",
+     "title": "CFO",
+     "founder": false
+    },
+    {
+     "name": "Herbert Hutman",
+     "title": "CMO",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://virogenbio.com/profile.html",
+    "https://virogenbio.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "bighat biosciences": {
+   "name": "BigHat Biosciences, Inc.",
+   "website": "bighatbio.com",
+   "status": "ok",
+   "note": "BHB810 confirmed on site; other co-founder Mark DePristo previously CEO, now advisory per search (not on site)",
+   "people": [
+    {
+     "name": "Peyton Greenside",
+     "title": "CEO & Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Stefan Weigand",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "John Corbin",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Liz Schwarzbach",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Eddie Abrams",
+     "title": "Chief Information Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://bighatbio.com/about",
+    "https://bighatbio.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "adarx pharmaceuticals": {
+   "name": "ADARx Pharmaceuticals, Inc.",
+   "website": "adarx.com",
+   "status": "ok",
+   "note": "ADX-324 not named on homepage (onvuzosiran/HAE shown)",
+   "people": [
+    {
+     "name": "Zhen Li, Ph.D.",
+     "title": "President & CEO",
+     "founder": true
+    },
+    {
+     "name": "Rob Ackles",
+     "title": "Chief People Officer",
+     "founder": false
+    },
+    {
+     "name": "Ryan Fisk",
+     "title": "Chief Financial Officer and Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Robert A. MacLeod, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Rui Zhu, Ph.D.",
+     "title": "Chief Technology Officer",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.adarx.com/company/team/",
+    "https://adarx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "eloxx pharmaceuticals": {
+   "name": "Eloxx Pharmaceuticals, Inc.",
+   "website": "eloxxpharma.com",
+   "status": "ok",
+   "note": "Site confirmed (exaluren) but names no leadership; people from press coverage of company releases. SEC officers David Rector/Vaughn Smider not confirmed as officers.",
+   "people": [
+    {
+     "name": "Sumit Aggarwal",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "T.R. Srinivas, M.D.",
+     "title": "Senior Vice President and Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.rttnews.com/3700913/eloxx-finalizes-phase-2-adpkd-trial-design-following-fda-feedback-appoints-new-cmo.aspx",
+    "https://eloxxpharma.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "regor pharmaceuticals": {
+   "name": "Regor Pharmaceuticals Inc.",
+   "website": "regor.com",
+   "status": "ok",
+   "note": "Site branded Regor Therapeutics Group; RGT-075 matches. Site names no team; CEO from Goldman Sachs conference announcement.",
+   "people": [
+    {
+     "name": "Xiayang Qiu, Ph.D.",
+     "title": "Founder and CEO",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://synapse.patsnap.com/article/regor-to-speak-at-goldman-sachs-45th-annual-global-healthcare-conference",
+    "https://www.regor.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "nurix therapeutics": {
+   "name": "Nurix Therapeutics, Inc.",
+   "website": "nurixtx.com",
+   "status": "ok",
+   "note": "Site does not name founders; none flagged.",
+   "people": [
+    {
+     "name": "Arthur T. Sands, M.D., Ph.D.",
+     "title": "President, Chief Executive Officer, and Board Director",
+     "founder": false
+    },
+    {
+     "name": "Hans van Houte",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Gwenn M. Hansen, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Christine Ring, Ph.D., J.D.",
+     "title": "Chief Legal Officer and Chief Compliance Officer",
+     "founder": false
+    },
+    {
+     "name": "Jason Kantor, Ph.D.",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "John Northcott",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Pasit Phiasivongsa, Ph.D.",
+     "title": "Chief Technical Officer",
+     "founder": false
+    },
+    {
+     "name": "Wes Burwell",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.nurixtx.com/about-us/leadership/"
+   ],
+   "checked": "2026-11-05"
+  },
+  "sano chemicals": {
+   "name": "Sano Chemicals Inc",
+   "website": "sanochemicals.com",
+   "status": "ok",
+   "note": "Site (occidiofungin/OCF001) names no team; titles from Feb 2025 press release via Pharmas Almanac and Nature feature; may be outdated.",
+   "people": [
+    {
+     "name": "James (Jim) Smith",
+     "title": "President and Co-CEO",
+     "founder": false
+    },
+    {
+     "name": "Janice Miles",
+     "title": "Co-CEO",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://sanochemicals.com",
+    "https://pharmasalmanac.com/articles/sano-chemicals-inc-announces-approval-to-start-phase-1-mad-study",
+    "https://www.nature.com/articles/d43747-024-00026-6.pdf"
+   ],
+   "checked": "2026-11-05"
+  },
+  "acurx pharmaceuticals": {
+   "name": "Acurx Pharmaceuticals Inc.",
+   "website": "acurxpharma.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "David P. Luci",
+     "title": "President and Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Robert J. DeLuccia",
+     "title": "Executive Chairman",
+     "founder": true
+    },
+    {
+     "name": "Robert G. Shawah, CPA",
+     "title": "Co-Founder and Chief Financial Officer",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.acurxpharma.com/about/management-team",
+    "https://www.acurxpharma.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "zetroz": {
+   "name": "ZetrOZ, Inc.",
+   "website": "zetroz.com",
+   "status": "ok",
+   "note": "Founders not named on site.",
+   "people": [
+    {
+     "name": "George K. Lewis, PhD",
+     "title": "President & CEO",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://zetroz.com/our-team/",
+    "https://zetroz.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "athos therapeutics": {
+   "name": "Athos Therapeutics Inc",
+   "website": "athostx.com",
+   "status": "ok",
+   "note": "Founders listed on company team page. Site homepage does not mention ATH-063 by name.",
+   "people": [
+    {
+     "name": "Dimitrios Iliopoulos, PhD, MBA",
+     "title": "President & CEO",
+     "founder": true
+    },
+    {
+     "name": "Allan J. Pantuck, MD, MS",
+     "title": "Chairman & CMO",
+     "founder": true
+    },
+    {
+     "name": "Michael Jung, PhD",
+     "title": "Scientific Board Member",
+     "founder": true
+    },
+    {
+     "name": "Keith B. Hoffman, PhD",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Iordanis Karagiannidis, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Jodi Pantuck, BBA",
+     "title": "Chief of Staff and Operations",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://athostx.com/ourteam/",
+    "https://athostx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "nefro avillion clinical development": {
+   "name": "Nefro Avillion Clinical Development, LLC",
+   "website": null,
+   "status": "no_site",
+   "note": "Sponsor of siplizumab Phase 2b MODERNIZE1 (NCT07508787); no official site or leadership found.",
+   "people": [],
+   "sources": [
+    "https://clinicaltrials.gov/study/NCT07508787"
+   ],
+   "checked": "2026-11-05"
+  },
+  "praxis precision medicines": {
+   "name": "Praxis Precision Medicines",
+   "website": "praxismedicines.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Marcio Souza",
+     "title": "President & Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Steve Petrou",
+     "title": "Co-Founder, President of Research & Development",
+     "founder": true
+    },
+    {
+     "name": "Alyssa Wyant",
+     "title": "Chief Regulatory & Quality Officer",
+     "founder": false
+    },
+    {
+     "name": "Tim Kelly",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Kelly McCue",
+     "title": "Chief People Officer",
+     "founder": false
+    },
+    {
+     "name": "Karl Hansen",
+     "title": "Chief Technical Operations Officer",
+     "founder": false
+    },
+    {
+     "name": "Megan Sniecinski",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.praxismedicines.com/about-us/leadership"
+   ],
+   "checked": "2026-11-05"
+  },
+  "biomea fusion": {
+   "name": "Biomea Fusion Inc.",
+   "website": "biomeafusion.com",
+   "status": "ok",
+   "note": "Interim CEO listed; Thomas Butler no longer on page.",
+   "people": [
+    {
+     "name": "Michael \"Mick\" Hitchcock, Ph.D.",
+     "title": "Interim CEO",
+     "founder": false
+    },
+    {
+     "name": "Ramses Erdtmann",
+     "title": "Co-Founder, COO & President",
+     "founder": true
+    },
+    {
+     "name": "Stephan \"Steve\" W. Morris, M.D.",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Heow Tan",
+     "title": "Chief Technical & Quality Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.biomeafusion.com/about-us/leadership"
+   ],
+   "checked": "2026-11-05"
+  },
+  "recurv pharma": {
+   "name": "Recurv Pharma Inc",
+   "website": null,
+   "status": "no_site",
+   "note": "recurvpharma.com did not resolve in session; CEO from Feb 2023 TVM press release, may be outdated",
+   "people": [
+    {
+     "name": "James E. Egan",
+     "title": "Chief Executive Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://finanzwire.com/press-release/tvm-life-science-management-gmbh-etr-tvm-capital-life-science-announces-up-to-usd-24-million-investment-in-oncology-company-recurv-pharma-inc-sCBc2m3fUyH"
+   ],
+   "checked": "2026-11-05"
+  },
+  "vergent bioscience": {
+   "name": "Vergent Bioscience, Inc.",
+   "website": "vergentbio.com",
+   "status": "ok",
+   "note": "Founders not identified on site",
+   "people": [
+    {
+     "name": "Adam Gridley",
+     "title": "President & Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "John Santini, PhD",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "Alix Alderman",
+     "title": "Chief Regulatory Officer",
+     "founder": false
+    },
+    {
+     "name": "Curtis Scribner, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.vergentbio.com/our-people",
+    "https://vergentbio.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "hb biotech": {
+   "name": "HB BioTech, LLC",
+   "website": null,
+   "status": "no_site",
+   "note": "No official site or leadership titles found; Tomer Seifan appears only as trial contact, title unconfirmed",
+   "people": [],
+   "sources": [
+    "https://api.ai-analytics.org/clinical/NCT07499440"
+   ],
+   "checked": "2026-11-05"
+  },
+  "lb pharmaceuticals": {
+   "name": "LB Pharmaceuticals Inc.",
+   "website": "lbpharma.com",
+   "status": "ok",
+   "note": "Site confirmed (LB-102); founders not identified",
+   "people": [
+    {
+     "name": "Heather Turner, J.D.",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Kaya Pai Panandiker",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Gad Soffer",
+     "title": "Chief Operating and Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Joseph M. Miller",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Susan G. Kozauer, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://lbpharma.com/our-leadership/",
+    "https://lbpharma.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "kind pharmaceuticals": {
+   "name": "Kind Pharmaceuticals LLC",
+   "website": null,
+   "status": "no_site",
+   "note": "kindpharmaceutical.com did not resolve in session; people from PR Newswire/BioSpace results",
+   "people": [
+    {
+     "name": "Dong Liu, PhD",
+     "title": "Chairman and CEO",
+     "founder": true
+    },
+    {
+     "name": "Qi Zhu, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.biospace.com/press-releases/kind-announces-late-breaking-abstract-accepted-for-presentation-on-and017-clinical-trials-to-treat-anemia-in-chronic-kidney-disease-ckd-at-asn-kidney-week-2024",
+    "https://prnewswire.com/news-releases/kind-announces-late-breaking-abstract-accepted-for-presentation-on-and017-clinical-trials-to-treat-anemia-in-chronic-kidney-disease-ckd-at-asn--kidney-week-2024-302279020.html"
+   ],
+   "checked": "2026-11-05"
+  },
+  "cali pharmaceuticals": {
+   "name": "Cali Pharmaceuticals LLC",
+   "website": "calibiosciences.com",
+   "status": "ok",
+   "note": "Site is Cali Biosciences Co., Ltd.; CPL-01 matches. Chairman Lin Dibang omitted",
+   "people": [
+    {
+     "name": "PJ Chen",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Dr. Erol Onel",
+     "title": "Chief Medical Officer (Cali US)",
+     "founder": false
+    },
+    {
+     "name": "Dr. Chen Lee",
+     "title": "Chief Operating Officer (Cali US)",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.calibiosciences.com/EN/Home/Article/dcf82d8b-f0f1-44ff-a6e3-d5c797462ad0",
+    "https://calibiosciences.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "rivus pharmaceuticals": {
+   "name": "Rivus Pharmaceuticals, Inc.",
+   "website": "rivuspharma.com",
+   "status": "ok",
+   "note": "Co-founders per site",
+   "people": [
+    {
+     "name": "Jorge Bartolome",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "David Grainger, Ph.D.",
+     "title": "Chair of Development and Co-Chair of the Board",
+     "founder": false
+    },
+    {
+     "name": "Allen Cunningham",
+     "title": "Chief Operating Officer",
+     "founder": true
+    },
+    {
+     "name": "Shaharyar Khan, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": true
+    },
+    {
+     "name": "Meg Fitzgerald, J.D.",
+     "title": "Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Stefanie Mason, M.D., M.P.H.",
+     "title": "Global Head of Clinical Development and Medical",
+     "founder": false
+    },
+    {
+     "name": "Francisco Portell",
+     "title": "Vice President, Pharmaceutical Development",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://rivuspharma.com/about/",
+    "https://rivuspharma.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "triana biomedicines": {
+   "name": "TRIANA Biomedicines, Inc.",
+   "website": "trianabio.com",
+   "status": "ok",
+   "note": "Founders not identified on site",
+   "people": [
+    {
+     "name": "Patrick Trojer, PhD",
+     "title": "President & Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Caroline Germa, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Vito Palombella, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Mohan Bala, PhD",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://trianabio.com/about-us/",
+    "https://trianabio.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "moonlight bio": {
+   "name": "Moonlight Bio, Inc",
+   "website": "moonlightbio.us",
+   "status": "ok",
+   "note": "Team page lists no CEO; ML261 not mentioned on homepage; founders not identified",
+   "people": [
+    {
+     "name": "Jordan Jarjour",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Nick Trede",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://moonlightbio.us/our-team/",
+    "https://moonlightbio.us"
+   ],
+   "checked": "2026-11-05"
+  },
+  "generate biomedicines": {
+   "name": "Generate Biomedicines",
+   "website": "generatebiomedicines.com",
+   "status": "ok",
+   "note": "GB-0895 confirmed on site",
+   "people": [
+    {
+     "name": "Michael Nally",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Jason Silvers",
+     "title": "President & Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Aarif Khakoo",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Gevorg Grigoryan",
+     "title": "Co-Founder & Chief Technology Officer",
+     "founder": true
+    },
+    {
+     "name": "Laurie Lee",
+     "title": "Chief Medical Officer, Immunology & Inflammation",
+     "founder": false
+    },
+    {
+     "name": "Sean Martin",
+     "title": "Chief Legal Officer & General Counsel",
+     "founder": false
+    },
+    {
+     "name": "Beth Grous",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://generatebiomedicines.com/about-us/",
+    "https://generatebiomedicines.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "paradigm therapeutics": {
+   "name": "Paradigm Therapeutics",
+   "website": "paradigmtherapeutics.com",
+   "status": "ok",
+   "note": "SD-101/Zorblesia confirmed",
+   "people": [
+    {
+     "name": "Dr. Robert Ryan",
+     "title": "Founder and Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Michael Zimmer, MBA",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Lisa Zimmerman",
+     "title": "EVP of Regulatory Affairs, Compliance, and Quality",
+     "founder": false
+    },
+    {
+     "name": "Dr. Ron Nardi",
+     "title": "Executive VP Development",
+     "founder": false
+    },
+    {
+     "name": "Willistine Lenon",
+     "title": "Executive VP Clinical Operations",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.paradigmtherapeutics.com/paradigm-therapeutics/",
+    "https://paradigmtherapeutics.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "xtresse": {
+   "name": "Restore Biologics Holdings, Inc. dba Xtressé",
+   "website": "xtresse.com",
+   "status": "ok",
+   "note": "Site does not mention Restore Biologics; no CEO listed on site",
+   "people": [
+    {
+     "name": "Matt Leavitt, DO",
+     "title": "Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Michael Mazen Jafar",
+     "title": "Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Trillitye Paullin, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://xtresse.com/pages/team",
+    "https://xtresse.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "taysha gene therapies": {
+   "name": "Taysha Gene Therapies, Inc.",
+   "website": "tayshagtx.com",
+   "status": "ok",
+   "note": "Site does not name a founder; original founder RA Session II no longer listed",
+   "people": [
+    {
+     "name": "Sean P. Nolan",
+     "title": "Chief Executive Officer and Board Chairman",
+     "founder": false
+    },
+    {
+     "name": "Sukumar Nagendran, M.D.",
+     "title": "President and Head of Research and Development",
+     "founder": false
+    },
+    {
+     "name": "Kamran Alam",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Emily McGinnis",
+     "title": "Chief Patient and External Affairs Officer",
+     "founder": false
+    },
+    {
+     "name": "Rumana Haque-Ahmed",
+     "title": "Chief Regulatory Officer",
+     "founder": false
+    },
+    {
+     "name": "Fred Porter, Ph.D.",
+     "title": "Chief of Staff and Technical Operations Officer",
+     "founder": false
+    },
+    {
+     "name": "Sean McAuliffe",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Michael Johannesen",
+     "title": "Chief Legal Officer and Corporate Secretary",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://tayshagtx.com/about-us/",
+    "https://www.tayshagtx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "protara therapeutics": {
+   "name": "Protara Therapeutics",
+   "website": "protaratx.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Jesse Shefferman",
+     "title": "Co-founder, Director, Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Jacqueline Zummo, PhD, MPH, MBA",
+     "title": "Co-Founder, Chief R&D Officer",
+     "founder": true
+    },
+    {
+     "name": "Patrick Fabbio",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "William \"Bill\" Conkling",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Shane Williams, PhD",
+     "title": "Chief People Officer",
+     "founder": false
+    },
+    {
+     "name": "Mary Grendell",
+     "title": "Chief Legal and Compliance Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://protaratx.com/about-us/leadership/",
+    "https://protaratx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "continuity biosciences": {
+   "name": "Continuity Biosciences, LLC",
+   "website": "continuitybiosciences.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Robert Whitehead",
+     "title": "Co-Founder & Executive Chair",
+     "founder": true
+    },
+    {
+     "name": "Ramakrishna Venugopalan, PhD, MBA",
+     "title": "Co-Founder & Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Alessandro Grattoni, PhD",
+     "title": "Chief Scientific Advisor",
+     "founder": true
+    },
+    {
+     "name": "Anthony Voiers",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "William Daunch, PhD",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "Sanjay Patel",
+     "title": "Chief Business Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://continuitybiosciences.com/about",
+    "https://continuitybiosciences.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "tr1x": {
+   "name": "Tr1X, Inc.",
+   "website": "tr1x.bio",
+   "status": "ok",
+   "note": "TRX319 not seen on homepage; company name matches",
+   "people": [
+    {
+     "name": "David de Vries, MPhil",
+     "title": "Co-founder, Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Maria Grazia Roncarolo, MD",
+     "title": "Co-founder, President and Head of R&D",
+     "founder": true
+    },
+    {
+     "name": "Jonathan Perrin, JD",
+     "title": "Co-founder, General Counsel & Head of Operations",
+     "founder": true
+    },
+    {
+     "name": "Marco Londei, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "James Adams, MBA",
+     "title": "Chief Technical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://tr1x.bio/about/",
+    "https://tr1x.bio"
+   ],
+   "checked": "2026-11-05"
+  },
+  "apriligen": {
+   "name": "Apriligen, Inc.",
+   "website": "apriligen.com",
+   "status": "no_team",
+   "note": "Site confirmed (APR-2020); no team page or names",
+   "people": [],
+   "sources": [
+    "https://apriligen.com",
+    "https://apriligen.com/contact/"
+   ],
+   "checked": "2026-11-05"
+  },
+  "inozyme pharma": {
+   "name": "Inozyme Pharma",
+   "website": null,
+   "status": "acquired",
+   "note": "Acquired by BioMarin; closed July 1, 2025 (~$270M). Not verified who currently leads; no leadership page for Inozyme.",
+   "people": [],
+   "sources": [
+    "https://www.biomarin.com/?p=9247",
+    "https://www.biospace.com/press-releases/biomarin-strengthens-enzyme-therapy-business-with-acquisition-of-inozyme-pharma"
+   ],
+   "checked": "2026-11-05"
+  },
+  "mediar therapeutics": {
+   "name": "Mediar Therapeutics",
+   "website": "mediartx.com",
+   "status": "ok",
+   "note": "MTX-463 not on homepage; name matches",
+   "people": [
+    {
+     "name": "Rahul Ballal, PhD",
+     "title": "CEO",
+     "founder": false
+    },
+    {
+     "name": "Jeff Bornstein, MD",
+     "title": "CMO",
+     "founder": false
+    },
+    {
+     "name": "Paul Yaworsky, PhD",
+     "title": "SAB Chair; founding CSO of Mediar Therapeutics",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://www.mediartx.com/team/",
+    "https://mediartx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "whitehawk therapeutics": {
+   "name": "Whitehawk Therapeutics, Inc.",
+   "website": "whitehawktx.com",
+   "status": "ok",
+   "note": "HWK-016 in pipeline; no founders identified",
+   "people": [
+    {
+     "name": "Dave Lennon, PhD",
+     "title": "President & CEO",
+     "founder": false
+    },
+    {
+     "name": "David Dornan, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Margaret Dugan, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Scott Giacobello, CPA",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Bryan Ball",
+     "title": "Chief Technical Operations Officer",
+     "founder": false
+    },
+    {
+     "name": "Laura McLaughlin",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.whitehawktx.com/about/",
+    "https://whitehawktx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "electra therapeutics": {
+   "name": "Electra Therapeutics Inc.",
+   "website": "electra-therapeutics.com",
+   "status": "ok",
+   "note": "Co-founder Adam Rosenthal, PhD is a former CEO listed under board, not current exec.",
+   "people": [
+    {
+     "name": "Kathy Dong, PharmD, MBA",
+     "title": "President, Chief Executive Officer and Director",
+     "founder": false
+    },
+    {
+     "name": "Kim-Hien Dao, DO, PhD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Graham Parry, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Gary S. Koe, PhD",
+     "title": "Chief Technical Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Clark, CFA",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Adam Rosenthal, PhD",
+     "title": "Co-founder and former CEO (Board of Directors)",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://electra-therapeutics.com/leadership/",
+    "https://electra-therapeutics.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "relmada therapeutics": {
+   "name": "Relmada Therapeutics, Inc.",
+   "website": "relmada.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Sergio Traversa",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Maged Shenouda",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Chuck Ence",
+     "title": "Chief Accounting and Compliance Officer",
+     "founder": false
+    },
+    {
+     "name": "Paul Kelly",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Bipin Dalmia, PhD, MBA",
+     "title": "Chief Business Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://relmada.com/company",
+    "https://relmada.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "ligachem biosciences": {
+   "name": "LigaChem Biosciences, Inc.",
+   "website": "ligachembio.com",
+   "status": "ok",
+   "note": "Korean-language site (Hangul names); delpazolid not mentioned on homepage. Titles on Key Personnel page inconsistent for Park (CEO vs COO).",
+   "people": [
+    {
+     "name": "김용주",
+     "title": "Chairman (회장)",
+     "founder": true
+    },
+    {
+     "name": "박세진",
+     "title": "CEO & 대표이사",
+     "founder": true
+    },
+    {
+     "name": "한진환",
+     "title": "CTO",
+     "founder": false
+    },
+    {
+     "name": "조영락",
+     "title": "Head of Development (개발본부장), Senior Vice President",
+     "founder": false
+    },
+    {
+     "name": "채제욱",
+     "title": "Head of R&D (R&D총괄) and ACB Corporate Head, Senior Vice President",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://ligachembio.com/company/executives.php?lang=k",
+    "https://ligachembio.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "epibiologics": {
+   "name": "EpiBiologics",
+   "website": "epibiologics.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Ann Lee-Karlon, Ph.D.",
+     "title": "Chief Executive Officer and President",
+     "founder": false
+    },
+    {
+     "name": "Shyra Gardai, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Eric Humke, M.D., Ph.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Aaron Mishel",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Steven Bartz, Ph.D.",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Jim Wells, Ph.D.",
+     "title": "Scientific Founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://epibiologics.com/about-us",
+    "https://epibiologics.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "maplight therapeutics": {
+   "name": "MapLight Therapeutics",
+   "website": "maplightrx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Christopher Kroeger, M.D.",
+     "title": "Chief Executive Officer, Founder",
+     "founder": true
+    },
+    {
+     "name": "Erin Pennock Foff, M.D., Ph.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "James Lillie, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Anatol Kreitzer, Ph.D.",
+     "title": "Chief Discovery Officer",
+     "founder": false
+    },
+    {
+     "name": "Jonathan Gillis",
+     "title": "Interim Chief Financial Officer, Chief Administrative and Accounting Officer",
+     "founder": false
+    },
+    {
+     "name": "Kris Hanson",
+     "title": "General Counsel",
+     "founder": false
+    },
+    {
+     "name": "Karl Deisseroth, M.D., Ph.D.",
+     "title": "Founder",
+     "founder": true
+    },
+    {
+     "name": "Robert Malenka, M.D., Ph.D.",
+     "title": "Founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://maplightrx.com/team/",
+    "https://maplightrx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "targed biopharmaceuticals b v": {
+   "name": "TargED Biopharmaceuticals B.V.",
+   "website": "targedbiopharmaceuticals.com",
+   "status": "ok",
+   "note": "Given domain targedbio.com 301-redirects to targedbiopharmaceuticals.com. Site lists TGD001; no founders identified.",
+   "people": [
+    {
+     "name": "Kristof Vercruysse",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Steven de Maat",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Samuel White, Dr.",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Josi Holz",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Rob Dekker",
+     "title": "Vice President CMC",
+     "founder": false
+    },
+    {
+     "name": "Filip Van den Wyngaert",
+     "title": "Vice President Asset Management",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://targedbiopharmaceuticals.com/about-us/team/",
+    "https://www.targedbiopharmaceuticals.com/"
+   ],
+   "checked": "2026-11-05"
+  },
+  "clear scientific": {
+   "name": "Clear Scientific, Inc.",
+   "website": "clearsci.com",
+   "status": "ok",
+   "note": "Founders per site news item (ACEP 2026): Shetty, Howe, Henderson.",
+   "people": [
+    {
+     "name": "Shekar Shetty",
+     "title": "Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Peter Howe",
+     "title": "Chief Financial Officer",
+     "founder": true
+    },
+    {
+     "name": "Winston Henderson, JD",
+     "title": "General Counsel",
+     "founder": true
+    },
+    {
+     "name": "Xinhua Li, PhD",
+     "title": "EVP, Drug Development",
+     "founder": false
+    },
+    {
+     "name": "Mitch Zakin, PhD",
+     "title": "EVP, Innovation",
+     "founder": false
+    },
+    {
+     "name": "John Marota, MD, PhD",
+     "title": "Medical Director",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.clearsci.com/leadership",
+    "https://clearsci.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "endeavor biomedicines": {
+   "name": "Endeavor Biomedicines, Inc.",
+   "website": "endeavorbiomedicines.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "John Hood, PhD",
+     "title": "Co-Founder & Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Miguel de los Rios, PhD",
+     "title": "Co-Founder & Chief Scientific Officer",
+     "founder": true
+    },
+    {
+     "name": "Enoch Kariuki, PharmD",
+     "title": "President",
+     "founder": false
+    },
+    {
+     "name": "Lisa Lancaster, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Vishaal Turakhia",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Chris Krueger, JD",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://endeavorbiomedicines.com/about-us/leadership/",
+    "https://endeavorbiomedicines.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "anagram therapeutics": {
+   "name": "Anagram Therapeutics, Inc.",
+   "website": "anagramtx.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Robert Gallotto",
+     "title": "President and Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Evan Bailey, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "David Brown",
+     "title": "Chief of Technology Development",
+     "founder": false
+    },
+    {
+     "name": "Hugh Wight",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Alexey Margolin, Ph.D.",
+     "title": "Chairman of the Board",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://anagramtx.com/company/leadership/",
+    "https://anagramtx.com"
+   ],
+   "checked": "2026-11-05"
+  },
+  "veru": {
+   "name": "Veru Inc.",
+   "website": "verupharma.com",
+   "status": "ok",
+   "people": [
+    {
+     "name": "Mitchell Steiner, M.D., F.A.C.S.",
+     "title": "Chairman, President, and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Harry Fisch, M.D., F.A.C.S.",
+     "title": "Vice Chairman, Chief Corporate Officer",
+     "founder": true
+    },
+    {
+     "name": "Michele Greco",
+     "title": "Chief Financial Officer and Chief Administrative Officer",
+     "founder": false
+    },
+    {
+     "name": "K. Gary Barnette, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://verupharma.com/?p=2809"
+   ],
+   "checked": "2026-11-05"
   }
  }
 }
