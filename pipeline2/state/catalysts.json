@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-05T14:02:02.779Z",
+ "generated": "2026-11-06T13:46:03.779Z",
  "catalysts": [
   {
    "drug": "pimicotinib",
@@ -1236,31 +1236,7 @@
    "sourceUrl": "https://www.onclive.com/view/fda-accepts-nda-for-zipalertinib-in-locally-advanced-or-metastatic-egfr-exon-20-nsclc",
    "sourceTitle": "FDA Accepts NDA for Zipalertinib in Locally Advanced or Metastatic EGFR Exon 20+ NSCLC",
    "sourceType": "news",
-   "mjhStories": 15
-  },
-  {
-   "drug": "amivantamab",
-   "brandName": null,
-   "company": null,
-   "indication": "HNSCC?",
-   "pdufaDate": "2027-02-27",
-   "dateLabel": null,
-   "dateBasis": "Announced",
-   "dateBasisDetail": "announced",
-   "submissionType": "sNDA/sBLA",
-   "status": "Pending",
-   "confidence": "High",
-   "confidenceWhy": "MJH headline on the filing · date announced",
-   "origin": "MJH only",
-   "flags": [
-    "new use of an approved drug",
-    "priority review"
-   ],
-   "source": "MJH only",
-   "sourceUrl": "https://www.onclive.com/view/fda-grants-priority-review-to-subcutaneous-amivantamab-in-head-and-neck-cancer",
-   "sourceTitle": "FDA Grants Priority Review to Subcutaneous Amivantamab in Head and Neck Cancer",
-   "sourceType": "news",
-   "mjhStories": 6
+   "mjhStories": 16
   },
   {
    "drug": "casimersen",
@@ -1421,7 +1397,7 @@
    "drug": "zanubrutinib + Rituximab",
    "brandName": null,
    "company": null,
-   "indication": "Previously Untreated MCL",
+   "indication": "Frontline MCL",
    "pdufaDate": "2027-03-05",
    "dateLabel": null,
    "dateBasis": "Estimated",
@@ -1439,7 +1415,7 @@
    "sourceUrl": "https://www.onclive.com/view/fda-grants-priority-review-to-zanubrutinib-plus-rituximab-for-previously-untreated-mcl",
    "sourceTitle": "FDA Grants Priority Review to Zanubrutinib Plus Rituximab for Previously Untreated MCL",
    "sourceType": "news",
-   "mjhStories": 2
+   "mjhStories": 4
   },
   {
    "drug": "lonvo-z",
@@ -1716,29 +1692,6 @@
    "mjhStories": 1
   },
   {
-   "drug": "rivoceranib + Camrelizumab",
-   "brandName": null,
-   "company": null,
-   "indication": "Frontline Unresectable or Metastatic HCC",
-   "pdufaDate": "2027-04-13",
-   "dateLabel": null,
-   "dateBasis": "Estimated",
-   "dateBasisDetail": "estimated from resubmission",
-   "submissionType": null,
-   "status": "Pending",
-   "confidence": "Medium",
-   "confidenceWhy": "MJH headline on the filing · date estimated",
-   "origin": "MJH only",
-   "flags": [
-    "after CRL"
-   ],
-   "source": "MJH only",
-   "sourceUrl": "https://www.targetedonc.com/view/rivoceranib-plus-camrelizumab-resubmitted-to-fda-in-frontline-hcc",
-   "sourceTitle": "Rivoceranib Plus Camrelizumab Resubmitted to FDA in Frontline HCC",
-   "sourceType": "news",
-   "mjhStories": 34
-  },
-  {
    "drug": "ozekibart",
    "brandName": null,
    "company": null,
@@ -1996,7 +1949,7 @@
    "sourceUrl": "https://www.onclive.com/view/sac-tmt-improves-pfs-and-os-is-under-fda-priority-review-in-previously-treated-endometrial-cancer",
    "sourceTitle": "Sac-TMT Improves PFS and OS, Is Under FDA Priority Review in Previously Treated Endometrial Cancer",
    "sourceType": "news",
-   "mjhStories": 1
+   "mjhStories": 2
   },
   {
    "drug": "zalunfiban",
@@ -2124,6 +2077,26 @@
    "mjhStories": 26
   },
   {
+   "drug": "rivoceranib + Camrelizumab",
+   "brandName": null,
+   "company": null,
+   "indication": "Unresectable HCC",
+   "pdufaDate": "2026-11-05",
+   "scheduledDate": "2027-04-09",
+   "decisionTitle": "FDA Sets PDUFA Date for Rivoceranib/Camrelizumab Resubmission After Third CRL in Unresectable HCC",
+   "dateLabel": null,
+   "dateBasis": "Decision",
+   "dateBasisDetail": "FDA Sets PDUFA Date for Rivoceranib/Camrelizumab Resubmission After Third CRL in Unresectable HCC",
+   "submissionType": null,
+   "status": "CRL",
+   "origin": "MJH",
+   "flags": [],
+   "source": "MJH",
+   "sourceUrl": "https://www.cancernetwork.com/view/fda-sets-pdufa-date-for-rivoceranib-camrelizumab-resubmission-after-third-crl-in-unresectable-hcc",
+   "sourceType": "news",
+   "mjhStories": 26
+  },
+  {
    "drug": "talazoparib + Enzalutamide",
    "brandName": null,
    "company": null,
@@ -2220,6 +2193,26 @@
    "flags": [],
    "source": "MJH",
    "sourceUrl": "https://www.psychiatrictimes.com/view/olanzapine-lai-weltruza-receives-fda-approval-for-schizophrenia",
+   "sourceType": "news",
+   "mjhStories": 9
+  },
+  {
+   "drug": "amivantamab",
+   "brandName": null,
+   "company": null,
+   "indication": "Recurrent/Metastatic HNSCC",
+   "pdufaDate": "2026-11-05",
+   "scheduledDate": "2027-02-27",
+   "decisionTitle": "FDA Approves SC Amivantamab for Recurrent/Metastatic HNSCC",
+   "dateLabel": null,
+   "dateBasis": "Decision",
+   "dateBasisDetail": "FDA Approves SC Amivantamab for Recurrent/Metastatic HNSCC",
+   "submissionType": "sNDA/sBLA",
+   "status": "Approved",
+   "origin": "MJH",
+   "flags": [],
+   "source": "MJH",
+   "sourceUrl": "https://www.cancernetwork.com/view/fda-approves-sc-amivantamab-for-recurrent-metastatic-hnscc",
    "sourceType": "news",
    "mjhStories": 9
   },
