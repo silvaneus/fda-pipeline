@@ -13959,11 +13959,27 @@
   "propedix": {
    "name": "Propedix, Inc.",
    "website": "propedix.com",
-   "status": "no_team",
-   "note": "Homepage names no leadership",
-   "people": [],
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Niv Caviar",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Dr. Carl Schanbacher",
+     "title": "Founder, Chief Medical Officer",
+     "founder": true
+    },
+    {
+     "name": "Dr. Nick Manesis",
+     "title": "Chief Technology Officer",
+     "founder": false
+    }
+   ],
    "sources": [
-    "https://propedix.com"
+    "https://propedix.com/about-us/"
    ],
    "checked": "2026-11-07"
   },
@@ -13976,6 +13992,272 @@
    "sources": [
     "https://immviragroup.com"
    ],
+   "checked": "2026-11-07"
+  },
+  "neutrolis": {
+   "name": "Neutrolis",
+   "website": "neutrolis.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Anthony Aiudi, PharmD",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Toby Fox, PhD",
+     "title": "Co-Founder, Co-President & Chief Scientific Officer",
+     "founder": true
+    },
+    {
+     "name": "Abdul Hakkim, PhD",
+     "title": "Co-Founder, Co-President & Chief Operating Officer",
+     "founder": true
+    },
+    {
+     "name": "Andreas Reiff, MD",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Caren Deardorf",
+     "title": "Chief Business & Strategy Officer",
+     "founder": false
+    },
+    {
+     "name": "Ralph Lambalot, PhD",
+     "title": "Chief Technology Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://neutrolis.com/about-us"
+   ],
+   "checked": "2026-11-07"
+  },
+  "stelexis biosciences": {
+   "name": "Stelexis BioSciences",
+   "website": "stelexis.com",
+   "status": "ok",
+   "note": "Scientific founders not named as founders on page",
+   "people": [
+    {
+     "name": "Manuel Aivado, M.D., Ph.D.",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Eric Feldman, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Alan List, M.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Darrell Nix, Ph.D.",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Rossitza Alargova, Ph.D.",
+     "title": "Head of CMC",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://stelexis.com/about/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "lakefront biotherapeutics west": {
+   "name": "Lakefront Biotherapeutics West LLC",
+   "website": "lakefrontbio.com",
+   "status": "ok",
+   "note": "Site is Lakefront Biotherapeutics NV (Belgium)",
+   "people": [
+    {
+     "name": "Henry Gosebruch",
+     "title": "Executive Director and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Aaron Cox",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Christina Carlson",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Dan Grossman",
+     "title": "Chief Strategy Officer",
+     "founder": false
+    },
+    {
+     "name": "Eric Hedrick",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Sooin Kwon",
+     "title": "Chief Business Officer",
+     "founder": false
+    },
+    {
+     "name": "Tania Philipp",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://lakefrontbio.com/about-us/leadership-team/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "nkgen biotech": {
+   "name": "NKGen Biotech, Inc.",
+   "website": "nkgenbiotech.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Paul Y. Song, MD",
+     "title": "Chairman and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Yong Man Kim, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "James Graf",
+     "title": "CFO (interim)",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://nkgenbiotech.com/about-us/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "neurorx": {
+   "name": "NeuroRx, Inc.",
+   "website": null,
+   "status": "acquired",
+   "note": "Merged into NRx Pharmaceuticals (nrxpharma.com) in May 2021",
+   "people": [
+    {
+     "name": "Jonathan Javitt",
+     "title": "Chairman, Chief Executive Officer and Chief Scientist",
+     "founder": true
+    },
+    {
+     "name": "Joseph Casper",
+     "title": "Chief Operating Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1719406/000143774926009418/nrxp20251231_10k.htm"
+   ],
+   "checked": "2026-11-07"
+  },
+  "genosco": {
+   "name": "Genosco Inc.",
+   "website": null,
+   "status": "no_site",
+   "note": "Official site not verified",
+   "people": [],
+   "sources": [],
+   "checked": "2026-11-07"
+  },
+  "chromadex": {
+   "name": "ChromaDex, Inc.",
+   "website": "niagenbioscience.com",
+   "status": "acquired",
+   "note": "Renamed Niagen Bioscience, Inc. in March 2025 (rebrand, not acquisition)",
+   "people": [
+    {
+     "name": "Rob Fried",
+     "title": "Chief Executive Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.businesswire.com/news/home/20250319662388/en"
+   ],
+   "checked": "2026-11-07"
+  },
+  "regenxbio": {
+   "name": "REGENXBIO Inc.",
+   "website": "regenxbio.com",
+   "status": "ok",
+   "note": "Queue had no website",
+   "people": [
+    {
+     "name": "Curran M. Simpson",
+     "title": "President and CEO",
+     "founder": false
+    },
+    {
+     "name": "Steve Pakola, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Olivier Danos, Ph.D.",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Mitchell Chan",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Patrick J. Christmas II, J.D.",
+     "title": "Chief Legal Officer",
+     "founder": false
+    },
+    {
+     "name": "Ram Palanki, Pharm.D.",
+     "title": "Chief Commercial Officer",
+     "founder": false
+    },
+    {
+     "name": "Craig Malzahn",
+     "title": "Chief Technology Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.regenxbio.com/who-we-are/management-team/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "tessera therapeutics": {
+   "name": "Tessera Therapeutics, Inc.",
+   "website": "tesseratx.com",
+   "status": "no_team",
+   "note": "Site returned 503 on repeated attempts; leadership not read",
+   "people": [],
+   "sources": [],
+   "checked": "2026-11-07"
+  },
+  "ingenia therapeutics": {
+   "name": "Ingenia Therapeutics INC",
+   "website": "ingeniatx.com",
+   "status": "no_team",
+   "note": "Site content empty/404 on team page; unverified",
+   "people": [],
+   "sources": [],
    "checked": "2026-11-07"
   }
  }
