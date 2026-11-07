@@ -13482,6 +13482,501 @@
     "https://contineum-tx.com/about/"
    ],
    "checked": "2026-11-07"
+  },
+  "askbio": {
+   "name": "AskBio Inc",
+   "website": "askbio.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Gustavo Pesquin",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Canwen Jiang",
+     "title": "Chief Development Officer and Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Mansuo Shannon",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Jason Krentz",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Melissa Murrell",
+     "title": "Chief People Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.askbio.com/leadership-team/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "comanche biopharma": {
+   "name": "Comanche Biopharma",
+   "website": "comanchebiopharma.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Scott Johnson, M.D.",
+     "title": "Chief Executive Officer & Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Mike Young",
+     "title": "President & Co-Founder",
+     "founder": true
+    },
+    {
+     "name": "Richard Colvin, M.D., Ph.D.",
+     "title": "Head of Research and Development",
+     "founder": false
+    },
+    {
+     "name": "Belen Vicente Blazquez, MBA",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Thomas P. Hess, CPA",
+     "title": "Chief Financial Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://comanchebiopharma.com/about-us/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "arsenal biosciences": {
+   "name": "Arsenal Biosciences, Inc.",
+   "website": "arsenalbio.com",
+   "status": "no_team",
+   "note": "Site confirmed; no leadership page found",
+   "people": [],
+   "sources": [
+    "https://arsenalbio.com"
+   ],
+   "checked": "2026-11-07"
+  },
+  "biossil": {
+   "name": "Biossil Inc.",
+   "website": "biossil.ai",
+   "status": "no_team",
+   "note": "Toronto AI-native biopharma; site names no leadership",
+   "people": [],
+   "sources": [
+    "https://biossil.ai"
+   ],
+   "checked": "2026-11-07"
+  },
+  "yaso therapeutics": {
+   "name": "Yaso Therapeutics Corporation",
+   "website": "yasotherapeutics.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Mary Weitzel, MBA",
+     "title": "Co-Founder, CEO, President",
+     "founder": true
+    },
+    {
+     "name": "Barbara North, MD, PhD",
+     "title": "Co-founder, Chief Medical Officer",
+     "founder": true
+    },
+    {
+     "name": "Michael Oldham, PhD",
+     "title": "Co-Founder, Regulatory Advisor, Pre-clinical development expert",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://yasotherapeutics.com/team"
+   ],
+   "checked": "2026-11-07"
+  },
+  "tyra biosciences": {
+   "name": "Tyra Biosciences, Inc",
+   "website": "tyra.bio",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Todd Harris",
+     "title": "Chief Executive Officer",
+     "founder": true
+    },
+    {
+     "name": "Daniel Bensen",
+     "title": "Chief Discovery Officer",
+     "founder": true
+    },
+    {
+     "name": "Ronald V. Swanson",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Robert L. Hudkins",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "Piyush Patel",
+     "title": "Chief Development Officer",
+     "founder": false
+    },
+    {
+     "name": "Doug Warner, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Alan Fuhrman",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Bhavesh Ashar",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Heather Faulds",
+     "title": "Chief Regulatory Officer",
+     "founder": false
+    },
+    {
+     "name": "Liz Pagano",
+     "title": "Chief Human Resources Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://tyra.bio/our-people/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "ventus therapeutics u s": {
+   "name": "Ventus Therapeutics U.S., Inc.",
+   "website": "ventustx.com",
+   "status": "ok",
+   "note": "Queue had no website",
+   "people": [
+    {
+     "name": "Marcelo Bigal, M.D., Ph.D.",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Christine Ha",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Daniel Koerwer",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Jan Klatt, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.ventustx.com/about/leadership/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "bantam pharmaceuticals": {
+   "name": "Bantam Pharmaceuticals",
+   "website": "bantampharma.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Michael Stocum, MS",
+     "title": "President & CEO",
+     "founder": false
+    },
+    {
+     "name": "Matthew Kostura, PhD",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    },
+    {
+     "name": "Glen Weiss, MD, MBA",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Michael Luther, PhD, MBA",
+     "title": "Founding CEO, Bantam Pharmaceutical",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://bantampharma.com/our-team/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "consano bio": {
+   "name": "Consano Bio",
+   "website": "consanobio.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Andrew Hall, MS",
+     "title": "Chief Executive Officer and Board Member",
+     "founder": false
+    },
+    {
+     "name": "Jennifer Schmitke, PhD",
+     "title": "Chief Operations Officer and Head of R&D",
+     "founder": false
+    },
+    {
+     "name": "Mark Versavel, MD, PhD, MBA",
+     "title": "Fractional CMO",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://consanobio.com/about-us/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "terremoto biosciences": {
+   "name": "Terremoto Biosciences Inc.",
+   "website": "terremotobio.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "James Christensen, Ph.D.",
+     "title": "President and Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Ronald Shazer, M.D., MBA",
+     "title": "Senior Vice President, Head of Clinical Development",
+     "founder": false
+    },
+    {
+     "name": "Peter Thompson, M.D.",
+     "title": "Co-founder and Director",
+     "founder": true
+    },
+    {
+     "name": "Jack Taunton, Ph.D.",
+     "title": "Co-founder",
+     "founder": true
+    },
+    {
+     "name": "Matthew Jacobson, Ph.D.",
+     "title": "Co-founder",
+     "founder": true
+    }
+   ],
+   "sources": [
+    "https://terremotobio.com/about/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "curis": {
+   "name": "Curis, Inc.",
+   "website": "curis.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "James Dentzer",
+     "title": "President & CEO",
+     "founder": false
+    },
+    {
+     "name": "Diantha Duvall",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Ahmed Hamdy, MBBCH",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Jonathan Zung, Ph.D.",
+     "title": "Chief Development Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://www.curis.com/about-us/management/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "accsalus biosciences": {
+   "name": "AccSalus Biosciences, Inc.",
+   "website": "accsalus.com",
+   "status": "ok",
+   "note": "Site names the company AccSalus Scitech Inc.",
+   "people": [
+    {
+     "name": "Dr. Auro Nair",
+     "title": "Chairman",
+     "founder": false
+    },
+    {
+     "name": "Dr. Qiang Zhang",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Dr. Yan Yang",
+     "title": "Chief Operating Officer",
+     "founder": false
+    },
+    {
+     "name": "Dr. Gary Ge",
+     "title": "Chief Technology Officer",
+     "founder": false
+    },
+    {
+     "name": "Dr. Jacques Banchereau",
+     "title": "Chief Scientific Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://accsalus.com/pages/team"
+   ],
+   "checked": "2026-11-07"
+  },
+  "vaxart": {
+   "name": "Vaxart",
+   "website": "vaxart.com",
+   "status": "ok",
+   "note": "",
+   "people": [
+    {
+     "name": "Steven Lo",
+     "title": "Chief Executive Officer",
+     "founder": false
+    },
+    {
+     "name": "Sean Tucker, Ph.D.",
+     "title": "Senior Vice President and Chief Scientific Officer",
+     "founder": true
+    },
+    {
+     "name": "James F. Cummings, M.D.",
+     "title": "Chief Medical Officer",
+     "founder": false
+    },
+    {
+     "name": "Jeroen Grasman",
+     "title": "Chief Financial Officer",
+     "founder": false
+    },
+    {
+     "name": "Todd Lopeman",
+     "title": "Chief Technology Officer",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://vaxart.com/about/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "discgenics": {
+   "name": "DiscGenics, Inc.",
+   "website": "discgenics.com",
+   "status": "ok",
+   "note": "Site inconsistent on CEO: Interim CEO Bob Wynalek listed; Flagg Flanagan shown as director",
+   "people": [
+    {
+     "name": "Bob Wynalek",
+     "title": "Interim Chief Executive Officer, Director",
+     "founder": false
+    },
+    {
+     "name": "Kevin T. Foley, M.D.",
+     "title": "Chief Medical Officer, Director",
+     "founder": true
+    },
+    {
+     "name": "Valery Kukekov, Ph.D.",
+     "title": "Co-founder",
+     "founder": true
+    },
+    {
+     "name": "Najeeb Thomas, M.D.",
+     "title": "Chairman of the Board",
+     "founder": false
+    }
+   ],
+   "sources": [
+    "https://discgenics.com/our-company/"
+   ],
+   "checked": "2026-11-07"
+  },
+  "gain therapeutics": {
+   "name": "Gain Therapeutics, Inc.",
+   "website": "gaintherapeutics.com",
+   "status": "no_team",
+   "note": "Site confirmed; no leadership page found in budget",
+   "people": [],
+   "sources": [
+    "https://gaintherapeutics.com"
+   ],
+   "checked": "2026-11-07"
+  },
+  "aspera biomedicines": {
+   "name": "Aspera Biomedicines, Inc.",
+   "website": "asperabio.com",
+   "status": "no_team",
+   "note": "Site under construction",
+   "people": [],
+   "sources": [
+    "https://asperabio.com"
+   ],
+   "checked": "2026-11-07"
+  },
+  "propedix": {
+   "name": "Propedix, Inc.",
+   "website": "propedix.com",
+   "status": "no_team",
+   "note": "Homepage names no leadership",
+   "people": [],
+   "sources": [
+    "https://propedix.com"
+   ],
+   "checked": "2026-11-07"
+  },
+  "immvira pharma": {
+   "name": "ImmVira Pharma Co. Ltd",
+   "website": "immviragroup.com",
+   "status": "no_team",
+   "note": "Site shows only a website-upgrade notice",
+   "people": [],
+   "sources": [
+    "https://immviragroup.com"
+   ],
+   "checked": "2026-11-07"
   }
  }
 }
