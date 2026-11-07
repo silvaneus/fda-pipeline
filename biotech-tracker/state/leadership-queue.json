@@ -1,657 +1,8 @@
 {
  "about": "Companies due for a leadership check, most useful first. Rewritten every night by run.js; do not edit by hand. Results go in leadership.json.",
- "generated": "2026-11-06",
- "remaining": 698,
+ "generated": "2026-11-07",
+ "remaining": 647,
  "companies": [
-  {
-   "key": "epirium bio",
-   "name": "Epirium Bio Inc.",
-   "previousCheck": null,
-   "website": "epirium.com",
-   "websiteSource": "contact",
-   "headquarters": "CA",
-   "area": "Other",
-   "leadDrug": "MF-300 (Phase 2, Healthy Volunteers; Sarcopenia in Elderly)",
-   "secOfficers": []
-  },
-  {
-   "key": "personalized stem cells",
-   "name": "Personalized Stem Cells, Inc.",
-   "previousCheck": null,
-   "website": "personalizedstemcells.com",
-   "websiteSource": "guess",
-   "headquarters": "Poway, CA",
-   "area": "Other",
-   "leadDrug": "autologous adipose-derived stem cells (Phase 1, Mild Traumatic Brain Injury)",
-   "secOfficers": [
-    "Robert Harman",
-    "Michael Dale"
-   ]
-  },
-  {
-   "key": "black diamond therapeutics",
-   "name": "Black Diamond Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "blackdiamondtherapeutics.com",
-   "websiteSource": "guess",
-   "headquarters": "Cambridge, MA",
-   "area": "Oncology",
-   "leadDrug": "silevertinib in combination with temozolomide (Phase 2, Glioblastoma (GBM); Newly Diagnosed Glioblastoma)",
-   "secOfficers": [
-    "David M. Epstein",
-    "Thomas Leggett",
-    "Brent Hatzis-Schoch",
-    "Christopher Roberts"
-   ]
-  },
-  {
-   "key": "rhoshan pharmaceuticals",
-   "name": "Rhoshan Pharmaceuticals Inc",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "State College, PA",
-   "area": "Other",
-   "leadDrug": "325 mg Oral Aspirin (Phase 1, Healthy)",
-   "secOfficers": [
-    "Hitha Palepu",
-    "Allan Clarke",
-    "Charlene Messinger"
-   ]
-  },
-  {
-   "key": "immunophotonics",
-   "name": "Immunophotonics, Inc.",
-   "previousCheck": null,
-   "website": "immunophotonics.com",
-   "websiteSource": "guess",
-   "headquarters": "St. Louis, MO",
-   "area": "Oncology",
-   "leadDrug": "1.0% IP-001 for Injection (Phase 2/3, Metastatic Solid Tumor; Colon Cancer)",
-   "secOfficers": [
-    "Alexander M. Hurst",
-    "Robert H. Arch"
-   ]
-  },
-  {
-   "key": "dewpoint therapeutics",
-   "name": "Dewpoint Therapeutics",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Boston, MA",
-   "area": "Oncology",
-   "leadDrug": "DPTX3186 (Phase 1, Solid Tumors)",
-   "secOfficers": [
-    "Ameet Nathwani, M.D.",
-    "Isaac A. Klein, M.D., Ph.D."
-   ]
-  },
-  {
-   "key": "lomond therapeutics holdings",
-   "name": "Lomond Therapeutics Holdings, Inc.",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Dover, DE",
-   "area": "Oncology",
-   "leadDrug": "ZE50-0134 (Phase 1, CLL / SLL; CLL (Chronic Lymphocytic Leukemia))",
-   "secOfficers": [
-    "Iain Dukes",
-    "Nikolay Savchuk"
-   ]
-  },
-  {
-   "key": "merida biosciences",
-   "name": "Merida Biosciences",
-   "previousCheck": null,
-   "website": "meridabio.com",
-   "websiteSource": "contact",
-   "headquarters": "MA",
-   "area": "Other",
-   "leadDrug": "MER511 (IV) (Phase 1, Graves Disease)",
-   "secOfficers": []
-  },
-  {
-   "key": "beam therapeutics",
-   "name": "Beam Therapeutics Inc.",
-   "previousCheck": null,
-   "website": "beamtx.com",
-   "websiteSource": "contact",
-   "headquarters": "Cambridge, MA",
-   "area": "Rare/Genetic Disease",
-   "leadDrug": "BEAM-301: Single dose of BEAM-301 administered by IV (Phase 1/2, Glycogen Storage Disease Type Ia)",
-   "secOfficers": [
-    "John Evans"
-   ]
-  },
-  {
-   "key": "aspargo labs",
-   "name": "Aspargo Labs, Inc",
-   "previousCheck": null,
-   "website": "aspargolabs.com",
-   "websiteSource": "guess",
-   "headquarters": "New York, NY",
-   "area": "Other",
-   "leadDrug": "Hezkue Sildenafil Oral Suspension (Phase 2, Erectile Dysfunction)",
-   "secOfficers": [
-    "Michael Demurjian"
-   ]
-  },
-  {
-   "key": "callio therapeutics",
-   "name": "Callio Therapeutics",
-   "previousCheck": null,
-   "website": "calliotx.com",
-   "websiteSource": "contact",
-   "headquarters": "WA",
-   "area": "Oncology",
-   "leadDrug": "CLIO-8221 (Phase 1/2, Advanced Solid Tumor)",
-   "secOfficers": []
-  },
-  {
-   "key": "cidara therapeutics",
-   "name": "Cidara Therapeutics Inc., a subsidiary of Merck & Co., Inc. (Rahway, New Jersey USA)",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "San Diego, CA",
-   "area": "Infectious Disease",
-   "leadDrug": "MK-1406 Injection (Phase 3, Influenza; Healthy Participants)",
-   "secOfficers": [
-    "Jeffrey Stein, Ph.D.",
-    "Taylor Sandison, M.D.",
-    "Preetam Shah, Ph.D.",
-    "Leslie Tari, Ph.D.",
-    "Shane Ward"
-   ]
-  },
-  {
-   "key": "zenas biopharma",
-   "name": "Zenas BioPharma (USA), LLC",
-   "previousCheck": null,
-   "website": "zenasbio.com",
-   "websiteSource": "contact",
-   "headquarters": "Waltham, MA",
-   "area": "Hematology",
-   "leadDrug": "Orelabrutinib (Phase 3, Multiple Sclerosis (MS) Primary Progressive; Secondary Progressive Multiple Sclerosis)",
-   "secOfficers": [
-    "Leon O. Moulder, Jr.",
-    "Joseph Farmer",
-    "Jennifer Fox",
-    "Tanya Z. Fischer"
-   ]
-  },
-  {
-   "key": "neomorph",
-   "name": "Neomorph, Inc",
-   "previousCheck": null,
-   "website": "neomorph.com",
-   "websiteSource": "contact",
-   "headquarters": "CA",
-   "area": "Oncology",
-   "leadDrug": "NEO-811 (Phase 1, Clear Cell Renal Cell Carcinoma; Renal Cell Carcinoma)",
-   "secOfficers": []
-  },
-  {
-   "key": "paq therapeutics",
-   "name": "PAQ Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "paqtx.com",
-   "websiteSource": "contact",
-   "headquarters": "MA",
-   "area": "Oncology",
-   "leadDrug": "PT0511 (Phase 1, Colorectal Cancer; Pancreatic Cancer)",
-   "secOfficers": []
-  },
-  {
-   "key": "sdk therapeutics",
-   "name": "SDK Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "sdktx.net",
-   "websiteSource": "contact",
-   "headquarters": "CA",
-   "area": "Oncology",
-   "leadDrug": "Oral ATO (Phase 3, Acute Promyelocytic Leukemia (APL); Acute Promyelocytic Leukaemia)",
-   "secOfficers": []
-  },
-  {
-   "key": "sparrow pharmaceuticals",
-   "name": "Sparrow Pharmaceuticals",
-   "previousCheck": null,
-   "website": "sparrowrx.com",
-   "websiteSource": "guess",
-   "headquarters": "Portland, OR",
-   "area": "Endocrinology",
-   "leadDrug": "clofutriben (Phase 2, Type 2 Diabetes; Cortisol Excess)",
-   "secOfficers": [
-    "Robert Jacks"
-   ]
-  },
-  {
-   "key": "life biosciences",
-   "name": "Life Biosciences Inc.",
-   "previousCheck": null,
-   "website": "lifebiosciences.com",
-   "websiteSource": "contact",
-   "headquarters": "Boston, MA",
-   "area": "Ophthalmology",
-   "leadDrug": "ER-100 epigenetic therapy (Phase 1, Open Angle Glaucoma (OAG); NAION( Non-arteritic Anterior Ischemic Optic Neuropathy))",
-   "secOfficers": [
-    "Gerald McLaughlin",
-    "Sharon Rosenzweig-Lipson",
-    "Michael Ringel",
-    "Amit Shashank"
-   ]
-  },
-  {
-   "key": "aminex therapeutics",
-   "name": "Aminex Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "aminextx.com",
-   "websiteSource": "contact",
-   "headquarters": "Kirkland, WA",
-   "area": "Oncology",
-   "leadDrug": "AMXT1501 (Phase 1/2, Cancer; Solid Tumor)",
-   "secOfficers": [
-    "Mark Burns"
-   ]
-  },
-  {
-   "key": "contineum therapeutics",
-   "name": "Contineum Therapeutics",
-   "previousCheck": null,
-   "website": "contineum-tx.com",
-   "websiteSource": "contact",
-   "headquarters": "San Diego, CA",
-   "area": "Neurology",
-   "leadDrug": "PIPE-791 (Phase 2, Multiple Sclerosis; Idiopathic Pulmonary Fibrosis (IPF))",
-   "secOfficers": []
-  },
-  {
-   "key": "c4 therapeutics",
-   "name": "C4 Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "c4therapeutics.com",
-   "websiteSource": "contact",
-   "headquarters": "Watertown, MA",
-   "area": "Oncology",
-   "leadDrug": "Cemsidomide (Phase 2, Multiple Myeloma; Lymphoma, Non-Hodgkin's)",
-   "secOfficers": [
-    "Marc Cohen",
-    "Jason Fisherman"
-   ]
-  },
-  {
-   "key": "arsenal biosciences",
-   "name": "Arsenal Biosciences, Inc.",
-   "previousCheck": null,
-   "website": "arsenalbio.com",
-   "websiteSource": "guess",
-   "headquarters": "South San Francisco, CA",
-   "area": "Oncology",
-   "leadDrug": "AB-3028 (Phase 1/2, Metastatic Castration Resistant Prostate Cancer (mCRPC))",
-   "secOfficers": [
-    "Kenneth Drazan",
-    "James Ahlers",
-    "Irene Pleasure"
-   ]
-  },
-  {
-   "key": "plexium",
-   "name": "Plexium, Inc.",
-   "previousCheck": null,
-   "website": "plexium.com",
-   "websiteSource": "contact",
-   "headquarters": "San Diego, CA",
-   "area": "Oncology",
-   "leadDrug": "PLX-61639 (Phase 1, Esophageal Squamous Cell Carcinoma; Gastric Adenocarcinoma)",
-   "secOfficers": [
-    "Michael Martin",
-    "Stephen Mullennix"
-   ]
-  },
-  {
-   "key": "askbio",
-   "name": "AskBio Inc",
-   "previousCheck": null,
-   "website": "askbio.com",
-   "websiteSource": "contact",
-   "headquarters": "NC",
-   "area": "Rare/Genetic Disease",
-   "leadDrug": "AB-1005 (Phase 2, PARKINSON DISEASE (Disorder))",
-   "secOfficers": []
-  },
-  {
-   "key": "comanche biopharma",
-   "name": "Comanche Biopharma",
-   "previousCheck": null,
-   "website": "comanchebiopharma.com",
-   "websiteSource": "contact",
-   "headquarters": "Concord, MA",
-   "area": "OB/GYN",
-   "leadDrug": "CBP-4888 (Phase 1, Healthy Volunteer Study; sFlt1 Mediated Preterm Preeclampsia)",
-   "secOfficers": [
-    "Thomas S. Johnson",
-    "Michael Young",
-    "Paul Antinori",
-    "Allison August"
-   ]
-  },
-  {
-   "key": "biossil",
-   "name": "Biossil Inc.",
-   "previousCheck": null,
-   "website": "biossil.ai",
-   "websiteSource": "contact",
-   "headquarters": "MA",
-   "area": "Hematology",
-   "leadDrug": "Senicapoc (Phase 2, Sickle Cell Disease; Sickle Cell Anaemia)",
-   "secOfficers": []
-  },
-  {
-   "key": "yaso therapeutics",
-   "name": "Yaso Therapeutics Corporation",
-   "previousCheck": null,
-   "website": "yasotherapeutics.com",
-   "websiteSource": "contact",
-   "headquarters": "AZ",
-   "area": "Other",
-   "leadDrug": "YASO GEL (Early Phase 1, Early-phase Safety and PK Study of a Vaginal Gel)",
-   "secOfficers": []
-  },
-  {
-   "key": "gain therapeutics",
-   "name": "Gain Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "gaintherapeutics.com",
-   "websiteSource": "contact",
-   "headquarters": "Bethesda, MD",
-   "area": "Neurology",
-   "leadDrug": "GT-02287 (Phase 2, Parkinson Disease)",
-   "secOfficers": [
-    "Eric I. Richman"
-   ]
-  },
-  {
-   "key": "curis",
-   "name": "Curis, Inc.",
-   "previousCheck": null,
-   "website": "curis.com",
-   "websiteSource": "contact",
-   "headquarters": "Lexington, MA",
-   "area": "Oncology",
-   "leadDrug": "Emavusertib (Phase 2, Relapsed Hematologic Malignancy; Refractory Hematologic Malignancy)",
-   "secOfficers": [
-    "Daniel R. Passeri",
-    "Michael P. Gray",
-    "Mark W. Noel",
-    "Maurizio Voi"
-   ]
-  },
-  {
-   "key": "tyra biosciences",
-   "name": "Tyra Biosciences, Inc",
-   "previousCheck": null,
-   "website": "tyra.bio",
-   "websiteSource": "contact",
-   "headquarters": "Carlsbad, CA",
-   "area": "Rare/Genetic Disease",
-   "leadDrug": "TYRA-300 (Phase 2, Locally Advanced Urothelial Carcinoma; Metastatic Urothelial Carcinoma)",
-   "secOfficers": [
-    "Todd Harris, Ph.D.",
-    "Alan Fuhrman",
-    "Daniel Bensen",
-    "Hiroomi Tada, M.D., Ph.D."
-   ]
-  },
-  {
-   "key": "bantam pharmaceuticals",
-   "name": "Bantam Pharmaceuticals",
-   "previousCheck": null,
-   "website": "bantampharma.com",
-   "websiteSource": "contact",
-   "headquarters": "NY",
-   "area": "Oncology",
-   "leadDrug": "BTM-3566 (Phase 1, Lymphoma, B-Cell; Advanced Solid Tumors)",
-   "secOfficers": []
-  },
-  {
-   "key": "consano bio",
-   "name": "Consano Bio",
-   "previousCheck": null,
-   "website": "consanobio.com",
-   "websiteSource": "contact",
-   "headquarters": "Burlington, MA",
-   "area": "Other",
-   "leadDrug": "C-1101 (Phase 1, Lumbosacral Radicular Pain; Sciatic Radiculopathy)",
-   "secOfficers": [
-    "Andrew Hall",
-    "Jennifer Schmitke"
-   ]
-  },
-  {
-   "key": "ventus therapeutics u s",
-   "name": "Ventus Therapeutics U.S., Inc.",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Waltham, MA",
-   "area": "Rheumatology",
-   "leadDrug": "VENT-03 (Phase 2, Cutaneous Lupus Erythematosus (CLE); Systemic Lupus Erythematosus)",
-   "secOfficers": [
-    "Marcelo Bigal",
-    "Daniel Koerwer",
-    "Zachary McNealy",
-    "Michael Crackower"
-   ]
-  },
-  {
-   "key": "terremoto biosciences",
-   "name": "Terremoto Biosciences Inc.",
-   "previousCheck": null,
-   "website": "terremotobio.com",
-   "websiteSource": "contact",
-   "headquarters": "South San Francisco, CA",
-   "area": "Oncology",
-   "leadDrug": "TER-2013 (Phase 1/2, Breast Cancer; Endometrial Cancer)",
-   "secOfficers": [
-    "Charles Baum",
-    "James Christensen",
-    "Grace Lu"
-   ]
-  },
-  {
-   "key": "accsalus biosciences",
-   "name": "AccSalus Biosciences, Inc.",
-   "previousCheck": null,
-   "website": "accsalus.com",
-   "websiteSource": "contact",
-   "headquarters": "CA",
-   "area": "Oncology",
-   "leadDrug": "ACC-1898 (Phase 1, Hepatocellular Carcinoma; Renal Cell Carcinoma)",
-   "secOfficers": []
-  },
-  {
-   "key": "vaxart",
-   "name": "Vaxart",
-   "previousCheck": null,
-   "website": "vaxart.com",
-   "websiteSource": "guess",
-   "headquarters": "South San Francisco, CA",
-   "area": "Infectious Disease",
-   "leadDrug": "VXA-CoV2-3.1 (Phase 2, SARS-CoV2; COVID-19)",
-   "secOfficers": []
-  },
-  {
-   "key": "discgenics",
-   "name": "DiscGenics, Inc.",
-   "previousCheck": null,
-   "website": "discgenics.com",
-   "websiteSource": "guess",
-   "headquarters": "Salt Lake City, UT",
-   "area": "Orthopedics",
-   "leadDrug": "IDCT (rebonuputemcel) (Phase 3, Degenerative Disc Disease)",
-   "secOfficers": [
-    "J. F. Flanagan",
-    "Robert M. Wynalek"
-   ]
-  },
-  {
-   "key": "aspera biomedicines",
-   "name": "Aspera Biomedicines, Inc.",
-   "previousCheck": null,
-   "website": "asperabio.com",
-   "websiteSource": "contact",
-   "headquarters": "CA",
-   "area": "Oncology",
-   "leadDrug": "rebecsinib (Phase 1, Secondary AML; Myelofibrosis)",
-   "secOfficers": []
-  },
-  {
-   "key": "chromadex",
-   "name": "ChromaDex, Inc.",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Irvine, CA",
-   "area": "Other",
-   "leadDrug": "Niagen®Plus (Phase 1, Healthy Volunteer; Fatigue)",
-   "secOfficers": []
-  },
-  {
-   "key": "propedix",
-   "name": "Propedix, Inc.",
-   "previousCheck": null,
-   "website": "propedix.com",
-   "websiteSource": "contact",
-   "headquarters": "Boston, MA",
-   "area": "Other",
-   "leadDrug": "1% Tolnaftate Stick Formula A (Phase 2, Tinea Pedis)",
-   "secOfficers": [
-    "Carl Schanbacher"
-   ]
-  },
-  {
-   "key": "immvira pharma",
-   "name": "ImmVira Pharma Co. Ltd",
-   "previousCheck": null,
-   "website": "immviragroup.com",
-   "websiteSource": "contact",
-   "headquarters": "MA",
-   "area": "Oncology",
-   "leadDrug": "T3011 (Phase 2, Solid Tumor; Melanoma)",
-   "secOfficers": []
-  },
-  {
-   "key": "neutrolis",
-   "name": "Neutrolis",
-   "previousCheck": null,
-   "website": "neutrolis.com",
-   "websiteSource": "contact",
-   "headquarters": "Cambridge, MA",
-   "area": "Rheumatology",
-   "leadDrug": "NTR1011 (Phase 1, SLE (Systemic Lupus); RA - Rheumatoid Arthritis)",
-   "secOfficers": [
-    "Abdul H. Rahamathullah",
-    "Toby Fox",
-    "Anthony Aiudi"
-   ]
-  },
-  {
-   "key": "regenxbio",
-   "name": "REGENXBIO Inc.",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Rockville, MD",
-   "area": "Rare/Genetic Disease",
-   "leadDrug": "RGX-121-3102 (Phase 3, MPS II; Hunter Syndrome (MPS II))",
-   "secOfficers": [
-    "Kenneth T. Mills"
-   ]
-  },
-  {
-   "key": "stelexis biosciences",
-   "name": "Stelexis BioSciences",
-   "previousCheck": null,
-   "website": "stelexis.com",
-   "websiteSource": "contact",
-   "headquarters": "MA",
-   "area": "Oncology",
-   "leadDrug": "STLX-2012 (Phase 1, Healthy Participants)",
-   "secOfficers": []
-  },
-  {
-   "key": "ingenia therapeutics",
-   "name": "Ingenia Therapeutics INC",
-   "previousCheck": null,
-   "website": "ingeniatx.com",
-   "websiteSource": "contact",
-   "headquarters": "Cambridge, MA",
-   "area": "Nephrology",
-   "leadDrug": "IGT-303 (Phase 1/2, Healthy Volunteers; Chronic Kidney Disease)",
-   "secOfficers": [
-    "Sangyeul Han"
-   ]
-  },
-  {
-   "key": "lakefront biotherapeutics west",
-   "name": "Lakefront Biotherapeutics West LLC",
-   "previousCheck": null,
-   "website": "lakefrontbio.com",
-   "websiteSource": "contact",
-   "headquarters": "CA",
-   "area": "Hematology",
-   "leadDrug": "OM336 (Phase 1, AIHA - Warm Autoimmune Hemolytic Anemia; AIHA - Cold Autoimmune Hemolytic Anemia)",
-   "secOfficers": []
-  },
-  {
-   "key": "nkgen biotech",
-   "name": "NKGen Biotech, Inc.",
-   "previousCheck": null,
-   "website": "nkgenbiotech.com",
-   "websiteSource": "contact",
-   "headquarters": "Santa Ana, CA",
-   "area": "Neurology",
-   "leadDrug": "SNK01 (Phase 2, Plaque Psoriasis; Refractory Cancer)",
-   "secOfficers": []
-  },
-  {
-   "key": "neurorx",
-   "name": "NeuroRx, Inc.",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Wilmington, DE",
-   "area": "Psychiatry",
-   "leadDrug": "NRX-101 (Phase 3, Bipolar Depression; Suicidal Ideas)",
-   "secOfficers": [
-    "Jonathan Javitt"
-   ]
-  },
-  {
-   "key": "tessera therapeutics",
-   "name": "Tessera Therapeutics, Inc.",
-   "previousCheck": null,
-   "website": "tesseratx.com",
-   "websiteSource": "contact",
-   "headquarters": "MA",
-   "area": "Other",
-   "leadDrug": "TSRA-196 (Phase 1/2, Alpha-1 Antitrypsin Deficiency (AATD))",
-   "secOfficers": []
-  },
-  {
-   "key": "genosco",
-   "name": "Genosco Inc.",
-   "previousCheck": null,
-   "website": null,
-   "websiteSource": null,
-   "headquarters": "Billerica",
-   "area": "Pulmonology",
-   "leadDrug": "GNS-3545 (Phase 1, Idiopathic Pulmonary Fibrosis)",
-   "secOfficers": []
-  },
   {
    "key": "neuropro therapeutics",
    "name": "NeuroPro Therapeutics, Inc.",
@@ -2668,6 +2019,701 @@
    "leadDrug": "AUTX-703 (Phase 1, Relapsed Acute Myeloid Leukemia (AML); Refractory Acute Myeloid Leukemia (AML))",
    "secOfficers": [
     "Katharine Yen"
+   ]
+  },
+  {
+   "key": "ayuvis research",
+   "name": "AyuVis Research, Inc.",
+   "previousCheck": null,
+   "website": "ayuvis.com",
+   "websiteSource": "contact",
+   "headquarters": "Fort Worth, TX",
+   "area": "Other",
+   "leadDrug": "AVR-48 (Phase 1, Safety Issues; Tolerability)",
+   "secOfficers": [
+    "Suchismita Acharya",
+    "Dwight Horton",
+    "Russell Bromley",
+    "William D. Dean",
+    "Beamon Agarwal"
+   ]
+  },
+  {
+   "key": "lineage cell therapeutics",
+   "name": "Lineage Cell Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": "lineagecell.com",
+   "websiteSource": "contact",
+   "headquarters": "Carlsbad, CA",
+   "area": "OB/GYN",
+   "leadDrug": "OPC1 (Phase 1, Spinal Cord Injury Cervical; Spinal Cord Injury Thoracic)",
+   "secOfficers": [
+    "Michael D. West",
+    "Robert W. Peabody",
+    "William P. Tew"
+   ]
+  },
+  {
+   "key": "pheast therapeutics",
+   "name": "Pheast Therapeutics",
+   "previousCheck": null,
+   "website": "pheast.com",
+   "websiteSource": "contact",
+   "headquarters": "Redwood City, CA",
+   "area": "Oncology",
+   "leadDrug": "PHST001 (Phase 1, Advanced Solid Tumors; Ovarian Cancer)",
+   "secOfficers": [
+    "Roy Maute",
+    "Thomas Marty",
+    "Raphael Rousseau"
+   ]
+  },
+  {
+   "key": "arbor biotechnologies",
+   "name": "Arbor Biotechnologies",
+   "previousCheck": null,
+   "website": "arbor.bio",
+   "websiteSource": "contact",
+   "headquarters": "Cambridge, MA",
+   "area": "Other",
+   "leadDrug": "ABO-101 (Phase 1/2, Primary Hyperoxaluria Type 1 (PH1))",
+   "secOfficers": [
+    "Devyn Smith",
+    "David Cheng",
+    "Pam Stetkiewicz",
+    "John Murphy",
+    "Kelly Morgan"
+   ]
+  },
+  {
+   "key": "alterome therapeutics",
+   "name": "Alterome Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": "alterome.com",
+   "websiteSource": "contact",
+   "headquarters": "San Marcos, CA",
+   "area": "Oncology",
+   "leadDrug": "ALTA3263 (Phase 1, Cancer; PDAC - Pancreatic Ductal Adenocarcinoma)",
+   "secOfficers": [
+    "Eric A. Murphy"
+   ]
+  },
+  {
+   "key": "cero therapeutics holdings",
+   "name": "CERo Therapeutics Holdings, Inc.",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "South San Francisco, CA",
+   "area": "Oncology",
+   "leadDrug": "CER-1236 (Phase 1, AML; Acute Myeloid Leukemia)",
+   "secOfficers": [
+    "Chris Ehrlich",
+    "Andrew A. Kucharchuk",
+    "Kristen Pierce"
+   ]
+  },
+  {
+   "key": "azitra",
+   "name": "Azitra Inc.",
+   "previousCheck": null,
+   "website": "azitrainc.com",
+   "websiteSource": "contact",
+   "headquarters": "Branford, CT",
+   "area": "Dermatology",
+   "leadDrug": "ATR04-484 (Phase 1/2, EGFR Inhibitor-associated Rash)",
+   "secOfficers": [
+    "Francisco Salva"
+   ]
+  },
+  {
+   "key": "marengo therapeutics",
+   "name": "Marengo Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": "marengotx.com",
+   "websiteSource": "contact",
+   "headquarters": "MA",
+   "area": "Vaccines",
+   "leadDrug": "STAR0602 (Phase 1/2, Advanced Solid Tumors; Genital Neoplasm, Female)",
+   "secOfficers": []
+  },
+  {
+   "key": "vistagen therapeutics",
+   "name": "VistaGen Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "South San Francisco, CA",
+   "area": "Psychiatry",
+   "leadDrug": "Fasedienol Nasal Spray (Phase 3, Social Anxiety Disorder; Social Anxiety Disorder (SAD))",
+   "secOfficers": [
+    "Shawn K. Singh",
+    "Jerrold D. Dotson",
+    "Reid G. Adler"
+   ]
+  },
+  {
+   "key": "axcynsis therapeutics",
+   "name": "Axcynsis Therapeutics Pte Ltd",
+   "previousCheck": null,
+   "website": "axcynsis.com",
+   "websiteSource": "contact",
+   "headquarters": "MA",
+   "area": "Oncology",
+   "leadDrug": "AT03-65 (Phase 1, Solid Tumor)",
+   "secOfficers": []
+  },
+  {
+   "key": "novelty nobility",
+   "name": "Novelty Nobility, Inc.",
+   "previousCheck": null,
+   "website": "noveltynobility.com",
+   "websiteSource": "contact",
+   "headquarters": "MA",
+   "area": "Oncology",
+   "leadDrug": "NN3201 (Phase 1, Gastrointestinal Stromal Tumors; Small-cell Lung Cancer)",
+   "secOfficers": []
+  },
+  {
+   "key": "allay therapeutics",
+   "name": "Allay Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "San Jose, CA",
+   "area": "Other",
+   "leadDrug": "ATX101 (Phase 2, Total Knee Arthroplasty (Postoperative Pain))",
+   "secOfficers": [
+    "Adam Gridley",
+    "Kristen Howells"
+   ]
+  },
+  {
+   "key": "accent therapeutics",
+   "name": "Accent Therapeutics",
+   "previousCheck": null,
+   "website": "accenttx.com",
+   "websiteSource": "contact",
+   "headquarters": "MA",
+   "area": "Oncology",
+   "leadDrug": "ATX-295 (Phase 1/2, Advanced Solid Tumors; Breast Cancer Recurrent)",
+   "secOfficers": []
+  },
+  {
+   "key": "abviro",
+   "name": "AbViro LLC",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "Bethesda, MD",
+   "area": "Infectious Disease",
+   "leadDrug": "AV-1 100 mg (Phase 2, DENV-3 Controlled Human Infection Model)",
+   "secOfficers": [
+    "Urban Ramstedt",
+    "Brennan Klose",
+    "Sam Black"
+   ]
+  },
+  {
+   "key": "hdt bio",
+   "name": "HDT Bio",
+   "previousCheck": null,
+   "website": "hdt.bio",
+   "websiteSource": "contact",
+   "headquarters": "WA",
+   "area": "Vaccines",
+   "leadDrug": "10 ug HDT 321 (Phase 1, Vaccine; Crimean-Congo Hemorrhagic Fever)",
+   "secOfficers": []
+  },
+  {
+   "key": "pyxis oncology",
+   "name": "Pyxis Oncology, Inc",
+   "previousCheck": null,
+   "website": "pyxisoncology.com",
+   "websiteSource": "contact",
+   "headquarters": "Boston, MA",
+   "area": "Oncology",
+   "leadDrug": "PYX-201 (Phase 1/2, Solid Tumor; Advanced Solid Tumor)",
+   "secOfficers": [
+    "Lara Sullivan",
+    "Robert Crane"
+   ]
+  },
+  {
+   "key": "rion",
+   "name": "Rion Inc.",
+   "previousCheck": null,
+   "website": "riontx.com",
+   "websiteSource": "contact",
+   "headquarters": "Cumming, GA",
+   "area": "Endocrinology",
+   "leadDrug": "PEP (Purified Exosome Product) / TISSEEL (Phase 2, Diabetic Foot Ulcer)",
+   "secOfficers": [
+    "Atta Behfar",
+    "Charles Farrahar"
+   ]
+  },
+  {
+   "key": "nextcure",
+   "name": "NextCure, Inc.",
+   "previousCheck": null,
+   "website": "nextcure.com",
+   "websiteSource": "contact",
+   "headquarters": "Baltimore, MD",
+   "area": "Oncology",
+   "leadDrug": "SIM0505 for injection (Phase 1, Advanced Solid Tumors; Platinum Resistant Ovarian Cancer)",
+   "secOfficers": [
+    "Michael Richman",
+    "Steven P. Cobourn",
+    "Udayan Guha",
+    "Timothy Mayer",
+    "Sourav Kundu",
+    "Kevin Shaw"
+   ]
+  },
+  {
+   "key": "pds biotechnology",
+   "name": "PDS Biotechnology Corp.",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "Princeton, NJ",
+   "area": "Vaccines",
+   "leadDrug": "Pembrolizumab (KEYTRUDA®) and PDS0101 (Phase 2, Metastatic Head and Neck Cancer; Recurrent Head and Neck Cancer)",
+   "secOfficers": [
+    "Brian A. Leuthner",
+    "Robert L. Macdonald",
+    "Andrew Einhorn",
+    "Herbert J. Faleck",
+    "Albert N. Marchio II",
+    "Carl J. Soranno"
+   ]
+  },
+  {
+   "key": "moleculin biotech",
+   "name": "Moleculin Biotech, Inc.",
+   "previousCheck": null,
+   "website": "moleculin.com",
+   "websiteSource": "contact",
+   "headquarters": "Houston, TX",
+   "area": "Oncology",
+   "leadDrug": "Liposomal Annamycin Injection in combination with Cytarabine Injection (Phase 2/3, Acute Myeloid Leukaemia (AML))",
+   "secOfficers": [
+    "Walter Klemp",
+    "Louis Ploth"
+   ]
+  },
+  {
+   "key": "mineralys therapeutics",
+   "name": "Mineralys Therapeutics Inc.",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "Radnor, PA",
+   "area": "Nephrology",
+   "leadDrug": "lorundrostat (Phase 3, Hypertension; Obstructive Sleep Apnea)",
+   "secOfficers": [
+    "Jon Congleton",
+    "Adam Levy"
+   ]
+  },
+  {
+   "key": "pathos ai",
+   "name": "Pathos AI, Inc.",
+   "previousCheck": null,
+   "website": "pathos.com",
+   "websiteSource": "contact",
+   "headquarters": "Chicago, IL",
+   "area": "Oncology",
+   "leadDrug": "Pocenbrodib (Phase 1/2, mCRPC (Metastatic Castration-resistant Prostate Cancer); Prostate Cancer)",
+   "secOfficers": [
+    "Ryan Fukushima",
+    "Eric Lefkofky",
+    "Andrew Heinlein",
+    "Alex Dolan"
+   ]
+  },
+  {
+   "key": "immunogenesis",
+   "name": "ImmunoGenesis",
+   "previousCheck": null,
+   "website": "immunogenesis.com",
+   "websiteSource": "contact",
+   "headquarters": "Houston, TX",
+   "area": "Oncology",
+   "leadDrug": "Evofosfamide (Phase 1/2, Metastatic Prostate Cancer; Metastatic Head and Neck Squamous Cell Carcinoma)",
+   "secOfficers": [
+    "Jennifer Barlow"
+   ]
+  },
+  {
+   "key": "cour pharmaceutical development",
+   "name": "COUR Pharmaceutical Development Company, Inc.",
+   "previousCheck": null,
+   "website": "courpharma.com",
+   "websiteSource": "contact",
+   "headquarters": "IN",
+   "area": "Neurology",
+   "leadDrug": "CNP-103 (Phase 1/2, Type 1 Diabetes Mellitus; T1D)",
+   "secOfficers": []
+  },
+  {
+   "key": "aerogen pharma",
+   "name": "Aerogen Pharma Limited",
+   "previousCheck": null,
+   "website": "aerogenpharma.com",
+   "websiteSource": "contact",
+   "headquarters": "NC",
+   "area": "Other",
+   "leadDrug": "APC-0101 (SF-RI 1 surfactant for inhalation combined with a dedicated delivery system) (Phase 3, Respiratory Distress Syndrome; Pre-term Infants)",
+   "secOfficers": []
+  },
+  {
+   "key": "truebinding",
+   "name": "TrueBinding, Inc.",
+   "previousCheck": null,
+   "website": "truebinding.com",
+   "websiteSource": "guess",
+   "headquarters": "Menlo Park, CA",
+   "area": "Neurology",
+   "leadDrug": "TB006 (Phase 2, Alzheimer Disease; Alzheimer's Disease)",
+   "secOfficers": [
+    "Dongxu Sun"
+   ]
+  },
+  {
+   "key": "caribou biosciences",
+   "name": "Caribou Biosciences, Inc.",
+   "previousCheck": null,
+   "website": "cariboubio.com",
+   "websiteSource": "contact",
+   "headquarters": "Berkeley, CA",
+   "area": "Oncology",
+   "leadDrug": "CB-011 (Phase 1, Relapsed/Refractory Multiple Myeloma)",
+   "secOfficers": [
+    "Rachel E. Haurwitz",
+    "Barbara G. McClung",
+    "Steven B. Kanner",
+    "Jason O'Byrne"
+   ]
+  },
+  {
+   "key": "arcturus therapeutics",
+   "name": "Arcturus Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": "arcturusrx.com",
+   "websiteSource": "contact",
+   "headquarters": "San Diego, CA",
+   "area": "Infectious Disease",
+   "leadDrug": "ARCT-2303 (Phase 3, COVID-19)",
+   "secOfficers": [
+    "Joseph E. Payne",
+    "Padmanabh Chivukula"
+   ]
+  },
+  {
+   "key": "jasper therapeutics",
+   "name": "Jasper Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": "jaspertx.com",
+   "websiteSource": "guess",
+   "headquarters": "Redwood City, CA",
+   "area": "Allergy/Immunology",
+   "leadDrug": "Briquilimab (Phase 1/2, Chronic Spontaneous Urticaria)",
+   "secOfficers": [
+    "Herb Cross",
+    "Jeet Mahal",
+    "Wenru Song",
+    "Gregory F. Keenan"
+   ]
+  },
+  {
+   "key": "nkarta",
+   "name": "Nkarta, Inc.",
+   "previousCheck": null,
+   "website": "nkartatx.com",
+   "websiteSource": "contact",
+   "headquarters": "South San Francisco, CA",
+   "area": "Oncology",
+   "leadDrug": "NKX019 (Phase 1/2, Lymphoma, Non-Hodgkin; B-cell Acute Lymphoblastic Leukemia)",
+   "secOfficers": [
+    "Paul Hastings",
+    "Matthew Plunkett"
+   ]
+  },
+  {
+   "key": "tharimmune",
+   "name": "Tharimmune Inc",
+   "previousCheck": null,
+   "website": "tharimmune.com",
+   "websiteSource": "contact",
+   "headquarters": "NJ",
+   "area": "Dermatology",
+   "leadDrug": "Nalmefene (Phase 2, Healthy; Pruritus)",
+   "secOfficers": []
+  },
+  {
+   "key": "aer therapeutics",
+   "name": "Aer Therapeutics",
+   "previousCheck": null,
+   "website": "aertherapeutics.com",
+   "websiteSource": "contact",
+   "headquarters": "Raleigh, NC",
+   "area": "Pulmonology",
+   "leadDrug": "Flexlamose (Phase 2, COPD)",
+   "secOfficers": [
+    "Thomas Mathers"
+   ]
+  },
+  {
+   "key": "helios cardio",
+   "name": "Helios Cardio Inc.",
+   "previousCheck": null,
+   "website": "helioscardio.com",
+   "websiteSource": "contact",
+   "headquarters": "MA",
+   "area": "Cardiology",
+   "leadDrug": "The intervention includes Amiodarone-Infused CardiaMend patches (70mg, 150mg and 300mg) (Phase 1/2, Atrial Fibrillation, Postoperative)",
+   "secOfficers": []
+  },
+  {
+   "key": "manistee therapeutics",
+   "name": "Manistee Therapeutics",
+   "previousCheck": null,
+   "website": "manisteetx.com",
+   "websiteSource": "guess",
+   "headquarters": "Concord, MA",
+   "area": "Neurology",
+   "leadDrug": "MTX101 (Phase 2, Migraine)",
+   "secOfficers": [
+    "Robert L. Bratzler, Ph.D.",
+    "Bradford J. Shingleton, M.D"
+   ]
+  },
+  {
+   "key": "spero therapeutics",
+   "name": "Spero Therapeutics",
+   "previousCheck": null,
+   "website": "sperotx.com",
+   "websiteSource": "guess",
+   "headquarters": "Cambridge, MA",
+   "area": "Urology",
+   "leadDrug": "TBP-PI-HBr (Phase 3, Healthy Volunteers; Urinary Tract Infection)",
+   "secOfficers": [
+    "Ankit Mahadevia",
+    "Satyavrat Shukla",
+    "Tamara Joseph",
+    "Timothy Keutzer",
+    "Kamal Hamed"
+   ]
+  },
+  {
+   "key": "io therapeutics",
+   "name": "Io Therapeutics",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "Spring, TX",
+   "area": "Dermatology",
+   "leadDrug": "IRX4204 (Phase 2, Parkinson's Disease; Psoriasis)",
+   "secOfficers": [
+    "Martin Sanders",
+    "Vidyasagar Vuligonda",
+    "Sharon Lew"
+   ]
+  },
+  {
+   "key": "afasci",
+   "name": "Afasci Inc",
+   "previousCheck": null,
+   "website": "afasci.com",
+   "websiteSource": "contact",
+   "headquarters": "CA",
+   "area": "Psychiatry",
+   "leadDrug": "AFA-281 (Phase 2, Pain, Neuropathic; Pain, Inflammatory)",
+   "secOfficers": []
+  },
+  {
+   "key": "aion healthspan",
+   "name": "AION Healthspan, Inc.",
+   "previousCheck": null,
+   "website": "aionhealthspan.com",
+   "websiteSource": "contact",
+   "headquarters": "Miami, FL",
+   "area": "Nephrology",
+   "leadDrug": "AION-301 (Phase 1/2, Chronic Kidney Disease Stage 3)",
+   "secOfficers": [
+    "Camillo Ricordi"
+   ]
+  },
+  {
+   "key": "quanta therapeutics",
+   "name": "Quanta Therapeutics",
+   "previousCheck": null,
+   "website": "quantatx.com",
+   "websiteSource": "contact",
+   "headquarters": "South San Francisco, CA",
+   "area": "Oncology",
+   "leadDrug": "QTX3544 (Phase 1, Advanced Solid Tumors)",
+   "secOfficers": [
+    "Perry Nisen",
+    "Derek Metzger",
+    "Cameron Pitt"
+   ]
+  },
+  {
+   "key": "adcentrx therapeutics",
+   "name": "Adcentrx Therapeutics",
+   "previousCheck": null,
+   "website": "adcentrx.com",
+   "websiteSource": "contact",
+   "headquarters": "CA",
+   "area": "Oncology",
+   "leadDrug": "ADRX-0405 (Phase 1, Solid Tumors)",
+   "secOfficers": []
+  },
+  {
+   "key": "perspective therapeutics",
+   "name": "Perspective Therapeutics",
+   "previousCheck": null,
+   "website": "perspectivetherapeutics.com",
+   "websiteSource": "contact",
+   "headquarters": "Seattle, WA",
+   "area": "Oncology",
+   "leadDrug": "[203Pb]Pb-PSV359 (Phase 1/2, Pancreatic Ductal Adenocarcinoma; Gastric Cancer)",
+   "secOfficers": [
+    "Johan (Thijs) Spoor",
+    "Jonathan Hunt",
+    "Markus Puhlmann",
+    "Mark Austin"
+   ]
+  },
+  {
+   "key": "rapa therapeutics",
+   "name": "Rapa Therapeutics LLC",
+   "previousCheck": null,
+   "website": "rapatherapeutics.com",
+   "websiteSource": "contact",
+   "headquarters": "MD",
+   "area": "Oncology",
+   "leadDrug": "RAPA-501 Autologous T stem cells (Phase 2/3, Amyotrophic Lateral Sclerosis)",
+   "secOfficers": []
+  },
+  {
+   "key": "xalud therapeutics",
+   "name": "Xalud Therapeutics, Inc.",
+   "previousCheck": null,
+   "website": "xaludthera.com",
+   "websiteSource": "contact",
+   "headquarters": "Charlottesville, VA",
+   "area": "Neurology",
+   "leadDrug": "XT-150 (Phase 2, Osteoarthritis, Knee; Facet Joint Pain)",
+   "secOfficers": [
+    "Stephen Collins",
+    "Diem Nguyen"
+   ]
+  },
+  {
+   "key": "technogenesys",
+   "name": "TechnoGenesys, Inc.",
+   "previousCheck": null,
+   "website": "technogenesys.com",
+   "websiteSource": "contact",
+   "headquarters": "FL",
+   "area": "Oncology",
+   "leadDrug": "(R)-9bMS (Phase 1, Metastatic Castration-resistant Prostate Cancer (CRPC); Metastatic Castration-resistant Prostate Carcinoma)",
+   "secOfficers": []
+  },
+  {
+   "key": "blossomhill therapeutics",
+   "name": "BlossomHill Therapeutics",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "San Diego, CA",
+   "area": "Oncology",
+   "leadDrug": "BH-30643 (Phase 1/2, NSCLC (Advanced Non-small Cell Lung Cancer))",
+   "secOfficers": [
+    "Jingrong Jean Cui",
+    "Yishan Li"
+   ]
+  },
+  {
+   "key": "ppd development",
+   "name": "PPD Development, LP",
+   "previousCheck": null,
+   "website": null,
+   "websiteSource": null,
+   "headquarters": "Wilmington, NC",
+   "area": "Pulmonology",
+   "leadDrug": "Cohort A: vilobelimab (Phase 2, Acute Respiratory Distress Syndrome (ARDS); ARDS)",
+   "secOfficers": []
+  },
+  {
+   "key": "cytodyn",
+   "name": "CytoDyn, Inc.",
+   "previousCheck": null,
+   "website": "cytodyn.com",
+   "websiteSource": "guess",
+   "headquarters": "Vancouver, WA",
+   "area": "Oncology",
+   "leadDrug": "350 mg leronlimab (Phase 2, Metastatic Colorectal Cancer (mCRC))",
+   "secOfficers": [
+    "Jacob P. Lalezari",
+    "Robert E. Hoffman",
+    "Tyler Blok"
+   ]
+  },
+  {
+   "key": "rakuten medical",
+   "name": "Rakuten Medical, Inc.",
+   "previousCheck": null,
+   "website": "rakuten-med.com",
+   "websiteSource": "contact",
+   "headquarters": "San Mateo, CA",
+   "area": "Oncology",
+   "leadDrug": "ASP-1929 Photoimmunotherapy (Phase 3, Head and Neck Cancer; Recurrent Head and Neck Squamous Cell Carcinoma)",
+   "secOfficers": [
+    "Maeda Minami",
+    "Tiffany Piecewicz",
+    "Abhijit Bhatia",
+    "Toshiaki Suzuki",
+    "Suzane San",
+    "Hiroyuki Kodama",
+    "Louise Chang",
+    "Amy Thorne",
+    "Anthony Manibusan",
+    "Hassan Danesi"
+   ]
+  },
+  {
+   "key": "fulgent pharma",
+   "name": "Fulgent Pharma LLC.",
+   "previousCheck": null,
+   "website": "fulgentpharma.com",
+   "websiteSource": "contact",
+   "headquarters": "Temple City, CA",
+   "area": "Oncology",
+   "leadDrug": "FID007 (Phase 2, Head and Neck Squamous Cell Carcinoma)",
+   "secOfficers": [
+    "Ming Hsieh"
+   ]
+  },
+  {
+   "key": "a2 biotherapeutics",
+   "name": "A2 Biotherapeutics Inc.",
+   "previousCheck": null,
+   "website": "a2bio.com",
+   "websiteSource": "guess",
+   "headquarters": "Agoura Hills, CA",
+   "area": "Oncology",
+   "leadDrug": "A2B395 (Phase 1/2, Solid Tumor, Adult; Colorectal Cancer)",
+   "secOfficers": [
+    "Scott Foraker",
+    "Alexander Kamb",
+    "Thomas Leung",
+    "David Lucas",
+    "William Go"
    ]
   }
  ]
