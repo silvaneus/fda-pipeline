@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-06T13:46:03.779Z",
+ "generated": "2026-11-07T12:29:13.902Z",
  "catalysts": [
   {
    "drug": "pimicotinib",
@@ -1692,6 +1692,29 @@
    "mjhStories": 1
   },
   {
+   "drug": "rivoceranib + Camrelizumab",
+   "brandName": null,
+   "company": null,
+   "indication": "Unresectable HCC",
+   "pdufaDate": "2027-04-09",
+   "dateLabel": null,
+   "dateBasis": "Announced",
+   "dateBasisDetail": "announced",
+   "submissionType": null,
+   "status": "Pending",
+   "confidence": "Low",
+   "confidenceWhy": "MJH mention only · date announced",
+   "origin": "MJH only",
+   "flags": [
+    "after CRL"
+   ],
+   "source": "MJH only",
+   "sourceUrl": "https://www.targetedonc.com/view/rivoceranib-camrelizumab-fda-pdufa-date-hcc",
+   "sourceTitle": null,
+   "sourceType": "news",
+   "mjhStories": 36
+  },
+  {
    "drug": "ozekibart",
    "brandName": null,
    "company": null,
@@ -2073,26 +2096,6 @@
    "flags": [],
    "source": "MJH",
    "sourceUrl": "https://www.cancernetwork.com/view/fda-expands-approval-for-nogapendekin-alfa-in-bcg-unresponsive-nmibc",
-   "sourceType": "news",
-   "mjhStories": 26
-  },
-  {
-   "drug": "rivoceranib + Camrelizumab",
-   "brandName": null,
-   "company": null,
-   "indication": "Unresectable HCC",
-   "pdufaDate": "2026-11-05",
-   "scheduledDate": "2027-04-09",
-   "decisionTitle": "FDA Sets PDUFA Date for Rivoceranib/Camrelizumab Resubmission After Third CRL in Unresectable HCC",
-   "dateLabel": null,
-   "dateBasis": "Decision",
-   "dateBasisDetail": "FDA Sets PDUFA Date for Rivoceranib/Camrelizumab Resubmission After Third CRL in Unresectable HCC",
-   "submissionType": null,
-   "status": "CRL",
-   "origin": "MJH",
-   "flags": [],
-   "source": "MJH",
-   "sourceUrl": "https://www.cancernetwork.com/view/fda-sets-pdufa-date-for-rivoceranib-camrelizumab-resubmission-after-third-crl-in-unresectable-hcc",
    "sourceType": "news",
    "mjhStories": 26
   },
